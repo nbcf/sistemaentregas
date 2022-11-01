@@ -1,0 +1,536 @@
+﻿
+namespace Sistema.View
+{
+    partial class VeiculosView
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.bttnNew = new System.Windows.Forms.ToolStripButton();
+            this.bttnSave = new System.Windows.Forms.ToolStripButton();
+            this.bttnRefresh = new System.Windows.Forms.ToolStripButton();
+            this.bttnEdit = new System.Windows.Forms.ToolStripButton();
+            this.bttnSearch = new System.Windows.Forms.ToolStripButton();
+            this.bttnDel = new System.Windows.Forms.ToolStripButton();
+            this.tabControlAssets = new System.Windows.Forms.TabControl();
+            this.tabPagePesquisar = new System.Windows.Forms.TabPage();
+            this.radioBttnTermina = new System.Windows.Forms.RadioButton();
+            this.radioBttnContem = new System.Windows.Forms.RadioButton();
+            this.cbButtonPesquisarEm = new System.Windows.Forms.ComboBox();
+            this.radioBttnComeca = new System.Windows.Forms.RadioButton();
+            this.txtBoxPesquisar = new System.Windows.Forms.TextBox();
+            this.txtBoxId = new System.Windows.Forms.TextBox();
+            this.gridCrudVeiculos = new System.Windows.Forms.DataGridView();
+            this.toolStrip2 = new System.Windows.Forms.ToolStrip();
+            this.bttnBeginPages = new System.Windows.Forms.ToolStripButton();
+            this.bttnOnePageLeft = new System.Windows.Forms.ToolStripButton();
+            this.labelTextPageFrom = new System.Windows.Forms.ToolStripLabel();
+            this.toolStripLabel3 = new System.Windows.Forms.ToolStripLabel();
+            this.labelTextTotalPages = new System.Windows.Forms.ToolStripLabel();
+            this.toolStripLabel5 = new System.Windows.Forms.ToolStripLabel();
+            this.labelTextTotalRegFould = new System.Windows.Forms.ToolStripLabel();
+            this.bttnOnePageRight = new System.Windows.Forms.ToolStripButton();
+            this.bttnEndPages = new System.Windows.Forms.ToolStripButton();
+            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
+            this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripLabel4 = new System.Windows.Forms.ToolStripLabel();
+            this.cbButtnQuantPage1 = new System.Windows.Forms.ToolStripComboBox();
+            this.toolStripLabel6 = new System.Windows.Forms.ToolStripLabel();
+            this.cbOrdemParam1 = new System.Windows.Forms.ToolStripComboBox();
+            this.toolStripLabel7 = new System.Windows.Forms.ToolStripLabel();
+            this.cbOrdenarPor1 = new System.Windows.Forms.ToolStripComboBox();
+            this.toolStrip1.SuspendLayout();
+            this.tabControlAssets.SuspendLayout();
+            this.tabPagePesquisar.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridCrudVeiculos)).BeginInit();
+            this.toolStrip2.SuspendLayout();
+            this.SuspendLayout();
+            // 
+            // toolStrip1
+            // 
+            this.toolStrip1.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.bttnNew,
+            this.bttnSave,
+            this.bttnRefresh,
+            this.bttnEdit,
+            this.bttnSearch,
+            this.bttnDel});
+            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Padding = new System.Windows.Forms.Padding(0);
+            this.toolStrip1.Size = new System.Drawing.Size(915, 51);
+            this.toolStrip1.TabIndex = 3;
+            this.toolStrip1.Text = "toolStrip1";
+            // 
+            // bttnNew
+            // 
+            this.bttnNew.AutoSize = false;
+            this.bttnNew.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.bttnNew.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bttnNew.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.bttnNew.Image = global::Sistema.View.Properties.Resources.add48;
+            this.bttnNew.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.bttnNew.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.bttnNew.Name = "bttnNew";
+            this.bttnNew.Size = new System.Drawing.Size(100, 48);
+            this.bttnNew.Text = "toolStripButton1";
+            this.bttnNew.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
+            this.bttnNew.Click += new System.EventHandler(this.bttnNew_Click);
+            // 
+            // bttnSave
+            // 
+            this.bttnSave.AutoSize = false;
+            this.bttnSave.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bttnSave.Image = global::Sistema.View.Properties.Resources.save48;
+            this.bttnSave.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.bttnSave.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.bttnSave.Name = "bttnSave";
+            this.bttnSave.Size = new System.Drawing.Size(100, 48);
+            this.bttnSave.Text = "toolStripButton2";
+            this.bttnSave.Click += new System.EventHandler(this.bttnSave_Click);
+            // 
+            // bttnRefresh
+            // 
+            this.bttnRefresh.AutoSize = false;
+            this.bttnRefresh.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bttnRefresh.Image = global::Sistema.View.Properties.Resources.refresh48;
+            this.bttnRefresh.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.bttnRefresh.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.bttnRefresh.Name = "bttnRefresh";
+            this.bttnRefresh.Size = new System.Drawing.Size(100, 48);
+            this.bttnRefresh.Text = "toolStripButton3";
+            this.bttnRefresh.Click += new System.EventHandler(this.bttnRefresh_Click_2);
+            // 
+            // bttnEdit
+            // 
+            this.bttnEdit.AutoSize = false;
+            this.bttnEdit.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bttnEdit.Image = global::Sistema.View.Properties.Resources.editForm48;
+            this.bttnEdit.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.bttnEdit.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.bttnEdit.Name = "bttnEdit";
+            this.bttnEdit.Size = new System.Drawing.Size(100, 48);
+            this.bttnEdit.Text = "toolStripButton4";
+            this.bttnEdit.Click += new System.EventHandler(this.bttnEdit_Click);
+            // 
+            // bttnSearch
+            // 
+            this.bttnSearch.AutoSize = false;
+            this.bttnSearch.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bttnSearch.Image = global::Sistema.View.Properties.Resources.search48;
+            this.bttnSearch.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.bttnSearch.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.bttnSearch.Name = "bttnSearch";
+            this.bttnSearch.Size = new System.Drawing.Size(100, 48);
+            this.bttnSearch.Text = "toolStripButton5";
+            this.bttnSearch.Click += new System.EventHandler(this.bttnSearch_Click_1);
+            // 
+            // bttnDel
+            // 
+            this.bttnDel.AutoSize = false;
+            this.bttnDel.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bttnDel.Image = global::Sistema.View.Properties.Resources.del48;
+            this.bttnDel.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.bttnDel.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.bttnDel.Name = "bttnDel";
+            this.bttnDel.Size = new System.Drawing.Size(100, 48);
+            this.bttnDel.Text = "toolStripButton6";
+            this.bttnDel.Click += new System.EventHandler(this.bttnDel_Click);
+            // 
+            // tabControlAssets
+            // 
+            this.tabControlAssets.Appearance = System.Windows.Forms.TabAppearance.FlatButtons;
+            this.tabControlAssets.Controls.Add(this.tabPagePesquisar);
+            this.tabControlAssets.Dock = System.Windows.Forms.DockStyle.Top;
+            this.tabControlAssets.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabControlAssets.Location = new System.Drawing.Point(0, 51);
+            this.tabControlAssets.Name = "tabControlAssets";
+            this.tabControlAssets.SelectedIndex = 0;
+            this.tabControlAssets.Size = new System.Drawing.Size(915, 73);
+            this.tabControlAssets.TabIndex = 4;
+            // 
+            // tabPagePesquisar
+            // 
+            this.tabPagePesquisar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tabPagePesquisar.Controls.Add(this.radioBttnTermina);
+            this.tabPagePesquisar.Controls.Add(this.radioBttnContem);
+            this.tabPagePesquisar.Controls.Add(this.cbButtonPesquisarEm);
+            this.tabPagePesquisar.Controls.Add(this.radioBttnComeca);
+            this.tabPagePesquisar.Controls.Add(this.txtBoxPesquisar);
+            this.tabPagePesquisar.Controls.Add(this.txtBoxId);
+            this.tabPagePesquisar.Location = new System.Drawing.Point(4, 28);
+            this.tabPagePesquisar.Name = "tabPagePesquisar";
+            this.tabPagePesquisar.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPagePesquisar.Size = new System.Drawing.Size(907, 41);
+            this.tabPagePesquisar.TabIndex = 1;
+            this.tabPagePesquisar.Text = "Pesquisar";
+            this.tabPagePesquisar.UseVisualStyleBackColor = true;
+            // 
+            // radioBttnTermina
+            // 
+            this.radioBttnTermina.AutoSize = true;
+            this.radioBttnTermina.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioBttnTermina.Location = new System.Drawing.Point(462, 10);
+            this.radioBttnTermina.Name = "radioBttnTermina";
+            this.radioBttnTermina.Size = new System.Drawing.Size(74, 20);
+            this.radioBttnTermina.TabIndex = 4;
+            this.radioBttnTermina.Text = "Termina";
+            this.radioBttnTermina.UseVisualStyleBackColor = true;
+            this.radioBttnTermina.CheckedChanged += new System.EventHandler(this.radioBttnTermina_CheckedChanged_2);
+            // 
+            // radioBttnContem
+            // 
+            this.radioBttnContem.AutoSize = true;
+            this.radioBttnContem.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioBttnContem.Location = new System.Drawing.Point(389, 11);
+            this.radioBttnContem.Name = "radioBttnContem";
+            this.radioBttnContem.Size = new System.Drawing.Size(70, 20);
+            this.radioBttnContem.TabIndex = 5;
+            this.radioBttnContem.Text = "Contém";
+            this.radioBttnContem.UseVisualStyleBackColor = true;
+            this.radioBttnContem.CheckedChanged += new System.EventHandler(this.radioBttnContem_CheckedChanged_2);
+            // 
+            // cbButtonPesquisarEm
+            // 
+            this.cbButtonPesquisarEm.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbButtonPesquisarEm.FormattingEnabled = true;
+            this.cbButtonPesquisarEm.Items.AddRange(new object[] {
+            "Veiculo",
+            "Placa"});
+            this.cbButtonPesquisarEm.Location = new System.Drawing.Point(170, 6);
+            this.cbButtonPesquisarEm.Name = "cbButtonPesquisarEm";
+            this.cbButtonPesquisarEm.Size = new System.Drawing.Size(138, 24);
+            this.cbButtonPesquisarEm.TabIndex = 1;
+            this.cbButtonPesquisarEm.SelectedIndexChanged += new System.EventHandler(this.cbButtonPesquisarEm_SelectedIndexChanged_1);
+            // 
+            // radioBttnComeca
+            // 
+            this.radioBttnComeca.AutoSize = true;
+            this.radioBttnComeca.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioBttnComeca.Location = new System.Drawing.Point(314, 10);
+            this.radioBttnComeca.Name = "radioBttnComeca";
+            this.radioBttnComeca.Size = new System.Drawing.Size(72, 20);
+            this.radioBttnComeca.TabIndex = 6;
+            this.radioBttnComeca.Text = "Começa";
+            this.radioBttnComeca.UseVisualStyleBackColor = true;
+            this.radioBttnComeca.CheckedChanged += new System.EventHandler(this.radioBttnComeca_CheckedChanged_2);
+            // 
+            // txtBoxPesquisar
+            // 
+            this.txtBoxPesquisar.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBoxPesquisar.Location = new System.Drawing.Point(7, 6);
+            this.txtBoxPesquisar.Name = "txtBoxPesquisar";
+            this.txtBoxPesquisar.Size = new System.Drawing.Size(157, 23);
+            this.txtBoxPesquisar.TabIndex = 0;
+            this.txtBoxPesquisar.TextChanged += new System.EventHandler(this.txtBoxPesquisar_TextChanged_2);
+            // 
+            // txtBoxId
+            // 
+            this.txtBoxId.Enabled = false;
+            this.txtBoxId.Location = new System.Drawing.Point(646, 10);
+            this.txtBoxId.Name = "txtBoxId";
+            this.txtBoxId.Size = new System.Drawing.Size(86, 23);
+            this.txtBoxId.TabIndex = 8;
+            this.txtBoxId.Visible = false;
+            // 
+            // gridCrudVeiculos
+            // 
+            this.gridCrudVeiculos.AllowUserToAddRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Gainsboro;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridCrudVeiculos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridCrudVeiculos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.gridCrudVeiculos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.gridCrudVeiculos.DefaultCellStyle = dataGridViewCellStyle3;
+            this.gridCrudVeiculos.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridCrudVeiculos.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.gridCrudVeiculos.Location = new System.Drawing.Point(0, 124);
+            this.gridCrudVeiculos.MultiSelect = false;
+            this.gridCrudVeiculos.Name = "gridCrudVeiculos";
+            this.gridCrudVeiculos.RowTemplate.Height = 25;
+            this.gridCrudVeiculos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.gridCrudVeiculos.Size = new System.Drawing.Size(915, 454);
+            this.gridCrudVeiculos.TabIndex = 5;
+            this.gridCrudVeiculos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridCrudVeiculos_CellClick);
+            // 
+            // toolStrip2
+            // 
+            this.toolStrip2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.toolStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.bttnBeginPages,
+            this.bttnOnePageLeft,
+            this.labelTextPageFrom,
+            this.toolStripLabel3,
+            this.labelTextTotalPages,
+            this.toolStripLabel5,
+            this.labelTextTotalRegFould,
+            this.bttnOnePageRight,
+            this.bttnEndPages,
+            this.toolStripLabel1,
+            this.toolStripLabel2,
+            this.toolStripSeparator1,
+            this.toolStripLabel4,
+            this.cbButtnQuantPage1,
+            this.toolStripLabel6,
+            this.cbOrdemParam1,
+            this.toolStripLabel7,
+            this.cbOrdenarPor1});
+            this.toolStrip2.Location = new System.Drawing.Point(0, 551);
+            this.toolStrip2.Name = "toolStrip2";
+            this.toolStrip2.Size = new System.Drawing.Size(915, 27);
+            this.toolStrip2.TabIndex = 6;
+            this.toolStrip2.Text = "toolStrip2";
+            // 
+            // bttnBeginPages
+            // 
+            this.bttnBeginPages.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bttnBeginPages.Image = global::Sistema.View.Properties.Resources._2leftarrow;
+            this.bttnBeginPages.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.bttnBeginPages.Name = "bttnBeginPages";
+            this.bttnBeginPages.Size = new System.Drawing.Size(23, 24);
+            this.bttnBeginPages.Text = "toolStripButton1";
+            // 
+            // bttnOnePageLeft
+            // 
+            this.bttnOnePageLeft.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bttnOnePageLeft.Image = global::Sistema.View.Properties.Resources._1leftarrow;
+            this.bttnOnePageLeft.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.bttnOnePageLeft.Name = "bttnOnePageLeft";
+            this.bttnOnePageLeft.Size = new System.Drawing.Size(23, 24);
+            this.bttnOnePageLeft.Text = "toolStripButton2";
+            // 
+            // labelTextPageFrom
+            // 
+            this.labelTextPageFrom.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTextPageFrom.Name = "labelTextPageFrom";
+            this.labelTextPageFrom.Size = new System.Drawing.Size(17, 24);
+            this.labelTextPageFrom.Text = "0";
+            // 
+            // toolStripLabel3
+            // 
+            this.toolStripLabel3.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripLabel3.Name = "toolStripLabel3";
+            this.toolStripLabel3.Size = new System.Drawing.Size(15, 24);
+            this.toolStripLabel3.Text = "/";
+            // 
+            // labelTextTotalPages
+            // 
+            this.labelTextTotalPages.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTextTotalPages.Name = "labelTextTotalPages";
+            this.labelTextTotalPages.Size = new System.Drawing.Size(17, 24);
+            this.labelTextTotalPages.Text = "0";
+            // 
+            // toolStripLabel5
+            // 
+            this.toolStripLabel5.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripLabel5.Name = "toolStripLabel5";
+            this.toolStripLabel5.Size = new System.Drawing.Size(15, 24);
+            this.toolStripLabel5.Text = "-";
+            // 
+            // labelTextTotalRegFould
+            // 
+            this.labelTextTotalRegFould.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTextTotalRegFould.Name = "labelTextTotalRegFould";
+            this.labelTextTotalRegFould.Size = new System.Drawing.Size(17, 24);
+            this.labelTextTotalRegFould.Text = "0";
+            // 
+            // bttnOnePageRight
+            // 
+            this.bttnOnePageRight.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bttnOnePageRight.Image = global::Sistema.View.Properties.Resources._1rightarrow;
+            this.bttnOnePageRight.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.bttnOnePageRight.Name = "bttnOnePageRight";
+            this.bttnOnePageRight.Size = new System.Drawing.Size(23, 24);
+            this.bttnOnePageRight.Text = "toolStripButton3";
+            // 
+            // bttnEndPages
+            // 
+            this.bttnEndPages.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bttnEndPages.Image = global::Sistema.View.Properties.Resources._2rightarrow;
+            this.bttnEndPages.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.bttnEndPages.Name = "bttnEndPages";
+            this.bttnEndPages.Size = new System.Drawing.Size(23, 24);
+            this.bttnEndPages.Text = "toolStripButton4";
+            // 
+            // toolStripLabel1
+            // 
+            this.toolStripLabel1.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripLabel1.Name = "toolStripLabel1";
+            this.toolStripLabel1.Size = new System.Drawing.Size(209, 24);
+            this.toolStripLabel1.Text = "Total Registros Encontrados : ";
+            // 
+            // toolStripLabel2
+            // 
+            this.toolStripLabel2.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripLabel2.Name = "toolStripLabel2";
+            this.toolStripLabel2.Size = new System.Drawing.Size(17, 24);
+            this.toolStripLabel2.Text = "0";
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 27);
+            // 
+            // toolStripLabel4
+            // 
+            this.toolStripLabel4.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripLabel4.Name = "toolStripLabel4";
+            this.toolStripLabel4.Size = new System.Drawing.Size(54, 24);
+            this.toolStripLabel4.Text = "Qt.Pg.:";
+            // 
+            // cbButtnQuantPage1
+            // 
+            this.cbButtnQuantPage1.Items.AddRange(new object[] {
+            "10",
+            "15",
+            "20",
+            "25",
+            "30",
+            "35",
+            "40",
+            "45",
+            "50",
+            "75",
+            "100"});
+            this.cbButtnQuantPage1.Name = "cbButtnQuantPage1";
+            this.cbButtnQuantPage1.Size = new System.Drawing.Size(121, 27);
+            // 
+            // toolStripLabel6
+            // 
+            this.toolStripLabel6.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripLabel6.Name = "toolStripLabel6";
+            this.toolStripLabel6.Size = new System.Drawing.Size(77, 24);
+            this.toolStripLabel6.Text = "Listar Por:";
+            // 
+            // cbOrdemParam1
+            // 
+            this.cbOrdemParam1.Items.AddRange(new object[] {
+            "Codigo",
+            "Alfabeto"});
+            this.cbOrdemParam1.Name = "cbOrdemParam1";
+            this.cbOrdemParam1.Size = new System.Drawing.Size(121, 27);
+            // 
+            // toolStripLabel7
+            // 
+            this.toolStripLabel7.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripLabel7.Name = "toolStripLabel7";
+            this.toolStripLabel7.Size = new System.Drawing.Size(60, 24);
+            this.toolStripLabel7.Text = "Ordem:";
+            // 
+            // cbOrdenarPor1
+            // 
+            this.cbOrdenarPor1.Items.AddRange(new object[] {
+            "Primeiros",
+            "Ultimos"});
+            this.cbOrdenarPor1.Name = "cbOrdenarPor1";
+            this.cbOrdenarPor1.Size = new System.Drawing.Size(121, 23);
+            // 
+            // VeiculosView
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(915, 578);
+            this.Controls.Add(this.toolStrip2);
+            this.Controls.Add(this.gridCrudVeiculos);
+            this.Controls.Add(this.tabControlAssets);
+            this.Controls.Add(this.toolStrip1);
+            this.Name = "VeiculosView";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Cadastro de Veículos";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.formCrudVeiculos_FormClosing);
+            this.toolStrip1.ResumeLayout(false);
+            this.toolStrip1.PerformLayout();
+            this.tabControlAssets.ResumeLayout(false);
+            this.tabPagePesquisar.ResumeLayout(false);
+            this.tabPagePesquisar.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridCrudVeiculos)).EndInit();
+            this.toolStrip2.ResumeLayout(false);
+            this.toolStrip2.PerformLayout();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
+        }
+
+        #endregion
+
+        private System.Windows.Forms.ToolStrip toolStrip1;
+        private System.Windows.Forms.ToolStripButton bttnNew;
+        private System.Windows.Forms.ToolStripButton bttnSave;
+        private System.Windows.Forms.ToolStripButton bttnRefresh;
+        private System.Windows.Forms.ToolStripButton bttnEdit;
+        private System.Windows.Forms.ToolStripButton bttnSearch;
+        private System.Windows.Forms.ToolStripButton bttnDel;
+        private System.Windows.Forms.TabControl tabControlAssets;
+        private System.Windows.Forms.TabPage tabPagePesquisar;
+        private System.Windows.Forms.RadioButton radioBttnContem;
+        private System.Windows.Forms.RadioButton radioBttnComeca;
+        private System.Windows.Forms.RadioButton radioBttnTermina;
+        private System.Windows.Forms.ComboBox cbButtonPesquisarEm;
+        private System.Windows.Forms.TextBox txtBoxPesquisar;
+        private System.Windows.Forms.DataGridView gridCrudVeiculos;
+        private System.Windows.Forms.ToolStrip toolStrip2;
+        private System.Windows.Forms.ToolStripButton bttnBeginPages;
+        private System.Windows.Forms.ToolStripButton bttnOnePageLeft;
+        private System.Windows.Forms.ToolStripLabel labelTextPageFrom;
+        private System.Windows.Forms.ToolStripLabel toolStripLabel3;
+        private System.Windows.Forms.ToolStripLabel labelTextTotalPages;
+        private System.Windows.Forms.ToolStripLabel toolStripLabel5;
+        private System.Windows.Forms.ToolStripLabel labelTextTotalRegFould;
+        private System.Windows.Forms.ToolStripButton bttnOnePageRight;
+        private System.Windows.Forms.ToolStripButton bttnEndPages;
+        private System.Windows.Forms.ToolStripLabel toolStripLabel1;
+        private System.Windows.Forms.ToolStripLabel toolStripLabel2;
+        private System.Windows.Forms.TextBox txtBoxId;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripLabel toolStripLabel4;
+        private System.Windows.Forms.ToolStripComboBox cbButtnQuantPage1;
+        private System.Windows.Forms.ToolStripLabel toolStripLabel6;
+        private System.Windows.Forms.ToolStripComboBox cbOrdemParam1;
+        private System.Windows.Forms.ToolStripLabel toolStripLabel7;
+        private System.Windows.Forms.ToolStripComboBox cbOrdenarPor1;
+    }
+}
