@@ -63,6 +63,20 @@ namespace Sistema.Controller
                 throw;
             }
         }
+        public DataTable ListarEmComboBox()
+        {
+            try
+            {
+                DataTable dt = new DataTable();
+                dt = dao.ListarEmComboBox();
+                return dt;
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("O Metodo 'Listar' não foi Executada\n\nA seguinte execessão foi lançada: " + e, "Aviso do Sistema", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                throw;
+            }
+        }
 
         public DataTable ConfiListagemImpOE()
         {

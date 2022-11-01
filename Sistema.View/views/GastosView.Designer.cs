@@ -67,6 +67,7 @@ namespace Sistema.View.views
             this.radioBttnComeca = new System.Windows.Forms.RadioButton();
             this.txtBoxPesquisar = new System.Windows.Forms.TextBox();
             this.groupBoxFormulario = new System.Windows.Forms.GroupBox();
+            this.txtJoinTipoUnit = new System.Windows.Forms.TextBox();
             this.txtvalorunit = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.txtIdTipoUnit = new System.Windows.Forms.TextBox();
@@ -92,7 +93,6 @@ namespace Sistema.View.views
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridGastos)).BeginInit();
             this.toolStrip2.SuspendLayout();
@@ -484,7 +484,7 @@ namespace Sistema.View.views
             // 
             // groupBoxFormulario
             // 
-            this.groupBoxFormulario.Controls.Add(this.textBox1);
+            this.groupBoxFormulario.Controls.Add(this.txtJoinTipoUnit);
             this.groupBoxFormulario.Controls.Add(this.txtvalorunit);
             this.groupBoxFormulario.Controls.Add(this.label11);
             this.groupBoxFormulario.Controls.Add(this.txtIdTipoUnit);
@@ -515,6 +515,14 @@ namespace Sistema.View.views
             this.groupBoxFormulario.Size = new System.Drawing.Size(843, 410);
             this.groupBoxFormulario.TabIndex = 8;
             this.groupBoxFormulario.TabStop = false;
+            // 
+            // txtJoinTipoUnit
+            // 
+            this.txtJoinTipoUnit.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtJoinTipoUnit.Location = new System.Drawing.Point(129, 169);
+            this.txtJoinTipoUnit.Name = "txtJoinTipoUnit";
+            this.txtJoinTipoUnit.Size = new System.Drawing.Size(200, 25);
+            this.txtJoinTipoUnit.TabIndex = 28;
             // 
             // txtvalorunit
             // 
@@ -550,6 +558,7 @@ namespace Sistema.View.views
             this.cbTipoGasto.Name = "cbTipoGasto";
             this.cbTipoGasto.Size = new System.Drawing.Size(200, 25);
             this.cbTipoGasto.TabIndex = 24;
+            this.cbTipoGasto.SelectedIndexChanged += new System.EventHandler(this.cbTipoGasto_SelectedIndexChanged);
             // 
             // cbFornecedor
             // 
@@ -559,6 +568,7 @@ namespace Sistema.View.views
             this.cbFornecedor.Name = "cbFornecedor";
             this.cbFornecedor.Size = new System.Drawing.Size(200, 25);
             this.cbFornecedor.TabIndex = 23;
+            this.cbFornecedor.SelectedIndexChanged += new System.EventHandler(this.cbFornecedor_SelectedIndexChanged);
             // 
             // label10
             // 
@@ -741,14 +751,6 @@ namespace Sistema.View.views
             this.label1.TabIndex = 0;
             this.label1.Text = "ID:";
             // 
-            // textBox1
-            // 
-            this.textBox1.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(129, 169);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(200, 25);
-            this.textBox1.TabIndex = 28;
-            // 
             // GastosView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -840,6 +842,6 @@ namespace Sistema.View.views
         private System.Windows.Forms.TextBox txtIdTipoUnit;
         private System.Windows.Forms.TextBox txtvalorunit;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtJoinTipoUnit;
     }
 }

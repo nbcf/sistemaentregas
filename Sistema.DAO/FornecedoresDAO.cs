@@ -94,7 +94,6 @@ namespace Sistema.DAO
                     sql = "INSERT INTO fornecedores (fornecedor) VALUES (@fornecedor)";
                     cmd = new MySqlCommand(sql, classeConecta.con);
                     cmd.Parameters.AddWithValue("@fornecedor", fornecedor);
-          
                     cmd.ExecuteNonQuery();
                     acaoCrudDAO = "S!";
                     classeConecta.FecharCon();
@@ -157,6 +156,28 @@ namespace Sistema.DAO
             }
         }
 
+        public DataTable ListarEmComboBox()
+        {
+            try
+            {
+                classeConecta.AbrirCon();
+                //  sql = "SELECT * FROM tipogastos ";
+                sql = "SELECT * FROM fornecedores";
+                cmd = new MySqlCommand(sql, classeConecta.con);
+                MySqlDataAdapter da = new MySqlDataAdapter();
+                da.SelectCommand = cmd;
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                classeConecta.FecharCon();
+                return dt;
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
 
         public int ListarTodosVeiculosBD()
         {

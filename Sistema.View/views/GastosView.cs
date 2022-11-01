@@ -15,6 +15,7 @@ namespace Sistema.View.views
     {
         public string strIdFornecedores;
         public string strIdTipoGastos;
+        public string strIdTipoUnit;
         public bool finalPaginaBol = false;
         public bool inicioPaginaBol = true;
         public bool estadoBotaoDesbloqueio = false;
@@ -71,7 +72,11 @@ namespace Sistema.View.views
             return _InstanciaGastosView;
         }
 
-        GastosController controllerGastos = new GastosController();
+        TipoGastosController    controllerTipoGastos    = new   TipoGastosController();
+        TipoUndsController      controllerTipoUnds      = new   TipoUndsController();
+        FornecedoresController  controllerFornecedores  = new   FornecedoresController();
+        GastosController        controllerGastos        = new   GastosController();
+
         public GastosView()
         {
             InitializeComponent();
@@ -1462,19 +1467,7 @@ namespace Sistema.View.views
             }
         }
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-            if (comboBox1.Items.Count > 0)
-            {
-
-                txtIdTipogastos.Text = comboBox1.SelectedValue.ToString();
-                strIdCombo = txtIdTipogastos.Text;
-                puxarparametro(0, Convert.ToInt32(cbButtnQuantPage1.SelectedItem), "Sim");
-
-            }
-        }
-
+   
         private void cbButtonPesquisarEm_SelectedIndexChanged_1(object sender, EventArgs e)
         {
             puxarparametroPesquisa();
@@ -1501,14 +1494,60 @@ namespace Sistema.View.views
         }
 
         private void GastosView_Load(object sender, EventArgs e)
-        {
-            cbFornecedor.DataSource = controllerTipoUnd.ListComboBoxTipoUndController();
-            cbFornecedor.ValueMember = "idtipound";
-            cbFornecedor.DisplayMember = "nomeund";
+        {/*
+          
+        public string strIdFornecedores;
+        public string strIdTipoGastos;
+        public string strIdTipoUnit;*/
+
+            cbFornecedor.DataSource = controllerFornecedores.ListarEmComboBox();
+            cbFornecedor.ValueMember = "idfornecedor";
+            cbFornecedor.DisplayMember = "fornecedor";
+
             if (cbFornecedor.Items.Count > 0)
             {
-                txtIdTipogastos.Text = comboBox1.SelectedValue.ToString();
-                strIdCombo = txtIdTipogastos.Text;
+                txtIdFornecedor.Text = cbFornecedor.SelectedValue.ToString();
+                strIdFornecedores = txtIdFornecedor.Text;
+            }
+
+            
+            cbTipoGasto.DataSource = controllerTipoGastos.ListarEmComboBox();
+            cbTipoGasto.ValueMember = "idtipogasto";
+            cbTipoGasto.DisplayMember = "tipogasto";
+
+            if (cbTipoGasto.Items.Count > 0)
+            {
+                txtIdTipogasto.Text     =       cbFornecedor.SelectedValue.ToString();
+                strIdTipoGastos         =       txtIdFornecedor.Text;
+                txtJoinTipoUnit.Text    =       cbTipoGasto.DisplayMember = "nomeund";
+                txtIdTipoUnit.Text      =       cbTipoGasto.DisplayMember = "";
+               
+            }
+        }
+
+        private void cbFornecedor_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            if (cbFornecedor.Items.Count > 0)
+            {
+
+                txtIdFornecedor.Text = cbFornecedor.SelectedValue.ToString();
+                strIdFornecedores = txtIdFornecedor.Text;
+  
+
+            }
+        }
+
+        private void cbTipoGasto_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            if (cbTipoGasto.Items.Count > 0)
+            {
+
+                txtIdTipogasto.Text = cbTipoGasto.SelectedValue.ToString();
+                strIdTipoGastos = txtIdTipogasto.Text;
+          
+
             }
         }
     }

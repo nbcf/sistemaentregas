@@ -171,7 +171,21 @@ namespace Sistema.DAO
             try
             {
                 classeConecta.AbrirCon();
-                sql = "SELECT * FROM tipogastos ";
+                //  sql = "SELECT * FROM tipogastos ";
+                 sql = "SELECT * FROM tipogastos tpg INNER JOIN tipounds tpu ON tpg.idtipound = tpu.idtipound";
+          /*      sql = "SELECT " +
+                    "tipogastos.idtipogasto," +
+                    " tipogastos.idtipound," +
+                    " tipogastos.NOMEGASTO," +
+                    " tipounds.NOMEUND" +
+                    " FROM " +
+                    "tipogastos," +
+                    " tipounds" +
+                    " where " +
+                    "tipogastos.idtipound = 1 " +
+                    "and tipounds.idtipound = 1";*/
+
+
                 cmd = new MySqlCommand(sql, classeConecta.con);
                 MySqlDataAdapter da = new MySqlDataAdapter();
                 da.SelectCommand = cmd;
