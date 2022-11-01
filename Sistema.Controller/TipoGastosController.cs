@@ -56,6 +56,24 @@ namespace Sistema.Controller
             }
         }
 
+        //ComplementoComboBoxTipoUnds
+
+        public DataTable ComplementoComboBoxTipoUnds(int idtipogasto)
+        {
+            try
+            {
+                DataTable dt = new DataTable();
+                dt = dao.ComplementoComboBoxTipoUnds(idtipogasto);
+                return dt;
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("O Metodo 'Listar' não foi Executada\n\nA seguinte execessão foi lançada: " + e, "Aviso do Sistema", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                throw;
+            }
+        }
+
+
         public void Excluir(int idtipogasto)
         {
             dao.Excluir(idtipogasto);

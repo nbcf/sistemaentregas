@@ -29,9 +29,9 @@ namespace Sistema.View.views
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.bttnNew = new System.Windows.Forms.ToolStripButton();
             this.bttnSave = new System.Windows.Forms.ToolStripButton();
@@ -67,9 +67,14 @@ namespace Sistema.View.views
             this.radioBttnComeca = new System.Windows.Forms.RadioButton();
             this.txtBoxPesquisar = new System.Windows.Forms.TextBox();
             this.groupBoxFormulario = new System.Windows.Forms.GroupBox();
+            this.groupBoxOculto = new System.Windows.Forms.GroupBox();
+            this.cbTipoUnit = new System.Windows.Forms.ComboBox();
+            this.txtIdTipoUnit = new System.Windows.Forms.TextBox();
+            this.txtIdFornecedor = new System.Windows.Forms.TextBox();
+            this.txtIdTipogasto = new System.Windows.Forms.TextBox();
+            this.txtJoinTipoUnit = new System.Windows.Forms.TextBox();
             this.txtvalorunit = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.txtIdTipoUnit = new System.Windows.Forms.TextBox();
             this.cbTipoGasto = new System.Windows.Forms.ComboBox();
             this.cbFornecedor = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
@@ -78,12 +83,9 @@ namespace Sistema.View.views
             this.txtKm = new System.Windows.Forms.TextBox();
             this.txtQuant = new System.Windows.Forms.TextBox();
             this.txtCodSaida = new System.Windows.Forms.TextBox();
-            this.txtBoxId = new System.Windows.Forms.TextBox();
+            this.txtBoxIdGastos = new System.Windows.Forms.TextBox();
             this.txtValorTotal = new System.Windows.Forms.TextBox();
             this.txtBoxNumeroNota = new System.Windows.Forms.TextBox();
-            this.txtIdTipogasto = new System.Windows.Forms.TextBox();
-            this.cbTipoUnit = new System.Windows.Forms.ComboBox();
-            this.txtIdFornecedor = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -92,13 +94,13 @@ namespace Sistema.View.views
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridGastos)).BeginInit();
             this.toolStrip2.SuspendLayout();
             this.tabControlAssets.SuspendLayout();
             this.tabPagePesquisar.SuspendLayout();
             this.groupBoxFormulario.SuspendLayout();
+            this.groupBoxOculto.SuspendLayout();
             this.SuspendLayout();
             // 
             // toolStrip1
@@ -195,27 +197,27 @@ namespace Sistema.View.views
             // dataGridGastos
             // 
             this.dataGridGastos.AllowUserToAddRows = false;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.Gainsboro;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dataGridGastos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.Transparent;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridGastos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Gainsboro;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dataGridGastos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Transparent;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridGastos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridGastos.ColumnHeadersHeight = 26;
             this.dataGridGastos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridGastos.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridGastos.DefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridGastos.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridGastos.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dataGridGastos.Location = new System.Drawing.Point(0, 51);
@@ -484,10 +486,10 @@ namespace Sistema.View.views
             // 
             // groupBoxFormulario
             // 
-            this.groupBoxFormulario.Controls.Add(this.textBox1);
+            this.groupBoxFormulario.Controls.Add(this.groupBoxOculto);
+            this.groupBoxFormulario.Controls.Add(this.txtJoinTipoUnit);
             this.groupBoxFormulario.Controls.Add(this.txtvalorunit);
             this.groupBoxFormulario.Controls.Add(this.label11);
-            this.groupBoxFormulario.Controls.Add(this.txtIdTipoUnit);
             this.groupBoxFormulario.Controls.Add(this.cbTipoGasto);
             this.groupBoxFormulario.Controls.Add(this.cbFornecedor);
             this.groupBoxFormulario.Controls.Add(this.label10);
@@ -496,12 +498,9 @@ namespace Sistema.View.views
             this.groupBoxFormulario.Controls.Add(this.txtKm);
             this.groupBoxFormulario.Controls.Add(this.txtQuant);
             this.groupBoxFormulario.Controls.Add(this.txtCodSaida);
-            this.groupBoxFormulario.Controls.Add(this.txtBoxId);
+            this.groupBoxFormulario.Controls.Add(this.txtBoxIdGastos);
             this.groupBoxFormulario.Controls.Add(this.txtValorTotal);
             this.groupBoxFormulario.Controls.Add(this.txtBoxNumeroNota);
-            this.groupBoxFormulario.Controls.Add(this.txtIdTipogasto);
-            this.groupBoxFormulario.Controls.Add(this.cbTipoUnit);
-            this.groupBoxFormulario.Controls.Add(this.txtIdFornecedor);
             this.groupBoxFormulario.Controls.Add(this.label5);
             this.groupBoxFormulario.Controls.Add(this.label6);
             this.groupBoxFormulario.Controls.Add(this.label7);
@@ -510,11 +509,65 @@ namespace Sistema.View.views
             this.groupBoxFormulario.Controls.Add(this.label4);
             this.groupBoxFormulario.Controls.Add(this.label2);
             this.groupBoxFormulario.Controls.Add(this.label1);
-            this.groupBoxFormulario.Location = new System.Drawing.Point(0, 125);
+            this.groupBoxFormulario.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBoxFormulario.Location = new System.Drawing.Point(0, 119);
             this.groupBoxFormulario.Name = "groupBoxFormulario";
-            this.groupBoxFormulario.Size = new System.Drawing.Size(843, 410);
+            this.groupBoxFormulario.Size = new System.Drawing.Size(843, 416);
             this.groupBoxFormulario.TabIndex = 8;
             this.groupBoxFormulario.TabStop = false;
+            // 
+            // groupBoxOculto
+            // 
+            this.groupBoxOculto.Controls.Add(this.cbTipoUnit);
+            this.groupBoxOculto.Controls.Add(this.txtIdTipoUnit);
+            this.groupBoxOculto.Controls.Add(this.txtIdFornecedor);
+            this.groupBoxOculto.Controls.Add(this.txtIdTipogasto);
+            this.groupBoxOculto.Location = new System.Drawing.Point(493, 38);
+            this.groupBoxOculto.Name = "groupBoxOculto";
+            this.groupBoxOculto.Size = new System.Drawing.Size(200, 213);
+            this.groupBoxOculto.TabIndex = 30;
+            this.groupBoxOculto.TabStop = false;
+            this.groupBoxOculto.Text = "groupBox1";
+            // 
+            // cbTipoUnit
+            // 
+            this.cbTipoUnit.FormattingEnabled = true;
+            this.cbTipoUnit.Location = new System.Drawing.Point(21, 23);
+            this.cbTipoUnit.Name = "cbTipoUnit";
+            this.cbTipoUnit.Size = new System.Drawing.Size(162, 21);
+            this.cbTipoUnit.TabIndex = 29;
+            // 
+            // txtIdTipoUnit
+            // 
+            this.txtIdTipoUnit.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtIdTipoUnit.Location = new System.Drawing.Point(21, 134);
+            this.txtIdTipoUnit.Name = "txtIdTipoUnit";
+            this.txtIdTipoUnit.Size = new System.Drawing.Size(58, 25);
+            this.txtIdTipoUnit.TabIndex = 25;
+            // 
+            // txtIdFornecedor
+            // 
+            this.txtIdFornecedor.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtIdFornecedor.Location = new System.Drawing.Point(21, 51);
+            this.txtIdFornecedor.Name = "txtIdFornecedor";
+            this.txtIdFornecedor.Size = new System.Drawing.Size(58, 25);
+            this.txtIdFornecedor.TabIndex = 8;
+            // 
+            // txtIdTipogasto
+            // 
+            this.txtIdTipogasto.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtIdTipogasto.Location = new System.Drawing.Point(22, 79);
+            this.txtIdTipogasto.Name = "txtIdTipogasto";
+            this.txtIdTipogasto.Size = new System.Drawing.Size(58, 25);
+            this.txtIdTipogasto.TabIndex = 11;
+            // 
+            // txtJoinTipoUnit
+            // 
+            this.txtJoinTipoUnit.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtJoinTipoUnit.Location = new System.Drawing.Point(129, 169);
+            this.txtJoinTipoUnit.Name = "txtJoinTipoUnit";
+            this.txtJoinTipoUnit.Size = new System.Drawing.Size(200, 25);
+            this.txtJoinTipoUnit.TabIndex = 28;
             // 
             // txtvalorunit
             // 
@@ -534,14 +587,6 @@ namespace Sistema.View.views
             this.label11.TabIndex = 26;
             this.label11.Text = "VALOR UNIT.:";
             // 
-            // txtIdTipoUnit
-            // 
-            this.txtIdTipoUnit.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtIdTipoUnit.Location = new System.Drawing.Point(331, 169);
-            this.txtIdTipoUnit.Name = "txtIdTipoUnit";
-            this.txtIdTipoUnit.Size = new System.Drawing.Size(58, 25);
-            this.txtIdTipoUnit.TabIndex = 25;
-            // 
             // cbTipoGasto
             // 
             this.cbTipoGasto.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -550,6 +595,7 @@ namespace Sistema.View.views
             this.cbTipoGasto.Name = "cbTipoGasto";
             this.cbTipoGasto.Size = new System.Drawing.Size(200, 25);
             this.cbTipoGasto.TabIndex = 24;
+            this.cbTipoGasto.SelectedIndexChanged += new System.EventHandler(this.cbTipoGasto_SelectedIndexChanged);
             // 
             // cbFornecedor
             // 
@@ -559,6 +605,7 @@ namespace Sistema.View.views
             this.cbFornecedor.Name = "cbFornecedor";
             this.cbFornecedor.Size = new System.Drawing.Size(200, 25);
             this.cbFornecedor.TabIndex = 23;
+            this.cbFornecedor.SelectedIndexChanged += new System.EventHandler(this.cbFornecedor_SelectedIndexChanged);
             // 
             // label10
             // 
@@ -573,6 +620,7 @@ namespace Sistema.View.views
             // dtDataGasto
             // 
             this.dtDataGasto.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtDataGasto.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtDataGasto.Location = new System.Drawing.Point(129, 286);
             this.dtDataGasto.Name = "dtDataGasto";
             this.dtDataGasto.Size = new System.Drawing.Size(200, 25);
@@ -612,13 +660,13 @@ namespace Sistema.View.views
             this.txtCodSaida.Size = new System.Drawing.Size(200, 25);
             this.txtCodSaida.TabIndex = 16;
             // 
-            // txtBoxId
+            // txtBoxIdGastos
             // 
-            this.txtBoxId.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBoxId.Location = new System.Drawing.Point(129, 29);
-            this.txtBoxId.Name = "txtBoxId";
-            this.txtBoxId.Size = new System.Drawing.Size(200, 25);
-            this.txtBoxId.TabIndex = 15;
+            this.txtBoxIdGastos.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBoxIdGastos.Location = new System.Drawing.Point(129, 29);
+            this.txtBoxIdGastos.Name = "txtBoxIdGastos";
+            this.txtBoxIdGastos.Size = new System.Drawing.Size(200, 25);
+            this.txtBoxIdGastos.TabIndex = 15;
             // 
             // txtValorTotal
             // 
@@ -635,31 +683,6 @@ namespace Sistema.View.views
             this.txtBoxNumeroNota.Name = "txtBoxNumeroNota";
             this.txtBoxNumeroNota.Size = new System.Drawing.Size(200, 25);
             this.txtBoxNumeroNota.TabIndex = 12;
-            // 
-            // txtIdTipogasto
-            // 
-            this.txtIdTipogasto.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtIdTipogasto.Location = new System.Drawing.Point(332, 114);
-            this.txtIdTipogasto.Name = "txtIdTipogasto";
-            this.txtIdTipogasto.Size = new System.Drawing.Size(58, 25);
-            this.txtIdTipogasto.TabIndex = 11;
-            // 
-            // cbTipoUnit
-            // 
-            this.cbTipoUnit.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbTipoUnit.FormattingEnabled = true;
-            this.cbTipoUnit.Location = new System.Drawing.Point(472, 326);
-            this.cbTipoUnit.Name = "cbTipoUnit";
-            this.cbTipoUnit.Size = new System.Drawing.Size(200, 25);
-            this.cbTipoUnit.TabIndex = 10;
-            // 
-            // txtIdFornecedor
-            // 
-            this.txtIdFornecedor.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtIdFornecedor.Location = new System.Drawing.Point(331, 86);
-            this.txtIdFornecedor.Name = "txtIdFornecedor";
-            this.txtIdFornecedor.Size = new System.Drawing.Size(58, 25);
-            this.txtIdFornecedor.TabIndex = 8;
             // 
             // label5
             // 
@@ -741,14 +764,6 @@ namespace Sistema.View.views
             this.label1.TabIndex = 0;
             this.label1.Text = "ID:";
             // 
-            // textBox1
-            // 
-            this.textBox1.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(129, 169);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(200, 25);
-            this.textBox1.TabIndex = 28;
-            // 
             // GastosView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -762,6 +777,7 @@ namespace Sistema.View.views
             this.Name = "GastosView";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "GastosView";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.GastosView_FormClosing);
             this.Load += new System.EventHandler(this.GastosView_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
@@ -773,6 +789,8 @@ namespace Sistema.View.views
             this.tabPagePesquisar.PerformLayout();
             this.groupBoxFormulario.ResumeLayout(false);
             this.groupBoxFormulario.PerformLayout();
+            this.groupBoxOculto.ResumeLayout(false);
+            this.groupBoxOculto.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -821,10 +839,9 @@ namespace Sistema.View.views
         private System.Windows.Forms.TextBox txtKm;
         private System.Windows.Forms.TextBox txtQuant;
         private System.Windows.Forms.TextBox txtCodSaida;
-        private System.Windows.Forms.TextBox txtBoxId;
+        private System.Windows.Forms.TextBox txtBoxIdGastos;
         private System.Windows.Forms.TextBox txtValorTotal;
         private System.Windows.Forms.TextBox txtBoxNumeroNota;
-        private System.Windows.Forms.ComboBox cbTipoUnit;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
@@ -840,6 +857,8 @@ namespace Sistema.View.views
         private System.Windows.Forms.TextBox txtIdTipoUnit;
         private System.Windows.Forms.TextBox txtvalorunit;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtJoinTipoUnit;
+        private System.Windows.Forms.ComboBox cbTipoUnit;
+        private System.Windows.Forms.GroupBox groupBoxOculto;
     }
 }

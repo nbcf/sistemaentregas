@@ -59,31 +59,42 @@ namespace Sistema.DAO
                             string km, 
                             DateTime datagasto, 
                             string numeronota,
-                            string imgnota)
-        {
-            try
-            {
+                            string imgnota){
+            try{
+                MessageBox.Show(idsaida.ToString()+idfornecedor.ToString()+idtipogasto.ToString()+qtd+tipound+valorunitario+valortotal+ km+datagasto+numeronota+imgnota);
+                int tamanhoResultadoSalvar = 0;
                 classeConecta.AbrirCon();
-                cmdVerificar = new MySqlCommand("SELECT * FROM gastos where numeronota = @numeronota", classeConecta.con);
-                cmdVerificar.Parameters.AddWithValue("@usuario", modelGastos.Numeronota);
+                cmdVerificar = new MySqlCommand("SELECT * FROM gastos where numeronota = @numeronota and idfornecedor = @idfornecedor", classeConecta.con);
+                cmdVerificar.Parameters.AddWithValue("@numeronota", numeronota);
+                cmdVerificar.Parameters.AddWithValue("@idfornecedor", idfornecedor);
                 MySqlDataAdapter dap = new MySqlDataAdapter();
                 dap.SelectCommand = cmdVerificar;
                 DataTable dtp = new DataTable();
                 dap.Fill(dtp);
-                if (dtp.Rows.Count > 0)
-                {
-                    var resultado = MessageBox.Show("O Registro " + Convert.ToString(modelGastos.Numeronota) + " Contagem dtp.Rows.Count : " + Convert.ToString(dtp.Rows.Count) + " já se encontra, no banco de dados do sistema. " + "\n" + "Para confirmar a inserção duplicada, clique no botão 'Sim'. E no botão 'Não' para cancelar.", "Aviso de Duplicidade", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                    if (resultado == DialogResult.Yes)
-                    {
+                classeConecta.FecharCon();
 
-                    sql = "INSERT INTO gastos (" +
+                if (dtp.Rows.Count > 0){
+
+                    var resultado = MessageBox.Show("O Registro " + numeronota + " Contagem dtp.Rows.Count : " +
+                        Convert.ToString(dtp.Rows.Count) +
+                        " já se encontra, no banco de dados do sistema." +
+                        " " + "\n" + "Para confirmar a inserção duplicada," +
+                        " clique no botão 'Sim'. E no botão 'Não' para cancelar.",
+                        "Aviso de Duplicidade", 
+                        MessageBoxButtons.YesNo,
+                        MessageBoxIcon.Question);
+                    
+                    if (resultado == DialogResult.Yes){
+
+                        classeConecta.AbrirCon();
+                     sql = "INSERT INTO gastos (" +
                             "idsaida," +
                             "idfornecedor," +
                             "idtipogasto," +
                             "qtd," +
                             "tipound," +
                             "valorunitario," +
-                            "valototal," +
+                            "valortotal," +
                             "km," +
                             "datagasto," +
                             "numeronota," +
@@ -95,7 +106,7 @@ namespace Sistema.DAO
                             "@qtd," +
                             "@tipound," +
                             "@valorunitario," +
-                            "@valototal," +
+                            "@valortotal," +
                             "@km," +
                             "@datagasto," +
                             "@numeronota," +
@@ -116,18 +127,12 @@ namespace Sistema.DAO
                         acaoCrud = "S!!";
                         classeConecta.FecharCon();
 
-                    }
-                    else if (resultado == DialogResult.No)
-                    {
-
+                    }else if (resultado == DialogResult.No){
                         acaoCrud = "NS";
-                        classeConecta.FecharCon();
-
                     }
-                }
-                else if (dtp.Rows.Count == 0)
-                {
 
+                }else if (dtp.Rows.Count == 0){
+                    classeConecta.AbrirCon();
                     sql = "INSERT INTO gastos (" +
                             "idsaida," +
                             "idfornecedor," +
@@ -135,7 +140,7 @@ namespace Sistema.DAO
                             "qtd," +
                             "tipound," +
                             "valorunitario," +
-                            "valototal," +
+                            "valortotal," +
                             "km," +
                             "datagasto," +
                             "numeronota," +
@@ -147,7 +152,7 @@ namespace Sistema.DAO
                             "@qtd," +
                             "@tipound," +
                             "@valorunitario," +
-                            "@valototal," +
+                            "@valortotal," +
                             "@km," +
                             "@datagasto," +
                             "@numeronota," +
@@ -165,14 +170,12 @@ namespace Sistema.DAO
                     cmd.Parameters.AddWithValue("@numeronota",      numeronota);
                     cmd.Parameters.AddWithValue("@imgnota",         imgnota);
                     cmd.ExecuteNonQuery();
-                   
                     acaoCrud = "S!";
                     classeConecta.FecharCon();
                 }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("A Seguinte Excessão foi lançada quando o método Salvar foi operado " + ex, "Erro na classe PessoaDAO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }catch (Exception ex){
+                MessageBox.Show("A Seguinte Excessão foi lançada quando o método Salvar foi operado " + ex, "Erro na classe GastosDAO", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
         }
@@ -249,7 +252,7 @@ namespace Sistema.DAO
                 {
 
                     MessageBox.Show("Erro ao Excluir " + ex);
-                    classeConecta.FecharCon();
+                 
                 }
             }
             else if (resultado == DialogResult.No)
@@ -286,9 +289,10 @@ namespace Sistema.DAO
         public int ListarTodosRegistrosBD()
         {
             int todosresgistros;
-            classeConecta.AbrirCon();
+           
             try
             {
+                classeConecta.AbrirCon();
                 sql = "SELECT * FROM gastos";
                 cmd = new MySqlCommand(sql, classeConecta.con);
                 MySqlDataAdapter da = new MySqlDataAdapter();
@@ -296,6 +300,7 @@ namespace Sistema.DAO
                 DataTable dt = new DataTable();
                 da.Fill(dt);
                 todosresgistros = dt.Rows.Count;
+                classeConecta.FecharCon();
                 return todosresgistros;
             }
             catch (Exception ex)
@@ -330,21 +335,21 @@ namespace Sistema.DAO
                 classeConecta.AbrirCon();
               sql = "SELECT * FROM gastos gast " +
                     "INNER JOIN tipogastos tpg " +
-                    "INNER JOIN tipounds tpu " +
+                //    "INNER JOIN tipounds tpu " +
                     "INNER JOIN saidas said " +
-                    "INNER JOIN fornecedores fornecedor " +
+                    "INNER JOIN fornecedores forn " +
                     "ON gast.idsaida = said.idsaida " +
-                    "AND gast.idfornecedor = fornecedor.idfornecedor " +
+                    "AND gast.idfornecedor = forn.idfornecedor " +
                     "AND gast.idtipogasto = tpg.idtipogasto " +
-                    "AND tpg.idtipound= tpu.idtipound " +
+               //     "AND tpg.idtipound= tpu.idtipound " +
                     "ORDER BY "+ parametro +" "+ indexar+ " Limit " + offsett + "," + limitt;            
                 cmd = new MySqlCommand(sql, classeConecta.con);
                 MySqlDataAdapter da = new MySqlDataAdapter();
                 da.SelectCommand = cmd;
                 DataTable dt = new DataTable();
                 da.Fill(dt);
-                return dt;
                 classeConecta.FecharCon();
+                return dt;
             }
             catch (Exception ex)
             {
@@ -365,8 +370,8 @@ namespace Sistema.DAO
                 da.SelectCommand = cmd;
                 DataTable dt = new DataTable();
                 da.Fill(dt);
-                return dt;
                 classeConecta.FecharCon();
+                return dt;
             }
             catch (Exception ex)
             {
@@ -399,8 +404,8 @@ namespace Sistema.DAO
                 DataTable dt = new DataTable();
                 da.Fill(dt);
                 resQuantSearch = dt.Rows.Count;
-                return dt;
                 classeConecta.FecharCon();
+                return dt;
             }
             catch (Exception ex)
             {
@@ -430,8 +435,9 @@ namespace Sistema.DAO
                 da.Fill(dt);
 
                 resQuantSearch = dt.Rows.Count;
-                return dt;
                 classeConecta.FecharCon();
+                return dt;
+               
 
             }
             catch (Exception ex)
@@ -465,8 +471,9 @@ namespace Sistema.DAO
                 DataTable dt = new DataTable();
                 da.Fill(dt);
                 resQuantSearch = dt.Rows.Count;
-                return dt;
                 classeConecta.FecharCon();
+                return dt;
+
             }
             catch (Exception ex)
             {

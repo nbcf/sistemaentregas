@@ -64,20 +64,9 @@ namespace Sistema.DAO
                     "Aviso de Duplicidade",
                     MessageBoxButtons.YesNo,
                     MessageBoxIcon.Question);
+
                     if (resultado == DialogResult.Yes)
-                    {//(idtipogasto, idtipound, nomegasto)  (@idtipogasto, @idtipound, @nomegasto)
-
-
-                        /* classeConecta.AbrirCon();
-                        sql = "INSERT INTO origem (nomeorigem, codorigem) VALUES (@nomeorigem,@codorigem)";
-                        cmd = new MySqlCommand(sql, classeConecta.con);
-                        cmd.Parameters.AddWithValue("@nomeorigem", nomeorigem);
-                        cmd.Parameters.AddWithValue("@codorigem", codorigem);
-                        cmd.ExecuteNonQuery();
-                        acaoCrudDAO = "S!!";
-                        classeConecta.FecharCon();*/
-
-
+                    {
 
                         classeConecta.AbrirCon();
                         sql = "INSERT INTO tipogastos ( idtipound, nomegasto) VALUES ( @idtipound, @nomegasto)";
@@ -166,12 +155,14 @@ namespace Sistema.DAO
 
             }
         }
+
         public DataTable ListarEmComboBox()
         {
             try
             {
                 classeConecta.AbrirCon();
-                sql = "SELECT * FROM tipogastos ";
+                 sql = "SELECT * FROM tipogastos ";
+           
                 cmd = new MySqlCommand(sql, classeConecta.con);
                 MySqlDataAdapter da = new MySqlDataAdapter();
                 da.SelectCommand = cmd;
@@ -179,7 +170,30 @@ namespace Sistema.DAO
                 da.Fill(dt);
                 classeConecta.FecharCon();
                 return dt;
-                
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
+
+        public DataTable ComplementoComboBoxTipoUnds(int idtipogasto){
+            try{
+                classeConecta.AbrirCon();
+                sql = "SELECT tipogastos.idtipound,tipounds.nomeund " +
+                       "FROM tipogastos,tipounds " +
+                       "WHERE tipogastos.idtipound = tipounds.idtipound " +
+                       "AND tipogastos.idtipogasto = " + idtipogasto + " ";
+
+                cmd = new MySqlCommand(sql, classeConecta.con);
+                MySqlDataAdapter da = new MySqlDataAdapter();
+                da.SelectCommand = cmd;
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                classeConecta.FecharCon();
+                return dt;
             }
             catch (Exception ex)
             {

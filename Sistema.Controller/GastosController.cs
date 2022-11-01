@@ -19,19 +19,29 @@ namespace Sistema.Controller
         public string retornoPersistencia;
 
 
-        public void Salvar(int idsaida,
-            int idfornecedor, 
-            int idtipogasto,
-            string qtd,
-            string tipound,
-            string valorunitario,
-            string valortotal, 
-            string km,
-            DateTime datagasto,
-            string numeronota,
-            string imgnota)
-        {
-            dao.Salvar(idsaida, idfornecedor, idtipogasto,  qtd, tipound,  valorunitario,  valortotal,  km, datagasto,  numeronota, imgnota);
+        public void Salvar(
+                            int idsaida,
+                            int idfornecedor, 
+                            int idtipogasto,
+                            string qtd,
+                            string tipound,
+                            string valorunitario,
+                            string valortotal, 
+                            string km,
+                            DateTime datagasto,
+                            string numeronota,
+                            string imgnota){
+             dao.Salvar(idsaida,
+                        idfornecedor,
+                        idtipogasto, 
+                        qtd,
+                        tipound,
+                        valorunitario,
+                        valortotal,
+                        km,
+                        datagasto,
+                        numeronota,
+                        imgnota);
             retornoRegistroSalvo();
         }
 
@@ -58,7 +68,8 @@ namespace Sistema.Controller
             dao.Excluir(idgastos);
         }
 
-        public void Editar(int idsaida,
+        public void Editar(
+                            int idsaida,
                             int idfornecedor,
                             int idtipogasto,
                             string qtd,
@@ -70,7 +81,20 @@ namespace Sistema.Controller
                             string numeronota,
                             string imgnota,
                             int idgasto){
-            dao.Editar(idsaida,idfornecedor,idtipogasto, qtd,tipound,valorunitario,valortotal,km,datagasto, numeronota,imgnota, idgasto);
+
+            dao.Editar(
+                idsaida,
+                idfornecedor,
+                idtipogasto,
+                qtd,
+                tipound,
+                valorunitario,
+                valortotal,
+                km,
+                datagasto,
+                numeronota,
+                imgnota,
+                idgasto);
             retornoRegistroSalvo();
         }
 

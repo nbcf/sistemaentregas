@@ -15,6 +15,9 @@ namespace Sistema.View.views
     {
         public string strIdFornecedores;
         public string strIdTipoGastos;
+        public string strIdTipoUnit;
+
+        public string strTipoUnit;
         public bool finalPaginaBol = false;
         public bool inicioPaginaBol = true;
         public bool estadoBotaoDesbloqueio = false;
@@ -71,7 +74,11 @@ namespace Sistema.View.views
             return _InstanciaGastosView;
         }
 
-        GastosController controllerGastos = new GastosController();
+        TipoGastosController    controllerTipoGastos    = new   TipoGastosController();
+        TipoUndsController      controllerTipoUnds      = new   TipoUndsController();
+        FornecedoresController  controllerFornecedores  = new   FornecedoresController();
+        GastosController        controllerGastos        = new   GastosController();
+
         public GastosView()
         {
             InitializeComponent();
@@ -692,7 +699,9 @@ namespace Sistema.View.views
             enableFieldsFormulario();
             operationType = "newInsertion";
 
-            txtBoxId.Enabled = false;
+            txtBoxIdGastos.Enabled = false;
+            carregarPadraoComboBox();
+            groupBoxOculto.Visible = false;
         }
         private void behaviorDel()
         {
@@ -769,7 +778,7 @@ namespace Sistema.View.views
         {
             string retiraEspacos = txtBoxNumeroNota.Text;
             string rem = retiraEspacos.Trim();
-            if (txtBoxId.Text.Trim().Equals("") || txtBoxId.Text.Trim() == null)
+            if (txtBoxIdGastos.Text.Trim().Equals("") || txtBoxIdGastos.Text.Trim() == null)
             {
                 if (operationType.Equals("newInsertion") && typeEdition.Equals("insert"))
                 {
@@ -824,7 +833,7 @@ namespace Sistema.View.views
                     }
                 }
             }
-            else if (!txtBoxId.Text.Trim().Equals("") || txtBoxId.Text.Trim() != null)
+            else if (!txtBoxIdGastos.Text.Trim().Equals("") || txtBoxIdGastos.Text.Trim() != null)
             {
 
                 if (operationType.Equals("updateData") && typeEdition.Equals("insert"))
@@ -860,7 +869,7 @@ namespace Sistema.View.views
                                                    dtDataGasto.Value,
                                                    txtBoxNumeroNota.Text,
                                                    "", 
-                                                   Convert.ToInt32(txtBoxId.Text));
+                                                   Convert.ToInt32(txtBoxIdGastos.Text));
                         if (controllerGastos.retornoPersistencia.Equals("AT"))
                         {
 
@@ -906,7 +915,7 @@ namespace Sistema.View.views
                                                   dtDataGasto.Value,
                                                   txtBoxNumeroNota.Text,
                                                   "",
-                                                  Convert.ToInt32(txtBoxId.Text));
+                                                  Convert.ToInt32(txtBoxIdGastos.Text));
                         if (controllerGastos.retornoPersistencia.Equals("AT"))
                         {
                             behaviorRefresh();
@@ -962,7 +971,7 @@ namespace Sistema.View.views
             groupBoxFormulario.Visible = true;
             enableFieldsFormulario();
             clearFieldsFormulario();
-            txtBoxId.Enabled = false;
+            txtBoxIdGastos.Enabled = false;
             setaGridEmCampos();
         }
 
@@ -984,7 +993,7 @@ namespace Sistema.View.views
             groupBoxFormulario.Visible = true;
             enableFieldsFormulario();
             clearFieldsFormulario();
-            txtBoxId.Enabled = false;
+            txtBoxIdGastos.Enabled = false;
             setaGridEmCampos();
         }
 
@@ -1054,7 +1063,7 @@ namespace Sistema.View.views
 
         public void clearFieldsFormulario()
         {
-            txtBoxId.Text = "";
+            txtBoxIdGastos.Text = "";
             txtCodSaida.Text = "";
             txtIdFornecedor.Text = "";
             txtIdTipogasto.Text = "";
@@ -1071,7 +1080,7 @@ namespace Sistema.View.views
             cbFornecedor.Enabled = false;
             cbTipoGasto.Enabled = false;
             cbTipoUnit.Enabled = false;
-            txtBoxId.Enabled = false;
+            txtBoxIdGastos.Enabled = false;
             txtCodSaida.Enabled = false;
             txtIdFornecedor.Enabled = false;
             txtIdTipogasto.Enabled = false;
@@ -1088,7 +1097,7 @@ namespace Sistema.View.views
             cbFornecedor.Enabled = true;
             cbTipoGasto.Enabled = true;
             cbTipoUnit.Enabled = true;
-            txtBoxId.Enabled = true;
+            txtBoxIdGastos.Enabled = true;
             txtCodSaida.Enabled = true;
             txtIdFornecedor.Enabled = true;
             txtIdTipogasto.Enabled = true;
@@ -1189,7 +1198,7 @@ namespace Sistema.View.views
                 toolStripLabel1.Visible = false;
                 toolStripLabel2.Visible = false;
                 puxarparametro(0, Convert.ToInt32(cbButtnQuantPage1.SelectedItem), "Sim");
-                txtBoxId.Text = "";
+                txtBoxIdGastos.Text = "";
                 typeEdition = "insert";
                 cbButtnQuantPage1.Visible = true;
                 cbOrdemParam1.Visible = true;
@@ -1428,7 +1437,7 @@ namespace Sistema.View.views
 
         private void TipoGastosView_FormClosing(object sender, FormClosingEventArgs e)
         {
-            _InstanciaTipoGastosView = null;
+            _InstanciaGastosView = null;
         }
 
        
@@ -1462,19 +1471,7 @@ namespace Sistema.View.views
             }
         }
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-            if (comboBox1.Items.Count > 0)
-            {
-
-                txtIdTipogastos.Text = comboBox1.SelectedValue.ToString();
-                strIdCombo = txtIdTipogastos.Text;
-                puxarparametro(0, Convert.ToInt32(cbButtnQuantPage1.SelectedItem), "Sim");
-
-            }
-        }
-
+   
         private void cbButtonPesquisarEm_SelectedIndexChanged_1(object sender, EventArgs e)
         {
             puxarparametroPesquisa();
@@ -1502,14 +1499,90 @@ namespace Sistema.View.views
 
         private void GastosView_Load(object sender, EventArgs e)
         {
-            cbFornecedor.DataSource = controllerTipoUnd.ListComboBoxTipoUndController();
-            cbFornecedor.ValueMember = "idtipound";
-            cbFornecedor.DisplayMember = "nomeund";
+            /*
+          
+        public string strIdFornecedores;
+        public string strIdTipoGastos;
+        public string strIdTipoUnit;*/
+
+
+        }
+
+        private void cbFornecedor_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
             if (cbFornecedor.Items.Count > 0)
             {
-                txtIdTipogastos.Text = comboBox1.SelectedValue.ToString();
-                strIdCombo = txtIdTipogastos.Text;
+
+                txtIdFornecedor.Text = cbFornecedor.SelectedValue.ToString();
+                strIdFornecedores = txtIdFornecedor.Text;
+  
+
             }
+        }
+        public void carregarPadraoComboBox() {
+
+
+            cbFornecedor.DataSource = controllerFornecedores.ListarEmComboBox();
+            cbFornecedor.ValueMember = "idfornecedor";
+            cbFornecedor.DisplayMember = "fornecedor";
+            if (cbFornecedor.Items.Count > 0)
+            {
+                txtIdFornecedor.Text = cbFornecedor.SelectedValue.ToString();
+                strIdFornecedores = txtIdFornecedor.Text;
+            }
+
+
+            cbTipoGasto.DataSource = controllerTipoGastos.ListarEmComboBox();
+            cbTipoGasto.ValueMember = "idtipogasto";
+            cbTipoGasto.DisplayMember = "nomegasto";
+
+            if (cbTipoGasto.Items.Count > 0)
+            {
+                cbTipoUnit.DataSource       =       controllerTipoGastos.ComplementoComboBoxTipoUnds(Convert.ToInt32(cbTipoGasto.SelectedValue.ToString()));
+                cbTipoUnit.ValueMember      =       "idtipound";
+                cbTipoUnit.DisplayMember    =       "nomeund";
+               
+                strIdTipoUnit = cbTipoUnit.SelectedValue.ToString();
+                strTipoUnit = cbTipoUnit.Text;
+                strIdTipoGastos = cbTipoGasto.SelectedValue.ToString();
+
+                txtIdTipoUnit.Text = strIdTipoUnit;
+                txtJoinTipoUnit.Text = strTipoUnit;
+                txtIdTipogasto.Text = strIdTipoGastos;
+                txtJoinTipoUnit.Enabled = false;
+            }
+
+
+
+        }
+        private void cbTipoGasto_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbTipoGasto.Items.Count > 0  && cbTipoUnit.Items.Count > 0)
+            {
+                cbTipoUnit.DataSource       =   controllerTipoGastos.ComplementoComboBoxTipoUnds(Convert.ToInt32(cbTipoGasto.SelectedValue.ToString()));
+                cbTipoUnit.ValueMember      =   "idtipound";
+                cbTipoUnit.DisplayMember    =   "nomeund";
+
+                strIdTipoUnit = cbTipoUnit.SelectedValue.ToString();
+                strTipoUnit = cbTipoUnit.Text;
+                strIdTipoGastos = cbTipoGasto.SelectedValue.ToString();
+
+                txtIdTipoUnit.Text = strIdTipoUnit;
+                txtJoinTipoUnit.Text = strTipoUnit;
+                txtIdTipogasto.Text = strIdTipoGastos;
+
+                txtJoinTipoUnit.Enabled = false;
+                //txtIdTipoUnit.Text          =   cbTipoUnit.SelectedValue.ToString();
+                //txtJoinTipoUnit.Text        =   cbTipoUnit.Text;
+                //txtIdTipogasto.Text         =   cbTipoGasto.SelectedValue.ToString();
+            }
+
+        }
+
+        private void GastosView_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            _InstanciaGastosView = null;
         }
     }
 
