@@ -111,6 +111,7 @@ namespace Sistema.DAO
                             "@datagasto," +
                             "@numeronota," +
                             "@imgnota)";
+
                         cmd = new MySqlCommand(sql, classeConecta.con);
                         cmd.Parameters.AddWithValue("@idsaida",         idsaida);
                         cmd.Parameters.AddWithValue("@idfornecedor",    idfornecedor);
