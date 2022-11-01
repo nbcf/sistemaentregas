@@ -34,6 +34,7 @@ namespace Sistema.View
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PessoasView));
             this.tabControlAssets = new System.Windows.Forms.TabControl();
             this.tabPagePesquisar = new System.Windows.Forms.TabPage();
@@ -101,11 +102,11 @@ namespace Sistema.View
             this.tabControlAssets.Appearance = System.Windows.Forms.TabAppearance.FlatButtons;
             this.tabControlAssets.Controls.Add(this.tabPagePesquisar);
             this.tabControlAssets.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tabControlAssets.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabControlAssets.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabControlAssets.Location = new System.Drawing.Point(0, 51);
             this.tabControlAssets.Name = "tabControlAssets";
             this.tabControlAssets.SelectedIndex = 0;
-            this.tabControlAssets.Size = new System.Drawing.Size(1056, 68);
+            this.tabControlAssets.Size = new System.Drawing.Size(1056, 79);
             this.tabControlAssets.TabIndex = 0;
             // 
             // tabPagePesquisar
@@ -116,10 +117,10 @@ namespace Sistema.View
             this.tabPagePesquisar.Controls.Add(this.cbButtonPesquisarEm);
             this.tabPagePesquisar.Controls.Add(this.radioBttnComeca);
             this.tabPagePesquisar.Controls.Add(this.txtBoxPesquisar);
-            this.tabPagePesquisar.Location = new System.Drawing.Point(4, 25);
+            this.tabPagePesquisar.Location = new System.Drawing.Point(4, 32);
             this.tabPagePesquisar.Name = "tabPagePesquisar";
             this.tabPagePesquisar.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPagePesquisar.Size = new System.Drawing.Size(1048, 39);
+            this.tabPagePesquisar.Size = new System.Drawing.Size(1048, 43);
             this.tabPagePesquisar.TabIndex = 1;
             this.tabPagePesquisar.Text = "Pesquisar";
             this.tabPagePesquisar.UseVisualStyleBackColor = true;
@@ -195,6 +196,7 @@ namespace Sistema.View
             // 
             this.txtBoxName.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBoxName.Location = new System.Drawing.Point(114, 50);
+            this.txtBoxName.MaxLength = 100;
             this.txtBoxName.Name = "txtBoxName";
             this.txtBoxName.Size = new System.Drawing.Size(265, 25);
             this.txtBoxName.TabIndex = 2;
@@ -205,7 +207,7 @@ namespace Sistema.View
             this.txtBoxId.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBoxId.Location = new System.Drawing.Point(114, 17);
             this.txtBoxId.Name = "txtBoxId";
-            this.txtBoxId.Size = new System.Drawing.Size(265, 25);
+            this.txtBoxId.Size = new System.Drawing.Size(87, 25);
             this.txtBoxId.TabIndex = 1;
             // 
             // label1
@@ -337,7 +339,7 @@ namespace Sistema.View
             this.gridCrudPessoa.DefaultCellStyle = dataGridViewCellStyle3;
             this.gridCrudPessoa.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gridCrudPessoa.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.gridCrudPessoa.Location = new System.Drawing.Point(0, 119);
+            this.gridCrudPessoa.Location = new System.Drawing.Point(0, 130);
             this.gridCrudPessoa.MultiSelect = false;
             this.gridCrudPessoa.Name = "gridCrudPessoa";
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -348,9 +350,11 @@ namespace Sistema.View
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.gridCrudPessoa.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridCrudPessoa.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.gridCrudPessoa.RowTemplate.Height = 25;
             this.gridCrudPessoa.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.gridCrudPessoa.Size = new System.Drawing.Size(1056, 435);
+            this.gridCrudPessoa.Size = new System.Drawing.Size(1056, 424);
             this.gridCrudPessoa.TabIndex = 4;
             this.gridCrudPessoa.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridCrudPessoa_CellClick);
             // 
@@ -558,9 +562,10 @@ namespace Sistema.View
             this.groupBoxFormulario.Controls.Add(this.label2);
             this.groupBoxFormulario.Controls.Add(this.label1);
             this.groupBoxFormulario.Controls.Add(this.txtBoxId);
-            this.groupBoxFormulario.Location = new System.Drawing.Point(0, 291);
+            this.groupBoxFormulario.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBoxFormulario.Location = new System.Drawing.Point(0, 130);
             this.groupBoxFormulario.Name = "groupBoxFormulario";
-            this.groupBoxFormulario.Size = new System.Drawing.Size(1056, 238);
+            this.groupBoxFormulario.Size = new System.Drawing.Size(1056, 399);
             this.groupBoxFormulario.TabIndex = 6;
             this.groupBoxFormulario.TabStop = false;
             // 
@@ -586,6 +591,7 @@ namespace Sistema.View
             // 
             this.txtCep.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCep.Location = new System.Drawing.Point(114, 210);
+            this.txtCep.MaxLength = 100;
             this.txtCep.Name = "txtCep";
             this.txtCep.Size = new System.Drawing.Size(265, 25);
             this.txtCep.TabIndex = 15;
@@ -622,6 +628,7 @@ namespace Sistema.View
             // 
             this.txtCidade.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCidade.Location = new System.Drawing.Point(114, 178);
+            this.txtCidade.MaxLength = 100;
             this.txtCidade.Name = "txtCidade";
             this.txtCidade.Size = new System.Drawing.Size(265, 25);
             this.txtCidade.TabIndex = 11;
@@ -630,6 +637,7 @@ namespace Sistema.View
             // 
             this.txtBairro.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBairro.Location = new System.Drawing.Point(114, 145);
+            this.txtBairro.MaxLength = 100;
             this.txtBairro.Name = "txtBairro";
             this.txtBairro.Size = new System.Drawing.Size(265, 25);
             this.txtBairro.TabIndex = 10;
@@ -658,6 +666,7 @@ namespace Sistema.View
             // 
             this.txtComplemento.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtComplemento.Location = new System.Drawing.Point(114, 112);
+            this.txtComplemento.MaxLength = 100;
             this.txtComplemento.Name = "txtComplemento";
             this.txtComplemento.Size = new System.Drawing.Size(265, 25);
             this.txtComplemento.TabIndex = 7;
@@ -666,6 +675,7 @@ namespace Sistema.View
             // 
             this.txtLogradouro.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtLogradouro.Location = new System.Drawing.Point(152, 82);
+            this.txtLogradouro.MaxLength = 100;
             this.txtLogradouro.Name = "txtLogradouro";
             this.txtLogradouro.Size = new System.Drawing.Size(227, 25);
             this.txtLogradouro.TabIndex = 6;
@@ -701,6 +711,7 @@ namespace Sistema.View
             this.Controls.Add(this.gridCrudPessoa);
             this.Controls.Add(this.tabControlAssets);
             this.Controls.Add(this.toolStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "PessoasView";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastro de Pessoas";

@@ -334,16 +334,17 @@ namespace Sistema.DAO
             try
             {
                 classeConecta.AbrirCon();
-              sql = "SELECT * FROM gastos gast " +
-                    "INNER JOIN tipogastos tpg " +
-                //    "INNER JOIN tipounds tpu " +
-                    "INNER JOIN saidas said " +
-                    "INNER JOIN fornecedores forn " +
-                    "ON gast.idsaida = said.idsaida " +
-                    "AND gast.idfornecedor = forn.idfornecedor " +
-                    "AND gast.idtipogasto = tpg.idtipogasto " +
-               //     "AND tpg.idtipound= tpu.idtipound " +
-                    "ORDER BY "+ parametro +" "+ indexar+ " Limit " + offsett + "," + limitt;            
+                 sql = "SELECT * FROM gastos gast " +
+                       "INNER JOIN tipogastos tpg " +
+                   //    "INNER JOIN tipounds tpu " +
+                       "INNER JOIN saidas said " +
+                       "INNER JOIN fornecedores forn " +
+                       "ON gast.idsaida = said.idsaida " +
+                       "AND gast.idfornecedor = forn.idfornecedor " +
+                       "AND gast.idtipogasto = tpg.idtipogasto " +
+                //     "AND tpg.idtipound= tpu.idtipound " +
+            
+                    " ORDER BY "+ parametro +" "+ indexar+ " Limit " + offsett + "," + limitt;            
                 cmd = new MySqlCommand(sql, classeConecta.con);
                 MySqlDataAdapter da = new MySqlDataAdapter();
                 da.SelectCommand = cmd;

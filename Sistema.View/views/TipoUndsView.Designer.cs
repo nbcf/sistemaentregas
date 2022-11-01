@@ -33,6 +33,7 @@ namespace Sistema.View.views
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TipoUndsView));
             this.toolStrip2 = new System.Windows.Forms.ToolStrip();
             this.bttnBeginPages = new System.Windows.Forms.ToolStripButton();
             this.bttnOnePageLeft = new System.Windows.Forms.ToolStripButton();
@@ -362,11 +363,11 @@ namespace Sistema.View.views
             this.tabControlAssets.Appearance = System.Windows.Forms.TabAppearance.FlatButtons;
             this.tabControlAssets.Controls.Add(this.tabPagePesquisar);
             this.tabControlAssets.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tabControlAssets.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabControlAssets.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabControlAssets.Location = new System.Drawing.Point(0, 51);
             this.tabControlAssets.Name = "tabControlAssets";
             this.tabControlAssets.SelectedIndex = 0;
-            this.tabControlAssets.Size = new System.Drawing.Size(674, 68);
+            this.tabControlAssets.Size = new System.Drawing.Size(674, 87);
             this.tabControlAssets.TabIndex = 8;
             // 
             // tabPagePesquisar
@@ -377,10 +378,10 @@ namespace Sistema.View.views
             this.tabPagePesquisar.Controls.Add(this.cbButtonPesquisarEm);
             this.tabPagePesquisar.Controls.Add(this.radioBttnComeca);
             this.tabPagePesquisar.Controls.Add(this.txtBoxPesquisar);
-            this.tabPagePesquisar.Location = new System.Drawing.Point(4, 25);
+            this.tabPagePesquisar.Location = new System.Drawing.Point(4, 32);
             this.tabPagePesquisar.Name = "tabPagePesquisar";
             this.tabPagePesquisar.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPagePesquisar.Size = new System.Drawing.Size(666, 39);
+            this.tabPagePesquisar.Size = new System.Drawing.Size(666, 51);
             this.tabPagePesquisar.TabIndex = 1;
             this.tabPagePesquisar.Text = "Pesquisar";
             this.tabPagePesquisar.UseVisualStyleBackColor = true;
@@ -450,7 +451,7 @@ namespace Sistema.View.views
             this.gridCrudTipoUnds.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.Transparent;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -468,7 +469,7 @@ namespace Sistema.View.views
             this.gridCrudTipoUnds.DefaultCellStyle = dataGridViewCellStyle3;
             this.gridCrudTipoUnds.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gridCrudTipoUnds.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.gridCrudTipoUnds.Location = new System.Drawing.Point(0, 119);
+            this.gridCrudTipoUnds.Location = new System.Drawing.Point(0, 138);
             this.gridCrudTipoUnds.MultiSelect = false;
             this.gridCrudTipoUnds.Name = "gridCrudTipoUnds";
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -481,7 +482,7 @@ namespace Sistema.View.views
             this.gridCrudTipoUnds.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.gridCrudTipoUnds.RowTemplate.Height = 25;
             this.gridCrudTipoUnds.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.gridCrudTipoUnds.Size = new System.Drawing.Size(674, 303);
+            this.gridCrudTipoUnds.Size = new System.Drawing.Size(674, 284);
             this.gridCrudTipoUnds.TabIndex = 9;
             this.gridCrudTipoUnds.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridCrudTipoGastos_CellClick);
             this.gridCrudTipoUnds.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridCrudTipoGastos_CellDoubleClick);
@@ -492,9 +493,10 @@ namespace Sistema.View.views
             this.groupBoxFormulario.Controls.Add(this.label2);
             this.groupBoxFormulario.Controls.Add(this.label1);
             this.groupBoxFormulario.Controls.Add(this.txtBoxId);
-            this.groupBoxFormulario.Location = new System.Drawing.Point(0, 188);
+            this.groupBoxFormulario.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBoxFormulario.Location = new System.Drawing.Point(0, 138);
             this.groupBoxFormulario.Name = "groupBoxFormulario";
-            this.groupBoxFormulario.Size = new System.Drawing.Size(674, 234);
+            this.groupBoxFormulario.Size = new System.Drawing.Size(674, 284);
             this.groupBoxFormulario.TabIndex = 10;
             this.groupBoxFormulario.TabStop = false;
             // 
@@ -504,7 +506,7 @@ namespace Sistema.View.views
             this.txtBoxName.Location = new System.Drawing.Point(79, 59);
             this.txtBoxName.MaxLength = 3;
             this.txtBoxName.Name = "txtBoxName";
-            this.txtBoxName.Size = new System.Drawing.Size(259, 25);
+            this.txtBoxName.Size = new System.Drawing.Size(100, 25);
             this.txtBoxName.TabIndex = 2;
             this.txtBoxName.TextChanged += new System.EventHandler(this.txtBoxName_TextChanged);
             // 
@@ -534,7 +536,7 @@ namespace Sistema.View.views
             this.txtBoxId.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBoxId.Location = new System.Drawing.Point(79, 25);
             this.txtBoxId.Name = "txtBoxId";
-            this.txtBoxId.Size = new System.Drawing.Size(259, 25);
+            this.txtBoxId.Size = new System.Drawing.Size(50, 25);
             this.txtBoxId.TabIndex = 1;
             // 
             // TipoUndsView
@@ -547,6 +549,7 @@ namespace Sistema.View.views
             this.Controls.Add(this.tabControlAssets);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.toolStrip2);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "TipoUndsView";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

@@ -1407,7 +1407,69 @@ namespace Sistema.View.views
 
 
 
-        public void DataGridModel() { }
+        public void DataGridModel() {
+
+            dataGridGastos.Columns[0].HeaderText = "ID";
+            dataGridGastos.Columns[1].HeaderText = "COD SAIDA";
+            dataGridGastos.Columns[2].HeaderText = "id Fornecedor ";
+            dataGridGastos.Columns[3].HeaderText = "id Tipo Gasto";
+            dataGridGastos.Columns[4].HeaderText = "QTD";
+            dataGridGastos.Columns[5].HeaderText = "ID TIPOUND";
+            dataGridGastos.Columns[6].HeaderText = "VALOR UNT";
+            dataGridGastos.Columns[7].HeaderText = "VALOR TOTAL";
+            dataGridGastos.Columns[8].HeaderText = "KM";
+            dataGridGastos.Columns[9].HeaderText = "DATA NOTA";
+            dataGridGastos.Columns[10].HeaderText = "NUMERO NOTA";
+            dataGridGastos.Columns[11].HeaderText = "IMG NOTA";
+            dataGridGastos.Columns[12].HeaderText = "ID TIPO GASTO 1";
+            dataGridGastos.Columns[13].HeaderText = "ID TPO UND";
+            //dataGridGastos.Columns[14].HeaderText = "KM SAÍDA";
+            //dataGridGastos.Columns[15].HeaderText = "KM REGRESSO";
+            //dataGridGastos.Columns[16].HeaderText = "KM TOTAL";
+
+            dataGridGastos.Columns[0].Visible = true;// id
+            dataGridGastos.Columns[1].Visible = true;// cod saida
+            dataGridGastos.Columns[2].Visible = false;
+            dataGridGastos.Columns[3].Visible = false;
+            dataGridGastos.Columns[4].Visible = false;//qtd
+            dataGridGastos.Columns[5].Visible = false;
+            dataGridGastos.Columns[6].Visible = false;// valor unit
+            dataGridGastos.Columns[7].Visible = false;
+            dataGridGastos.Columns[8].Visible = false;//km
+            dataGridGastos.Columns[9].Visible = true; // data gasto
+            dataGridGastos.Columns[10].Visible = true;// numero nota
+            dataGridGastos.Columns[11].Visible = false;
+            dataGridGastos.Columns[12].Visible = false;
+            dataGridGastos.Columns[13].Visible = false;
+
+            dataGridGastos.Columns[14].HeaderText = "GASTO";
+            dataGridGastos.Columns[14].Visible = true;// abastecimento
+            dataGridGastos.Columns[15].Visible = false;
+            dataGridGastos.Columns[16].Visible = false;
+            dataGridGastos.Columns[17].Visible = false;
+            dataGridGastos.Columns[18].Visible = false;
+            dataGridGastos.Columns[19].Visible = false;
+            dataGridGastos.Columns[20].Visible = true;
+            dataGridGastos.Columns[21].Visible = true;
+
+            dataGridGastos.Columns[22].HeaderText = "NOME ENTREGADOR";
+            dataGridGastos.Columns[22].Visible = true;// nome entregador
+            dataGridGastos.Columns[23].Visible = true;// p 
+            dataGridGastos.Columns[24].Visible = false;// 
+            dataGridGastos.Columns[25].Visible = false;
+            dataGridGastos.Columns[26].Visible = false;
+            dataGridGastos.Columns[27].Visible = false;
+            dataGridGastos.Columns[28].Visible = false;
+            dataGridGastos.Columns[29].Visible = false;
+            dataGridGastos.Columns[30].Visible = false;
+            dataGridGastos.Columns[31].Visible = false;
+            dataGridGastos.Columns[32].Visible = false;
+            dataGridGastos.Columns[33].HeaderText = "FORNECEDOR";
+            dataGridGastos.Columns[33].Visible = true;
+     
+
+
+        }
 
         private void cbButtonPesquisarEm_SelectedValueChanged(object sender, EventArgs e)
         {

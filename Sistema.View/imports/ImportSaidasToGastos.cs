@@ -182,28 +182,7 @@ namespace Sistema.View.imports
             gridCrudSaidas.Columns[15].Visible = false;
             gridCrudSaidas.Columns[16].Visible = false;
 
-            //gridCrudSaidas.Columns[17].Visible = false;
-            //gridCrudSaidas.Columns[18].Visible = false;
-            //gridCrudSaidas.Columns[19].Visible = false;
-            //gridCrudSaidas.Columns[20].Visible = false;
-            //gridCrudSaidas.Columns[21].Visible = false;
-            //gridCrudSaidas.Columns[22].Visible = false;
-            //gridCrudSaidas.Columns[23].Visible = false;
-            //gridCrudSaidas.Columns[24].Visible = false;
-            //gridCrudSaidas.Columns[25].Visible = false;
-            //gridCrudSaidas.Columns[26].Visible = false;
-            //gridCrudSaidas.Columns[27].Visible = false;
-            //gridCrudSaidas.Columns[28].Visible = false;
-            //gridCrudSaidas.Columns[29].Visible = false;
-            //gridCrudSaidas.Columns[30].Visible = false;
-            //gridCrudSaidas.Columns[31].Visible = false;
-            //gridCrudSaidas.Columns[32].Visible = false;
-            //gridCrudSaidas.Columns[33].Visible = false;
-            //gridCrudSaidas.Columns[34].Visible = false;
-            //gridCrudSaidas.Columns[35].Visible = false;
-            //gridCrudSaidas.Columns[36].Visible = false;
-            //gridCrudSaidas.Columns[37].Visible = false;
-            //gridCrudSaidas.Columns[38].Visible = false;
+
         }
 
         private void gridCrudSaidas_CellContentClick(object sender, DataGridViewCellEventArgs e)

@@ -1332,10 +1332,7 @@ namespace Sistema.View
             inicioPagina();
         }
 
-        private void formCrudPapeis_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            _InstanciaformCrudPapeis = null;
-        }
+      
 
         private void formCrudPapeis_Load(object sender, EventArgs e)
         {

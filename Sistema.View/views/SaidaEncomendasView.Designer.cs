@@ -609,9 +609,10 @@ namespace Sistema.View
             // 
             this.groupBoxFormulario.Controls.Add(this.groupBox1);
             this.groupBoxFormulario.Controls.Add(this.groupBox2);
-            this.groupBoxFormulario.Location = new System.Drawing.Point(0, 288);
+            this.groupBoxFormulario.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBoxFormulario.Location = new System.Drawing.Point(0, 119);
             this.groupBoxFormulario.Name = "groupBoxFormulario";
-            this.groupBoxFormulario.Size = new System.Drawing.Size(1148, 411);
+            this.groupBoxFormulario.Size = new System.Drawing.Size(1148, 580);
             this.groupBoxFormulario.TabIndex = 10;
             this.groupBoxFormulario.TabStop = false;
             // 
@@ -630,7 +631,7 @@ namespace Sistema.View
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox1.Location = new System.Drawing.Point(3, 137);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1142, 271);
+            this.groupBox1.Size = new System.Drawing.Size(1142, 440);
             this.groupBox1.TabIndex = 98;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Encomendas Para Entrega";
@@ -657,7 +658,7 @@ namespace Sistema.View
             this.gridCurdMestreDetalhe.Name = "gridCurdMestreDetalhe";
             this.gridCurdMestreDetalhe.ReadOnly = true;
             this.gridCurdMestreDetalhe.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.gridCurdMestreDetalhe.Size = new System.Drawing.Size(1133, 217);
+            this.gridCurdMestreDetalhe.Size = new System.Drawing.Size(1133, 386);
             this.gridCurdMestreDetalhe.TabIndex = 105;
             this.gridCurdMestreDetalhe.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridMestreDetalhe_CellClick);
             // 

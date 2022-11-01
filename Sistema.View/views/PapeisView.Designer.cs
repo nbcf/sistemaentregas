@@ -29,14 +29,25 @@ namespace Sistema.View
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PapeisView));
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.bttnNew = new System.Windows.Forms.ToolStripButton();
+            this.bttnSave = new System.Windows.Forms.ToolStripButton();
+            this.bttnRefresh = new System.Windows.Forms.ToolStripButton();
+            this.bttnEdit = new System.Windows.Forms.ToolStripButton();
+            this.bttnSearch = new System.Windows.Forms.ToolStripButton();
+            this.bttnDel = new System.Windows.Forms.ToolStripButton();
             this.gridCrudPapeis = new System.Windows.Forms.DataGridView();
             this.toolStrip2 = new System.Windows.Forms.ToolStrip();
+            this.bttnBeginPages = new System.Windows.Forms.ToolStripButton();
+            this.bttnOnePageLeft = new System.Windows.Forms.ToolStripButton();
             this.labelTextPageFrom = new System.Windows.Forms.ToolStripLabel();
             this.toolStripLabel3 = new System.Windows.Forms.ToolStripLabel();
             this.labelTextTotalPages = new System.Windows.Forms.ToolStripLabel();
             this.toolStripLabel5 = new System.Windows.Forms.ToolStripLabel();
             this.labelTextTotalRegFould = new System.Windows.Forms.ToolStripLabel();
+            this.bttnOnePageRight = new System.Windows.Forms.ToolStripButton();
+            this.bttnEndPages = new System.Windows.Forms.ToolStripButton();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
@@ -54,16 +65,6 @@ namespace Sistema.View
             this.radioBttnContem = new System.Windows.Forms.RadioButton();
             this.txtBoxId = new System.Windows.Forms.TextBox();
             this.radioBttnComeca = new System.Windows.Forms.RadioButton();
-            this.bttnBeginPages = new System.Windows.Forms.ToolStripButton();
-            this.bttnOnePageLeft = new System.Windows.Forms.ToolStripButton();
-            this.bttnOnePageRight = new System.Windows.Forms.ToolStripButton();
-            this.bttnEndPages = new System.Windows.Forms.ToolStripButton();
-            this.bttnNew = new System.Windows.Forms.ToolStripButton();
-            this.bttnSave = new System.Windows.Forms.ToolStripButton();
-            this.bttnRefresh = new System.Windows.Forms.ToolStripButton();
-            this.bttnEdit = new System.Windows.Forms.ToolStripButton();
-            this.bttnSearch = new System.Windows.Forms.ToolStripButton();
-            this.bttnDel = new System.Windows.Forms.ToolStripButton();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridCrudPapeis)).BeginInit();
             this.toolStrip2.SuspendLayout();
@@ -85,9 +86,84 @@ namespace Sistema.View
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Padding = new System.Windows.Forms.Padding(0);
-            this.toolStrip1.Size = new System.Drawing.Size(658, 51);
+            this.toolStrip1.Size = new System.Drawing.Size(800, 51);
             this.toolStrip1.TabIndex = 3;
             this.toolStrip1.Text = "toolStrip1";
+            // 
+            // bttnNew
+            // 
+            this.bttnNew.AutoSize = false;
+            this.bttnNew.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.bttnNew.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bttnNew.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.bttnNew.Image = global::Sistema.View.Properties.Resources.add48;
+            this.bttnNew.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.bttnNew.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.bttnNew.Name = "bttnNew";
+            this.bttnNew.Size = new System.Drawing.Size(80, 48);
+            this.bttnNew.Text = "toolStripButton1";
+            this.bttnNew.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
+            this.bttnNew.Click += new System.EventHandler(this.bttnNew_Click);
+            // 
+            // bttnSave
+            // 
+            this.bttnSave.AutoSize = false;
+            this.bttnSave.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bttnSave.Image = global::Sistema.View.Properties.Resources.save48;
+            this.bttnSave.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.bttnSave.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.bttnSave.Name = "bttnSave";
+            this.bttnSave.Size = new System.Drawing.Size(80, 48);
+            this.bttnSave.Text = "toolStripButton2";
+            this.bttnSave.Click += new System.EventHandler(this.bttnSave_Click);
+            // 
+            // bttnRefresh
+            // 
+            this.bttnRefresh.AutoSize = false;
+            this.bttnRefresh.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bttnRefresh.Image = global::Sistema.View.Properties.Resources.refresh48;
+            this.bttnRefresh.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.bttnRefresh.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.bttnRefresh.Name = "bttnRefresh";
+            this.bttnRefresh.Size = new System.Drawing.Size(80, 48);
+            this.bttnRefresh.Text = "toolStripButton3";
+            this.bttnRefresh.Click += new System.EventHandler(this.bttnRefresh_Click_1);
+            // 
+            // bttnEdit
+            // 
+            this.bttnEdit.AutoSize = false;
+            this.bttnEdit.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bttnEdit.Image = global::Sistema.View.Properties.Resources.editForm48;
+            this.bttnEdit.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.bttnEdit.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.bttnEdit.Name = "bttnEdit";
+            this.bttnEdit.Size = new System.Drawing.Size(80, 48);
+            this.bttnEdit.Text = "toolStripButton4";
+            this.bttnEdit.Click += new System.EventHandler(this.bttnEdit_Click);
+            // 
+            // bttnSearch
+            // 
+            this.bttnSearch.AutoSize = false;
+            this.bttnSearch.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bttnSearch.Image = global::Sistema.View.Properties.Resources.search48;
+            this.bttnSearch.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.bttnSearch.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.bttnSearch.Name = "bttnSearch";
+            this.bttnSearch.Size = new System.Drawing.Size(80, 48);
+            this.bttnSearch.Text = "toolStripButton5";
+            this.bttnSearch.Click += new System.EventHandler(this.bttnSearch_Click_1);
+            // 
+            // bttnDel
+            // 
+            this.bttnDel.AutoSize = false;
+            this.bttnDel.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bttnDel.Image = global::Sistema.View.Properties.Resources.del48;
+            this.bttnDel.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.bttnDel.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.bttnDel.Name = "bttnDel";
+            this.bttnDel.Size = new System.Drawing.Size(80, 48);
+            this.bttnDel.Text = "toolStripButton6";
+            this.bttnDel.Click += new System.EventHandler(this.bttnDel_Click);
             // 
             // gridCrudPapeis
             // 
@@ -95,12 +171,13 @@ namespace Sistema.View
             this.gridCrudPapeis.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridCrudPapeis.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gridCrudPapeis.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.gridCrudPapeis.Location = new System.Drawing.Point(0, 123);
+            this.gridCrudPapeis.Location = new System.Drawing.Point(0, 139);
+            this.gridCrudPapeis.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.gridCrudPapeis.MultiSelect = false;
             this.gridCrudPapeis.Name = "gridCrudPapeis";
             this.gridCrudPapeis.RowTemplate.Height = 25;
             this.gridCrudPapeis.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.gridCrudPapeis.Size = new System.Drawing.Size(658, 305);
+            this.gridCrudPapeis.Size = new System.Drawing.Size(800, 520);
             this.gridCrudPapeis.TabIndex = 7;
             this.gridCrudPapeis.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridCrudPapeis_CellClick);
             this.gridCrudPapeis.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridCrudPapeis_CellDoubleClick);
@@ -127,67 +204,116 @@ namespace Sistema.View
             this.cbOrdemParam1,
             this.toolStripLabel8,
             this.cbOrdenarPor1});
-            this.toolStrip2.Location = new System.Drawing.Point(0, 401);
+            this.toolStrip2.Location = new System.Drawing.Point(0, 627);
             this.toolStrip2.Name = "toolStrip2";
-            this.toolStrip2.Size = new System.Drawing.Size(658, 27);
+            this.toolStrip2.Size = new System.Drawing.Size(800, 32);
             this.toolStrip2.TabIndex = 8;
             this.toolStrip2.Text = "toolStrip2";
             // 
+            // bttnBeginPages
+            // 
+            this.bttnBeginPages.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bttnBeginPages.Image = global::Sistema.View.Properties.Resources._2leftarrow;
+            this.bttnBeginPages.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.bttnBeginPages.Name = "bttnBeginPages";
+            this.bttnBeginPages.Size = new System.Drawing.Size(23, 29);
+            this.bttnBeginPages.Text = "toolStripButton1";
+            this.bttnBeginPages.Click += new System.EventHandler(this.bttnBeginPages_Click_1);
+            // 
+            // bttnOnePageLeft
+            // 
+            this.bttnOnePageLeft.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bttnOnePageLeft.Image = global::Sistema.View.Properties.Resources._1leftarrow;
+            this.bttnOnePageLeft.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.bttnOnePageLeft.Name = "bttnOnePageLeft";
+            this.bttnOnePageLeft.Size = new System.Drawing.Size(23, 29);
+            this.bttnOnePageLeft.Text = "toolStripButton2";
+            this.bttnOnePageLeft.Click += new System.EventHandler(this.bttnOnePageLeft_Click_1);
+            // 
             // labelTextPageFrom
             // 
+            this.labelTextPageFrom.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelTextPageFrom.Name = "labelTextPageFrom";
-            this.labelTextPageFrom.Size = new System.Drawing.Size(13, 24);
+            this.labelTextPageFrom.Size = new System.Drawing.Size(17, 29);
             this.labelTextPageFrom.Text = "0";
             // 
             // toolStripLabel3
             // 
+            this.toolStripLabel3.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStripLabel3.Name = "toolStripLabel3";
-            this.toolStripLabel3.Size = new System.Drawing.Size(12, 24);
+            this.toolStripLabel3.Size = new System.Drawing.Size(15, 29);
             this.toolStripLabel3.Text = "/";
             // 
             // labelTextTotalPages
             // 
+            this.labelTextTotalPages.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelTextTotalPages.Name = "labelTextTotalPages";
-            this.labelTextTotalPages.Size = new System.Drawing.Size(13, 24);
+            this.labelTextTotalPages.Size = new System.Drawing.Size(17, 29);
             this.labelTextTotalPages.Text = "0";
             // 
             // toolStripLabel5
             // 
+            this.toolStripLabel5.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStripLabel5.Name = "toolStripLabel5";
-            this.toolStripLabel5.Size = new System.Drawing.Size(12, 24);
+            this.toolStripLabel5.Size = new System.Drawing.Size(15, 29);
             this.toolStripLabel5.Text = "-";
             // 
             // labelTextTotalRegFould
             // 
+            this.labelTextTotalRegFould.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelTextTotalRegFould.Name = "labelTextTotalRegFould";
-            this.labelTextTotalRegFould.Size = new System.Drawing.Size(13, 24);
+            this.labelTextTotalRegFould.Size = new System.Drawing.Size(17, 29);
             this.labelTextTotalRegFould.Text = "0";
+            // 
+            // bttnOnePageRight
+            // 
+            this.bttnOnePageRight.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bttnOnePageRight.Image = global::Sistema.View.Properties.Resources._1rightarrow;
+            this.bttnOnePageRight.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.bttnOnePageRight.Name = "bttnOnePageRight";
+            this.bttnOnePageRight.Size = new System.Drawing.Size(23, 29);
+            this.bttnOnePageRight.Text = "toolStripButton3";
+            this.bttnOnePageRight.Click += new System.EventHandler(this.bttnOnePageRight_Click_1);
+            // 
+            // bttnEndPages
+            // 
+            this.bttnEndPages.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bttnEndPages.Image = global::Sistema.View.Properties.Resources._2rightarrow;
+            this.bttnEndPages.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.bttnEndPages.Name = "bttnEndPages";
+            this.bttnEndPages.Size = new System.Drawing.Size(23, 29);
+            this.bttnEndPages.Text = "toolStripButton4";
+            this.bttnEndPages.Click += new System.EventHandler(this.bttnEndPages_Click_1);
             // 
             // toolStripLabel1
             // 
+            this.toolStripLabel1.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStripLabel1.Name = "toolStripLabel1";
-            this.toolStripLabel1.Size = new System.Drawing.Size(161, 24);
+            this.toolStripLabel1.Size = new System.Drawing.Size(209, 29);
             this.toolStripLabel1.Text = "Total Registros Encontrados : ";
             // 
             // toolStripLabel2
             // 
+            this.toolStripLabel2.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStripLabel2.Name = "toolStripLabel2";
-            this.toolStripLabel2.Size = new System.Drawing.Size(13, 24);
+            this.toolStripLabel2.Size = new System.Drawing.Size(17, 29);
             this.toolStripLabel2.Text = "0";
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 27);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 32);
             // 
             // toolStripLabel6
             // 
+            this.toolStripLabel6.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStripLabel6.Name = "toolStripLabel6";
-            this.toolStripLabel6.Size = new System.Drawing.Size(43, 24);
+            this.toolStripLabel6.Size = new System.Drawing.Size(54, 29);
             this.toolStripLabel6.Text = "Qt.Pg.:";
             // 
             // cbButtnQuantPage1
             // 
+            this.cbButtnQuantPage1.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbButtnQuantPage1.Items.AddRange(new object[] {
             "5",
             "10",
@@ -202,39 +328,43 @@ namespace Sistema.View
             "75",
             "100"});
             this.cbButtnQuantPage1.Name = "cbButtnQuantPage1";
-            this.cbButtnQuantPage1.Size = new System.Drawing.Size(75, 27);
+            this.cbButtnQuantPage1.Size = new System.Drawing.Size(111, 32);
             this.cbButtnQuantPage1.SelectedIndexChanged += new System.EventHandler(this.cbButtnQuantPage1_SelectedIndexChanged_2);
             this.cbButtnQuantPage1.Click += new System.EventHandler(this.cbButtnQuantPage1_Click);
             // 
             // toolStripLabel7
             // 
+            this.toolStripLabel7.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStripLabel7.Name = "toolStripLabel7";
-            this.toolStripLabel7.Size = new System.Drawing.Size(59, 24);
+            this.toolStripLabel7.Size = new System.Drawing.Size(77, 29);
             this.toolStripLabel7.Text = "Listar Por:";
             // 
             // cbOrdemParam1
             // 
+            this.cbOrdemParam1.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbOrdemParam1.Items.AddRange(new object[] {
             "Codigo",
             "Alfabeto"});
             this.cbOrdemParam1.Name = "cbOrdemParam1";
-            this.cbOrdemParam1.Size = new System.Drawing.Size(80, 27);
+            this.cbOrdemParam1.Size = new System.Drawing.Size(118, 32);
             this.cbOrdemParam1.SelectedIndexChanged += new System.EventHandler(this.cbOrdemParam1_SelectedIndexChanged);
             this.cbOrdemParam1.Click += new System.EventHandler(this.cbOrdemParam1_Click);
             // 
             // toolStripLabel8
             // 
+            this.toolStripLabel8.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStripLabel8.Name = "toolStripLabel8";
-            this.toolStripLabel8.Size = new System.Drawing.Size(47, 15);
+            this.toolStripLabel8.Size = new System.Drawing.Size(60, 20);
             this.toolStripLabel8.Text = "Ordem:";
             // 
             // cbOrdenarPor1
             // 
+            this.cbOrdenarPor1.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbOrdenarPor1.Items.AddRange(new object[] {
             "Primeiros",
             "Ultimos"});
             this.cbOrdenarPor1.Name = "cbOrdenarPor1";
-            this.cbOrdenarPor1.Size = new System.Drawing.Size(80, 23);
+            this.cbOrdenarPor1.Size = new System.Drawing.Size(118, 28);
             this.cbOrdenarPor1.SelectedIndexChanged += new System.EventHandler(this.cbOrdenarPor_SelectedIndexChanged);
             this.cbOrdenarPor1.Click += new System.EventHandler(this.cbOrdenarPor_Click);
             // 
@@ -244,9 +374,10 @@ namespace Sistema.View
             this.tabControlAssets.Controls.Add(this.tabPagePesquisar);
             this.tabControlAssets.Dock = System.Windows.Forms.DockStyle.Top;
             this.tabControlAssets.Location = new System.Drawing.Point(0, 51);
+            this.tabControlAssets.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tabControlAssets.Name = "tabControlAssets";
             this.tabControlAssets.SelectedIndex = 0;
-            this.tabControlAssets.Size = new System.Drawing.Size(658, 72);
+            this.tabControlAssets.Size = new System.Drawing.Size(800, 88);
             this.tabControlAssets.TabIndex = 5;
             // 
             // tabPagePesquisar
@@ -258,42 +389,46 @@ namespace Sistema.View
             this.tabPagePesquisar.Controls.Add(this.radioBttnContem);
             this.tabPagePesquisar.Controls.Add(this.txtBoxId);
             this.tabPagePesquisar.Controls.Add(this.radioBttnComeca);
-            this.tabPagePesquisar.Location = new System.Drawing.Point(4, 25);
+            this.tabPagePesquisar.Location = new System.Drawing.Point(4, 32);
+            this.tabPagePesquisar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tabPagePesquisar.Name = "tabPagePesquisar";
-            this.tabPagePesquisar.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPagePesquisar.Size = new System.Drawing.Size(650, 43);
+            this.tabPagePesquisar.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tabPagePesquisar.Size = new System.Drawing.Size(792, 52);
             this.tabPagePesquisar.TabIndex = 1;
             this.tabPagePesquisar.Text = "Pesquisar";
             this.tabPagePesquisar.UseVisualStyleBackColor = true;
             // 
             // cbButtonPesquisarEm
             // 
-            this.cbButtonPesquisarEm.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbButtonPesquisarEm.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbButtonPesquisarEm.FormattingEnabled = true;
             this.cbButtonPesquisarEm.Items.AddRange(new object[] {
             "Nome"});
-            this.cbButtonPesquisarEm.Location = new System.Drawing.Point(193, 6);
+            this.cbButtonPesquisarEm.Location = new System.Drawing.Point(289, 9);
+            this.cbButtonPesquisarEm.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cbButtonPesquisarEm.Name = "cbButtonPesquisarEm";
-            this.cbButtonPesquisarEm.Size = new System.Drawing.Size(121, 24);
+            this.cbButtonPesquisarEm.Size = new System.Drawing.Size(180, 25);
             this.cbButtonPesquisarEm.TabIndex = 1;
             this.cbButtonPesquisarEm.SelectedIndexChanged += new System.EventHandler(this.cbButtonPesquisarEm_SelectedIndexChanged);
             // 
             // txtBoxPesquisar
             // 
-            this.txtBoxPesquisar.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBoxPesquisar.Location = new System.Drawing.Point(6, 6);
+            this.txtBoxPesquisar.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBoxPesquisar.Location = new System.Drawing.Point(9, 9);
+            this.txtBoxPesquisar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtBoxPesquisar.Name = "txtBoxPesquisar";
-            this.txtBoxPesquisar.Size = new System.Drawing.Size(180, 23);
+            this.txtBoxPesquisar.Size = new System.Drawing.Size(268, 25);
             this.txtBoxPesquisar.TabIndex = 0;
             this.txtBoxPesquisar.TextChanged += new System.EventHandler(this.txtBoxPesquisar_TextChanged_1);
             // 
             // radioBttnTermina
             // 
             this.radioBttnTermina.AutoSize = true;
-            this.radioBttnTermina.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioBttnTermina.Location = new System.Drawing.Point(457, 10);
+            this.radioBttnTermina.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioBttnTermina.Location = new System.Drawing.Point(628, 11);
+            this.radioBttnTermina.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.radioBttnTermina.Name = "radioBttnTermina";
-            this.radioBttnTermina.Size = new System.Drawing.Size(74, 20);
+            this.radioBttnTermina.Size = new System.Drawing.Size(74, 21);
             this.radioBttnTermina.TabIndex = 4;
             this.radioBttnTermina.Text = "Termina";
             this.radioBttnTermina.UseVisualStyleBackColor = true;
@@ -302,10 +437,11 @@ namespace Sistema.View
             // radioBttnContem
             // 
             this.radioBttnContem.AutoSize = true;
-            this.radioBttnContem.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioBttnContem.Location = new System.Drawing.Point(390, 10);
+            this.radioBttnContem.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioBttnContem.Location = new System.Drawing.Point(555, 12);
+            this.radioBttnContem.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.radioBttnContem.Name = "radioBttnContem";
-            this.radioBttnContem.Size = new System.Drawing.Size(70, 20);
+            this.radioBttnContem.Size = new System.Drawing.Size(74, 21);
             this.radioBttnContem.TabIndex = 5;
             this.radioBttnContem.Text = "Contém";
             this.radioBttnContem.UseVisualStyleBackColor = true;
@@ -313,151 +449,42 @@ namespace Sistema.View
             // 
             // txtBoxId
             // 
-            this.txtBoxId.Location = new System.Drawing.Point(537, 11);
+            this.txtBoxId.Location = new System.Drawing.Point(806, 16);
+            this.txtBoxId.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtBoxId.Name = "txtBoxId";
-            this.txtBoxId.Size = new System.Drawing.Size(100, 20);
+            this.txtBoxId.Size = new System.Drawing.Size(148, 27);
             this.txtBoxId.TabIndex = 8;
             // 
             // radioBttnComeca
             // 
             this.radioBttnComeca.AutoSize = true;
-            this.radioBttnComeca.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioBttnComeca.Location = new System.Drawing.Point(320, 10);
+            this.radioBttnComeca.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioBttnComeca.Location = new System.Drawing.Point(480, 12);
+            this.radioBttnComeca.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.radioBttnComeca.Name = "radioBttnComeca";
-            this.radioBttnComeca.Size = new System.Drawing.Size(72, 20);
+            this.radioBttnComeca.Size = new System.Drawing.Size(74, 21);
             this.radioBttnComeca.TabIndex = 6;
             this.radioBttnComeca.Text = "Começa";
             this.radioBttnComeca.UseVisualStyleBackColor = true;
             this.radioBttnComeca.CheckedChanged += new System.EventHandler(this.radioBttnComeca_CheckedChanged_1);
             // 
-            // bttnBeginPages
-            // 
-            this.bttnBeginPages.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bttnBeginPages.Image = global::Sistema.View.Properties.Resources._2leftarrow;
-            this.bttnBeginPages.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.bttnBeginPages.Name = "bttnBeginPages";
-            this.bttnBeginPages.Size = new System.Drawing.Size(23, 24);
-            this.bttnBeginPages.Text = "toolStripButton1";
-            this.bttnBeginPages.Click += new System.EventHandler(this.bttnBeginPages_Click_1);
-            // 
-            // bttnOnePageLeft
-            // 
-            this.bttnOnePageLeft.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bttnOnePageLeft.Image = global::Sistema.View.Properties.Resources._1leftarrow;
-            this.bttnOnePageLeft.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.bttnOnePageLeft.Name = "bttnOnePageLeft";
-            this.bttnOnePageLeft.Size = new System.Drawing.Size(23, 24);
-            this.bttnOnePageLeft.Text = "toolStripButton2";
-            this.bttnOnePageLeft.Click += new System.EventHandler(this.bttnOnePageLeft_Click_1);
-            // 
-            // bttnOnePageRight
-            // 
-            this.bttnOnePageRight.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bttnOnePageRight.Image = global::Sistema.View.Properties.Resources._1rightarrow;
-            this.bttnOnePageRight.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.bttnOnePageRight.Name = "bttnOnePageRight";
-            this.bttnOnePageRight.Size = new System.Drawing.Size(23, 24);
-            this.bttnOnePageRight.Text = "toolStripButton3";
-            this.bttnOnePageRight.Click += new System.EventHandler(this.bttnOnePageRight_Click_1);
-            // 
-            // bttnEndPages
-            // 
-            this.bttnEndPages.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bttnEndPages.Image = global::Sistema.View.Properties.Resources._2rightarrow;
-            this.bttnEndPages.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.bttnEndPages.Name = "bttnEndPages";
-            this.bttnEndPages.Size = new System.Drawing.Size(23, 24);
-            this.bttnEndPages.Text = "toolStripButton4";
-            this.bttnEndPages.Click += new System.EventHandler(this.bttnEndPages_Click_1);
-            // 
-            // bttnNew
-            // 
-            this.bttnNew.AutoSize = false;
-            this.bttnNew.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.bttnNew.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bttnNew.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.bttnNew.Image = global::Sistema.View.Properties.Resources.add;
-            this.bttnNew.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.bttnNew.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.bttnNew.Name = "bttnNew";
-            this.bttnNew.Size = new System.Drawing.Size(80, 48);
-            this.bttnNew.Text = "toolStripButton1";
-            this.bttnNew.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
-            this.bttnNew.Click += new System.EventHandler(this.bttnNew_Click);
-            // 
-            // bttnSave
-            // 
-            this.bttnSave.AutoSize = false;
-            this.bttnSave.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bttnSave.Image = global::Sistema.View.Properties.Resources.save;
-            this.bttnSave.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.bttnSave.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.bttnSave.Name = "bttnSave";
-            this.bttnSave.Size = new System.Drawing.Size(80, 48);
-            this.bttnSave.Text = "toolStripButton2";
-            this.bttnSave.Click += new System.EventHandler(this.bttnSave_Click);
-            // 
-            // bttnRefresh
-            // 
-            this.bttnRefresh.AutoSize = false;
-            this.bttnRefresh.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bttnRefresh.Image = global::Sistema.View.Properties.Resources.refresh;
-            this.bttnRefresh.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.bttnRefresh.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.bttnRefresh.Name = "bttnRefresh";
-            this.bttnRefresh.Size = new System.Drawing.Size(80, 48);
-            this.bttnRefresh.Text = "toolStripButton3";
-            this.bttnRefresh.Click += new System.EventHandler(this.bttnRefresh_Click_1);
-            // 
-            // bttnEdit
-            // 
-            this.bttnEdit.AutoSize = false;
-            this.bttnEdit.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bttnEdit.Image = global::Sistema.View.Properties.Resources.update;
-            this.bttnEdit.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.bttnEdit.Name = "bttnEdit";
-            this.bttnEdit.Size = new System.Drawing.Size(80, 48);
-            this.bttnEdit.Text = "toolStripButton4";
-            this.bttnEdit.Click += new System.EventHandler(this.bttnEdit_Click);
-            // 
-            // bttnSearch
-            // 
-            this.bttnSearch.AutoSize = false;
-            this.bttnSearch.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bttnSearch.Image = global::Sistema.View.Properties.Resources.search;
-            this.bttnSearch.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.bttnSearch.Name = "bttnSearch";
-            this.bttnSearch.Size = new System.Drawing.Size(80, 48);
-            this.bttnSearch.Text = "toolStripButton5";
-            this.bttnSearch.Click += new System.EventHandler(this.bttnSearch_Click_1);
-            // 
-            // bttnDel
-            // 
-            this.bttnDel.AutoSize = false;
-            this.bttnDel.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bttnDel.Image = global::Sistema.View.Properties.Resources.del;
-            this.bttnDel.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.bttnDel.Name = "bttnDel";
-            this.bttnDel.Size = new System.Drawing.Size(80, 48);
-            this.bttnDel.Text = "toolStripButton6";
-            this.bttnDel.Click += new System.EventHandler(this.bttnDel_Click);
-            // 
             // PapeisView
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(658, 428);
+            this.ClientSize = new System.Drawing.Size(800, 659);
             this.Controls.Add(this.toolStrip2);
             this.Controls.Add(this.gridCrudPapeis);
             this.Controls.Add(this.tabControlAssets);
             this.Controls.Add(this.toolStrip1);
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
+            this.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "PapeisView";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Cadastro de Cargos";
+            this.Text = "Cadastro de Papéis";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.formCrudPapeis_FormClosing);
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.formCrudPapeis_FormClosed);
+         //   this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.formCrudPapeis_FormClosed);
             this.Load += new System.EventHandler(this.formCrudPapeis_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
