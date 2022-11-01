@@ -74,20 +74,17 @@ namespace Sistema.Controller
             }
         }
 
-        //public DataTable Listar(string ordernaPor)
-        //{
-        //    try
-        //    {
-        //        DataTable dt = new DataTable();
-        //       // dt = dao.Listar("");
-        //        return dt;
-        //    }
-        //    catch (Exception e)
-        //    {
-        //        MessageBox.Show("O Metodo 'Listar' não foi Executada\n\nA seguinte execessão foi lançada: " + e, "Aviso do Sistema", MessageBoxButtons.OK, MessageBoxIcon.Error);
-        //        throw;
-        //    }
-        //}
+        public DataTable ListarSaidaGasto(){
+            try{
+
+                DataTable dt = new DataTable();
+                return dt = dao.ListarSaidaGasto();
+
+            }catch (Exception e){
+                MessageBox.Show("O Metodo 'Listar' não foi Executada\n\nA seguinte execessão foi lançada: " + e, "Aviso do Sistema", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                throw;
+            }
+        }
 
 
         public void Excluir(int idsaida)

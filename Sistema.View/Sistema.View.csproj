@@ -138,6 +138,12 @@
     <Compile Include="edits\EditSaidas.Designer.cs">
       <DependentUpon>EditSaidas.cs</DependentUpon>
     </Compile>
+    <Compile Include="imports\ImportSaidasToGastos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="imports\ImportSaidasToGastos.Designer.cs">
+      <DependentUpon>ImportSaidasToGastos.cs</DependentUpon>
+    </Compile>
     <Compile Include="views\FornecedoresView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -298,6 +304,9 @@
     </Compile>
     <EmbeddedResource Include="edits\EditSaidas.resx">
       <DependentUpon>EditSaidas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="imports\ImportSaidasToGastos.resx">
+      <DependentUpon>ImportSaidasToGastos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="views\FornecedoresView.resx">
       <DependentUpon>FornecedoresView.cs</DependentUpon>

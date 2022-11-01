@@ -1,4 +1,5 @@
 ﻿using Sistema.Controller;
+using Sistema.View.imports;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -1583,6 +1584,19 @@ namespace Sistema.View.views
         private void GastosView_FormClosing(object sender, FormClosingEventArgs e)
         {
             _InstanciaGastosView = null;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            ImportSaidasToGastos imp = new ImportSaidasToGastos();
+            imp.ShowDialog();
+
+
+            txtEntregador.Text = imp.EntregadorVO;
+            txtVeiculo.Text = imp.VeiculoVO;
+            txtPlaca.Text = imp.PlacaVO;
+            txtCodSaida.Text = Convert.ToString(imp.CodSaidaVO);
+           // dtDataGasto.Value = imp.DataSaidaVO;
         }
     }
 

@@ -369,6 +369,7 @@ namespace Sistema.View
             this.gridCrudImporES.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gridCrudImporES.Size = new System.Drawing.Size(774, 379);
             this.gridCrudImporES.TabIndex = 10;
+            this.gridCrudImporES.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridCrudImporES_CellContentClick);
             this.gridCrudImporES.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.gridCrudImporES_CellMouseDoubleClick);
             // 
             // ImportEncomendasToSaida

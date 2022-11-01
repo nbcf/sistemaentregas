@@ -217,12 +217,29 @@ namespace Sistema.DAO
         
         }
 
-        public int ListarTodosRegistrosBD()
-        {
-            int todosresgistros;
-
+        public DataTable ListarSaidaGasto(){
             try
             {
+                classeConecta.AbrirCon();
+                sql = "SELECT * FROM saidas WHERE estsaida = 'Em Rota'";
+                cmd = new MySqlCommand(sql, classeConecta.con);
+                MySqlDataAdapter da = new MySqlDataAdapter();
+                da.SelectCommand = cmd;
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                classeConecta.FecharCon();
+                return dt;
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
+        public int ListarTodosRegistrosBD(){
+            try{
                 classeConecta.AbrirCon();
                 sql = "SELECT * FROM saidas";
                 cmd = new MySqlCommand(sql, classeConecta.con);
@@ -230,12 +247,10 @@ namespace Sistema.DAO
                 da.SelectCommand = cmd;
                 DataTable dt = new DataTable();
                 da.Fill(dt);
-                todosresgistros = dt.Rows.Count;
-                return todosresgistros;
                 classeConecta.FecharCon();
-            }
-            catch (Exception ex)
-            {
+                return dt.Rows.Count;
+               
+            }catch (Exception ex){
 
                 throw ex;
             }
@@ -252,8 +267,9 @@ namespace Sistema.DAO
                 da.SelectCommand = cmd;
                 DataTable dt = new DataTable();
                 da.Fill(dt);
-                return dt;
                 classeConecta.FecharCon();
+                return dt;
+               
             }
             catch (Exception ex)
             {
@@ -296,8 +312,9 @@ namespace Sistema.DAO
                 da.SelectCommand = cmd;
                 DataTable dt = new DataTable();
                 da.Fill(dt);
-                return dt;
                 classeConecta.FecharCon();
+                return dt;
+               
             }
             catch (Exception ex)
             {

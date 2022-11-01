@@ -809,7 +809,7 @@ namespace Sistema.View
         private void gridCrudImporES_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
 
-            if (gridCrudImporES.CurrentRow.Cells[0].Value.ToString().Length > 1){
+            if (gridCrudImporES.CurrentRow.Cells[0].Value.ToString().Length > 0){
                 string numeropacote = gridCrudImporES.CurrentRow.Cells[8].Value.ToString();
 
                 var resultado = MessageBox.Show("Confirma o despacho do item numero :" +
@@ -922,6 +922,11 @@ namespace Sistema.View
         private void ImportEncomendasToSaida_FormClosed(object sender, FormClosedEventArgs e)
         {
             AcaoFormVO = "Fechar";
+        }
+
+        private void gridCrudImporES_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
