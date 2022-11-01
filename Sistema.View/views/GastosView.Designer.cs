@@ -29,9 +29,9 @@ namespace Sistema.View.views
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.bttnNew = new System.Windows.Forms.ToolStripButton();
             this.bttnSave = new System.Windows.Forms.ToolStripButton();
@@ -67,6 +67,8 @@ namespace Sistema.View.views
             this.radioBttnComeca = new System.Windows.Forms.RadioButton();
             this.txtBoxPesquisar = new System.Windows.Forms.TextBox();
             this.groupBoxFormulario = new System.Windows.Forms.GroupBox();
+            this.txtvalorunit = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
             this.txtIdTipoUnit = new System.Windows.Forms.TextBox();
             this.cbTipoGasto = new System.Windows.Forms.ComboBox();
             this.cbFornecedor = new System.Windows.Forms.ComboBox();
@@ -90,8 +92,7 @@ namespace Sistema.View.views
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtvalorunit = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridGastos)).BeginInit();
             this.toolStrip2.SuspendLayout();
@@ -194,27 +195,27 @@ namespace Sistema.View.views
             // dataGridGastos
             // 
             this.dataGridGastos.AllowUserToAddRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Gainsboro;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dataGridGastos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Transparent;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridGastos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.Gainsboro;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dataGridGastos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.Transparent;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridGastos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridGastos.ColumnHeadersHeight = 26;
             this.dataGridGastos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridGastos.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridGastos.DefaultCellStyle = dataGridViewCellStyle6;
             this.dataGridGastos.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridGastos.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dataGridGastos.Location = new System.Drawing.Point(0, 51);
@@ -483,6 +484,7 @@ namespace Sistema.View.views
             // 
             // groupBoxFormulario
             // 
+            this.groupBoxFormulario.Controls.Add(this.textBox1);
             this.groupBoxFormulario.Controls.Add(this.txtvalorunit);
             this.groupBoxFormulario.Controls.Add(this.label11);
             this.groupBoxFormulario.Controls.Add(this.txtIdTipoUnit);
@@ -513,6 +515,24 @@ namespace Sistema.View.views
             this.groupBoxFormulario.Size = new System.Drawing.Size(843, 410);
             this.groupBoxFormulario.TabIndex = 8;
             this.groupBoxFormulario.TabStop = false;
+            // 
+            // txtvalorunit
+            // 
+            this.txtvalorunit.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtvalorunit.Location = new System.Drawing.Point(129, 200);
+            this.txtvalorunit.Name = "txtvalorunit";
+            this.txtvalorunit.Size = new System.Drawing.Size(200, 25);
+            this.txtvalorunit.TabIndex = 27;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(18, 203);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(87, 17);
+            this.label11.TabIndex = 26;
+            this.label11.Text = "VALOR UNIT.:";
             // 
             // txtIdTipoUnit
             // 
@@ -628,7 +648,7 @@ namespace Sistema.View.views
             // 
             this.cbTipoUnit.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbTipoUnit.FormattingEnabled = true;
-            this.cbTipoUnit.Location = new System.Drawing.Point(129, 169);
+            this.cbTipoUnit.Location = new System.Drawing.Point(472, 326);
             this.cbTipoUnit.Name = "cbTipoUnit";
             this.cbTipoUnit.Size = new System.Drawing.Size(200, 25);
             this.cbTipoUnit.TabIndex = 10;
@@ -721,23 +741,13 @@ namespace Sistema.View.views
             this.label1.TabIndex = 0;
             this.label1.Text = "ID:";
             // 
-            // txtvalorunit
+            // textBox1
             // 
-            this.txtvalorunit.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtvalorunit.Location = new System.Drawing.Point(129, 200);
-            this.txtvalorunit.Name = "txtvalorunit";
-            this.txtvalorunit.Size = new System.Drawing.Size(200, 25);
-            this.txtvalorunit.TabIndex = 27;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(18, 203);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(87, 17);
-            this.label11.TabIndex = 26;
-            this.label11.Text = "VALOR UNIT.:";
+            this.textBox1.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(129, 169);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(200, 25);
+            this.textBox1.TabIndex = 28;
             // 
             // GastosView
             // 
@@ -752,6 +762,7 @@ namespace Sistema.View.views
             this.Name = "GastosView";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "GastosView";
+            this.Load += new System.EventHandler(this.GastosView_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridGastos)).EndInit();
@@ -829,5 +840,6 @@ namespace Sistema.View.views
         private System.Windows.Forms.TextBox txtIdTipoUnit;
         private System.Windows.Forms.TextBox txtvalorunit;
         private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }

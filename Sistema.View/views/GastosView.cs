@@ -13,6 +13,8 @@ namespace Sistema.View.views
 {
     public partial class GastosView : Form
     {
+        public string strIdFornecedores;
+        public string strIdTipoGastos;
         public bool finalPaginaBol = false;
         public bool inicioPaginaBol = true;
         public bool estadoBotaoDesbloqueio = false;
@@ -1429,18 +1431,7 @@ namespace Sistema.View.views
             _InstanciaTipoGastosView = null;
         }
 
-        private void TipoGastosView_Load(object sender, EventArgs e)
-        {
-            comboBox1.DataSource = controllerTipoUnd.ListComboBoxTipoUndController();
-            comboBox1.ValueMember = "idtipound";
-            comboBox1.DisplayMember = "nomeund";
-            if (comboBox1.Items.Count > 0)
-            {
-                txtIdTipogastos.Text = comboBox1.SelectedValue.ToString();
-                strIdCombo = txtIdTipogastos.Text;
-            }
-        }
-
+       
         private void gridCrudTipoGastos_CellClick_1(object sender, DataGridViewCellEventArgs e)
         {
             var gridVazia = dataGridGastos.CurrentRow.Cells[0].Value.ToString();
@@ -1507,6 +1498,18 @@ namespace Sistema.View.views
         private void radioBttnTermina_CheckedChanged_2(object sender, EventArgs e)
         {
             puxarparametroPesquisa();
+        }
+
+        private void GastosView_Load(object sender, EventArgs e)
+        {
+            cbFornecedor.DataSource = controllerTipoUnd.ListComboBoxTipoUndController();
+            cbFornecedor.ValueMember = "idtipound";
+            cbFornecedor.DisplayMember = "nomeund";
+            if (cbFornecedor.Items.Count > 0)
+            {
+                txtIdTipogastos.Text = comboBox1.SelectedValue.ToString();
+                strIdCombo = txtIdTipogastos.Text;
+            }
         }
     }
 
