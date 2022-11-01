@@ -538,8 +538,8 @@ namespace Sistema.View
             bttnRefresh.Enabled = true;
             bttnSave.Enabled = false;
             bttnNew.Enabled = true;
-            bttnPrint.Enabled = false;
-            bttnImport.Enabled = false;
+          //  bttnPrint.Enabled = false;
+         //   bttnImport.Enabled = false;
             bttnExcel.Enabled = false;
             radioBttnComeca.Checked = false;
             radioBttnContem.Checked = false;
@@ -664,8 +664,8 @@ namespace Sistema.View
                 bttnRefresh.Enabled = true;
                 bttnSave.Enabled = false;
                 bttnNew.Enabled = true;
-                bttnPrint.Enabled = false;
-                bttnImport.Enabled = false;
+           //     bttnPrint.Enabled = false;
+            //    bttnImport.Enabled = false;
                 bttnExcel.Enabled = false;
                 radioBttnComeca.Checked = false;
                 radioBttnContem.Checked = false;
@@ -685,8 +685,8 @@ namespace Sistema.View
                 bttnRefresh.Enabled = true;
                 bttnSave.Enabled = false;
                 bttnNew.Enabled = true;
-                bttnPrint.Enabled = false;
-                bttnImport.Enabled = false;
+          //      bttnPrint.Enabled = false;
+          //      bttnImport.Enabled = false;
                 bttnExcel.Enabled = false;
                 radioBttnComeca.Checked = false;
                 radioBttnContem.Checked = false;
@@ -705,8 +705,8 @@ namespace Sistema.View
             bttnRefresh.Enabled = true;
             bttnSave.Enabled = true;
             bttnNew.Enabled = false;
-            bttnPrint.Enabled = false;
-            bttnImport.Enabled = false;
+       //     bttnPrint.Enabled = false;
+       //     bttnImport.Enabled = false;
             bttnExcel.Enabled = false;
             operationType = "newInsertion";
             txtBoxId.Enabled = false;
@@ -991,8 +991,8 @@ namespace Sistema.View
             bttnRefresh.Enabled = true;
             bttnSave.Enabled = false;
             bttnNew.Enabled = true;
-            bttnPrint.Enabled = false;
-            bttnImport.Enabled = false;
+         //   bttnPrint.Enabled = false;
+         //   bttnImport.Enabled = false;
             bttnExcel.Enabled = false;
             radioBttnComeca.Checked = false;
             radioBttnContem.Checked = false;
@@ -1014,8 +1014,8 @@ namespace Sistema.View
             bttnRefresh.Enabled = true;
             bttnSave.Enabled = true;
             bttnNew.Enabled = false;
-            bttnPrint.Enabled = false;
-            bttnImport.Enabled = false;
+      //      bttnPrint.Enabled = false;
+      //      bttnImport.Enabled = false;
             bttnExcel.Enabled = false;
 
             txtBoxId.Enabled = false;
@@ -1065,9 +1065,8 @@ namespace Sistema.View
             bttnRefresh.Enabled = true;
             bttnSave.Enabled = true;
             bttnNew.Enabled = false;
-            bttnPrint.Enabled = false;
-            bttnImport.Enabled = false;
-            bttnExcel.Enabled = false;
+         //    bttnImport.Enabled = false;
+         //   bttnExcel.Enabled = false;
             clearFieldsFormulario();
             txtBoxId.Enabled = false;
             txtBoxId.Text = gridCrudEndereco.CurrentRow.Cells[0].Value.ToString();
@@ -1126,8 +1125,8 @@ namespace Sistema.View
             bttnRefresh.Enabled = false;
             bttnSave.Enabled = false;
             bttnNew.Enabled = false;
-            bttnPrint.Enabled = false;
-            bttnImport.Enabled = false;
+       //     bttnPrint.Enabled = false;
+        //    bttnImport.Enabled = false;
             bttnExcel.Enabled = false;
             tabControlAssets.Visible = true;
         }
@@ -1156,8 +1155,8 @@ namespace Sistema.View
             bttnSearch.Enabled = true;
             bttnRefresh.Enabled = false;
             bttnSave.Enabled = false;
-            bttnPrint.Enabled = false;
-            bttnImport.Enabled = false;
+        //    bttnPrint.Enabled = false;
+       //     bttnImport.Enabled = false;
             bttnExcel.Enabled = false;
             radioBttnComeca.Checked = false;
             radioBttnContem.Checked = false;
@@ -1185,8 +1184,8 @@ namespace Sistema.View
             bttnSearch.Enabled = true;
             bttnRefresh.Enabled = false;
             bttnSave.Enabled = false;
-            bttnPrint.Enabled = false;
-            bttnImport.Enabled = false;
+         //   bttnPrint.Enabled = false;
+         //   bttnImport.Enabled = false;
             bttnExcel.Enabled = false;
 
             txtBoxId.Text = gridCrudEndereco.CurrentRow.Cells[0].Value.ToString();
@@ -1685,6 +1684,11 @@ namespace Sistema.View
         private void EnderecosView_FormClosing(object sender, FormClosingEventArgs e)
         {
             _InstanciaformCrudEnderecos = null;
+        }
+
+        private void EnderecosView_Load(object sender, EventArgs e)
+        {
+
         }
     }
 

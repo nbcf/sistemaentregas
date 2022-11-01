@@ -137,5 +137,15 @@ namespace Sistema.View
             frmFornecedoresView.Show();
 
         }
+
+        private void relatoriosDeGastosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void abastecimentoPorDataToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

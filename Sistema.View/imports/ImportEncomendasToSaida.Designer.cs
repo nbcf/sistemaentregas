@@ -29,6 +29,7 @@ namespace Sistema.View
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ImportEncomendasToSaida));
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.bttnRefresh = new System.Windows.Forms.ToolStripButton();
             this.bttnSearch = new System.Windows.Forms.ToolStripButton();
@@ -85,7 +86,8 @@ namespace Sistema.View
             // 
             this.bttnRefresh.AutoSize = false;
             this.bttnRefresh.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bttnRefresh.Image = global::Sistema.View.Properties.Resources.atualizar;
+            this.bttnRefresh.Image = global::Sistema.View.Properties.Resources.refresh48;
+            this.bttnRefresh.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.bttnRefresh.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.bttnRefresh.Name = "bttnRefresh";
             this.bttnRefresh.Size = new System.Drawing.Size(80, 48);
@@ -96,7 +98,8 @@ namespace Sistema.View
             // 
             this.bttnSearch.AutoSize = false;
             this.bttnSearch.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bttnSearch.Image = global::Sistema.View.Properties.Resources.pesquisar;
+            this.bttnSearch.Image = global::Sistema.View.Properties.Resources.search48;
+            this.bttnSearch.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.bttnSearch.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.bttnSearch.Name = "bttnSearch";
             this.bttnSearch.Size = new System.Drawing.Size(80, 48);
@@ -108,10 +111,11 @@ namespace Sistema.View
             this.tabControlAssets.Appearance = System.Windows.Forms.TabAppearance.FlatButtons;
             this.tabControlAssets.Controls.Add(this.tabPagePesquisar);
             this.tabControlAssets.Dock = System.Windows.Forms.DockStyle.Top;
+            this.tabControlAssets.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabControlAssets.Location = new System.Drawing.Point(0, 51);
             this.tabControlAssets.Name = "tabControlAssets";
             this.tabControlAssets.SelectedIndex = 0;
-            this.tabControlAssets.Size = new System.Drawing.Size(774, 72);
+            this.tabControlAssets.Size = new System.Drawing.Size(774, 85);
             this.tabControlAssets.TabIndex = 6;
             // 
             // tabPagePesquisar
@@ -123,17 +127,17 @@ namespace Sistema.View
             this.tabPagePesquisar.Controls.Add(this.radioBttnContem);
             this.tabPagePesquisar.Controls.Add(this.txtBoxId);
             this.tabPagePesquisar.Controls.Add(this.radioBttnComeca);
-            this.tabPagePesquisar.Location = new System.Drawing.Point(4, 25);
+            this.tabPagePesquisar.Location = new System.Drawing.Point(4, 32);
             this.tabPagePesquisar.Name = "tabPagePesquisar";
             this.tabPagePesquisar.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPagePesquisar.Size = new System.Drawing.Size(766, 43);
+            this.tabPagePesquisar.Size = new System.Drawing.Size(766, 49);
             this.tabPagePesquisar.TabIndex = 1;
             this.tabPagePesquisar.Text = "Pesquisar";
             this.tabPagePesquisar.UseVisualStyleBackColor = true;
             // 
             // cbButtonPesquisarEm
             // 
-            this.cbButtonPesquisarEm.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbButtonPesquisarEm.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbButtonPesquisarEm.FormattingEnabled = true;
             this.cbButtonPesquisarEm.Items.AddRange(new object[] {
             "Destinatario",
@@ -144,24 +148,24 @@ namespace Sistema.View
             "Bairro"});
             this.cbButtonPesquisarEm.Location = new System.Drawing.Point(193, 6);
             this.cbButtonPesquisarEm.Name = "cbButtonPesquisarEm";
-            this.cbButtonPesquisarEm.Size = new System.Drawing.Size(121, 24);
+            this.cbButtonPesquisarEm.Size = new System.Drawing.Size(121, 25);
             this.cbButtonPesquisarEm.TabIndex = 1;
             // 
             // txtBoxPesquisar
             // 
-            this.txtBoxPesquisar.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBoxPesquisar.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBoxPesquisar.Location = new System.Drawing.Point(6, 6);
             this.txtBoxPesquisar.Name = "txtBoxPesquisar";
-            this.txtBoxPesquisar.Size = new System.Drawing.Size(180, 23);
+            this.txtBoxPesquisar.Size = new System.Drawing.Size(180, 25);
             this.txtBoxPesquisar.TabIndex = 0;
             // 
             // radioBttnTermina
             // 
             this.radioBttnTermina.AutoSize = true;
-            this.radioBttnTermina.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioBttnTermina.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioBttnTermina.Location = new System.Drawing.Point(457, 10);
             this.radioBttnTermina.Name = "radioBttnTermina";
-            this.radioBttnTermina.Size = new System.Drawing.Size(74, 20);
+            this.radioBttnTermina.Size = new System.Drawing.Size(74, 21);
             this.radioBttnTermina.TabIndex = 4;
             this.radioBttnTermina.Text = "Termina";
             this.radioBttnTermina.UseVisualStyleBackColor = true;
@@ -169,28 +173,29 @@ namespace Sistema.View
             // radioBttnContem
             // 
             this.radioBttnContem.AutoSize = true;
-            this.radioBttnContem.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioBttnContem.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioBttnContem.Location = new System.Drawing.Point(390, 10);
             this.radioBttnContem.Name = "radioBttnContem";
-            this.radioBttnContem.Size = new System.Drawing.Size(70, 20);
+            this.radioBttnContem.Size = new System.Drawing.Size(74, 21);
             this.radioBttnContem.TabIndex = 5;
             this.radioBttnContem.Text = "Contém";
             this.radioBttnContem.UseVisualStyleBackColor = true;
             // 
             // txtBoxId
             // 
+            this.txtBoxId.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBoxId.Location = new System.Drawing.Point(537, 11);
             this.txtBoxId.Name = "txtBoxId";
-            this.txtBoxId.Size = new System.Drawing.Size(100, 20);
+            this.txtBoxId.Size = new System.Drawing.Size(100, 25);
             this.txtBoxId.TabIndex = 8;
             // 
             // radioBttnComeca
             // 
             this.radioBttnComeca.AutoSize = true;
-            this.radioBttnComeca.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioBttnComeca.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioBttnComeca.Location = new System.Drawing.Point(320, 10);
             this.radioBttnComeca.Name = "radioBttnComeca";
-            this.radioBttnComeca.Size = new System.Drawing.Size(72, 20);
+            this.radioBttnComeca.Size = new System.Drawing.Size(74, 21);
             this.radioBttnComeca.TabIndex = 6;
             this.radioBttnComeca.Text = "Começa";
             this.radioBttnComeca.UseVisualStyleBackColor = true;
@@ -363,11 +368,11 @@ namespace Sistema.View
             this.gridCrudImporES.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridCrudImporES.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gridCrudImporES.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.gridCrudImporES.Location = new System.Drawing.Point(0, 123);
+            this.gridCrudImporES.Location = new System.Drawing.Point(0, 136);
             this.gridCrudImporES.MultiSelect = false;
             this.gridCrudImporES.Name = "gridCrudImporES";
             this.gridCrudImporES.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.gridCrudImporES.Size = new System.Drawing.Size(774, 379);
+            this.gridCrudImporES.Size = new System.Drawing.Size(774, 366);
             this.gridCrudImporES.TabIndex = 10;
             this.gridCrudImporES.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridCrudImporES_CellContentClick);
             this.gridCrudImporES.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.gridCrudImporES_CellMouseDoubleClick);
@@ -381,6 +386,7 @@ namespace Sistema.View
             this.Controls.Add(this.toolStrip2);
             this.Controls.Add(this.tabControlAssets);
             this.Controls.Add(this.toolStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "ImportEncomendasToSaida";
