@@ -720,62 +720,6 @@ namespace Sistema.View.views
 
                 }
             }
-
-            //if (operationType == "updateData" && typeEdition == "search")
-            //{
-            //    controllerTipoUnds.Excluir(Convert.ToInt32(gridCrudTipoUnds.CurrentRow.Cells[0].Value));
-            //    puxarparametroPesquisa();
-
-            //    bttnDel.Enabled = true;
-            //    bttnEdit.Enabled = false;
-            //    bttnSearch.Enabled = true;
-            //    bttnRefresh.Enabled = true;
-            //    bttnSave.Enabled = false;
-            //    bttnNew.Enabled = false;
-            //    txtBoxPesquisar.Text = "";
-
-            //    int tamanho_lista = gridCrudTipoUnds.RowCount;
-            //    MessageBox.Show(tamanho_lista.ToString());
-            //    if (tamanho_lista == 0)
-            //    {
-
-
-            //        bttnDel.Enabled = false;
-            //        bttnEdit.Enabled = false;
-            //        bttnRefresh.Enabled = false;
-            //        bttnSearch.Enabled = true;
-            //    }
-
-            //}
-            //else if (operationType == "" || operationType == "newInsertion" || operationType == "updateData" || operationType == "search" && typeEdition == "insert")
-            //{
-            //    bttnDel.Enabled = true;
-            //    bttnEdit.Enabled = false;
-            //    bttnSearch.Enabled = true;
-            //    bttnRefresh.Enabled = true;
-            //    bttnSave.Enabled = false;
-            //    bttnNew.Enabled = true;
-
-            //    controllerTipoUnds.Excluir(Convert.ToInt32(gridCrudTipoUnds.CurrentRow.Cells[0].Value));
-            //    puxarparametro(0, Convert.ToInt32(cbButtnQuantPage1.SelectedItem), "Sim");
-
-
-            //}
-            //else if (operationType == "" || operationType == "newInsertion" || operationType == "updateData" || operationType == "search" && typeEdition == "search")
-            //{
-
-            //    bttnDel.Enabled = true;
-            //    bttnEdit.Enabled = false;
-            //    bttnSearch.Enabled = true;
-            //    bttnRefresh.Enabled = true;
-            //    bttnSave.Enabled = false;
-            //    bttnNew.Enabled = true;
-
-            //    controllerTipoUnds.Excluir(Convert.ToInt32(gridCrudTipoUnds.CurrentRow.Cells[0].Value));
-            //    puxarparametro(0, Convert.ToInt32(cbButtnQuantPage1.SelectedItem), "Sim");
-
-            //}
-
         }
 
         private void behaviorSave()

@@ -64,8 +64,16 @@ namespace Sistema.DAO
                     if (resultado == DialogResult.Yes)
                     {
                         classeConecta.AbrirCon();
-                        sql = "INSERT INTO usuarios (idpessoa, idpapel, usuario,senha) " +
-                            "VALUES (@idpessoa,@idpapel,@usuario,@senha)";
+                        sql = "INSERT INTO usuarios (" +
+                            "idpessoa," +
+                            " idpapel," +
+                            " usuario," +
+                            "senha" +
+                            ") VALUES (" +
+                            "@idpessoa," +
+                            "@idpapel," +
+                            "@usuario," +
+                            "@senha)";
                         cmd = new MySqlCommand(sql, classeConecta.con);
                         cmd.Parameters.AddWithValue("@idpessoa", idpessoa);
                         cmd.Parameters.AddWithValue("@idpapel", idpapel);
@@ -80,8 +88,16 @@ namespace Sistema.DAO
                     }
                 }else if (dtp.Rows.Count == 0){
                     classeConecta.AbrirCon();
-                    sql = "INSERT INTO usuarios (idpessoa, idpapel, usuario,senha) " +
-                        "VALUES (@idpessoa,@idpapel,@usuario,@senha)";
+                    sql = "INSERT INTO usuarios (" +
+                        " idpessoa," +
+                        " idpapel," +
+                        " usuario," +
+                        " senha" +
+                        ") VALUES (" +
+                        "@idpessoa," +
+                        "@idpapel," +
+                        "@usuario," +
+                        "@senha)";
                     cmd = new MySqlCommand(sql, classeConecta.con);
                     cmd.Parameters.AddWithValue("@idpessoa", idpessoa);
                     cmd.Parameters.AddWithValue("@idpapel", idpapel);
@@ -94,17 +110,19 @@ namespace Sistema.DAO
             }
             catch (Exception ex)
             {
-                MessageBox.Show("A Seguinte Excessão foi lançada quando o método Salvar foi operado " + ex, "Erro na classe PessoaDAO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("A Seguinte Excessão foi lançada quando o método Salvar foi operado " + ex,
+                    "Erro na classe UsuariosDAO",
+                    MessageBoxButtons.OK, 
+                    MessageBoxIcon.Error);
             }
 
         }
-
         public void Editar(int idpessoa, int idpapel, string usuario, string senha, int idusuario)
         {
             try{
                 classeConecta.AbrirCon();
                 cmd = new MySqlCommand("UPDATE usuarios SET " +
-                    "idpessoa = @idpessoa," +
+                    " idpessoa = @idpessoa," +
                     " idpapel = @idpapel," +
                     " usuario = @usuario," +
                     " senha = @senha" +
@@ -113,20 +131,25 @@ namespace Sistema.DAO
                 cmd.Parameters.AddWithValue("@idpapel", idpapel);
                 cmd.Parameters.AddWithValue("@usuario", usuario);
                 cmd.Parameters.AddWithValue("@senha", senha);
-                cmd.Parameters.AddWithValue("@idusario", idusuario);
+                cmd.Parameters.AddWithValue("@idusuario", idusuario);
                 cmd.ExecuteNonQuery();
                 acaoCrudUsuariosDAO = "AT";
                 classeConecta.FecharCon();
 
             }catch (Exception ex){
-                MessageBox.Show("Erro ao Editar " + ex);
+                MessageBox.Show("A Seguinte Excessão foi lançada quando o método Editar foi operado " + ex, "Erro na classe UsuariosDAO",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
             }
 
         }
 
         public void Excluir(int idusuario)
         {
-            var resultado = MessageBox.Show("Confirmar excluisão do registro " + idusuario, "Excluir Registro", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            var resultado = MessageBox.Show("Confirmar excluisão do registro " + idusuario,
+                "Excluir Registro",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question);
             if (resultado == DialogResult.Yes)
             {
                 try
@@ -141,7 +164,10 @@ namespace Sistema.DAO
 
                 }catch (Exception ex){
 
-                    MessageBox.Show("A Seguinte Excessão foi lançada quando o método Excluir foi operado " + ex, "Erro na classe OrigemDAO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("A Seguinte Excessão foi lançada quando o método Excluir foi operado " + ex,
+                        "Erro na classe UsuariosDAO",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Error);
                 }
             }else if (resultado == DialogResult.No){
                 acaoCrudUsuariosDAO = "NDEL";
@@ -235,7 +261,7 @@ namespace Sistema.DAO
             return regEncontradosPesquisaUsuariosDAO;
         }
 
-        public string VerificarPersistencia(){
+        public string AcaoCrudUsuariosDAO(){
             return acaoCrudUsuariosDAO;
         }
 

@@ -106,7 +106,7 @@ namespace Sistema.View
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Padding = new System.Windows.Forms.Padding(0);
-            this.toolStrip1.Size = new System.Drawing.Size(643, 51);
+            this.toolStrip1.Size = new System.Drawing.Size(632, 51);
             this.toolStrip1.TabIndex = 2;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -183,6 +183,7 @@ namespace Sistema.View
             this.bttnDel.Name = "bttnDel";
             this.bttnDel.Size = new System.Drawing.Size(100, 48);
             this.bttnDel.Text = "toolStripButton6";
+            this.bttnDel.Click += new System.EventHandler(this.bttnDel_Click);
             // 
             // tabControlAssets
             // 
@@ -193,7 +194,7 @@ namespace Sistema.View
             this.tabControlAssets.Location = new System.Drawing.Point(0, 51);
             this.tabControlAssets.Name = "tabControlAssets";
             this.tabControlAssets.SelectedIndex = 0;
-            this.tabControlAssets.Size = new System.Drawing.Size(643, 80);
+            this.tabControlAssets.Size = new System.Drawing.Size(632, 80);
             this.tabControlAssets.TabIndex = 4;
             // 
             // tabPagePesquisar
@@ -207,7 +208,7 @@ namespace Sistema.View
             this.tabPagePesquisar.Location = new System.Drawing.Point(4, 32);
             this.tabPagePesquisar.Name = "tabPagePesquisar";
             this.tabPagePesquisar.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPagePesquisar.Size = new System.Drawing.Size(635, 44);
+            this.tabPagePesquisar.Size = new System.Drawing.Size(624, 44);
             this.tabPagePesquisar.TabIndex = 1;
             this.tabPagePesquisar.Text = "Pesquisar";
             this.tabPagePesquisar.UseVisualStyleBackColor = true;
@@ -496,7 +497,7 @@ namespace Sistema.View
             this.cbOrdenarPor1});
             this.toolStrip2.Location = new System.Drawing.Point(0, 433);
             this.toolStrip2.Name = "toolStrip2";
-            this.toolStrip2.Size = new System.Drawing.Size(643, 32);
+            this.toolStrip2.Size = new System.Drawing.Size(632, 32);
             this.toolStrip2.TabIndex = 7;
             this.toolStrip2.Text = "toolStrip2";
             // 
@@ -667,7 +668,7 @@ namespace Sistema.View
             this.gridCrudUsuarios.Name = "gridCrudUsuarios";
             this.gridCrudUsuarios.RowTemplate.Height = 25;
             this.gridCrudUsuarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.gridCrudUsuarios.Size = new System.Drawing.Size(643, 334);
+            this.gridCrudUsuarios.Size = new System.Drawing.Size(632, 334);
             this.gridCrudUsuarios.TabIndex = 6;
             this.gridCrudUsuarios.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridCrudPessoa_CellClick_1);
             // 
@@ -695,16 +696,15 @@ namespace Sistema.View
             this.groupBoxFormulario.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBoxFormulario.Location = new System.Drawing.Point(0, 131);
             this.groupBoxFormulario.Name = "groupBoxFormulario";
-            this.groupBoxFormulario.Size = new System.Drawing.Size(643, 302);
+            this.groupBoxFormulario.Size = new System.Drawing.Size(632, 302);
             this.groupBoxFormulario.TabIndex = 8;
             this.groupBoxFormulario.TabStop = false;
-   //         this.groupBoxFormulario.Enter += new System.EventHandler(this.groupBoxFormulario_Enter);
             // 
             // UsuariosView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(643, 465);
+            this.ClientSize = new System.Drawing.Size(632, 465);
             this.Controls.Add(this.groupBoxFormulario);
             this.Controls.Add(this.toolStrip2);
             this.Controls.Add(this.gridCrudUsuarios);

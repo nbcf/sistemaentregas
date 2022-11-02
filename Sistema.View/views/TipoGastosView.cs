@@ -90,6 +90,130 @@ namespace Sistema.View.views
             carregarEstadoPadrao("CarregaPadraoIDTodosUltimos", 0);
         }
 
+
+        private void behaviorSave()
+        {
+            string retiraEspacos = txtBoxName.Text;
+            string rem = retiraEspacos.Trim();
+            if (txtBoxId.Text.Trim().Equals("") || txtBoxId.Text.Trim() == null)
+            {
+                if (operationType.Equals("newInsertion") && typeEdition.Equals("insert"))
+                {
+                    if (rem.Length <= 3)
+                    {
+                        var resultado = MessageBox.Show("A Inserção não alcançou o número mínimo de 3 caracteres.\nPara tentar novamente clique no botão 'Sim'. E no botão 'Não' para cancelar e sair do modo de Inserção.", "Aviso do Sistema", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                        if (resultado == DialogResult.Yes)
+                        {
+                            txtBoxName.Text = "";
+                            txtBoxName.Focus();
+                        }
+                        else if (resultado == DialogResult.No)
+                        {
+                            behaviorRefresh();
+                        }
+                    }
+                    else if (rem.Length >= 3)
+                    {
+
+                        controllerTipoGastos.Salvar(Convert.ToInt32(txtIdTipogastos.Text), txtBoxName.Text);
+                        if (controllerTipoGastos.retornoPersistencia.Equals("NS"))
+                        {
+                            txtBoxName.Focus();
+                            txtBoxName.Text = "";
+
+                        }
+                        else if (controllerTipoGastos.retornoPersistencia.Equals("S!"))
+                        {
+                            operationType = "newInsertion";
+                            typeEdition = "insert";
+                            acoesBehaviorSave();
+
+                        }
+                        else if (controllerTipoGastos.retornoPersistencia.Equals("S!!"))
+                        {
+                            acoesBehaviorSave();
+
+                        }
+                    }
+                }
+            }
+            else if (!txtBoxId.Text.Trim().Equals("") || txtBoxId.Text.Trim() != null)
+            {
+
+                if (operationType.Equals("updateData") && typeEdition.Equals("insert"))
+                {
+                    if (rem.Length <= 3)
+                    {
+
+                        var resultado = MessageBox.Show("A Edição não alcançou o número mínimo de 3 caracteres.\nPara tentar novamente clique no botão 'Sim'. E no botão 'Não' para cancelar e sair do modo de Inserção.", "Aviso do Sistema", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                        if (resultado == DialogResult.Yes)
+                        {
+
+                            txtBoxName.Focus();
+                        }
+                        else if (resultado == DialogResult.No)
+                        {
+
+                            behaviorRefresh();
+                        }
+
+                    }
+                    else if (rem.Length >= 3)
+                    {
+                        controllerTipoGastos.Editar(
+                            Convert.ToInt32(txtBoxId.Text.Trim()),
+                            txtBoxName.Text,
+                            Convert.ToInt32(txtIdTipogastos.Text));
+
+                        if (controllerTipoGastos.retornoPersistencia.Equals("AT"))
+                        {
+
+                            operationType = "newInsertion";
+                            typeEdition = "insert";
+
+                            behaviorRefresh();
+
+
+                        }
+                    }
+                }
+                else if (operationType.Equals("updateData") && typeEdition.Equals("search"))
+                {
+
+                    if (rem.Length <= 3)
+                    {
+                        var resultado = MessageBox.Show("A Edição não alcançou o número mínimo de 3 caracteres.\nPara tentar novamente clique no botão 'Sim'. E no botão 'Não' para cancelar e sair do modo de Inserção.", "Aviso do Sistema", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                        if (resultado == DialogResult.Yes)
+                        {
+                            txtBoxName.Focus();
+                        }
+                        else if (resultado == DialogResult.No)
+                        {
+                            operationType = "updateData";
+                            typeEdition = "search";
+                            behaviorRefresh();
+                        }
+
+                    }
+                    else if (rem.Length >= 3)
+                    {
+                        controllerTipoGastos.Editar(
+                             Convert.ToInt32(txtBoxId.Text.Trim()),
+                             txtBoxName.Text,
+                             Convert.ToInt32(txtIdTipogastos.Text));
+
+                        if (controllerTipoGastos.retornoPersistencia.Equals("AT"))
+                        {
+                            behaviorRefresh();
+                            puxarparametroPesquisa();
+
+                        }
+                    }
+                }
+            }
+        }
+
+
         private void puxarparametro(int deslocamento, int limiteregistro, string inicioDeslocamento)
         {
 
@@ -545,6 +669,7 @@ namespace Sistema.View.views
                 bttnEdit.Enabled = true;
                 bttnSave.Enabled = false;
                 bttnSearch.Enabled = true;
+                puxarparametroPesquisa();
 
 
             }
@@ -734,127 +859,7 @@ namespace Sistema.View.views
             }
         }
 
-        private void behaviorSave()
-        {
-            string retiraEspacos = txtBoxName.Text;
-            string rem = retiraEspacos.Trim();
-            if (txtBoxId.Text.Trim().Equals("") || txtBoxId.Text.Trim() == null){
-                if (operationType.Equals("newInsertion") && typeEdition.Equals("insert")){
-                    if (rem.Length <= 3){
-                        var resultado = MessageBox.Show("A Inserção não alcançou o número mínimo de 3 caracteres.\nPara tentar novamente clique no botão 'Sim'. E no botão 'Não' para cancelar e sair do modo de Inserção.", "Aviso do Sistema", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                        if (resultado == DialogResult.Yes)
-                        {
-                            txtBoxName.Text = "";
-                            txtBoxName.Focus();
-                        }
-                        else if (resultado == DialogResult.No)
-                        {
-                            behaviorRefresh();
-                        }
-                    }
-                    else if (rem.Length >= 3)
-                    {
-
-                        controllerTipoGastos.Salvar( Convert.ToInt32(txtIdTipogastos.Text), txtBoxName.Text);
-                        if (controllerTipoGastos.retornoPersistencia.Equals("NS"))
-                        {
-                            txtBoxName.Focus();
-                            txtBoxName.Text = "";
-
-                        }
-                        else if (controllerTipoGastos.retornoPersistencia.Equals("S!"))
-                        {
-                            operationType = "newInsertion";
-                            typeEdition = "insert";
-                            acoesBehaviorSave();
-
-                        }
-                        else if (controllerTipoGastos.retornoPersistencia.Equals("S!!"))
-                        {
-                            //bttnNew
-                            acoesBehaviorSave();
-
-                        }
-                    }
-                }
-            }
-            else if (!txtBoxId.Text.Trim().Equals("") || txtBoxId.Text.Trim() != null)
-            {
-
-                if (operationType.Equals("updateData") && typeEdition.Equals("insert"))
-                {
-                    if (rem.Length <= 3)
-                    {
-
-                        var resultado = MessageBox.Show("A Edição não alcançou o número mínimo de 3 caracteres.\nPara tentar novamente clique no botão 'Sim'. E no botão 'Não' para cancelar e sair do modo de Inserção.", "Aviso do Sistema", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                        if (resultado == DialogResult.Yes)
-                        {
-
-                            txtBoxName.Focus();
-                        }
-                        else if (resultado == DialogResult.No)
-                        {
-
-                            behaviorRefresh();
-                        }
-
-                    }
-                    else if (rem.Length >= 3)
-                    {
-                        controllerTipoGastos.Editar(
-                            Convert.ToInt32(txtBoxId.Text.Trim()),
-                            txtBoxName.Text,
-                            Convert.ToInt32(txtIdTipogastos.Text));
-
-                        if (controllerTipoGastos.retornoPersistencia.Equals("AT"))
-                        {
-
-                            operationType = "newInsertion";
-                            typeEdition = "insert";
-
-                            behaviorRefresh();
-
-
-                        }
-                    }
-                }
-                else if (operationType.Equals("updateData") && typeEdition.Equals("search"))
-                {
-
-                    if (rem.Length <= 3)
-                    {
-                        var resultado = MessageBox.Show("A Edição não alcançou o número mínimo de 3 caracteres.\nPara tentar novamente clique no botão 'Sim'. E no botão 'Não' para cancelar e sair do modo de Inserção.", "Aviso do Sistema", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                        if (resultado == DialogResult.Yes)
-                        {
-                            txtBoxName.Focus();
-                        }
-                        else if (resultado == DialogResult.No)
-                        {
-                            operationType = "updateData";
-                            typeEdition = "search";
-                            behaviorRefresh();
-                        }
-
-                    }
-                    else if (rem.Length >= 3)
-                    {
-                        controllerTipoGastos.Editar(
-                             Convert.ToInt32(txtBoxId.Text.Trim()),
-                             txtBoxName.Text,
-                             Convert.ToInt32(txtIdTipogastos.Text));
-
-                        if (controllerTipoGastos.retornoPersistencia.Equals("AT"))
-                        {
-                            behaviorRefresh();
-                            puxarparametroPesquisa();
-
-                        }
-                    }
-                }
-            }
-        }
-
-
+       
 
 
         private void acoesBehaviorSave()

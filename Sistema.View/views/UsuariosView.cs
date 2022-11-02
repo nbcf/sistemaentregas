@@ -101,26 +101,146 @@ namespace Sistema.View
             InitializeComponent();
 
             carregarEstadoPadrao("CarregaPadraoIDTodosUltimos", 0);
-            bttnBeginPages.Visible = true;
-            bttnOnePageLeft.Visible = true;
-            labelTextPageFrom.Visible = true;
-            toolStripLabel3.Visible = true;
-            labelTextTotalPages.Visible = true;
-            toolStripLabel5.Visible = true;
-            labelTextTotalRegFould.Visible = true;
-            bttnOnePageRight.Visible = true;
-            bttnEndPages.Visible = true;
 
-
-            toolStripLabel1.Visible = false;
-            toolStripLabel2.Visible = false;
-        //    ckCadastrar.Enabled = false;
-          
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void behaviorSave()
         {
+            //   string rem = retiraEspacos.Trim();
 
+            string retiraEspacos = txtBoxUsuario.Text;
+            string remPapel = retiraEspacos.Trim();
+            string retiraEspacosId = txtBoxId.Text;
+            string remEspacosId = retiraEspacosId.Trim();
+            if (remEspacosId.Equals("") || remEspacosId == null)
+            {
+                if (operationType.Equals("newInsertion") && typeEdition.Equals("insert"))
+                {
+                    if (remPapel.Length <= 1)
+                    {
+                        var resultado = MessageBox.Show("A Inserção não alcançou o número mínimo de 3 caracteres.\n" +
+                        "Para tentar novamente clique no botão 'Sim'. E no botão 'Não' para cancelar e sair do modo de Inserção.",
+                        "Aviso do Sistema",
+                        MessageBoxButtons.YesNo,
+                        MessageBoxIcon.Question);
+                        if (resultado == DialogResult.Yes)
+                        {
+
+                            txtBoxUsuario.Text = "";
+                            txtBoxUsuario.Focus();
+                        }
+                        else if (resultado == DialogResult.No)
+                        {
+
+                            behaviorRefresh();
+                        }
+                    }
+                    else if (remPapel.Length >= 1)
+                    {
+                        controllerUsuarios.Salvar(txtBoxUsuario.Text, txtBoxSenha.Text, txtBoxIdPessoa.Text, txtBoxIdPapeis.Text);//   controllerTipoUnds.Salvar(txtBoxName.Text);
+
+                        if ("NS".Equals(controllerUsuarios.AcaoCrudUsuariosController()))
+                        {
+
+                            txtBoxUsuario.Text = "";
+
+                            behaviorRefresh();
+                        }
+                        else if ("S!".Equals(controllerUsuarios.AcaoCrudUsuariosController()))
+                        {
+
+                            operationType = "newInsertion";
+                            typeEdition = "insert";
+
+                            behaviorRefresh();
+
+                        }
+                        else if ("S!!".Equals(controllerUsuarios.AcaoCrudUsuariosController()))
+                        {
+
+                            operationType = "newInsertion";
+                            typeEdition = "insert";
+
+                            behaviorRefresh();
+
+                        }
+                    }
+                    if ("NS".Equals(controllerUsuarios.AcaoCrudUsuariosController()))
+                    {
+
+                        operationType = "newInsertion";
+                        typeEdition = "insert";
+                        behaviorRefresh();
+                    }
+                }
+            }
+            else if (!remEspacosId.Equals("") || remEspacosId != null)
+            {
+
+                if (operationType.Equals("updateData") && typeEdition.Equals("insert"))
+                {
+                    if (remPapel.Length <= 1)
+                    {
+                        var resultado = MessageBox.Show("A Edição não alcançou o número mínimo de 3 caracteres.\nPara tentar novamente clique no botão 'Sim'. E no botão 'Não' para cancelar e sair do modo de Inserção.", "Aviso do Sistema", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                        if (resultado == DialogResult.Yes)
+                        {
+                            txtBoxUsuario.Text = "";
+                        }
+                        else if (resultado == DialogResult.No)
+                        {
+                            behaviorRefresh();
+                        }
+                    }
+                    else if (remPapel.Length >= 1)
+                    {
+                        controllerUsuarios.Editar(txtBoxIdPessoa.Text, txtBoxIdPapeis.Text, txtBoxUsuario.Text, txtBoxSenha.Text, Convert.ToInt32(txtBoxId.Text.Trim()));// controllerTipoUnds.Editar(Convert.ToInt32(txtBoxId.Text.Trim()), txtBoxName.Text); // controllerPapeis.Editar(Convert.ToInt32(txtBoxId.Text), stringPapel, bolCriar, bolRecuperar, bolEditar, bolExcluir, bolMenuOp, bolMenuAdmin, bolMenuGen);
+
+                        if ("AT".Equals(controllerUsuarios.AcaoCrudUsuariosController()))
+                        {
+
+                            behaviorRefresh();
+
+                        }
+                    }
+                    if ("NS".Equals(controllerUsuarios.AcaoCrudUsuariosController()))
+                    {
+
+                        behaviorRefresh();
+                    }
+                }
+                else if (operationType.Equals("updateData") && typeEdition.Equals("search"))
+                {
+                    if (remPapel.Length <= 1)
+                    {
+                        var resultado = MessageBox.Show("A Edição não alcançou o número mínimo de 3 caracteres.\nPara tentar novamente clique no botão 'Sim'. E no botão 'Não' para cancelar e sair do modo de Inserção.", "Aviso do Sistema", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                        if (resultado == DialogResult.Yes)
+                        {
+                            txtBoxUsuario.Text = "";
+
+                        }
+                        else if (resultado == DialogResult.No)
+                        {
+                            behaviorRefresh();
+                        }
+
+                    }
+                    else if (remPapel.Length >= 1)
+                    {
+                        controllerUsuarios.Editar(txtBoxIdPessoa.Text, txtBoxIdPapeis.Text, txtBoxUsuario.Text, txtBoxSenha.Text, Convert.ToInt32(txtBoxId.Text.Trim()));// controllerTipoUnds.Editar(Convert.ToInt32(txtBoxId.Text.Trim()), txtBoxName.Text); // controllerPapeis.Editar(Convert.ToInt32(txtBoxId.Text), stringPapel, bolCriar, bolRecuperar, bolEditar, bolExcluir, bolMenuOp, bolMenuAdmin, bolMenuGen);
+
+                        if ("AT".Equals(controllerUsuarios.AcaoCrudUsuariosController()))
+                        {
+                            behaviorRefresh();
+                            puxarparametroPesquisa();
+
+                        }
+                    }
+                    if ("NS".Equals(controllerUsuarios.AcaoCrudUsuariosController()))
+                    {
+                        behaviorRefresh();
+                    }
+                }
+            }
         }
 
 
@@ -502,10 +622,6 @@ namespace Sistema.View
             bttnSave.Enabled = false;
             bttnNew.Enabled = true;
             txtBoxId.Enabled = false;
-            //bttnPrint.Enabled = false;
-            //bttnImport.Enabled = false;
-            //bttnExcel.Enabled = false;
-            //       bttnTools.Enabled = true;
             radioBttnComeca.Checked = false;
             radioBttnContem.Checked = false;
             radioBttnTermina.Checked = false;
@@ -514,51 +630,27 @@ namespace Sistema.View
 
             tabControlAssets.Visible = false;
             tabControlAssets.TabPages.Remove(tabPagePesquisar);
-            // tabControlAssets.TabPages.Remove(tabPageFormulario);
-            // tabControlAssets.TabPages.Remove(tabPageOptListagem);
             groupBoxFormulario.Enabled = false;
             groupBoxFormulario.Visible = false;
    
 
             clearFieldsFormulario();
             disableFieldsFormulario();
+            bttnBeginPages.Visible = true;
+            bttnOnePageLeft.Visible = true;
+            labelTextPageFrom.Visible = true;
+            toolStripLabel3.Visible = true;
+            labelTextTotalPages.Visible = true;
+            toolStripLabel5.Visible = true;
+            labelTextTotalRegFould.Visible = true;
+            bttnOnePageRight.Visible = true;
+            bttnEndPages.Visible = true;
 
+
+            toolStripLabel1.Visible = false;
+            toolStripLabel2.Visible = false;
         }
 
-        //private void bttnTools_Click(object sender, EventArgs e)
-        //{
-        //    countBttnToggleTools++;
-        //    if (countBttnToggleTools % 2 == 0)
-        //    {
-        //        tabControlAssets.Visible = true;
-        //        tabControlAssets.TabPages.Remove(tabPagePesquisar);
-        //        //   tabControlAssets.TabPages.Remove(tabPageFormulario);
-        //        //  tabControlAssets.TabPages.Remove(tabPageOptListagem);
-        //        //   tabControlAssets.TabPages.Insert(0, tabPageOptListagem);
-        //        groupBoxFormulario.Enabled = false;
-        //        groupBoxFormulario.Visible = false;
-
-        //        bttnNew.Enabled = false;
-        //        bttnRefresh.Enabled = false;
-        //        bttnSearch.Enabled = false;
-
-        //    }
-        //    else
-        //    {
-        //        tabControlAssets.Visible = false;
-        //        tabControlAssets.TabPages.Remove(tabPagePesquisar);
-        //        //  tabControlAssets.TabPages.Remove(tabPageFormulario);
-        //        // tabControlAssets.TabPages.Remove(tabPageOptListagem);
-        //        groupBoxFormulario.Enabled = false;
-        //        groupBoxFormulario.Visible = false;
-
-        //        bttnNew.Enabled = true;
-        //        bttnRefresh.Enabled = true;
-        //        bttnSearch.Enabled = true;
-        //        puxarparametro(0, Convert.ToInt32(cbButtnQuantPage1.SelectedItem), "Sim");
-
-        //    }
-        //}
 
         private void bttnSearch_Click_1(object sender, EventArgs e)
         {
@@ -567,8 +659,7 @@ namespace Sistema.View
             {
                 tabControlAssets.Visible = true;
                 tabControlAssets.TabPages.Remove(tabPagePesquisar);
-             //   tabControlAssets.TabPages.Remove(tabPageFormulario);
-             //   tabControlAssets.TabPages.Remove(tabPageOptListagem);
+
                 tabControlAssets.TabPages.Insert(0, tabPagePesquisar);
                 groupBoxFormulario.Enabled = false;
                 groupBoxFormulario.Visible = false;
@@ -580,8 +671,6 @@ namespace Sistema.View
                 cbButtonPesquisarEm.SelectedIndex = 0;
                 radioBttnComeca.Checked = true;
                 txtBoxPesquisar.Text = "";
-
-            //    bttnTools.Enabled = false;
                 bttnBeginPages.Visible = false;
                 bttnOnePageLeft.Visible = false;
                 labelTextPageFrom.Visible = false;
@@ -591,8 +680,6 @@ namespace Sistema.View
                 labelTextTotalRegFould.Visible = false;
                 bttnOnePageRight.Visible = false;
                 bttnEndPages.Visible = false;
-
-
                 toolStripLabel1.Visible = true;
                 toolStripLabel2.Visible = true;
                 txtBoxPesquisar.Text = "";
@@ -611,8 +698,6 @@ namespace Sistema.View
             {
                 tabControlAssets.Visible = false;
                 tabControlAssets.TabPages.Remove(tabPagePesquisar);
-                //    tabControlAssets.TabPages.Remove(tabPageFormulario);
-                //  tabControlAssets.TabPages.Remove(tabPageOptListagem);
                 groupBoxFormulario.Enabled = false;
                 groupBoxFormulario.Visible = false;
 
@@ -630,12 +715,8 @@ namespace Sistema.View
                 labelTextTotalRegFould.Visible = true;
                 bttnOnePageRight.Visible = true;
                 bttnEndPages.Visible = true;
-          //      bttnTools.Enabled = true;
-
                 toolStripLabel1.Visible = false;
                 toolStripLabel2.Visible = false;
-
-
                 puxarparametro(0, Convert.ToInt32(cbButtnQuantPage1.SelectedItem), "Sim");
                 typeEdition = "insert";
               
@@ -697,14 +778,13 @@ namespace Sistema.View
                 gridCrudUsuarios.Visible = true;
                 tabControlAssets.Visible = true;
                 tabControlAssets.TabPages.Remove(tabPagePesquisar);
-                //   tabControlAssets.TabPages.Remove(tabPageFormulario);
-                //   tabControlAssets.TabPages.Remove(tabPageOptListagem);
                 groupBoxFormulario.Enabled = false;
                 groupBoxFormulario.Visible = false;
                 tabControlAssets.TabPages.Insert(0, tabPagePesquisar);
                 bttnEdit.Enabled = true;
                 bttnSave.Enabled = false;
                 bttnSearch.Enabled = true;
+                puxarparametroPesquisa();
 
             }
             else if (operationType == "" || operationType == "newInsertion" || operationType == "updateData" || operationType == "search" && typeEdition == "insert")
@@ -722,8 +802,6 @@ namespace Sistema.View
                 gridCrudUsuarios.Visible = true;
                 tabControlAssets.Visible = false;
                 tabControlAssets.TabPages.Remove(tabPagePesquisar);
-                // tabControlAssets.TabPages.Remove(tabPageFormulario);
-                //   tabControlAssets.TabPages.Remove(tabPageOptListagem);
                 groupBoxFormulario.Enabled = false;
                 groupBoxFormulario.Visible = false;
                 clearFieldsFormulario();
@@ -776,140 +854,82 @@ namespace Sistema.View
         }
         private void behaviorDel()
         {
-            bttnDel.Enabled = true;
-            bttnEdit.Enabled = false;
-            bttnSearch.Enabled = true;
-            bttnRefresh.Enabled = true;
-            bttnSave.Enabled = false;
-            bttnNew.Enabled = true;
-            controllerUsuarios.Excluir(Convert.ToInt32(gridCrudUsuarios.CurrentRow.Cells[0].Value));
-            puxarparametro(0, Convert.ToInt32(cbButtnQuantPage1.SelectedItem), "Sim");
-        }
-
-        private void behaviorSave()
-        {
-            string retiraEspacos = txtBoxUsuario.Text;
-            string rem = retiraEspacos.Trim();
-
-            if (txtBoxId.Text.Trim().Equals("") || txtBoxId.Text.Trim() == null)
+            if (operationType == "updateData" && typeEdition == "search")
             {
-                if (operationType.Equals("newInsertion") && typeEdition.Equals("insert"))
-                {
-                    if (rem.Length <= 3)
-                    {
-                        var resultado = MessageBox.Show("A Inserção não alcançou o número mínimo de 3 caracteres.\nPara tentar novamente clique no botão 'Sim'. E no botão 'Não' para cancelar e sair do modo de Inserção.", "Aviso do Sistema", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                        if (resultado == DialogResult.Yes)
-                        {
-                            txtBoxUsuario.Text = "";
-                            txtBoxUsuario.Focus();
-                        }
-                        else if (resultado == DialogResult.No)
-                        {
-                            behaviorRefresh();
-                        }
-                    }
-                    else if (rem.Length >= 3)
-                    {
-                       
-                        controllerUsuarios.Salvar( txtBoxUsuario.Text, txtBoxSenha.Text, txtBoxIdPessoa.Text, txtBoxIdPapeis.Text);
-                        if (controllerUsuarios.retornoPersistencia.Equals("NS"))
-                        {
-                            txtBoxUsuario.Focus();
-                            txtBoxUsuario.Text = "";
-                            MessageBox.Show("Operação Cancelada!", "Aviso" + Convert.ToString(controllerUsuarios.retornoPersistencia), MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        }
-                        else if (controllerUsuarios.retornoPersistencia.Equals("S!"))
-                        {
+                controllerUsuarios.Excluir(Convert.ToInt32(gridCrudUsuarios.CurrentRow.Cells[0].Value));
 
-                            operationType = "newInsertion";
-                            typeEdition = "insert";
-                            acoesBehaviorSave();
-                            MessageBox.Show("Registro Salvo Com Sucesso!" + Convert.ToString(controllerUsuarios.retornoPersistencia), "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        }
-                        else if (controllerUsuarios.retornoPersistencia.Equals("S!!"))
-                        {
-                            acoesBehaviorSave();
-                            MessageBox.Show("Dado Existente Salvo!" + Convert.ToString(controllerUsuarios.retornoPersistencia), "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        }
+                if ("DEL".Equals(controllerUsuarios.AcaoCrudUsuariosController()))
+                {
+                    bttnDel.Enabled = true;
+                    bttnEdit.Enabled = false;
+                    bttnSearch.Enabled = true;
+                    bttnRefresh.Enabled = true;
+                    bttnSave.Enabled = false;
+                    bttnNew.Enabled = false;
+                    puxarparametroPesquisa();
+
+                    int tamanho_lista = gridCrudUsuarios.RowCount;
+
+                    if (tamanho_lista == 0)
+                    {
+                        bttnDel.Enabled = false;
+                        bttnEdit.Enabled = false;
+                        bttnRefresh.Enabled = false;
+                        bttnSearch.Enabled = true;
+                        puxarparametroPesquisa();
                     }
+
+                }
+                else if ("NDEL".Equals(controllerUsuarios.AcaoCrudUsuariosController()))
+                {
+
                 }
             }
-            else if (!txtBoxId.Text.Trim().Equals("") || txtBoxId.Text.Trim() != null)
+            else if (operationType == "" || operationType == "newInsertion" || operationType == "updateData" || operationType == "search" && typeEdition == "insert")
             {
+                controllerUsuarios.Excluir(Convert.ToInt32(gridCrudUsuarios.CurrentRow.Cells[0].Value));
 
-                if (operationType.Equals("updateData") && typeEdition.Equals("insert"))
+                if ("DEL".Equals(controllerUsuarios.AcaoCrudUsuariosController()))
                 {
-                    if (rem.Length <= 3)
-                    {
+                    bttnDel.Enabled = true;
+                    bttnEdit.Enabled = false;
+                    bttnSearch.Enabled = true;
+                    bttnRefresh.Enabled = true;
+                    bttnSave.Enabled = false;
+                    bttnNew.Enabled = true;
+                    controllerUsuarios.Excluir(Convert.ToInt32(gridCrudUsuarios.CurrentRow.Cells[0].Value));
+                    puxarparametro(0, Convert.ToInt32(cbButtnQuantPage1.SelectedItem), "Sim");
 
-                        var resultado = MessageBox.Show("A Edição não alcançou o número mínimo de 3 caracteres.\nPara tentar novamente clique no botão 'Sim'. E no botão 'Não' para cancelar e sair do modo de Inserção.", "Aviso do Sistema", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                        if (resultado == DialogResult.Yes)
-                        {
-                            txtBoxUsuario.Focus();
-                        }
-                        else if (resultado == DialogResult.No)
-                        {
+                    clearFieldsFormulario();
 
-                            behaviorRefresh();
-                        }
-
-                    }
-                    else if (rem.Length >= 3)
-                    {
-
-
-                        controllerUsuarios.Editar(Convert.ToInt32(txtBoxId.Text.Trim()), txtBoxUsuario.Text, txtBoxSenha.Text ,txtBoxIdPessoa.Text, txtBoxIdPapeis.Text);
-
-                        if (controllerUsuarios.retornoPersistencia.Equals("AT"))
-                        {
-
-                            operationType = "";
-                            typeEdition = "";
-                            behaviorRefresh();
-
-                            MessageBox.Show(" Resgistro Listado doi Editado !   \n    else if (operationType.Equals(updateData) && typeEdition.Equals(insert) ) ", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        }
-                    }
                 }
-                else if (operationType.Equals("updateData") && typeEdition.Equals("search"))
+                else if ("NDEL".Equals(controllerUsuarios.AcaoCrudUsuariosController())) { }
+
+            }
+            else if (operationType == "" || operationType == "newInsertion" || operationType == "updateData" || operationType == "search" && typeEdition == "search")
+            {
+                controllerUsuarios.Excluir(Convert.ToInt32(gridCrudUsuarios.CurrentRow.Cells[0].Value));
+                if ("DEL".Equals(controllerUsuarios.AcaoCrudUsuariosController()))
                 {
-                    MessageBox.Show("Entrou onde eu esperava", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    if (rem.Length <= 3)
-                    {
+                    bttnDel.Enabled = true;
+                    bttnEdit.Enabled = false;
+                    bttnSearch.Enabled = true;
+                    bttnRefresh.Enabled = true;
+                    bttnSave.Enabled = false;
+                    bttnNew.Enabled = true;
+                    controllerUsuarios.Excluir(Convert.ToInt32(gridCrudUsuarios.CurrentRow.Cells[0].Value));
+                    puxarparametro(0, Convert.ToInt32(cbButtnQuantPage1.SelectedItem), "Sim");
 
-                        var resultado = MessageBox.Show("A Edição não alcançou o número mínimo de 3 caracteres.\nPara tentar novamente clique no botão 'Sim'. E no botão 'Não' para cancelar e sair do modo de Inserção.", "Aviso do Sistema", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                        if (resultado == DialogResult.Yes)
-                        {
+                    clearFieldsFormulario();
 
-                            // txtBoxName.Text = "";
-                            txtBoxUsuario.Focus();
-                        }
-                        else if (resultado == DialogResult.No)
-                        {
+                }
+                else if ("NDEL".Equals(controllerUsuarios.AcaoCrudUsuariosController()))
+                {
 
-                            behaviorRefresh();
-                        }
-
-                    }
-                    else if (rem.Length >= 3)
-                    {
-                        controllerUsuarios.Editar(Convert.ToInt32(txtBoxId.Text.Trim()), txtBoxUsuario.Text, txtBoxSenha.Text, txtBoxIdPessoa.Text, txtBoxIdPapeis.Text);
-                      
-                        if (controllerUsuarios.retornoPersistencia.Equals("AT"))
-                        {
-                           
-                            behaviorRefresh();
-                            puxarparametroPesquisa();
-
-                            MessageBox.Show("Registro Pesquisado foi Atualizado !  \n else if (operationType.Equals(search) && typeEdition.Equals(search))", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        }
-                    }
                 }
             }
         }
-
-
-
+      
 
         private void acoesBehaviorSave()
         {
@@ -1582,7 +1602,10 @@ namespace Sistema.View
             _InstanciaformCrudUsuarios = null;
         }
 
-       
+        private void bttnDel_Click(object sender, EventArgs e)
+        {
+
+        }
     }
   
 }

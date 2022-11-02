@@ -16,23 +16,33 @@ namespace Sistema.Controller
         UsuariosModel modelUsuarios = new UsuariosModel();
         public int encontrados;
         public int encontradosPesquisa;
-        public string retornoPersistencia;
+
         public PapeisModel pmc = new PapeisModel();
         public PessoasModel pec = new PessoasModel();
 
         public void Salvar(string usuario, string senha, string idpessoa, string idpapel){
             dao.Salvar(Convert.ToInt32(idpessoa), Convert.ToInt32(idpapel), usuario,    senha);
-            retornoRegistroSalvo();
+            AcaoCrudUsuariosController();
         }
 
 
         public void Excluir(int idpessoa){
             dao.Excluir(idpessoa);
         }
+        public void Editar(
+            string idpessoa,
+            string idpapel,
+            string usuario,
+            string senha,
+            int idusuario){
 
-        public void Editar(int idusuario, string usuario, string senha, string idpessoa, string idpapel) {
-            dao.Editar(Convert.ToInt32(idpessoa), Convert.ToInt32(idpapel),  usuario,  senha, idusuario);
-            retornoRegistroSalvo();
+            dao.Editar(
+                Convert.ToInt32(idpessoa),
+                Convert.ToInt32(idpapel),
+                usuario,
+                senha,
+                idusuario);
+            AcaoCrudUsuariosController();
         }
 
 
@@ -44,8 +54,8 @@ namespace Sistema.Controller
             return dao.ListarPesquisados();
         }
 
-        public string retornoRegistroSalvo(){
-            return dao.VerificarPersistencia();
+        public string AcaoCrudUsuariosController(){
+            return dao.AcaoCrudUsuariosDAO();
         }
 
         public object retornoDadosPapeis(string idpapel)
