@@ -29,6 +29,7 @@ namespace Sistema.View.views
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FornecedoresView));
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.bttnNew = new System.Windows.Forms.ToolStripButton();
             this.bttnSave = new System.Windows.Forms.ToolStripButton();
@@ -62,7 +63,7 @@ namespace Sistema.View.views
             this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripLabel4 = new System.Windows.Forms.ToolStripLabel();
-            this.cbButtnQuantPage1 = new System.Windows.Forms.ToolStripComboBox();
+            this.cbBtnQtPg = new System.Windows.Forms.ToolStripComboBox();
             this.toolStripLabel6 = new System.Windows.Forms.ToolStripLabel();
             this.cbOrdemParam1 = new System.Windows.Forms.ToolStripComboBox();
             this.toolStripLabel7 = new System.Windows.Forms.ToolStripLabel();
@@ -266,7 +267,7 @@ namespace Sistema.View.views
             this.tabPageFormulario.Location = new System.Drawing.Point(4, 29);
             this.tabPageFormulario.Name = "tabPageFormulario";
             this.tabPageFormulario.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageFormulario.Size = new System.Drawing.Size(792, 43);
+            this.tabPageFormulario.Size = new System.Drawing.Size(867, 43);
             this.tabPageFormulario.TabIndex = 2;
             this.tabPageFormulario.Text = "Formulário";
             this.tabPageFormulario.UseVisualStyleBackColor = true;
@@ -325,7 +326,7 @@ namespace Sistema.View.views
             this.toolStripLabel2,
             this.toolStripSeparator1,
             this.toolStripLabel4,
-            this.cbButtnQuantPage1,
+            this.cbBtnQtPg,
             this.toolStripLabel6,
             this.cbOrdemParam1,
             this.toolStripLabel7,
@@ -342,7 +343,7 @@ namespace Sistema.View.views
             this.bttnBeginPages.Image = global::Sistema.View.Properties.Resources._2leftarrow;
             this.bttnBeginPages.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.bttnBeginPages.Name = "bttnBeginPages";
-            this.bttnBeginPages.Size = new System.Drawing.Size(23, 26);
+            this.bttnBeginPages.Size = new System.Drawing.Size(23, 22);
             this.bttnBeginPages.Text = "toolStripButton1";
             this.bttnBeginPages.Click += new System.EventHandler(this.bttnBeginPages_Click);
             // 
@@ -352,7 +353,7 @@ namespace Sistema.View.views
             this.bttnOnePageLeft.Image = global::Sistema.View.Properties.Resources._1leftarrow;
             this.bttnOnePageLeft.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.bttnOnePageLeft.Name = "bttnOnePageLeft";
-            this.bttnOnePageLeft.Size = new System.Drawing.Size(23, 26);
+            this.bttnOnePageLeft.Size = new System.Drawing.Size(23, 22);
             this.bttnOnePageLeft.Text = "toolStripButton2";
             this.bttnOnePageLeft.Click += new System.EventHandler(this.bttnOnePageLeft_Click);
             // 
@@ -360,35 +361,35 @@ namespace Sistema.View.views
             // 
             this.labelTextPageFrom.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelTextPageFrom.Name = "labelTextPageFrom";
-            this.labelTextPageFrom.Size = new System.Drawing.Size(17, 26);
+            this.labelTextPageFrom.Size = new System.Drawing.Size(17, 22);
             this.labelTextPageFrom.Text = "0";
             // 
             // toolStripLabel3
             // 
             this.toolStripLabel3.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStripLabel3.Name = "toolStripLabel3";
-            this.toolStripLabel3.Size = new System.Drawing.Size(15, 26);
+            this.toolStripLabel3.Size = new System.Drawing.Size(15, 22);
             this.toolStripLabel3.Text = "/";
             // 
             // labelTextTotalPages
             // 
             this.labelTextTotalPages.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelTextTotalPages.Name = "labelTextTotalPages";
-            this.labelTextTotalPages.Size = new System.Drawing.Size(17, 26);
+            this.labelTextTotalPages.Size = new System.Drawing.Size(17, 22);
             this.labelTextTotalPages.Text = "0";
             // 
             // toolStripLabel5
             // 
             this.toolStripLabel5.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStripLabel5.Name = "toolStripLabel5";
-            this.toolStripLabel5.Size = new System.Drawing.Size(15, 26);
+            this.toolStripLabel5.Size = new System.Drawing.Size(15, 22);
             this.toolStripLabel5.Text = "-";
             // 
             // labelTextTotalRegFould
             // 
             this.labelTextTotalRegFould.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelTextTotalRegFould.Name = "labelTextTotalRegFould";
-            this.labelTextTotalRegFould.Size = new System.Drawing.Size(17, 26);
+            this.labelTextTotalRegFould.Size = new System.Drawing.Size(17, 22);
             this.labelTextTotalRegFould.Text = "0";
             // 
             // bttnOnePageRight
@@ -397,7 +398,7 @@ namespace Sistema.View.views
             this.bttnOnePageRight.Image = global::Sistema.View.Properties.Resources._1rightarrow;
             this.bttnOnePageRight.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.bttnOnePageRight.Name = "bttnOnePageRight";
-            this.bttnOnePageRight.Size = new System.Drawing.Size(23, 26);
+            this.bttnOnePageRight.Size = new System.Drawing.Size(23, 22);
             this.bttnOnePageRight.Text = "toolStripButton3";
             this.bttnOnePageRight.Click += new System.EventHandler(this.bttnOnePageRight_Click);
             // 
@@ -407,7 +408,7 @@ namespace Sistema.View.views
             this.bttnEndPages.Image = global::Sistema.View.Properties.Resources._2rightarrow;
             this.bttnEndPages.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.bttnEndPages.Name = "bttnEndPages";
-            this.bttnEndPages.Size = new System.Drawing.Size(23, 26);
+            this.bttnEndPages.Size = new System.Drawing.Size(23, 22);
             this.bttnEndPages.Text = "toolStripButton4";
             this.bttnEndPages.Click += new System.EventHandler(this.bttnEndPages_Click);
             // 
@@ -415,32 +416,32 @@ namespace Sistema.View.views
             // 
             this.toolStripLabel1.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStripLabel1.Name = "toolStripLabel1";
-            this.toolStripLabel1.Size = new System.Drawing.Size(209, 26);
+            this.toolStripLabel1.Size = new System.Drawing.Size(209, 22);
             this.toolStripLabel1.Text = "Total Registros Encontrados : ";
             // 
             // toolStripLabel2
             // 
             this.toolStripLabel2.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStripLabel2.Name = "toolStripLabel2";
-            this.toolStripLabel2.Size = new System.Drawing.Size(17, 26);
+            this.toolStripLabel2.Size = new System.Drawing.Size(17, 22);
             this.toolStripLabel2.Text = "0";
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 29);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
             // 
             // toolStripLabel4
             // 
             this.toolStripLabel4.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStripLabel4.Name = "toolStripLabel4";
-            this.toolStripLabel4.Size = new System.Drawing.Size(54, 26);
+            this.toolStripLabel4.Size = new System.Drawing.Size(54, 22);
             this.toolStripLabel4.Text = "Qt.Pg.:";
             // 
-            // cbButtnQuantPage1
+            // cbBtnQtPg
             // 
-            this.cbButtnQuantPage1.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbButtnQuantPage1.Items.AddRange(new object[] {
+            this.cbBtnQtPg.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbBtnQtPg.Items.AddRange(new object[] {
             "5",
             "10",
             "15",
@@ -453,15 +454,15 @@ namespace Sistema.View.views
             "50",
             "75",
             "100"});
-            this.cbButtnQuantPage1.Name = "cbButtnQuantPage1";
-            this.cbButtnQuantPage1.Size = new System.Drawing.Size(75, 29);
-            this.cbButtnQuantPage1.SelectedIndexChanged += new System.EventHandler(this.cbButtnQuantPage1_SelectedIndexChanged);
+            this.cbBtnQtPg.Name = "cbBtnQtPg";
+            this.cbBtnQtPg.Size = new System.Drawing.Size(75, 25);
+            this.cbBtnQtPg.SelectedIndexChanged += new System.EventHandler(this.cbButtnQuantPage1_SelectedIndexChanged);
             // 
             // toolStripLabel6
             // 
             this.toolStripLabel6.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStripLabel6.Name = "toolStripLabel6";
-            this.toolStripLabel6.Size = new System.Drawing.Size(77, 26);
+            this.toolStripLabel6.Size = new System.Drawing.Size(77, 22);
             this.toolStripLabel6.Text = "Listar Por:";
             // 
             // cbOrdemParam1
@@ -471,14 +472,14 @@ namespace Sistema.View.views
             "Codigo",
             "Alfabeto"});
             this.cbOrdemParam1.Name = "cbOrdemParam1";
-            this.cbOrdemParam1.Size = new System.Drawing.Size(75, 29);
+            this.cbOrdemParam1.Size = new System.Drawing.Size(75, 25);
             this.cbOrdemParam1.SelectedIndexChanged += new System.EventHandler(this.cbOrdemParam1_SelectedIndexChanged);
             // 
             // toolStripLabel7
             // 
             this.toolStripLabel7.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStripLabel7.Name = "toolStripLabel7";
-            this.toolStripLabel7.Size = new System.Drawing.Size(60, 26);
+            this.toolStripLabel7.Size = new System.Drawing.Size(60, 22);
             this.toolStripLabel7.Text = "Ordem:";
             // 
             // cbOrdenarPor1
@@ -499,6 +500,7 @@ namespace Sistema.View.views
             this.gridCrudFornecedores.Name = "gridCrudFornecedores";
             this.gridCrudFornecedores.Size = new System.Drawing.Size(875, 298);
             this.gridCrudFornecedores.TabIndex = 9;
+            this.gridCrudFornecedores.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridCrudFornecedores_CellClick);
             // 
             // FornecedoresView
             // 
@@ -509,12 +511,12 @@ namespace Sistema.View.views
             this.Controls.Add(this.toolStrip2);
             this.Controls.Add(this.tabControlAssets);
             this.Controls.Add(this.toolStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "FornecedoresView";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FornecedoresView";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FornecedoresView_FormClosing);
-            this.Load += new System.EventHandler(this.FornecedoresView_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.tabControlAssets.ResumeLayout(false);
@@ -565,7 +567,7 @@ namespace Sistema.View.views
         private System.Windows.Forms.ToolStripLabel toolStripLabel2;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripLabel toolStripLabel4;
-        private System.Windows.Forms.ToolStripComboBox cbButtnQuantPage1;
+        private System.Windows.Forms.ToolStripComboBox cbBtnQtPg;
         private System.Windows.Forms.ToolStripLabel toolStripLabel6;
         private System.Windows.Forms.ToolStripComboBox cbOrdemParam1;
         private System.Windows.Forms.ToolStripLabel toolStripLabel7;
