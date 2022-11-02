@@ -50,7 +50,7 @@ namespace Sistema.Controller
 
         public object retornoDadosPapeis(string idpapel)
         {
-           dao.ExibirDadosPapeis(idpapel);
+            dao.ExibirDadosPapeis(idpapel);
             pmc.Nomepapel = dao.pmodelDAO.Nomepapel;
             pmc.Criar = dao.pmodelDAO.Criar;
             pmc.Recuperar = dao.pmodelDAO.Recuperar;
@@ -66,8 +66,8 @@ namespace Sistema.Controller
 
         public object retornoDadoPessoas(string idpessoa){
 
-            dao.ExibirDadosPessoa(idpessoa);
-            pec.Nomepessoa = dao.pessmodelDAO.Nomepessoa;
+           
+            pec.Nomepessoa = dao.ExibirDadosPessoa(idpessoa);
             return pec;
         }
 

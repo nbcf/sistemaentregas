@@ -374,7 +374,7 @@ namespace Sistema.View
             this.gridCrudImporES.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gridCrudImporES.Size = new System.Drawing.Size(774, 366);
             this.gridCrudImporES.TabIndex = 10;
-            this.gridCrudImporES.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridCrudImporES_CellContentClick);
+  //          this.gridCrudImporES.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridCrudImporES_CellContentClick);
             this.gridCrudImporES.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.gridCrudImporES_CellMouseDoubleClick);
             // 
             // ImportEncomendasToSaida
@@ -393,7 +393,7 @@ namespace Sistema.View
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Despachar Encomendas";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ImportEncomendasToSaida_FormClosed);
-            this.Load += new System.EventHandler(this.ImportEncomendasToSaida_Load);
+      //      this.Load += new System.EventHandler(this.ImportEncomendasToSaida_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.tabControlAssets.ResumeLayout(false);

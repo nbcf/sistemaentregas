@@ -213,6 +213,16 @@ namespace Sistema.View.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap close24 {
+            get {
+                object obj = ResourceManager.GetObject("close24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap conf {
             get {
                 object obj = ResourceManager.GetObject("conf", resourceCulture);
@@ -466,6 +476,16 @@ namespace Sistema.View.Properties {
         internal static System.Drawing.Bitmap ok_32 {
             get {
                 object obj = ResourceManager.GetObject("ok_32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ok24 {
+            get {
+                object obj = ResourceManager.GetObject("ok24", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

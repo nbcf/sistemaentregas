@@ -540,7 +540,7 @@ namespace Sistema.View
             bttnNew.Enabled = true;
           //  bttnPrint.Enabled = false;
          //   bttnImport.Enabled = false;
-            bttnExcel.Enabled = false;
+       //     bttnExcel.Enabled = false;
             radioBttnComeca.Checked = false;
             radioBttnContem.Checked = false;
             radioBttnTermina.Checked = false;
@@ -666,7 +666,7 @@ namespace Sistema.View
                 bttnNew.Enabled = true;
            //     bttnPrint.Enabled = false;
             //    bttnImport.Enabled = false;
-                bttnExcel.Enabled = false;
+        //        bttnExcel.Enabled = false;
                 radioBttnComeca.Checked = false;
                 radioBttnContem.Checked = false;
                 radioBttnTermina.Checked = false;
@@ -687,7 +687,7 @@ namespace Sistema.View
                 bttnNew.Enabled = true;
           //      bttnPrint.Enabled = false;
           //      bttnImport.Enabled = false;
-                bttnExcel.Enabled = false;
+        //        bttnExcel.Enabled = false;
                 radioBttnComeca.Checked = false;
                 radioBttnContem.Checked = false;
                 radioBttnTermina.Checked = false;
@@ -707,7 +707,7 @@ namespace Sistema.View
             bttnNew.Enabled = false;
        //     bttnPrint.Enabled = false;
        //     bttnImport.Enabled = false;
-            bttnExcel.Enabled = false;
+       //     bttnExcel.Enabled = false;
             operationType = "newInsertion";
             txtBoxId.Enabled = false;
             txtBoxId.Enabled = false;
@@ -993,7 +993,7 @@ namespace Sistema.View
             bttnNew.Enabled = true;
          //   bttnPrint.Enabled = false;
          //   bttnImport.Enabled = false;
-            bttnExcel.Enabled = false;
+       //     bttnExcel.Enabled = false;
             radioBttnComeca.Checked = false;
             radioBttnContem.Checked = false;
             radioBttnTermina.Checked = false;
@@ -1016,7 +1016,7 @@ namespace Sistema.View
             bttnNew.Enabled = false;
       //      bttnPrint.Enabled = false;
       //      bttnImport.Enabled = false;
-            bttnExcel.Enabled = false;
+       //     bttnExcel.Enabled = false;
 
             txtBoxId.Enabled = false;
             txtBoxId.Text = gridCrudEndereco.CurrentRow.Cells[0].Value.ToString();
@@ -1127,7 +1127,7 @@ namespace Sistema.View
             bttnNew.Enabled = false;
        //     bttnPrint.Enabled = false;
         //    bttnImport.Enabled = false;
-            bttnExcel.Enabled = false;
+       //     bttnExcel.Enabled = false;
             tabControlAssets.Visible = true;
         }
 
@@ -1157,7 +1157,7 @@ namespace Sistema.View
             bttnSave.Enabled = false;
         //    bttnPrint.Enabled = false;
        //     bttnImport.Enabled = false;
-            bttnExcel.Enabled = false;
+       //     bttnExcel.Enabled = false;
             radioBttnComeca.Checked = false;
             radioBttnContem.Checked = false;
             radioBttnTermina.Checked = false;
@@ -1186,7 +1186,7 @@ namespace Sistema.View
             bttnSave.Enabled = false;
          //   bttnPrint.Enabled = false;
          //   bttnImport.Enabled = false;
-            bttnExcel.Enabled = false;
+       //     bttnExcel.Enabled = false;
 
             txtBoxId.Text = gridCrudEndereco.CurrentRow.Cells[0].Value.ToString();
             stringPapel = gridCrudEndereco.CurrentRow.Cells[1].Value.ToString();

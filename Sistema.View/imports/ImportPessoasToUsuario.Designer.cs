@@ -71,9 +71,9 @@ namespace Sistema.View
             // 
             // txtBoxPesquisar
             // 
-            this.txtBoxPesquisar.BackColor = System.Drawing.SystemColors.Window;
+            this.txtBoxPesquisar.BackColor = System.Drawing.Color.White;
             this.txtBoxPesquisar.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBoxPesquisar.ForeColor = System.Drawing.SystemColors.Window;
+            this.txtBoxPesquisar.ForeColor = System.Drawing.Color.Black;
             this.txtBoxPesquisar.Location = new System.Drawing.Point(6, 6);
             this.txtBoxPesquisar.Name = "txtBoxPesquisar";
             this.txtBoxPesquisar.Size = new System.Drawing.Size(288, 25);
@@ -108,7 +108,7 @@ namespace Sistema.View
             // 
             this.radioBttnComeca.AutoSize = true;
             this.radioBttnComeca.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioBttnComeca.Location = new System.Drawing.Point(299, 9);
+            this.radioBttnComeca.Location = new System.Drawing.Point(300, 9);
             this.radioBttnComeca.Name = "radioBttnComeca";
             this.radioBttnComeca.Size = new System.Drawing.Size(74, 21);
             this.radioBttnComeca.TabIndex = 6;
@@ -128,7 +128,7 @@ namespace Sistema.View
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(817, 409);
             this.dataGridView1.TabIndex = 11;
-            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick_2);
+            this.dataGridView1.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_CellMouseDoubleClick_1);
             // 
             // ImportPessoasToUsuario
             // 
@@ -144,6 +144,8 @@ namespace Sistema.View
             this.Name = "ImportPessoasToUsuario";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Importar Pessoa";
+ //           this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ImportPessoasToUsuario_FormClosing);
+            this.Load += new System.EventHandler(this.ImportPessoasToUsuario_Load);
             this.tabControlAssets.ResumeLayout(false);
             this.tabPagePesquisar.ResumeLayout(false);
             this.tabPagePesquisar.PerformLayout();

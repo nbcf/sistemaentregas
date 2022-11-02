@@ -66,6 +66,7 @@ namespace Sistema.View
             this.Name = "ImportVeiculoToSaidas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Importar Veiculos";
+            this.Load += new System.EventHandler(this.ImportVeiculoToSaidas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridImportVS)).EndInit();
             this.ResumeLayout(false);
 

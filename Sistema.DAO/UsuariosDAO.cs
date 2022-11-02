@@ -148,7 +148,7 @@ namespace Sistema.DAO
             }
         }
 
-        public PapeisModel ExibirDadosPapeis(string idpapel) {
+        public Object ExibirDadosPapeis(string idpapel) {
             PapeisModel pmodel = new PapeisModel();
             try
             {
@@ -158,6 +158,7 @@ namespace Sistema.DAO
                 cmdVerificar = new MySqlCommand("SELECT * FROM papeis where idpapel = @idpapel", classeConecta.con);
                 cmdVerificar.Parameters.AddWithValue("@idpapel", idpapel);
                 reader = cmdVerificar.ExecuteReader();
+                classeConecta.FecharCon();
                 if (reader.HasRows)
                 {
                     while (reader.Read())
@@ -172,10 +173,10 @@ namespace Sistema.DAO
                         pmodel.Menugen          =       "1".Equals(reader["Menugen"])     ? true : false;
                     }
                 }
-                classeConecta.FecharCon();
-                return pmodel;
-
-            }catch (Exception ex){
+                pmodelDAO = pmodel;
+                return pmodelDAO;
+            }
+            catch (Exception ex){
                 throw ex;
             }
         }

@@ -14,6 +14,7 @@ namespace Sistema.View
     public partial class formEditEnderecos : Form
     {
         public string acaoDialog;
+        public string formAcaoDialog;
 
 
         public string IdVO
@@ -50,6 +51,12 @@ namespace Sistema.View
         {
             get { return txtCep.Text; }
             set { txtCep.Text = value; }
+        }
+
+        public string FormAcaoDialogVO
+        {
+            get { return formAcaoDialog; }
+            set { formAcaoDialog = value; }
         }
 
         public string AcaoDialogVO

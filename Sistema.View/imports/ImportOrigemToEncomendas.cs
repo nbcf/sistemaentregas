@@ -13,6 +13,8 @@ namespace Sistema.View
 {
     public partial class ImportOrigemToEncomendas : Form
     {
+        public string strAcaoDialog = "";
+        public string strAcaoForm = "";
         public string strID;
         public string strOrigem;
         public string strCodigoOrigem;
@@ -32,8 +34,18 @@ namespace Sistema.View
             get { return strCodigoOrigem; }
             set { strCodigoOrigem = value; }
         }
-     
 
+
+        public string AcaoDialogVO {
+
+            get { return strAcaoDialog; }
+            set { strAcaoDialog = value; }
+        }
+        public string AcaoFormVO {
+
+            get { return strAcaoForm; }
+            set { strAcaoForm = value; }
+        }
         OrigemController controllerOrigem = new OrigemController();
 
         public ImportOrigemToEncomendas()
@@ -46,40 +58,6 @@ namespace Sistema.View
 
         }
 
-        //private void puxarparametroPesquisa()
-        //{
-        //    string estadoPesquisa = "";
-        //    string pesquisarEmColuna = Convert.ToString(cbButtonPesquisarEm.SelectedItem);
-
-        //    if (radioBttnComeca.Checked == true) { estadoPesquisa = "ComecaCom"; }
-        //    else if (radioBttnContem.Checked == true) { estadoPesquisa = "Contem"; }
-        //    else if (radioBttnTermina.Checked == true) { estadoPesquisa = "TerminaCom"; }
-        //    else if (radioBttnComeca.Checked == false) { estadoPesquisa = ""; }
-        //    else if (radioBttnContem.Checked == false) { estadoPesquisa = ""; }
-        //    else if (radioBttnTermina.Checked == false) { estadoPesquisa = ""; }
-
-        //    if (estadoPesquisa.Equals("ComecaCom") && pesquisarEmColuna.Equals("Origem"))
-        //    {
-
-        //        dataGridView1.DataSource = controllerOrigem.PesquisarComecaCom("nomeorigem", "@nomeorigem", txtBoxPesquisar.Text);
-        //        DataGridModel();
-        //        // toolStripLabel2.Text = Convert.ToString(controllerOrigem.retornoQuantPesquisa());
-        //    }
-        //    else if (estadoPesquisa.Equals("Contem") && pesquisarEmColuna.Equals("Origem"))
-        //    {
-
-        //        dataGridView1.DataSource = controllerOrigem.PesquisarContemCom("nomeorigem", "@nomeorigem", txtBoxPesquisar.Text);
-        //        DataGridModel();
-        //        //  toolStripLabel2.Text = Convert.ToString(controllerOrigem.retornoQuantPesquisa());
-        //    }
-        //    else if (estadoPesquisa.Equals("TerminaCom") && pesquisarEmColuna.Equals("Origem"))
-        //    {
-
-        //        dataGridView1.DataSource = controllerOrigem.PesquisarTerminaCom("nomeorigem", "@nomeorigem", txtBoxPesquisar.Text);
-        //        DataGridModel();
-        //        // toolStripLabel2.Text = Convert.ToString(controllerOrigem.retornoQuantPesquisa());
-        //    }
-        //}
 
         private void DataGridModel()
         {
@@ -100,12 +78,24 @@ namespace Sistema.View
             strID = Convert.ToString(dataGridView1.CurrentRow.Cells[0].Value.ToString());
             strOrigem = dataGridView1.CurrentRow.Cells[1].Value.ToString();
             strCodigoOrigem = dataGridView1.CurrentRow.Cells[2].Value.ToString();
+            AcaoDialogVO = "Confirmado";
+            AcaoFormVO = "MC";
             Close();
         }
 
         private void dataGridView1_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             behaviorClickGrid();
+        }
+
+        private void ImportOrigemToEncomendas_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ImportOrigemToEncomendas_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            AcaoFormVO = "btnFechar";
         }
 
 

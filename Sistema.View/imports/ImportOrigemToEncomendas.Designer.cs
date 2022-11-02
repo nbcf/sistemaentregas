@@ -61,6 +61,8 @@ namespace Sistema.View
             this.Name = "ImportOrigemToEncomendas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Origem Das Encomendas";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ImportOrigemToEncomendas_FormClosing);
+            this.Load += new System.EventHandler(this.ImportOrigemToEncomendas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 

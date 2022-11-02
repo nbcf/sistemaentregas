@@ -206,7 +206,7 @@ namespace Sistema.View
             this.tabPagePesquisar.Controls.Add(this.radioBttnComeca);
             this.tabPagePesquisar.Location = new System.Drawing.Point(4, 32);
             this.tabPagePesquisar.Name = "tabPagePesquisar";
-            this.tabPagePesquisar.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPagePesquisar.Padding = new System.Windows.Forms.Padding(3);
             this.tabPagePesquisar.Size = new System.Drawing.Size(635, 44);
             this.tabPagePesquisar.TabIndex = 1;
             this.tabPagePesquisar.Text = "Pesquisar";
@@ -306,7 +306,7 @@ namespace Sistema.View
             this.ckMenuGen.AutoSize = true;
             this.ckMenuGen.Enabled = false;
             this.ckMenuGen.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ckMenuGen.Location = new System.Drawing.Point(261, 219);
+            this.ckMenuGen.Location = new System.Drawing.Point(199, 220);
             this.ckMenuGen.Name = "ckMenuGen";
             this.ckMenuGen.Size = new System.Drawing.Size(125, 21);
             this.ckMenuGen.TabIndex = 17;
@@ -318,7 +318,7 @@ namespace Sistema.View
             this.ckMenuAdmin.AutoSize = true;
             this.ckMenuAdmin.Enabled = false;
             this.ckMenuAdmin.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ckMenuAdmin.Location = new System.Drawing.Point(261, 196);
+            this.ckMenuAdmin.Location = new System.Drawing.Point(199, 197);
             this.ckMenuAdmin.Name = "ckMenuAdmin";
             this.ckMenuAdmin.Size = new System.Drawing.Size(162, 21);
             this.ckMenuAdmin.TabIndex = 16;
@@ -330,7 +330,7 @@ namespace Sistema.View
             this.ckMenuOp.AutoSize = true;
             this.ckMenuOp.Enabled = false;
             this.ckMenuOp.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ckMenuOp.Location = new System.Drawing.Point(261, 173);
+            this.ckMenuOp.Location = new System.Drawing.Point(199, 173);
             this.ckMenuOp.Name = "ckMenuOp";
             this.ckMenuOp.Size = new System.Drawing.Size(145, 21);
             this.ckMenuOp.TabIndex = 15;
@@ -342,7 +342,7 @@ namespace Sistema.View
             this.ckDeletar.AutoSize = true;
             this.ckDeletar.Enabled = false;
             this.ckDeletar.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ckDeletar.Location = new System.Drawing.Point(119, 242);
+            this.ckDeletar.Location = new System.Drawing.Point(103, 242);
             this.ckDeletar.Name = "ckDeletar";
             this.ckDeletar.Size = new System.Drawing.Size(70, 21);
             this.ckDeletar.TabIndex = 14;
@@ -354,7 +354,7 @@ namespace Sistema.View
             this.ckEditar.AutoSize = true;
             this.ckEditar.Enabled = false;
             this.ckEditar.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ckEditar.Location = new System.Drawing.Point(119, 219);
+            this.ckEditar.Location = new System.Drawing.Point(103, 219);
             this.ckEditar.Name = "ckEditar";
             this.ckEditar.Size = new System.Drawing.Size(62, 21);
             this.ckEditar.TabIndex = 13;
@@ -366,7 +366,7 @@ namespace Sistema.View
             this.ckPesquisar.AutoSize = true;
             this.ckPesquisar.Enabled = false;
             this.ckPesquisar.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ckPesquisar.Location = new System.Drawing.Point(119, 196);
+            this.ckPesquisar.Location = new System.Drawing.Point(103, 196);
             this.ckPesquisar.Name = "ckPesquisar";
             this.ckPesquisar.Size = new System.Drawing.Size(85, 21);
             this.ckPesquisar.TabIndex = 12;
@@ -378,7 +378,7 @@ namespace Sistema.View
             this.ckCadastrar.AutoSize = true;
             this.ckCadastrar.Enabled = false;
             this.ckCadastrar.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ckCadastrar.Location = new System.Drawing.Point(120, 173);
+            this.ckCadastrar.Location = new System.Drawing.Point(104, 173);
             this.ckCadastrar.Name = "ckCadastrar";
             this.ckCadastrar.Size = new System.Drawing.Size(85, 21);
             this.ckCadastrar.TabIndex = 11;
@@ -698,6 +698,7 @@ namespace Sistema.View
             this.groupBoxFormulario.Size = new System.Drawing.Size(643, 302);
             this.groupBoxFormulario.TabIndex = 8;
             this.groupBoxFormulario.TabStop = false;
+   //         this.groupBoxFormulario.Enter += new System.EventHandler(this.groupBoxFormulario_Enter);
             // 
             // UsuariosView
             // 

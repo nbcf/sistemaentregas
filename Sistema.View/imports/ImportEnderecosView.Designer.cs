@@ -36,6 +36,7 @@ namespace Sistema.View
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ImportEnderecos));
             this.tabControlAssets = new System.Windows.Forms.TabControl();
             this.tabPagePesquisar = new System.Windows.Forms.TabPage();
+            this.txtBoxPesquisar = new System.Windows.Forms.TextBox();
             this.button4 = new System.Windows.Forms.Button();
             this.radioBttnContem = new System.Windows.Forms.RadioButton();
             this.radioBttnTermina = new System.Windows.Forms.RadioButton();
@@ -55,7 +56,6 @@ namespace Sistema.View
             this.label5 = new System.Windows.Forms.Label();
             this.txtLogradouro = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.txtBoxPesquisar = new System.Windows.Forms.TextBox();
             this.tabControlAssets.SuspendLayout();
             this.tabPagePesquisar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridImpEndereco)).BeginInit();
@@ -90,6 +90,14 @@ namespace Sistema.View
             this.tabPagePesquisar.TabIndex = 1;
             this.tabPagePesquisar.Text = "Pesquisar";
             this.tabPagePesquisar.UseVisualStyleBackColor = true;
+            // 
+            // txtBoxPesquisar
+            // 
+            this.txtBoxPesquisar.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBoxPesquisar.Location = new System.Drawing.Point(8, 9);
+            this.txtBoxPesquisar.Name = "txtBoxPesquisar";
+            this.txtBoxPesquisar.Size = new System.Drawing.Size(261, 25);
+            this.txtBoxPesquisar.TabIndex = 35;
             // 
             // button4
             // 
@@ -333,14 +341,6 @@ namespace Sistema.View
             this.label3.TabIndex = 18;
             this.label3.Text = "Endereço";
             // 
-            // txtBoxPesquisar
-            // 
-            this.txtBoxPesquisar.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBoxPesquisar.Location = new System.Drawing.Point(8, 9);
-            this.txtBoxPesquisar.Name = "txtBoxPesquisar";
-            this.txtBoxPesquisar.Size = new System.Drawing.Size(261, 25);
-            this.txtBoxPesquisar.TabIndex = 35;
-            // 
             // ImportEnderecos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -357,6 +357,7 @@ namespace Sistema.View
             this.Name = "ImportEnderecos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Importar Endereços Offline";
+            this.Load += new System.EventHandler(this.ImportEnderecos_Load);
             this.tabControlAssets.ResumeLayout(false);
             this.tabPagePesquisar.ResumeLayout(false);
             this.tabPagePesquisar.PerformLayout();

@@ -14,11 +14,27 @@ namespace Sistema.View
     public partial class ImportPessoasToUsuario : Form
     {
         public string stringID;
+        public string strAcaoDialog = "";
+        public string strFormAcaoDialogVO = "";
         public string IdPessoasVO
         {
             get { return stringID; }
             set { stringID = value; }
         }
+
+        public string AcaoDialogVO
+        {
+
+            get { return strAcaoDialog; }
+            set { strAcaoDialog = value; }
+        }
+        public string FormAcaoDialogVO
+        {
+
+            get { return strFormAcaoDialogVO; }
+            set { strFormAcaoDialogVO = value; }
+        }
+
         PessoasController controllerPessoas = new PessoasController();
 
         public ImportPessoasToUsuario()
@@ -96,11 +112,8 @@ namespace Sistema.View
 
         public void behaviorClickGrid()
         {
-            //formCrudUsuarios frm = new formCrudUsuarios();
-            //frm.IdPapeisVO = Convert.ToString(dataGridView1.CurrentRow.Cells[0].Value.ToString());
-            //Close();
             stringID = Convert.ToString(dataGridView1.CurrentRow.Cells[0].Value.ToString());
-            Close();
+           
         }
 
 
@@ -109,15 +122,6 @@ namespace Sistema.View
             puxarparametroPesquisa();
 
         }
-
-
-
-        private void formCrudPessoas_Load(object sender, EventArgs e)
-        {
-
-        }
-
-
 
         private void radBttnFirst_CheckedChanged(object sender, EventArgs e)
         {
@@ -128,10 +132,6 @@ namespace Sistema.View
         {
             puxarparametroPesquisa();
         }
-
-
-
-
 
 
         private void radioBttnContem_CheckedChanged(object sender, EventArgs e)
@@ -153,8 +153,6 @@ namespace Sistema.View
         {
             puxarparametroPesquisa();
         }
-
-
 
         private void radioBttnTermina_CheckedChanged_1(object sender, EventArgs e)
         {
@@ -232,12 +230,6 @@ namespace Sistema.View
             puxarparametroPesquisa();
         }
 
-        private void tabPagePesquisar_Click(object sender, EventArgs e)
-        {
-
-        }
-
-
 
         private void dataGridView1_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
@@ -249,16 +241,7 @@ namespace Sistema.View
             behaviorClickGrid();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button2_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
+      
         private void radioBttnComeca_CheckedChanged_3(object sender, EventArgs e)
         {
             puxarparametroPesquisa();
@@ -284,10 +267,6 @@ namespace Sistema.View
             behaviorClickGrid();
         }
 
-        private void dataGridView1_CellClick_2(object sender, DataGridViewCellEventArgs e)
-        {
-            behaviorClickGrid();
-        }
 
         private void radioBttnTermina_CheckedChanged_2(object sender, EventArgs e)
         {
@@ -314,10 +293,25 @@ namespace Sistema.View
             puxarparametroPesquisa();
         }
 
-        private void button1_Click_1(object sender, EventArgs e)
+
+
+        private void dataGridView1_CellMouseDoubleClick_1(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            IdPessoasVO = Convert.ToString(dataGridView1.CurrentRow.Cells[0].Value.ToString());
+            AcaoDialogVO = "Importou";
+           
+            Close();
+         //   AcaoDialogVO.Equals("Importou") FormAcaoDialogVO.Equals("N"))
+            
+}
+       
+
+        private void ImportPessoasToUsuario_Load(object sender, EventArgs e)
         {
 
         }
+
+      
     }
 
 }

@@ -33,6 +33,7 @@ namespace Sistema.View
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EnderecosView));
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.bttnNew = new System.Windows.Forms.ToolStripButton();
@@ -41,7 +42,6 @@ namespace Sistema.View
             this.bttnEdit = new System.Windows.Forms.ToolStripButton();
             this.bttnSearch = new System.Windows.Forms.ToolStripButton();
             this.bttnDel = new System.Windows.Forms.ToolStripButton();
-            this.bttnExcel = new System.Windows.Forms.ToolStripButton();
             this.tabControlAssets = new System.Windows.Forms.TabControl();
             this.tabPagePesquisar = new System.Windows.Forms.TabPage();
             this.radioBttnTermina = new System.Windows.Forms.RadioButton();
@@ -87,12 +87,11 @@ namespace Sistema.View
             this.bttnRefresh,
             this.bttnEdit,
             this.bttnSearch,
-            this.bttnDel,
-            this.bttnExcel});
+            this.bttnDel});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Padding = new System.Windows.Forms.Padding(0);
-            this.toolStrip1.Size = new System.Drawing.Size(970, 51);
+            this.toolStrip1.Size = new System.Drawing.Size(914, 51);
             this.toolStrip1.TabIndex = 3;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -102,10 +101,11 @@ namespace Sistema.View
             this.bttnNew.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.bttnNew.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.bttnNew.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.bttnNew.Image = global::Sistema.View.Properties.Resources.adicionar;
+            this.bttnNew.Image = global::Sistema.View.Properties.Resources.add48;
+            this.bttnNew.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.bttnNew.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.bttnNew.Name = "bttnNew";
-            this.bttnNew.Size = new System.Drawing.Size(80, 48);
+            this.bttnNew.Size = new System.Drawing.Size(100, 48);
             this.bttnNew.Text = "toolStripButton1";
             this.bttnNew.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
             this.bttnNew.Click += new System.EventHandler(this.bttnNew_Click);
@@ -114,10 +114,11 @@ namespace Sistema.View
             // 
             this.bttnSave.AutoSize = false;
             this.bttnSave.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bttnSave.Image = global::Sistema.View.Properties.Resources.salvar;
+            this.bttnSave.Image = global::Sistema.View.Properties.Resources.save48;
+            this.bttnSave.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.bttnSave.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.bttnSave.Name = "bttnSave";
-            this.bttnSave.Size = new System.Drawing.Size(80, 48);
+            this.bttnSave.Size = new System.Drawing.Size(100, 48);
             this.bttnSave.Text = "toolStripButton2";
             this.bttnSave.Click += new System.EventHandler(this.bttnSave_Click);
             // 
@@ -125,10 +126,11 @@ namespace Sistema.View
             // 
             this.bttnRefresh.AutoSize = false;
             this.bttnRefresh.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bttnRefresh.Image = global::Sistema.View.Properties.Resources.atualizar;
+            this.bttnRefresh.Image = global::Sistema.View.Properties.Resources.refresh48;
+            this.bttnRefresh.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.bttnRefresh.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.bttnRefresh.Name = "bttnRefresh";
-            this.bttnRefresh.Size = new System.Drawing.Size(80, 48);
+            this.bttnRefresh.Size = new System.Drawing.Size(100, 48);
             this.bttnRefresh.Text = "toolStripButton3";
             this.bttnRefresh.Click += new System.EventHandler(this.bttnRefresh_Click_1);
             // 
@@ -136,10 +138,11 @@ namespace Sistema.View
             // 
             this.bttnEdit.AutoSize = false;
             this.bttnEdit.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bttnEdit.Image = global::Sistema.View.Properties.Resources.editar;
+            this.bttnEdit.Image = global::Sistema.View.Properties.Resources.editForm48;
+            this.bttnEdit.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.bttnEdit.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.bttnEdit.Name = "bttnEdit";
-            this.bttnEdit.Size = new System.Drawing.Size(80, 48);
+            this.bttnEdit.Size = new System.Drawing.Size(100, 48);
             this.bttnEdit.Text = "toolStripButton4";
             this.bttnEdit.Click += new System.EventHandler(this.bttnEdit_Click);
             // 
@@ -147,10 +150,11 @@ namespace Sistema.View
             // 
             this.bttnSearch.AutoSize = false;
             this.bttnSearch.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bttnSearch.Image = global::Sistema.View.Properties.Resources.pesquisar;
+            this.bttnSearch.Image = global::Sistema.View.Properties.Resources.search48;
+            this.bttnSearch.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.bttnSearch.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.bttnSearch.Name = "bttnSearch";
-            this.bttnSearch.Size = new System.Drawing.Size(80, 48);
+            this.bttnSearch.Size = new System.Drawing.Size(100, 48);
             this.bttnSearch.Text = "toolStripButton5";
             this.bttnSearch.Click += new System.EventHandler(this.bttnSearch_Click_1);
             // 
@@ -158,21 +162,13 @@ namespace Sistema.View
             // 
             this.bttnDel.AutoSize = false;
             this.bttnDel.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bttnDel.Image = global::Sistema.View.Properties.Resources.excluir;
+            this.bttnDel.Image = global::Sistema.View.Properties.Resources.del48;
+            this.bttnDel.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.bttnDel.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.bttnDel.Name = "bttnDel";
-            this.bttnDel.Size = new System.Drawing.Size(80, 48);
+            this.bttnDel.Size = new System.Drawing.Size(100, 48);
             this.bttnDel.Text = "toolStripButton6";
             this.bttnDel.Click += new System.EventHandler(this.bttnDel_Click);
-            // 
-            // bttnExcel
-            // 
-            this.bttnExcel.AutoSize = false;
-            this.bttnExcel.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bttnExcel.Image = global::Sistema.View.Properties.Resources.Excel_icon;
-            this.bttnExcel.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.bttnExcel.Name = "bttnExcel";
-            this.bttnExcel.Size = new System.Drawing.Size(80, 48);
             // 
             // tabControlAssets
             // 
@@ -182,7 +178,7 @@ namespace Sistema.View
             this.tabControlAssets.Location = new System.Drawing.Point(0, 51);
             this.tabControlAssets.Name = "tabControlAssets";
             this.tabControlAssets.SelectedIndex = 0;
-            this.tabControlAssets.Size = new System.Drawing.Size(970, 72);
+            this.tabControlAssets.Size = new System.Drawing.Size(914, 72);
             this.tabControlAssets.TabIndex = 4;
             // 
             // tabPagePesquisar
@@ -197,7 +193,7 @@ namespace Sistema.View
             this.tabPagePesquisar.Location = new System.Drawing.Point(4, 25);
             this.tabPagePesquisar.Name = "tabPagePesquisar";
             this.tabPagePesquisar.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPagePesquisar.Size = new System.Drawing.Size(962, 43);
+            this.tabPagePesquisar.Size = new System.Drawing.Size(906, 43);
             this.tabPagePesquisar.TabIndex = 1;
             this.tabPagePesquisar.Text = "Pesquisar";
             this.tabPagePesquisar.UseVisualStyleBackColor = true;
@@ -205,9 +201,10 @@ namespace Sistema.View
             // radioBttnTermina
             // 
             this.radioBttnTermina.AutoSize = true;
-            this.radioBttnTermina.Location = new System.Drawing.Point(463, 11);
+            this.radioBttnTermina.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioBttnTermina.Location = new System.Drawing.Point(554, 9);
             this.radioBttnTermina.Name = "radioBttnTermina";
-            this.radioBttnTermina.Size = new System.Drawing.Size(63, 17);
+            this.radioBttnTermina.Size = new System.Drawing.Size(74, 21);
             this.radioBttnTermina.TabIndex = 4;
             this.radioBttnTermina.Text = "Termina";
             this.radioBttnTermina.UseVisualStyleBackColor = true;
@@ -216,9 +213,10 @@ namespace Sistema.View
             // radioBttnComeca
             // 
             this.radioBttnComeca.AutoSize = true;
-            this.radioBttnComeca.Location = new System.Drawing.Point(326, 10);
+            this.radioBttnComeca.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioBttnComeca.Location = new System.Drawing.Point(407, 10);
             this.radioBttnComeca.Name = "radioBttnComeca";
-            this.radioBttnComeca.Size = new System.Drawing.Size(64, 17);
+            this.radioBttnComeca.Size = new System.Drawing.Size(74, 21);
             this.radioBttnComeca.TabIndex = 6;
             this.radioBttnComeca.Text = "Começa";
             this.radioBttnComeca.UseVisualStyleBackColor = true;
@@ -227,9 +225,10 @@ namespace Sistema.View
             // radioBttnContem
             // 
             this.radioBttnContem.AutoSize = true;
-            this.radioBttnContem.Location = new System.Drawing.Point(396, 10);
+            this.radioBttnContem.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioBttnContem.Location = new System.Drawing.Point(482, 10);
             this.radioBttnContem.Name = "radioBttnContem";
-            this.radioBttnContem.Size = new System.Drawing.Size(61, 17);
+            this.radioBttnContem.Size = new System.Drawing.Size(74, 21);
             this.radioBttnContem.TabIndex = 5;
             this.radioBttnContem.Text = "Contém";
             this.radioBttnContem.UseVisualStyleBackColor = true;
@@ -237,23 +236,25 @@ namespace Sistema.View
             // 
             // cbButtonPesquisarEm
             // 
+            this.cbButtonPesquisarEm.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbButtonPesquisarEm.FormattingEnabled = true;
             this.cbButtonPesquisarEm.Items.AddRange(new object[] {
             "Logradouro",
             "Bairro",
             "Cidade",
             "Cep"});
-            this.cbButtonPesquisarEm.Location = new System.Drawing.Point(182, 6);
+            this.cbButtonPesquisarEm.Location = new System.Drawing.Point(263, 6);
             this.cbButtonPesquisarEm.Name = "cbButtonPesquisarEm";
-            this.cbButtonPesquisarEm.Size = new System.Drawing.Size(138, 21);
+            this.cbButtonPesquisarEm.Size = new System.Drawing.Size(138, 25);
             this.cbButtonPesquisarEm.TabIndex = 1;
             this.cbButtonPesquisarEm.SelectedIndexChanged += new System.EventHandler(this.cbButtonPesquisarEm_SelectedIndexChanged);
             // 
             // txtBoxPesquisar
             // 
-            this.txtBoxPesquisar.Location = new System.Drawing.Point(7, 6);
+            this.txtBoxPesquisar.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBoxPesquisar.Location = new System.Drawing.Point(12, 6);
             this.txtBoxPesquisar.Name = "txtBoxPesquisar";
-            this.txtBoxPesquisar.Size = new System.Drawing.Size(157, 20);
+            this.txtBoxPesquisar.Size = new System.Drawing.Size(243, 25);
             this.txtBoxPesquisar.TabIndex = 0;
             this.txtBoxPesquisar.TextChanged += new System.EventHandler(this.txtBoxPesquisar_TextChanged);
             // 
@@ -294,15 +295,17 @@ namespace Sistema.View
             this.gridCrudEndereco.Name = "gridCrudEndereco";
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.gridCrudEndereco.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridCrudEndereco.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.gridCrudEndereco.RowTemplate.Height = 25;
             this.gridCrudEndereco.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.gridCrudEndereco.Size = new System.Drawing.Size(970, 481);
+            this.gridCrudEndereco.Size = new System.Drawing.Size(914, 481);
             this.gridCrudEndereco.TabIndex = 5;
             this.gridCrudEndereco.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridCrudPessoa_CellClick);
             // 
@@ -331,7 +334,7 @@ namespace Sistema.View
             this.cbOrdenarPor});
             this.toolStrip2.Location = new System.Drawing.Point(0, 572);
             this.toolStrip2.Name = "toolStrip2";
-            this.toolStrip2.Size = new System.Drawing.Size(970, 32);
+            this.toolStrip2.Size = new System.Drawing.Size(914, 32);
             this.toolStrip2.TabIndex = 9;
             this.toolStrip2.Text = "toolStrip2";
             // 
@@ -494,7 +497,7 @@ namespace Sistema.View
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(970, 604);
+            this.ClientSize = new System.Drawing.Size(914, 604);
             this.Controls.Add(this.toolStrip2);
             this.Controls.Add(this.gridCrudEndereco);
             this.Controls.Add(this.tabControlAssets);
@@ -528,7 +531,6 @@ namespace Sistema.View
         private System.Windows.Forms.ToolStripButton bttnEdit;
         private System.Windows.Forms.ToolStripButton bttnSearch;
         private System.Windows.Forms.ToolStripButton bttnDel;
-        private System.Windows.Forms.ToolStripButton bttnExcel;
         private System.Windows.Forms.TabControl tabControlAssets;
         private System.Windows.Forms.TabPage tabPagePesquisar;
         private System.Windows.Forms.RadioButton radioBttnContem;

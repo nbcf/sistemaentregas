@@ -47,7 +47,6 @@ namespace Sistema.View
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(390, 307);
             this.dataGridView1.TabIndex = 10;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_CellMouseDoubleClick);
             // 
             // ImportPapeisToUsuario
@@ -65,6 +64,8 @@ namespace Sistema.View
             this.Name = "ImportPapeisToUsuario";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Importar Função";
+           // this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ImportPapeisToUsuario_FormClosed);
+            this.Load += new System.EventHandler(this.ImportPapeisToUsuario_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 

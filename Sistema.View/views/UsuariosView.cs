@@ -1486,20 +1486,28 @@ namespace Sistema.View
             }
         }
 
-        private void bttImportaPapel_Click(object sender, EventArgs e)
-        {
+        private void bttImportaPapel_Click(object sender, EventArgs e){
             ImportPapeisToUsuario imp = new ImportPapeisToUsuario();
             imp.ShowDialog();
-            txtBoxIdPapeis.Text = imp.IdPapeisVO;
-            carregarComplementosPapeis();
+            if (imp.AcaoDialogVO.Equals("Importou"))
+            {
+                txtBoxIdPapeis.Text = imp.IdPapeisVO;
+                carregarComplementosPapeis();
+            }
+           
+
         }
 
         private void bttImportPessoa_Click(object sender, EventArgs e)
         {
-            ImportPessoasToUsuario imp = new ImportPessoasToUsuario();
-            imp.ShowDialog();
-            txtBoxIdPessoa.Text = imp.IdPessoasVO;
-            carregarComplementosPessoas();
+            ImportPessoasToUsuario impPessoasToUsuario = new ImportPessoasToUsuario();
+            impPessoasToUsuario.ShowDialog();
+            
+            if (impPessoasToUsuario.AcaoDialogVO.Equals("Importou"))
+            {
+                txtBoxIdPessoa.Text = impPessoasToUsuario.IdPessoasVO;
+                carregarComplementosPessoas();
+            }
         }
 
 
@@ -1573,6 +1581,8 @@ namespace Sistema.View
         {
             _InstanciaformCrudUsuarios = null;
         }
+
+       
     }
   
 }

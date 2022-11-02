@@ -14,23 +14,33 @@ namespace Sistema.View
     public partial class ImportPapeisToUsuario : Form
     {
         public string stringID;
-        public string IdPapeisVO
-        {
+        public string strAcaoDialog = "";
+        public string strFormAcaoDialog;
+
+        public string IdPapeisVO{
             get { return stringID; }
             set { stringID = value; }
         }
+
+        public string AcaoDialogVO{
+            get { return strAcaoDialog; }
+            set { strAcaoDialog = value; }
+        }
+
+        public string FormAcaoDialogVO {
+            get { return strFormAcaoDialog; }
+            set { strFormAcaoDialog = value; }
+        }
+
         PapeisController controllerPapeis = new PapeisController();
 
-        public ImportPapeisToUsuario()
-        {
+        public ImportPapeisToUsuario(){
             InitializeComponent();
-
             dataGridView1.DataSource = controllerPapeis.ConfiListagemImportPU();
             DataGridModel();
         }
 
-        private void DataGridModel()
-        {
+        private void DataGridModel(){
             dataGridView1.Columns[0].HeaderText = "ID";
             dataGridView1.Columns[1].HeaderText = "Função";
             dataGridView1.Columns[2].HeaderText = "Criar";
@@ -59,21 +69,24 @@ namespace Sistema.View
             dataGridView1.Columns[8].Visible = false;
         }
 
-        public void behaviorClickGrid()
-        {
-            stringID = Convert.ToString(dataGridView1.CurrentRow.Cells[0].Value.ToString());
+      
+
+        private void dataGridView1_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e){
+            
+            IdPapeisVO = Convert.ToString(dataGridView1.CurrentRow.Cells[0].Value.ToString());
+            AcaoDialogVO = "Importou";
+    
             Close();
         }
 
-        private void dataGridView1_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
-        {
-            behaviorClickGrid();
-        }
+      
+      
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void ImportPapeisToUsuario_Load(object sender, EventArgs e)
         {
 
         }
+
+        
     }
-
 }

@@ -21,12 +21,9 @@ namespace Sistema.View
         public string entregador;
         public string estentrega;
         public string idsaida;
-
         public DateTime dataentrega;
         public DateTime dataentrada;
         public DateTime dataEmRota;
-
-
         public string acaoDialog;
         public string acaoForm;
 
@@ -41,8 +38,6 @@ namespace Sistema.View
             get { return acaoForm; }
             set { acaoForm = value; }
         }
-
-
 
         public int IdVeiculoVO
         {
@@ -59,7 +54,6 @@ namespace Sistema.View
             get { return nomeveiculo; }
             set { nomeveiculo = value; }
         }
-
         public string PlacaVeiculoVO
         {
             get { return placa; }
@@ -76,7 +70,6 @@ namespace Sistema.View
             get { return estentrega; }
             set { estentrega = value; }
         }
-
         public string IdSaidaVO
         {
             get { return idsaida; }
@@ -94,7 +87,6 @@ namespace Sistema.View
             get { return dataentrada; }
             set { dataentrada = value; }
         }
-
         public DateTime DataEmRotaVO
         {
             get { return dataEmRota; }
@@ -159,8 +151,6 @@ namespace Sistema.View
         {
             InitializeComponent();
             carregarEstadoPadrao("CarregaPadraoIDTodosUltimos", 0);
-
-
         }
 
         private void bttnRefresh_Click(object sender, EventArgs e)
@@ -335,9 +325,7 @@ namespace Sistema.View
             gridCrudImporES.Columns[18].Visible = false;
             gridCrudImporES.Columns[19].Visible = false;
             gridCrudImporES.Columns[21].Visible = false;
-
             gridCrudImporES.Columns[22].Visible = false;
-           // gridCrudImporES.Columns[23].Visible = false;
             gridCrudImporES.Columns[24].Visible = false;
         }
 
@@ -746,8 +734,7 @@ namespace Sistema.View
                 bttnEndPages.Visible = true;
                 toolStripLabel1.Visible = false;
                 toolStripLabel2.Visible = false;
-                //  puxarparametro(0, Convert.ToInt32(cbButtnQuantPage1.SelectedItem), "Sim");
-                //   stringPapel = "";
+
                 DataGridModel();
                 txtBoxId.Text = "";
                 typeEdition = "insert";
@@ -914,19 +901,9 @@ namespace Sistema.View
 
 
 
-        private void ImportEncomendasToSaida_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void ImportEncomendasToSaida_FormClosed(object sender, FormClosedEventArgs e)
         {
             AcaoFormVO = "Fechar";
-        }
-
-        private void gridCrudImporES_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
     }
 }

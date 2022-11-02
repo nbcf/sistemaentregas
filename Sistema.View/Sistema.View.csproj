@@ -633,6 +633,8 @@
     <None Include="image\crud48x48\update48.png" />
     <None Include="image\crud48x48\ok48.png" />
     <None Include="image\crud48x48\import48.png" />
+    <None Include="image\crud24x24\close24.png" />
+    <None Include="image\crud24x24\ok24.png" />
     <Content Include="image\icons8-truck-32.png" />
     <None Include="image\truck-esquerda-24.png" />
   </ItemGroup>
