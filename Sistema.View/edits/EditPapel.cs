@@ -82,13 +82,13 @@ namespace Sistema.View
 
         private void button1_Click(object sender, EventArgs e)
         {
-            acaoDialog = "Salvar";
+            AcaoDialogVO = "Salvar";
             Close();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            acaoDialog = "Cancelar";
+            AcaoDialogVO = "Cancelar";
             Close();
         }
 

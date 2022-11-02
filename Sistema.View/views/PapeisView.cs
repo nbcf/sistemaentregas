@@ -334,7 +334,7 @@ namespace Sistema.View
         {
             resultado = 0;
             int quantidadeReg = 0;
-            quantidadeReg = Convert.ToInt32(controllerPapeis.retornoQuantRegistro());
+            quantidadeReg = Convert.ToInt32(controllerPapeis.ListarBDPapeisControlller());
             int jcbPaginas = Convert.ToInt32(cbButtnQuantPage1.SelectedItem);
 
             resultado = quantidadeReg / jcbPaginas;
@@ -386,19 +386,19 @@ namespace Sistema.View
                 {
                     gridCrudPapeis.DataSource = controllerPapeis.PesquisarComecaCom("nomepapel", "@nomepapel", txtBoxPesquisar.Text);
                     DataGridModel();
-                    toolStripLabel2.Text = Convert.ToString(controllerPapeis.retornoQuantPesquisa());
+                    toolStripLabel2.Text = Convert.ToString(controllerPapeis.ListarPesquisaPapeisController());
                 }
                 else if (estadoPesquisa.Equals("Contem") && pesquisarEmColuna.Equals("Nome"))
                 {
                     gridCrudPapeis.DataSource = controllerPapeis.PesquisarContemCom("nomepapel", "@nomepapel", txtBoxPesquisar.Text);
                     DataGridModel();
-                    toolStripLabel2.Text = Convert.ToString(controllerPapeis.retornoQuantPesquisa());
+                    toolStripLabel2.Text = Convert.ToString(controllerPapeis.ListarPesquisaPapeisController());
                 }
                 else if (estadoPesquisa.Equals("TerminaCom") && pesquisarEmColuna.Equals("Nome"))
                 {
                     gridCrudPapeis.DataSource = controllerPapeis.PesquisarTerminaCom("nomepapel", "@nomepapel", txtBoxPesquisar.Text);
                     DataGridModel();
-                    toolStripLabel2.Text = Convert.ToString(controllerPapeis.retornoQuantPesquisa());
+                    toolStripLabel2.Text = Convert.ToString(controllerPapeis.ListarPesquisaPapeisController());
                 }
             }
         }
@@ -410,28 +410,28 @@ namespace Sistema.View
             {
                 gridCrudPapeis.DataSource = controllerPapeis.ConfiListagemDataGrid("idpapel", "desc", offset, limitt);
                 DataGridModel();
-                labelTextTotalRegFould.Text = Convert.ToString(controllerPapeis.retornoQuantRegistro());
+                labelTextTotalRegFould.Text = Convert.ToString(controllerPapeis.ListarBDPapeisControlller());
                 carregarInformacoes();
             }
             else if (pesquisa.Equals("CarregaPadraoIDTodosPrimeiros") && parametroCodigoAlfabeto.Equals("Codigo") && parametroASCDESC.Equals("primeiros"))
             {
                 gridCrudPapeis.DataSource = controllerPapeis.ConfiListagemDataGrid("idpapel", "asc", offset, limitt);
                 DataGridModel();
-                labelTextTotalRegFould.Text = Convert.ToString(controllerPapeis.retornoQuantRegistro());
+                labelTextTotalRegFould.Text = Convert.ToString(controllerPapeis.ListarBDPapeisControlller());
                 carregarInformacoes();
             }
             else if (pesquisa.Equals("CarregaPadraoNomeTodosUltimos") && parametroCodigoAlfabeto.Equals("Alfabeto") && parametroASCDESC.Equals("ultimos"))
             {
                 gridCrudPapeis.DataSource = controllerPapeis.ConfiListagemDataGrid("nomepapel", "desc", offset, limitt);
                 DataGridModel();
-                labelTextTotalRegFould.Text = Convert.ToString(controllerPapeis.retornoQuantRegistro());
+                labelTextTotalRegFould.Text = Convert.ToString(controllerPapeis.ListarBDPapeisControlller());
                 carregarInformacoes();
             }
             else if (pesquisa.Equals("CarregaPadraoNomeTodosPrimeiros") && parametroCodigoAlfabeto.Equals("Alfabeto") && parametroASCDESC.Equals("primeiros"))
             {
                 gridCrudPapeis.DataSource = controllerPapeis.ConfiListagemDataGrid("nomepapel", "asc", offset, limitt);
                 DataGridModel();
-                labelTextTotalRegFould.Text = Convert.ToString(controllerPapeis.retornoQuantRegistro());
+                labelTextTotalRegFould.Text = Convert.ToString(controllerPapeis.ListarBDPapeisControlller());
                 carregarInformacoes();
             }
         }
@@ -500,7 +500,7 @@ namespace Sistema.View
                 txtBoxPesquisar.Focus();
                 gridCrudPapeis.DataSource = controllerPapeis.PesquisarComecaCom("nomepapel", "@nomepapel", "");
                 DataGridModel();
-                toolStripLabel2.Text = Convert.ToString(controllerPapeis.retornoQuantPesquisa());
+                toolStripLabel2.Text = Convert.ToString(controllerPapeis.ListarPesquisaPapeisController());
                 typeEdition = "search";
                 cbButtnQuantPage1.Visible = false;
                 cbOrdemParam1.Visible = false;
@@ -722,7 +722,7 @@ namespace Sistema.View
             {
                 if (operationType.Equals("newInsertion") && typeEdition.Equals("insert"))
                 {
-                    if (remPapel.Length <= 3)
+                    if (remPapel.Length <= 1)
                     {
                         var resultado = MessageBox.Show("A Inserção não alcançou o número mínimo de 3 caracteres.\n" +
                         "Para tentar novamente clique no botão 'Sim'. E no botão 'Não' para cancelar e sair do modo de Inserção.",
@@ -740,40 +740,40 @@ namespace Sistema.View
                             behaviorRefresh();
                         }
                     }
-                    else if (remPapel.Length >= 3)
+                    else if (remPapel.Length >= 1)
                     {
-                        controllerPapeis.Salvar(stringPapel, bolCriar, bolRecuperar, bolEditar, bolExcluir, bolMenuOp, bolMenuAdmin, bolMenuGen);
-                        if (controllerPapeis.retornoPersistencia.Equals("NS"))
+                        controllerPapeis.Salvar(stringPapel, bolCriar, bolRecuperar, bolEditar, bolExcluir, bolMenuOp, bolMenuAdmin, bolMenuGen);//  controllerUsuarios.Salvar(txtBoxUsuario.Text, txtBoxSenha.Text, txtBoxIdPessoa.Text, txtBoxIdPapeis.Text);//   controllerTipoUnds.Salvar(txtBoxName.Text);
+
+                        if ("NS".Equals(controllerPapeis.AcaoCrudPapeisDAO()))
                         {
 
                             stringPapel = "";
                             behaviorRefresh();
                         }
-                        else if (controllerPapeis.retornoPersistencia.Equals("S!"))
+                        else if ("S!".Equals(controllerPapeis.AcaoCrudPapeisDAO()))
                         {
 
                             operationType = "newInsertion";
                             typeEdition = "insert";
 
                             behaviorRefresh();
-                            MessageBox.Show("Registro Salvo Com Sucesso!", "Aviso de Confirmação", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
                         }
-                        else if (controllerPapeis.retornoPersistencia.Equals("S!!"))
+                        else if ("S!!".Equals(controllerPapeis.AcaoCrudPapeisDAO()))
                         {
 
                             operationType = "newInsertion";
                             typeEdition = "insert";
 
                             behaviorRefresh();
-                            MessageBox.Show("Dado Existente Salvo!", "Aviso de Confirmação", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
                         }
                     }
-                    if (controllerPapeis.retornoPersistencia.Equals("NS"))
+                    if ("NS".Equals(controllerPapeis.AcaoCrudPapeisDAO()))
                     {
 
                         operationType = "newInsertion";
                         typeEdition = "insert";
-                        //acoesBehaviorSave();
                         behaviorRefresh();
                     }
                 }
@@ -783,7 +783,7 @@ namespace Sistema.View
 
                 if (operationType.Equals("updateData") && typeEdition.Equals("insert"))
                 {
-                    if (remPapel.Length <= 3)
+                    if (remPapel.Length <= 1)
                     {
                         var resultado = MessageBox.Show("A Edição não alcançou o número mínimo de 3 caracteres.\nPara tentar novamente clique no botão 'Sim'. E no botão 'Não' para cancelar e sair do modo de Inserção.", "Aviso do Sistema", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                         if (resultado == DialogResult.Yes)
@@ -795,18 +795,18 @@ namespace Sistema.View
                             behaviorRefresh();
                         }
                     }
-                    else if (remPapel.Length >= 3)
+                    else if (remPapel.Length >= 1)
                     {
-                        controllerPapeis.Editar(Convert.ToInt32(txtBoxId.Text), stringPapel, bolCriar, bolRecuperar, bolEditar, bolExcluir, bolMenuOp, bolMenuAdmin, bolMenuGen);
+                        controllerPapeis.Editar(stringPapel, bolCriar, bolRecuperar, bolEditar, bolExcluir, bolMenuOp, bolMenuAdmin, bolMenuGen, Convert.ToInt32(txtBoxId.Text));
 
-                        if (controllerPapeis.retornoPersistencia.Equals("AT"))
+                        if ("AT".Equals(controllerPapeis.AcaoCrudPapeisDAO()))
                         {
 
                             behaviorRefresh();
 
                         }
                     }
-                    if (controllerPapeis.retornoPersistencia.Equals("NS"))
+                    if ("NS".Equals(controllerPapeis.AcaoCrudPapeisDAO()))
                     {
 
                         behaviorRefresh();
@@ -814,15 +814,13 @@ namespace Sistema.View
                 }
                 else if (operationType.Equals("updateData") && typeEdition.Equals("search"))
                 {
-
-                    MessageBox.Show("8!");
-                    if (remPapel.Length <= 3)
+                    if (remPapel.Length <= 1)
                     {
                         var resultado = MessageBox.Show("A Edição não alcançou o número mínimo de 3 caracteres.\nPara tentar novamente clique no botão 'Sim'. E no botão 'Não' para cancelar e sair do modo de Inserção.", "Aviso do Sistema", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                         if (resultado == DialogResult.Yes)
                         {
-
                             stringPapel = "";
+
                         }
                         else if (resultado == DialogResult.No)
                         {
@@ -830,23 +828,162 @@ namespace Sistema.View
                         }
 
                     }
-                    else if (remPapel.Length >= 3)
+                    else if (remPapel.Length >= 1)
                     {
-                        controllerPapeis.Editar(Convert.ToInt32(txtBoxId.Text), stringPapel, bolCriar, bolRecuperar, bolEditar, bolExcluir, bolMenuOp, bolMenuAdmin, bolMenuGen);
-                        if (controllerPapeis.retornoPersistencia.Equals("AT"))
+                        controllerPapeis.Editar( stringPapel, bolCriar, bolRecuperar, bolEditar, bolExcluir, bolMenuOp, bolMenuAdmin, bolMenuGen, Convert.ToInt32(txtBoxId.Text));
+
+                        if ("AT".Equals(controllerPapeis.AcaoCrudPapeisDAO()))
                         {
                             behaviorRefresh();
                             puxarparametroPesquisa();
-                            MessageBox.Show("Registro Pesquisado foi Atualizado !  \n else if (operationType.Equals(search) && typeEdition.Equals(search))", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                           
+
                         }
                     }
-                    if (controllerPapeis.retornoPersistencia.Equals("NS"))
+                    if ("NS".Equals(controllerPapeis.AcaoCrudPapeisDAO()))
                     {
                         behaviorRefresh();
                     }
                 }
             }
         }
+
+        //private void behaviorSave()
+        //{
+        //    string retiraEspacos = stringPapel;
+        //    string remPapel = retiraEspacos.Trim();
+        //    string retiraEspacosId = txtBoxId.Text;
+        //    string remEspacosId = retiraEspacosId.Trim();
+        //    if (remEspacosId.Equals("") || remEspacosId == null)
+        //    {
+        //        if (operationType.Equals("newInsertion") && typeEdition.Equals("insert"))
+        //        {
+        //            if (remPapel.Length <= 3)
+        //            {
+        //                var resultado = MessageBox.Show("A Inserção não alcançou o número mínimo de 3 caracteres.\n" +
+        //                "Para tentar novamente clique no botão 'Sim'. E no botão 'Não' para cancelar e sair do modo de Inserção.",
+        //                "Aviso do Sistema",
+        //                MessageBoxButtons.YesNo,
+        //                MessageBoxIcon.Question);
+        //                if (resultado == DialogResult.Yes)
+        //                {
+
+        //                    stringPapel = "";
+        //                }
+        //                else if (resultado == DialogResult.No)
+        //                {
+
+        //                    behaviorRefresh();
+        //                }
+        //            }
+        //            else if (remPapel.Length >= 3)
+        //            {
+        //                controllerPapeis.Salvar(stringPapel, bolCriar, bolRecuperar, bolEditar, bolExcluir, bolMenuOp, bolMenuAdmin, bolMenuGen);
+        //                if (controllerPapeis.retornoPersistencia.Equals("NS"))
+        //                {
+
+        //                    stringPapel = "";
+        //                    behaviorRefresh();
+        //                }
+        //                else if (controllerPapeis.retornoPersistencia.Equals("S!"))
+        //                {
+
+        //                    operationType = "newInsertion";
+        //                    typeEdition = "insert";
+
+        //                    behaviorRefresh();
+        //                    MessageBox.Show("Registro Salvo Com Sucesso!", "Aviso de Confirmação", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        //                }
+        //                else if (controllerPapeis.retornoPersistencia.Equals("S!!"))
+        //                {
+
+        //                    operationType = "newInsertion";
+        //                    typeEdition = "insert";
+
+        //                    behaviorRefresh();
+        //                    MessageBox.Show("Dado Existente Salvo!", "Aviso de Confirmação", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        //                }
+        //            }
+        //            if (controllerPapeis.retornoPersistencia.Equals("NS"))
+        //            {
+
+        //                operationType = "newInsertion";
+        //                typeEdition = "insert";
+        //                //acoesBehaviorSave();
+        //                behaviorRefresh();
+        //            }
+        //        }
+        //    }
+        //    else if (!remEspacosId.Equals("") || remEspacosId != null)
+        //    {
+
+        //        if (operationType.Equals("updateData") && typeEdition.Equals("insert"))
+        //        {
+        //            if (remPapel.Length <= 3)
+        //            {
+        //                var resultado = MessageBox.Show("A Edição não alcançou o número mínimo de 3 caracteres.\nPara tentar novamente clique no botão 'Sim'. E no botão 'Não' para cancelar e sair do modo de Inserção.", "Aviso do Sistema", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+        //                if (resultado == DialogResult.Yes)
+        //                {
+        //                    stringPapel = "";
+        //                }
+        //                else if (resultado == DialogResult.No)
+        //                {
+        //                    behaviorRefresh();
+        //                }
+        //            }
+        //            else if (remPapel.Length >= 3)
+        //            {
+        //                controllerPapeis.Editar(Convert.ToInt32(txtBoxId.Text), stringPapel, bolCriar, bolRecuperar, bolEditar, bolExcluir, bolMenuOp, bolMenuAdmin, bolMenuGen);
+
+        //                if (controllerPapeis.retornoPersistencia.Equals("AT"))
+        //                {
+
+        //                    behaviorRefresh();
+
+        //                }
+        //            }
+        //            if (controllerPapeis.retornoPersistencia.Equals("NS"))
+        //            {
+
+        //                behaviorRefresh();
+        //            }
+        //        }
+        //        else if (operationType.Equals("updateData") && typeEdition.Equals("search"))
+        //        {
+
+        //            MessageBox.Show("8!");
+        //            if (remPapel.Length <= 3)
+        //            {
+        //                var resultado = MessageBox.Show("A Edição não alcançou o número mínimo de 3 caracteres.\nPara tentar novamente clique no botão 'Sim'. E no botão 'Não' para cancelar e sair do modo de Inserção.", "Aviso do Sistema", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+        //                if (resultado == DialogResult.Yes)
+        //                {
+
+        //                    stringPapel = "";
+        //                }
+        //                else if (resultado == DialogResult.No)
+        //                {
+        //                    behaviorRefresh();
+        //                }
+
+        //            }
+        //            else if (remPapel.Length >= 3)
+        //            {
+        //                controllerPapeis.Editar(Convert.ToInt32(txtBoxId.Text), stringPapel, bolCriar, bolRecuperar, bolEditar, bolExcluir, bolMenuOp, bolMenuAdmin, bolMenuGen);
+        //                if (controllerPapeis.retornoPersistencia.Equals("AT"))
+        //                {
+        //                    behaviorRefresh();
+        //                    puxarparametroPesquisa();
+        //                    MessageBox.Show("Registro Pesquisado foi Atualizado !  \n else if (operationType.Equals(search) && typeEdition.Equals(search))", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        //                }
+        //            }
+        //            if (controllerPapeis.retornoPersistencia.Equals("NS"))
+        //            {
+        //                behaviorRefresh();
+        //            }
+        //        }
+        //    }
+        //}
 
 
         private void acoesBehaviorSave()
@@ -1041,7 +1178,7 @@ namespace Sistema.View
             txtBoxPesquisar.Text = "";
             gridCrudPapeis.DataSource = controllerPapeis.PesquisarComecaCom("nomepapel", "@nomepapel", "");
             DataGridModel();
-            toolStripLabel2.Text = Convert.ToString(controllerPapeis.retornoQuantPesquisa());
+            toolStripLabel2.Text = Convert.ToString(controllerPapeis.ListarPesquisaPapeisController());
             operationType = "search";
 
         }
@@ -1134,7 +1271,7 @@ namespace Sistema.View
                 txtBoxPesquisar.Focus();
                 gridCrudPapeis.DataSource = controllerPapeis.PesquisarComecaCom("nomepapel", "@nomepapel", "");
                 DataGridModel();
-                toolStripLabel2.Text = Convert.ToString(controllerPapeis.retornoQuantPesquisa());
+                toolStripLabel2.Text = Convert.ToString(controllerPapeis.ListarPesquisaPapeisController());
                 operationType = "search";
 
 
@@ -1337,7 +1474,7 @@ namespace Sistema.View
         private void formCrudPapeis_Load(object sender, EventArgs e)
         {
             //funciona inicializacao maximizada
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+        //    this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
 
         }
 

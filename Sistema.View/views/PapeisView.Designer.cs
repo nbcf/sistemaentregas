@@ -86,7 +86,7 @@ namespace Sistema.View
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Padding = new System.Windows.Forms.Padding(0);
-            this.toolStrip1.Size = new System.Drawing.Size(800, 51);
+            this.toolStrip1.Size = new System.Drawing.Size(767, 51);
             this.toolStrip1.TabIndex = 3;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -100,7 +100,7 @@ namespace Sistema.View
             this.bttnNew.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.bttnNew.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.bttnNew.Name = "bttnNew";
-            this.bttnNew.Size = new System.Drawing.Size(80, 48);
+            this.bttnNew.Size = new System.Drawing.Size(100, 48);
             this.bttnNew.Text = "toolStripButton1";
             this.bttnNew.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
             this.bttnNew.Click += new System.EventHandler(this.bttnNew_Click);
@@ -113,7 +113,7 @@ namespace Sistema.View
             this.bttnSave.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.bttnSave.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.bttnSave.Name = "bttnSave";
-            this.bttnSave.Size = new System.Drawing.Size(80, 48);
+            this.bttnSave.Size = new System.Drawing.Size(100, 48);
             this.bttnSave.Text = "toolStripButton2";
             this.bttnSave.Click += new System.EventHandler(this.bttnSave_Click);
             // 
@@ -125,7 +125,7 @@ namespace Sistema.View
             this.bttnRefresh.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.bttnRefresh.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.bttnRefresh.Name = "bttnRefresh";
-            this.bttnRefresh.Size = new System.Drawing.Size(80, 48);
+            this.bttnRefresh.Size = new System.Drawing.Size(100, 48);
             this.bttnRefresh.Text = "toolStripButton3";
             this.bttnRefresh.Click += new System.EventHandler(this.bttnRefresh_Click_1);
             // 
@@ -137,7 +137,7 @@ namespace Sistema.View
             this.bttnEdit.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.bttnEdit.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.bttnEdit.Name = "bttnEdit";
-            this.bttnEdit.Size = new System.Drawing.Size(80, 48);
+            this.bttnEdit.Size = new System.Drawing.Size(100, 48);
             this.bttnEdit.Text = "toolStripButton4";
             this.bttnEdit.Click += new System.EventHandler(this.bttnEdit_Click);
             // 
@@ -149,7 +149,7 @@ namespace Sistema.View
             this.bttnSearch.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.bttnSearch.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.bttnSearch.Name = "bttnSearch";
-            this.bttnSearch.Size = new System.Drawing.Size(80, 48);
+            this.bttnSearch.Size = new System.Drawing.Size(100, 48);
             this.bttnSearch.Text = "toolStripButton5";
             this.bttnSearch.Click += new System.EventHandler(this.bttnSearch_Click_1);
             // 
@@ -161,7 +161,7 @@ namespace Sistema.View
             this.bttnDel.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.bttnDel.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.bttnDel.Name = "bttnDel";
-            this.bttnDel.Size = new System.Drawing.Size(80, 48);
+            this.bttnDel.Size = new System.Drawing.Size(100, 48);
             this.bttnDel.Text = "toolStripButton6";
             this.bttnDel.Click += new System.EventHandler(this.bttnDel_Click);
             // 
@@ -177,7 +177,7 @@ namespace Sistema.View
             this.gridCrudPapeis.Name = "gridCrudPapeis";
             this.gridCrudPapeis.RowTemplate.Height = 25;
             this.gridCrudPapeis.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.gridCrudPapeis.Size = new System.Drawing.Size(800, 520);
+            this.gridCrudPapeis.Size = new System.Drawing.Size(767, 342);
             this.gridCrudPapeis.TabIndex = 7;
             this.gridCrudPapeis.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridCrudPapeis_CellClick);
             this.gridCrudPapeis.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridCrudPapeis_CellDoubleClick);
@@ -204,9 +204,9 @@ namespace Sistema.View
             this.cbOrdemParam1,
             this.toolStripLabel8,
             this.cbOrdenarPor1});
-            this.toolStrip2.Location = new System.Drawing.Point(0, 627);
+            this.toolStrip2.Location = new System.Drawing.Point(0, 449);
             this.toolStrip2.Name = "toolStrip2";
-            this.toolStrip2.Size = new System.Drawing.Size(800, 32);
+            this.toolStrip2.Size = new System.Drawing.Size(767, 32);
             this.toolStrip2.TabIndex = 8;
             this.toolStrip2.Text = "toolStrip2";
             // 
@@ -346,7 +346,7 @@ namespace Sistema.View
             "Codigo",
             "Alfabeto"});
             this.cbOrdemParam1.Name = "cbOrdemParam1";
-            this.cbOrdemParam1.Size = new System.Drawing.Size(118, 32);
+            this.cbOrdemParam1.Size = new System.Drawing.Size(118, 28);
             this.cbOrdemParam1.SelectedIndexChanged += new System.EventHandler(this.cbOrdemParam1_SelectedIndexChanged);
             this.cbOrdemParam1.Click += new System.EventHandler(this.cbOrdemParam1_Click);
             // 
@@ -377,7 +377,7 @@ namespace Sistema.View
             this.tabControlAssets.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tabControlAssets.Name = "tabControlAssets";
             this.tabControlAssets.SelectedIndex = 0;
-            this.tabControlAssets.Size = new System.Drawing.Size(800, 88);
+            this.tabControlAssets.Size = new System.Drawing.Size(767, 88);
             this.tabControlAssets.TabIndex = 5;
             // 
             // tabPagePesquisar
@@ -393,7 +393,7 @@ namespace Sistema.View
             this.tabPagePesquisar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tabPagePesquisar.Name = "tabPagePesquisar";
             this.tabPagePesquisar.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.tabPagePesquisar.Size = new System.Drawing.Size(792, 52);
+            this.tabPagePesquisar.Size = new System.Drawing.Size(759, 52);
             this.tabPagePesquisar.TabIndex = 1;
             this.tabPagePesquisar.Text = "Pesquisar";
             this.tabPagePesquisar.UseVisualStyleBackColor = true;
@@ -472,7 +472,7 @@ namespace Sistema.View
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 659);
+            this.ClientSize = new System.Drawing.Size(767, 481);
             this.Controls.Add(this.toolStrip2);
             this.Controls.Add(this.gridCrudPapeis);
             this.Controls.Add(this.tabControlAssets);
@@ -484,7 +484,6 @@ namespace Sistema.View
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastro de Papéis";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.formCrudPapeis_FormClosing);
-         //   this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.formCrudPapeis_FormClosed);
             this.Load += new System.EventHandler(this.formCrudPapeis_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();

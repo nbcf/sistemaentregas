@@ -577,6 +577,7 @@ namespace Sistema.View
                 bttnEdit.Enabled = true;
                 bttnSave.Enabled = false;
                 bttnSearch.Enabled = true;
+                puxarparametroPesquisa();
                 
             }
             else if (operationType == "" || operationType == "newInsertion" || operationType == "updateData" || operationType == "search" && typeEdition == "insert")

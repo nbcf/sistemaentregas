@@ -1,4 +1,5 @@
 ﻿using MySql.Data.MySqlClient;
+using Sistema.Conexao;
 using Sistema.Model;
 using System;
 using System.Collections.Generic;
@@ -13,10 +14,11 @@ namespace Sistema.DAO
   public  class PapeisDAO
     {
         PapeisModel papeisModel = new PapeisModel();
-        public int quantidadeBD = 0;
-        public int resQuantSearch;
-        public string registroInserido = "";
-        Sistema.Conexao.ClasseConexao classeConecta = new Sistema.Conexao.ClasseConexao();
+
+        public int pesquisaPapeisDAO = 0;
+        public string acaoCrudPapeisDAO = "";
+        public int qtBDPapeisDAO = 0;
+        ClasseConexao classeConecta = new ClasseConexao();
         string sql;
         MySqlCommand cmd;
         MySqlCommand cmdVerificar;
@@ -42,124 +44,164 @@ namespace Sistema.DAO
 
         }
 
-        public void Salvar(PapeisModel modelPapeis)
-        {
+        public void Salvar(
+                        string papel,
+                        bool cadastrar,
+                        bool pesquisar, 
+                        bool editar,
+                        bool excluir,
+                        bool menuope,
+                        bool menuadmin,
+                        bool menugen){
+            
             try
             {
                 classeConecta.AbrirCon();
                 cmdVerificar = new MySqlCommand("SELECT * FROM papeis where nomepapel = @nomepapel", classeConecta.con);
-                cmdVerificar.Parameters.AddWithValue("@nomepapel", modelPapeis.Nomepapel);
+                cmdVerificar.Parameters.AddWithValue("@nomepapel", papel);
                 MySqlDataAdapter dap = new MySqlDataAdapter();
                 dap.SelectCommand = cmdVerificar;
                 DataTable dtp = new DataTable();
                 dap.Fill(dtp);
-                if (dtp.Rows.Count == 0)
+                classeConecta.FecharCon();
+                if (dtp.Rows.Count > 0)
                 {
-                    sql = "INSERT INTO papeis (nomepapel, criar, recuperar, atualizar, excluir, menuope, menuadmin, menugen) VALUES (@nomepapel, @criar, @recuperar, @atualizar, @excluir, @menuope, @menuadmin, @menugen)";
-                    cmd = new MySqlCommand(sql, classeConecta.con);
-                    cmd.Parameters.AddWithValue("@nomepapel", modelPapeis.Nomepapel);
-                    cmd.Parameters.AddWithValue("@criar", modelPapeis.Criar);
-                    cmd.Parameters.AddWithValue("@recuperar", modelPapeis.Recuperar);
-                    cmd.Parameters.AddWithValue("@atualizar", modelPapeis.Atualizar);
-                    cmd.Parameters.AddWithValue("@excluir", modelPapeis.Excluir);
-                    cmd.Parameters.AddWithValue("@menuope", modelPapeis.Menuope);
-                    cmd.Parameters.AddWithValue("@menuadmin", modelPapeis.Menuadmin);
-                    cmd.Parameters.AddWithValue("@menugen", modelPapeis.Menugen);
-                    cmd.ExecuteNonQuery();
-                    MessageBox.Show("Registro Salvo com Sucesso!", "Registro Salvo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    registroInserido = "S!";
-                    classeConecta.FecharCon();
-                }
+                    var resultado = MessageBox.Show("O Registro " + papel + " já se encontra, no banco de dados do sistema. " + "\n" + "Para confirmar a inserção duplicada, clique no botão 'Sim'. E no botão 'Não' para cancelar.",
+                        "Aviso de Duplicidade",
+                        MessageBoxButtons.YesNo,
+                        MessageBoxIcon.Question);
+                    if (resultado == DialogResult.Yes)
+                    {
+                        classeConecta.AbrirCon();
+                        sql = "INSERT INTO papeis (" +
+                            "nomepapel," +
+                            "criar, " +
+                            "recuperar, " +
+                            "atualizar," +
+                            "excluir," +
+                            "menuope," +
+                            "menuadmin," +
+                            "menugen" +
+                            ") VALUES (" +
+                            "@nomepapel," +
+                            "@criar," +
+                            "@recuperar," +
+                            "@atualizar," +
+                            "@excluir," +
+                            "@menuope," +
+                            "@menuadmin," +
+                            "@menugen)";
+                        cmd = new MySqlCommand(sql, classeConecta.con);
+                        cmd.Parameters.AddWithValue("@nomepapel", papel);
+                        cmd.Parameters.AddWithValue("@criar", cadastrar);
+                        cmd.Parameters.AddWithValue("@recuperar", pesquisar);
+                        cmd.Parameters.AddWithValue("@atualizar", editar);
+                        cmd.Parameters.AddWithValue("@excluir", excluir);
+                        cmd.Parameters.AddWithValue("@menuope", menuope);
+                        cmd.Parameters.AddWithValue("@menuadmin", menuadmin);
+                        cmd.Parameters.AddWithValue("@menugen", menugen);
+                        cmd.ExecuteNonQuery();
+                        acaoCrudPapeisDAO = "S!!";
+                        classeConecta.FecharCon();
 
-                else  if (dtp.Rows.Count > 0)
+                    }
+                    else if (resultado == DialogResult.No)
+                    {
+                        acaoCrudPapeisDAO = "NS";
+                    }
+                }
+                else if (dtp.Rows.Count == 0)
                 {
-                    
-                    MessageBox.Show("Registro Já Existente no Banco de Dados", "Não Foi Possivel Salvar!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    classeConecta.AbrirCon();
+                    sql = "INSERT INTO papeis (" +
+                        "nomepapel," +
+                        "criar, " +
+                        "recuperar," +
+                        "atualizar," +
+                        "excluir, " +
+                        "menuope, " +
+                        "menuadmin, " +
+                        "menugen" +
+                        ") VALUES (" +
+                        "@nomepapel," +
+                        "@criar, " +
+                        "@recuperar," +
+                        "@atualizar," +
+                        "@excluir," +
+                        "@menuope, " +
+                        "@menuadmin," +
+                        "@menugen)";
+                    cmd = new MySqlCommand(sql, classeConecta.con);
+                    cmd.Parameters.AddWithValue("@nomepapel", papel);
+                    cmd.Parameters.AddWithValue("@criar", cadastrar);
+                    cmd.Parameters.AddWithValue("@recuperar", pesquisar);
+                    cmd.Parameters.AddWithValue("@atualizar", editar);
+                    cmd.Parameters.AddWithValue("@excluir", excluir);
+                    cmd.Parameters.AddWithValue("@menuope", menuope);
+                    cmd.Parameters.AddWithValue("@menuadmin", menuadmin);
+                    cmd.Parameters.AddWithValue("@menugen", menugen);
+                    cmd.ExecuteNonQuery();
+                    acaoCrudPapeisDAO = "S!";
+                    classeConecta.FecharCon();
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("A Seguinte Excessão foi lançada quando o método Salvar foi operado " + ex, "Erro na classe PessoaDAO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("A Seguinte Excessão foi lançada quando o método Salvar foi operado " + ex,
+                    "Erro na classe UsuariosDAO",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
             }
+
         }
 
 
-        public void Editar(PapeisModel modelPapeis)
-        {
-            string edicaoRepetida = modelPapeis.Nomepapel;
-            int dadoEncontrado = modelPapeis.Idpapel;
-            try
-            {
+        public void Editar(
+                        string papel,
+                        bool cadastrar, 
+                        bool pesquisar,
+                        bool editar, 
+                        bool excluir,
+                        bool menuope, 
+                        bool menuadm, 
+                        bool menugen, 
+                        int idpapel){
+            try{
                 classeConecta.AbrirCon();
-                cmdVerificar = new MySqlCommand("SELECT * FROM papeis where nomepapel = @nomepapel ", classeConecta.con);
-                cmdVerificar.Parameters.AddWithValue("@nomepapel", modelPapeis.Nomepapel);
-                MySqlDataAdapter dap = new MySqlDataAdapter();
-                dap.SelectCommand = cmdVerificar;
-                DataTable dtp = new DataTable();
-                dap.Fill(dtp);
-                if (dtp.Rows.Count == 0)
-                {
-                    sql = "INSERT INTO papeis (nomepapel, criar, recuperar, atualizar, excluir, menuope, menuadmin, menugen) VALUES (@nomepapel, @criar, @recuperar, @atualizar, @excluir, @menuope, @menuadmin, @menugen)";
-                    cmd = new MySqlCommand(sql, classeConecta.con);
-                    cmd.Parameters.AddWithValue("@nomepapel",   modelPapeis.Nomepapel);
-                    cmd.Parameters.AddWithValue("@criar",       modelPapeis.Criar);
-                    cmd.Parameters.AddWithValue("@recuperar",   modelPapeis.Recuperar);
-                    cmd.Parameters.AddWithValue("@atualizar",   modelPapeis.Atualizar);
-                    cmd.Parameters.AddWithValue("@excluir",     modelPapeis.Excluir);
-                    cmd.Parameters.AddWithValue("@menuope",     modelPapeis.Menuope);
-                    cmd.Parameters.AddWithValue("@menuadmin",   modelPapeis.Menuadmin);
-                    cmd.Parameters.AddWithValue("@menugen",     modelPapeis.Menugen);
+                cmdVerificar = new MySqlCommand("UPDATE usuarios SET " +
+                    " nomepapel     =   @nomepapel," +
+                    " criar         =   @criar," +
+                    " recuperar     =   @recuperar," +
+                    " atualizar     =   @editar," +
+                    " excluir       =   @excluir," +
+                    " menuope       =   @menuope," +
+                    " menuadm       =   @menuadm," +
+                    " menugen       =   @menugen" +
+                    " WHERE idpapel = @idpapel", classeConecta.con);
+                    cmd.Parameters.AddWithValue("@nomepapel",   papel);
+                    cmd.Parameters.AddWithValue("@criar",       cadastrar);
+                    cmd.Parameters.AddWithValue("@recuperar",   pesquisar);
+                    cmd.Parameters.AddWithValue("@atualizar",   editar);
+                    cmd.Parameters.AddWithValue("@excluir",     excluir);
+                    cmd.Parameters.AddWithValue("@menuope",     menuope);
+                    cmd.Parameters.AddWithValue("@menuadmin",   menuadm);
+                    cmd.Parameters.AddWithValue("@menugen",   menugen);
+                    cmd.Parameters.AddWithValue("@idpapel",     idpapel);
                     cmd.ExecuteNonQuery();
-                    registroInserido = "AT";
-                    classeConecta.FecharCon();
-                }
+                    acaoCrudPapeisDAO = "AT";
 
-                else if (dtp.Rows.Count > 0)
-                {
-                    MessageBox.Show("Não é possível renomear para outro registro existente\n Da mesma forma a atualização do mesmo a ação é nula", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    //var resultado = MessageBox.Show("O Registro que está tentando editar: " +
-                    //Convert.ToString(modelPapeis.Nomepapel) +
-                    //", se encotra na base de dados. " +
-                    //"\n\nForam encontrados: " + Convert.ToInt32(dtp.Rows.Count) +
-                    //" Registros com o mesmo nome no campo 'Complemento'" +
-                    //"\n" + "Para confirmar a ação, clique no botão 'Sim', e 'Não' para cancelar.",
-                    //"Aviso de nome de Papel Repetido",
-                    //MessageBoxButtons.OK,
-                    //MessageBoxIcon.Question);
-                    //if (resultado == DialogResult.Yes)
-                    //{
-                    //    sql = "INSERT INTO papeis (nomepapel, criar, recuperar, atualizar, excluir, menuope, menuadmin, menugen) VALUES (@nomepapel, @criar, @recuperar, @atualizar, @excluir, @menuope, @menuadmin, @menugen)";
-                    //    cmd = new MySqlCommand(sql, classeConecta.con);
-                    //    cmd.Parameters.AddWithValue("@nomepapel", modelPapeis.Nomepapel);
-                    //    cmd.Parameters.AddWithValue("@criar", modelPapeis.Criar);
-                    //    cmd.Parameters.AddWithValue("@recuperar", modelPapeis.Recuperar);
-                    //    cmd.Parameters.AddWithValue("@atualizar", modelPapeis.Atualizar);
-                    //    cmd.Parameters.AddWithValue("@excluir", modelPapeis.Excluir);
-                    //    cmd.Parameters.AddWithValue("@menuope", modelPapeis.Menuope);
-                    //    cmd.Parameters.AddWithValue("@menuadmin", modelPapeis.Menuadmin);
-                    //    cmd.Parameters.AddWithValue("@menugen", modelPapeis.Menugen);
-                    //    cmd.ExecuteNonQuery();
-                    //    registroInserido = "AT";
-                    //    classeConecta.FecharCon();
-                    //}
-                    //else if (resultado == DialogResult.No)
-                    //{
-                        registroInserido = "NS";
-                    //    classeConecta.FecharCon();
-                    //}
-                }
+            } catch (Exception ex){
+                MessageBox.Show("A Seguinte Excessão foi lançada quando o método Editar foi operado " + ex, "Erro na classe UsuariosDAO",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Erro ao Editar " + ex);
-            }
+
         }
 
 
-
-        public void Excluir(PapeisModel modelPapeis)
+        public void Excluir(int idpapeis, string nomepapel)
         {
-            var resultado = MessageBox.Show("Confirmar exclusão do registro: " + Convert.ToString(modelPapeis.Nomepapel), "Excluir Registro", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            var resultado = MessageBox.Show("Confirmar exclusão do registro: " + nomepapel, "Excluir Registro", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (resultado == DialogResult.Yes)
             {
                 try
@@ -167,20 +209,19 @@ namespace Sistema.DAO
                     classeConecta.AbrirCon();
                     sql = "DELETE FROM papeis where idpapel = @idpapel";
                     cmd = new MySqlCommand(sql, classeConecta.con);
-                    cmd.Parameters.AddWithValue("@idpapel", modelPapeis.Idpapel);
+                    cmd.Parameters.AddWithValue("@idpapel", idpapeis);
                     cmd.ExecuteNonQuery();
                     classeConecta.FecharCon();
-                    registroInserido = "DEL";
-                }
-                catch (Exception ex)
-                {
+                    acaoCrudPapeisDAO = "DEL";
+                    
+                }catch (Exception ex){
                     MessageBox.Show("Erro ao Excluir " + ex);
-                    classeConecta.FecharCon();
+          
                 }
             }
             else if (resultado == DialogResult.No)
             {
-                registroInserido = "NDEL";
+                acaoCrudPapeisDAO = "NDEL";
             }
         }
 
@@ -196,9 +237,10 @@ namespace Sistema.DAO
                 da.SelectCommand = cmd;
                 DataTable dt = new DataTable();
                 da.Fill(dt);
-                quantidadeBD = dt.Rows.Count;
-                return dt;
+                qtBDPapeisDAO = dt.Rows.Count;
                 classeConecta.FecharCon();
+                return dt;
+               
             }
             catch (Exception ex)
             {
@@ -207,9 +249,7 @@ namespace Sistema.DAO
         }
 
 
-        public int ListarTodosRegistrosBD()
-        {
-            int todosresgistros;
+        public int ListarBDPapeisDAO(){
             try
             {
                 classeConecta.AbrirCon();
@@ -219,28 +259,21 @@ namespace Sistema.DAO
                 da.SelectCommand = cmd;
                 DataTable dt = new DataTable();
                 da.Fill(dt);
-                todosresgistros = dt.Rows.Count;
-                return todosresgistros;
-            }
-            catch (Exception ex)
-            {
+                classeConecta.FecharCon();
+                return dt.Rows.Count;
+
+            }catch (Exception ex){
                 throw ex;
             }
         }
 
 
-        public int ListarPesquisados()
-        {
-            int retornoPesquisado;
-            retornoPesquisado = resQuantSearch;
-            return retornoPesquisado;
+        public int ListarPesquisaPapeisDAO(){
+            return pesquisaPapeisDAO;
         }
 
-        public string VerificarPersistencia()
-        {
-            string retornoExistente;
-            retornoExistente = registroInserido;
-            return retornoExistente;
+        public string AcaoCrudPapeisDAO(){
+            return acaoCrudPapeisDAO;
         }
 
         public DataTable ConfiListagemDataGrid(string parametro, string indexar, int offsett, int limitt)
@@ -254,8 +287,8 @@ namespace Sistema.DAO
                 da.SelectCommand = cmd;
                 DataTable dt = new DataTable();
                 da.Fill(dt);
-                return dt;
                 classeConecta.FecharCon();
+                return dt;
             }
             catch (Exception ex)
             {
@@ -275,8 +308,8 @@ namespace Sistema.DAO
                 da.SelectCommand = cmd;
                 DataTable dt = new DataTable();
                 da.Fill(dt);
-                return dt;
                 classeConecta.FecharCon();
+                return dt;
             }
             catch (Exception ex)
             {
@@ -305,9 +338,9 @@ namespace Sistema.DAO
                 da.SelectCommand = cmd;
                 DataTable dt = new DataTable();
                 da.Fill(dt);
-                resQuantSearch = dt.Rows.Count;
-                return dt;
+                pesquisaPapeisDAO = dt.Rows.Count;
                 classeConecta.FecharCon();
+                return dt;
             }
             catch (Exception ex)
             {
@@ -334,11 +367,9 @@ namespace Sistema.DAO
                 da.SelectCommand = cmd;
                 DataTable dt = new DataTable();
                 da.Fill(dt);
-
-                resQuantSearch = dt.Rows.Count;
-                return dt;
+                pesquisaPapeisDAO = dt.Rows.Count;
                 classeConecta.FecharCon();
-
+                return dt;
             }
             catch (Exception ex)
             {
@@ -368,9 +399,9 @@ namespace Sistema.DAO
                 da.SelectCommand = cmd;
                 DataTable dt = new DataTable();
                 da.Fill(dt);
-                resQuantSearch = dt.Rows.Count;
-                return dt;
+                pesquisaPapeisDAO = dt.Rows.Count;
                 classeConecta.FecharCon();
+                return dt;
             }
             catch (Exception ex)
             {

@@ -181,7 +181,7 @@ namespace Sistema.View.views
             this.tabControlAssets.Location = new System.Drawing.Point(0, 51);
             this.tabControlAssets.Name = "tabControlAssets";
             this.tabControlAssets.SelectedIndex = 0;
-            this.tabControlAssets.Size = new System.Drawing.Size(875, 76);
+            this.tabControlAssets.Size = new System.Drawing.Size(875, 84);
             this.tabControlAssets.TabIndex = 5;
             // 
             // tabPagePesquisar
@@ -267,7 +267,7 @@ namespace Sistema.View.views
             this.tabPageFormulario.Location = new System.Drawing.Point(4, 29);
             this.tabPageFormulario.Name = "tabPageFormulario";
             this.tabPageFormulario.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageFormulario.Size = new System.Drawing.Size(867, 43);
+            this.tabPageFormulario.Size = new System.Drawing.Size(867, 51);
             this.tabPageFormulario.TabIndex = 2;
             this.tabPageFormulario.Text = "Formulário";
             this.tabPageFormulario.UseVisualStyleBackColor = true;
@@ -496,9 +496,9 @@ namespace Sistema.View.views
             // 
             this.gridCrudFornecedores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridCrudFornecedores.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridCrudFornecedores.Location = new System.Drawing.Point(0, 127);
+            this.gridCrudFornecedores.Location = new System.Drawing.Point(0, 135);
             this.gridCrudFornecedores.Name = "gridCrudFornecedores";
-            this.gridCrudFornecedores.Size = new System.Drawing.Size(875, 298);
+            this.gridCrudFornecedores.Size = new System.Drawing.Size(875, 290);
             this.gridCrudFornecedores.TabIndex = 9;
             this.gridCrudFornecedores.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridCrudFornecedores_CellClick);
             // 

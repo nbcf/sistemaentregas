@@ -18,18 +18,24 @@ namespace Sistema.Controller
         public string retornoPersistencia;
 
 
-        public void Salvar(string papel, bool cadastrar, bool pesquisar, bool editar, bool excluir, bool menuope, bool menuadmin, bool menugen)
+        public void Salvar(string papel,
+            bool cadastrar,
+            bool pesquisar,
+            bool editar, 
+            bool excluir,
+            bool menuope,
+            bool menuadmin,
+            bool menugen)
         {
-            modelPapeis.Nomepapel = papel;
-            modelPapeis.Criar = cadastrar;
-            modelPapeis.Recuperar = pesquisar;
-            modelPapeis.Atualizar = editar;
-            modelPapeis.Excluir = excluir;
-            modelPapeis.Menuope = menuope;
-            modelPapeis.Menuadmin = menuadmin;
-            modelPapeis.Menugen = menugen;
-            dao.Salvar(modelPapeis);
-            retornoRegistroSalvo();
+            
+            dao.Salvar( papel,
+                cadastrar,
+                pesquisar, 
+                editar,
+                excluir,
+                menuope, 
+                menuadmin, 
+                menugen);
         }
 
         public DataTable Listar(string ordernaPor)
@@ -50,45 +56,45 @@ namespace Sistema.Controller
 
         public void Excluir(int idpapeis, string nomepapel)
         {
-            modelPapeis.Idpapel = idpapeis;
-            modelPapeis.Nomepapel = nomepapel;
-            dao.Excluir(modelPapeis);
-            retornoRegistroSalvo();
+          
+            dao.Excluir( idpapeis,  nomepapel);
+      
         }
 
-        public void Editar(int idpapel, string papel, bool cadastrar, bool pesquisar, bool editar, bool excluir, bool menuope, bool menuadm, bool menugen)
+        public void Editar(string papel,
+            bool cadastrar, 
+            bool pesquisar,
+            bool editar, 
+            bool excluir, 
+            bool menuope, 
+            bool menuadm, 
+            bool menugen, 
+            int idpapel)
         {
-            modelPapeis.Idpapel = idpapel;
-            modelPapeis.Nomepapel = papel;
-            modelPapeis.Criar = cadastrar;
-            modelPapeis.Recuperar = pesquisar;
-            modelPapeis.Atualizar = editar;
-            modelPapeis.Excluir = excluir;
-            modelPapeis.Menuope = menuope;
-            modelPapeis.Menuadmin = menuadm;
-            modelPapeis.Menugen = menugen;
-            dao.Editar(modelPapeis);
-            retornoRegistroSalvo();
+            dao.Editar(papel,
+                cadastrar,
+                pesquisar, 
+                editar, 
+                excluir,  
+                menuope, 
+                menuadm, 
+                menugen, 
+                idpapel);
+      
         }
 
 
-        public int retornoQuantRegistro()
-        {
-            encontrados = dao.ListarTodosRegistrosBD();
-            return encontrados;
+       
+        public int ListarBDPapeisControlller(){
+            return dao.ListarBDPapeisDAO();
         }
 
-        public int retornoQuantPesquisa()
-        {
-            encontradosPesquisa = dao.ListarPesquisados();
-            return encontradosPesquisa;
+        public int ListarPesquisaPapeisController(){
+            return dao.ListarPesquisaPapeisDAO();
         }
 
-        public string retornoRegistroSalvo()
-        {
-            retornoPersistencia = dao.VerificarPersistencia();
-            return retornoPersistencia;
-
+        public string AcaoCrudPapeisDAO(){
+            return dao.AcaoCrudPapeisDAO();
         }
 
 
@@ -96,9 +102,9 @@ namespace Sistema.Controller
         {
             try
             {
-                retornoQuantRegistro();
                 DataTable dt = new DataTable();
                 dt = dao.ConfiListagemDataGrid(parametro, indexar, offsett, limitt);
+                ListarBDPapeisControlller();
                 return dt;
             }
             catch (Exception e)
@@ -112,9 +118,9 @@ namespace Sistema.Controller
         {
             try
             {
-                retornoQuantRegistro();
                 DataTable dt = new DataTable();
                 dt = dao.ConfiListagemImportPU();
+                ListarBDPapeisControlller();
                 return dt;
             }
             catch (Exception e)
@@ -128,9 +134,9 @@ namespace Sistema.Controller
         {
             try
             {
-                //     retornoQuantPesquisa();
                 DataTable dt = new DataTable();
                 dt = dao.PesquisarComeca(coluna, campo, pesquisar);
+                ListarPesquisaPapeisController();
                 return dt;
             }
             catch (Exception)
@@ -145,9 +151,9 @@ namespace Sistema.Controller
         {
             try
             {
-                // retornoQuantPesquisa();
                 DataTable dt = new DataTable();
                 dt = dao.PesquisarContem(coluna, campo, pesquisar);
+                ListarPesquisaPapeisController();
                 return dt;
             }
             catch (Exception e)
@@ -161,9 +167,9 @@ namespace Sistema.Controller
         {
             try
             {
-                //         retornoQuantPesquisa();
                 DataTable dt = new DataTable();
                 dt = dao.PesquisarTermina(coluna, campo, pesquisar);
+                ListarPesquisaPapeisController();
                 return dt;
             }
             catch (Exception)
