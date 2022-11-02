@@ -15,6 +15,3 @@
 >> Altere o Branches  de 'Main' para 'Master' para poder acessar o projeto
 
 
-# Andamento do Projeto
-
-01 / Nov / 2022 : Programando Lógica de Gastos.
