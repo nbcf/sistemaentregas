@@ -586,6 +586,7 @@ namespace Sistema.View
                 bttnSave.Enabled = false;
                 bttnSearch.Enabled = true;
                 puxarparametroPesquisa();
+
             }
             else if (operationType == "" ||
                     operationType == "newInsertion" ||
@@ -788,6 +789,7 @@ namespace Sistema.View
 
                 if (operationType.Equals("updateData") && typeEdition.Equals("insert"))
                 {
+
                     if (remPapel.Length <= 3)
                     {
                         var resultado = MessageBox.Show("A Edição não alcançou o número mínimo de 3 caracteres.\nPara tentar novamente clique no botão 'Sim'. E no botão 'Não' para cancelar e sair do modo de Inserção.", "Aviso do Sistema", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -885,11 +887,6 @@ namespace Sistema.View
 
 
      
-
-        private void behaviorEdit()
-        {
-
-        }
 
        
 
@@ -1097,7 +1094,8 @@ namespace Sistema.View
                 else if (typeEdition.Equals("search"))
                 {
                     operationType = "updateData";
-                    behaviorClickGridPesquisa();
+                    //behaviorClickGridPesquisa();
+                    behaviorClickGrid();
 
                 }
 
@@ -1179,55 +1177,45 @@ namespace Sistema.View
             }
         }
 
-        private void bttnDel_Click(object sender, EventArgs e)
-        {
+        private void bttnDel_Click(object sender, EventArgs e){
             behaviorDel();
         }
 
 
-        private void radioBttnTermina_CheckedChanged_1(object sender, EventArgs e)
-        {
+        private void radioBttnTermina_CheckedChanged_1(object sender, EventArgs e){
             puxarparametroPesquisa();
         }
 
-        private void radioBttnComeca_CheckedChanged_1(object sender, EventArgs e)
-        {
+        private void radioBttnComeca_CheckedChanged_1(object sender, EventArgs e){
             puxarparametroPesquisa();
         }
 
-        private void radioBttnContem_CheckedChanged_1(object sender, EventArgs e)
-        {
+        private void radioBttnContem_CheckedChanged_1(object sender, EventArgs e){
             puxarparametroPesquisa();
         }
 
-        private void cbButtonPesquisarEm_SelectedIndexChanged(object sender, EventArgs e)
-        {
+        private void cbButtonPesquisarEm_SelectedIndexChanged(object sender, EventArgs e) {
             puxarparametroPesquisa();
         }
 
-        private void txtBoxPesquisar_TextChanged_1(object sender, EventArgs e)
-        {
+        private void txtBoxPesquisar_TextChanged_1(object sender, EventArgs e){
             puxarparametroPesquisa();
         }
 
-        private void cbOrdemParam_SelectedIndexChanged(object sender, EventArgs e)
-        {
+        private void cbOrdemParam_SelectedIndexChanged(object sender, EventArgs e){
             puxarparametro(0, Convert.ToInt32(cbButtnQuantPage1.SelectedItem), "Sim");
         }
 
 
-        private void radBttnLast_CheckedChanged_1(object sender, EventArgs e)
-        {
+        private void radBttnLast_CheckedChanged_1(object sender, EventArgs e){
             puxarparametro(0, Convert.ToInt32(cbButtnQuantPage1.SelectedItem), "Sim");
         }
 
-        private void radBttnFirst_CheckedChanged_1(object sender, EventArgs e)
-        {
+        private void radBttnFirst_CheckedChanged_1(object sender, EventArgs e){
             puxarparametro(0, Convert.ToInt32(cbButtnQuantPage1.SelectedItem), "Sim");
         }
 
-        private void cbButtnQuantPage1_SelectedIndexChanged_1(object sender, EventArgs e)
-        {
+        private void cbButtnQuantPage1_SelectedIndexChanged_1(object sender, EventArgs e){
             puxarparametro(0, Convert.ToInt32(cbButtnQuantPage1.SelectedItem), "Sim");
         }
 
@@ -1249,7 +1237,7 @@ namespace Sistema.View
                 else if (typeEdition.Equals("search"))
                 {
                     operationType = "updateData";
-                    behaviorClickGridPesquisa();
+                    behaviorClickGrid();
                 }
             }
 
@@ -1338,17 +1326,14 @@ namespace Sistema.View
         public void editarRegistro()
         {
             var gridVazia = gridCrudPapeis.CurrentRow.Cells[0].Value.ToString();
-            if (string.IsNullOrEmpty(gridVazia))
-            {
-            }
-            else if (gridVazia.Length > 0)
-            {
-                if (typeEdition.Equals("insert") && operationType.Equals("newInsertion"))
-                {
+            
+            if (string.IsNullOrEmpty(gridVazia)){ }
+
+            else if (gridVazia.Length > 0){
+
+                if (typeEdition.Equals("insert") && operationType.Equals("newInsertion")){
                     operationType = "newInsertion";
-                    behaviorEdit();
                     typeEdition = "insert";
-                    operationType = "updateData";
                     bttnDel.Enabled = false;
                     bttnEdit.Enabled = false;
                     bttnSearch.Enabled = false;
@@ -1402,34 +1387,6 @@ namespace Sistema.View
 
                     }
 
-                    if (frmEditPapel.AcaoDialogVO.Equals("sair"))
-                    {
-
-                        bttnRefresh.Enabled = false;
-                        stringPapel = "";
-                        bolCriar = false;
-                        bolRecuperar = false;
-                        bolEditar = false;
-                        bolEditar = false;
-                        bolMenuOp = false;
-                        bolMenuAdmin = false;
-                        bolMenuGen = false;
-                        behaviorRefresh();
-                    }
-
-                    else if (frmEditPapel.AcaoDialogVO.Equals("ok"))
-                    {
-                        stringPapel = frmEditPapel.PapelVO;
-                        bolCriar = frmEditPapel.CriarVO;
-                        bolRecuperar = frmEditPapel.RecuperarVO;
-                        bolEditar = frmEditPapel.AtualizarVO;
-                        bolExcluir = frmEditPapel.DeletarVO;
-                        bolMenuOp = frmEditPapel.MenuOpVO;
-                        bolMenuAdmin = frmEditPapel.MenuAdminVO;
-                        bolMenuGen = frmEditPapel.MenuGenVO;
-                        behaviorSave();
-                    }
-
                 }
                 else if (typeEdition.Equals("search") && operationType.Equals("updateData"))
                 {
@@ -1446,7 +1403,9 @@ namespace Sistema.View
                     txtBoxId.Text = gridCrudPapeis.CurrentRow.Cells[0].Value.ToString();
                     stringPapel = gridCrudPapeis.CurrentRow.Cells[1].Value.ToString();
 
+
                     formEditPapel frmEditPapel = new formEditPapel();
+
                     frmEditPapel.PapelVO = stringPapel;
                     frmEditPapel.CriarVO = bolCriar;
                     frmEditPapel.RecuperarVO = bolRecuperar;
@@ -1457,7 +1416,8 @@ namespace Sistema.View
                     frmEditPapel.MenuGenVO = bolMenuGen;
                     frmEditPapel.ShowDialog();
 
-                    if (frmEditPapel.AcaoDialogVO.Equals("sair")){
+                    if (frmEditPapel.AcaoDialogVO.Equals("sair"))
+                    {
                         stringPapel = "";
                         bolCriar = false;
                         bolRecuperar = false;
@@ -1470,7 +1430,9 @@ namespace Sistema.View
                         behaviorRefresh();
                     }
 
-                    else if (frmEditPapel.AcaoDialogVO.Equals("ok")){
+                    else if (frmEditPapel.AcaoDialogVO.Equals("ok"))
+                    {
+
                         stringPapel = frmEditPapel.PapelVO;
                         bolCriar = frmEditPapel.CriarVO;
                         bolRecuperar = frmEditPapel.RecuperarVO;
@@ -1507,36 +1469,13 @@ namespace Sistema.View
             radioBttnComeca.Checked = false;
             radioBttnContem.Checked = false;
             radioBttnTermina.Checked = false;
+
             clearFieldsFormulario();
             txtBoxId.Text = gridCrudPapeis.CurrentRow.Cells[0].Value.ToString();
             stringPapel = gridCrudPapeis.CurrentRow.Cells[1].Value.ToString();
 
 
         }
-        private void behaviorClickGridPesquisa()
-        {
-            bolCriar = "1".Equals(Convert.ToInt32(gridCrudPapeis.CurrentRow.Cells[2].Value.ToString())) ? true : false;
-            bolRecuperar = "1".Equals(Convert.ToInt32(gridCrudPapeis.CurrentRow.Cells[3].Value.ToString())) ? true : false;
-            bolEditar = "1".Equals(Convert.ToInt32(gridCrudPapeis.CurrentRow.Cells[4].Value.ToString())) ? true : false;
-            bolExcluir = "1".Equals(Convert.ToInt32(gridCrudPapeis.CurrentRow.Cells[5].Value.ToString())) ? true : false;
-            bolMenuOp = "1".Equals(Convert.ToInt32(gridCrudPapeis.CurrentRow.Cells[6].Value.ToString())) ? true : false;
-            bolMenuAdmin = "1".Equals(Convert.ToInt32(gridCrudPapeis.CurrentRow.Cells[7].Value.ToString())) ? true : false;
-            bolMenuGen = "1".Equals(Convert.ToInt32(gridCrudPapeis.CurrentRow.Cells[8].Value.ToString())) ? true : false;
-
-            bttnNew.Enabled = false;
-            bttnDel.Enabled = true;
-            bttnEdit.Enabled = true;
-            bttnSearch.Enabled = true;
-            bttnRefresh.Enabled = false;
-            bttnSave.Enabled = false;
-
-
-            clearFieldsFormulario();
-            txtBoxId.Text = gridCrudPapeis.CurrentRow.Cells[0].Value.ToString();
-            stringPapel = gridCrudPapeis.CurrentRow.Cells[1].Value.ToString();
-        }
-
-
 
 
         public void clearFieldsFormulario() { txtBoxId.Text = ""; stringPapel = ""; }
@@ -2337,12 +2276,7 @@ namespace Sistema.View
 //            puxarparametro(0, Convert.ToInt32(cbButtnQuantPage1.SelectedItem), "Sim");
 //        }
 
-//        private void behaviorEdit()
-//        {
 
-//        }
-
-     
 
 //      private void bttnSave_Click(object sender, EventArgs e)
 //        {
