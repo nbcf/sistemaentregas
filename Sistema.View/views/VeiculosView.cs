@@ -598,7 +598,10 @@ namespace Sistema.View
                 puxarparametroPesquisa();
 
             }
-            else if (operationType == "" || operationType == "newInsertion" || operationType == "updateData" || operationType == "search" && typeEdition == "insert")
+            else if (operationType == "" || 
+                operationType == "newInsertion" ||
+                operationType == "updateData" || 
+                operationType == "search" && typeEdition == "insert")
             {
                 bttnDel.Enabled = false;
                 bttnEdit.Enabled = false;
@@ -671,49 +674,7 @@ namespace Sistema.View
                 puxarparametro(0, Convert.ToInt32(cbButtnQuantPage1.SelectedItem), "Sim");
                 gridCrudVeiculos.ClearSelection();
             
-            //if (operationType == "updateData" && typeEdition == "search")
-            //{
-            //    tabControlAssets.Visible = true;
-            //    tabControlAssets.TabPages.Remove(tabPagePesquisar);
-            //    tabControlAssets.TabPages.Insert(0, tabPagePesquisar);
-            //    bttnEdit.Enabled = true;
-            //    bttnSave.Enabled = false;
-            //    bttnSearch.Enabled = true;
-            //    puxarparametroPesquisa();
-            //}
-            //else if (operationType == "" ||operationType == "newInsertion" ||operationType == "updateData" || operationType == "search" && typeEdition == "insert")
-            //{
-            //    bttnDel.Enabled = false;
-            //    bttnEdit.Enabled = false;
-            //    bttnSearch.Enabled = true;
-            //    bttnRefresh.Enabled = true;
-            //    bttnSave.Enabled = false;
-            //    bttnNew.Enabled = true;
-            //    radioBttnComeca.Checked = false;
-            //    radioBttnContem.Checked = false;
-            //    radioBttnTermina.Checked = false;
-            //    tabControlAssets.Visible = false;
-            //    tabControlAssets.TabPages.Remove(tabPagePesquisar);
-            //    clearFieldsFormulario();
-            //    puxarparametro(0, Convert.ToInt32(cbButtnQuantPage1.SelectedItem), "Sim");
-            //    gridCrudVeiculos.ClearSelection();
-            //}
-            //else if (operationType == "" ||operationType == "newInsertion" ||operationType == "updateData" ||operationType == "search" && typeEdition == "search")
-            //{
-            //    bttnDel.Enabled = false;
-            //    bttnEdit.Enabled = false;
-            //    bttnSearch.Enabled = true;
-            //    bttnRefresh.Enabled = true;
-            //    bttnSave.Enabled = false;
-            //    bttnNew.Enabled = true;
-            //    radioBttnComeca.Checked = false;
-            //    radioBttnContem.Checked = false;
-            //    radioBttnTermina.Checked = false;
-            //    tabControlAssets.Visible = false;
-            //    tabControlAssets.TabPages.Remove(tabPagePesquisar);
-            //    clearFieldsFormulario();
-            //    puxarparametro(0, Convert.ToInt32(cbButtnQuantPage1.SelectedItem), "Sim");
-            //    gridCrudVeiculos.ClearSelection();
+
             }
 
         }
@@ -738,7 +699,7 @@ namespace Sistema.View
              frmEdVeiculos.PlacaVO = strPlaca;
              frmEdVeiculos.ShowDialog();
 
-            if (frmEdVeiculos.acaoDialog.Equals("Cancelar"))
+            if ("sair".Equals(frmEdVeiculos.AcaoDialogVO))
             {
                 txtBoxId.Text = "";
                 strVeiculo = "";
@@ -746,7 +707,7 @@ namespace Sistema.View
                 behaviorRefresh();
             }
 
-            else if (frmEdVeiculos.acaoDialog.Equals("Salvar"))
+            else if ("ok".Equals(frmEdVeiculos.AcaoDialogVO))
             {
                 strVeiculo = frmEdVeiculos.VeiculoVO;
                 strPlaca = frmEdVeiculos.PlacaVO;
@@ -1012,7 +973,7 @@ namespace Sistema.View
             frmEdVeiculos.PlacaVO = strPlaca;
             frmEdVeiculos.ShowDialog();
 
-            if (frmEdVeiculos.acaoDialog.Equals("Cancelar"))
+            if ("sair".Equals(frmEdVeiculos.AcaoDialogVO))
             {
                 bttnRefresh.Enabled = false;
                 strVeiculo = "";
@@ -1020,7 +981,7 @@ namespace Sistema.View
                 behaviorRefresh();
             }
 
-            else if (frmEdVeiculos.acaoDialog.Equals("Salvar"))
+            else if ("ok".Equals(frmEdVeiculos.AcaoDialogVO))
             {
                 strVeiculo  =  frmEdVeiculos.VeiculoVO ;
                 strPlaca = frmEdVeiculos.PlacaVO ;
@@ -1053,7 +1014,7 @@ namespace Sistema.View
             frmEdVeiculos.PlacaVO = strPlaca;
             frmEdVeiculos.ShowDialog();
 
-            if (frmEdVeiculos.acaoDialog.Equals("Cancelar"))
+            if ("sair".Equals(frmEdVeiculos.AcaoDialogVO))
             {
                 bttnRefresh.Enabled = false;
                 strVeiculo = "";
@@ -1063,7 +1024,7 @@ namespace Sistema.View
                 behaviorRefresh();
             }
 
-            else if (frmEdVeiculos.acaoDialog.Equals("Salvar"))
+            else if ("ok".Equals(frmEdVeiculos.AcaoDialogVO))
             {
                 strVeiculo = frmEdVeiculos.VeiculoVO;
                 strPlaca = frmEdVeiculos.PlacaVO;
@@ -1260,31 +1221,26 @@ namespace Sistema.View
             puxarparametro(0, Convert.ToInt32(cbButtnQuantPage1.SelectedItem), "Sim");
         }
 
-        private void radBttnLast_CheckedChanged(object sender, EventArgs e)
-        {
+        private void radBttnLast_CheckedChanged(object sender, EventArgs e){
             puxarparametro(0, Convert.ToInt32(cbButtnQuantPage1.SelectedItem), "Sim");
         }
 
 
 
-        private void bttnNew_Click_1(object sender, EventArgs e)
-        {
+        private void bttnNew_Click_1(object sender, EventArgs e) {
 
             behaviorNewInsert();
         }
 
-        private void bttnRefresh_Click_1(object sender, EventArgs e)
-        {
+        private void bttnRefresh_Click_1(object sender, EventArgs e){
             behaviorRefresh();
         }
 
-        private void radioBttnContem_CheckedChanged(object sender, EventArgs e)
-        {
+        private void radioBttnContem_CheckedChanged(object sender, EventArgs e) {
             puxarparametroPesquisa();
         }
 
-        private void radioBttnTermina_CheckedChanged(object sender, EventArgs e)
-        {
+        private void radioBttnTermina_CheckedChanged(object sender, EventArgs e){
             puxarparametroPesquisa();
         }
 

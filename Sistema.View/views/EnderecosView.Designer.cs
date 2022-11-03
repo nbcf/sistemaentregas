@@ -203,7 +203,7 @@ namespace Sistema.View
             // 
             this.radioBttnTermina.AutoSize = true;
             this.radioBttnTermina.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioBttnTermina.Location = new System.Drawing.Point(554, 9);
+            this.radioBttnTermina.Location = new System.Drawing.Point(567, 18);
             this.radioBttnTermina.Name = "radioBttnTermina";
             this.radioBttnTermina.Size = new System.Drawing.Size(74, 21);
             this.radioBttnTermina.TabIndex = 4;
@@ -215,7 +215,7 @@ namespace Sistema.View
             // 
             this.radioBttnComeca.AutoSize = true;
             this.radioBttnComeca.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioBttnComeca.Location = new System.Drawing.Point(407, 10);
+            this.radioBttnComeca.Location = new System.Drawing.Point(407, 18);
             this.radioBttnComeca.Name = "radioBttnComeca";
             this.radioBttnComeca.Size = new System.Drawing.Size(74, 21);
             this.radioBttnComeca.TabIndex = 6;
@@ -227,7 +227,7 @@ namespace Sistema.View
             // 
             this.radioBttnContem.AutoSize = true;
             this.radioBttnContem.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioBttnContem.Location = new System.Drawing.Point(482, 10);
+            this.radioBttnContem.Location = new System.Drawing.Point(487, 18);
             this.radioBttnContem.Name = "radioBttnContem";
             this.radioBttnContem.Size = new System.Drawing.Size(74, 21);
             this.radioBttnContem.TabIndex = 5;
@@ -244,7 +244,7 @@ namespace Sistema.View
             "Bairro",
             "Cidade",
             "Cep"});
-            this.cbButtonPesquisarEm.Location = new System.Drawing.Point(263, 6);
+            this.cbButtonPesquisarEm.Location = new System.Drawing.Point(263, 14);
             this.cbButtonPesquisarEm.Name = "cbButtonPesquisarEm";
             this.cbButtonPesquisarEm.Size = new System.Drawing.Size(138, 25);
             this.cbButtonPesquisarEm.TabIndex = 1;
@@ -253,7 +253,7 @@ namespace Sistema.View
             // txtBoxPesquisar
             // 
             this.txtBoxPesquisar.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBoxPesquisar.Location = new System.Drawing.Point(12, 6);
+            this.txtBoxPesquisar.Location = new System.Drawing.Point(12, 14);
             this.txtBoxPesquisar.Name = "txtBoxPesquisar";
             this.txtBoxPesquisar.Size = new System.Drawing.Size(243, 25);
             this.txtBoxPesquisar.TabIndex = 0;

@@ -13,8 +13,8 @@ namespace Sistema.View
     public partial class formEditVeiculos : Form
     {
 
-        public string acaoDialog;
-        public string acaoForm;
+        public string acaoDialog = "";
+        public string acaoForm = "";
         public string VeiculoVO
         {
             get { return textBox1.Text; }
@@ -51,19 +51,19 @@ namespace Sistema.View
 
         private void button2_Click(object sender, EventArgs e)
         {
-            acaoDialog = "Cancelar";
+            AcaoDialogVO = "sair";
             Close();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            acaoDialog = "Salvar";
+            AcaoDialogVO = "ok";
             Close();
         }
 
         private void formEditVeiculos_FormClosing(object sender, FormClosingEventArgs e)
         {
-            acaoForm = "Fechou";
+            AcaoFormVO = "S";
         }
     }
 }
