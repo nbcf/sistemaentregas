@@ -404,8 +404,7 @@ namespace Sistema.View
             }
         }
 
-        public void EnviaModelo(string pesquisa, int offset, int limitt)
-        {
+        public void EnviaModelo(string pesquisa, int offset, int limitt){
 
             if (pesquisa.Equals("CarregaPadraoIDTodosUltimos") && parametroCodigoAlfabeto.Equals("Codigo") && parametroASCDESC.Equals("ultimos"))
             {
