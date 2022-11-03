@@ -13,8 +13,8 @@ namespace Sistema.View
 {
     public partial class formEditEnderecos : Form
     {
-        public string acaoDialog;
-        public string formAcaoDialog;
+        public string acaoDialog = "";
+        public string formAcaoDialog = "";
 
 
         public string IdVO
@@ -73,14 +73,15 @@ namespace Sistema.View
 
         private void button2_Click(object sender, EventArgs e)
         {
-            acaoDialog = "Cancelar";
+            AcaoDialogVO = "sair";
             Close();
 
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            acaoDialog = "Salvar";
+            AcaoDialogVO = "ok";
+
             Close();
         }
 
@@ -111,12 +112,12 @@ namespace Sistema.View
 
         private void formEditEnderecos_FormClosing(object sender, FormClosingEventArgs e)
         {
-            acaoDialog = "Cancelar";
+            FormAcaoDialogVO = "S"; //acaoDialog = "Cancelar";
         }
 
         private void formEditEnderecos_FormClosed(object sender, FormClosedEventArgs e)
         {
-            acaoDialog = "Cancelar";
+           // acaoDialog = "Cancelar";
         }
 
         private void formEditEnderecos_Load(object sender, EventArgs e)

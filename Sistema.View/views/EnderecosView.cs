@@ -82,17 +82,7 @@ namespace Sistema.View
         {
             InitializeComponent();
             carregarEstadoPadrao("CarregaPadraoIDTodosUltimos", 0);
-            bttnBeginPages.Visible = true;
-            bttnOnePageLeft.Visible = true;
-            labelTextPageFrom.Visible = true;
-            toolStripLabel3.Visible = true;
-            labelTextTotalPages.Visible = true;
-            toolStripLabel5.Visible = true;
-            labelTextTotalRegFould.Visible = true;
-            bttnOnePageRight.Visible = true;
-            bttnEndPages.Visible = true;
-            toolStripLabel1.Visible = false;
-            toolStripLabel2.Visible = false;
+         
 
         }
 
@@ -344,7 +334,7 @@ namespace Sistema.View
         {
             resultado = 0;
             int quantidadeReg = 0;
-            quantidadeReg = Convert.ToInt32(controllerEnderecos.retornoQuantRegistro());
+            quantidadeReg = Convert.ToInt32(controllerEnderecos.ListarBDEnderecosController());
             int jcbPaginas = Convert.ToInt32(cbButtnQuantPage1.SelectedItem);
 
             resultado = quantidadeReg / jcbPaginas;
@@ -396,19 +386,19 @@ namespace Sistema.View
                 {
                     gridCrudEndereco.DataSource = controllerEnderecos.PesquisarComecaCom("logradouro", "@logradouro", txtBoxPesquisar.Text);
                     DataGridModel();
-                    toolStripLabel2.Text = Convert.ToString(controllerEnderecos.retornoQuantPesquisa());
+                    toolStripLabel2.Text = Convert.ToString(controllerEnderecos.PesquisaEnderecosController());
                 }
                 else if (estadoPesquisa.Equals("Contem") && pesquisarEmColuna.Equals("Logradouro"))
                 {
                     gridCrudEndereco.DataSource = controllerEnderecos.PesquisarContemCom("logradouro", "@logradouro", txtBoxPesquisar.Text);
                     DataGridModel();
-                    toolStripLabel2.Text = Convert.ToString(controllerEnderecos.retornoQuantPesquisa());
+                    toolStripLabel2.Text = Convert.ToString(controllerEnderecos.PesquisaEnderecosController());
                 }
                 else if (estadoPesquisa.Equals("TerminaCom") && pesquisarEmColuna.Equals("Logradouro"))
                 {
                     gridCrudEndereco.DataSource = controllerEnderecos.PesquisarTerminaCom("logradouro", "@logradouro", txtBoxPesquisar.Text);
                     DataGridModel();
-                    toolStripLabel2.Text = Convert.ToString(controllerEnderecos.retornoQuantPesquisa());
+                    toolStripLabel2.Text = Convert.ToString(controllerEnderecos.PesquisaEnderecosController());
                 }
                 //***********************
 
@@ -416,38 +406,38 @@ namespace Sistema.View
                 {
                     gridCrudEndereco.DataSource = controllerEnderecos.PesquisarComecaCom("complemento", "@complemento", txtBoxPesquisar.Text);
                     DataGridModel();
-                    toolStripLabel2.Text = Convert.ToString(controllerEnderecos.retornoQuantPesquisa());
+                    toolStripLabel2.Text = Convert.ToString(controllerEnderecos.PesquisaEnderecosController());
                 }
                 else if (estadoPesquisa.Equals("Contem") && pesquisarEmColuna.Equals("Complemento"))
                 {
                     gridCrudEndereco.DataSource = controllerEnderecos.PesquisarContemCom("complemento", "@complemento", txtBoxPesquisar.Text);
                     DataGridModel();
-                    toolStripLabel2.Text = Convert.ToString(controllerEnderecos.retornoQuantPesquisa());
+                    toolStripLabel2.Text = Convert.ToString(controllerEnderecos.PesquisaEnderecosController());
                 }
                 else if (estadoPesquisa.Equals("TerminaCom") && pesquisarEmColuna.Equals("Complemento"))
                 {
                     gridCrudEndereco.DataSource = controllerEnderecos.PesquisarTerminaCom("complemento", "@complemento", txtBoxPesquisar.Text);
                     DataGridModel();
-                    toolStripLabel2.Text = Convert.ToString(controllerEnderecos.retornoQuantPesquisa());
+                    toolStripLabel2.Text = Convert.ToString(controllerEnderecos.PesquisaEnderecosController());
                 }
                 //*************************************
                 if (estadoPesquisa.Equals("ComecaCom") && pesquisarEmColuna.Equals("Bairro"))
                 {
                     gridCrudEndereco.DataSource = controllerEnderecos.PesquisarComecaCom("bairro", "@bairro", txtBoxPesquisar.Text);
                     DataGridModel();
-                    toolStripLabel2.Text = Convert.ToString(controllerEnderecos.retornoQuantPesquisa());
+                    toolStripLabel2.Text = Convert.ToString(controllerEnderecos.PesquisaEnderecosController());
                 }
                 else if (estadoPesquisa.Equals("Contem") && pesquisarEmColuna.Equals("Bairro"))
                 {
                     gridCrudEndereco.DataSource = controllerEnderecos.PesquisarContemCom("bairro", "@bairro", txtBoxPesquisar.Text);
                     DataGridModel();
-                    toolStripLabel2.Text = Convert.ToString(controllerEnderecos.retornoQuantPesquisa());
+                    toolStripLabel2.Text = Convert.ToString(controllerEnderecos.PesquisaEnderecosController());
                 }
                 else if (estadoPesquisa.Equals("TerminaCom") && pesquisarEmColuna.Equals("Bairro"))
                 {
                     gridCrudEndereco.DataSource = controllerEnderecos.PesquisarTerminaCom("bairro", "@bairro", txtBoxPesquisar.Text);
                     DataGridModel();
-                    toolStripLabel2.Text = Convert.ToString(controllerEnderecos.retornoQuantPesquisa());
+                    toolStripLabel2.Text = Convert.ToString(controllerEnderecos.PesquisaEnderecosController());
                 }
 
                 //************************************* 
@@ -455,38 +445,38 @@ namespace Sistema.View
                 {
                     gridCrudEndereco.DataSource = controllerEnderecos.PesquisarComecaCom("cidade", "@cidade", txtBoxPesquisar.Text);
                     DataGridModel();
-                    toolStripLabel2.Text = Convert.ToString(controllerEnderecos.retornoQuantPesquisa());
+                    toolStripLabel2.Text = Convert.ToString(controllerEnderecos.PesquisaEnderecosController());
                 }
                 else if (estadoPesquisa.Equals("Contem") && pesquisarEmColuna.Equals("Cidade"))
                 {
                     gridCrudEndereco.DataSource = controllerEnderecos.PesquisarContemCom("cidade", "@cidade", txtBoxPesquisar.Text);
                     DataGridModel();
-                    toolStripLabel2.Text = Convert.ToString(controllerEnderecos.retornoQuantPesquisa());
+                    toolStripLabel2.Text = Convert.ToString(controllerEnderecos.PesquisaEnderecosController());
                 }
                 else if (estadoPesquisa.Equals("TerminaCom") && pesquisarEmColuna.Equals("Cidade"))
                 {
                     gridCrudEndereco.DataSource = controllerEnderecos.PesquisarTerminaCom("cidade", "@cidade", txtBoxPesquisar.Text);
                     DataGridModel();
-                    toolStripLabel2.Text = Convert.ToString(controllerEnderecos.retornoQuantPesquisa());
+                    toolStripLabel2.Text = Convert.ToString(controllerEnderecos.PesquisaEnderecosController());
                 }
                 //************************************* 
                 if (estadoPesquisa.Equals("ComecaCom") && pesquisarEmColuna.Equals("Cep"))
                 {
                     gridCrudEndereco.DataSource = controllerEnderecos.PesquisarComecaCom("cep", "@cep", txtBoxPesquisar.Text);
                     DataGridModel();
-                    toolStripLabel2.Text = Convert.ToString(controllerEnderecos.retornoQuantPesquisa());
+                    toolStripLabel2.Text = Convert.ToString(controllerEnderecos.PesquisaEnderecosController());
                 }
                 else if (estadoPesquisa.Equals("Contem") && pesquisarEmColuna.Equals("Cep"))
                 {
                     gridCrudEndereco.DataSource = controllerEnderecos.PesquisarContemCom("cep", "@cep", txtBoxPesquisar.Text);
                     DataGridModel();
-                    toolStripLabel2.Text = Convert.ToString(controllerEnderecos.retornoQuantPesquisa());
+                    toolStripLabel2.Text = Convert.ToString(controllerEnderecos.PesquisaEnderecosController());
                 }
                 else if (estadoPesquisa.Equals("TerminaCom") && pesquisarEmColuna.Equals("Cep"))
                 {
                     gridCrudEndereco.DataSource = controllerEnderecos.PesquisarTerminaCom("cep", "@cep", txtBoxPesquisar.Text);
                     DataGridModel();
-                    toolStripLabel2.Text = Convert.ToString(controllerEnderecos.retornoQuantPesquisa());
+                    toolStripLabel2.Text = Convert.ToString(controllerEnderecos.PesquisaEnderecosController());
                 }
             }
         }
@@ -496,30 +486,30 @@ namespace Sistema.View
 
             if (pesquisa.Equals("CarregaPadraoIDTodosUltimos") && parametroCodigoAlfabeto.Equals("Codigo") && parametroASCDESC.Equals("ultimos"))
             {
-                gridCrudEndereco.DataSource = controllerEnderecos.ConfiListagemDataGrid("idendereco", "desc", offset, limitt);
+                gridCrudEndereco.DataSource = controllerEnderecos.ListarDataGrid("idendereco", "desc", offset, limitt);
                 DataGridModel();
-                labelTextTotalRegFould.Text = Convert.ToString(controllerEnderecos.retornoQuantRegistro());
+                labelTextTotalRegFould.Text = Convert.ToString(controllerEnderecos.ListarBDEnderecosController());
                 carregarInformacoes();
             }
             else if (pesquisa.Equals("CarregaPadraoIDTodosPrimeiros") && parametroCodigoAlfabeto.Equals("Codigo") && parametroASCDESC.Equals("primeiros"))
             {
-                gridCrudEndereco.DataSource = controllerEnderecos.ConfiListagemDataGrid("idendereco", "asc", offset, limitt);
+                gridCrudEndereco.DataSource = controllerEnderecos.ListarDataGrid("idendereco", "asc", offset, limitt);
                 DataGridModel();
-                labelTextTotalRegFould.Text = Convert.ToString(controllerEnderecos.retornoQuantRegistro());
+                labelTextTotalRegFould.Text = Convert.ToString(controllerEnderecos.ListarBDEnderecosController());
                 carregarInformacoes();
             }
             else if (pesquisa.Equals("CarregaPadraoNomeTodosUltimos") && parametroCodigoAlfabeto.Equals("Alfabeto") && parametroASCDESC.Equals("ultimos"))
             {
-                gridCrudEndereco.DataSource = controllerEnderecos.ConfiListagemDataGrid("logradouro", "desc", offset, limitt);
+                gridCrudEndereco.DataSource = controllerEnderecos.ListarDataGrid("logradouro", "desc", offset, limitt);
                 DataGridModel();
-                labelTextTotalRegFould.Text = Convert.ToString(controllerEnderecos.retornoQuantRegistro());
+                labelTextTotalRegFould.Text = Convert.ToString(controllerEnderecos.ListarBDEnderecosController());
                 carregarInformacoes();
             }
             else if (pesquisa.Equals("CarregaPadraoNomeTodosPrimeiros") && parametroCodigoAlfabeto.Equals("Alfabeto") && parametroASCDESC.Equals("primeiros"))
             {
-                gridCrudEndereco.DataSource = controllerEnderecos.ConfiListagemDataGrid("logradouro", "asc", offset, limitt);
+                gridCrudEndereco.DataSource = controllerEnderecos.ListarDataGrid("logradouro", "asc", offset, limitt);
                 DataGridModel();
-                labelTextTotalRegFould.Text = Convert.ToString(controllerEnderecos.retornoQuantRegistro());
+                labelTextTotalRegFould.Text = Convert.ToString(controllerEnderecos.ListarBDEnderecosController());
                 carregarInformacoes();
             }
         }
@@ -538,16 +528,25 @@ namespace Sistema.View
             bttnRefresh.Enabled = true;
             bttnSave.Enabled = false;
             bttnNew.Enabled = true;
-          //  bttnPrint.Enabled = false;
-         //   bttnImport.Enabled = false;
-       //     bttnExcel.Enabled = false;
             radioBttnComeca.Checked = false;
             radioBttnContem.Checked = false;
             radioBttnTermina.Checked = false;
             tabControlAssets.Visible = false;
             tabControlAssets.TabPages.Remove(tabPagePesquisar);
             clearFieldsFormulario();
+            bttnBeginPages.Visible = true;
+            bttnOnePageLeft.Visible = true;
+            labelTextPageFrom.Visible = true;
+            toolStripLabel3.Visible = true;
+            labelTextTotalPages.Visible = true;
+            toolStripLabel5.Visible = true;
+            labelTextTotalRegFould.Visible = true;
+            bttnOnePageRight.Visible = true;
+            bttnEndPages.Visible = true;
+            toolStripLabel1.Visible = false;
+            toolStripLabel2.Visible = false;
         }
+
         private void bttnSearch_Click_1(object sender, EventArgs e)
         {
             countBttnToggle++;
@@ -578,7 +577,7 @@ namespace Sistema.View
                 txtBoxPesquisar.Focus();
                 gridCrudEndereco.DataSource = controllerEnderecos.PesquisarComecaCom("nomepessoa", "@nomepessoa", "");
                 DataGridModel();
-                toolStripLabel2.Text = Convert.ToString(controllerEnderecos.retornoQuantPesquisa());
+                toolStripLabel2.Text = Convert.ToString(controllerEnderecos.PesquisaEnderecosController());
                 typeEdition = "search";
                 cbButtnQuantPage1.Visible = false;
                 cbOrdemParam1.Visible = false;
@@ -664,9 +663,6 @@ namespace Sistema.View
                 bttnRefresh.Enabled = true;
                 bttnSave.Enabled = false;
                 bttnNew.Enabled = true;
-           //     bttnPrint.Enabled = false;
-            //    bttnImport.Enabled = false;
-        //        bttnExcel.Enabled = false;
                 radioBttnComeca.Checked = false;
                 radioBttnContem.Checked = false;
                 radioBttnTermina.Checked = false;
@@ -685,9 +681,6 @@ namespace Sistema.View
                 bttnRefresh.Enabled = true;
                 bttnSave.Enabled = false;
                 bttnNew.Enabled = true;
-          //      bttnPrint.Enabled = false;
-          //      bttnImport.Enabled = false;
-        //        bttnExcel.Enabled = false;
                 radioBttnComeca.Checked = false;
                 radioBttnContem.Checked = false;
                 radioBttnTermina.Checked = false;
@@ -705,9 +698,6 @@ namespace Sistema.View
             bttnRefresh.Enabled = true;
             bttnSave.Enabled = true;
             bttnNew.Enabled = false;
-       //     bttnPrint.Enabled = false;
-       //     bttnImport.Enabled = false;
-       //     bttnExcel.Enabled = false;
             operationType = "newInsertion";
             txtBoxId.Enabled = false;
             txtBoxId.Enabled = false;
@@ -728,7 +718,7 @@ namespace Sistema.View
             frmEditEnderecos.CepVO = strCep;
             frmEditEnderecos.ShowDialog();
 
-            if (frmEditEnderecos.acaoDialog.Equals("Cancelar"))
+            if ("sair".Equals(frmEditEnderecos.AcaoDialogVO))
             {
                 strLogradouro = "";
                 txtBoxId.Text = "";
@@ -740,7 +730,7 @@ namespace Sistema.View
                 behaviorRefresh();
             }
 
-            else if (frmEditEnderecos.acaoDialog.Equals("Salvar"))
+            else if ("ok".Equals(frmEditEnderecos.AcaoDialogVO))
             {
                 strLogradouro = frmEditEnderecos.LogradouroVO;
 
@@ -752,57 +742,7 @@ namespace Sistema.View
             }
 
         }
-        //    formEditPapel frmEditPapel = new formEditPapel();
-        //    stringPapel = "";
-        //    bolCriar = false;
-        //    bolRecuperar = false;
-        //    bolEditar = false;
-        //    bolExcluir = false;
-        //    bolMenuOp = false;
-        //    bolMenuAdmin = false;
-        //    bolMenuGen = false;
-
-
-        //    frmEditPapel.PapelVO = stringPapel;
-        //    frmEditPapel.CriarVO = bolCriar;
-        //    frmEditPapel.RecuperarVO = bolRecuperar;
-        //    frmEditPapel.AtualizarVO = bolEditar;
-        //    frmEditPapel.DeletarVO = bolExcluir;
-        //    frmEditPapel.MenuOpVO = bolMenuOp;
-        //    frmEditPapel.MenuAdminVO = bolMenuAdmin;
-        //    frmEditPapel.MenuGenVO = bolMenuGen;
-        //    frmEditPapel.ShowDialog();
-
-        //    if (frmEditPapel.acaoDialog.Equals("Cancelar"))
-        //    {
-        //        stringPapel = "";
-        //        txtBoxId.Text = "";
-        //        bolCriar = false;
-        //        bolRecuperar = false;
-        //        bolEditar = false;
-        //        bolExcluir = false;
-        //        bolMenuOp = false;
-        //        bolMenuAdmin = false;
-        //        bolMenuGen = false;
-        //        behaviorRefresh();
-
-        //    }
-
-        //    if (frmEditPapel.acaoDialog.Equals("Salvar"))
-        //    {
-        //        stringPapel = frmEditPapel.PapelVO;
-        //        bolCriar = frmEditPapel.CriarVO;
-        //        bolRecuperar = frmEditPapel.RecuperarVO;
-        //        bolEditar = frmEditPapel.AtualizarVO;
-        //        bolExcluir = frmEditPapel.DeletarVO;
-        //        bolMenuOp = frmEditPapel.MenuOpVO;
-        //        bolMenuAdmin = frmEditPapel.MenuAdminVO;
-        //        bolMenuGen = frmEditPapel.MenuGenVO;
-        //        behaviorSave();
-        //    }
-
-
-        //}
+   
         private void behaviorDel()
         {
             bttnDel.Enabled = true;
@@ -868,14 +808,15 @@ namespace Sistema.View
                     else if (remPapel.Length >= 3)
                     {
                         controllerEnderecos.Salvar(strLogradouro,  strBairro, strCidade, strUf, strCep);
-                        //controllerPapeis.Salvar(stringPapel, bolCriar, bolRecuperar, bolEditar, bolExcluir, bolMenuOp, bolMenuAdmin, bolMenuGen);
-                        if (controllerEnderecos.retornoPersistencia.Equals("NS"))
+
+                        //  if (controllerEnderecos.retornoPersistencia.Equals("NS"))
+                        if ("NS".Equals(controllerEnderecos.AcaoCrudEnderecosDAO()))
                         {
                             MessageBox.Show("3");
                             stringPapel = "";
                             behaviorRefresh();
                         }
-                        else if (controllerEnderecos.retornoPersistencia.Equals("S!"))
+                        else if ("S!".Equals(controllerEnderecos.AcaoCrudEnderecosDAO()))
                         {
                             MessageBox.Show("4");
                             operationType = "newInsertion";
@@ -884,7 +825,7 @@ namespace Sistema.View
                             behaviorRefresh();
                             MessageBox.Show("Registro Salvo Com Sucesso!", "Aviso de Confirmação", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
-                        else if (controllerEnderecos.retornoPersistencia.Equals("S!!"))
+                        else if ("S!!".Equals(controllerEnderecos.AcaoCrudEnderecosDAO()))
                         {
                             MessageBox.Show("5");
                             operationType = "newInsertion";
@@ -894,7 +835,7 @@ namespace Sistema.View
                             MessageBox.Show("Dado Existente Salvo!", "Aviso de Confirmação", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
                     }
-                    if (controllerEnderecos.retornoPersistencia.Equals("NS"))
+                    if ("NS".Equals(controllerEnderecos.AcaoCrudEnderecosDAO()))
                     {
                         MessageBox.Show("6");
                         operationType = "newInsertion";
@@ -903,10 +844,9 @@ namespace Sistema.View
                         behaviorRefresh();
                     }
                 }
-            }
-            else if (!remEspacosId.Equals("") || remEspacosId != null)
-            {
-                MessageBox.Show("7!");
+
+            }else if (!remEspacosId.Equals("") || remEspacosId != null){
+
                 if (operationType.Equals("updateData") && typeEdition.Equals("insert"))
                 {
                     if (remPapel.Length <= 3)
@@ -924,9 +864,8 @@ namespace Sistema.View
                     else if (remPapel.Length >= 3)
                     {
                         controllerEnderecos.Editar(Convert.ToInt32(txtBoxId.Text), strLogradouro, strBairro, strCidade, strUf, strCep);
-                        //controllerPapeis.Editar(Convert.ToInt32(txtBoxId.Text), stringPapel, bolCriar, bolRecuperar, bolEditar, bolExcluir, bolMenuOp, bolMenuAdmin, bolMenuGen);
-
-                        if (controllerEnderecos.retornoPersistencia.Equals("AT"))
+                       
+                        if ("AT".Equals(controllerEnderecos.AcaoCrudEnderecosDAO()))
                         {
 
                             // operationType = "";
@@ -935,7 +874,7 @@ namespace Sistema.View
                             MessageBox.Show(" Resgistro Listado doi Editado !   \n    else if (operationType.Equals(updateData) && typeEdition.Equals(insert) ) ", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         }
                     }
-                    if (controllerEnderecos.retornoPersistencia.Equals("NS"))
+                    if ("NS".Equals(controllerEnderecos.AcaoCrudEnderecosDAO()))
                     {
                         // operationType = "newInsertion";
                         //   typeEdition = "insert";
@@ -964,15 +903,15 @@ namespace Sistema.View
                     else if (remPapel.Length >= 3)
                     {
                         controllerEnderecos.Editar(Convert.ToInt32(txtBoxId.Text), strLogradouro, strBairro, strCidade, strUf, strCep);
-                        //controllerPapeis.Editar(Convert.ToInt32(txtBoxId.Text), stringPapel, bolCriar, bolRecuperar, bolEditar, bolExcluir, bolMenuOp, bolMenuAdmin, bolMenuGen);
-                        if (controllerEnderecos.retornoPersistencia.Equals("AT"))
+                      
+                        if ("AT".Equals(controllerEnderecos.AcaoCrudEnderecosDAO()))
                         {
                             behaviorRefresh();
                             puxarparametroPesquisa();
                             MessageBox.Show("Registro Pesquisado foi Atualizado !  \n else if (operationType.Equals(search) && typeEdition.Equals(search))", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         }
                     }
-                    if (controllerEnderecos.retornoPersistencia.Equals("NS"))
+                    if ("NS".Equals(controllerEnderecos.AcaoCrudEnderecosDAO()))
                     {
                         //operationType = "newInsertion";
                         //typeEdition = "insert";
@@ -982,27 +921,7 @@ namespace Sistema.View
                 }
             }
         }
-        private void acoesBehaviorSave()
-        {
-
-            bttnDel.Enabled = false;
-            bttnEdit.Enabled = false;
-            bttnSearch.Enabled = true;
-            bttnRefresh.Enabled = true;
-            bttnSave.Enabled = false;
-            bttnNew.Enabled = true;
-         //   bttnPrint.Enabled = false;
-         //   bttnImport.Enabled = false;
-       //     bttnExcel.Enabled = false;
-            radioBttnComeca.Checked = false;
-            radioBttnContem.Checked = false;
-            radioBttnTermina.Checked = false;
-            tabControlAssets.Visible = false;
-
-            tabControlAssets.TabPages.Remove(tabPagePesquisar);
-            clearFieldsFormulario();
-            puxarparametro(0, Convert.ToInt32(cbButtnQuantPage1.SelectedItem), "Sim");
-        }
+ 
 
         private void behaviorEdit()
         {
@@ -1014,10 +933,6 @@ namespace Sistema.View
             bttnRefresh.Enabled = true;
             bttnSave.Enabled = true;
             bttnNew.Enabled = false;
-      //      bttnPrint.Enabled = false;
-      //      bttnImport.Enabled = false;
-       //     bttnExcel.Enabled = false;
-
             txtBoxId.Enabled = false;
             txtBoxId.Text = gridCrudEndereco.CurrentRow.Cells[0].Value.ToString();
             stringPapel = gridCrudEndereco.CurrentRow.Cells[1].Value.ToString();
@@ -1031,7 +946,7 @@ namespace Sistema.View
             frmEditEnderecos.CepVO = strCep;
             frmEditEnderecos.ShowDialog();
 
-            if (frmEditEnderecos.acaoDialog.Equals("Cancelar"))
+            if ("sair".Equals(frmEditEnderecos.AcaoDialogVO))
             {
                 bttnRefresh.Enabled = false;
                 stringPapel = "";
@@ -1044,7 +959,7 @@ namespace Sistema.View
                 behaviorRefresh();
             }
 
-            else if (frmEditEnderecos.acaoDialog.Equals("Salvar"))
+            else if ("ok".Equals(frmEditEnderecos.AcaoDialogVO))
             {
                 strLogradouro = frmEditEnderecos.LogradouroVO;
                 strBairro = frmEditEnderecos.BairroVO;
@@ -1065,8 +980,6 @@ namespace Sistema.View
             bttnRefresh.Enabled = true;
             bttnSave.Enabled = true;
             bttnNew.Enabled = false;
-         //    bttnImport.Enabled = false;
-         //   bttnExcel.Enabled = false;
             clearFieldsFormulario();
             txtBoxId.Enabled = false;
             txtBoxId.Text = gridCrudEndereco.CurrentRow.Cells[0].Value.ToString();
@@ -1086,7 +999,7 @@ namespace Sistema.View
 
 
 
-            if (frmEditEnderecos.acaoDialog.Equals("Cancelar"))
+            if ("sair".Equals(frmEditEnderecos.AcaoDialogVO))
             {
 
                 bttnRefresh.Enabled = false;
@@ -1102,7 +1015,7 @@ namespace Sistema.View
 
             }
 
-            else if (frmEditEnderecos.acaoDialog.Equals("Salvar"))
+            else if ("ok".Equals(frmEditEnderecos.AcaoDialogVO))
             {
                 strLogradouro = frmEditEnderecos.LogradouroVO;
  
@@ -1125,22 +1038,11 @@ namespace Sistema.View
             bttnRefresh.Enabled = false;
             bttnSave.Enabled = false;
             bttnNew.Enabled = false;
-       //     bttnPrint.Enabled = false;
-        //    bttnImport.Enabled = false;
-       //     bttnExcel.Enabled = false;
             tabControlAssets.Visible = true;
         }
 
         private void behaviorClickGrid()
         {
-            int valorCriar = 0;
-            int valorRecuperar = 0;
-            int valorAtualizar = 0;
-            int valorExcluir = 0;
-            int menuOp = 0;
-            int menuAdmin = 0;
-            int menuGen = 0;
-
             txtBoxId.Text = gridCrudEndereco.CurrentRow.Cells[0].Value.ToString();
             strLogradouro = gridCrudEndereco.CurrentRow.Cells[1].Value.ToString();
             strBairro = gridCrudEndereco.CurrentRow.Cells[2].Value.ToString();
@@ -1155,9 +1057,6 @@ namespace Sistema.View
             bttnSearch.Enabled = true;
             bttnRefresh.Enabled = false;
             bttnSave.Enabled = false;
-        //    bttnPrint.Enabled = false;
-       //     bttnImport.Enabled = false;
-       //     bttnExcel.Enabled = false;
             radioBttnComeca.Checked = false;
             radioBttnContem.Checked = false;
             radioBttnTermina.Checked = false;
@@ -1165,11 +1064,9 @@ namespace Sistema.View
             txtBoxId.Text = gridCrudEndereco.CurrentRow.Cells[0].Value.ToString();
             stringPapel = gridCrudEndereco.CurrentRow.Cells[1].Value.ToString();
 
-
         }
-        private void behaviorClickGridPesquisa()
-        {
 
+        private void behaviorClickGridPesquisa(){
 
             txtBoxId.Text = gridCrudEndereco.CurrentRow.Cells[0].Value.ToString();
             strLogradouro = gridCrudEndereco.CurrentRow.Cells[1].Value.ToString();
@@ -1184,9 +1081,6 @@ namespace Sistema.View
             bttnSearch.Enabled = true;
             bttnRefresh.Enabled = false;
             bttnSave.Enabled = false;
-         //   bttnPrint.Enabled = false;
-         //   bttnImport.Enabled = false;
-       //     bttnExcel.Enabled = false;
 
             txtBoxId.Text = gridCrudEndereco.CurrentRow.Cells[0].Value.ToString();
             stringPapel = gridCrudEndereco.CurrentRow.Cells[1].Value.ToString();
@@ -1220,8 +1114,6 @@ namespace Sistema.View
             {
                 tabControlAssets.Visible = true;
                 tabControlAssets.TabPages.Remove(tabPagePesquisar);
-                // tabControlAssets.TabPages.Remove(tabPageFormulario);
-                //    tabControlAssets.TabPages.Remove(tabPageOptListagem);
                 tabControlAssets.TabPages.Insert(0, tabPagePesquisar);
                 bttnNew.Enabled = false;
                 bttnRefresh.Enabled = false;
@@ -1231,8 +1123,6 @@ namespace Sistema.View
             {
                 tabControlAssets.Visible = false;
                 tabControlAssets.TabPages.Remove(tabPagePesquisar);
-                //   tabControlAssets.TabPages.Remove(tabPageFormulario);
-                //     tabControlAssets.TabPages.Remove(tabPageOptListagem);
                 bttnNew.Enabled = true;
                 bttnRefresh.Enabled = true;
                 actBehaviorSerarch = false;
@@ -1251,9 +1141,6 @@ namespace Sistema.View
             {
                 tabControlAssets.Visible = true;
                 tabControlAssets.TabPages.Remove(tabPagePesquisar);
-                //  tabControlAssets.TabPages.Remove(tabPageFormulario);
-                //     tabControlAssets.TabPages.Remove(tabPageOptListagem);
-                //    tabControlAssets.TabPages.Insert(0, tabPageOptListagem);
                 bttnNew.Enabled = false;
                 bttnRefresh.Enabled = false;
                 bttnSearch.Enabled = false;
@@ -1262,8 +1149,6 @@ namespace Sistema.View
             {
                 tabControlAssets.Visible = false;
                 tabControlAssets.TabPages.Remove(tabPagePesquisar);
-                // tabControlAssets.TabPages.Remove(tabPageFormulario);
-                //   tabControlAssets.TabPages.Remove(tabPageOptListagem);
                 bttnNew.Enabled = true;
                 bttnRefresh.Enabled = true;
                 bttnSearch.Enabled = true;
@@ -1277,8 +1162,6 @@ namespace Sistema.View
             {
                 tabControlAssets.Visible = false;
                 tabControlAssets.TabPages.Remove(tabPagePesquisar);
-                //  tabControlAssets.TabPages.Remove(tabPageFormulario);
-                //    tabControlAssets.TabPages.Remove(tabPageOptListagem);
                 bttnNew.Enabled = true;
                 bttnRefresh.Enabled = true;
             }
@@ -1286,8 +1169,6 @@ namespace Sistema.View
             {
                 tabControlAssets.Visible = true;
                 tabControlAssets.TabPages.Remove(tabPagePesquisar);
-                // tabControlAssets.TabPages.Remove(tabPageFormulario);
-                //   tabControlAssets.TabPages.Remove(tabPageOptListagem);
                 tabControlAssets.TabPages.Insert(0, tabPagePesquisar);
                 bttnNew.Enabled = false;
                 bttnRefresh.Enabled = false;
@@ -1458,7 +1339,7 @@ namespace Sistema.View
                 txtBoxPesquisar.Focus();
                 gridCrudEndereco.DataSource = controllerEnderecos.PesquisarComecaCom("logradouro", "@logradouro", "");
                 DataGridModel();
-                toolStripLabel2.Text = Convert.ToString(controllerEnderecos.retornoQuantPesquisa());
+                toolStripLabel2.Text = Convert.ToString(controllerEnderecos.PesquisaEnderecosController());
                 operationType = "search";
 
 

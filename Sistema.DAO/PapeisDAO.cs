@@ -13,11 +13,9 @@ namespace Sistema.DAO
 {
   public  class PapeisDAO
     {
-        PapeisModel papeisModel = new PapeisModel();
 
         public int pesquisaPapeisDAO = 0;
         public string acaoCrudPapeisDAO = "";
-        public int qtBDPapeisDAO = 0;
         ClasseConexao classeConecta = new ClasseConexao();
         string sql;
         MySqlCommand cmd;
@@ -169,15 +167,16 @@ namespace Sistema.DAO
             try{
                 classeConecta.AbrirCon();
                 cmd = new MySqlCommand("UPDATE papeis SET " +
-                    " nomepapel         =       @nomepapel," +
+                    " nomepapel     =       @nomepapel," +
                     " criar         =       @criar, " +
-                    " recuperar         =       @recuperar, " +
-                    " atualizar         =       @atualizar, " +
-                    " excluir         =       @excluir, " +
-                    " menuope         =       @menuope, " +
-                    " menuadmin         =       @menuadmin, " +
-                    " menugen         =       @menugen " +
+                    " recuperar     =       @recuperar, " +
+                    " atualizar     =       @atualizar, " +
+                    " excluir       =       @excluir, " +
+                    " menuope       =       @menuope, " +
+                    " menuadmin     =       @menuadmin, " +
+                    " menugen       =       @menugen " +
                     " WHERE idpapel =       @idpapel", classeConecta.con);
+
                 cmd.Parameters.AddWithValue("@nomepapel", papel);
                 cmd.Parameters.AddWithValue("@criar", cadastrar);
                 cmd.Parameters.AddWithValue("@recuperar", pesquisar);
@@ -227,30 +226,7 @@ namespace Sistema.DAO
             }
         }
 
-        public DataTable Listar(string ordenarpor)
-        {
-            try
-            {
-                classeConecta.AbrirCon();
-                sql = "SELECT * FROM papeis where nomepapel LIKE @nomepapel";
-                cmd = new MySqlCommand(sql, classeConecta.con);
-                cmd.Parameters.AddWithValue("@nomepapel", papeisModel.Nomepapel + "%");
-                MySqlDataAdapter da = new MySqlDataAdapter();
-                da.SelectCommand = cmd;
-                DataTable dt = new DataTable();
-                da.Fill(dt);
-                qtBDPapeisDAO = dt.Rows.Count;
-                classeConecta.FecharCon();
-                return dt;
-               
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-        }
-
-
+  
         public int ListarBDPapeisDAO(){
             try
             {

@@ -39,21 +39,7 @@ namespace Sistema.Controller
                 menugen);
         }
 
-        public DataTable Listar(string ordernaPor)
-        {
-            try
-            {
-                DataTable dt = new DataTable();
-                dt = dao.Listar("");
-                return dt;
-            }
-            catch (Exception)
-            {
-
-                throw;
-            }
-
-        }
+     
 
         public void Excluir(int idpapeis, string nomepapel)
         {

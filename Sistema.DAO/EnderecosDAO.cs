@@ -12,14 +12,16 @@ using System.Windows.Forms;
 // 
 namespace Sistema.DAO
 {
- public   class EnderecosDAO
-    {
-        EnderecosModel enderecosModel = new EnderecosModel();
-        public int quantidadeBD = 0;
-        public int quantidadePaginada = 0;
-        public int resQuantSearch;
-        public string acaoCrud = "";
-        Sistema.Conexao.ClasseConexao classeConecta = new Sistema.Conexao.ClasseConexao();
+    public class EnderecosDAO{
+        //public int quantidadeBD = 0;
+        //public int quantidadePaginada = 0;
+        //public int resQuantSearch;
+        //public string acaoCrud = "";
+
+        public int pesquisaEnderecosDAO = 0;
+        public string acaoCrudEnderecosDAO = "";
+
+        ClasseConexao classeConecta = new ClasseConexao();
         string sql;
         MySqlCommand cmd;
         MySqlCommand cmdVerificar;
@@ -46,55 +48,88 @@ namespace Sistema.DAO
         }
 
         // Metodo Salvar registroInserido
-        public void Salvar(EnderecosModel modelEnderecos)
+        public void Salvar(
+            string logradouro,
+            string bairro,
+            string cidade,
+            string uf,
+            string cep)
         {
             try
             {
                 classeConecta.AbrirCon();
                 cmdVerificar = new MySqlCommand("SELECT * FROM enderecos where logradouro = @logradouro", classeConecta.con);
-                cmdVerificar.Parameters.AddWithValue("@logradouro", modelEnderecos.Logradouro);
+                cmdVerificar.Parameters.AddWithValue("@logradouro", logradouro);
                 MySqlDataAdapter dap = new MySqlDataAdapter();
                 dap.SelectCommand = cmdVerificar;
                 DataTable dtp = new DataTable();
                 dap.Fill(dtp);
+                classeConecta.FecharCon();
+
                 if (dtp.Rows.Count > 0)
                 {
-                    var resultado = MessageBox.Show("O Registro " + Convert.ToString(modelEnderecos.Logradouro) + " Contagem dtp.Rows.Count : " + Convert.ToString(dtp.Rows.Count) + " já se encontra, no banco de dados do sistema. " + "\n" + "Para confirmar a inserção duplicada, clique no botão 'Sim'. E no botão 'Não' para cancelar.", "Aviso de Duplicidade", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    var resultado = MessageBox.Show("O Registro " + logradouro + " já se encontra, no banco de dados do sistema. " + "\n" + "Para confirmar a inserção duplicada, clique no botão 'Sim'. E no botão 'Não' para cancelar.", "Aviso de Duplicidade", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                     if (resultado == DialogResult.Yes)
                     {
-                        sql = "INSERT INTO enderecos (logradouro,  bairro, cidade, uf, cep) VALUES (@logradouro, @bairro, @cidade, @uf, @cep)";
+                        classeConecta.AbrirCon();
+                        sql = "INSERT INTO enderecos (" +
+                            "logradouro," +
+                            "  bairro, " +
+                            "cidade, " +
+                            "uf," +
+                            " cep" +
+                            ") VALUES (" +
+                            "@logradouro," +
+                            " @bairro," +
+                            " @cidade," +
+                            " @uf," +
+                            " @cep" +
+                            ")";
                         cmd = new MySqlCommand(sql, classeConecta.con);
-                        cmd.Parameters.AddWithValue("@logradouro", modelEnderecos.Logradouro);
-                        cmd.Parameters.AddWithValue("@bairro", modelEnderecos.Bairro);
-                        cmd.Parameters.AddWithValue("@cidade", modelEnderecos.Cidade);
-                        cmd.Parameters.AddWithValue("@uf", modelEnderecos.Uf);
-                        cmd.Parameters.AddWithValue("@cep", modelEnderecos.Cep);
+                        cmd.Parameters.AddWithValue("@logradouro", logradouro);
+                        cmd.Parameters.AddWithValue("@bairro", bairro);
+                        cmd.Parameters.AddWithValue("@cidade", cidade);
+                        cmd.Parameters.AddWithValue("@uf", uf);
+                        cmd.Parameters.AddWithValue("@cep", cep);
                         cmd.ExecuteNonQuery();
                         //    MessageBox.Show("Registro Salvo com Sucesso!", "Registro Salvo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        acaoCrud = "S!!";
+                        acaoCrudEnderecosDAO = "S!!";
                         classeConecta.FecharCon();
 
                     }
                     else if (resultado == DialogResult.No)
                     {
 
-                        acaoCrud = "NS";
-                        classeConecta.FecharCon();
+                        acaoCrudEnderecosDAO = "NS";
+             
 
                     }
                 }
                 else if (dtp.Rows.Count == 0)
                 {
-                    sql = "INSERT INTO enderecos (logradouro,  bairro, cidade, uf, cep) VALUES (@logradouro,  @bairro, @cidade, @uf, @cep)";
+                    classeConecta.AbrirCon();
+                    sql = "INSERT INTO enderecos (" +
+                        "logradouro, " +
+                        " bairro," +
+                        " cidade," +
+                        " uf," +
+                        " cep" +
+                        ") VALUES (" +
+                        "@logradouro, " +
+                        " @bairro," +
+                        " @cidade," +
+                        " @uf," +
+                        " @cep" +
+                        ")";
                     cmd = new MySqlCommand(sql, classeConecta.con);
-                    cmd.Parameters.AddWithValue("@logradouro", modelEnderecos.Logradouro);
-                    cmd.Parameters.AddWithValue("@bairro", modelEnderecos.Bairro);
-                    cmd.Parameters.AddWithValue("@cidade", modelEnderecos.Cidade);
-                    cmd.Parameters.AddWithValue("@uf", modelEnderecos.Uf);
-                    cmd.Parameters.AddWithValue("@cep", modelEnderecos.Cep);
+                    cmd.Parameters.AddWithValue("@logradouro", logradouro);
+                    cmd.Parameters.AddWithValue("@bairro", bairro);
+                    cmd.Parameters.AddWithValue("@cidade", cidade);
+                    cmd.Parameters.AddWithValue("@uf", uf);
+                    cmd.Parameters.AddWithValue("@cep", cep);
                     cmd.ExecuteNonQuery();
                     //  MessageBox.Show("Registro Salvo com Sucesso!", "Registro Salvo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    acaoCrud = "S!";
+                    acaoCrudEnderecosDAO = "S!";
                     classeConecta.FecharCon();
                 }
             }
@@ -106,81 +141,41 @@ namespace Sistema.DAO
         }
 
 
-        public void Editar(EnderecosModel modelEnderecos)
-        {
+        public void Editar(
+            int idendereco,
+            string logradouro,
+            string bairro,
+            string cidade,
+            string uf,
+            string cep){
 
-       
-            try
-            {
+            try{
                 classeConecta.AbrirCon();
-                cmdVerificar = new MySqlCommand("SELECT * FROM enderecos where logradouro = @logradouro", classeConecta.con);
-                cmdVerificar.Parameters.AddWithValue("@logradouro", modelEnderecos.Logradouro);
-                MySqlDataAdapter dap = new MySqlDataAdapter();
-                dap.SelectCommand = cmdVerificar;
-                DataTable dtp = new DataTable();
-                dap.Fill(dtp);
-                if (dtp.Rows.Count == 0)
-                {
                     cmd = new MySqlCommand("UPDATE enderecos SET " +
                         "logradouro =   @logradouro, " +
                         "bairro     =   @bairro," +
                         "cidade     =   @cidade," +
                         "uf         =   @uf, " +
-                        "cep        =   @cep" +
-                        "WHERE idendereco = @idendereco", classeConecta.con);
-                    cmd.Parameters.AddWithValue("@logradouro", modelEnderecos.Logradouro);
-                   
-                    cmd.Parameters.AddWithValue("@bairro", modelEnderecos.Bairro);
-                    cmd.Parameters.AddWithValue("@cidade", modelEnderecos.Cidade);
-                    cmd.Parameters.AddWithValue("@uf", modelEnderecos.Uf);
-                    cmd.Parameters.AddWithValue("@cep", modelEnderecos.Cep);
-                    cmd.Parameters.AddWithValue("@idendereco", modelEnderecos.Idendereco);
+                        "cep        =   @cep " +
+                        " WHERE idendereco = @idendereco", classeConecta.con);
+                    cmd.Parameters.AddWithValue("@logradouro", logradouro);
+                    cmd.Parameters.AddWithValue("@bairro", bairro);
+                    cmd.Parameters.AddWithValue("@cidade", cidade);
+                    cmd.Parameters.AddWithValue("@uf", uf);
+                    cmd.Parameters.AddWithValue("@cep", cep);
+                    cmd.Parameters.AddWithValue("@idendereco", idendereco);
                     cmd.ExecuteNonQuery();
-                    acaoCrud = "AT";
+                    acaoCrudEnderecosDAO = "AT";
                     classeConecta.FecharCon();
-                }
 
-                else if (dtp.Rows.Count > 0)
-                {
-                    var resultado = MessageBox.Show("O Registro que está tentando editar: " +
-                    Convert.ToString(modelEnderecos.Logradouro) +
-                    ", se encotra na base de dados. " +
-                    "\n\nForam encontrados: " + Convert.ToInt32(dtp.Rows.Count) +
-                    " Registros com o mesmo nome no campo 'Complemento'" +
-                    "\n" + "Para confirmar a ação, clique no botão 'Sim', e 'Não' para cancelar.",
-                    "Aviso de nome de Papel Repetido",
-                    MessageBoxButtons.YesNo,
-                    MessageBoxIcon.Question);
-                    if (resultado == DialogResult.Yes)
-                    {
-                        cmd = new MySqlCommand("UPDATE enderecos SET logradouro = @logradouro, bairro = @bairro, cidade = @cidade, uf = @uf, cep = @cep  WHERE idendereco = @idendereco", classeConecta.con);
-                        cmd.Parameters.AddWithValue("@logradouro", modelEnderecos.Logradouro);
-                      
-                        cmd.Parameters.AddWithValue("@bairro", modelEnderecos.Bairro);
-                        cmd.Parameters.AddWithValue("@cidade", modelEnderecos.Cidade);
-                        cmd.Parameters.AddWithValue("@uf", modelEnderecos.Uf);
-                        cmd.Parameters.AddWithValue("@cep", modelEnderecos.Cep);
-                        cmd.Parameters.AddWithValue("@idendereco", modelEnderecos.Idendereco);
-                        cmd.ExecuteNonQuery();
-                        acaoCrud  = "AT";
-                        classeConecta.FecharCon();
-                    }
-                    else if (resultado == DialogResult.No)
-                    {
-                        acaoCrud = "NS";
-                     
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
+            }catch (Exception ex) {
                 MessageBox.Show("Erro ao Editar " + ex);
             }
         }
 
-        public void Excluir(EnderecosModel modelEnderecos)
+        public void Excluir(int idendereco)
         {
-            var resultado = MessageBox.Show("Confirmar excluisão do registro " + Convert.ToString(modelEnderecos.Cep), "Excluir Registro", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            var resultado = MessageBox.Show("Confirmar excluisão do registro " + idendereco, "Excluir Registro", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (resultado == DialogResult.Yes)
             {
                 try
@@ -188,90 +183,56 @@ namespace Sistema.DAO
                     classeConecta.AbrirCon();
                     sql = "DELETE FROM enderecos where idendereco = @idendereco";
                     cmd = new MySqlCommand(sql, classeConecta.con);
-                    cmd.Parameters.AddWithValue("@idendereco", modelEnderecos.Idendereco);
+                    cmd.Parameters.AddWithValue("@idendereco", idendereco);
                     cmd.ExecuteNonQuery();
-                    classeConecta.FecharCon();
-                    acaoCrud = "DEL";
+                    acaoCrudEnderecosDAO = "DEL";
+                    classeConecta.AbrirCon();
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show("Erro ao Excluir " + ex);
-                    classeConecta.FecharCon();
+                  
                 }
             }
             else if (resultado == DialogResult.No)
             {
-                acaoCrud = "NDEL";
+                acaoCrudEnderecosDAO = "NDEL";
             }
         }
 
-        public DataTable Listar(string ordenarpor)
-        {
-            try
-            {
+
+        public int ListarBDEnderecosDAO() {
+            try{
                 classeConecta.AbrirCon();
-                sql = "SELECT * FROM enderecos where logradouro LIKE @logradouro";
-                cmd = new MySqlCommand(sql, classeConecta.con);
-                cmd.Parameters.AddWithValue("@logradouro", enderecosModel.Logradouro + "%");
-                MySqlDataAdapter da = new MySqlDataAdapter();
-                da.SelectCommand = cmd;
-                DataTable dt = new DataTable();
-                da.Fill(dt);
-                quantidadeBD = dt.Rows.Count;
-                return dt;
-                classeConecta.FecharCon();
-            }
-            catch (Exception ex)
-            {
-
-                throw ex;
-
-            }
-        }
-
-
-        public int ListarTodosRegistrosBD()
-        {
-            int todosresgistros;
-            classeConecta.AbrirCon();
-            try
-            {
                 sql = "SELECT * FROM enderecos";
                 cmd = new MySqlCommand(sql, classeConecta.con);
                 MySqlDataAdapter da = new MySqlDataAdapter();
                 da.SelectCommand = cmd;
-
                 DataTable dt = new DataTable();
                 da.Fill(dt);
-                todosresgistros = dt.Rows.Count;
-                return todosresgistros;
-            }
-            catch (Exception ex)
-            {
+                classeConecta.AbrirCon();
+                return dt.Rows.Count;
 
+            }catch (Exception ex){
                 throw ex;
             }
         }
 
 
-        public int ListarPesquisados()
+        public int PesquisaEnderecosDAO()
         {
-            int retornoPesquisado;
-            retornoPesquisado = resQuantSearch;
-            return retornoPesquisado;
+            
+            return pesquisaEnderecosDAO;
         }
 
-        public string VerificarPersistencia()
+        public string AcaoCrudEnderecosDAO()
         {
-            string retornoExistente;
-            retornoExistente = acaoCrud;
-            return retornoExistente;
+            
+            return acaoCrudEnderecosDAO;
         }
 
-        public DataTable ConfiListagemDataGrid(string parametro, string indexar, int offsett, int limitt)
-        {
-            try
-            {
+        public DataTable ListarDataGrid(string parametro, string indexar, int offsett, int limitt){
+            try{
                 classeConecta.AbrirCon();
                 sql = "SELECT * from enderecos ORDER BY " + parametro + " " + indexar + " Limit " + offsett + "," + limitt;
                 cmd = new MySqlCommand(sql, classeConecta.con);
@@ -279,11 +240,10 @@ namespace Sistema.DAO
                 da.SelectCommand = cmd;
                 DataTable dt = new DataTable();
                 da.Fill(dt);
-                return dt;
                 classeConecta.FecharCon();
-            }
-            catch (Exception ex)
-            {
+                return dt;
+                
+            }catch (Exception ex){
 
                 throw ex;
             }
@@ -291,10 +251,8 @@ namespace Sistema.DAO
 
 
 
-        public DataTable PesquisarComeca(string coluna, string campo, string pesquisar)
-        {
-            try
-            {
+        public DataTable PesquisarComeca(string coluna, string campo, string pesquisar){
+            try{
                 classeConecta.AbrirCon();
                 sql = "SELECT * FROM enderecos where logradouro Like " + campo + "";
                 cmd = new MySqlCommand(sql, classeConecta.con);
@@ -310,20 +268,18 @@ namespace Sistema.DAO
                 da.SelectCommand = cmd;
                 DataTable dt = new DataTable();
                 da.Fill(dt);
-                resQuantSearch = dt.Rows.Count;
-                return dt;
+                pesquisaEnderecosDAO = dt.Rows.Count;
                 classeConecta.FecharCon();
-            }
-            catch (Exception ex)
-            {
+                return dt;
+
+            }catch (Exception ex){
                 throw ex;
             }
         }
 
-        public DataTable PesquisarContem(string coluna, string campo, string pesquisar)
-        {
-            try
-            {
+        public DataTable PesquisarContem(string coluna, string campo, string pesquisar){
+            try{
+
                 classeConecta.AbrirCon();
                 sql = "SELECT * FROM enderecos where logradouro Like  " + campo + "";
                 cmd = new MySqlCommand(sql, classeConecta.con);
@@ -339,22 +295,17 @@ namespace Sistema.DAO
                 da.SelectCommand = cmd;
                 DataTable dt = new DataTable();
                 da.Fill(dt);
-                resQuantSearch = dt.Rows.Count;
-                return dt;
+                pesquisaEnderecosDAO = dt.Rows.Count;
                 classeConecta.FecharCon();
+                return dt;
 
-            }
-            catch (Exception ex)
-            {
-
+            }catch (Exception ex){
                 throw ex;
             }
         }
 
-        public DataTable PesquisarTermina(string coluna, string campo, string pesquisar)
-        {
-            try
-            {
+        public DataTable PesquisarTermina(string coluna, string campo, string pesquisar){
+            try{
                 classeConecta.AbrirCon();
                 sql = "SELECT * FROM enderecos where logradouro Like  " + campo + "";
                 cmd = new MySqlCommand(sql, classeConecta.con);
@@ -370,12 +321,11 @@ namespace Sistema.DAO
                 da.SelectCommand = cmd;
                 DataTable dt = new DataTable();
                 da.Fill(dt);
-                resQuantSearch = dt.Rows.Count;
-                return dt;
+                pesquisaEnderecosDAO = dt.Rows.Count;
                 classeConecta.FecharCon();
-            }
-            catch (Exception ex)
-            {
+                return dt;
+
+            }catch (Exception ex){
 
                 throw ex;
             }
