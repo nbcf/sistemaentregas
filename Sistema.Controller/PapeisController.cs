@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Sistema.Model;
 using Sistema.DAO;
 using System.Data;
+using System.Windows.Forms;
 
 namespace Sistema.Controller
 {
@@ -61,7 +62,8 @@ namespace Sistema.Controller
       
         }
 
-        public void Editar(string papel,
+        public void Editar(
+            string papel,
             bool cadastrar, 
             bool pesquisar,
             bool editar, 
@@ -71,7 +73,8 @@ namespace Sistema.Controller
             bool menugen, 
             int idpapel)
         {
-            dao.Editar(papel,
+            dao.Editar(
+                papel,
                 cadastrar,
                 pesquisar, 
                 editar, 
@@ -94,6 +97,9 @@ namespace Sistema.Controller
         }
 
         public string AcaoCrudPapeisDAO(){
+
+            MessageBox.Show(dao.AcaoCrudPapeisDAO());
+
             return dao.AcaoCrudPapeisDAO();
         }
 

@@ -121,7 +121,13 @@ namespace Sistema.DAO
                 dap.Fill(dtp);
                 if (dtp.Rows.Count == 0)
                 {
-                    cmd = new MySqlCommand("UPDATE enderecos SET logradouro = @logradouro, bairro = @bairro, cidade = @cidade, uf = @uf, cep = @cep  WHERE idendereco = @idendereco", classeConecta.con);
+                    cmd = new MySqlCommand("UPDATE enderecos SET " +
+                        "logradouro =   @logradouro, " +
+                        "bairro     =   @bairro," +
+                        "cidade     =   @cidade," +
+                        "uf         =   @uf, " +
+                        "cep        =   @cep" +
+                        "WHERE idendereco = @idendereco", classeConecta.con);
                     cmd.Parameters.AddWithValue("@logradouro", modelEnderecos.Logradouro);
                    
                     cmd.Parameters.AddWithValue("@bairro", modelEnderecos.Bairro);
@@ -162,7 +168,7 @@ namespace Sistema.DAO
                     else if (resultado == DialogResult.No)
                     {
                         acaoCrud = "NS";
-                        classeConecta.FecharCon();
+                     
                     }
                 }
             }

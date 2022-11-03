@@ -12,8 +12,8 @@ namespace Sistema.View
 {
     public partial class formEditPapel : Form
     {
-        public string acaoDialog;
-
+        public string acaoDialog = "";
+        public string acaoFormDialog = "";
 
         public string IdVO
         {
@@ -75,6 +75,13 @@ namespace Sistema.View
             get { return acaoDialog; }
             set { acaoDialog = value; }
         }
+
+        public string AcaoFormDialogVO
+        {
+            get { return acaoFormDialog; }
+            set { acaoFormDialog = value; }
+        }
+
         public formEditPapel()
         {
             InitializeComponent();
@@ -82,14 +89,19 @@ namespace Sistema.View
 
         private void button1_Click(object sender, EventArgs e)
         {
-            AcaoDialogVO = "Salvar";
+            AcaoDialogVO = "ok";
+            AcaoFormDialogVO = "ok";
+        //    MessageBox.Show(AcaoDialogVO);
             Close();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            AcaoDialogVO = "Cancelar";
+            AcaoDialogVO = "sair";
+            AcaoFormDialogVO = "sair";
+         //   MessageBox.Show(AcaoDialogVO);
             Close();
+
         }
 
         private void txtBoxName_TextChanged(object sender, EventArgs e)
@@ -104,15 +116,9 @@ namespace Sistema.View
 
         private void formEditPapel_FormClosing(object sender, FormClosingEventArgs e)
         {
-            acaoDialog = "Cancelar";
+            AcaoFormDialogVO = "fechou";
             
         }
 
-        private void formEditPapel_FormClosed(object sender, FormClosedEventArgs e)
-        {
-
-            acaoDialog = "Cancelar";
-       
-        }
     }
 }

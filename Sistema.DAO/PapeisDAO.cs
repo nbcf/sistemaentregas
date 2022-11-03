@@ -163,38 +163,40 @@ namespace Sistema.DAO
                         bool editar, 
                         bool excluir,
                         bool menuope, 
-                        bool menuadm, 
+                        bool menuadmin, 
                         bool menugen, 
-                        int idpapel){
+                        int  idpapel){
             try{
                 classeConecta.AbrirCon();
-                cmdVerificar = new MySqlCommand("UPDATE usuarios SET " +
-                    " nomepapel     =   @nomepapel," +
-                    " criar         =   @criar," +
-                    " recuperar     =   @recuperar," +
-                    " atualizar     =   @editar," +
-                    " excluir       =   @excluir," +
-                    " menuope       =   @menuope," +
-                    " menuadm       =   @menuadm," +
-                    " menugen       =   @menugen" +
-                    " WHERE idpapel = @idpapel", classeConecta.con);
-                    cmd.Parameters.AddWithValue("@nomepapel",   papel);
-                    cmd.Parameters.AddWithValue("@criar",       cadastrar);
-                    cmd.Parameters.AddWithValue("@recuperar",   pesquisar);
-                    cmd.Parameters.AddWithValue("@atualizar",   editar);
-                    cmd.Parameters.AddWithValue("@excluir",     excluir);
-                    cmd.Parameters.AddWithValue("@menuope",     menuope);
-                    cmd.Parameters.AddWithValue("@menuadmin",   menuadm);
-                    cmd.Parameters.AddWithValue("@menugen",   menugen);
-                    cmd.Parameters.AddWithValue("@idpapel",     idpapel);
-                    cmd.ExecuteNonQuery();
-                    acaoCrudPapeisDAO = "AT";
-
+                cmd = new MySqlCommand("UPDATE papeis SET " +
+                    " nomepapel         =       @nomepapel," +
+                    " criar         =       @criar, " +
+                    " recuperar         =       @recuperar, " +
+                    " atualizar         =       @atualizar, " +
+                    " excluir         =       @excluir, " +
+                    " menuope         =       @menuope, " +
+                    " menuadmin         =       @menuadmin, " +
+                    " menugen         =       @menugen " +
+                    " WHERE idpapel =       @idpapel", classeConecta.con);
+                cmd.Parameters.AddWithValue("@nomepapel", papel);
+                cmd.Parameters.AddWithValue("@criar", cadastrar);
+                cmd.Parameters.AddWithValue("@recuperar", pesquisar);
+                cmd.Parameters.AddWithValue("@atualizar", editar);
+                cmd.Parameters.AddWithValue("@excluir", excluir);
+                cmd.Parameters.AddWithValue("@menuope", menuope);
+                cmd.Parameters.AddWithValue("@menuadmin", menuadmin);
+                cmd.Parameters.AddWithValue("@menugen", menugen);
+                cmd.Parameters.AddWithValue("@idpapel", idpapel);
+                cmd.ExecuteNonQuery();
+                acaoCrudPapeisDAO = "AT";
+                classeConecta.FecharCon();
             } catch (Exception ex){
-                MessageBox.Show("A Seguinte Excessão foi lançada quando o método Editar foi operado " + ex, "Erro na classe UsuariosDAO",
+                MessageBox.Show("A Seguinte Excessão foi lançada" +
+                    " quando o método Editar foi operado " + ex, 
+                    "Erro na classe UsuariosDAO",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
-            }
+                }
 
         }
 

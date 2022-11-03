@@ -105,7 +105,9 @@ namespace Sistema.DAO
             try
             {
                 classeConecta.AbrirCon();
-                cmd = new MySqlCommand("UPDATE tipounds SET nomeund = @nomeund WHERE idtipound = @idtipound", classeConecta.con);
+                cmd = new MySqlCommand("UPDATE tipounds SET " +
+                    "nomeund = @nomeund " +
+                    "WHERE idtipound = @idtipound", classeConecta.con);
                 cmd.Parameters.AddWithValue("@nomeund", nomeund);
                 cmd.Parameters.AddWithValue("@idtipound", idtipound);
                 cmd.ExecuteNonQuery();

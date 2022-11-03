@@ -199,7 +199,7 @@ namespace Sistema.View
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Formulário";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.formEditPapel_FormClosing);
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.formEditPapel_FormClosed);
+  //          this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.formEditPapel_FormClosed);
             this.Load += new System.EventHandler(this.formEditPapel_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
