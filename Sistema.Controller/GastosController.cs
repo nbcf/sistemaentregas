@@ -13,10 +13,10 @@ namespace Sistema.Controller
     {
         GastosDAO dao = new GastosDAO();
         GastosModel modelGastos = new GastosModel();
-        public int encontrados;
-        public int encontradosPesquisa;
-        public string acaoCrudController;
-        public string retornoPersistencia;
+        //public int encontrados;
+        //public int encontradosPesquisa;
+        //public string acaoCrudController;
+        //public string retornoPersistencia;
 
 
         public void Salvar(
@@ -45,26 +45,9 @@ namespace Sistema.Controller
             retornoRegistroSalvo();
         }
 
-        //public DataTable Listar(string ordernaPor)
-        //{
-        //    try
-        //    {
-        //        DataTable dt = new DataTable();
-        //        dt = dao.Listar("");
-        //        return dt;
-        //    }
-        //    catch (Exception)
-        //    {
+      
 
-        //        throw;
-        //    }
-
-        //}
-
-
-
-        public void Excluir(int idgastos)
-        {
+        public void Excluir(int idgastos){
             dao.Excluir(idgastos);
         }
 
@@ -81,7 +64,6 @@ namespace Sistema.Controller
                             string numeronota,
                             string imgnota,
                             int idgasto){
-
             dao.Editar(
                 idsaida,
                 idfornecedor,
@@ -99,93 +81,37 @@ namespace Sistema.Controller
         }
 
 
-        public int retornoQuantRegistro()
-        {
-            encontrados = dao.ListarTodosRegistrosBD();
-            return encontrados;
+        public int retornoQuantRegistro() {
+            return dao.ListarTodosRegistrosBD();
         }
 
-        public int retornoQuantPesquisa()
-        {
-            encontradosPesquisa = dao.ListarPesquisados();
-            return encontradosPesquisa;
+        public int retornoQuantPesquisa(){
+            return dao.ListarPesquisados();
         }
 
-        public string retornoRegistroSalvo()
-        {
-            retornoPersistencia = dao.VerificarPersistencia();
-            return retornoPersistencia;
-
+        public string retornoRegistroSalvo(){
+            return dao.VerificarPersistencia();
         }
 
 
-
-        public DataTable ListarDataGrid(string parametro, string indexar, int offsett, int limitt)
-        {
-            try
-            {
+        public DataTable ListarDataGrid(string parametro, string indexar, int offsett, int limitt){
                 retornoQuantRegistro();
-                DataTable dt = new DataTable();
-                dt = dao.ListarDataGrid(parametro, indexar, offsett, limitt);
-                return dt;
-            }
-            catch (Exception e)
-            {
-
-                throw e;
-            }
-
-
+                return dao.ListarDataGrid(parametro, indexar, offsett, limitt);
         }
 
-        public DataTable PesquisarComecaCom(string coluna, string campo, string pesquisar)
-        {
-            try
-            {
-                //     retornoQuantPesquisa();
-                DataTable dt = new DataTable();
-           //     dt = dao.PesquisarComeca(coluna, campo, pesquisar);
-                return dt;
-            }
-            catch (Exception)
-            {
-
-                throw;
-            }
-
+        public DataTable PesquisarComecaCom(string coluna, string campo, string pesquisar){     
+            retornoQuantPesquisa();
+            return dao.PesquisarComeca(coluna, campo, pesquisar);
         }
 
-        public DataTable PesquisarContemCom(string coluna, string campo, string pesquisar)
-        {
-            try
-            {
-                // retornoQuantPesquisa();
-                DataTable dt = new DataTable();
-           //     dt = dao.PesquisarContem(coluna, campo, pesquisar);
-                return dt;
-            }
-            catch (Exception e)
-            {
-
-                throw;
-            }
-
+        public DataTable PesquisarContemCom(string coluna, string campo, string pesquisar){
+            retornoQuantPesquisa();
+            return dao.PesquisarContem(coluna, campo, pesquisar);
         }
-        public DataTable PesquisarTerminaCom(string coluna, string campo, string pesquisar)
-        {
-            try
-            {
-                //         retornoQuantPesquisa();
-                DataTable dt = new DataTable();
-            //    dt = dao.PesquisarTermina(coluna, campo, pesquisar);
-                return dt;
-            }
-            catch (Exception)
-            {
 
-                throw;
-            }
-
+        public DataTable PesquisarTerminaCom(string coluna, string campo, string pesquisar){        
+                retornoQuantPesquisa();
+                return dao.PesquisarTermina(coluna, campo, pesquisar);
         }
     }
 }

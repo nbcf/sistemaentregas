@@ -18,8 +18,6 @@ namespace Sistema.Controller
             RetornoQuantVeiclosEncontrados();
         }
 
-     
-
         public void Excluir(int idveiculo){
             dao.Excluir(idveiculo);
             AcaoCrudVeiculosController();
@@ -48,69 +46,28 @@ namespace Sistema.Controller
             return dao.AcaoCrudVeiculosDAO();
 
         }
-
-
         public DataTable ListarDataGrid(string parametro, string indexar, int offsett, int limitt){
-            try {
-                DataTable dt = new DataTable();
-                dt = dao.ListarDataGrid(parametro, indexar, offsett, limitt);
                 RetornoQuantVeiclosEncontrados();
-                return dt;
-
-            }catch (Exception e) {
-                throw e;
-            }
+                return dao.ListarDataGrid(parametro, indexar, offsett, limitt);
         }
 
-        public DataTable ConfiListagemImportVS() {
-            try{
-              
-                DataTable dt = new DataTable();
-                dt = dao.ConfiListagemImportVS();
+        public DataTable ConfiListagemImportVS(){
                 RetornoQuantVeiclosEncontrados();
-                return dt;
-
-            }catch (Exception e){
-                throw e;
-            }
+                return dao.ConfiListagemImportVS();
         }
 
         public DataTable PesquisarComecaCom(string coluna, string campo, string pesquisar){
-            try{
-                DataTable dt = new DataTable();
-                dt = dao.PesquisarComeca(coluna, campo, pesquisar);
-                RetornoQuantVeiclosEncontrados();
-                return dt;
-
-            }catch (Exception){
-                throw;
-            }
-
+                return dao.PesquisarComeca(coluna, campo, pesquisar);
         }
 
         public DataTable PesquisarContemCom(string coluna, string campo, string pesquisar){
-            try{
-                DataTable dt = new DataTable();
-                dt = dao.PesquisarContem(coluna, campo, pesquisar);
                 RetornoQuantVeiclosEncontrados();
-                return dt;
-
-            }catch (Exception e){
-                throw;
-            }
-
+                return dao.PesquisarContem(coluna, campo, pesquisar);
         }
+
         public DataTable PesquisarTerminaCom(string coluna, string campo, string pesquisar){
-            try{
-                DataTable dt = new DataTable();
-                dt = dao.PesquisarTermina(coluna, campo, pesquisar);
                 RetornoQuantVeiclosEncontrados();
-                return dt;
-
-            }catch (Exception) {
-
-                throw;
-            }
+                return dao.PesquisarTermina(coluna, campo, pesquisar);
 
         }
     }

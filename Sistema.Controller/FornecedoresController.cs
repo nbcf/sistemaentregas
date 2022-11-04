@@ -41,70 +41,28 @@ namespace Sistema.Controller{
         }
 
         public DataTable ListaDataGrid(string parametro, string indexar, int offsett, int limitt){
-            
-            try{
-                DataTable dt = new DataTable();
-                dt = dao.ListaDataGrid(parametro, indexar, offsett, limitt);
                 RetornoQuantPesquisa();
-                return dt;
-
-            }catch (Exception e) {
-
-                throw;
-            }
+                return dao.ListaDataGrid(parametro, indexar, offsett, limitt);
         }
-        public DataTable ListarEmComboBox(){
 
-            try{
-                DataTable dt = new DataTable();
-                dt = dao.ListarEmComboBox();
-                return dt;
-            }catch (Exception e){
-               
-                throw;
-            }
+
+        public DataTable ListarEmComboBox(){
+             return dao.ListarEmComboBox();
         }
 
         public DataTable PesquisarComecaCom(string coluna, string campo, string pesquisar){
-            
-            try{
-                DataTable dt = new DataTable();
-                dt = dao.PesquisarComeca(coluna, campo, pesquisar);
                 RetornoQuantPesquisa();
-                return dt;
-
-            }catch (Exception e){
-                throw;
-            }
-
+                return dao.PesquisarComeca(coluna, campo, pesquisar);
         }
 
         public DataTable PesquisarContemCom(string coluna, string campo, string pesquisar){
-           
-            try{
-
-                DataTable dt = new DataTable();
-                dt = dao.PesquisarContem(coluna, campo, pesquisar);
                 RetornoQuantPesquisa();
-                return dt;
-
-            }catch (Exception e){
-                throw;
+                return dao.PesquisarContem(coluna, campo, pesquisar);
             }
 
-        }
         public DataTable PesquisarTerminaCom(string coluna, string campo, string pesquisar){
-            
-            try{
-
-                DataTable dt = new DataTable();
-                dt = dao.PesquisarTermina(coluna, campo, pesquisar);
-                RetornoQuantPesquisa();
-                return dt;
-
-            }catch (Exception e){
-                throw;
-            }
+             RetornoQuantPesquisa();
+            return dao.PesquisarTermina(coluna, campo, pesquisar);
         }
     }
 }

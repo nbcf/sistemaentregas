@@ -15,11 +15,7 @@ namespace Sistema.Controller
 
         EncomendasDAO dao = new EncomendasDAO();
         EncomendasModel modelEncomendas = new EncomendasModel();
-        public int encontrados;
-        public int encontradosPesquisa;
-      
-        public int verificaEstatusParaRetorno;
-        public int listarTodosRegistrosBDEstatus;
+   
         public PapeisModel pmc = new PapeisModel();
         public PessoasModel pec = new PessoasModel();
         public void Salvar(int idorigem,
@@ -69,32 +65,11 @@ namespace Sistema.Controller
         }
 
 
-
-        public DataTable Listar(string ordernaPor)
-        {
-            try
-            {
-                DataTable dt = new DataTable();
-                dt = dao.Listar("");
-                return dt;
-            }
-            catch (Exception)
-            {
-
-                throw;
-            }
-
-        }
-
         public void Excluir(int idencomenda)
         {
             dao.Excluir(idencomenda);
         }
 
-       
-        
-        
-        
         public void Editar(int idorigem,
                            int idveiculo,
                            int identregador,
@@ -140,8 +115,9 @@ namespace Sistema.Controller
             modelEncomendas.Idsaida = idsaida;
             modelEncomendas.Idencomenda     =   idencomenda;
             dao.Editar(modelEncomendas);
-       
         }
+
+
         public void EditarSaidaEncomendaRota(int idorigem,
                       int idveiculo,
                       int identregador,
@@ -229,21 +205,16 @@ namespace Sistema.Controller
         }
         
 
-        public int retornoQuantRegistro()
-        {
-            encontrados = dao.ListarTodosRegistrosBD();
-            return encontrados;
+        public int retornoQuantRegistro(){
+            return dao.ListarTodosRegistrosBD();
         }
 
-        public int retornoQuantPesquisa()
-        {
-            encontradosPesquisa = dao.ListarPesquisados();
-            return encontradosPesquisa;
+        public int retornoQuantPesquisa(){
+            return dao.ListarPesquisados();
         }
 
 
-        public string retornoAcaoEncomendasDAO()
-        {
+        public string retornoAcaoEncomendasDAO(){
             return dao.AcaoCrud();
         }
 
@@ -254,197 +225,72 @@ namespace Sistema.Controller
             int identregador,
             string esentrega,
             DateTime datarota){
-           
             return dao.ContarEncomendas(stridsaida, idveiculo, identregador, esentrega, datarota);
         }
 
 
-        public DataTable ConfiListagemDataGrid(
-            string idsaida,
-            string estentrega,
-            string parametro,
-            string indexar,
-            int offsett,
-            int limitt){
-
-            try{
-                retornoQuantRegistro();
-                DataTable dt = new DataTable();
-                dt = dao.ConfiListagemDataGrid(idsaida, estentrega, parametro, indexar, offsett, limitt);
-                return dt;
-            }
-            catch (Exception e)
-            {
-
-                throw e;
-            }
+        public DataTable ConfiListagemDataGrid(string idsaida, string estentrega,string parametro,string indexar, int offsett,int limitt){
+                return dao.ConfiListagemDataGrid(idsaida, estentrega, parametro, indexar, offsett, limitt);
         }
 
-        public DataTable ListarDetalheMestre(string idsaida, string estatusencomenda)
-        {
-            try
-            {
+        public DataTable ListarDetalheMestre(string idsaida, string estatusencomenda){
                 retornoQuantRegistro();
-                DataTable dt = new DataTable();
-                dt = dao.ListarDetalheMestre(idsaida, estatusencomenda);
-                return dt;
-            }
-            catch (Exception e)
-            {
-
-                throw;
-            }
+                return dao.ListarDetalheMestre(idsaida, estatusencomenda);
         }
 
-        public DataTable ListarDetalheMestreUnion(string idsaida, string estSaiuEntrega, string estEntregue)
-        {
-            try
-            {
+        public DataTable ListarDetalheMestreUnion(string idsaida, string estSaiuEntrega, string estEntregue) {
                 retornoQuantRegistro();
-                DataTable dt = new DataTable();
-                dt = dao.ListarDetalheMestreUnion( idsaida, estSaiuEntrega, estEntregue);
-                return dt;
-            }
-            catch (Exception e)
-            {
-
-                throw;
-            }
+                return dao.ListarDetalheMestreUnion(idsaida, estSaiuEntrega, estEntregue);
         }
 
-        public DataTable ConfiListagemImportVS()
-        {
-            try
-            {
+        public DataTable ConfiListagemImportVS() {
                 retornoQuantRegistro();
-                DataTable dt = new DataTable();
-                dt = dao.ConfiListagemImportVS(); 
-                return dt;
-            }
-            catch (Exception e)
-            {
-                throw e;
-            }
+                return dao.ConfiListagemImportVS();
         }
         
         public int ListarTodosRegistrosBDEstatus(string estatusencomenda){
-            listarTodosRegistrosBDEstatus = dao.ListarTodosRegistrosBDEstatus( estatusencomenda);
-            return listarTodosRegistrosBDEstatus;
+            return dao.ListarTodosRegistrosBDEstatus(estatusencomenda);
         }
 
 
         public DataTable ListarTodasEntregaSaida(string idsaida,string estencomendas,string parametro,string indexar,int offsett,int limitt){
-            try {
-                DataTable dt = new DataTable();
-                dt = dao.ListarTodasEntregaSaida(idsaida, estencomendas, parametro, indexar, offsett, limitt);
-                return dt;
-            }
-            catch (Exception e){
-                throw e;
-            }
+                return dao.ListarTodasEntregaSaida(idsaida, estencomendas, parametro, indexar, offsett, limitt);
         }
 
 
         public DataTable ListarEntregaSaida(string estencomendas, string parametro,  string indexar, int offsett, int limitt){
-            try{
-             
-                DataTable dt = new DataTable();
-                dt = dao.ListarEntregaSaida(estencomendas, parametro, indexar, offsett, limitt);
-                return dt;
-
-            }catch (Exception e){
-                throw e;
-            }
+                     return dao.ListarEntregaSaida(estencomendas, parametro, indexar, offsett, limitt);
         }
 
 
         public DataTable PesquisarComecaCom(string coluna, string campo, string pesquisar, string estencomendas){
-            try{
                 retornoQuantPesquisa();
-                DataTable dt = new DataTable();
-                dt = dao.PesquisarComeca(coluna, campo, pesquisar, estencomendas);
-                return dt;
-            }
-            catch (Exception)
-            {
-
-                throw;
-            }
-
+                return dao.PesquisarComeca(coluna, campo, pesquisar, estencomendas);
         }
+
         public DataTable PesquisarContemCom(string coluna, string campo, string pesquisar, string estencomendas){
-            try{
                 retornoQuantPesquisa();
-                DataTable dt = new DataTable();
-                dt = dao.PesquisarContem(coluna, campo, pesquisar, estencomendas);
-                return dt;
-
-            }catch (Exception e){
-                throw;
-            }
-
+                return dao.PesquisarContem(coluna, campo, pesquisar, estencomendas);
         }
+
         public DataTable PesquisarTerminaCom(string coluna, string campo, string pesquisar, string estencomendas){
-            try
-            {
                 retornoQuantPesquisa();
-                DataTable dt = new DataTable();
-                dt = dao.PesquisarTermina(coluna, campo, pesquisar, estencomendas);
-                return dt;
-            }
-            catch (Exception)
-            {
-
-                throw;
-            }
-
+                return dao.PesquisarTermina(coluna, campo, pesquisar, estencomendas);
         }
 
-        public DataTable PesquisarComecaImpES(string coluna, string campo, string pesquisar, string estencomendas)
-        {
-            try
-            {
+        public DataTable PesquisarComecaImpES(string coluna, string campo, string pesquisar, string estencomendas){
                 retornoQuantPesquisa();
-                DataTable dt = new DataTable();
-                dt = dao.PesquisarComecaImpES(coluna, campo, pesquisar, estencomendas);
-                return dt;
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-
+                return dao.PesquisarComecaImpES(coluna, campo, pesquisar, estencomendas);
         }
 
-        public DataTable PesquisarContemImpES(string coluna, string campo, string pesquisar, string estencomendas)
-        {
-            try
-            {
+        public DataTable PesquisarContemImpES(string coluna, string campo, string pesquisar, string estencomendas){
                 retornoQuantPesquisa();
-                DataTable dt = new DataTable();
-                dt = dao.PesquisarContemImpES(coluna, campo, pesquisar, estencomendas);
-                return dt;
-            }
-            catch (Exception e)
-            {
-                throw;
-            }
-
+                return dao.PesquisarContemImpES(coluna, campo, pesquisar, estencomendas);
         }
-        public DataTable PesquisarTerminaImpES(string coluna, string campo, string pesquisar, string estencomendas)
-        {
-            try
-            {
-                retornoQuantPesquisa();
-                DataTable dt = new DataTable();
-                dt = dao.PesquisarTerminaImpES(coluna, campo, pesquisar, estencomendas);
-                return dt;
-            }
-            catch (Exception)
-            {
-                throw;
-            }
 
+        public DataTable PesquisarTerminaImpES(string coluna, string campo, string pesquisar, string estencomendas){
+                retornoQuantPesquisa();
+                return dao.PesquisarTerminaImpES(coluna, campo, pesquisar, estencomendas);
         }
     }
 }

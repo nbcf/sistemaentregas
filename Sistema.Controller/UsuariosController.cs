@@ -20,8 +20,16 @@ namespace Sistema.Controller
         public PapeisModel pmc = new PapeisModel();
         public PessoasModel pec = new PessoasModel();
 
-        public void Salvar(string usuario, string senha, string idpessoa, string idpapel){
-            dao.Salvar(Convert.ToInt32(idpessoa), Convert.ToInt32(idpapel), usuario,    senha);
+        public void Salvar(
+            string usuario,
+            string senha,
+            string idpessoa,
+            string idpapel){
+            dao.Salvar(
+                Convert.ToInt32(idpessoa),
+                Convert.ToInt32(idpapel),
+                usuario, 
+                senha);
             AcaoCrudUsuariosController();
         }
 
@@ -58,8 +66,7 @@ namespace Sistema.Controller
             return dao.AcaoCrudUsuariosDAO();
         }
 
-        public object retornoDadosPapeis(string idpapel)
-        {
+        public object retornoDadosPapeis(string idpapel){
             dao.ExibirDadosPapeis(idpapel);
             pmc.Nomepapel = dao.pmodelDAO.Nomepapel;
             pmc.Criar = dao.pmodelDAO.Criar;
@@ -70,104 +77,38 @@ namespace Sistema.Controller
             pmc.Menuope = dao.pmodelDAO.Menuope;
             pmc.Menuadmin = dao.pmodelDAO.Menuadmin;
             pmc.Menugen = dao.pmodelDAO.Menugen;
-
             return pmc;
         }
 
         public object retornoDadoPessoas(string idpessoa){
-
-           
             pec.Nomepessoa = dao.ExibirDadosPessoa(idpessoa);
             return pec;
         }
 
 
-        public DataTable ListarDataGrid(string parametro, string indexar, int offsett, int limitt)
-        {
-            try
-            {
-                
-                DataTable dt = new DataTable();
-                dt = dao.ListarDataGrid(parametro, indexar, offsett, limitt);
+        public DataTable ListarDataGrid(string parametro, string indexar, int offsett, int limitt){
                 retornoQuantRegistro();
-                return dt;
-            }
-            catch (Exception e)
-            {
-
-                throw e;
-            }
-
-
+                return dao.ListarDataGrid(parametro, indexar, offsett, limitt);
         }
        
-        public DataTable ListarEntregador(string funcao)
-        {
-            try
-            {
-                
-                DataTable dt = new DataTable();
-                dt = dao.ListarImportEntregador(funcao);
+        public DataTable ListarEntregador(string funcao){
                 retornoQuantRegistro();
-                return dt;
-            }
-            catch (Exception e)
-            {
-
-                throw e;
-            }
-
-
+                return dao.ListarImportEntregador(funcao); 
         }
 
-        public DataTable PesquisarComecaCom(string coluna, string campo, string pesquisar)
-        {
-            try
-            {
-                DataTable dt = new DataTable();
-                dt = dao.PesquisarComeca(coluna, campo, pesquisar);
+        public DataTable PesquisarComecaCom(string coluna, string campo, string pesquisar){
                 retornoQuantPesquisa();
-                return dt;
-            }
-            catch (Exception)
-            {
-
-                throw;
+                return dao.PesquisarComeca(coluna, campo, pesquisar);
             }
 
-        }
-
-        public DataTable PesquisarContemCom(string coluna, string campo, string pesquisar)
-        {
-            try
-            {
-                DataTable dt = new DataTable();
-                dt = dao.PesquisarContem(coluna, campo, pesquisar);
+        public DataTable PesquisarContemCom(string coluna, string campo, string pesquisar){
                 retornoQuantPesquisa();
-                return dt;
-            }
-            catch (Exception e)
-            {
-
-                throw;
+                return dao.PesquisarContem(coluna, campo, pesquisar);
             }
 
-        }
-        public DataTable PesquisarTerminaCom(string coluna, string campo, string pesquisar)
-        {
-            try
-            {
-                DataTable dt = new DataTable();
-                dt = dao.PesquisarTermina(coluna, campo, pesquisar);
+        public DataTable PesquisarTerminaCom(string coluna, string campo, string pesquisar) {
                 retornoQuantPesquisa();
-                return dt;
-            }
-            catch (Exception)
-            {
-
-                throw;
-            }
-
+                return dao.PesquisarTermina(coluna, campo, pesquisar);
         }
     }
 }

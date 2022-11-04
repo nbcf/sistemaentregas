@@ -9,16 +9,10 @@ using System.Data;
 using Sistema.DAO;
 using Sistema.Model;
 
-namespace Sistema.Controller
-{
-  public  class EnderecosController
-    {
+namespace Sistema.Controller{
+
+  public  class EnderecosController{
         EnderecosDAO dao = new EnderecosDAO();
-
-        public int encontrados;
-        public int encontradosPesquisa;
-        public string retornoPersistencia;
-
 
         public void Salvar(
             string logradouro,
@@ -33,15 +27,10 @@ namespace Sistema.Controller
                 cidade,
                 uf,
                 cep);
-
             AcaoCrudEnderecosDAO();
         }
 
-       
-
-
-        public void Excluir(int idendereco)
-        {
+        public void Excluir(int idendereco){
             dao.Excluir(idendereco);
             AcaoCrudEnderecosDAO();
         }
@@ -51,8 +40,7 @@ namespace Sistema.Controller
             string bairro, 
             string cidade,
             string uf, 
-            string cep)
-        {
+            string cep) {
             dao.Editar(
                 idendereco,
                 logradouro,
@@ -60,7 +48,6 @@ namespace Sistema.Controller
                 cidade, 
                 uf,  
                 cep);
-
             AcaoCrudEnderecosDAO();
         }
 
@@ -74,81 +61,33 @@ namespace Sistema.Controller
         }
 
         public string AcaoCrudEnderecosDAO(){
-
             return dao.AcaoCrudEnderecosDAO();
 
         }
 
-
-        //encontradosPesquisa
 
         public DataTable ListarDataGrid(
             string parametro,
             string indexar,
             int offsett,
             int limitt){
-            try
-            {
-                DataTable dt = new DataTable();
-                dt = dao.ListarDataGrid(parametro, indexar, offsett, limitt);
                 ListarBDEnderecosController();
-                return dt;
-            }
-            catch (Exception e)
-            {
-
-                throw e;
-            }
-
-
+            return dao.ListarDataGrid(parametro, indexar, offsett, limitt);
         }
 
         public DataTable PesquisarComecaCom(string coluna, string campo, string pesquisar) {
-            try {
-                DataTable dt = new DataTable();
-                dt = dao.PesquisarComeca(coluna, campo, pesquisar);
                 PesquisaEnderecosController();
-                return dt;
-            }
-            catch (Exception)
-            {
-
-                throw;
-            }
-
+                return dao.PesquisarComeca(coluna, campo, pesquisar);
         }
 
-        public DataTable PesquisarContemCom(string coluna, string campo, string pesquisar)
-        {
-            try
-            {
-                DataTable dt = new DataTable();
-                dt = dao.PesquisarContem(coluna, campo, pesquisar);
+        public DataTable PesquisarContemCom(string coluna, string campo, string pesquisar) {
                 PesquisaEnderecosController();
-                return dt;
-            }
-            catch (Exception e)
-            {
-
-                throw;
+                return dao.PesquisarContem(coluna, campo, pesquisar);
             }
 
-        }
-        public DataTable PesquisarTerminaCom(string coluna, string campo, string pesquisar)
-        {
-            try
-            {
-                DataTable dt = new DataTable();
-                dt = dao.PesquisarTermina(coluna, campo, pesquisar);
+        public DataTable PesquisarTerminaCom(string coluna, string campo, string pesquisar){
                 PesquisaEnderecosController();
-                return dt;
-            }
-            catch (Exception)
-            {
-
-                throw;
-            }
-
+                return dao.PesquisarTermina(coluna, campo, pesquisar);
         }
     }
 }

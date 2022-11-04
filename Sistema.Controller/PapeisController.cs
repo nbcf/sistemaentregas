@@ -106,70 +106,25 @@ namespace Sistema.Controller
             }
         }
 
-        public DataTable ConfiListagemImportPU()
-        {
-            try
-            {
-                DataTable dt = new DataTable();
-                dt = dao.ConfiListagemImportPU();
+        public DataTable ConfiListagemImportPU(){ 
                 ListarBDPapeisControlller();
-                return dt;
-            }
-            catch (Exception e)
-            {
-
-                throw e;
-            }
-        }
-
-        public DataTable PesquisarComecaCom(string coluna, string campo, string pesquisar)
-        {
-            try
-            {
-                DataTable dt = new DataTable();
-                dt = dao.PesquisarComeca(coluna, campo, pesquisar);
-                ListarPesquisaPapeisController();
-                return dt;
-            }
-            catch (Exception)
-            {
-
-                throw;
-            }
+                return dao.ConfiListagemImportPU();
 
         }
 
-        public DataTable PesquisarContemCom(string coluna, string campo, string pesquisar)
-        {
-            try
-            {
-                DataTable dt = new DataTable();
-                dt = dao.PesquisarContem(coluna, campo, pesquisar);
+        public DataTable PesquisarComecaCom(string coluna, string campo, string pesquisar){
                 ListarPesquisaPapeisController();
-                return dt;
-            }
-            catch (Exception e)
-            {
-
-                throw;
+                return dao.PesquisarComeca(coluna, campo, pesquisar);
             }
 
-        }
-        public DataTable PesquisarTerminaCom(string coluna, string campo, string pesquisar)
-        {
-            try
-            {
-                DataTable dt = new DataTable();
-                dt = dao.PesquisarTermina(coluna, campo, pesquisar);
+        public DataTable PesquisarContemCom(string coluna, string campo, string pesquisar) {
                 ListarPesquisaPapeisController();
-                return dt;
-            }
-            catch (Exception)
-            {
-
-                throw;
+                return dao.PesquisarContem(coluna, campo, pesquisar);
             }
 
+        public DataTable PesquisarTerminaCom(string coluna, string campo, string pesquisar){
+                ListarPesquisaPapeisController();
+                return dao.PesquisarTermina(coluna, campo, pesquisar);
         }
     }
 }

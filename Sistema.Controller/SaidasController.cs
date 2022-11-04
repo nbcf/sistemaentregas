@@ -56,7 +56,7 @@ namespace Sistema.Controller
         public DataTable ListarEstatusSaidaController(string estsaidas){
             return dao.ListarEstatusSaidaDAO(estsaidas);
 
-            }
+        }
 
         public DataTable ListarSaidaGasto(){
             return  dao.ListarSaidaGasto();

@@ -13,39 +13,24 @@ namespace Sistema.Controller
     {
         TipoUndsDAO dao = new TipoUndsDAO();
       
-        public int encontrados;
-        public int encontradosPesquisa;
-        public string retornoPersistencia;
+   
 
-
-        public void Salvar(string nomeund)
-        {
+        public void Salvar(string nomeund){
             dao.Salvar(nomeund);
             AcaoCrudTipoUndsController();
         }
 
 
         public DataTable ListComboBoxTipoUndController(){
-            try{
-                DataTable dt = new DataTable();
-                dt = dao.ListComboBoxTipoUndDAO();
-                return dt;
-
-            } catch (Exception e){
-
-                MessageBox.Show("O Metodo 'Listar' não foi Executada\n\nA seguinte execessão foi lançada: " + e, "Aviso do Sistema", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                throw;
+                return dao.ListComboBoxTipoUndDAO();
             }
-        }
 
-        public void Excluir(int idorigem)
-        {
+        public void Excluir(int idorigem){
             dao.Excluir(idorigem);
             AcaoCrudTipoUndsController();
         }
 
-        public void Editar(int idtipound, string nomeund)
-        {
+        public void Editar(int idtipound, string nomeund){
             dao.Editar(idtipound, nomeund);
             AcaoCrudTipoUndsController();
         }
@@ -54,102 +39,37 @@ namespace Sistema.Controller
             return dao.ListarTodosRegistrosBD(); ;
         }
 
-        public int retornoQuantPesquisa()
-        {
-            encontradosPesquisa = dao.ListarPesquisados();
-            return encontradosPesquisa;
+        public int retornoQuantPesquisa(){
+            return dao.ListarPesquisados();
         }
 
-        public string AcaoCrudTipoUndsController()
-        {
+        public string AcaoCrudTipoUndsController(){
             return dao.AcaoCrudTipoUndsDAO();
         }
 
-        public DataTable ConfiListagemDataGrid(string parametro, string indexar, int offsett, int limitt)
-        {
-            try
-            {
+        public DataTable ConfiListagemDataGrid(string parametro, string indexar, int offsett, int limitt){
                 retornoQuantRegistro();
-                DataTable dt = new DataTable();
-                dt = dao.ConfiListagemDataGrid(parametro, indexar, offsett, limitt);
-                return dt;
-            }
-            catch (Exception e)
-            {
-                MessageBox.Show("O Metodo 'ConfiListagemDataGrid' não foi Executada\n\nA seguinte execessão foi lançada: " + e,
-                                "Aviso do Sistema",
-                                MessageBoxButtons.OK,
-                                MessageBoxIcon.Error);
-                throw;
-            }
+                return dao.ConfiListagemDataGrid(parametro, indexar, offsett, limitt);
         }
 
-        public DataTable ConfiListagemImpOE()
-        {
-
+        public DataTable ConfiListagemImpOE(){
             retornoQuantRegistro();
-            DataTable dt = new DataTable();
-            dt = dao.ConfiListagemImportOE();
-            return dt;
-
+            return dao.ConfiListagemImportOE();
         }
 
-        public DataTable PesquisarComecaCom(string coluna, string campo, string pesquisar)
-        {
-            try
-            {
-                DataTable dt = new DataTable();
-                dt = dao.PesquisarComeca(coluna, campo, pesquisar);
-                return dt;
-            }
-            catch (Exception e)
-            {
-                MessageBox.Show("O Metodo 'PesquisarComecaCom' não foi Executada\n\nA seguinte execessão foi lançada: " + e,
-                                "Aviso do Sistema",
-                                MessageBoxButtons.OK,
-                                MessageBoxIcon.Error);
-                throw;
-            }
-
+        public DataTable PesquisarComecaCom(string coluna, string campo, string pesquisar){
+            retornoQuantPesquisa();
+            return dao.PesquisarComeca(coluna, campo, pesquisar);
         }
 
-        public DataTable PesquisarContemCom(string coluna, string campo, string pesquisar)
-        {
-            try
-            {
-                DataTable dt = new DataTable();
-                dt = dao.PesquisarContem(coluna, campo, pesquisar);
-                return dt;
-            }
-            catch (Exception e)
-            {
-                MessageBox.Show("O Metodo 'PesquisarContemCom' não foi Executada\n\nA seguinte execessão foi lançada: " + e,
-                                "Aviso do Sistema",
-                                MessageBoxButtons.OK,
-                                MessageBoxIcon.Error);
-                throw;
-            }
-
+        public DataTable PesquisarContemCom(string coluna, string campo, string pesquisar){
+            retornoQuantPesquisa();
+            return dao.PesquisarContem(coluna, campo, pesquisar);
         }
-        public DataTable PesquisarTerminaCom(string coluna, string campo, string pesquisar)
-        {
-            try
-            {
-                DataTable dt = new DataTable();
-                dt = dao.PesquisarTermina(coluna, campo, pesquisar);
-                return dt;
-            }
-            catch (Exception e)
-            {
 
-                MessageBox.Show("O Metodo 'PesquisarTerminaCom' não foi Executada\n\nA seguinte execessão foi lançada: " + e,
-                                "Aviso do Sistema",
-                                MessageBoxButtons.OK,
-                                MessageBoxIcon.Error);
-                throw;
-
-            }
-
+        public DataTable PesquisarTerminaCom(string coluna, string campo, string pesquisar){
+            retornoQuantPesquisa();
+            return dao.PesquisarTermina(coluna, campo, pesquisar);
         }
     }
 }
