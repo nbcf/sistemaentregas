@@ -360,31 +360,31 @@ namespace Sistema.View
         {
             if (pesquisa.Equals("CarregaPadraoIDTodosUltimos") && parametroCodigoAlfabeto.Equals("Codigo") && parametroASCDESC.Equals("ultimos"))
             {
-                gridCrudEnc.DataSource = controllerEncomendas.ListarTodasEntregaSaida(strIdCombo, "Saiu para entrega","idencomenda", "desc", offset, limitt);
+                gridCrudEnc.DataSource = controllerEncomendas.ListarTodasEntregaSaida(strIdCombo, "Saiu para Entrega","idencomenda", "desc", offset, limitt);
                 DataGridModel();
-                labelTextTotalRegFould.Text = Convert.ToString(controllerEncomendas.ListarTodosRegistrosBDEstatus("Saiu para entrega"));
+                labelTextTotalRegFould.Text = Convert.ToString(controllerEncomendas.ListarTodosRegistrosBDEstatus("Saiu para Entrega"));
                 carregarInformacoes();
             }
             else if (pesquisa.Equals("CarregaPadraoIDTodosPrimeiros") && parametroCodigoAlfabeto.Equals("Codigo") && parametroASCDESC.Equals("primeiros"))
             {
             
-                gridCrudEnc.DataSource = controllerEncomendas.ListarTodasEntregaSaida(strIdCombo, "Saiu para entrega", "idencomenda", "asc", offset, limitt);
+                gridCrudEnc.DataSource = controllerEncomendas.ListarTodasEntregaSaida(strIdCombo, "Saiu para Entrega", "idencomenda", "asc", offset, limitt);
                 DataGridModel();
-                labelTextTotalRegFould.Text = Convert.ToString(controllerEncomendas.ListarTodosRegistrosBDEstatus("Saiu para entrega"));
+                labelTextTotalRegFould.Text = Convert.ToString(controllerEncomendas.ListarTodosRegistrosBDEstatus("Saiu para Entrega"));
                 carregarInformacoes();
             }
             else if (pesquisa.Equals("CarregaPadraoNomeTodosUltimos") && parametroCodigoAlfabeto.Equals("Alfabeto") && parametroASCDESC.Equals("ultimos"))
             {
-                gridCrudEnc.DataSource = controllerEncomendas.ListarTodasEntregaSaida(strIdCombo, "Saiu para entrega","numpacote", "desc", offset, limitt);
+                gridCrudEnc.DataSource = controllerEncomendas.ListarTodasEntregaSaida(strIdCombo, "Saiu para Entrega", "numpacote", "desc", offset, limitt);
                 DataGridModel();
-                labelTextTotalRegFould.Text = Convert.ToString(controllerEncomendas.ListarTodosRegistrosBDEstatus("Saiu para entrega"));
+                labelTextTotalRegFould.Text = Convert.ToString(controllerEncomendas.ListarTodosRegistrosBDEstatus("Saiu para Entrega"));
                 carregarInformacoes();
             }
             else if (pesquisa.Equals("CarregaPadraoNomeTodosPrimeiros") && parametroCodigoAlfabeto.Equals("Alfabeto") && parametroASCDESC.Equals("primeiros"))
             {
-                gridCrudEnc.DataSource = controllerEncomendas.ListarTodasEntregaSaida(strIdCombo, "Saiu para entrega", "numpacote", "asc", offset, limitt);
+                gridCrudEnc.DataSource = controllerEncomendas.ListarTodasEntregaSaida(strIdCombo, "Saiu para Entrega", "numpacote", "asc", offset, limitt);
                 DataGridModel();
-                labelTextTotalRegFould.Text = Convert.ToString(controllerEncomendas.ListarTodosRegistrosBDEstatus("Saiu para entrega"));
+                labelTextTotalRegFould.Text = Convert.ToString(controllerEncomendas.ListarTodosRegistrosBDEstatus("Saiu para Entrega"));
                 carregarInformacoes();
             }
 
@@ -422,30 +422,6 @@ namespace Sistema.View
        
         private void DataGridModel()
         {
-            //gridCrudEnc.Columns[0].Width = 60;
-            //gridCrudEnc.Columns[1].Width = 0;
-            //gridCrudEnc.Columns[2].Width = 0;
-            //gridCrudEnc.Columns[3].Width = 0;
-            //gridCrudEnc.Columns[4].Width = 100;
-            //gridCrudEnc.Columns[5].Width = 100;
-            //gridCrudEnc.Columns[6].Width = 100;
-            //gridCrudEnc.Columns[7].Width = 80;
-            //gridCrudEnc.Columns[8].Width = 150;
-            //gridCrudEnc.Columns[9].Width = 90;
-            //gridCrudEnc.Columns[10].Width = 80;
-            //gridCrudEnc.Columns[11].Width = 150;
-            //gridCrudEnc.Columns[12].Width = 150;
-            //gridCrudEnc.Columns[13].Width = 100;
-            //gridCrudEnc.Columns[14].Width = 100;
-            //gridCrudEnc.Columns[15].Width = 100;
-            //gridCrudEnc.Columns[16].Width = 60;
-            //gridCrudEnc.Columns[17].Width = 100;
-            //gridCrudEnc.Columns[18].Width = 100;
-            //gridCrudEnc.Columns[19].Width = 100;
-            //gridCrudEnc.Columns[20].Width = 150;
-            //gridCrudEnc.Columns[21].Width = 150;
-            //gridCrudEnc.Columns[22].Width = 150;
-
 
 
             gridCrudEnc.Columns[0].HeaderText = "ID";
@@ -502,16 +478,17 @@ namespace Sistema.View
             puxarparametro(0, Convert.ToInt32(cbButtnQuantPage1.SelectedItem), "Sim");
         }
 
-        private void gridCrudEnc_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
-        {
-           
+        private void gridCrudEnc_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e){
             clickPegaLinhas();
         }
 
-   
 
-        private void behaviorClickGrid()
-        {
+        public int ContarFaltantes(){
+            return  controllerEncomendas.ContarEncomendas(strIdCombo,Convert.ToInt32(strIdVeiculo),Convert.ToInt32(strIdEntregador), "Saiu para Entrega", dtDatarota);
+        }
+
+
+        private void behaviorClickGrid(){
             EditSaidas editSaidas = new EditSaidas();
             editSaidas.IdEncomendaVO        =       gridCrudEnc.CurrentRow.Cells[0].Value.ToString();
             editSaidas.IdOrigemVO           =       gridCrudEnc.CurrentRow.Cells[1].Value.ToString();
@@ -536,27 +513,33 @@ namespace Sistema.View
             editSaidas.IdSaidaVO            =       gridCrudEnc.CurrentRow.Cells[21].Value.ToString();
             editSaidas.OrigemVO             =       gridCrudEnc.CurrentRow.Cells[23].Value.ToString();
             editSaidas.ShowDialog();
-
-            int tementregas = controllerEncomendas.ContarEncomendas(strIdCombo,Convert.ToInt32(strIdVeiculo),Convert.ToInt32(strIdEntregador),dtDatarota,"Saiu para entrega");
+            /*"SELECT  COUNT (*) " +
+                   " FROM encomendas enco " +
+                   " WHERE enco.idsaida = '"+ stridsaida + "' " +
+                   " AND  enco.idveiculo = '"+ idveiculo + "' " +
+                   " AND  enco.identregador = '"+ identregador + "' " +
+                   " AND enco.estentrega = '"+ estentrega + "'" +
+                   " AND enco.datarota= '"+datarota+"'";*/
+           
            
             if (editSaidas.AcaoDialogoVO.Equals("Cancelar"))
             {
-                strIdOrigem = "";
-                strIdVeiculo = "";
+                strIdOrigem     = "";
+                strIdVeiculo    = "";
                 strIdEntregador = "";
-                strVeiculo = "";
-                strPlaca = "";
-                strEntregador = "";
-                strIdSaida = "";
+                strVeiculo      = "";
+                strPlaca        = "";
+                strEntregador   = "";
+                strIdSaida      = "";
                 strDestinatario = "";
-                strLogradouro = "";
-                strComplemento = "";
-                strBairro = "";
-                strCidade = "";
-                strUf = "";
-                strCep = "";
-                strCpf = "";
-                strOrigem = "";
+                strLogradouro   = "";
+                strComplemento  = "";
+                strBairro       = "";
+                strCidade       = "";
+                strUf           = "";
+                strCep          = "";
+                strCpf          = "";
+                strOrigem       = "";
                 strNumeroEncomenda = "";
                 strEstatusEntrega = "";
 
@@ -587,7 +570,7 @@ namespace Sistema.View
                 strIdSaida          =       editSaidas.IdSaidaVO;
                 strOrigem           =       editSaidas.OrigemVO;
 
-                controllerEncomendas.Editar(    Convert.ToInt32(strIdOrigem),
+                   controllerEncomendas.Editar(Convert.ToInt32(strIdOrigem),
                                                Convert.ToInt32(strIdVeiculo),
                                                Convert.ToInt32(strIdEntregador),
                                                strVeiculo,
@@ -610,16 +593,22 @@ namespace Sistema.View
                                                strIdSaida,
                                                Convert.ToInt32(strIdEncomenda));
 
-                MessageBox.Show(tementregas.ToString());
-                if (tementregas == 0 || tementregas < 0)
-                {
-                    controllerSaida.EditarFimDeRota(Convert.ToInt32(strIdVeiculo),Convert.ToInt32(strIdEntregador),"Rota Concluída",Convert.ToInt32(txtIdSaida.Text));
-                }
+                int qt = ContarFaltantes();
 
+                MessageBox.Show(qt.ToString());
 
                 if (controllerEncomendas.retornoAcaoEncomendasDAO() == "AT")
                 {
-                   
+                    if (ContarFaltantes() == 0)
+                    {
+                         
+                      controllerSaida.EditarFimDeRota(Convert.ToInt32(strIdVeiculo), Convert.ToInt32(strIdEntregador), "Rota Concluída", Convert.ToInt32(txtIdSaida.Text));
+                    }
+                    else if (ContarFaltantes() > 0)
+                    {
+                      
+                        //    controllerSaida.EditarFimDeRota(Convert.ToInt32(strIdVeiculo), Convert.ToInt32(strIdEntregador), "Rota Concluída", Convert.ToInt32(txtIdSaida.Text));
+                    }
                 }
             }
         }

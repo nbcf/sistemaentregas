@@ -75,6 +75,12 @@ namespace Sistema.View
             {
                 _InstSaidaEncomendasView = new SaidaEncomendasView();
             }
+            else if (_InstSaidaEncomendasView != null)
+            {
+
+                MessageBox.Show("Janela já se encontra aberta!", "Aviso do Sistema", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+
             return _InstSaidaEncomendasView;
         }
 
@@ -1075,7 +1081,7 @@ namespace Sistema.View
                             if (controllerSaida.retornoPersistencia.Equals("AT"))
                             {
                                 behaviorRefresh();
-                                MessageBox.Show(" Resgistro Listado doi Editado !   \n    else if (operationType.Equals(updateData) && typeEdition.Equals(insert) ) ", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                
                             }
                         }
                     }
@@ -1096,7 +1102,7 @@ namespace Sistema.View
                         }
                         else if (remEspacosPlaca.Length >= 3 && remEntregador.Length >= 3)
                         {
-                            MessageBox.Show(Convert.ToString(controllerSaida.retornoPersistencia), "Flag", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                           
                             if (controllerSaida.retornoPersistencia.Equals("AT"))
                             {
                                 behaviorRefresh();
@@ -2154,9 +2160,11 @@ namespace Sistema.View
                 veiculosController.EditarEstatusVeiculo(txtVeiculo.Text, txtPlacaVeiculo.Text, "Disponivel", Convert.ToInt32(txtIdVeiculo.Text));
                 if (controllerSaida.retornoPersistencia.Equals("AT"))
                 {
+
                     // veiculosController.EditarEstatusVeiculo(txtVeiculo.Text, txtPlacaVeiculo.Text, "Em Rota", Convert.ToInt32(txtIdVeiculo.Text));
                     behaviorRefresh();
                     //  MessageBox.Show("Saida Conclúida", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+               
                 }
 
             }
@@ -2164,23 +2172,9 @@ namespace Sistema.View
             {
                 behaviorRefresh();
             }
-            //controllerSaida.Editar(
-            //                    Convert.ToInt32(txtIdVeiculo.Text),
-            //                    Convert.ToInt32(txtIdUsuario.Text),
-            //                    Convert.ToInt32(txtIdPapel.Text),
-            //                    Convert.ToInt32(txtIdPessoa.Text),
-            //                    txtVeiculo.Text,
-            //                    txtPlacaVeiculo.Text,
-            //                    txtPessoa.Text,
-            //                    Convert.ToDateTime(DateTime.Today.ToString("dd/MM/yyyy")),
-            //                    Convert.ToDateTime(DateTime.Today.ToString("dd/MM/yyyy")),
-            //                    "",
-            //                    DateTime.Now.ToString("HH:mm:ss"),
-            //                    txtEstatusSaida.Text,
-            //                    txtRegiaoEntrega.Text,
-            //                    txtKmSaida.Text,
-            //                    txtKmRetorno.Text,
-            //                    txtKmTotal.Text, 1);
+
+            btConfirmarRetorno.Enabled = false;
+            btConfirmarRetorno.Visible = false;
         }
 
 
@@ -2530,6 +2524,11 @@ namespace Sistema.View
             txtIdPessoa.Text = importEntregadorToSaidas.IdPessoaVO;
             txtIdPapel.Text = importEntregadorToSaidas.IdPapelVO;
             txtPessoa.Text = importEntregadorToSaidas.nomeVO;
+        }
+
+        private void SaidaEncomendasView_Load(object sender, EventArgs e)
+        {
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
         }
     }
 }

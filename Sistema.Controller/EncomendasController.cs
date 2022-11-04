@@ -248,15 +248,26 @@ namespace Sistema.Controller
         }
 
       
-        public int ContarEncomendas(string stridsaida,int idveiculo,int identregador,DateTime datarota,string esentrega) {
-            return dao.ContarEncomendas( stridsaida, idveiculo, identregador, datarota, esentrega);
+        public int ContarEncomendas(
+            string stridsaida,
+            int idveiculo,
+            int identregador,
+            string esentrega,
+            DateTime datarota){
+           
+            return dao.ContarEncomendas(stridsaida, idveiculo, identregador, esentrega, datarota);
         }
 
 
-        public DataTable ConfiListagemDataGrid(string idsaida, string estentrega, string parametro, string indexar, int offsett, int limitt)
-        {
-            try
-            {
+        public DataTable ConfiListagemDataGrid(
+            string idsaida,
+            string estentrega,
+            string parametro,
+            string indexar,
+            int offsett,
+            int limitt){
+
+            try{
                 retornoQuantRegistro();
                 DataTable dt = new DataTable();
                 dt = dao.ConfiListagemDataGrid(idsaida, estentrega, parametro, indexar, offsett, limitt);

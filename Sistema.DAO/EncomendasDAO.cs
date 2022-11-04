@@ -508,25 +508,33 @@ namespace Sistema.DAO
             return acaoCrud;
         }
 
-        public int ContarEncomendas(string stridsaida,int idveiculo, int identregador,DateTime datarota,string estentrega){
-           
-            try{
+        public int ContarEncomendas(
+            string stridsaida,
+            int idveiculo,
+            int identregador,
+            string estentrega, 
+            DateTime datarota){
+
+            //MessageBox.Show("  1  "+ stridsaida+" 2 "+ idveiculo+" 3 "+ identregador+" 4  "+ estentrega);
+
+            try
+            {
             classeConecta.AbrirCon();
-             sql = "SELECT  COUNT(*) " +
-                    "FROM encomendas enco " +
-                    "WHERE enco.idsaida = '"+ stridsaida + "' " +
-                    "AND  enco.idveiculo = '"+ idveiculo + "' " +
-                    "AND  enco.identregador = '"+ identregador + "' " +
-                    "AND enco.estentrega = '"+ estentrega + "'";
+                sql = "  SELECT  COUNT(*) " +
+                       " FROM encomendas enco " +
+                       " WHERE enco.idsaida = '" + stridsaida + "'" +
+                       " AND  enco.idveiculo = '" + idveiculo + "'" +
+                       " AND  enco.identregador = '" + identregador + "'" +
+                       " AND enco.estentrega = '" + estentrega + "'";
+                  //  " AND enco.datarota= '"+ datarota +"'";
                 cmd = new MySqlCommand(sql, classeConecta.con);
                 MySqlDataAdapter da = new MySqlDataAdapter();
+            
+                int id = Convert.ToInt32(cmd.ExecuteScalar());
                 classeConecta.FecharCon();
-                return Convert.ToInt32(cmd.ExecuteScalar()) - 1;
+                return id;
                 
-            }
-            catch (Exception ex)
-            {
-
+            }catch (Exception ex){
                 throw ex;
             }
         }
