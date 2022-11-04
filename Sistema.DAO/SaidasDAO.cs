@@ -212,7 +212,8 @@ namespace Sistema.DAO
                 catch (Exception ex)
                 {
                     MessageBox.Show("Erro ao Excluir " + ex);
-                    classeConecta.FecharCon();
+                
+
                 }
         
         }
@@ -305,7 +306,7 @@ namespace Sistema.DAO
                     "AND sai.idusuario = usuario.idusuario " +
                     "AND usuario.idpapel = pap.idpapel " +
                     "AND usuario.idpessoa = pess.idpessoa " +
-                    "WHERE sai.estsaida = '"+ estatusSaida +"' " +
+                    "WHERE sai.estsaida = 'Rota Concluída' " +
                     "ORDER BY pess.nomepessoa " + indexar + " Limit " + offsett + "," + limitt;
                 cmd = new MySqlCommand(sql, classeConecta.con);
                 MySqlDataAdapter da = new MySqlDataAdapter();
@@ -335,8 +336,8 @@ namespace Sistema.DAO
                 da.SelectCommand = cmd;
                 DataTable dt = new DataTable();
                 da.Fill(dt);
-                return dt;
                 classeConecta.FecharCon();
+                return dt;
             }
             catch (Exception ex)
             {
@@ -366,8 +367,8 @@ namespace Sistema.DAO
                 da.SelectCommand = cmd;
                 DataTable dt = new DataTable();
                 da.Fill(dt);
-                return dt;
                 classeConecta.FecharCon();
+                return dt;
             }
             catch (Exception ex)
             {
@@ -375,10 +376,6 @@ namespace Sistema.DAO
                 throw ex;
             }
         }
-
-
-
-
 
         public DataTable PesquisarComeca(string coluna, string campo, string pesquisar)
         {
@@ -396,8 +393,6 @@ namespace Sistema.DAO
                     "AND usu.idpessoa = pes.idpessoa " +
                     "AND usu.idpapel = pape.idpapel " +
                     "WHERE pes.nomepessoa Like " + campo + "";
-                //sql = "SELECT * FROM saidas pes where pes.nomepessoa Like pes." + campo + " INNER JOIN enderecos ende on pes.idendereco = ende.idendereco";
-                //   sql = "SELECT * FROM saidas where nomepessoa Like "+campo+"";
                 cmd = new MySqlCommand(sql, classeConecta.con);
                 if (pesquisar == "")
                 {
@@ -413,8 +408,8 @@ namespace Sistema.DAO
                 DataTable dt = new DataTable();
                 da.Fill(dt);
                 resQuantSearch = dt.Rows.Count;
-                return dt;
                 classeConecta.FecharCon();
+                return dt;
             }
             catch (Exception ex)
             {
@@ -428,8 +423,6 @@ namespace Sistema.DAO
             try
             {
                 classeConecta.AbrirCon();
-                // sql = "SELECt * from saidas pes inner join enderecos ende on pes.idendereco = ende.idendereco where pes.nomepessoa Like " + campo + "";
-                //  sql = "SELECT * FROM saidas where nomepessoa Like  " + campo + "";
                 sql = "SELECT * FROM saidas said " +
                     "INNER JOIN enderecos ende " +
                     "INNER JOIN usuarios usu  " +
@@ -454,11 +447,10 @@ namespace Sistema.DAO
                 da.SelectCommand = cmd;
                 DataTable dt = new DataTable();
                 da.Fill(dt);
-
                 resQuantSearch = dt.Rows.Count;
-                return dt;
                 classeConecta.FecharCon();
-
+                return dt;
+              
             }
             catch (Exception ex)
             {
@@ -472,9 +464,6 @@ namespace Sistema.DAO
             try
             {
                 classeConecta.AbrirCon();
-                // sql = "SELECT * from saidas pes inner join enderecos ende on pes.idendereco = ende.idendereco where pes.nomepessoa Like " + campo + "";
-                //sql = "SELECT * FROM saidas pes where pes.nomepessoa Like pes." + campo+" INNER JOIN enderecos ende on pes.idendereco = ende.idendereco";
-                //sql = "SELECT * FROM saidas where nomepessoa Like  " + campo + "";
                 sql = "SELECT * FROM saidas said " +
                     "INNER JOIN enderecos ende " +
                     "INNER JOIN usuarios usu  " +
@@ -500,8 +489,9 @@ namespace Sistema.DAO
                 DataTable dt = new DataTable();
                 da.Fill(dt);
                 resQuantSearch = dt.Rows.Count;
-                return dt;
                 classeConecta.FecharCon();
+                return dt;
+               
             }
             catch (Exception ex)
             {

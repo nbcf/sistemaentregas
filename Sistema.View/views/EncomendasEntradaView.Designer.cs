@@ -98,6 +98,8 @@ namespace Sistema.View
             this.txtLogradouro = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
             this.toolStrip1.SuspendLayout();
             this.tabControlAssets.SuspendLayout();
             this.tabPagePesquisar.SuspendLayout();
@@ -510,6 +512,8 @@ namespace Sistema.View
             // 
             // groupBoxFormulario
             // 
+            this.groupBoxFormulario.Controls.Add(this.textBox1);
+            this.groupBoxFormulario.Controls.Add(this.label14);
             this.groupBoxFormulario.Controls.Add(this.txtEstatusEncomenda);
             this.groupBoxFormulario.Controls.Add(this.label13);
             this.groupBoxFormulario.Controls.Add(this.label12);
@@ -552,20 +556,20 @@ namespace Sistema.View
             // txtEstatusEncomenda
             // 
             this.txtEstatusEncomenda.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEstatusEncomenda.Location = new System.Drawing.Point(500, 212);
+            this.txtEstatusEncomenda.Location = new System.Drawing.Point(502, 212);
             this.txtEstatusEncomenda.Name = "txtEstatusEncomenda";
-            this.txtEstatusEncomenda.Size = new System.Drawing.Size(250, 25);
+            this.txtEstatusEncomenda.Size = new System.Drawing.Size(248, 25);
             this.txtEstatusEncomenda.TabIndex = 41;
             // 
             // label13
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(366, 215);
+            this.label13.Location = new System.Drawing.Point(441, 218);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(130, 17);
+            this.label13.Size = new System.Drawing.Size(55, 17);
             this.label13.TabIndex = 40;
-            this.label13.Text = "Estatus Encomenda:";
+            this.label13.Text = "Estatus:";
             // 
             // label12
             // 
@@ -580,11 +584,11 @@ namespace Sistema.View
             // dateTimeEntrega
             // 
             this.dateTimeEntrega.Enabled = false;
-            this.dateTimeEntrega.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimeEntrega.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimeEntrega.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateTimeEntrega.Location = new System.Drawing.Point(106, 213);
             this.dateTimeEntrega.Name = "dateTimeEntrega";
-            this.dateTimeEntrega.Size = new System.Drawing.Size(250, 25);
+            this.dateTimeEntrega.Size = new System.Drawing.Size(100, 25);
             this.dateTimeEntrega.TabIndex = 38;
             // 
             // label11
@@ -600,7 +604,7 @@ namespace Sistema.View
             // dateTimeRota
             // 
             this.dateTimeRota.Enabled = false;
-            this.dateTimeRota.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimeRota.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimeRota.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateTimeRota.Location = new System.Drawing.Point(499, 174);
             this.dateTimeRota.Name = "dateTimeRota";
@@ -619,7 +623,7 @@ namespace Sistema.View
             // 
             // dateTimeEntrada
             // 
-            this.dateTimeEntrada.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimeEntrada.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimeEntrada.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateTimeEntrada.Location = new System.Drawing.Point(106, 177);
             this.dateTimeEntrada.Name = "dateTimeEntrada";
@@ -851,6 +855,24 @@ namespace Sistema.View
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // textBox1
+            // 
+            this.textBox1.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(269, 215);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(87, 25);
+            this.textBox1.TabIndex = 43;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(212, 220);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(52, 17);
+            this.label14.TabIndex = 42;
+            this.label14.Text = "Faltam:";
+            // 
             // EncomendasEntradaView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -953,5 +975,7 @@ namespace Sistema.View
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.DateTimePicker dateTimeRota;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label14;
     }
 }

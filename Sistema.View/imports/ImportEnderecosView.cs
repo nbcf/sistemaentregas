@@ -379,6 +379,11 @@ namespace Sistema.View
         {
 
         }
+
+        private void txtBoxPesquisar_TextChanged_5(object sender, EventArgs e)
+        {
+            puxarparametroPesquisa();
+        }
     }
 
 }

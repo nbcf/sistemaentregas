@@ -79,6 +79,7 @@ namespace Sistema.View
             this.gridCrudSaidas = new System.Windows.Forms.DataGridView();
             this.groupBoxFormulario = new System.Windows.Forms.GroupBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.txtEstatusSaida = new System.Windows.Forms.TextBox();
             this.gridCurdMestreDetalhe = new System.Windows.Forms.DataGridView();
             this.label9 = new System.Windows.Forms.Label();
@@ -114,6 +115,7 @@ namespace Sistema.View
             ((System.ComponentModel.ISupportInitialize)(this.gridCrudSaidas)).BeginInit();
             this.groupBoxFormulario.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridCurdMestreDetalhe)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -229,6 +231,7 @@ namespace Sistema.View
             // 
             this.toolStripButton2.AutoSize = false;
             this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton2.Image = global::Sistema.View.Properties.Resources.truck48copia;
             this.toolStripButton2.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton2.Name = "toolStripButton2";
@@ -240,6 +243,7 @@ namespace Sistema.View
             // 
             this.toolStripButton1.AutoSize = false;
             this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton1.Image = global::Sistema.View.Properties.Resources.truck481;
             this.toolStripButton1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton1.Name = "toolStripButton1";
@@ -609,40 +613,50 @@ namespace Sistema.View
             // 
             this.groupBoxFormulario.Controls.Add(this.groupBox1);
             this.groupBoxFormulario.Controls.Add(this.groupBox2);
-            this.groupBoxFormulario.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBoxFormulario.Location = new System.Drawing.Point(0, 119);
+            this.groupBoxFormulario.Location = new System.Drawing.Point(0, 309);
             this.groupBoxFormulario.Name = "groupBoxFormulario";
-            this.groupBoxFormulario.Size = new System.Drawing.Size(1148, 580);
+            this.groupBoxFormulario.Size = new System.Drawing.Size(1148, 390);
             this.groupBoxFormulario.TabIndex = 10;
             this.groupBoxFormulario.TabStop = false;
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.txtEstatusSaida);
+            this.groupBox1.Controls.Add(this.dataGridView1);
             this.groupBox1.Controls.Add(this.gridCurdMestreDetalhe);
             this.groupBox1.Controls.Add(this.label9);
-            this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.button5);
             this.groupBox1.Controls.Add(this.txtIdSaida);
             this.groupBox1.Controls.Add(this.txtIdVeiculo);
+            this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.txtEstatuVeiculo);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox1.Location = new System.Drawing.Point(3, 137);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1142, 440);
+            this.groupBox1.Size = new System.Drawing.Size(1142, 250);
             this.groupBox1.TabIndex = 98;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Encomendas Para Entrega";
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.dataGridView1.Location = new System.Drawing.Point(12, 65);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(958, 78);
+            this.dataGridView1.TabIndex = 107;
             // 
             // txtEstatusSaida
             // 
             this.txtEstatusSaida.Enabled = false;
             this.txtEstatusSaida.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEstatusSaida.Location = new System.Drawing.Point(791, 15);
+            this.txtEstatusSaida.Location = new System.Drawing.Point(799, 86);
             this.txtEstatusSaida.Name = "txtEstatusSaida";
-            this.txtEstatusSaida.Size = new System.Drawing.Size(53, 23);
+            this.txtEstatusSaida.Size = new System.Drawing.Size(128, 23);
             this.txtEstatusSaida.TabIndex = 106;
             // 
             // gridCurdMestreDetalhe
@@ -653,14 +667,15 @@ namespace Sistema.View
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gridCurdMestreDetalhe.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridCurdMestreDetalhe.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.gridCurdMestreDetalhe.Location = new System.Drawing.Point(6, 48);
+            this.gridCurdMestreDetalhe.Location = new System.Drawing.Point(6, 180);
             this.gridCurdMestreDetalhe.MultiSelect = false;
             this.gridCurdMestreDetalhe.Name = "gridCurdMestreDetalhe";
             this.gridCurdMestreDetalhe.ReadOnly = true;
             this.gridCurdMestreDetalhe.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.gridCurdMestreDetalhe.Size = new System.Drawing.Size(1133, 386);
+            this.gridCurdMestreDetalhe.Size = new System.Drawing.Size(1133, 64);
             this.gridCurdMestreDetalhe.TabIndex = 105;
             this.gridCurdMestreDetalhe.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridMestreDetalhe_CellClick);
+            this.gridCurdMestreDetalhe.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridCurdMestreDetalhe_CellContentClick);
             // 
             // label9
             // 
@@ -676,7 +691,7 @@ namespace Sistema.View
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(731, 22);
+            this.label8.Location = new System.Drawing.Point(739, 89);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(54, 16);
             this.label8.TabIndex = 99;
@@ -724,14 +739,15 @@ namespace Sistema.View
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.button1);
+            this.groupBox2.Controls.Add(this.txtEstatusSaida);
             this.groupBox2.Controls.Add(this.datePckRetorno);
             this.groupBox2.Controls.Add(this.label14);
             this.groupBox2.Controls.Add(this.label12);
+            this.groupBox2.Controls.Add(this.label8);
             this.groupBox2.Controls.Add(this.txtRegiaoEntrega);
             this.groupBox2.Controls.Add(this.txtPlacaVeiculo);
             this.groupBox2.Controls.Add(this.label6);
             this.groupBox2.Controls.Add(this.txtKmTotal);
-            this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.txtKmRetorno);
             this.groupBox2.Controls.Add(this.txtKmSaida);
             this.groupBox2.Controls.Add(this.label3);
@@ -830,7 +846,7 @@ namespace Sistema.View
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(924, 86);
+            this.label5.Location = new System.Drawing.Point(1029, 65);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(64, 16);
             this.label5.TabIndex = 93;
@@ -963,6 +979,7 @@ namespace Sistema.View
             this.groupBoxFormulario.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridCurdMestreDetalhe)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
@@ -1050,5 +1067,6 @@ namespace Sistema.View
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ToolStripLabel toolStripLabel8;
         private System.Windows.Forms.ToolStripComboBox toolStripComboBox1;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }

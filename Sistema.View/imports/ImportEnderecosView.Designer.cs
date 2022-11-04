@@ -71,7 +71,7 @@ namespace Sistema.View
             this.tabControlAssets.Location = new System.Drawing.Point(0, 0);
             this.tabControlAssets.Name = "tabControlAssets";
             this.tabControlAssets.SelectedIndex = 0;
-            this.tabControlAssets.Size = new System.Drawing.Size(768, 76);
+            this.tabControlAssets.Size = new System.Drawing.Size(768, 89);
             this.tabControlAssets.TabIndex = 7;
             // 
             // tabPagePesquisar
@@ -86,7 +86,7 @@ namespace Sistema.View
             this.tabPagePesquisar.Location = new System.Drawing.Point(4, 32);
             this.tabPagePesquisar.Name = "tabPagePesquisar";
             this.tabPagePesquisar.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPagePesquisar.Size = new System.Drawing.Size(760, 40);
+            this.tabPagePesquisar.Size = new System.Drawing.Size(760, 53);
             this.tabPagePesquisar.TabIndex = 1;
             this.tabPagePesquisar.Text = "Pesquisar";
             this.tabPagePesquisar.UseVisualStyleBackColor = true;
@@ -98,6 +98,7 @@ namespace Sistema.View
             this.txtBoxPesquisar.Name = "txtBoxPesquisar";
             this.txtBoxPesquisar.Size = new System.Drawing.Size(261, 25);
             this.txtBoxPesquisar.TabIndex = 35;
+            this.txtBoxPesquisar.TextChanged += new System.EventHandler(this.txtBoxPesquisar_TextChanged_5);
             // 
             // button4
             // 
@@ -185,7 +186,7 @@ namespace Sistema.View
             this.dataGridImpEndereco.DefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridImpEndereco.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridImpEndereco.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dataGridImpEndereco.Location = new System.Drawing.Point(0, 76);
+            this.dataGridImpEndereco.Location = new System.Drawing.Point(0, 89);
             this.dataGridImpEndereco.MultiSelect = false;
             this.dataGridImpEndereco.Name = "dataGridImpEndereco";
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -197,7 +198,7 @@ namespace Sistema.View
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridImpEndereco.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridImpEndereco.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridImpEndereco.Size = new System.Drawing.Size(768, 292);
+            this.dataGridImpEndereco.Size = new System.Drawing.Size(768, 279);
             this.dataGridImpEndereco.TabIndex = 8;
             this.dataGridImpEndereco.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridImpEndereco_CellMouseDoubleClick);
             // 
@@ -216,9 +217,9 @@ namespace Sistema.View
             this.groupBox1.Controls.Add(this.txtLogradouro);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox1.Location = new System.Drawing.Point(0, 76);
+            this.groupBox1.Location = new System.Drawing.Point(0, 89);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(768, 292);
+            this.groupBox1.Size = new System.Drawing.Size(768, 279);
             this.groupBox1.TabIndex = 9;
             this.groupBox1.TabStop = false;
             // 
@@ -237,7 +238,7 @@ namespace Sistema.View
             // 
             this.button3.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.Location = new System.Drawing.Point(566, 247);
+            this.button3.Location = new System.Drawing.Point(556, 228);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(88, 39);
             this.button3.TabIndex = 32;
@@ -251,7 +252,7 @@ namespace Sistema.View
             // 
             this.button2.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.Image = global::Sistema.View.Properties.Resources.ok;
-            this.button2.Location = new System.Drawing.Point(668, 247);
+            this.button2.Location = new System.Drawing.Point(658, 228);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(88, 39);
             this.button2.TabIndex = 32;

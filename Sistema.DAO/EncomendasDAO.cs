@@ -449,8 +449,9 @@ namespace Sistema.DAO
                 DataTable dt = new DataTable();
                 da.Fill(dt);
                 quantidadeBD = dt.Rows.Count;
-                return dt;
                 classeConecta.FecharCon();
+                return dt;
+               
             }
             catch (Exception ex)
             {
@@ -458,34 +459,29 @@ namespace Sistema.DAO
             }
         }
 
-        public int ListarTodosRegistrosBD()
-        {
-            int todosresgistros;
-            classeConecta.AbrirCon();
+        public int ListarTodosRegistrosBD(){
+           
             try
             {
+                classeConecta.AbrirCon();
                 sql = "SELECT * FROM encomendas";
                 cmd = new MySqlCommand(sql, classeConecta.con);
                 MySqlDataAdapter da = new MySqlDataAdapter();
                 da.SelectCommand = cmd;
                 DataTable dt = new DataTable();
                 da.Fill(dt);
-                todosresgistros = dt.Rows.Count;
-                return todosresgistros;
-            }
-            catch (Exception ex)
-            {
+                classeConecta.FecharCon();
+                return dt.Rows.Count;
+
+            }catch (Exception ex) {
 
                 throw ex;
             }
         }
 
-        public int ListarTodosRegistrosBDEstatus(string estatusencomenda)
-        {
-            int todosresgistrosEstatus;
-            classeConecta.AbrirCon();
-            try
-            {
+        public int ListarTodosRegistrosBDEstatus(string estatusencomenda){
+            try{
+                classeConecta.AbrirCon();
                 sql = "SELECT * FROM encomendas enco " +
                     "INNER JOIN origem ori " +
                     "ON  enco.idorigem = ori.idorigem " +
@@ -494,13 +490,10 @@ namespace Sistema.DAO
                 MySqlDataAdapter da = new MySqlDataAdapter();
                 da.SelectCommand = cmd;
                 DataTable dt = new DataTable();
-                da.Fill(dt);
-                todosresgistrosEstatus = dt.Rows.Count;
-                return todosresgistrosEstatus;
-            }
-            catch (Exception ex)
-            {
-
+                da.Fill(dt); 
+                classeConecta.FecharCon();
+                return dt.Rows.Count;
+            }catch (Exception ex) {
                 throw ex;
             }
         }
@@ -516,7 +509,7 @@ namespace Sistema.DAO
         }
 
         public int ContarEncomendas(string stridsaida,int idveiculo, int identregador,DateTime datarota,string estentrega){
-            int quant;
+           
             try{
             classeConecta.AbrirCon();
              sql = "SELECT  COUNT(*) " +
@@ -527,9 +520,9 @@ namespace Sistema.DAO
                     "AND enco.estentrega = '"+ estentrega + "'";
                 cmd = new MySqlCommand(sql, classeConecta.con);
                 MySqlDataAdapter da = new MySqlDataAdapter();
-                quant = Convert.ToInt32(cmd.ExecuteScalar());
-                return quant - 1;
                 classeConecta.FecharCon();
+                return Convert.ToInt32(cmd.ExecuteScalar()) - 1;
+                
             }
             catch (Exception ex)
             {
@@ -554,9 +547,8 @@ namespace Sistema.DAO
                 da.SelectCommand = cmd;
                 DataTable dt = new DataTable();
                 da.Fill(dt);
-          
-                return dt;
                 classeConecta.FecharCon();
+                return dt;
             }
             catch (Exception ex)
             {
@@ -587,8 +579,8 @@ namespace Sistema.DAO
                 da.SelectCommand = cmd;
                 DataTable dt = new DataTable();
                 da.Fill(dt);
-                return dt;
                 classeConecta.FecharCon();
+                return dt;
             }
             catch (Exception ex)
             {
@@ -611,8 +603,8 @@ namespace Sistema.DAO
                 da.SelectCommand = cmd;
                 DataTable dt = new DataTable();
                 da.Fill(dt);
-                return dt;
                 classeConecta.FecharCon();
+                return dt;
             }
             catch (Exception ex)
             {
@@ -638,8 +630,8 @@ namespace Sistema.DAO
                 da.SelectCommand = cmd;
                 DataTable dt = new DataTable();
                 da.Fill(dt);
+                classeConecta.FecharCon();
                 return dt;
-                classeConecta.FecharCon();//enco.identrega
             }
             catch (Exception ex)
             {
@@ -667,8 +659,8 @@ namespace Sistema.DAO
                 da.SelectCommand = cmd;
                 DataTable dt = new DataTable();
                 da.Fill(dt);
-                return dt;
                 classeConecta.FecharCon();
+                return dt;
 
             }catch (Exception ex){
                 throw ex;
@@ -677,11 +669,7 @@ namespace Sistema.DAO
      
 
         public DataTable ListarDetalheMestre(string idsaida, string estatusencomenda)
-        {/*
-            "SELECT * FROM encomendas enco " +
-                      "INNER JOIN origem ori " +
-                      "ON enco.idorigem = ori.idorigem " +
-                      "WHERE enco.estentrega = 'Em Transito' AND enco.idsaida = '000'";*/
+        {
             try
             {
                 classeConecta.AbrirCon();
@@ -694,9 +682,10 @@ namespace Sistema.DAO
                 da.SelectCommand = cmd;
                 DataTable dt = new DataTable();
                 da.Fill(dt);
-                return dt;
                 classeConecta.FecharCon();
-                MessageBox.Show("Atualizou");
+
+                return dt;
+             
             }
             catch (Exception ex)
             {
@@ -723,9 +712,9 @@ namespace Sistema.DAO
                 da.SelectCommand = cmd;
                 DataTable dt = new DataTable();
                 da.Fill(dt);
-                return dt;
                 classeConecta.FecharCon();
-                MessageBox.Show("Atualizou");
+                return dt;
+              
             }
             catch (Exception ex)
             {
@@ -752,8 +741,8 @@ namespace Sistema.DAO
                 da.SelectCommand = cmd;
                 DataTable dt = new DataTable();
                 da.Fill(dt);
-                return dt;
                 classeConecta.FecharCon();
+                return dt;
             }
             catch (Exception ex)
             {
@@ -786,8 +775,8 @@ namespace Sistema.DAO
                 DataTable dt = new DataTable();
                 da.Fill(dt);
                 resQuantSearch = dt.Rows.Count;
-                return dt;
                 classeConecta.FecharCon();
+                return dt;
             }
             catch (Exception ex)
             {
@@ -821,8 +810,8 @@ namespace Sistema.DAO
                 da.Fill(dt);
 
                 resQuantSearch = dt.Rows.Count;
-                return dt;
                 classeConecta.FecharCon();
+                return dt;
 
             }
             catch (Exception ex)
@@ -858,8 +847,8 @@ namespace Sistema.DAO
                 DataTable dt = new DataTable();
                 da.Fill(dt);
                 resQuantSearch = dt.Rows.Count;
-                return dt;
                 classeConecta.FecharCon();
+                return dt;
             }
             catch (Exception ex)
             {
@@ -884,8 +873,8 @@ namespace Sistema.DAO
                 da.SelectCommand = cmd;
                 DataTable dt = new DataTable();
                 da.Fill(dt);
-                return dt;
                 classeConecta.FecharCon();
+                return dt;
             }
             catch (Exception ex)
             {
@@ -920,8 +909,8 @@ namespace Sistema.DAO
                 DataTable dt = new DataTable();
                 da.Fill(dt);
                 resQuantSearch = dt.Rows.Count;
-                return dt;
                 classeConecta.FecharCon();
+                return dt;
             }
             catch (Exception ex)
             {
@@ -957,9 +946,8 @@ namespace Sistema.DAO
                 da.Fill(dt);
 
                 resQuantSearch = dt.Rows.Count;
-                return dt;
                 classeConecta.FecharCon();
-
+                return dt;
             }
             catch (Exception ex)
             {
@@ -994,8 +982,9 @@ namespace Sistema.DAO
                 DataTable dt = new DataTable();
                 da.Fill(dt);
                 resQuantSearch = dt.Rows.Count;
-                return dt;
                 classeConecta.FecharCon();
+
+                return dt;
             }
             catch (Exception ex)
             {

@@ -1322,19 +1322,7 @@ namespace Sistema.View
 
         }
 
-        private void behaviorClickGridPesquisa()
-        {
-            bttnNew.Enabled = false;
-            bttnDel.Enabled = true;
-            //bttnEdit.Enabled = true;
-            bttnSearch.Enabled = true;
-            bttnRefresh.Enabled = false;
-            bttnSave.Enabled = false;
-            toolStripButton1.Enabled = true;
-            enableFieldsFormulario();
-            clearFieldsFormulario();
-            setaGridEmCampos();
-        }
+     
 
         public void clearFieldsFormulario()
         {
@@ -2082,49 +2070,82 @@ namespace Sistema.View
         }
 
 
-        //private void button4_Click_1(object sender, EventArgs e)
-        //{
-        //    bool conteudoStringNuloOuVazio = String.IsNullOrEmpty(txtKmRetorno.Text);
-        //    bool isNumeric = int.TryParse(txtKmRetorno.Text, out int n);
-
-        //    if (conteudoStringNuloOuVazio == false && isNumeric == true)
-        //    {
-        //        txtEstatusSaida.Text = "Retornado";
-        //        int kmsaida = Convert.ToInt32(txtKmSaida.Text);
-        //        int kmretorno = Convert.ToInt32(txtKmRetorno.Text);
-
-        //        if (kmretorno - kmsaida <= 0) {
-
-        //            MessageBox.Show("O KM do veículo no retorno não pode ser menor, ou igual, do que foi infromado na saída\n",
-        //                "Alerta do Sistema",
-        //                MessageBoxButtons.OK,
-        //                MessageBoxIcon.Error);
-        //        }
-        //        else
-        //        {
-        //            var resultado = MessageBox.Show("Confirma a kilometragem de retorno?",
-        //                "Aviso do Sistema",
-        //                MessageBoxButtons.YesNo,
-        //                MessageBoxIcon.Question);
-
-        //            if (resultado == DialogResult.Yes)
-        //            {
-        //                int kmtotal = kmretorno - kmsaida;
-        //                txtKmTotal.Text = Convert.ToString(kmtotal);
-        //                toolStripButtonConcluirSaida.Enabled = true;
-        //            }
-        //        }
-
-        //    }
-
-        //}
-
-
         private void toolStripButton2_Click(object sender, EventArgs e)
         {
+            if ("Rota Concluída".Equals(txtEstatusSaida.Text = gridCrudSaidas.CurrentRow.Cells[12].Value.ToString())){
+               
+                groupBoxFormulario.Enabled = true;
+                groupBoxFormulario.Visible = true;
+                datePckSaida.Enabled = false;
+                txtKmTotal.Visible              =       true;
+                button1.Visible                 =       true;
+                button1.Enabled                 =       true;
+                txtKmSaida.Visible              =       true;
+                txtKmSaida.Enabled              =       false;
+                txtKmRetorno.Visible            =       true;
+                txtKmRetorno.Enabled            =       true;
+                datePckRetorno.Visible          =       true;
+                datePckRetorno.Enabled          =       true;
+                txtRegiaoEntrega.Enabled        =       false;
+                int idsaida                     =       Convert.ToInt32(gridCrudSaidas.CurrentRow.Cells[0].Value.ToString());
+                groupBoxFormulario.Visible      =       true;
+                groupBox1.Visible               =       true;
+                txtIdSaida.Text         =       gridCrudSaidas.CurrentRow.Cells[0].Value.ToString();
+                txtIdVeiculo.Text       =       gridCrudSaidas.CurrentRow.Cells[1].Value.ToString();
+                txtIdUsuario.Text       =       gridCrudSaidas.CurrentRow.Cells[2].Value.ToString();
+                txtIdPapel.Text         =       gridCrudSaidas.CurrentRow.Cells[3].Value.ToString();
+                txtIdPessoa.Text        =       gridCrudSaidas.CurrentRow.Cells[4].Value.ToString();
+                txtVeiculo.Text         =       gridCrudSaidas.CurrentRow.Cells[5].Value.ToString();
+                txtPlacaVeiculo.Text    =       gridCrudSaidas.CurrentRow.Cells[6].Value.ToString();
+                txtPessoa.Text          =       gridCrudSaidas.CurrentRow.Cells[7].Value.ToString();
+                datePckSaida.Value      =       Convert.ToDateTime(gridCrudSaidas.CurrentRow.Cells[8].Value.ToString());
+                txtEstatusSaida.Text    =       gridCrudSaidas.CurrentRow.Cells[12].Value.ToString();
+                txtRegiaoEntrega.Text   =       gridCrudSaidas.CurrentRow.Cells[13].Value.ToString();
+                txtKmSaida.Text         =       gridCrudSaidas.CurrentRow.Cells[14].Value.ToString();
+                txtKmRetorno.Text       =       gridCrudSaidas.CurrentRow.Cells[15].Value.ToString();
+                txtKmTotal.Text         =       gridCrudSaidas.CurrentRow.Cells[16].Value.ToString();
+            }
+        }
+
+
+        private void toolStripButton3_Click(object sender, EventArgs e){
+            controllerSaida.Editar(
+                                Convert.ToInt32(txtIdVeiculo.Text),
+                                Convert.ToInt32(txtIdUsuario.Text),
+                                Convert.ToInt32(txtIdPapel.Text),
+                                Convert.ToInt32(txtIdPessoa.Text),
+                                txtVeiculo.Text,
+                                txtPlacaVeiculo.Text,
+                                txtPessoa.Text,
+                                Convert.ToDateTime(DateTime.Today.ToString("dd/MM/yyyy")),
+                                Convert.ToDateTime(DateTime.Today.ToString("dd/MM/yyyy")),
+                                "",
+                                DateTime.Now.ToString("HH:mm:ss"),
+                                txtEstatusSaida.Text,
+                                txtRegiaoEntrega.Text,
+                                txtKmSaida.Text,
+                                txtKmRetorno.Text,
+                                txtKmTotal.Text, 1);
+        }
+
+
+        private void gridCrudSaidas_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            groupBoxFormulario.Visible = true;
+            groupBox1.Visible = true;
+            gridCurdMestreDetalhe.DataSource = controllerEncomendas.ListarDetalheMestre(txtIdSaida.Text, "Saiu para entrega");
+            DataGridModelDetalhe();
+
+        }
+
+     
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
             if (String.IsNullOrEmpty(txtKmSaida.Text) == false
-                && String.IsNullOrEmpty(txtKmRetorno.Text) == false
-                && String.IsNullOrEmpty(txtKmTotal.Text) == false)
+               && String.IsNullOrEmpty(txtKmRetorno.Text) == false
+               && String.IsNullOrEmpty(txtKmTotal.Text) == false)
             {
 
 
@@ -2194,11 +2215,7 @@ namespace Sistema.View
                                     //  MessageBox.Show("Saida Conclúida", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                                 }
 
-
-                            }
-                            else if (resultadoRetorno == DialogResult.No)
-                            {
-
+                            }else if (resultadoRetorno == DialogResult.No) {
                                 behaviorRefresh();
                             }
                         }
@@ -2208,166 +2225,54 @@ namespace Sistema.View
                 else if (conteudoStringNuloOuVazio == true)
                 {
                     MessageBox.Show("O Campo 'Km Retorno' não pode estar vazio para que seja contabilizado o km total",
-                                    "Alerta do Sistema",MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                    "Alerta do Sistema", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
 
 
             }
         }
 
+        //bool conteudoStringNuloOuVazio = String.IsNullOrEmpty(txtKmRetorno.Text);
+        //bool isNumeric = int.TryParse(txtKmRetorno.Text, out int n);
 
-        private void toolStripButton3_Click(object sender, EventArgs e)
-        {
+        //if (conteudoStringNuloOuVazio == false)
+        //{
+        //    txtEstatusSaida.Text = "Retornado";
+        //    int kmsaida = Convert.ToInt32(txtKmSaida.Text);
+        //    int kmretorno = Convert.ToInt32(txtKmRetorno.Text);
 
-          
+        //    if (kmretorno - kmsaida <= 0)
+        //    {
 
-            if (toolStripComboBox1.SelectedItem.ToString().Equals("Rota Concluída"))
-            {
-                button1.Enabled = true;
-                button1.Visible = true;
+        //        MessageBox.Show("O KM do veículo no retorno não pode ser menor, ou igual, do que foi infromado na saída\n",
+        //            "Alerta do Sistema",
+        //            MessageBoxButtons.OK,
+        //            MessageBoxIcon.Error);
+        //    }
+        //    else
+        //    {
+        //        var resultado = MessageBox.Show("Confirma a kilometragem de retorno?",
+        //            "Aviso do Sistema",
+        //            MessageBoxButtons.YesNo,
+        //            MessageBoxIcon.Question);
 
-
-                toolStripButtonConcluirSaida.Enabled = false;
-                bttnSearch.Enabled = false;
-                bttnSearch.Enabled = false;
-                toolStripButton2.Enabled = true;
-
-                toolStrip2.Visible = false;
-                groupBoxFormulario.Enabled = true;
-                groupBoxFormulario.Visible = true;
-                txtEstatusSaida.Enabled = false;
-                datePckSaida.Enabled = false;
-                datePckRetorno.Enabled = true;
-                txtKmRetorno.Enabled = true;
-                txtKmSaida.Enabled = false;
-                label5.Visible = true;
-                txtKmTotal.Visible = true;
-                txtRegiaoEntrega.Enabled = false;
-
-                txtIdSaida.Text = gridCrudSaidas.CurrentRow.Cells[0].Value.ToString();
-                txtIdVeiculo.Text = gridCrudSaidas.CurrentRow.Cells[1].Value.ToString();
-                txtIdUsuario.Text = gridCrudSaidas.CurrentRow.Cells[2].Value.ToString();
-                txtIdPapel.Text = gridCrudSaidas.CurrentRow.Cells[3].Value.ToString();
-                txtIdPessoa.Text = gridCrudSaidas.CurrentRow.Cells[4].Value.ToString();
-                txtVeiculo.Text = gridCrudSaidas.CurrentRow.Cells[5].Value.ToString();
-                txtPlacaVeiculo.Text = gridCrudSaidas.CurrentRow.Cells[6].Value.ToString();
-                txtPessoa.Text = gridCrudSaidas.CurrentRow.Cells[7].Value.ToString();
-                datePckSaida.Value = Convert.ToDateTime(gridCrudSaidas.CurrentRow.Cells[8].Value.ToString());
-                txtEstatusSaida.Text = gridCrudSaidas.CurrentRow.Cells[12].Value.ToString();
-                txtRegiaoEntrega.Text = gridCrudSaidas.CurrentRow.Cells[13].Value.ToString();
-                txtKmSaida.Text = gridCrudSaidas.CurrentRow.Cells[14].Value.ToString();
-                txtKmRetorno.Text = gridCrudSaidas.CurrentRow.Cells[15].Value.ToString();
-                txtKmTotal.Text = gridCrudSaidas.CurrentRow.Cells[16].Value.ToString();
-            }
-            else
-            {
-                setaGridEmCampos();
-            }
-            //        string strtxtVeiculo    =   txtVeiculo.Text;
-            //        string strplaca         =   txtPlacaVeiculo.Text;
-            //        string idveiculo        =   txtIdVeiculo.Text;
-            //        string strHoraSaida     =   gridCrudSaidas.CurrentRow.Cells[10].Value.ToString();
-            //        string strHoraDevolvido =   DateTime.Now.ToString("HH:mm:ss");
-
-            //    var resultadoRetorno = MessageBox.Show("Deseja concluir a saida de rota ?",
-            //        "Aviso do Sistema",
-            //        MessageBoxButtons.YesNo,
-            //        MessageBoxIcon.Question);
-
-            //        if (resultadoRetorno == DialogResult.Yes)
-            //        {
-            //            controllerSaida.Editar(
-            //            Convert.ToInt32(txtIdVeiculo.Text),
-            //            Convert.ToInt32(txtIdUsuario.Text),
-            //            Convert.ToInt32(txtIdPapel.Text),
-            //            Convert.ToInt32(txtIdPessoa.Text),
-            //            strtxtVeiculo,
-            //            strplaca,
-            //            txtPessoa.Text,
-            //            Convert.ToDateTime(datePckSaida.Value.ToString("dd/MM/yyyy")),
-            //            Convert.ToDateTime(datePckRetorno.Value.ToString("dd/MM/yyyy")),
-            //            strHoraSaida,
-            //            strHoraDevolvido,
-            //            "Veículo Devolvido",
-            //            txtRegiaoEntrega.Text,
-            //            txtKmSaida.Text,
-            //            txtKmRetorno.Text,
-            //            txtKmTotal.Text,
-            //            Convert.ToInt32(txtIdSaida.Text));
-            //            veiculosController.EditarEstatusVeiculo(strtxtVeiculo, strplaca, "Disponivel", Convert.ToInt32(idveiculo));
+        //        if (resultado == DialogResult.Yes)
+        //        {
+        //            int kmtotal = kmretorno - kmsaida;
+        //            txtKmTotal.Text = Convert.ToString(kmtotal);
+        //            toolStripButtonConcluirSaida.Enabled = true;
+        //        }
+        //    }
+        //}
+        //else if (conteudoStringNuloOuVazio == true)
+        //{
+        //    MessageBox.Show("O Campo 'Km Retorno' não pode estar vazio para que seja contabilizado o km total",
+        //                    "Alerta do Sistema", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        //}
+    
 
 
-            //        if (controllerSaida.retornoPersistencia.Equals("AT"))
-            //        {
-            //            // veiculosController.EditarEstatusVeiculo(txtVeiculo.Text, txtPlacaVeiculo.Text, "Em Rota", Convert.ToInt32(txtIdVeiculo.Text));
-            //            behaviorRefresh();
-            //          //  MessageBox.Show("Saida Conclúida", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            //        }
-
-
-            //    }
-            //    else if (resultadoRetorno == DialogResult.No){
-
-            //        behaviorRefresh();
-            //    }
-        }
-
-        private void gridCrudSaidas_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
-        {
-            groupBoxFormulario.Visible = true;
-            groupBox1.Visible = true;
-            gridCurdMestreDetalhe.DataSource = controllerEncomendas.ListarDetalheMestre(txtIdSaida.Text, "Saiu para entrega");
-            DataGridModelDetalhe();
-
-
-        }
-
-     
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            bool conteudoStringNuloOuVazio = String.IsNullOrEmpty(txtKmRetorno.Text);
-            bool isNumeric = int.TryParse(txtKmRetorno.Text, out int n);
-
-            if (conteudoStringNuloOuVazio == false)
-            {
-                txtEstatusSaida.Text = "Retornado";
-                int kmsaida = Convert.ToInt32(txtKmSaida.Text);
-                int kmretorno = Convert.ToInt32(txtKmRetorno.Text);
-
-                if (kmretorno - kmsaida <= 0)
-                {
-
-                    MessageBox.Show("O KM do veículo no retorno não pode ser menor, ou igual, do que foi infromado na saída\n",
-                        "Alerta do Sistema",
-                        MessageBoxButtons.OK,
-                        MessageBoxIcon.Error);
-                }
-                else
-                {
-                    var resultado = MessageBox.Show("Confirma a kilometragem de retorno?",
-                        "Aviso do Sistema",
-                        MessageBoxButtons.YesNo,
-                        MessageBoxIcon.Question);
-
-                    if (resultado == DialogResult.Yes)
-                    {
-                        int kmtotal = kmretorno - kmsaida;
-                        txtKmTotal.Text = Convert.ToString(kmtotal);
-                        toolStripButtonConcluirSaida.Enabled = true;
-                    }
-                }
-            }
-            else if (conteudoStringNuloOuVazio == true)
-            {
-                MessageBox.Show("O Campo 'Km Retorno' não pode estar vazio para que seja contabilizado o km total",
-                                "Alerta do Sistema", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-
-   
-        private void button6_Click(object sender, EventArgs e)
+    private void button6_Click(object sender, EventArgs e)
         {
 
         }
@@ -2484,19 +2389,17 @@ namespace Sistema.View
 
 
 
-                if (gridCrudSaidas.CurrentRow.Cells[12].Value.ToString().Equals("Rota Concluída") && tamanhoGridSaidas > 0)
-                {
+                if (gridCrudSaidas.CurrentRow.Cells[12].Value.ToString().Equals("Rota Concluída") && tamanhoGridSaidas > 0){
                   
                     toolStripButtonConcluirSaida.Enabled = true;
-                    //toolStripButton2.Enabled = true;
-                }
-                else if (!gridCrudSaidas.CurrentRow.Cells[12].Value.ToString().Equals("Rota Concluída") && tamanhoGridSaidas > 0)
-                {
+                    toolStripButton2.Enabled = true;
+
+                }else if (!gridCrudSaidas.CurrentRow.Cells[12].Value.ToString().Equals("Rota Concluída") && tamanhoGridSaidas > 0){
 
                     toolStripButtonConcluirSaida.Enabled = false;
                     bttnDel.Enabled = true;
 
-                    //toolStripButton2.Enabled = false;
+                    toolStripButton2.Enabled = false;
 
                 }
                 else if (gridCrudSaidas.CurrentRow.Cells[12].Value.ToString().Equals("Em Rota") && tamanhoGridSaidas > 0)
@@ -2605,6 +2508,11 @@ namespace Sistema.View
             {
                 setaGridEmCampos();
             }
+        }
+
+        private void gridCurdMestreDetalhe_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

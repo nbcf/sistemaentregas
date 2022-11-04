@@ -715,6 +715,9 @@ namespace Sistema.View
             _InstanciaEntregasView = null;
         }
 
-      
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
