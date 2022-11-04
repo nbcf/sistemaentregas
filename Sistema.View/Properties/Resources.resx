@@ -130,6 +130,9 @@
   <data name="refresh48" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\image\crud48x48\refresh48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="calc16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\image\crud16x16\calc16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="save" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\image\crud32x32\save.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -256,6 +259,9 @@
   <data name="greenDot" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\image\greenDot.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="gastos48" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\image\crud48x48\gastos48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="ok_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\image\ok_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -316,7 +322,7 @@
   <data name="salvar" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\image\salvar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="calc16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\image\crud16x16\calc16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="gastosB48" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\image\crud48x48\gastosB48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

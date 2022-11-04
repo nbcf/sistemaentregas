@@ -1,4 +1,5 @@
 ﻿using MySql.Data.MySqlClient;
+using Sistema.Conexao;
 using Sistema.Model;
 using System;
 using System.Data;
@@ -9,11 +10,10 @@ namespace Sistema.DAO
     public class SaidasDAO
     {
         SaidasModel saidaModel = new SaidasModel();
-        public int quantidadeBD = 0;
-        //public int quantidadePaginada = 0;
-        public int resQuantSearch;
-        public string registroInserido = "";
-        Sistema.Conexao.ClasseConexao classeConecta = new Sistema.Conexao.ClasseConexao();
+        public int qtListarBD = 0;
+        public int qtListarPesquisa = 0;
+        public string acaoCrudSaidasDAO = "";
+        ClasseConexao classeConecta = new ClasseConexao();
         string sql;
         MySqlCommand cmd;
         MySqlCommand cmdVerificar;
@@ -96,7 +96,7 @@ namespace Sistema.DAO
                     cmd.Parameters.AddWithValue("@kmretorno", modelSaida.Kmretorno);
                     cmd.Parameters.AddWithValue("@kmtotal", modelSaida.Kmtotal);
                     cmd.ExecuteNonQuery();
-                    registroInserido = "S!";
+                    acaoCrudSaidasDAO = "S!";
                     classeConecta.FecharCon();
             }
             catch (Exception ex)
@@ -156,7 +156,7 @@ namespace Sistema.DAO
 
                 cmd.Parameters.AddWithValue("@idsaida",         modelSaida.Idsaida);
                 cmd.ExecuteNonQuery();
-                registroInserido = "AT";
+                acaoCrudSaidasDAO = "AT";
                 classeConecta.FecharCon();
             }
             catch (Exception ex)
@@ -167,7 +167,10 @@ namespace Sistema.DAO
         }
 
 
-        public void EditarFimDeRota(SaidasModel modelSaida)
+        public void EditarFimDeRota(int idveiculo,
+                   int idusuario,
+                   string estsaida,
+                   int idsaida)
         {
             try
             {
@@ -175,19 +178,15 @@ namespace Sistema.DAO
                 cmd = new MySqlCommand("UPDATE saidas SET " +
                              " idveiculo        =   @idveiculo, " +
                              " idusuario        =   @idusuario, " +
-              //               " idpapel          =   @idpapel," +
-                 //            " idpessoa         =   @idpessoa," +
                              " estsaida         =   @estsaida" +
                              " WHERE idsaida    =   @idsaida", classeConecta.con);
 
-                cmd.Parameters.AddWithValue("@idveiculo", modelSaida.Idveiculo);
-                cmd.Parameters.AddWithValue("@idusuario", modelSaida.Idusuario);
-         //       cmd.Parameters.AddWithValue("@idpapel", modelSaida.Idpapel);
-            //    cmd.Parameters.AddWithValue("@idpessoa", modelSaida.Idpessoa);
-                cmd.Parameters.AddWithValue("@estsaida", modelSaida.Estsaida);
-                cmd.Parameters.AddWithValue("@idsaida", modelSaida.Idsaida);
+                cmd.Parameters.AddWithValue("@idveiculo", idveiculo);
+                cmd.Parameters.AddWithValue("@idusuario", idusuario);
+                cmd.Parameters.AddWithValue("@estsaida", estsaida);
+                cmd.Parameters.AddWithValue("@idsaida", idsaida);
                 cmd.ExecuteNonQuery();
-                registroInserido = "AT";
+                acaoCrudSaidasDAO = "AT";
                 classeConecta.FecharCon();
             }
             catch (Exception ex)
@@ -197,30 +196,23 @@ namespace Sistema.DAO
 
         }
 
-        public void Excluir(SaidasModel modelSaida)
-        {
-                try
-                {
+        public void Excluir(int idsaida) {
+                try {
                     classeConecta.AbrirCon();
                     sql = "DELETE FROM saidas where idsaida = @idsaida";
                     cmd = new MySqlCommand(sql, classeConecta.con);
-                    cmd.Parameters.AddWithValue("@idsaida", modelSaida.Idsaida);
+                    cmd.Parameters.AddWithValue("@idsaida", idsaida);
                     cmd.ExecuteNonQuery();
+                    acaoCrudSaidasDAO = "DEL";
                     classeConecta.FecharCon();
                 
-                }
-                catch (Exception ex)
-                {
+                } catch (Exception ex){
                     MessageBox.Show("Erro ao Excluir " + ex);
-                
-
                 }
-        
         }
 
         public DataTable ListarSaidaGasto(){
-            try
-            {
+            try{
                 classeConecta.AbrirCon();
                 sql = "SELECT * FROM saidas WHERE estsaida = 'Em Rota'";
                 cmd = new MySqlCommand(sql, classeConecta.con);
@@ -231,15 +223,13 @@ namespace Sistema.DAO
                 classeConecta.FecharCon();
                 return dt;
 
-            }
-            catch (Exception ex)
-            {
+            }catch (Exception ex) {
 
                 throw ex;
             }
         }
 
-        public int ListarTodosRegistrosBD(){
+        public int ListarBDSaidasDAO(){
             try{
                 classeConecta.AbrirCon();
                 sql = "SELECT * FROM saidas";
@@ -257,8 +247,17 @@ namespace Sistema.DAO
             }
         }
 
-        public DataTable UltimoRegistro()
+        public int ListarPesquisaDAO()
         {
+            return qtListarPesquisa;
+        }
+
+        public string AcaoCrudSaidasDAO()
+        {
+            return acaoCrudSaidasDAO;
+        }
+
+        public DataTable UltimoRegistro() {
             try
             {
                 classeConecta.AbrirCon();
@@ -270,34 +269,23 @@ namespace Sistema.DAO
                 da.Fill(dt);
                 classeConecta.FecharCon();
                 return dt;
-               
-            }
-            catch (Exception ex)
-            {
+            } catch (Exception ex){
 
                 throw ex;
             }
         }
-        public int ListarPesquisados()
-        {
-            int retornoPesquisado;
-            retornoPesquisado = resQuantSearch;
-            return retornoPesquisado;
-        }
+        
 
-        public string VerificarPersistencia()
-        {
-            string retornoExistente;
-            retornoExistente = registroInserido;
-            return retornoExistente;
-        }
+        public DataTable ListarDataGridDAO(
+            string parametro,
+            string estatusSaida,
+            string indexar,
+            int offsett,
+            int limitt) {
+            try{
 
-        public DataTable ConfiListagemDataGrid(string parametro, string estatusSaida , string indexar, int offsett, int limitt)
-        {
-            try
-            {
-                classeConecta.AbrirCon();
-                sql = "SELECT * FROM saidas sai " +
+              classeConecta.AbrirCon();
+              sql = "SELECT * FROM saidas sai " +
                     "INNER JOIN usuarios usuario " +
                     "INNER JOIN papeis pap " +
                     "INNER JOIN pessoas pess " +
@@ -316,16 +304,14 @@ namespace Sistema.DAO
                 classeConecta.FecharCon();
                 return dt;
                
-            }
-            catch (Exception ex)
-            {
+            }catch (Exception ex){
 
                 throw ex;
             }
         }
 
 
-        public DataTable ListEstSaidaDataGrid(string estsaidas)
+        public DataTable ListarEstatusSaidaDAO(string estsaidas)
         {
             try
             {
@@ -347,7 +333,7 @@ namespace Sistema.DAO
         }
 
         //ConfiListagemDataGridInnerJoin
-        public DataTable ConfiListagemDataGridInnerJoin(string parametro, string indexar, int offsett, int limitt)
+        public DataTable ListarDataGridIJDAO(string parametro, string indexar, int offsett, int limitt)
         {
             try
             {
@@ -407,7 +393,7 @@ namespace Sistema.DAO
                 da.SelectCommand = cmd;
                 DataTable dt = new DataTable();
                 da.Fill(dt);
-                resQuantSearch = dt.Rows.Count;
+                qtListarPesquisa = dt.Rows.Count;
                 classeConecta.FecharCon();
                 return dt;
             }
@@ -447,7 +433,7 @@ namespace Sistema.DAO
                 da.SelectCommand = cmd;
                 DataTable dt = new DataTable();
                 da.Fill(dt);
-                resQuantSearch = dt.Rows.Count;
+                qtListarPesquisa = dt.Rows.Count;
                 classeConecta.FecharCon();
                 return dt;
               
@@ -488,7 +474,7 @@ namespace Sistema.DAO
                 da.SelectCommand = cmd;
                 DataTable dt = new DataTable();
                 da.Fill(dt);
-                resQuantSearch = dt.Rows.Count;
+                qtListarPesquisa = dt.Rows.Count;
                 classeConecta.FecharCon();
                 return dt;
                

@@ -15,10 +15,6 @@ namespace Sistema.Controller
         SaidasDAO dao = new SaidasDAO();
       
         SaidasModel modelSaida = new SaidasModel();
-        public int encontrados;
-        public int encontradosPesquisa;
-        public string retornoPersistencia;
-
 
         public void Salvar(
                          int idveiculo,
@@ -28,239 +24,134 @@ namespace Sistema.Controller
                          string nomeveiculo,
                          string placa,
                          string entregador,
-
                          DateTime datasaida,
                          DateTime dataretorno,
                          string horasaida,
                          string horaretorno,
-
                          string estsaida,
                          string regiaoentrega,
                          string kmsaida,
                          string kmretorno,
                          string kmtotal){ 
-            modelSaida.Idveiculo    = idveiculo;
-            modelSaida.Idusuario    = idusuario;
-            modelSaida.Idpapel      = idpapel;
-            modelSaida.Idpessoa     = idpessoa;
-            modelSaida.Nomeveiculo = nomeveiculo;
-            modelSaida.Placa = placa;
-            modelSaida.Entregador = entregador;
-            modelSaida.Datasaida = datasaida;
-            modelSaida.Dataretorno = dataretorno;
-            modelSaida.Horasaida = horasaida;
-            modelSaida.Horaretorno = horaretorno;
-            modelSaida.Estsaida = estsaida;
-            modelSaida.Regiaoentrega = regiaoentrega;
-            modelSaida.Kmsaida = kmsaida;
-            modelSaida.Kmretorno = kmretorno;
-            modelSaida.Kmtotal = kmtotal;
-            dao.Salvar(modelSaida);
-            retornoRegistroSalvo();
+                        modelSaida.Idveiculo        = idveiculo;
+                        modelSaida.Idusuario        = idusuario;
+                        modelSaida.Idpapel          = idpapel;
+                        modelSaida.Idpessoa         = idpessoa;
+                        modelSaida.Nomeveiculo      = nomeveiculo;
+                        modelSaida.Placa            = placa;
+                        modelSaida.Entregador       = entregador;
+                        modelSaida.Datasaida        = datasaida;
+                        modelSaida.Dataretorno      = dataretorno;
+                        modelSaida.Horasaida        = horasaida;
+                        modelSaida.Horaretorno      = horaretorno;
+                        modelSaida.Estsaida         = estsaida;
+                        modelSaida.Regiaoentrega    = regiaoentrega;
+                        modelSaida.Kmsaida          = kmsaida;
+                        modelSaida.Kmretorno        = kmretorno;
+                        modelSaida.Kmtotal          = kmtotal;
+                        dao.Salvar(modelSaida);
+                        AcaoCrudSaidasController();
         }
 
-        public DataTable ListEstSaidaDataGrid(string estsaidas)
-        {
-            try
-            {
-                DataTable dt = new DataTable();
-                dt = dao.ListEstSaidaDataGrid(estsaidas);
-                return dt;
+        public DataTable ListarEstatusSaidaController(string estsaidas){
+            return dao.ListarEstatusSaidaDAO(estsaidas);
+
             }
-            catch (Exception e)
-            {
-                MessageBox.Show("O Metodo 'Listar' não foi Executada\n\nA seguinte execessão foi lançada: " + e, "Aviso do Sistema", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                throw;
-            }
-        }
 
         public DataTable ListarSaidaGasto(){
-            try{
-
-                DataTable dt = new DataTable();
-                return dt = dao.ListarSaidaGasto();
-
-            }catch (Exception e){
-                MessageBox.Show("O Metodo 'Listar' não foi Executada\n\nA seguinte execessão foi lançada: " + e, "Aviso do Sistema", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                throw;
-            }
+            return  dao.ListarSaidaGasto();
         }
 
 
-        public void Excluir(int idsaida)
-        {
-            modelSaida.Idsaida = idsaida;
-            dao.Excluir(modelSaida);
+        public void Excluir(int idsaida){
+            dao.Excluir( idsaida);
         }
       
                   
                 
             public void Editar( 
-                                int idveiculo,
-                                int idusuario,
-                                int idpapel,
-                                int idpessoa,
-                                string nomeveiculo,
-                                string placa,
-                                string entregador,
-                                DateTime datasaida,
-                                DateTime dataretorno,
-                                string horasaida,
-                                string horaretorno,
-                                string estsaida,
-                                string regiaoentrega,
-                                string kmsaida,
-                                string kmretorno,
-                                string kmtotal, 
-                                int idsaida){
-            modelSaida.Idveiculo = idveiculo;
-            modelSaida.Idusuario = idusuario;
-            modelSaida.Idpapel = idpapel;
-            modelSaida.Idpessoa = idpessoa;
-            modelSaida.Nomeveiculo = nomeveiculo;
-            modelSaida.Placa = placa;
-            modelSaida.Entregador = entregador;
-            modelSaida.Datasaida = datasaida;
-            modelSaida.Dataretorno = dataretorno;
-            modelSaida.Horasaida = horasaida;
-            modelSaida.Horaretorno = horaretorno;
-            modelSaida.Estsaida = estsaida;
-            modelSaida.Regiaoentrega = regiaoentrega;
-            modelSaida.Kmsaida = kmsaida;
-            modelSaida.Kmretorno = kmretorno;
-            modelSaida.Kmtotal = kmtotal;
-            modelSaida.Idsaida = idsaida;
-            dao.Editar(modelSaida);
-            retornoRegistroSalvo();
-
-        }
-
-               public void EditarFimDeRota(
-                   int idveiculo,
-                   int idusuario,
-              //     int idpapel,
-                //   int idpessoa,
-                   string estsaida,
-                   int idsaida)
-                        {
-                            modelSaida.Idveiculo = idveiculo;
-                            modelSaida.Idusuario = idusuario;
-                        //    modelSaida.Idpapel = idpapel;
-                         //   modelSaida.Idpessoa = idpessoa;
-                            modelSaida.Estsaida = estsaida;
-                            modelSaida.Idsaida = idsaida;
-                            dao.EditarFimDeRota(modelSaida);
-                            retornoRegistroSalvo();
-
+                        int idveiculo,
+                        int idusuario,
+                        int idpapel,
+                        int idpessoa,
+                        string nomeveiculo,
+                        string placa,
+                        string entregador,
+                        DateTime datasaida,
+                        DateTime dataretorno,
+                        string horasaida,
+                        string horaretorno,
+                        string estsaida,
+                        string regiaoentrega,
+                        string kmsaida,
+                        string kmretorno,
+                        string kmtotal, 
+                        int idsaida){
+                        modelSaida.Idveiculo        =   idveiculo;
+                        modelSaida.Idusuario        =   idusuario;
+                        modelSaida.Idpapel          =   idpapel;
+                        modelSaida.Idpessoa         =   idpessoa;
+                        modelSaida.Nomeveiculo      =   nomeveiculo;
+                        modelSaida.Placa            =   placa;
+                        modelSaida.Entregador       =   entregador;
+                        modelSaida.Datasaida        =   datasaida;
+                        modelSaida.Dataretorno      =   dataretorno;
+                        modelSaida.Horasaida        =   horasaida;
+                        modelSaida.Horaretorno      =   horaretorno;
+                        modelSaida.Estsaida         =   estsaida;
+                        modelSaida.Regiaoentrega    =   regiaoentrega;
+                        modelSaida.Kmsaida          =   kmsaida;
+                        modelSaida.Kmretorno        =   kmretorno;
+                        modelSaida.Kmtotal          =   kmtotal;
+                        modelSaida.Idsaida          =   idsaida;
+                        dao.Editar(modelSaida);
+                        AcaoCrudSaidasController();
                         }
 
-        public int retornoQuantRegistro()
-        {
-            encontrados = dao.ListarTodosRegistrosBD();
-            return encontrados;
+        public void EditarFimDeRota(int idveiculo, int idusuario,string estsaida, int idsaida){
+            dao.EditarFimDeRota(idveiculo, idusuario,estsaida,idsaida);
+            AcaoCrudSaidasController();
         }
 
-        public int retornoQuantPesquisa()
-        {
-            encontradosPesquisa = dao.ListarPesquisados();
-            return encontradosPesquisa;
+        public int ListarBDSaidasController(){
+            return  dao.ListarBDSaidasDAO();
         }
 
-        public string retornoRegistroSalvo()
-        {
-            retornoPersistencia = dao.VerificarPersistencia();
-            return retornoPersistencia;
-
+        public int ListarPesquisaController(){
+            return dao.ListarPesquisaDAO();
         }
 
-        public DataTable UltimoRegistro()
-        {
-            DataTable dt = new DataTable();
-            dt = dao.UltimoRegistro();
-            return dt;
+        public string AcaoCrudSaidasController(){
+            return dao.AcaoCrudSaidasDAO();
+        }
+
+        public DataTable UltimoRegistro(){
+            return dao.UltimoRegistro();
 
         }
 
-        public DataTable ConfiListagemDataGrid(string parametro,string estatusSaida, string indexar, int offsett, int limitt)
-        {
-            try
-            {
-                retornoQuantRegistro();
-                DataTable dt = new DataTable();
-               dt = dao.ConfiListagemDataGrid(parametro, estatusSaida, indexar, offsett, limitt);
-                return dt;
-            }
-            catch (Exception e)
-            {
-                MessageBox.Show("O Metodo 'ConfiListagemDataGrid' não foi Executada\n\nA seguinte execessão foi lançada: " + e,
-                                "Aviso do Sistema",
-                                MessageBoxButtons.OK,
-                                MessageBoxIcon.Error);
-                throw;
-            }
+        public DataTable ListarSaidasGridController(
+            string parametro,
+            string estatusSaida,
+            string indexar,
+            int offsett,
+            int limitt){
+                ListarBDSaidasController();
+                return dao.ListarDataGridDAO(parametro, estatusSaida, indexar, offsett, limitt);
+            
         }
 
-    
-
-        public DataTable PesquisarComecaCom(string coluna, string campo, string pesquisar)
-        {
-            try
-            {
-                DataTable dt = new DataTable();
-                dt = dao.PesquisarComeca(coluna, campo, pesquisar);
-                return dt;
-            }
-            catch (Exception e)
-            {
-                MessageBox.Show("O Metodo 'PesquisarComecaCom' não foi Executada\n\nA seguinte execessão foi lançada: " + e,
-                                "Aviso do Sistema",
-                                MessageBoxButtons.OK,
-                                MessageBoxIcon.Error);
-                throw;
-            }
-
+        public DataTable PesquisarComecaCom(string coluna, string campo, string pesquisar){
+              return dao.PesquisarComeca(coluna, campo, pesquisar);
         }
 
-        public DataTable PesquisarContemCom(string coluna, string campo, string pesquisar)
-        {
-            try
-            {
-                DataTable dt = new DataTable();
-                dt = dao.PesquisarContem(coluna, campo, pesquisar);
-                return dt;
-            }
-            catch (Exception e)
-            {
-                MessageBox.Show("O Metodo 'PesquisarContemCom' não foi Executada\n\nA seguinte execessão foi lançada: " + e,
-                                "Aviso do Sistema",
-                                MessageBoxButtons.OK,
-                                MessageBoxIcon.Error);
-                throw;
-            }
-
+        public DataTable PesquisarContemCom(string coluna, string campo, string pesquisar){
+               return dao.PesquisarContem(coluna, campo, pesquisar);
         }
-        public DataTable PesquisarTerminaCom(string coluna, string campo, string pesquisar)
-        {
-            try
-            {
-                DataTable dt = new DataTable();
-                dt = dao.PesquisarTermina(coluna, campo, pesquisar);
-                return dt;
-            }
-            catch (Exception e)
-            {
 
-                MessageBox.Show("O Metodo 'PesquisarTerminaCom' não foi Executada\n\nA seguinte execessão foi lançada: " + e,
-                                "Aviso do Sistema",
-                                MessageBoxButtons.OK,
-                                MessageBoxIcon.Error);
-                throw;
-
-            }
-
-
-
-
+        public DataTable PesquisarTerminaCom(string coluna, string campo, string pesquisar){
+            return dao.PesquisarTermina(coluna, campo, pesquisar);
+            
         }
     }
 }

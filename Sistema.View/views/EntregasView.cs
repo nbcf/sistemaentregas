@@ -676,7 +676,7 @@ namespace Sistema.View
         private void EntregasView_Load(object sender, EventArgs e)
         {
            
-            comboBox1.DataSource = controllerSaida.ListEstSaidaDataGrid("Em Rota");
+            comboBox1.DataSource = controllerSaida.ListarEstatusSaidaController("Em Rota");
             comboBox1.ValueMember = "idsaida";
             comboBox1.DisplayMember = "entregador";
             if (comboBox1.Items.Count > 0)
