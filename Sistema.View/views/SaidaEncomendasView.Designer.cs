@@ -37,7 +37,7 @@ namespace Sistema.View
             this.bttnSearch = new System.Windows.Forms.ToolStripButton();
             this.bttnDel = new System.Windows.Forms.ToolStripButton();
             this.bttnImport = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButtonConcluirSaida = new System.Windows.Forms.ToolStripButton();
+            this.btConfirmarRetorno = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.tabControlAssets = new System.Windows.Forms.TabControl();
@@ -80,24 +80,25 @@ namespace Sistema.View
             this.groupBoxFormulario = new System.Windows.Forms.GroupBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.txtEstatusSaida = new System.Windows.Forms.TextBox();
             this.gridCurdMestreDetalhe = new System.Windows.Forms.DataGridView();
             this.label9 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.button5 = new System.Windows.Forms.Button();
-            this.txtIdSaida = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.btnImportarEntregador = new System.Windows.Forms.Button();
+            this.btnImportarVeiculo = new System.Windows.Forms.Button();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.datePckRetorno = new System.Windows.Forms.DateTimePicker();
             this.label14 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtIdSaida = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.txtRegiaoEntrega = new System.Windows.Forms.TextBox();
             this.txtPlacaVeiculo = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.txtKmTotal = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
             this.txtKmRetorno = new System.Windows.Forms.TextBox();
             this.txtKmSaida = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -106,8 +107,12 @@ namespace Sistema.View
             this.label1 = new System.Windows.Forms.Label();
             this.txtPessoa = new System.Windows.Forms.TextBox();
             this.txtVeiculo = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.txtHoraSaida = new System.Windows.Forms.TextBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.txtHoraRetorno = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.txtEstatusSaida = new System.Windows.Forms.TextBox();
             this.toolStrip1.SuspendLayout();
             this.tabControlAssets.SuspendLayout();
             this.tabPagePesquisar.SuspendLayout();
@@ -131,13 +136,13 @@ namespace Sistema.View
             this.bttnSearch,
             this.bttnDel,
             this.bttnImport,
-            this.toolStripButtonConcluirSaida,
+            this.btConfirmarRetorno,
             this.toolStripButton2,
             this.toolStripButton1});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Padding = new System.Windows.Forms.Padding(0);
-            this.toolStrip1.Size = new System.Drawing.Size(1148, 51);
+            this.toolStrip1.Size = new System.Drawing.Size(1091, 51);
             this.toolStrip1.TabIndex = 4;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -215,17 +220,17 @@ namespace Sistema.View
             this.bttnImport.Size = new System.Drawing.Size(80, 48);
             this.bttnImport.Click += new System.EventHandler(this.bttnImport_Click);
             // 
-            // toolStripButtonConcluirSaida
+            // btConfirmarRetorno
             // 
-            this.toolStripButtonConcluirSaida.AutoSize = false;
-            this.toolStripButtonConcluirSaida.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButtonConcluirSaida.Image = global::Sistema.View.Properties.Resources.ok48;
-            this.toolStripButtonConcluirSaida.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.toolStripButtonConcluirSaida.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButtonConcluirSaida.Name = "toolStripButtonConcluirSaida";
-            this.toolStripButtonConcluirSaida.Size = new System.Drawing.Size(80, 48);
-            this.toolStripButtonConcluirSaida.Text = "toolStripButton3";
-            this.toolStripButtonConcluirSaida.Click += new System.EventHandler(this.toolStripButton3_Click);
+            this.btConfirmarRetorno.AutoSize = false;
+            this.btConfirmarRetorno.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btConfirmarRetorno.Image = global::Sistema.View.Properties.Resources.ok48;
+            this.btConfirmarRetorno.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.btConfirmarRetorno.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btConfirmarRetorno.Name = "btConfirmarRetorno";
+            this.btConfirmarRetorno.Size = new System.Drawing.Size(80, 48);
+            this.btConfirmarRetorno.Text = "toolStripButton3";
+            this.btConfirmarRetorno.Click += new System.EventHandler(this.toolStripButton3_Click);
             // 
             // toolStripButton2
             // 
@@ -259,7 +264,7 @@ namespace Sistema.View
             this.tabControlAssets.Location = new System.Drawing.Point(0, 51);
             this.tabControlAssets.Name = "tabControlAssets";
             this.tabControlAssets.SelectedIndex = 0;
-            this.tabControlAssets.Size = new System.Drawing.Size(1148, 68);
+            this.tabControlAssets.Size = new System.Drawing.Size(1091, 68);
             this.tabControlAssets.TabIndex = 5;
             // 
             // tabPagePesquisar
@@ -267,10 +272,13 @@ namespace Sistema.View
             this.tabPagePesquisar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tabPagePesquisar.Controls.Add(this.radioBttnTermina);
             this.tabPagePesquisar.Controls.Add(this.radioBttnContem);
+            this.tabPagePesquisar.Controls.Add(this.label9);
             this.tabPagePesquisar.Controls.Add(this.label10);
+            this.tabPagePesquisar.Controls.Add(this.txtIdVeiculo);
             this.tabPagePesquisar.Controls.Add(this.label11);
             this.tabPagePesquisar.Controls.Add(this.label13);
             this.tabPagePesquisar.Controls.Add(this.cbButtonPesquisarEm);
+            this.tabPagePesquisar.Controls.Add(this.txtEstatuVeiculo);
             this.tabPagePesquisar.Controls.Add(this.radioBttnComeca);
             this.tabPagePesquisar.Controls.Add(this.txtBoxPesquisar);
             this.tabPagePesquisar.Controls.Add(this.txtIdPessoa);
@@ -279,7 +287,7 @@ namespace Sistema.View
             this.tabPagePesquisar.Location = new System.Drawing.Point(4, 25);
             this.tabPagePesquisar.Name = "tabPagePesquisar";
             this.tabPagePesquisar.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPagePesquisar.Size = new System.Drawing.Size(1140, 39);
+            this.tabPagePesquisar.Size = new System.Drawing.Size(1083, 39);
             this.tabPagePesquisar.TabIndex = 1;
             this.tabPagePesquisar.Text = "Pesquisar";
             this.tabPagePesquisar.UseVisualStyleBackColor = true;
@@ -310,7 +318,7 @@ namespace Sistema.View
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(729, 12);
+            this.label10.Location = new System.Drawing.Point(779, 8);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(62, 16);
             this.label10.TabIndex = 102;
@@ -320,7 +328,7 @@ namespace Sistema.View
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(835, 9);
+            this.label11.Location = new System.Drawing.Point(885, 12);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(64, 16);
             this.label11.TabIndex = 103;
@@ -330,7 +338,7 @@ namespace Sistema.View
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(951, 9);
+            this.label13.Location = new System.Drawing.Point(989, 13);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(58, 16);
             this.label13.TabIndex = 104;
@@ -370,15 +378,15 @@ namespace Sistema.View
             // 
             this.txtIdPessoa.Enabled = false;
             this.txtIdPessoa.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtIdPessoa.Location = new System.Drawing.Point(1015, 6);
+            this.txtIdPessoa.Location = new System.Drawing.Point(1053, 7);
             this.txtIdPessoa.Name = "txtIdPessoa";
-            this.txtIdPessoa.Size = new System.Drawing.Size(32, 23);
+            this.txtIdPessoa.Size = new System.Drawing.Size(21, 23);
             this.txtIdPessoa.TabIndex = 94;
             // 
             // txtIdPapel
             // 
             this.txtIdPapel.Enabled = false;
-            this.txtIdPapel.Location = new System.Drawing.Point(913, 8);
+            this.txtIdPapel.Location = new System.Drawing.Point(951, 13);
             this.txtIdPapel.Name = "txtIdPapel";
             this.txtIdPapel.Size = new System.Drawing.Size(32, 20);
             this.txtIdPapel.TabIndex = 95;
@@ -386,7 +394,7 @@ namespace Sistema.View
             // txtIdUsuario
             // 
             this.txtIdUsuario.Enabled = false;
-            this.txtIdUsuario.Location = new System.Drawing.Point(797, 6);
+            this.txtIdUsuario.Location = new System.Drawing.Point(847, 7);
             this.txtIdUsuario.Name = "txtIdUsuario";
             this.txtIdUsuario.Size = new System.Drawing.Size(32, 20);
             this.txtIdUsuario.TabIndex = 96;
@@ -395,7 +403,7 @@ namespace Sistema.View
             // 
             this.txtEstatuVeiculo.Enabled = false;
             this.txtEstatuVeiculo.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEstatuVeiculo.Location = new System.Drawing.Point(1019, 18);
+            this.txtEstatuVeiculo.Location = new System.Drawing.Point(741, 7);
             this.txtEstatuVeiculo.Name = "txtEstatuVeiculo";
             this.txtEstatuVeiculo.Size = new System.Drawing.Size(32, 23);
             this.txtEstatuVeiculo.TabIndex = 97;
@@ -404,7 +412,7 @@ namespace Sistema.View
             // 
             this.txtIdVeiculo.Enabled = false;
             this.txtIdVeiculo.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtIdVeiculo.Location = new System.Drawing.Point(918, 17);
+            this.txtIdVeiculo.Location = new System.Drawing.Point(641, 10);
             this.txtIdVeiculo.Name = "txtIdVeiculo";
             this.txtIdVeiculo.Size = new System.Drawing.Size(32, 23);
             this.txtIdVeiculo.TabIndex = 93;
@@ -435,7 +443,7 @@ namespace Sistema.View
             this.toolStripComboBox1});
             this.toolStrip2.Location = new System.Drawing.Point(0, 699);
             this.toolStrip2.Name = "toolStrip2";
-            this.toolStrip2.Size = new System.Drawing.Size(1148, 25);
+            this.toolStrip2.Size = new System.Drawing.Size(1091, 25);
             this.toolStrip2.TabIndex = 8;
             this.toolStrip2.Text = "toolStrip2";
             // 
@@ -604,7 +612,7 @@ namespace Sistema.View
             this.gridCrudSaidas.Location = new System.Drawing.Point(0, 119);
             this.gridCrudSaidas.Name = "gridCrudSaidas";
             this.gridCrudSaidas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.gridCrudSaidas.Size = new System.Drawing.Size(1148, 580);
+            this.gridCrudSaidas.Size = new System.Drawing.Size(1091, 580);
             this.gridCrudSaidas.TabIndex = 9;
             this.gridCrudSaidas.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridCrudSaidas_CellClick);
             this.gridCrudSaidas.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridCrudSaidas_CellDoubleClick);
@@ -613,9 +621,10 @@ namespace Sistema.View
             // 
             this.groupBoxFormulario.Controls.Add(this.groupBox1);
             this.groupBoxFormulario.Controls.Add(this.groupBox2);
-            this.groupBoxFormulario.Location = new System.Drawing.Point(0, 309);
+            this.groupBoxFormulario.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBoxFormulario.Location = new System.Drawing.Point(0, 119);
             this.groupBoxFormulario.Name = "groupBoxFormulario";
-            this.groupBoxFormulario.Size = new System.Drawing.Size(1148, 390);
+            this.groupBoxFormulario.Size = new System.Drawing.Size(1091, 580);
             this.groupBoxFormulario.TabIndex = 10;
             this.groupBoxFormulario.TabStop = false;
             // 
@@ -623,18 +632,11 @@ namespace Sistema.View
             // 
             this.groupBox1.Controls.Add(this.dataGridView1);
             this.groupBox1.Controls.Add(this.gridCurdMestreDetalhe);
-            this.groupBox1.Controls.Add(this.label9);
-            this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.button5);
-            this.groupBox1.Controls.Add(this.txtIdSaida);
-            this.groupBox1.Controls.Add(this.txtIdVeiculo);
-            this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.txtEstatuVeiculo);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox1.Location = new System.Drawing.Point(3, 137);
+            this.groupBox1.Location = new System.Drawing.Point(3, 203);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1142, 250);
+            this.groupBox1.Size = new System.Drawing.Size(1085, 374);
             this.groupBox1.TabIndex = 98;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Encomendas Para Entrega";
@@ -645,19 +647,10 @@ namespace Sistema.View
             this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 65);
+            this.dataGridView1.Location = new System.Drawing.Point(12, 96);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(958, 78);
             this.dataGridView1.TabIndex = 107;
-            // 
-            // txtEstatusSaida
-            // 
-            this.txtEstatusSaida.Enabled = false;
-            this.txtEstatusSaida.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEstatusSaida.Location = new System.Drawing.Point(799, 86);
-            this.txtEstatusSaida.Name = "txtEstatusSaida";
-            this.txtEstatusSaida.Size = new System.Drawing.Size(128, 23);
-            this.txtEstatusSaida.TabIndex = 106;
             // 
             // gridCurdMestreDetalhe
             // 
@@ -672,7 +665,7 @@ namespace Sistema.View
             this.gridCurdMestreDetalhe.Name = "gridCurdMestreDetalhe";
             this.gridCurdMestreDetalhe.ReadOnly = true;
             this.gridCurdMestreDetalhe.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.gridCurdMestreDetalhe.Size = new System.Drawing.Size(1133, 64);
+            this.gridCurdMestreDetalhe.Size = new System.Drawing.Size(907, 188);
             this.gridCurdMestreDetalhe.TabIndex = 105;
             this.gridCurdMestreDetalhe.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridMestreDetalhe_CellClick);
             this.gridCurdMestreDetalhe.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridCurdMestreDetalhe_CellContentClick);
@@ -681,41 +674,11 @@ namespace Sistema.View
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(957, 21);
+            this.label9.Location = new System.Drawing.Point(679, 13);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(56, 16);
             this.label9.TabIndex = 101;
             this.label9.Text = "EstVeicu";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(739, 89);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(54, 16);
-            this.label8.TabIndex = 99;
-            this.label8.Text = "Estatus:";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(850, 22);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(60, 16);
-            this.label7.TabIndex = 100;
-            this.label7.Text = "IdVeiculo";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(146, 21);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(106, 16);
-            this.label4.TabIndex = 99;
-            this.label4.Text = "Codigo da Saida:";
             // 
             // button5
             // 
@@ -728,22 +691,25 @@ namespace Sistema.View
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click_2);
             // 
-            // txtIdSaida
-            // 
-            this.txtIdSaida.Enabled = false;
-            this.txtIdSaida.Location = new System.Drawing.Point(258, 19);
-            this.txtIdSaida.Name = "txtIdSaida";
-            this.txtIdSaida.Size = new System.Drawing.Size(89, 20);
-            this.txtIdSaida.TabIndex = 92;
-            // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.button1);
+            this.groupBox2.Controls.Add(this.label18);
             this.groupBox2.Controls.Add(this.txtEstatusSaida);
+            this.groupBox2.Controls.Add(this.txtHoraRetorno);
+            this.groupBox2.Controls.Add(this.label8);
+            this.groupBox2.Controls.Add(this.txtHoraSaida);
+            this.groupBox2.Controls.Add(this.label16);
+            this.groupBox2.Controls.Add(this.btnImportarEntregador);
+            this.groupBox2.Controls.Add(this.txtIdSaida);
+            this.groupBox2.Controls.Add(this.label4);
+            this.groupBox2.Controls.Add(this.label17);
+            this.groupBox2.Controls.Add(this.btnImportarVeiculo);
+            this.groupBox2.Controls.Add(this.label15);
+            this.groupBox2.Controls.Add(this.label5);
+            this.groupBox2.Controls.Add(this.button1);
             this.groupBox2.Controls.Add(this.datePckRetorno);
             this.groupBox2.Controls.Add(this.label14);
             this.groupBox2.Controls.Add(this.label12);
-            this.groupBox2.Controls.Add(this.label8);
             this.groupBox2.Controls.Add(this.txtRegiaoEntrega);
             this.groupBox2.Controls.Add(this.txtPlacaVeiculo);
             this.groupBox2.Controls.Add(this.label6);
@@ -756,79 +722,150 @@ namespace Sistema.View
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Controls.Add(this.txtPessoa);
             this.groupBox2.Controls.Add(this.txtVeiculo);
-            this.groupBox2.Controls.Add(this.button2);
-            this.groupBox2.Controls.Add(this.button3);
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.groupBox2.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(3, 16);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(1142, 121);
+            this.groupBox2.Size = new System.Drawing.Size(1085, 187);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Formulário";
             // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(501, 129);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(40, 17);
+            this.label16.TabIndex = 111;
+            this.label16.Text = "Total:";
+            // 
+            // btnImportarEntregador
+            // 
+            this.btnImportarEntregador.Image = global::Sistema.View.Properties.Resources.lupinha;
+            this.btnImportarEntregador.Location = new System.Drawing.Point(90, 95);
+            this.btnImportarEntregador.Name = "btnImportarEntregador";
+            this.btnImportarEntregador.Size = new System.Drawing.Size(25, 25);
+            this.btnImportarEntregador.TabIndex = 110;
+            this.btnImportarEntregador.UseVisualStyleBackColor = true;
+            this.btnImportarEntregador.Click += new System.EventHandler(this.button6_Click_1);
+            // 
+            // btnImportarVeiculo
+            // 
+            this.btnImportarVeiculo.Image = global::Sistema.View.Properties.Resources.lupinha;
+            this.btnImportarVeiculo.Location = new System.Drawing.Point(90, 60);
+            this.btnImportarVeiculo.Name = "btnImportarVeiculo";
+            this.btnImportarVeiculo.Size = new System.Drawing.Size(25, 26);
+            this.btnImportarVeiculo.TabIndex = 109;
+            this.btnImportarVeiculo.UseVisualStyleBackColor = true;
+            this.btnImportarVeiculo.Click += new System.EventHandler(this.button4_Click_1);
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(5, 98);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(80, 17);
+            this.label15.TabIndex = 108;
+            this.label15.Text = "Entregador:";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(32, 68);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(53, 17);
+            this.label5.TabIndex = 107;
+            this.label5.Text = "Veículo:";
+            // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(522, 82);
+            this.button1.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Image = global::Sistema.View.Properties.Resources.calc16x16;
+            this.button1.Location = new System.Drawing.Point(545, 126);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(25, 25);
             this.button1.TabIndex = 106;
-            this.button1.Text = "Total Km:";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // datePckRetorno
             // 
-            this.datePckRetorno.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.datePckRetorno.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.datePckRetorno.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.datePckRetorno.Location = new System.Drawing.Point(613, 49);
+            this.datePckRetorno.Location = new System.Drawing.Point(119, 130);
             this.datePckRetorno.Name = "datePckRetorno";
-            this.datePckRetorno.Size = new System.Drawing.Size(114, 23);
+            this.datePckRetorno.Size = new System.Drawing.Size(154, 25);
             this.datePckRetorno.TabIndex = 105;
             // 
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(519, 54);
+            this.label14.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(55, 133);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(88, 16);
+            this.label14.Size = new System.Drawing.Size(60, 17);
             this.label14.TabIndex = 104;
-            this.label14.Text = "Data Retorno:";
+            this.label14.Text = "Retorno:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(9, 26);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(24, 17);
+            this.label4.TabIndex = 99;
+            this.label4.Text = "ID:";
+            // 
+            // txtIdSaida
+            // 
+            this.txtIdSaida.BackColor = System.Drawing.SystemColors.Control;
+            this.txtIdSaida.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtIdSaida.Enabled = false;
+            this.txtIdSaida.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtIdSaida.Location = new System.Drawing.Point(39, 28);
+            this.txtIdSaida.Name = "txtIdSaida";
+            this.txtIdSaida.Size = new System.Drawing.Size(78, 18);
+            this.txtIdSaida.TabIndex = 92;
             // 
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(9, 86);
+            this.label12.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(515, 61);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(52, 16);
+            this.label12.Size = new System.Drawing.Size(52, 17);
             this.label12.TabIndex = 98;
             this.label12.Text = "Região:";
             // 
             // txtRegiaoEntrega
             // 
-            this.txtRegiaoEntrega.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRegiaoEntrega.Location = new System.Drawing.Point(104, 83);
+            this.txtRegiaoEntrega.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtRegiaoEntrega.Location = new System.Drawing.Point(571, 55);
             this.txtRegiaoEntrega.Name = "txtRegiaoEntrega";
-            this.txtRegiaoEntrega.Size = new System.Drawing.Size(182, 23);
+            this.txtRegiaoEntrega.Size = new System.Drawing.Size(319, 25);
             this.txtRegiaoEntrega.TabIndex = 97;
             // 
             // txtPlacaVeiculo
             // 
             this.txtPlacaVeiculo.Enabled = false;
-            this.txtPlacaVeiculo.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPlacaVeiculo.Location = new System.Drawing.Point(390, 19);
+            this.txtPlacaVeiculo.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPlacaVeiculo.Location = new System.Drawing.Point(373, 58);
             this.txtPlacaVeiculo.Name = "txtPlacaVeiculo";
-            this.txtPlacaVeiculo.Size = new System.Drawing.Size(115, 23);
+            this.txtPlacaVeiculo.Size = new System.Drawing.Size(104, 25);
             this.txtPlacaVeiculo.TabIndex = 96;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(304, 24);
+            this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(325, 62);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(43, 16);
+            this.label6.Size = new System.Drawing.Size(42, 17);
             this.label6.TabIndex = 95;
             this.label6.Text = "Placa:";
             // 
@@ -836,29 +873,19 @@ namespace Sistema.View
             // 
             this.txtKmTotal.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.txtKmTotal.Enabled = false;
-            this.txtKmTotal.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtKmTotal.Location = new System.Drawing.Point(613, 83);
+            this.txtKmTotal.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtKmTotal.Location = new System.Drawing.Point(571, 126);
             this.txtKmTotal.Name = "txtKmTotal";
-            this.txtKmTotal.Size = new System.Drawing.Size(114, 23);
+            this.txtKmTotal.Size = new System.Drawing.Size(146, 25);
             this.txtKmTotal.TabIndex = 94;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(1029, 65);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(64, 16);
-            this.label5.TabIndex = 93;
-            this.label5.Text = "Total Km:";
             // 
             // txtKmRetorno
             // 
             this.txtKmRetorno.BackColor = System.Drawing.Color.LightPink;
-            this.txtKmRetorno.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtKmRetorno.Location = new System.Drawing.Point(390, 83);
+            this.txtKmRetorno.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtKmRetorno.Location = new System.Drawing.Point(373, 129);
             this.txtKmRetorno.Name = "txtKmRetorno";
-            this.txtKmRetorno.Size = new System.Drawing.Size(115, 23);
+            this.txtKmRetorno.Size = new System.Drawing.Size(104, 25);
             this.txtKmRetorno.TabIndex = 92;
             this.txtKmRetorno.TextChanged += new System.EventHandler(this.txtKmRetorno_TextChanged);
             this.txtKmRetorno.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtKmRetorno_KeyPress);
@@ -866,10 +893,10 @@ namespace Sistema.View
             // 
             // txtKmSaida
             // 
-            this.txtKmSaida.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtKmSaida.Location = new System.Drawing.Point(612, 19);
+            this.txtKmSaida.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtKmSaida.Location = new System.Drawing.Point(571, 92);
             this.txtKmSaida.Name = "txtKmSaida";
-            this.txtKmSaida.Size = new System.Drawing.Size(115, 23);
+            this.txtKmSaida.Size = new System.Drawing.Size(146, 25);
             this.txtKmSaida.TabIndex = 90;
             this.txtKmSaida.TextChanged += new System.EventHandler(this.txtKmSaida_TextChanged);
             this.txtKmSaida.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtKmSaida_KeyPress);
@@ -877,87 +904,121 @@ namespace Sistema.View
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(304, 89);
+            this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(283, 132);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(80, 16);
+            this.label3.Size = new System.Drawing.Size(84, 17);
             this.label3.TabIndex = 91;
             this.label3.Text = "Km Retorno:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(517, 22);
+            this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(500, 95);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(67, 16);
+            this.label2.Size = new System.Drawing.Size(67, 17);
             this.label2.TabIndex = 89;
             this.label2.Text = "Km Saida:";
             // 
             // datePckSaida
             // 
-            this.datePckSaida.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.datePckSaida.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.datePckSaida.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.datePckSaida.Location = new System.Drawing.Point(390, 49);
+            this.datePckSaida.Location = new System.Drawing.Point(373, 92);
             this.datePckSaida.Name = "datePckSaida";
-            this.datePckSaida.Size = new System.Drawing.Size(115, 23);
+            this.datePckSaida.Size = new System.Drawing.Size(104, 25);
             this.datePckSaida.TabIndex = 88;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(304, 56);
+            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(292, 99);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(75, 16);
+            this.label1.Size = new System.Drawing.Size(75, 17);
             this.label1.TabIndex = 87;
             this.label1.Text = "Data Saida:";
             // 
             // txtPessoa
             // 
             this.txtPessoa.Enabled = false;
-            this.txtPessoa.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPessoa.Location = new System.Drawing.Point(104, 51);
+            this.txtPessoa.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPessoa.Location = new System.Drawing.Point(121, 95);
             this.txtPessoa.Name = "txtPessoa";
-            this.txtPessoa.Size = new System.Drawing.Size(182, 23);
+            this.txtPessoa.Size = new System.Drawing.Size(152, 25);
             this.txtPessoa.TabIndex = 86;
             // 
             // txtVeiculo
             // 
             this.txtVeiculo.Enabled = false;
-            this.txtVeiculo.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtVeiculo.Location = new System.Drawing.Point(104, 19);
+            this.txtVeiculo.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtVeiculo.Location = new System.Drawing.Point(121, 60);
             this.txtVeiculo.Name = "txtVeiculo";
-            this.txtVeiculo.Size = new System.Drawing.Size(182, 23);
+            this.txtVeiculo.Size = new System.Drawing.Size(152, 25);
             this.txtVeiculo.TabIndex = 85;
             // 
-            // button2
+            // txtHoraSaida
             // 
-            this.button2.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(9, 51);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(89, 23);
-            this.button2.TabIndex = 84;
-            this.button2.Text = "Entregador:";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click_3);
+            this.txtHoraSaida.Enabled = false;
+            this.txtHoraSaida.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtHoraSaida.Location = new System.Drawing.Point(815, 90);
+            this.txtHoraSaida.Name = "txtHoraSaida";
+            this.txtHoraSaida.Size = new System.Drawing.Size(75, 25);
+            this.txtHoraSaida.TabIndex = 113;
             // 
-            // button3
+            // label17
             // 
-            this.button3.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(9, 19);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(89, 23);
-            this.button3.TabIndex = 83;
-            this.button3.Text = "Veiculo:";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click_2);
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.Location = new System.Drawing.Point(723, 95);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(77, 17);
+            this.label17.TabIndex = 112;
+            this.label17.Text = "Hora Saida:";
+            // 
+            // txtHoraRetorno
+            // 
+            this.txtHoraRetorno.Enabled = false;
+            this.txtHoraRetorno.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtHoraRetorno.Location = new System.Drawing.Point(815, 123);
+            this.txtHoraRetorno.Name = "txtHoraRetorno";
+            this.txtHoraRetorno.Size = new System.Drawing.Size(75, 25);
+            this.txtHoraRetorno.TabIndex = 115;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(723, 126);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(86, 17);
+            this.label8.TabIndex = 114;
+            this.label8.Text = "Fechamento:";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.Location = new System.Drawing.Point(896, 57);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(55, 17);
+            this.label18.TabIndex = 117;
+            this.label18.Text = "Estatus:";
+            // 
+            // txtEstatusSaida
+            // 
+            this.txtEstatusSaida.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEstatusSaida.Location = new System.Drawing.Point(956, 53);
+            this.txtEstatusSaida.Name = "txtEstatusSaida";
+            this.txtEstatusSaida.Size = new System.Drawing.Size(120, 25);
+            this.txtEstatusSaida.TabIndex = 116;
             // 
             // SaidaEncomendasView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1148, 724);
+            this.ClientSize = new System.Drawing.Size(1091, 724);
             this.Controls.Add(this.groupBoxFormulario);
             this.Controls.Add(this.gridCrudSaidas);
             this.Controls.Add(this.toolStrip2);
@@ -978,7 +1039,6 @@ namespace Sistema.View
             ((System.ComponentModel.ISupportInitialize)(this.gridCrudSaidas)).EndInit();
             this.groupBoxFormulario.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridCurdMestreDetalhe)).EndInit();
             this.groupBox2.ResumeLayout(false);
@@ -1025,13 +1085,11 @@ namespace Sistema.View
         private System.Windows.Forms.DataGridView gridCrudSaidas;
         private System.Windows.Forms.GroupBox groupBoxFormulario;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox txtRegiaoEntrega;
         private System.Windows.Forms.TextBox txtPlacaVeiculo;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtKmTotal;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtKmRetorno;
         private System.Windows.Forms.TextBox txtKmSaida;
         private System.Windows.Forms.Label label3;
@@ -1040,8 +1098,6 @@ namespace Sistema.View
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtPessoa;
         private System.Windows.Forms.TextBox txtVeiculo;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
         private System.Windows.Forms.TextBox txtEstatuVeiculo;
         private System.Windows.Forms.TextBox txtIdUsuario;
         private System.Windows.Forms.TextBox txtIdPapel;
@@ -1057,16 +1113,25 @@ namespace Sistema.View
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ToolStripButton toolStripButtonConcluirSaida;
+        private System.Windows.Forms.ToolStripButton btConfirmarRetorno;
         private System.Windows.Forms.DateTimePicker datePckRetorno;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.DataGridView gridCurdMestreDetalhe;
-        private System.Windows.Forms.TextBox txtEstatusSaida;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ToolStripLabel toolStripLabel8;
         private System.Windows.Forms.ToolStripComboBox toolStripComboBox1;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button btnImportarEntregador;
+        private System.Windows.Forms.Button btnImportarVeiculo;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.TextBox txtHoraSaida;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.TextBox txtHoraRetorno;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.TextBox txtEstatusSaida;
     }
 }

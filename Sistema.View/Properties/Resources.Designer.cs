@@ -193,6 +193,16 @@ namespace Sistema.View.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap calc16x16 {
+            get {
+                object obj = ResourceManager.GetObject("calc16x16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap calc48 {
             get {
                 object obj = ResourceManager.GetObject("calc48", resourceCulture);
