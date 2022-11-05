@@ -65,7 +65,6 @@ namespace Sistema.Controller{
 
         }
 
-
         public DataTable ListarDataGrid(
             string parametro,
             string indexar,

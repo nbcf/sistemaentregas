@@ -65,8 +65,7 @@ namespace Sistema.Controller
         }
 
 
-        public void Excluir(int idencomenda)
-        {
+        public void Excluir(int idencomenda){
             dao.Excluir(idencomenda);
         }
 

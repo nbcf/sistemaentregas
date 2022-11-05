@@ -14,7 +14,7 @@ using System.Windows.Forms;
 namespace Sistema.DAO
 {
    public class VeiculosDAO
-    {               //RegistrosEncontradosPesquisaVeiculosDAO
+    {  
         public int registrosEncontradosPesquisaVeiculosDAO = 0;
         public string acaoCrudVeiculosDAO = "";
         ClasseConexao classeConecta = new ClasseConexao();

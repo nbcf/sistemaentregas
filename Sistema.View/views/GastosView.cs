@@ -340,7 +340,7 @@ namespace Sistema.View.views
         {
             resultado = 0;
             int quantidadeReg = 0;
-            quantidadeReg = Convert.ToInt32(controllerGastos.retornoQuantRegistro());
+            quantidadeReg = Convert.ToInt32(controllerGastos.ListarGridBDGastosController());
             int jcbPaginas = Convert.ToInt32(cbButtnQuantPage1.SelectedItem);
 
             resultado = quantidadeReg / jcbPaginas;
@@ -395,19 +395,19 @@ namespace Sistema.View.views
                 {
                     dataGridGastos.DataSource = controllerGastos.PesquisarComecaCom("nomegasto", "@nomegasto", txtBoxPesquisar.Text);
                     DataGridModel();
-                    toolStripLabel2.Text = Convert.ToString(controllerGastos.retornoQuantPesquisa());
+                    toolStripLabel2.Text = Convert.ToString(controllerGastos.ListarPesquisadosGastosController());
                 }
                 else if (estadoPesquisa.Equals("Contem") && pesquisarEmColuna.Equals("Entregador"))
                 {
                     dataGridGastos.DataSource = controllerGastos.PesquisarContemCom("nomegasto", "@nomegasto", txtBoxPesquisar.Text);
                     DataGridModel();
-                    toolStripLabel2.Text = Convert.ToString(controllerGastos.retornoQuantPesquisa());
+                    toolStripLabel2.Text = Convert.ToString(controllerGastos.ListarPesquisadosGastosController());
                 }
                 else if (estadoPesquisa.Equals("TerminaCom") && pesquisarEmColuna.Equals("Entregador"))
                 {
                     dataGridGastos.DataSource = controllerGastos.PesquisarTerminaCom("nomegasto", "@nomegasto", txtBoxPesquisar.Text);
                     DataGridModel();
-                    toolStripLabel2.Text = Convert.ToString(controllerGastos.retornoQuantPesquisa());
+                    toolStripLabel2.Text = Convert.ToString(controllerGastos.ListarPesquisadosGastosController());
                 }
 
 
@@ -415,19 +415,19 @@ namespace Sistema.View.views
                 {
                     dataGridGastos.DataSource = controllerGastos.PesquisarComecaCom("nomegasto", "@nomegasto", txtBoxPesquisar.Text);
                     DataGridModel();
-                    toolStripLabel2.Text = Convert.ToString(controllerGastos.retornoQuantPesquisa());
+                    toolStripLabel2.Text = Convert.ToString(controllerGastos.ListarPesquisadosGastosController());
                 }
                 else if (estadoPesquisa.Equals("Contem") && pesquisarEmColuna.Equals("Veiculo"))
                 {
                     dataGridGastos.DataSource = controllerGastos.PesquisarContemCom("nomegasto", "@nomegasto", txtBoxPesquisar.Text);
                     DataGridModel();
-                    toolStripLabel2.Text = Convert.ToString(controllerGastos.retornoQuantPesquisa());
+                    toolStripLabel2.Text = Convert.ToString(controllerGastos.ListarPesquisadosGastosController());
                 }
                 else if (estadoPesquisa.Equals("TerminaCom") && pesquisarEmColuna.Equals("Veiculo"))
                 {
                     dataGridGastos.DataSource = controllerGastos.PesquisarTerminaCom("nomegasto", "@nomegasto", txtBoxPesquisar.Text);
                     DataGridModel();
-                    toolStripLabel2.Text = Convert.ToString(controllerGastos.retornoQuantPesquisa());
+                    toolStripLabel2.Text = Convert.ToString(controllerGastos.ListarPesquisadosGastosController());
                 }
 
 
@@ -436,19 +436,19 @@ namespace Sistema.View.views
                 {
                     dataGridGastos.DataSource = controllerGastos.PesquisarComecaCom("nomegasto", "@nomegasto", txtBoxPesquisar.Text);
                     DataGridModel();
-                    toolStripLabel2.Text = Convert.ToString(controllerGastos.retornoQuantPesquisa());
+                    toolStripLabel2.Text = Convert.ToString(controllerGastos.ListarPesquisadosGastosController());
                 }
                 else if (estadoPesquisa.Equals("Contem") && pesquisarEmColuna.Equals("Saida"))
                 {
                     dataGridGastos.DataSource = controllerGastos.PesquisarContemCom("nomegasto", "@nomegasto", txtBoxPesquisar.Text);
                     DataGridModel();
-                    toolStripLabel2.Text = Convert.ToString(controllerGastos.retornoQuantPesquisa());
+                    toolStripLabel2.Text = Convert.ToString(controllerGastos.ListarPesquisadosGastosController());
                 }
                 else if (estadoPesquisa.Equals("TerminaCom") && pesquisarEmColuna.Equals("Saida"))
                 {
                     dataGridGastos.DataSource = controllerGastos.PesquisarTerminaCom("nomegasto", "@nomegasto", txtBoxPesquisar.Text);
                     DataGridModel();
-                    toolStripLabel2.Text = Convert.ToString(controllerGastos.retornoQuantPesquisa());
+                    toolStripLabel2.Text = Convert.ToString(controllerGastos.ListarPesquisadosGastosController());
                 }
 
 
@@ -459,35 +459,32 @@ namespace Sistema.View.views
 
         public void EnviaModelo(string pesquisa, int offset, int limitt)
         {
-            //   MessageBox.Show("EnviaModelo");
-
-
             if (pesquisa.Equals("CarregaPadraoIDTodosUltimos") && parametroCodigoAlfabeto.Equals("Codigo") && parametroASCDESC.Equals("ultimos"))
             {
                 dataGridGastos.DataSource = controllerGastos.ListarDataGrid("idtipound", "desc", offset, limitt);
                 DataGridModel();
-                labelTextTotalRegFould.Text = Convert.ToString(controllerGastos.retornoQuantRegistro());
+                labelTextTotalRegFould.Text = Convert.ToString(controllerGastos.ListarGridBDGastosController());
                 carregarInformacoes();
             }
             else if (pesquisa.Equals("CarregaPadraoIDTodosPrimeiros") && parametroCodigoAlfabeto.Equals("Codigo") && parametroASCDESC.Equals("primeiros"))
             {
                 dataGridGastos.DataSource = controllerGastos.ListarDataGrid("idtipound", "asc", offset, limitt);
                 DataGridModel();
-                labelTextTotalRegFould.Text = Convert.ToString(controllerGastos.retornoQuantRegistro());
+                labelTextTotalRegFould.Text = Convert.ToString(controllerGastos.ListarGridBDGastosController());
                 carregarInformacoes();
             }
             else if (pesquisa.Equals("CarregaPadraoNomeTodosUltimos") && parametroCodigoAlfabeto.Equals("Alfabeto") && parametroASCDESC.Equals("ultimos"))
             {
                 dataGridGastos.DataSource = controllerGastos.ListarDataGrid("nomegasto", "desc", offset, limitt);
                 DataGridModel();
-                labelTextTotalRegFould.Text = Convert.ToString(controllerGastos.retornoQuantRegistro());
+                labelTextTotalRegFould.Text = Convert.ToString(controllerGastos.ListarGridBDGastosController());
                 carregarInformacoes();
             }
             else if (pesquisa.Equals("CarregaPadraoNomeTodosPrimeiros") && parametroCodigoAlfabeto.Equals("Alfabeto") && parametroASCDESC.Equals("primeiros"))
             {
                 dataGridGastos.DataSource = controllerGastos.ListarDataGrid("nomegasto", "asc", offset, limitt);
                 DataGridModel();
-                labelTextTotalRegFould.Text = Convert.ToString(controllerGastos.retornoQuantRegistro());
+                labelTextTotalRegFould.Text = Convert.ToString(controllerGastos.ListarGridBDGastosController());
                 carregarInformacoes();
             }
 
@@ -545,9 +542,6 @@ namespace Sistema.View.views
                 //  tabControlAssets.TabPages.Remove(tabPageFormulario);
                 groupBoxFormulario.Enabled = false;
                 groupBoxFormulario.Visible = false;
-                //  tabControlAssets.TabPages.Remove(tabPageOptListagem);
-                //   tabControlAssets.TabPages.Insert(0, tabPageOptListagem);
-
                 bttnNew.Enabled = false;
                 bttnRefresh.Enabled = false;
                 bttnSearch.Enabled = false;
@@ -706,20 +700,10 @@ namespace Sistema.View.views
         }
         private void behaviorDel()
         {
-            //    bttnDel.Enabled = true;
-            //    bttnEdit.Enabled = false;
-            //    bttnSearch.Enabled = true;
-            //    bttnRefresh.Enabled = true;
-            //    bttnSave.Enabled = false;
-            //    bttnNew.Enabled = true;
-            //    controllerGastos.Excluir(Convert.ToInt32(dataGridGastos.CurrentRow.Cells[0].Value));
-            //    puxarparametro(0, Convert.ToInt32(cbButtnQuantPage1.SelectedItem), "Sim");
-
-
             if (operationType == "updateData" && typeEdition == "search")
             {
                 controllerGastos.Excluir(Convert.ToInt32(dataGridGastos.CurrentRow.Cells[0].Value));
-                //controllerTipoUnds.Excluir(Convert.ToInt32(dataGridGastos.CurrentRow.Cells[0].Value));
+                
                 puxarparametroPesquisa();
 
                 bttnDel.Enabled = true;
@@ -734,8 +718,6 @@ namespace Sistema.View.views
                 MessageBox.Show(tamanho_lista.ToString());
                 if (tamanho_lista == 0)
                 {
-
-
                     bttnDel.Enabled = false;
                     bttnEdit.Enabled = false;
                     bttnRefresh.Enabled = false;
@@ -743,40 +725,39 @@ namespace Sistema.View.views
                 }
 
             }
-            else if (operationType == "" || operationType == "newInsertion" || operationType == "updateData" || operationType == "search" && typeEdition == "insert")
-            {
+            else if (operationType == "" ||
+                operationType == "newInsertion" ||
+                operationType == "updateData" ||
+                operationType == "search" &&
+                typeEdition == "insert"){
                 bttnDel.Enabled = true;
                 bttnEdit.Enabled = false;
                 bttnSearch.Enabled = true;
                 bttnRefresh.Enabled = true;
                 bttnSave.Enabled = false;
                 bttnNew.Enabled = true;
-
                 controllerGastos.Excluir(Convert.ToInt32(dataGridGastos.CurrentRow.Cells[0].Value));
-                //controllerTipoUnds.Excluir(Convert.ToInt32(dataGridGastos.CurrentRow.Cells[0].Value));
                 puxarparametro(0, Convert.ToInt32(cbButtnQuantPage1.SelectedItem), "Sim");
 
 
-            }
-            else if (operationType == "" || operationType == "newInsertion" || operationType == "updateData" || operationType == "search" && typeEdition == "search")
-            {
-
+            } else if (operationType == "" ||
+                operationType == "newInsertion" ||
+                operationType == "updateData" ||
+                operationType == "search" &&
+                typeEdition == "search"){
                 bttnDel.Enabled = true;
                 bttnEdit.Enabled = false;
                 bttnSearch.Enabled = true;
                 bttnRefresh.Enabled = true;
                 bttnSave.Enabled = false;
                 bttnNew.Enabled = true;
-
                 controllerGastos.Excluir(Convert.ToInt32(dataGridGastos.CurrentRow.Cells[0].Value));
-                //controllerTipoUnds.Excluir(Convert.ToInt32(dataGridGastos.CurrentRow.Cells[0].Value));
                 puxarparametro(0, Convert.ToInt32(cbButtnQuantPage1.SelectedItem), "Sim");
 
             }
         }
 
-        private void behaviorSave()
-        {
+        private void behaviorSave(){
             string retiraEspacos = txtBoxNumeroNota.Text;
             string rem = retiraEspacos.Trim();
             if (txtBoxIdGastos.Text.Trim().Equals("") || txtBoxIdGastos.Text.Trim() == null)
@@ -785,7 +766,12 @@ namespace Sistema.View.views
                 {
                     if (rem.Length <= 3)
                     {
-                        var resultado = MessageBox.Show("A Inserção não alcançou o número mínimo de 3 caracteres.\nPara tentar novamente clique no botão 'Sim'. E no botão 'Não' para cancelar e sair do modo de Inserção.", "Aviso do Sistema", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                        var resultado = MessageBox.Show("A Inserção não alcançou o número mínimo de 3 caracteres." +
+                            "\n" +
+                            "Para tentar novamente clique no botão 'Sim'. E no botão 'Não' para cancelar e sair do modo de Inserção.",
+                            "Aviso do Sistema",
+                            MessageBoxButtons.YesNo,
+                            MessageBoxIcon.Question);
                         if (resultado == DialogResult.Yes)
                         {
                             txtBoxNumeroNota.Text = "";
@@ -812,22 +798,21 @@ namespace Sistema.View.views
                             txtBoxNumeroNota.Text, 
                             "" );
 
-                        if (controllerGastos.retornoPersistencia.Equals("NS"))
+                        if ("NS".Equals(controllerGastos.AcaoCrudGastosController()))
                         {
                             txtBoxNumeroNota.Focus();
                             txtBoxNumeroNota.Text = "";
 
                         }
-                        else if (controllerGastos.retornoPersistencia.Equals("S!"))
+                        else if ("S!".Equals(controllerGastos.AcaoCrudGastosController()))
                         {
                             operationType = "newInsertion";
                             typeEdition = "insert";
                             acoesBehaviorSave();
 
                         }
-                        else if (controllerGastos.retornoPersistencia.Equals("S!!"))
+                        else if ("S!!".Equals(controllerGastos.AcaoCrudGastosController()))
                         {
-                            //bttnNew
                             acoesBehaviorSave();
 
                         }
@@ -857,7 +842,6 @@ namespace Sistema.View.views
                     }
                     else if (rem.Length >= 3)
                     {
-
                         controllerGastos.Editar( 
                                                    Convert.ToInt32(txtCodSaida.Text),
                                                    Convert.ToInt32(txtIdFornecedor.Text),
@@ -871,23 +855,16 @@ namespace Sistema.View.views
                                                    txtBoxNumeroNota.Text,
                                                    "", 
                                                    Convert.ToInt32(txtBoxIdGastos.Text));
-                        if (controllerGastos.retornoPersistencia.Equals("AT"))
+                        if ("AT".Equals(controllerGastos.AcaoCrudGastosController()))
                         {
-
                             operationType = "newInsertion";
                             typeEdition = "insert";
-
                             behaviorRefresh();
-
-
                         }
                     }
-                }
-                else if (operationType.Equals("updateData") && typeEdition.Equals("search"))
-                {
+                }else if (operationType.Equals("updateData") && typeEdition.Equals("search")){
 
-                    if (rem.Length <= 3)
-                    {
+                    if (rem.Length <= 3){
                         var resultado = MessageBox.Show("A Edição não alcançou o número mínimo de 3 caracteres.\nPara tentar novamente clique no botão 'Sim'. E no botão 'Não' para cancelar e sair do modo de Inserção.", "Aviso do Sistema", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                         if (resultado == DialogResult.Yes)
                         {
@@ -917,7 +894,7 @@ namespace Sistema.View.views
                                                   txtBoxNumeroNota.Text,
                                                   "",
                                                   Convert.ToInt32(txtBoxIdGastos.Text));
-                        if (controllerGastos.retornoPersistencia.Equals("AT"))
+                        if ("AT".Equals(controllerGastos.AcaoCrudGastosController()))
                         {
                             behaviorRefresh();
                             puxarparametroPesquisa();
@@ -929,10 +906,7 @@ namespace Sistema.View.views
         }
 
 
-
-
-        private void acoesBehaviorSave()
-        {
+        private void acoesBehaviorSave(){
 
             bttnDel.Enabled = false;
             bttnEdit.Enabled = false;
@@ -954,8 +928,7 @@ namespace Sistema.View.views
             puxarparametro(0, Convert.ToInt32(cbButtnQuantPage1.SelectedItem), "Sim");
         }
 
-        private void behaviorEdit()
-        {
+        private void behaviorEdit(){
 
             typeEdition = "insert";
             operationType = "updateData";
@@ -978,8 +951,6 @@ namespace Sistema.View.views
 
         private void behaviorEditPesquisa()
         {
-
-
             typeEdition = "search";
             bttnDel.Enabled = false;
             bttnEdit.Enabled = false;
@@ -998,20 +969,9 @@ namespace Sistema.View.views
             setaGridEmCampos();
         }
 
-        private void behaviorSearch()
-        {
-            bttnDel.Enabled = false;
-            bttnEdit.Enabled = false;
-            bttnSearch.Enabled = true;
-            bttnRefresh.Enabled = false;
-            bttnSave.Enabled = false;
-            bttnNew.Enabled = false;
-            tabControlAssets.Visible = true;
-        }
 
         private void behaviorClickGrid()
         {
-
             bttnNew.Enabled = false;
             bttnDel.Enabled = true;
             bttnEdit.Enabled = true;
@@ -1023,7 +983,7 @@ namespace Sistema.View.views
             radioBttnTermina.Checked = false;
             enableFieldsFormulario();
             clearFieldsFormulario();
-            setaGridEmCampos();
+           
 
         }
 
@@ -1058,9 +1018,6 @@ namespace Sistema.View.views
             clearFieldsFormulario();
             setaGridEmCampos();
         }
-
-
-
 
         public void clearFieldsFormulario()
         {
@@ -1123,9 +1080,6 @@ namespace Sistema.View.views
             cbButtonPesquisarEm.Enabled = true;
             txtBoxPesquisar.Enabled = true;
         }
-
-
-
 
         private void bttnSave_Click(object sender, EventArgs e)
         {
@@ -1296,12 +1250,6 @@ namespace Sistema.View.views
         }
 
 
-
-        private void formCrudPessoas_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void bttnSave_Click_1(object sender, EventArgs e)
         {
 
@@ -1320,19 +1268,15 @@ namespace Sistema.View.views
 
 
 
-        private void bttnNew_Click_1(object sender, EventArgs e)
-        {
-
+        private void bttnNew_Click_1(object sender, EventArgs e){
             behaviorNewInsert();
         }
 
-        private void bttnRefresh_Click_1(object sender, EventArgs e)
-        {
+        private void bttnRefresh_Click_1(object sender, EventArgs e){
             behaviorRefresh();
         }
 
-        private void radioBttnContem_CheckedChanged(object sender, EventArgs e)
-        {
+        private void radioBttnContem_CheckedChanged(object sender, EventArgs e) {
             puxarparametroPesquisa();
         }
 
@@ -1467,8 +1411,6 @@ namespace Sistema.View.views
             dataGridGastos.Columns[33].HeaderText = "FORNECEDOR";
             dataGridGastos.Columns[33].Visible = true;
      
-
-
         }
 
         private void cbButtonPesquisarEm_SelectedValueChanged(object sender, EventArgs e)
@@ -1560,16 +1502,7 @@ namespace Sistema.View.views
             puxarparametroPesquisa();
         }
 
-        private void GastosView_Load(object sender, EventArgs e)
-        {
-            /*
-          
-        public string strIdFornecedores;
-        public string strIdTipoGastos;
-        public string strIdTipoUnit;*/
-
-
-        }
+  
 
         private void cbFornecedor_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -1659,6 +1592,11 @@ namespace Sistema.View.views
             txtPlaca.Text = imp.PlacaVO;
             txtCodSaida.Text = Convert.ToString(imp.CodSaidaVO);
            // dtDataGasto.Value = imp.DataSaidaVO;
+        }
+
+        private void bttnDel_Click_1(object sender, EventArgs e)
+        {
+
         }
     }
 

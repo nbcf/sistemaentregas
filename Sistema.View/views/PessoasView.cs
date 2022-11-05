@@ -343,7 +343,7 @@ namespace Sistema.View
         {
             resultado = 0;
             int quantidadeReg = 0;
-            quantidadeReg = Convert.ToInt32(controllerPessoa.retornoQuantRegistro());
+            quantidadeReg = Convert.ToInt32(controllerPessoa.ListarQtBDPessoaController());
             int jcbPaginas = Convert.ToInt32(cbButtnQuantPage1.SelectedItem);
 
             resultado = quantidadeReg / jcbPaginas;
@@ -399,19 +399,19 @@ namespace Sistema.View
                 {
                     gridCrudPessoa.DataSource = controllerPessoa.PesquisarComecaCom("nomepessoa", "@nomepessoa", txtBoxPesquisar.Text);
                     DataGridModel();
-                    toolStripLabel2.Text = Convert.ToString(controllerPessoa.retornoQuantPesquisa());
+                    toolStripLabel2.Text = Convert.ToString(controllerPessoa.ListarPesquisados());
                 }
                 else if (estadoPesquisa.Equals("Contem") && pesquisarEmColuna.Equals("Nome"))
                 {
                     gridCrudPessoa.DataSource = controllerPessoa.PesquisarContemCom("nomepessoa", "@nomepessoa", txtBoxPesquisar.Text);
                     DataGridModel();
-                    toolStripLabel2.Text = Convert.ToString(controllerPessoa.retornoQuantPesquisa());
+                    toolStripLabel2.Text = Convert.ToString(controllerPessoa.ListarPesquisados());
                 }
                 else if (estadoPesquisa.Equals("TerminaCom") && pesquisarEmColuna.Equals("Nome"))
                 {
                     gridCrudPessoa.DataSource = controllerPessoa.PesquisarTerminaCom("nomepessoa", "@nomepessoa", txtBoxPesquisar.Text);
                     DataGridModel();
-                    toolStripLabel2.Text = Convert.ToString(controllerPessoa.retornoQuantPesquisa());
+                    toolStripLabel2.Text = Convert.ToString(controllerPessoa.ListarPesquisados());
                 }
             }
         }
@@ -425,28 +425,28 @@ namespace Sistema.View
             {
                 gridCrudPessoa.DataSource = controllerPessoa.ConfiListagemDataGrid("idpessoa", "desc", offset, limitt);
                 DataGridModel();
-                labelTextTotalRegFould.Text = Convert.ToString(controllerPessoa.retornoQuantRegistro());
+                labelTextTotalRegFould.Text = Convert.ToString(controllerPessoa.ListarQtBDPessoaController());
                 carregarInformacoes();
             }
             else if (pesquisa.Equals("CarregaPadraoIDTodosPrimeiros") && parametroCodigoAlfabeto.Equals("Codigo") && parametroASCDESC.Equals("primeiros"))
             {
                 gridCrudPessoa.DataSource = controllerPessoa.ConfiListagemDataGrid("idpessoa", "asc", offset, limitt);
                 DataGridModel();
-                labelTextTotalRegFould.Text = Convert.ToString(controllerPessoa.retornoQuantRegistro());
+                labelTextTotalRegFould.Text = Convert.ToString(controllerPessoa.ListarQtBDPessoaController());
                 carregarInformacoes();
             }
             else if (pesquisa.Equals("CarregaPadraoNomeTodosUltimos") && parametroCodigoAlfabeto.Equals("Alfabeto") && parametroASCDESC.Equals("ultimos"))
             {
                 gridCrudPessoa.DataSource = controllerPessoa.ConfiListagemDataGrid("nomepessoa", "desc", offset, limitt);
                 DataGridModel();
-                labelTextTotalRegFould.Text = Convert.ToString(controllerPessoa.retornoQuantRegistro());
+                labelTextTotalRegFould.Text = Convert.ToString(controllerPessoa.ListarQtBDPessoaController());
                 carregarInformacoes();
             }
             else if (pesquisa.Equals("CarregaPadraoNomeTodosPrimeiros") && parametroCodigoAlfabeto.Equals("Alfabeto") && parametroASCDESC.Equals("primeiros"))
             {
                 gridCrudPessoa.DataSource = controllerPessoa.ConfiListagemDataGrid("nomepessoa", "asc", offset, limitt);
                 DataGridModel();
-                labelTextTotalRegFould.Text = Convert.ToString(controllerPessoa.retornoQuantRegistro());
+                labelTextTotalRegFould.Text = Convert.ToString(controllerPessoa.ListarQtBDPessoaController());
                 carregarInformacoes();
             }
 
@@ -466,9 +466,6 @@ namespace Sistema.View
             bttnRefresh.Enabled = true;
             bttnSave.Enabled = false;
             bttnNew.Enabled = true;
-        //    bttnPrint.Enabled = false;
-         //   bttnImport.Enabled = false;
-        //    bttnExcel.Enabled = false;
             radioBttnComeca.Checked = false;
             radioBttnContem.Checked = false;
             radioBttnTermina.Checked = false;
@@ -501,11 +498,8 @@ namespace Sistema.View
             {
                 tabControlAssets.Visible = true;
                 tabControlAssets.TabPages.Remove(tabPagePesquisar);
-                //  tabControlAssets.TabPages.Remove(tabPageFormulario);
                 groupBoxFormulario.Enabled = false;
                 groupBoxFormulario.Visible = false;
-                //  tabControlAssets.TabPages.Remove(tabPageOptListagem);
-                //   tabControlAssets.TabPages.Insert(0, tabPageOptListagem);
 
                 bttnNew.Enabled = false;
                 bttnRefresh.Enabled = false;
@@ -516,11 +510,8 @@ namespace Sistema.View
             {
                 tabControlAssets.Visible = false;
                 tabControlAssets.TabPages.Remove(tabPagePesquisar);
-                //tabControlAssets.TabPages.Remove(tabPageFormulario);
                 groupBoxFormulario.Enabled = false;
                 groupBoxFormulario.Visible = false;
-                //     tabControlAssets.TabPages.Remove(tabPageOptListagem);
-
                 bttnNew.Enabled = true;
                 bttnRefresh.Enabled = true;
                 bttnSearch.Enabled = true;
@@ -730,20 +721,20 @@ namespace Sistema.View
                         controllerPessoa.Salvar(Convert.ToInt32(txtBoxIdEndereco.Text),
                             txtBoxName.Text, 
                             txtComplemento.Text);
-                        if (controllerPessoa.retornoPersistencia.Equals("NS"))
+                        if ("NS".Equals(controllerPessoa.AcaoCrudPessoaDAO()))
                         {
                             txtBoxName.Focus();
                             txtBoxName.Text = "";
                          
                         }
-                        else if (controllerPessoa.retornoPersistencia.Equals("S!"))
+                        else if ("S!".Equals(controllerPessoa.AcaoCrudPessoaDAO()))
                         {
                             operationType = "newInsertion"; 
                             typeEdition = "insert";
                             acoesBehaviorSave();
                         
                         }
-                        else if (controllerPessoa.retornoPersistencia.Equals("S!!"))
+                        else if ("S!!".Equals(controllerPessoa.AcaoCrudPessoaDAO()))
                         {
                             //bttnNew
                             acoesBehaviorSave();
@@ -777,15 +768,10 @@ namespace Sistema.View
                     {
                         controllerPessoa.Editar(Convert.ToInt32(txtBoxId.Text.Trim()), Convert.ToInt32(txtBoxIdEndereco.Text.Trim()),txtBoxName.Text, txtComplemento.Text);
 
-                        if (controllerPessoa.retornoPersistencia.Equals("AT"))
-                        {
-
+                        if ("AT".Equals(controllerPessoa.AcaoCrudPessoaDAO())){
                             operationType = "newInsertion";
                             typeEdition = "insert";
-                           
                             behaviorRefresh();
-                           
-                          
                         }
                     }
                 }  
@@ -811,7 +797,7 @@ namespace Sistema.View
                     {
                         controllerPessoa.Editar(Convert.ToInt32(txtBoxId.Text.Trim()), Convert.ToInt32(txtBoxIdEndereco.Text), txtBoxName.Text, txtComplemento.Text);
                      
-                        if (controllerPessoa.retornoPersistencia.Equals("AT"))
+                        if ("AT".Equals(controllerPessoa.AcaoCrudPessoaDAO()))
                         {
                             behaviorRefresh();
                             puxarparametroPesquisa();
@@ -1136,13 +1122,6 @@ namespace Sistema.View
         {
             puxarparametro(0,Convert.ToInt32(cbButtnQuantPage1.SelectedItem) ,"Sim");
            
-        }
-
-      
-
-        private void formCrudPessoas_Load(object sender, EventArgs e)
-        {
-          
         }
 
         private void bttnSave_Click_1(object sender, EventArgs e)

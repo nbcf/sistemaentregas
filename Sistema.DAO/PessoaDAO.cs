@@ -15,10 +15,9 @@ namespace Sistema.DAO
     public class PessoaDAO
     {
         PessoasModel pessoaModel = new PessoasModel();
-        public int quantidadeBD = 0;
-        //public int quantidadePaginada = 0;
-        public int resQuantSearch;
-        public string registroInserido = "";
+ 
+        public int listarQtPesquisa = 0;
+        public string acaoCrudPessoaDAO = "";
         Sistema.Conexao.ClasseConexao classeConecta = new Sistema.Conexao.ClasseConexao();
         string sql;
         MySqlCommand cmd;
@@ -56,6 +55,7 @@ namespace Sistema.DAO
                 dap.SelectCommand = cmdVerificar;
                 DataTable dtp = new DataTable();
                 dap.Fill(dtp);
+                classeConecta.FecharCon();
                 if (dtp.Rows.Count > 0)
                 {
                     var resultado = MessageBox.Show("O Registro: " +
@@ -65,40 +65,34 @@ namespace Sistema.DAO
                     "Aviso de Duplicidade",
                     MessageBoxButtons.YesNo,
                     MessageBoxIcon.Question);
-                    if (resultado == DialogResult.Yes)
-                    {
+                    if (resultado == DialogResult.Yes){
+                        classeConecta.AbrirCon();
                         sql = "INSERT INTO pessoas (idendereco, nomepessoa, complemento) VALUES (@idendereco,@nomepessoa, @complemento)";
                         cmd = new MySqlCommand(sql, classeConecta.con);
                         cmd.Parameters.AddWithValue("@idendereco", modelPessoa.Idendereco);
                         cmd.Parameters.AddWithValue("@nomepessoa", modelPessoa.Nomepessoa);
                         cmd.Parameters.AddWithValue("@complemento", modelPessoa.Complemento);
                         cmd.ExecuteNonQuery();
-                        registroInserido = "S!!";
+                        acaoCrudPessoaDAO = "S!!";
                         classeConecta.FecharCon();
 
-                    }
-                    else if (resultado == DialogResult.No)
-                    {
-                        registroInserido = "NS";
-                        classeConecta.FecharCon();
-
+                    }else if (resultado == DialogResult.No){
+                        acaoCrudPessoaDAO = "NS";
                     }
                 }
                 else if (dtp.Rows.Count == 0)
                 {
+                    classeConecta.AbrirCon();
                     sql = "INSERT INTO pessoas (idendereco, nomepessoa, complemento) VALUES (@idendereco,@nomepessoa, @complemento)";
                     cmd = new MySqlCommand(sql, classeConecta.con);
                     cmd.Parameters.AddWithValue("@idendereco", modelPessoa.Idendereco);
                     cmd.Parameters.AddWithValue("@nomepessoa", modelPessoa.Nomepessoa);
                     cmd.Parameters.AddWithValue("@complemento", modelPessoa.Complemento);
                     cmd.ExecuteNonQuery();
-                    registroInserido = "S!";
+                    acaoCrudPessoaDAO = "S!";
                     classeConecta.FecharCon();
                 }
-                classeConecta.FecharCon();
-            }
-            catch (Exception ex)
-            {
+            }catch (Exception ex) {
                 MessageBox.Show("A Seguinte Excessão foi lançada quando o método Salvar foi operado " + ex, "Erro na classe PessoaDAO", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
@@ -106,10 +100,8 @@ namespace Sistema.DAO
         }
 
 
-        public void Editar(PessoasModel modelPessoa)
-        {
-            try
-            {
+        public void Editar(PessoasModel modelPessoa){
+            try{
                 classeConecta.AbrirCon();
                 cmd = new MySqlCommand("UPDATE pessoas SET " +
                     "idendereco = @idendereco, " +
@@ -121,11 +113,9 @@ namespace Sistema.DAO
                 cmd.Parameters.AddWithValue("@complemento", modelPessoa.Complemento);
                 cmd.Parameters.AddWithValue("@idpessoa", modelPessoa.Idpessoa);
                 cmd.ExecuteNonQuery();
-                registroInserido = "AT";
+                acaoCrudPessoaDAO = "AT";
                 classeConecta.FecharCon();
-            }
-            catch (Exception ex)
-            {
+            }catch (Exception ex){
                 MessageBox.Show("Erro ao Editar " + ex);
             }
            
@@ -134,61 +124,25 @@ namespace Sistema.DAO
         public void Excluir(PessoasModel modelPessoa)
         {
             var resultado = MessageBox.Show("Confirmar excluisão do registro "+Convert.ToString(modelPessoa.Nomepessoa), "Excluir Registro", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (resultado == DialogResult.Yes)
-            {
-                try
-                {
+            if (resultado == DialogResult.Yes){
+                try{
                     classeConecta.AbrirCon();
                     sql = "DELETE FROM pessoas where idpessoa = @idpessoa";
                     cmd = new MySqlCommand(sql, classeConecta.con);
                     cmd.Parameters.AddWithValue("@idpessoa", modelPessoa.Idpessoa);
                     cmd.ExecuteNonQuery();
+                    acaoCrudPessoaDAO = "DEL";
                     classeConecta.FecharCon();
-                    MessageBox.Show("Registro Excluido com Sucesso!", "Registro Excluido", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                catch (Exception ex)
-                {
+                }catch (Exception ex){
                     MessageBox.Show("Erro ao Excluir " + ex);
-                    classeConecta.FecharCon();
                 }
-            }
-            else if (resultado == DialogResult.No)
-            {
-
+            } else if (resultado == DialogResult.No){
+                acaoCrudPessoaDAO = "NDEL";
             }
         }
 
-        public DataTable Listar(string ordenarpor)
-        {
-            try
-            {
-                classeConecta.AbrirCon();
-                sql = "SELECT * FROM pessoas where nomepessoa LIKE @nomepessoa";
-                cmd = new MySqlCommand(sql, classeConecta.con);
-                cmd.Parameters.AddWithValue("@nomepessoa", pessoaModel.Nomepessoa + "%");
-                MySqlDataAdapter da = new MySqlDataAdapter();
-                da.SelectCommand = cmd;
-                DataTable dt = new DataTable();
-                da.Fill(dt);
-                quantidadeBD = dt.Rows.Count;
-                return dt;
-                classeConecta.FecharCon();
-            }
-            catch (Exception ex)
-            {
-
-                throw ex;
-                
-            }
-        }
-
-
-        public int ListarTodosRegistrosBD()
-        {
-            int todosresgistros;
-            
-            try
-            {
+        public int ListarQtBDPessoaDAO(){
+            try{
                 classeConecta.AbrirCon();
                 sql = "SELECT * FROM pessoas";
                 cmd = new MySqlCommand(sql, classeConecta.con);
@@ -196,34 +150,23 @@ namespace Sistema.DAO
                 da.SelectCommand = cmd;
                 DataTable dt = new DataTable();
                 da.Fill(dt);
-                todosresgistros = dt.Rows.Count;
-                return todosresgistros;
                 classeConecta.FecharCon();
-            }
-            catch (Exception ex)
-            {
-
+                return dt.Rows.Count;
+            } catch (Exception ex){
                 throw ex;
             }
         }
 
 
-        public int ListarPesquisados()
-        {
-            int retornoPesquisado;
-            retornoPesquisado = resQuantSearch;
-            return retornoPesquisado;
+        public int ListarPesquisados(){
+            return listarQtPesquisa;
         }
 
-        public string VerificarPersistencia() 
-        {
-            string retornoExistente;
-            retornoExistente = registroInserido;
-            return retornoExistente;
+        public string AcaoCrudPessoaDAO(){
+            return acaoCrudPessoaDAO;
         }
 
-        public DataTable ConfiListagemDataGrid(string parametro, string indexar, int offsett, int limitt)
-        {
+        public DataTable ListarDataGrid(string parametro, string indexar, int offsett, int limitt){
             try{
                 classeConecta.AbrirCon();
                 sql = "SELECT * from pessoas ORDER BY " + parametro + " " + indexar + " Limit " + offsett + "," + limitt;
@@ -232,21 +175,16 @@ namespace Sistema.DAO
                 da.SelectCommand = cmd;
                 DataTable dt = new DataTable();
                 da.Fill(dt);
-                return dt;
                 classeConecta.FecharCon();
-
-            }catch (Exception ex)
-            {
-
+                return dt;
+            }catch (Exception ex){
                 throw ex;
             }
         }
 
 
-        public DataTable ConfiListagemDataGridInnerJoin(string parametro, string indexar, int offsett, int limitt)
-        {
-            try
-            {
+        public DataTable ListarDataGridInnerJoin(string parametro, string indexar, int offsett, int limitt){
+            try {
                 classeConecta.AbrirCon();
                 sql = "SELECT * from pessoas pes INNER JOIN enderecos ende on pes.idendereco = ende.idendereco ORDER BY " + parametro + "   " + indexar + " Limit " + offsett + "," + limitt;
                 cmd = new MySqlCommand(sql, classeConecta.con);
@@ -254,113 +192,78 @@ namespace Sistema.DAO
                 da.SelectCommand = cmd;
                 DataTable dt = new DataTable();
                 da.Fill(dt);
-                return dt;
                 classeConecta.FecharCon();
-            }
-            catch (Exception ex)
-            {
-
+                return dt;
+            }catch (Exception ex){
                 throw ex;
             }
         }
 
-        public DataTable PesquisarComeca(string coluna , string campo, string pesquisar)
-        {
-            try
-            {
+        public DataTable PesquisarComeca(string coluna , string campo, string pesquisar) {
+            try{
                 classeConecta.AbrirCon();
                 sql = "SELECt * from pessoas pes " +
                     "inner join enderecos ende " +
                     "on pes.idendereco = ende.idendereco " +
                     "where pes.nomepessoa Like "+campo+"";
-                //sql = "SELECT * FROM pessoas pes where pes.nomepessoa Like pes." + campo + " INNER JOIN enderecos ende on pes.idendereco = ende.idendereco";
-                //   sql = "SELECT * FROM pessoas where nomepessoa Like "+campo+"";
                 cmd = new MySqlCommand(sql, classeConecta.con);
-                if (pesquisar == "")
-                {
-                    cmd.Parameters.AddWithValue(campo, "");
-                }
-                else
-                {
-                    cmd.Parameters.AddWithValue(campo, pesquisar + "%");
-                   
-                }
+                    if (pesquisar == ""){
+                        cmd.Parameters.AddWithValue(campo, "");
+                    } else{
+                        cmd.Parameters.AddWithValue(campo, pesquisar + "%"); 
+                    }
                 MySqlDataAdapter da = new MySqlDataAdapter();
                 da.SelectCommand = cmd;
                 DataTable dt = new DataTable();
                 da.Fill(dt);
-                resQuantSearch = dt.Rows.Count;
-                return dt;
+                listarQtPesquisa = dt.Rows.Count;
                 classeConecta.FecharCon();
-            }
-            catch (Exception ex)
-            {
-
+                return dt;
+            } catch (Exception ex){
                 throw ex;
             }
         }
 
-        public DataTable PesquisarContem(string coluna, string campo, string pesquisar)
-        {
-            try
-            {
+        public DataTable PesquisarContem(string coluna, string campo, string pesquisar){
+            try {
                 classeConecta.AbrirCon();
                 sql = "SELECt * from pessoas pes inner join enderecos ende on pes.idendereco = ende.idendereco where pes.nomepessoa Like " + campo + "";
-                //  sql = "SELECT * FROM pessoas where nomepessoa Like  " + campo + "";
                 cmd = new MySqlCommand(sql, classeConecta.con);
-                if (pesquisar == "")
-                {
-                    cmd.Parameters.AddWithValue(campo, "");
-                }
-                else
-                {
-                    cmd.Parameters.AddWithValue(campo, "%" + pesquisar + "%");
-                }
+                    if (pesquisar == ""){
+                        cmd.Parameters.AddWithValue(campo, "");
+                    }else{
+                        cmd.Parameters.AddWithValue(campo, "%" + pesquisar + "%");
+                    }
                 MySqlDataAdapter da = new MySqlDataAdapter();
                 da.SelectCommand = cmd;
                 DataTable dt = new DataTable();
                 da.Fill(dt);
-
-                resQuantSearch = dt.Rows.Count;
-                return dt;
+                listarQtPesquisa = dt.Rows.Count;
                 classeConecta.FecharCon();
-
-            }
-            catch (Exception ex)
-            {
-
+                return dt;
+            }catch (Exception ex){
                 throw ex;
             }
         }
 
-        public DataTable PesquisarTermina(string coluna, string campo, string pesquisar)
-        {
-            try
-            {
+        public DataTable PesquisarTermina(string coluna, string campo, string pesquisar){
+            try{
                 classeConecta.AbrirCon();
                 sql = "SELECT * from pessoas pes inner join enderecos ende on pes.idendereco = ende.idendereco where pes.nomepessoa Like " + campo + "";
-                //sql = "SELECT * FROM pessoas pes where pes.nomepessoa Like pes." + campo+" INNER JOIN enderecos ende on pes.idendereco = ende.idendereco";
-                //sql = "SELECT * FROM pessoas where nomepessoa Like  " + campo + "";
                 cmd = new MySqlCommand(sql, classeConecta.con);
-                if (pesquisar == "")
-                {
-                    cmd.Parameters.AddWithValue(campo, "");
-                }
-                else
-                {
-                    cmd.Parameters.AddWithValue(campo, "%"+ pesquisar);
-                }
+                    if (pesquisar == ""){
+                        cmd.Parameters.AddWithValue(campo, "");
+                    }else{
+                        cmd.Parameters.AddWithValue(campo, "%"+ pesquisar);
+                    }
                 MySqlDataAdapter da = new MySqlDataAdapter();
                 da.SelectCommand = cmd;
                 DataTable dt = new DataTable();
                 da.Fill(dt);
-                resQuantSearch = dt.Rows.Count;
-                return dt;
+                listarQtPesquisa = dt.Rows.Count;
                 classeConecta.FecharCon();
-            }
-            catch (Exception ex)
-            {
-
+                return dt;
+            }catch (Exception ex) {
                 throw ex;
             }
         }

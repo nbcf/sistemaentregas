@@ -756,13 +756,13 @@ namespace Sistema.View
           //  puxarparametro(0, Convert.ToInt32(cbButtnQuantPage.SelectedItem), "Sim");
 
 
-            if (controllerEnderecos.retornoPersistencia.Equals("DEL"))
+            if ("DEL".Equals(controllerEnderecos.AcaoCrudEnderecosDAO()))
             {
                 MessageBox.Show("Registro Excluido com Sucesso!", "Registro Excluido", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 puxarparametro(0, Convert.ToInt32(cbButtnQuantPage1.SelectedItem), "Sim");
                 behaviorRefresh();
             }
-            else if (controllerEnderecos.retornoPersistencia.Equals("NDEL"))
+            else if ("NDEL".Equals(controllerEnderecos.AcaoCrudEnderecosDAO()))
             {
                 MessageBox.Show("Exclusão Cancelada", "Registro Não Excluido", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 puxarparametro(0, Convert.ToInt32(cbButtnQuantPage1.SelectedItem), "Sim");

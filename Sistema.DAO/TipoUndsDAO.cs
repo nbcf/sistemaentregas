@@ -16,9 +16,9 @@ namespace Sistema.DAO
    public  class TipoUndsDAO
     {
     
-        public int regEncontradosPesquisaTipoUndsDAO = 0;
+        public int listarPesquisaTipoUndsDAO = 0;
         public string acaoCrudTipoUndsDAO = "";
-        ClasseConexao classeConecta = new Sistema.Conexao.ClasseConexao();
+        ClasseConexao classeConecta = new ClasseConexao();
         string sql;
         MySqlCommand cmd;
         MySqlCommand cmdVerificar;
@@ -133,13 +133,14 @@ namespace Sistema.DAO
                     cmd = new MySqlCommand(sql, classeConecta.con);
                     cmd.Parameters.AddWithValue("@idtipound", idtipound);
                     cmd.ExecuteNonQuery();
+                    acaoCrudTipoUndsDAO = "DEL";
                     classeConecta.FecharCon();
 
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show("Erro ao Excluir " + ex);
-                    classeConecta.FecharCon();
+                    
                 }
             }
             else if (resultado == DialogResult.No)
@@ -170,10 +171,8 @@ namespace Sistema.DAO
         }
 
 
-        public int ListarTodosRegistrosBD()
-        {
-            try
-            {
+        public int ListarTipoUndsBD(){
+            try{
                 classeConecta.AbrirCon();
                 sql = "SELECT * FROM tipounds";
                 cmd = new MySqlCommand(sql, classeConecta.con);
@@ -184,29 +183,23 @@ namespace Sistema.DAO
                 classeConecta.FecharCon();
                 return dt.Rows.Count;
                
-            }
-            catch (Exception ex)
-            {
+            }catch (Exception ex){
 
                 throw ex;
             }
         }
 
 
-        public int ListarPesquisados()
-        {
-            return regEncontradosPesquisaTipoUndsDAO;
+        public int ListarPesquisadosTipoUndsDAO(){
+            return listarPesquisaTipoUndsDAO;
         }
 
-        public string AcaoCrudTipoUndsDAO()
-        {
+        public string AcaoCrudTipoUndsDAO(){
             return acaoCrudTipoUndsDAO;
         }
 
-        public DataTable ConfiListagemDataGrid(string parametro, string indexar, int offsett, int limitt)
-        {
-            try
-            {
+        public DataTable ListarTipoUndsDataGridDAO(string parametro, string indexar, int offsett, int limitt){
+            try{
                 classeConecta.AbrirCon();
                 sql = "SELECT * FROM tipounds ORDER BY " + parametro + " " + indexar + " Limit " + offsett + "," + limitt;
                 cmd = new MySqlCommand(sql, classeConecta.con);
@@ -217,9 +210,7 @@ namespace Sistema.DAO
                 classeConecta.FecharCon();
                 return dt;
                 
-            }
-            catch (Exception ex)
-            {
+            }catch (Exception ex){
 
                 throw ex;
             }
@@ -268,7 +259,7 @@ namespace Sistema.DAO
                 da.SelectCommand = cmd;
                 DataTable dt = new DataTable();
                 da.Fill(dt);
-                regEncontradosPesquisaTipoUndsDAO  = dt.Rows.Count;
+                listarPesquisaTipoUndsDAO = dt.Rows.Count;
                 classeConecta.FecharCon();
                 return dt;
                 
@@ -300,7 +291,7 @@ namespace Sistema.DAO
                 DataTable dt = new DataTable();
                 da.Fill(dt);
 
-                regEncontradosPesquisaTipoUndsDAO = dt.Rows.Count;
+                listarPesquisaTipoUndsDAO = dt.Rows.Count;
                 classeConecta.FecharCon();
                 return dt;
                 
@@ -332,7 +323,7 @@ namespace Sistema.DAO
                 da.SelectCommand = cmd;
                 DataTable dt = new DataTable();
                 da.Fill(dt);
-                regEncontradosPesquisaTipoUndsDAO = dt.Rows.Count;
+                listarPesquisaTipoUndsDAO = dt.Rows.Count;
                 classeConecta.FecharCon();
                 return dt;
                 

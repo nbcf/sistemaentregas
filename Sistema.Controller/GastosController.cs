@@ -42,7 +42,7 @@ namespace Sistema.Controller
                         datagasto,
                         numeronota,
                         imgnota);
-            retornoRegistroSalvo();
+            ListarGridBDGastosController();
         }
 
       
@@ -77,41 +77,41 @@ namespace Sistema.Controller
                 numeronota,
                 imgnota,
                 idgasto);
-            retornoRegistroSalvo();
+            AcaoCrudGastosController();
         }
 
 
-        public int retornoQuantRegistro() {
-            return dao.ListarTodosRegistrosBD();
+        public int ListarGridBDGastosController() {
+            return dao.ListarGridBDGastosDAO();
         }
 
-        public int retornoQuantPesquisa(){
-            return dao.ListarPesquisados();
+        public int ListarPesquisadosGastosController(){
+            return dao.ListarPesquisadosGastosDAO();
         }
 
-        public string retornoRegistroSalvo(){
-            return dao.VerificarPersistencia();
+        public string AcaoCrudGastosController(){
+            return dao.AcaoCrudGastosDAO();
         }
 
 
         public DataTable ListarDataGrid(string parametro, string indexar, int offsett, int limitt){
-                retornoQuantRegistro();
-                return dao.ListarDataGrid(parametro, indexar, offsett, limitt);
+            AcaoCrudGastosController();
+                return dao.ListarDataGridGastosDAO(parametro, indexar, offsett, limitt);
         }
 
-        public DataTable PesquisarComecaCom(string coluna, string campo, string pesquisar){     
-            retornoQuantPesquisa();
+        public DataTable PesquisarComecaCom(string coluna, string campo, string pesquisar){
+            ListarPesquisadosGastosController();
             return dao.PesquisarComeca(coluna, campo, pesquisar);
         }
 
         public DataTable PesquisarContemCom(string coluna, string campo, string pesquisar){
-            retornoQuantPesquisa();
+            ListarPesquisadosGastosController();
             return dao.PesquisarContem(coluna, campo, pesquisar);
         }
 
-        public DataTable PesquisarTerminaCom(string coluna, string campo, string pesquisar){        
-                retornoQuantPesquisa();
-                return dao.PesquisarTermina(coluna, campo, pesquisar);
+        public DataTable PesquisarTerminaCom(string coluna, string campo, string pesquisar){
+            ListarPesquisadosGastosController();
+            return dao.PesquisarTermina(coluna, campo, pesquisar);
         }
     }
 }

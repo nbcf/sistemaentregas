@@ -46,11 +46,11 @@ namespace Sistema.Controller
         }
 
 
-        public int retornoQuantRegistro(){
+        public int ListarTodosRegistrosBD(){
             return dao.ListarTodosRegistrosBD();
         }
 
-        public int retornoQuantPesquisa(){
+        public int ListarPesquisados(){
             return dao.ListarPesquisados();
         }
 

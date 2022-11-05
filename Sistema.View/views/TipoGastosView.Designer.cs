@@ -29,9 +29,9 @@ namespace Sistema.View.views
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.toolStrip2 = new System.Windows.Forms.ToolStrip();
             this.bttnBeginPages = new System.Windows.Forms.ToolStripButton();
             this.bttnOnePageLeft = new System.Windows.Forms.ToolStripButton();
@@ -441,27 +441,27 @@ namespace Sistema.View.views
             // gridCrudTipoGastos
             // 
             this.gridCrudTipoGastos.AllowUserToAddRows = false;
-            dataGridViewCellStyle16.BackColor = System.Drawing.Color.Gainsboro;
-            dataGridViewCellStyle16.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gridCrudTipoGastos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle16;
-            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle17.BackColor = System.Drawing.Color.Transparent;
-            dataGridViewCellStyle17.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle17.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gridCrudTipoGastos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle17;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Gainsboro;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridCrudTipoGastos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Transparent;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridCrudTipoGastos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.gridCrudTipoGastos.ColumnHeadersHeight = 26;
             this.gridCrudTipoGastos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle18.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle18.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle18.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.gridCrudTipoGastos.DefaultCellStyle = dataGridViewCellStyle18;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.gridCrudTipoGastos.DefaultCellStyle = dataGridViewCellStyle3;
             this.gridCrudTipoGastos.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gridCrudTipoGastos.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.gridCrudTipoGastos.Location = new System.Drawing.Point(0, 119);
@@ -472,6 +472,7 @@ namespace Sistema.View.views
             this.gridCrudTipoGastos.Size = new System.Drawing.Size(674, 303);
             this.gridCrudTipoGastos.TabIndex = 9;
             this.gridCrudTipoGastos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridCrudTipoGastos_CellClick_1);
+        //    this.gridCrudTipoGastos.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.gridCrudTipoGastos_CellMouseDoubleClick);
             // 
             // groupBoxFormulario
             // 
@@ -482,10 +483,9 @@ namespace Sistema.View.views
             this.groupBoxFormulario.Controls.Add(this.label2);
             this.groupBoxFormulario.Controls.Add(this.label1);
             this.groupBoxFormulario.Controls.Add(this.txtBoxId);
-            this.groupBoxFormulario.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBoxFormulario.Location = new System.Drawing.Point(0, 119);
+            this.groupBoxFormulario.Location = new System.Drawing.Point(0, 203);
             this.groupBoxFormulario.Name = "groupBoxFormulario";
-            this.groupBoxFormulario.Size = new System.Drawing.Size(674, 303);
+            this.groupBoxFormulario.Size = new System.Drawing.Size(674, 219);
             this.groupBoxFormulario.TabIndex = 10;
             this.groupBoxFormulario.TabStop = false;
             // 

@@ -716,7 +716,7 @@ namespace Sistema.View
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastro de Pessoas";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.PessoasView_FormClosing);
-            this.Load += new System.EventHandler(this.formCrudPessoas_Load);
+         //   this.Load += new System.EventHandler(this.formCrudPessoas_Load);
             this.tabControlAssets.ResumeLayout(false);
             this.tabPagePesquisar.ResumeLayout(false);
             this.tabPagePesquisar.PerformLayout();

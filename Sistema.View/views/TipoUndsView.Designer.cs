@@ -432,6 +432,7 @@ namespace Sistema.View.views
             this.radioBttnComeca.TabIndex = 6;
             this.radioBttnComeca.Text = "Começa";
             this.radioBttnComeca.UseVisualStyleBackColor = true;
+            this.radioBttnComeca.CheckedChanged += new System.EventHandler(this.radioBttnComeca_CheckedChanged_1);
             this.radioBttnComeca.TextChanged += new System.EventHandler(this.radioBttnComeca_TextChanged);
             // 
             // txtBoxPesquisar
@@ -485,7 +486,7 @@ namespace Sistema.View.views
             this.gridCrudTipoUnds.Size = new System.Drawing.Size(674, 284);
             this.gridCrudTipoUnds.TabIndex = 9;
             this.gridCrudTipoUnds.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridCrudTipoGastos_CellClick);
-            this.gridCrudTipoUnds.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridCrudTipoGastos_CellDoubleClick);
+            this.gridCrudTipoUnds.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.gridCrudTipoUnds_CellMouseDoubleClick);
             // 
             // groupBoxFormulario
             // 
@@ -493,10 +494,9 @@ namespace Sistema.View.views
             this.groupBoxFormulario.Controls.Add(this.label2);
             this.groupBoxFormulario.Controls.Add(this.label1);
             this.groupBoxFormulario.Controls.Add(this.txtBoxId);
-            this.groupBoxFormulario.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBoxFormulario.Location = new System.Drawing.Point(0, 138);
+            this.groupBoxFormulario.Location = new System.Drawing.Point(0, 255);
             this.groupBoxFormulario.Name = "groupBoxFormulario";
-            this.groupBoxFormulario.Size = new System.Drawing.Size(674, 284);
+            this.groupBoxFormulario.Size = new System.Drawing.Size(674, 167);
             this.groupBoxFormulario.TabIndex = 10;
             this.groupBoxFormulario.TabStop = false;
             // 
@@ -555,7 +555,6 @@ namespace Sistema.View.views
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Tipo Unidades";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.TipoUndsView_FormClosing);
-            this.Load += new System.EventHandler(this.TipoUndsView_Load);
             this.toolStrip2.ResumeLayout(false);
             this.toolStrip2.PerformLayout();
             this.toolStrip1.ResumeLayout(false);

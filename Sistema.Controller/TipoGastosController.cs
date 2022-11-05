@@ -15,12 +15,12 @@ namespace Sistema.Controller
      
         public void Salvar(int idtipound, string nomegasto){
             dao.Salvar(idtipound, nomegasto);
-            retornoRegistroSalvo();
+            AcaoCrudTipoGastosDAO();
         }
 
-        public DataTable Listar(string nomegasto){
-                return dao.Listar(nomegasto);
-        }
+        //public DataTable ListarGrid(string nomegasto){
+        //        return dao.Listar(nomegasto);
+        //}
 
         public DataTable ListarEmComboBox(){
                 return dao.ListarEmComboBox();
@@ -32,28 +32,29 @@ namespace Sistema.Controller
 
         public void Excluir(int idtipogasto){
             dao.Excluir(idtipogasto);
+            AcaoCrudTipoGastosDAO();
         }
 
         public void Editar(int idtipound, string nomegasto, int idtipogasto) {
             dao.Editar(idtipound,  nomegasto, idtipogasto);
-            retornoRegistroSalvo();
+            AcaoCrudTipoGastosDAO();
         }
 
-        public int retornoQuantRegistro(){
-            return dao.ListarTodosRegistrosBD();
+        public int ListarBDTipoGastosController(){
+            return dao.ListarBDTipoGastosDAO();
         }
 
-        public int retornoQuantPesquisa() {
-            return dao.ListarPesquisados();
+        public int ListarPesquisaTipoGastosController() {
+            return dao.ListarPesquisaTipoGastosDAO();
         }
 
-        public string retornoRegistroSalvo() {
-            return dao.VerificarPersistencia();
+        public string AcaoCrudTipoGastosDAO() {
+            return dao.AcaoCrudTipoGastosDAO();
 
         }
 
         public DataTable ListaDataGrid(string parametro, string indexar, int offsett, int limitt){
-            return dao.ListarEmDataGrid(parametro, indexar, offsett, limitt);
+            return dao.ListarDataGrid(parametro, indexar, offsett, limitt);
         }
     
         public DataTable PesquisarComecaCom(string coluna, string campo, string pesquisar){

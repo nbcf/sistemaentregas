@@ -137,7 +137,9 @@ namespace Sistema.DAO
                 classeConecta.FecharCon();
 
             }catch (Exception ex){
-                MessageBox.Show("A Seguinte Excessão foi lançada quando o método Editar foi operado " + ex, "Erro na classe UsuariosDAO",
+                    MessageBox.Show("A Seguinte Excessão foi lançada quando o método" +
+                    " Editar foi operado " + ex,
+                    "Erro na classe UsuariosDAO",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
             }

@@ -35,40 +35,40 @@ namespace Sistema.Controller
             AcaoCrudTipoUndsController();
         }
 
-        public int retornoQuantRegistro(){
-            return dao.ListarTodosRegistrosBD(); ;
+        public int ListarTipoUndsBDController(){
+            return dao.ListarTipoUndsBD(); ;
         }
 
-        public int retornoQuantPesquisa(){
-            return dao.ListarPesquisados();
+        public int ListarPesquisadosTipoUndsController(){
+            return dao.ListarPesquisadosTipoUndsDAO();
         }
 
         public string AcaoCrudTipoUndsController(){
             return dao.AcaoCrudTipoUndsDAO();
         }
 
-        public DataTable ConfiListagemDataGrid(string parametro, string indexar, int offsett, int limitt){
-                retornoQuantRegistro();
-                return dao.ConfiListagemDataGrid(parametro, indexar, offsett, limitt);
+        public DataTable ListarTipoUndsDataGrid(string parametro, string indexar, int offsett, int limitt){
+                ListarTipoUndsBDController();
+                return dao.ListarTipoUndsDataGridDAO(parametro, indexar, offsett, limitt);
         }
 
         public DataTable ConfiListagemImpOE(){
-            retornoQuantRegistro();
+            ListarTipoUndsBDController();
             return dao.ConfiListagemImportOE();
         }
 
         public DataTable PesquisarComecaCom(string coluna, string campo, string pesquisar){
-            retornoQuantPesquisa();
+            ListarPesquisadosTipoUndsController();
             return dao.PesquisarComeca(coluna, campo, pesquisar);
         }
 
         public DataTable PesquisarContemCom(string coluna, string campo, string pesquisar){
-            retornoQuantPesquisa();
+            ListarPesquisadosTipoUndsController();
             return dao.PesquisarContem(coluna, campo, pesquisar);
         }
 
         public DataTable PesquisarTerminaCom(string coluna, string campo, string pesquisar){
-            retornoQuantPesquisa();
+            ListarPesquisadosTipoUndsController();
             return dao.PesquisarTermina(coluna, campo, pesquisar);
         }
     }

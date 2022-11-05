@@ -183,7 +183,6 @@ namespace Sistema.DAO
                 da.Fill(dt);
                 classeConecta.FecharCon();
                 return dt;
-                
             }catch (Exception ex){
                 throw ex;
             }
@@ -192,7 +191,6 @@ namespace Sistema.DAO
 
         public DataTable ConfiListagemImportOE(){
             try{
-
                 classeConecta.AbrirCon();
                 sql = "SELECT * from origem ";
                 cmd = new MySqlCommand(sql, classeConecta.con);
@@ -208,12 +206,9 @@ namespace Sistema.DAO
             }
         }
 
-        public DataTable PesquisarComeca(string coluna, string campo, string pesquisar)
-        {
-            try
-            {
+        public DataTable PesquisarComeca(string coluna, string campo, string pesquisar){
+            try {
                 classeConecta.AbrirCon();
-                //  sql = "SELECT * FROM origem where nomeorigem Like " + campo + "";
                 sql = "SELECT * FROM origem where "+coluna+" Like " + campo + "";
                 cmd = new MySqlCommand(sql, classeConecta.con);
                 if (pesquisar == ""){
@@ -230,9 +225,8 @@ namespace Sistema.DAO
                 regEncontradosPesquisa = dt.Rows.Count;
                 classeConecta.FecharCon();
                 return dt;
-            }
-            catch (Exception ex)
-            {
+
+            }catch (Exception ex){
 
                 throw ex;
             }
