@@ -1019,10 +1019,6 @@ namespace Sistema.View.views
                 setaGridEmCampos();
             }
 
-            
-
-
-
         }
 
         private void setaGridEmCampos(){

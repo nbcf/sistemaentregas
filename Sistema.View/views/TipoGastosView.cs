@@ -81,10 +81,12 @@ namespace Sistema.View.views
         }
         private void behaviorSave()
         {
+            MessageBox.Show(" operationType:" + operationType + " typeEdition:" + typeEdition);
             string retiraEspacos = txtBoxName.Text;
             string rem = retiraEspacos.Trim();
             if (txtBoxId.Text.Trim().Equals("") || txtBoxId.Text.Trim() == null)
             {
+
                 if (operationType.Equals("newInsertion") && typeEdition.Equals("insert"))
                 {
                     if (rem.Length <= 3)
@@ -137,7 +139,7 @@ namespace Sistema.View.views
                         if (resultado == DialogResult.Yes)
                         {
 
-                            txtBoxName.Focus();
+                            txtBoxName.Text = "";
                         }
                         else if (resultado == DialogResult.No)
                         {
@@ -164,7 +166,7 @@ namespace Sistema.View.views
                 }
                 else if (operationType.Equals("updateData") && typeEdition.Equals("search"))
                 {
-
+                  
                     if (rem.Length <= 3)
                     {
                         var resultado = MessageBox.Show("A Edição não alcançou o número mínimo de 3 caracteres.\nPara tentar novamente clique no botão 'Sim'. E no botão 'Não' para cancelar e sair do modo de Inserção.", "Aviso do Sistema", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -535,14 +537,14 @@ namespace Sistema.View.views
 
             if (pesquisa.Equals("CarregaPadraoIDTodosUltimos") && parametroCodigoAlfabeto.Equals("Codigo") && parametroASCDESC.Equals("ultimos"))
             {
-                gridCrudTipoGastos.DataSource = controllerTipoGastos.ListaDataGrid("idtipound", "desc", offset, limitt);
+                gridCrudTipoGastos.DataSource = controllerTipoGastos.ListaDataGrid("idtipogasto", "desc", offset, limitt);
                 DataGridModel();
                 labelTextTotalRegFould.Text = Convert.ToString(controllerTipoGastos.ListarBDTipoGastosController());
                 carregarInformacoes();
             }
             else if (pesquisa.Equals("CarregaPadraoIDTodosPrimeiros") && parametroCodigoAlfabeto.Equals("Codigo") && parametroASCDESC.Equals("primeiros"))
             {
-                gridCrudTipoGastos.DataSource = controllerTipoGastos.ListaDataGrid("idtipound", "asc", offset, limitt);
+                gridCrudTipoGastos.DataSource = controllerTipoGastos.ListaDataGrid("idtipogasto", "asc", offset, limitt);
                 DataGridModel();
                 labelTextTotalRegFould.Text = Convert.ToString(controllerTipoGastos.ListarBDTipoGastosController());
                 carregarInformacoes();
@@ -865,6 +867,7 @@ namespace Sistema.View.views
         }
         private void behaviorDel()
         {
+            MessageBox.Show(" operationType:" + operationType+ " typeEdition:" + typeEdition);
 
             if (operationType == "updateData" && typeEdition == "search")
             {
@@ -895,8 +898,8 @@ namespace Sistema.View.views
                 operationType == "newInsertion" ||
                 operationType == "updateData" ||
                 operationType == "search" &&
-                typeEdition == "insert")
-            {
+                typeEdition == "insert"){
+
                 bttnDel.Enabled = true;
                 bttnEdit.Enabled = false;
                 bttnSearch.Enabled = true;
@@ -906,14 +909,12 @@ namespace Sistema.View.views
                 controllerTipoGastos.Excluir(Convert.ToInt32(gridCrudTipoGastos.CurrentRow.Cells[0].Value));
                 puxarparametro(0, Convert.ToInt32(cbButtnQuantPage1.SelectedItem), "Sim");
 
-
             }
             else if (operationType == "" ||
               operationType == "newInsertion" ||
               operationType == "updateData" ||
               operationType == "search" &&
-              typeEdition == "search")
-            {
+              typeEdition == "search"){
                 bttnDel.Enabled = true;
                 bttnEdit.Enabled = false;
                 bttnSearch.Enabled = true;
@@ -1219,6 +1220,7 @@ namespace Sistema.View.views
                 gridCrudTipoGastos.DataSource = controllerTipoGastos.PesquisarComecaCom("nomegasto", "@nomegasto", "");
                 DataGridModel();
                 typeEdition = "search";
+               
                 cbButtnQuantPage1.Visible = false;
                 cbOrdemParam1.Visible = false;
                 cbOrdenarPor1.Visible = false;

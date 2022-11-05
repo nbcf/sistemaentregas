@@ -53,6 +53,7 @@ namespace Sistema.DAO
                 dap.SelectCommand = cmdVerificar;
                 DataTable dtp = new DataTable();
                 dap.Fill(dtp);
+                classeConecta.FecharCon();
                 if (dtp.Rows.Count > 0)
                 {
                     var resultado = MessageBox.Show("O Registro: " +
@@ -64,6 +65,7 @@ namespace Sistema.DAO
                     MessageBoxIcon.Question);
                     if (resultado == DialogResult.Yes)
                     {
+                        classeConecta.AbrirCon();
                         sql = "INSERT INTO tipounds (nomeund) VALUES (@nomeund)";
                         cmd = new MySqlCommand(sql, classeConecta.con);
                         cmd.Parameters.AddWithValue("@nomeund", nomeund);
@@ -76,21 +78,19 @@ namespace Sistema.DAO
                     else if (resultado == DialogResult.No)
                     {
                         acaoCrudTipoUndsDAO = "NS";
-                        classeConecta.FecharCon();
-
                     }
                 }
                 else if (dtp.Rows.Count == 0)
                 {
+                    classeConecta.AbrirCon();
                     sql = "INSERT INTO tipounds (nomeund) VALUES (@nomeund)";
                     cmd = new MySqlCommand(sql, classeConecta.con);
                     cmd.Parameters.AddWithValue("@nomeund", nomeund);
                     cmd.ExecuteNonQuery();
-
                     acaoCrudTipoUndsDAO = "S!";
                     classeConecta.FecharCon();
                 }
-                classeConecta.FecharCon();
+               
             }
             catch (Exception ex)
             {
@@ -145,7 +145,7 @@ namespace Sistema.DAO
             }
             else if (resultado == DialogResult.No)
             {
-
+                acaoCrudTipoUndsDAO = "NDEL";
             }
         }
         public DataTable ListComboBoxTipoUndDAO()
