@@ -91,7 +91,6 @@ namespace Sistema.View
         {
             AcaoDialogVO = "ok";
             AcaoFormDialogVO = "ok";
-        //    MessageBox.Show(AcaoDialogVO);
             Close();
         }
 
@@ -99,7 +98,6 @@ namespace Sistema.View
         {
             AcaoDialogVO = "sair";
             AcaoFormDialogVO = "sair";
-         //   MessageBox.Show(AcaoDialogVO);
             Close();
 
         }
@@ -120,5 +118,6 @@ namespace Sistema.View
             
         }
 
+     
     }
 }

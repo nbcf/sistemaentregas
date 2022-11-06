@@ -38,8 +38,8 @@ namespace Sistema.View
             this.ckPesquisar = new System.Windows.Forms.CheckBox();
             this.ckCadastrar = new System.Windows.Forms.CheckBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnOk = new System.Windows.Forms.Button();
+            this.btnSair = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.txtNomeFuncao = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
@@ -131,33 +131,33 @@ namespace Sistema.View
             this.label2.TabIndex = 21;
             this.label2.Text = "Usuário";
             // 
-            // button1
+            // btnOk
             // 
-            this.button1.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Image = global::Sistema.View.Properties.Resources.ok24;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button1.Location = new System.Drawing.Point(266, 170);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(86, 47);
-            this.button1.TabIndex = 29;
-            this.button1.Text = "OK - Enter";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnOk.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnOk.Image = global::Sistema.View.Properties.Resources.ok24;
+            this.btnOk.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnOk.Location = new System.Drawing.Point(266, 170);
+            this.btnOk.Name = "btnOk";
+            this.btnOk.Size = new System.Drawing.Size(86, 47);
+            this.btnOk.TabIndex = 29;
+            this.btnOk.Text = "OK ";
+            this.btnOk.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnOk.UseVisualStyleBackColor = true;
+            this.btnOk.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button2
+            // btnSair
             // 
-            this.button2.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Image = global::Sistema.View.Properties.Resources.close24;
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button2.Location = new System.Drawing.Point(170, 170);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(86, 47);
-            this.button2.TabIndex = 30;
-            this.button2.Text = "Sair - Esc";
-            this.button2.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btnSair.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSair.Image = global::Sistema.View.Properties.Resources.close24;
+            this.btnSair.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnSair.Location = new System.Drawing.Point(170, 170);
+            this.btnSair.Name = "btnSair";
+            this.btnSair.Size = new System.Drawing.Size(86, 47);
+            this.btnSair.TabIndex = 30;
+            this.btnSair.Text = "Sair ";
+            this.btnSair.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnSair.UseVisualStyleBackColor = true;
+            this.btnSair.Click += new System.EventHandler(this.button2_Click);
             // 
             // textBox1
             // 
@@ -182,8 +182,8 @@ namespace Sistema.View
             this.ClientSize = new System.Drawing.Size(364, 229);
             this.Controls.Add(this.txtNomeFuncao);
             this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnSair);
+            this.Controls.Add(this.btnOk);
             this.Controls.Add(this.ckMenuGen);
             this.Controls.Add(this.ckMenuAdmin);
             this.Controls.Add(this.ckMenuOpe);
@@ -199,7 +199,6 @@ namespace Sistema.View
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Formulário";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.formEditPapel_FormClosing);
-  //          this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.formEditPapel_FormClosed);
             this.Load += new System.EventHandler(this.formEditPapel_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -216,8 +215,8 @@ namespace Sistema.View
         private System.Windows.Forms.CheckBox ckPesquisar;
         private System.Windows.Forms.CheckBox ckCadastrar;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnOk;
+        private System.Windows.Forms.Button btnSair;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox txtNomeFuncao;
     }

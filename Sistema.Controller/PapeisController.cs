@@ -26,9 +26,7 @@ namespace Sistema.Controller
             bool excluir,
             bool menuope,
             bool menuadmin,
-            bool menugen)
-        {
-            
+            bool menugen){
             dao.Salvar( papel,
                 cadastrar,
                 pesquisar, 
@@ -38,8 +36,6 @@ namespace Sistema.Controller
                 menuadmin, 
                 menugen);
         }
-
-     
 
         public void Excluir(int idpapeis, string nomepapel)
         {
@@ -83,47 +79,32 @@ namespace Sistema.Controller
         }
 
         public string AcaoCrudPapeisDAO(){
-
-            MessageBox.Show(dao.AcaoCrudPapeisDAO());
-
             return dao.AcaoCrudPapeisDAO();
         }
 
 
-        public DataTable ConfiListagemDataGrid(string parametro, string indexar, int offsett, int limitt)
-        {
-            try
-            {
-                DataTable dt = new DataTable();
-                dt = dao.ConfiListagemDataGrid(parametro, indexar, offsett, limitt);
-                ListarBDPapeisControlller();
-                return dt;
-            }
-            catch (Exception e)
-            {
-
-                throw e;
-            }
+        public DataTable ConfiListagemDataGrid(string parametro, string indexar, int offsett, int limitt) {
+                return dao.ConfiListagemDataGrid(parametro, indexar, offsett, limitt);
         }
 
         public DataTable ConfiListagemImportPU(){ 
-                ListarBDPapeisControlller();
+             //   ListarBDPapeisControlller();
                 return dao.ConfiListagemImportPU();
 
         }
 
         public DataTable PesquisarComecaCom(string coluna, string campo, string pesquisar){
-                ListarPesquisaPapeisController();
+           //     ListarPesquisaPapeisController();
                 return dao.PesquisarComeca(coluna, campo, pesquisar);
             }
 
         public DataTable PesquisarContemCom(string coluna, string campo, string pesquisar) {
-                ListarPesquisaPapeisController();
+             //   ListarPesquisaPapeisController();
                 return dao.PesquisarContem(coluna, campo, pesquisar);
             }
 
         public DataTable PesquisarTerminaCom(string coluna, string campo, string pesquisar){
-                ListarPesquisaPapeisController();
+             //   ListarPesquisaPapeisController();
                 return dao.PesquisarTermina(coluna, campo, pesquisar);
         }
     }

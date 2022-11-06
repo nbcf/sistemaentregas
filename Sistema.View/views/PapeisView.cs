@@ -77,7 +77,7 @@ namespace Sistema.View
             else if (_InstanciaformCrudPapeis != null)
             {
 
-                MessageBox.Show("Janela já se encontra aberta!", "Aviso do Sistema", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("O Gerênciador de Papeis de Usuário já se encontra aberto!", "Aviso do Sistema", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
 
             return _InstanciaformCrudPapeis;
@@ -545,7 +545,7 @@ namespace Sistema.View
         private void DataGridModel()
         {
             gridCrudPapeis.Columns[0].HeaderText = "ID";
-            gridCrudPapeis.Columns[1].HeaderText = "Função";
+            gridCrudPapeis.Columns[1].HeaderText = "FUNÇÃO";
             gridCrudPapeis.Columns[2].HeaderText = "Criar";
             gridCrudPapeis.Columns[3].HeaderText = "Recuperar";
             gridCrudPapeis.Columns[4].HeaderText = "Atualizar";
@@ -553,8 +553,8 @@ namespace Sistema.View
             gridCrudPapeis.Columns[6].HeaderText = "Operacional";
             gridCrudPapeis.Columns[7].HeaderText = "Administrativo";
             gridCrudPapeis.Columns[8].HeaderText = "Gerencial";
-            gridCrudPapeis.Columns[0].Width = 100;
-            gridCrudPapeis.Columns[1].Width = 200;
+            gridCrudPapeis.Columns[0].Width = 60;
+            gridCrudPapeis.Columns[1].Width = 250;
             gridCrudPapeis.Columns[2].Width = 130;
             gridCrudPapeis.Columns[3].Width = 130;
             gridCrudPapeis.Columns[4].Width = 130;
@@ -686,9 +686,6 @@ namespace Sistema.View
         }
 
 
-
-
-
         private void behaviorDel()
         {
             bttnDel.Enabled = true;
@@ -700,21 +697,17 @@ namespace Sistema.View
             controllerPapeis.Excluir(Convert.ToInt32(gridCrudPapeis.CurrentRow.Cells[0].Value), Convert.ToString(gridCrudPapeis.CurrentRow.Cells[1].Value));
             if ("DEL".Equals(controllerPapeis.AcaoCrudPapeisDAO()))
             {
-                MessageBox.Show("Registro Excluido com Sucesso!", "Registro Excluido", MessageBoxButtons.OK, MessageBoxIcon.Information);
+              
                 puxarparametro(0, Convert.ToInt32(cbButtnQuantPage1.SelectedItem), "Sim");
                 behaviorRefresh();
             }
             else if ("NDEL".Equals(controllerPapeis.AcaoCrudPapeisDAO()))
             {
-                MessageBox.Show("Exclusão Cancelada", "Registro Não Excluido", MessageBoxButtons.OK, MessageBoxIcon.Information);
+               
                 puxarparametro(0, Convert.ToInt32(cbButtnQuantPage1.SelectedItem), "Sim");
                 behaviorRefresh();
             }
         }
-
-
-
-
 
 
         private void behaviorSave()
@@ -761,7 +754,7 @@ namespace Sistema.View
                             typeEdition = "insert";
 
                             behaviorRefresh();
-                            MessageBox.Show("Registro Salvo Com Sucesso!", "Aviso de Confirmação", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                           
                         }
                         else if ("S!!".Equals(controllerPapeis.AcaoCrudPapeisDAO()))
                         {
@@ -770,7 +763,7 @@ namespace Sistema.View
                             typeEdition = "insert";
 
                             behaviorRefresh();
-                            MessageBox.Show("Dado Existente Salvo!", "Aviso de Confirmação", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                          
                         }
                     }
                     if ("NS".Equals(controllerPapeis.AcaoCrudPapeisDAO()))
@@ -778,7 +771,6 @@ namespace Sistema.View
 
                         operationType = "newInsertion";
                         typeEdition = "insert";
-                        //acoesBehaviorSave();
                         behaviorRefresh();
                     }
                 }
@@ -820,37 +812,6 @@ namespace Sistema.View
                 }
                 else if (operationType.Equals("updateData") && typeEdition.Equals("search"))
                 {
-                    /* else if (operationType.Equals("updateData") && typeEdition.Equals("search"))
-//                {
-//                    if (remPapel.Length <= 1)
-//                    {
-//                        var resultado = MessageBox.Show("A Edição não alcançou o número mínimo de 3 caracteres.\nPara tentar novamente clique no botão 'Sim'. E no botão 'Não' para cancelar e sair do modo de Inserção.", "Aviso do Sistema", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-//                        if (resultado == DialogResult.Yes)
-//                        {
-//                            stringPapel = "";
-
-//                        }
-//                        else if (resultado == DialogResult.No)
-//                        {
-//                            behaviorRefresh();
-//                        }
-
-//                    }
-//                    else if (remPapel.Length >= 1)
-//                    {
-//                        controllerPapeis.Editar( stringPapel, bolCriar, bolRecuperar, bolEditar, bolExcluir, bolMenuOp, bolMenuAdmin, bolMenuGen, Convert.ToInt32(txtBoxId.Text));
-
-//                        if ("AT".Equals(controllerPapeis.AcaoCrudPapeisDAO()))
-//                        {
-//                            behaviorRefresh();
-//                            puxarparametroPesquisa();
-
-                           
-
-//                        }
-//                    }*/
-
-                    MessageBox.Show("8!");
                     if (remPapel.Length <= 1)
                     {
                         var resultado = MessageBox.Show("A Edição não alcançou o número mínimo de 3 caracteres.\nPara tentar novamente clique no botão 'Sim'. E no botão 'Não' para cancelar e sair do modo de Inserção.", "Aviso do Sistema", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -870,7 +831,6 @@ namespace Sistema.View
                         controllerPapeis.Editar(stringPapel, bolCriar, bolRecuperar, bolEditar, bolExcluir, bolMenuOp, bolMenuAdmin, bolMenuGen, Convert.ToInt32(txtBoxId.Text));
                         if ("AT".Equals(controllerPapeis.AcaoCrudPapeisDAO()))
                         {
-                            MessageBox.Show("Salvou?");
                             behaviorRefresh();
                             puxarparametroPesquisa();
                            
@@ -884,21 +844,6 @@ namespace Sistema.View
             }
         }
 
-
-     
-
-       
-
-        private void behaviorSearch()
-        {
-            bttnDel.Enabled = false;
-            bttnEdit.Enabled = false;
-            bttnSearch.Enabled = true;
-            bttnRefresh.Enabled = false;
-            bttnSave.Enabled = false;
-            bttnNew.Enabled = false;
-            tabControlAssets.Visible = true;
-        }
       private void bttnSave_Click(object sender, EventArgs e)
         {
             behaviorSave();
@@ -1093,7 +1038,6 @@ namespace Sistema.View
                 else if (typeEdition.Equals("search"))
                 {
                     operationType = "updateData";
-                    //behaviorClickGridPesquisa();
                     behaviorClickGrid();
 
                 }
@@ -1162,17 +1106,11 @@ namespace Sistema.View
                 labelTextTotalRegFould.Visible = true;
                 bttnOnePageRight.Visible = true;
                 bttnEndPages.Visible = true;
-                //  bttnTools.Enabled = true;
-
                 toolStripLabel1.Visible = false;
                 toolStripLabel2.Visible = false;
-
-
                 puxarparametro(0, Convert.ToInt32(cbButtnQuantPage1.SelectedItem), "Sim");
                 typeEdition = "insert";
                 operationType = "newInsertion";
-
-
             }
         }
 
@@ -1259,11 +1197,6 @@ namespace Sistema.View
 
         }
 
-        private void cbButtnQuantPage1_Click(object sender, EventArgs e)
-        {
-            puxarparametro(0, Convert.ToInt32(cbButtnQuantPage1.SelectedItem), "Sim");
-        }
-
         private void cbOrdenarPor_SelectedIndexChanged(object sender, EventArgs e)
         {
             puxarparametro(0, Convert.ToInt32(cbButtnQuantPage1.SelectedItem), "Sim");
@@ -1307,7 +1240,7 @@ namespace Sistema.View
         private void formCrudPapeis_Load(object sender, EventArgs e)
         {
             //funciona inicializacao maximizada
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+         //   this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
 
         }
 

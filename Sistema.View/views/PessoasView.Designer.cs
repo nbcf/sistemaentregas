@@ -562,10 +562,9 @@ namespace Sistema.View
             this.groupBoxFormulario.Controls.Add(this.label2);
             this.groupBoxFormulario.Controls.Add(this.label1);
             this.groupBoxFormulario.Controls.Add(this.txtBoxId);
-            this.groupBoxFormulario.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBoxFormulario.Location = new System.Drawing.Point(0, 130);
+            this.groupBoxFormulario.Location = new System.Drawing.Point(0, 329);
             this.groupBoxFormulario.Name = "groupBoxFormulario";
-            this.groupBoxFormulario.Size = new System.Drawing.Size(1056, 399);
+            this.groupBoxFormulario.Size = new System.Drawing.Size(1056, 200);
             this.groupBoxFormulario.TabIndex = 6;
             this.groupBoxFormulario.TabStop = false;
             // 
@@ -716,7 +715,6 @@ namespace Sistema.View
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastro de Pessoas";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.PessoasView_FormClosing);
-         //   this.Load += new System.EventHandler(this.formCrudPessoas_Load);
             this.tabControlAssets.ResumeLayout(false);
             this.tabPagePesquisar.ResumeLayout(false);
             this.tabPagePesquisar.PerformLayout();

@@ -29,6 +29,8 @@ namespace Sistema.View
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PapeisView));
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.bttnNew = new System.Windows.Forms.ToolStripButton();
@@ -86,7 +88,7 @@ namespace Sistema.View
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Padding = new System.Windows.Forms.Padding(0);
-            this.toolStrip1.Size = new System.Drawing.Size(767, 51);
+            this.toolStrip1.Size = new System.Drawing.Size(731, 51);
             this.toolStrip1.TabIndex = 3;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -168,6 +170,9 @@ namespace Sistema.View
             // gridCrudPapeis
             // 
             this.gridCrudPapeis.AllowUserToAddRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Gainsboro;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridCrudPapeis.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.gridCrudPapeis.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridCrudPapeis.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gridCrudPapeis.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
@@ -175,9 +180,11 @@ namespace Sistema.View
             this.gridCrudPapeis.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.gridCrudPapeis.MultiSelect = false;
             this.gridCrudPapeis.Name = "gridCrudPapeis";
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridCrudPapeis.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.gridCrudPapeis.RowTemplate.Height = 25;
             this.gridCrudPapeis.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.gridCrudPapeis.Size = new System.Drawing.Size(767, 342);
+            this.gridCrudPapeis.Size = new System.Drawing.Size(731, 342);
             this.gridCrudPapeis.TabIndex = 7;
             this.gridCrudPapeis.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridCrudPapeis_CellClick);
             this.gridCrudPapeis.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridCrudPapeis_CellDoubleClick);
@@ -206,7 +213,7 @@ namespace Sistema.View
             this.cbOrdenarPor1});
             this.toolStrip2.Location = new System.Drawing.Point(0, 449);
             this.toolStrip2.Name = "toolStrip2";
-            this.toolStrip2.Size = new System.Drawing.Size(767, 32);
+            this.toolStrip2.Size = new System.Drawing.Size(731, 32);
             this.toolStrip2.TabIndex = 8;
             this.toolStrip2.Text = "toolStrip2";
             // 
@@ -328,9 +335,8 @@ namespace Sistema.View
             "75",
             "100"});
             this.cbButtnQuantPage1.Name = "cbButtnQuantPage1";
-            this.cbButtnQuantPage1.Size = new System.Drawing.Size(111, 32);
+            this.cbButtnQuantPage1.Size = new System.Drawing.Size(75, 32);
             this.cbButtnQuantPage1.SelectedIndexChanged += new System.EventHandler(this.cbButtnQuantPage1_SelectedIndexChanged_2);
-            this.cbButtnQuantPage1.Click += new System.EventHandler(this.cbButtnQuantPage1_Click);
             // 
             // toolStripLabel7
             // 
@@ -346,7 +352,7 @@ namespace Sistema.View
             "Codigo",
             "Alfabeto"});
             this.cbOrdemParam1.Name = "cbOrdemParam1";
-            this.cbOrdemParam1.Size = new System.Drawing.Size(118, 28);
+            this.cbOrdemParam1.Size = new System.Drawing.Size(85, 32);
             this.cbOrdemParam1.SelectedIndexChanged += new System.EventHandler(this.cbOrdemParam1_SelectedIndexChanged);
             this.cbOrdemParam1.Click += new System.EventHandler(this.cbOrdemParam1_Click);
             // 
@@ -364,7 +370,7 @@ namespace Sistema.View
             "Primeiros",
             "Ultimos"});
             this.cbOrdenarPor1.Name = "cbOrdenarPor1";
-            this.cbOrdenarPor1.Size = new System.Drawing.Size(118, 28);
+            this.cbOrdenarPor1.Size = new System.Drawing.Size(85, 28);
             this.cbOrdenarPor1.SelectedIndexChanged += new System.EventHandler(this.cbOrdenarPor_SelectedIndexChanged);
             this.cbOrdenarPor1.Click += new System.EventHandler(this.cbOrdenarPor_Click);
             // 
@@ -377,7 +383,7 @@ namespace Sistema.View
             this.tabControlAssets.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tabControlAssets.Name = "tabControlAssets";
             this.tabControlAssets.SelectedIndex = 0;
-            this.tabControlAssets.Size = new System.Drawing.Size(767, 88);
+            this.tabControlAssets.Size = new System.Drawing.Size(731, 88);
             this.tabControlAssets.TabIndex = 5;
             // 
             // tabPagePesquisar
@@ -393,7 +399,7 @@ namespace Sistema.View
             this.tabPagePesquisar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tabPagePesquisar.Name = "tabPagePesquisar";
             this.tabPagePesquisar.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.tabPagePesquisar.Size = new System.Drawing.Size(759, 52);
+            this.tabPagePesquisar.Size = new System.Drawing.Size(723, 52);
             this.tabPagePesquisar.TabIndex = 1;
             this.tabPagePesquisar.Text = "Pesquisar";
             this.tabPagePesquisar.UseVisualStyleBackColor = true;
@@ -472,7 +478,7 @@ namespace Sistema.View
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(767, 481);
+            this.ClientSize = new System.Drawing.Size(731, 481);
             this.Controls.Add(this.toolStrip2);
             this.Controls.Add(this.gridCrudPapeis);
             this.Controls.Add(this.tabControlAssets);

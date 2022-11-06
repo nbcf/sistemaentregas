@@ -556,23 +556,24 @@ namespace Sistema.View
 
         private void behaviorRefresh()
         {
- 
             if (operationType == "updateData" && typeEdition == "search")
             {
                 gridCrudPessoa.Visible = true;
                 tabControlAssets.Visible = true;
-                tabControlAssets.TabPages.Remove(tabPagePesquisar);
+                tabControlAssets.TabPages.Insert(0, tabPagePesquisar);
                 groupBoxFormulario.Enabled = false;
                 groupBoxFormulario.Visible = false;
-                tabControlAssets.TabPages.Insert(0, tabPagePesquisar);
                 bttnEdit.Enabled = true;
                 bttnSave.Enabled = false;
                 bttnSearch.Enabled = true;
                 puxarparametroPesquisa();
                 
             }
-            else if (operationType == "" || operationType == "newInsertion" || operationType == "updateData" || operationType == "search" && typeEdition == "insert")
-            {
+            else if (operationType == "" ||
+                operationType == "newInsertion" || 
+                operationType == "updateData" || 
+                operationType == "search" && 
+                typeEdition == "insert"){
                 bttnDel.Enabled = false;
                 bttnEdit.Enabled = false;
                 bttnSearch.Enabled = true;
@@ -609,8 +610,11 @@ namespace Sistema.View
                 toolStrip2.Visible = true;
                
             }
-            else if (operationType == "" || operationType == "newInsertion" || operationType == "updateData" || operationType == "search" && typeEdition == "search")
-            {
+            else if (operationType == "" || 
+                operationType == "newInsertion" || 
+                operationType == "updateData" || 
+                operationType == "search" &&
+                typeEdition == "search"){
                 bttnDel.Enabled = false;
                 bttnEdit.Enabled = false;
                 bttnSearch.Enabled = true;
@@ -647,15 +651,13 @@ namespace Sistema.View
                 toolStrip2.Visible = true;
             }
         }
-        private void behaviorNewInsert()
-        {
+        private void behaviorNewInsert(){
             bttnDel.Enabled = false;
             bttnEdit.Enabled = false;
             bttnSearch.Enabled = false;
             bttnRefresh.Enabled = true;
             bttnSave.Enabled = true;
             bttnNew.Enabled = false;
-
             bttnBeginPages.Visible = false;
             bttnOnePageLeft.Visible = false;
             labelTextPageFrom.Visible = false;
@@ -665,7 +667,6 @@ namespace Sistema.View
             labelTextTotalRegFould.Visible = false;
             bttnOnePageRight.Visible = false;
             bttnEndPages.Visible = false;
-      
             toolStripLabel2.Visible = false;
             toolStripLabel4.Visible = false;
             cbButtnQuantPage1.Visible = false;
@@ -673,17 +674,14 @@ namespace Sistema.View
             cbOrdemParam1.Visible = false;
             toolStripLabel7.Visible = false;
             toolStrip2.Visible = false;
-
             gridCrudPessoa.Visible = false;
             tabControlAssets.Visible = false;
             tabControlAssets.TabPages.Remove(tabPagePesquisar);
-
             groupBoxFormulario.Enabled = true;
             groupBoxFormulario.Visible = true;
             clearFieldsFormulario();
             enableFieldsFormulario();
             operationType = "newInsertion";
-
             txtBoxId.Enabled = false;
         }
         private void behaviorDel()
@@ -718,9 +716,7 @@ namespace Sistema.View
                     else if (rem.Length >= 3)
                     {
                       
-                        controllerPessoa.Salvar(Convert.ToInt32(txtBoxIdEndereco.Text),
-                            txtBoxName.Text, 
-                            txtComplemento.Text);
+                        controllerPessoa.Salvar(Convert.ToInt32(txtBoxIdEndereco.Text), txtBoxName.Text, txtComplemento.Text);
                         if ("NS".Equals(controllerPessoa.AcaoCrudPessoaDAO()))
                         {
                             txtBoxName.Focus();
@@ -819,7 +815,6 @@ namespace Sistema.View
             bttnRefresh.Enabled = true;
             bttnSave.Enabled = false;
             bttnNew.Enabled = true;
-
             gridCrudPessoa.Visible = true;
             radioBttnComeca.Checked = false;
             radioBttnContem.Checked = false;
@@ -827,7 +822,6 @@ namespace Sistema.View
             tabControlAssets.Visible = false;
             gridCrudPessoa.Visible = true;
             tabControlAssets.TabPages.Remove(tabPagePesquisar);
-
             groupBoxFormulario.Enabled = false;
             groupBoxFormulario.Visible = false;
             clearFieldsFormulario();
@@ -857,10 +851,7 @@ namespace Sistema.View
             setaGridEmCampos();
         }
 
-        private void behaviorEditPesquisa()
-        {
-
-           
+        private void behaviorEditPesquisa() {
             typeEdition = "search";
             bttnDel.Enabled = false;
             bttnEdit.Enabled = false;
@@ -879,16 +870,7 @@ namespace Sistema.View
             setaGridEmCampos();
         }
 
-        private void behaviorSearch()
-        {
-            bttnDel.Enabled = false;
-            bttnEdit.Enabled = false;
-            bttnSearch.Enabled = true;
-            bttnRefresh.Enabled = false;
-            bttnSave.Enabled = false;
-            bttnNew.Enabled = false;
-            tabControlAssets.Visible = true;
-        }
+    
 
         private void behaviorClickGrid() {
 
@@ -1053,10 +1035,8 @@ namespace Sistema.View
             {
                 tabControlAssets.Visible = true;
                 tabControlAssets.TabPages.Remove(tabPagePesquisar);
-
                 groupBoxFormulario.Enabled = false;
                 groupBoxFormulario.Visible = false;
-
                 bttnNew.Enabled = false;
                 bttnRefresh.Enabled = false;
                 bttnSearch.Enabled = false;
@@ -1065,7 +1045,6 @@ namespace Sistema.View
             {
                 tabControlAssets.Visible = false;
                 tabControlAssets.TabPages.Remove(tabPagePesquisar);
-    
                 groupBoxFormulario.Enabled = false;
                 groupBoxFormulario.Visible = false;
                 bttnNew.Enabled = true;
@@ -1077,17 +1056,15 @@ namespace Sistema.View
         private void button2_Click(object sender, EventArgs e)
         {
             countBttnToggle++;
-            if (countBttnToggle % 2 != 0)
-            {
+            if (countBttnToggle % 2 != 0){
                 tabControlAssets.Visible = false;
                 tabControlAssets.TabPages.Remove(tabPagePesquisar);
                 groupBoxFormulario.Enabled = false;
                 groupBoxFormulario.Visible = false;
                 bttnNew.Enabled = true;
                 bttnRefresh.Enabled = true;
-            }
-            else
-            {
+
+            }else{
                 tabControlAssets.Visible = true;
                 tabControlAssets.TabPages.Remove(tabPagePesquisar);
                 groupBoxFormulario.Enabled = false;
@@ -1183,8 +1160,6 @@ namespace Sistema.View
 
             else if (gridVazia.Length > 0)
             {
-                operationType = "newInsertion";
-                typeEdition = "insert";
                 if (typeEdition.Equals("insert") && operationType.Equals("newInsertion"))
                 {
                       behaviorEdit();
@@ -1253,20 +1228,14 @@ namespace Sistema.View
             }
             else if (gridVazia.Length > 0)
             {
-                operationType = "newInsertion";
-                typeEdition = "insert";   
-
                 if (typeEdition.Equals("insert"))
                 {
                     operationType = "newInsertion";
-                   
-
                     behaviorClickGrid();
                 }
                 else if (typeEdition.Equals("search"))
                 {
                     operationType = "updateData";
-                   
                     behaviorClickGridPesquisa();
                
                 }
