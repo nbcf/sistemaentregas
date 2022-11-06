@@ -472,7 +472,7 @@ namespace Sistema.View.views
             this.gridCrudTipoGastos.Size = new System.Drawing.Size(674, 303);
             this.gridCrudTipoGastos.TabIndex = 9;
             this.gridCrudTipoGastos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridCrudTipoGastos_CellClick_1);
-        //    this.gridCrudTipoGastos.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.gridCrudTipoGastos_CellMouseDoubleClick);
+            this.gridCrudTipoGastos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridCrudTipoGastos_CellContentClick);
             // 
             // groupBoxFormulario
             // 

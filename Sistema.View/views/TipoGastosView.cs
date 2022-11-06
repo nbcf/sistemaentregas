@@ -81,49 +81,68 @@ namespace Sistema.View.views
         }
         private void behaviorSave()
         {
-            MessageBox.Show(" operationType:" + operationType + " typeEdition:" + typeEdition);
             string retiraEspacos = txtBoxName.Text;
-            string rem = retiraEspacos.Trim();
-            if (txtBoxId.Text.Trim().Equals("") || txtBoxId.Text.Trim() == null)
+            string remPapel = retiraEspacos.Trim();
+            string retiraEspacosId = txtBoxId.Text;
+            string remEspacosId = retiraEspacosId.Trim();
+            if (remEspacosId.Equals("") || remEspacosId == null)
             {
-
                 if (operationType.Equals("newInsertion") && typeEdition.Equals("insert"))
                 {
-                    if (rem.Length <= 3)
+                    if (remPapel.Length <= 1)
                     {
-                        var resultado = MessageBox.Show("A Inserção não alcançou o número mínimo de 3 caracteres.\nPara tentar novamente clique no botão 'Sim'. E no botão 'Não' para cancelar e sair do modo de Inserção.", "Aviso do Sistema", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                        var resultado = MessageBox.Show("A Inserção não alcançou o número mínimo de 3 caracteres.\n" +
+                        "Para tentar novamente clique no botão 'Sim'. E no botão 'Não' para cancelar e sair do modo de Inserção.",
+                        "Aviso do Sistema",
+                        MessageBoxButtons.YesNo,
+                        MessageBoxIcon.Question);
                         if (resultado == DialogResult.Yes)
                         {
+
                             txtBoxName.Text = "";
-                            txtBoxName.Focus();
                         }
                         else if (resultado == DialogResult.No)
                         {
+
                             behaviorRefresh();
                         }
                     }
-                    else if (rem.Length >= 3)
+                    else if (remPapel.Length >= 1)
                     {
-
                         controllerTipoGastos.Salvar(Convert.ToInt32(txtIdTipogastos.Text), txtBoxName.Text);
-                        if ("NS".Equals(controllerTipoGastos.AcaoCrudTipoGastosDAO()))
+                        // controllerPapeis.Salvar(stringPapel, bolCriar, bolRecuperar, bolEditar, bolExcluir, bolMenuOp, bolMenuAdmin, bolMenuGen);
+                        if ("NS".Equals(controllerTipoUnds.AcaoCrudTipoUndsController()))
                         {
-                            txtBoxName.Focus();
-                            txtBoxName.Text = "";
 
+                            txtBoxName.Text = "";
+                            behaviorRefresh();
                         }
-                        else if ("S!".Equals(controllerTipoGastos.AcaoCrudTipoGastosDAO()))
+                        else if ("S!".Equals(controllerTipoUnds.AcaoCrudTipoUndsController()))
                         {
+
                             operationType = "newInsertion";
                             typeEdition = "insert";
-                            acoesBehaviorSave();
 
+                            behaviorRefresh();
+                            MessageBox.Show("Registro Salvo Com Sucesso!", "Aviso de Confirmação", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
-                        else if ("S!!".Equals(controllerTipoGastos.AcaoCrudTipoGastosDAO()))
+                        else if ("S!!".Equals(controllerTipoUnds.AcaoCrudTipoUndsController()))
                         {
-                            acoesBehaviorSave();
 
+                            operationType = "newInsertion";
+                            typeEdition = "insert";
+
+                            behaviorRefresh();
+                            MessageBox.Show("Dado Existente Salvo!", "Aviso de Confirmação", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
+                    }
+                    if ("NS".Equals(controllerTipoUnds.AcaoCrudTipoUndsController()))
+                    {
+
+                        operationType = "newInsertion";
+                        typeEdition = "insert";
+                        //acoesBehaviorSave();
+                        behaviorRefresh();
                     }
                 }
             }
@@ -132,46 +151,46 @@ namespace Sistema.View.views
 
                 if (operationType.Equals("updateData") && typeEdition.Equals("insert"))
                 {
-                    if (rem.Length <= 3)
+                    if (remPapel.Length <= 1)
                     {
-
                         var resultado = MessageBox.Show("A Edição não alcançou o número mínimo de 3 caracteres.\nPara tentar novamente clique no botão 'Sim'. E no botão 'Não' para cancelar e sair do modo de Inserção.", "Aviso do Sistema", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                         if (resultado == DialogResult.Yes)
                         {
-
                             txtBoxName.Text = "";
                         }
                         else if (resultado == DialogResult.No)
                         {
-
+                            //operationType = "updateData";
+                            //typeEdition = "insert";
                             behaviorRefresh();
                         }
-
                     }
-                    else if (rem.Length >= 3)
+                    else if (remPapel.Length >= 1)
                     {
-                        controllerTipoGastos.Editar(Convert.ToInt32(txtBoxId.Text.Trim()),txtBoxName.Text, Convert.ToInt32(txtIdTipogastos.Text));
-
-                        if ("AT".Equals(controllerTipoGastos.AcaoCrudTipoGastosDAO()))
+                        controllerTipoGastos.Editar(Convert.ToInt32(txtBoxId.Text.Trim()), txtBoxName.Text, Convert.ToInt32(txtIdTipogastos.Text));
+                        if ("AT".Equals(controllerTipoUnds.AcaoCrudTipoUndsController()))
                         {
-
                             operationType = "newInsertion";
                             typeEdition = "insert";
-
                             behaviorRefresh();
 
-
                         }
+                    }
+                    if ("NS".Equals(controllerTipoUnds.AcaoCrudTipoUndsController()))
+                    {
+
+                        behaviorRefresh();
                     }
                 }
                 else if (operationType.Equals("updateData") && typeEdition.Equals("search"))
                 {
-                  
-                    if (rem.Length <= 3)
+
+                    if (remPapel.Length <= 1)
                     {
                         var resultado = MessageBox.Show("A Edição não alcançou o número mínimo de 3 caracteres.\nPara tentar novamente clique no botão 'Sim'. E no botão 'Não' para cancelar e sair do modo de Inserção.", "Aviso do Sistema", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                         if (resultado == DialogResult.Yes)
                         {
+
                             txtBoxName.Text = "";
                         }
                         else if (resultado == DialogResult.No)
@@ -182,27 +201,151 @@ namespace Sistema.View.views
                         }
 
                     }
-                    else if (rem.Length >= 3)
+                    else if (remPapel.Length >= 1)
                     {
-                        controllerTipoGastos.Editar(Convert.ToInt32(txtBoxId.Text.Trim()),txtBoxName.Text,Convert.ToInt32(txtIdTipogastos.Text));
-
-                        if ("AT".Equals(controllerTipoGastos.AcaoCrudTipoGastosDAO()))
+                        controllerTipoGastos.Editar(Convert.ToInt32(txtBoxId.Text.Trim()), txtBoxName.Text, Convert.ToInt32(txtIdTipogastos.Text));
+                        if ("AT".Equals(controllerTipoUnds.AcaoCrudTipoUndsController()))
                         {
+
                             operationType = "updateData";
                             typeEdition = "search";
                             behaviorRefresh();
-
+                            //puxarparametroPesquisa();
+                            //MessageBox.Show("Registro Pesquisado foi Atualizado !  \n else if (operationType.Equals(search) && typeEdition.Equals(search))", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         }
-                        if ("NS".Equals(controllerTipoUnds.AcaoCrudTipoUndsController()))
-                        {
-                            behaviorRefresh();
-                        }
+                    }
+                    if ("NS".Equals(controllerTipoUnds.AcaoCrudTipoUndsController()))
+                    {
+                        behaviorRefresh();
                     }
                 }
             }
         }
 
-            private void puxarparametro(int deslocamento, int limiteregistro, string inicioDeslocamento)
+        //private void behaviorSave()
+        //{
+        //    MessageBox.Show(" operationType:" + operationType + " typeEdition:" + typeEdition);
+        //    string retiraEspacos = txtBoxName.Text;
+        //    string rem = retiraEspacos.Trim();
+        //    if (txtBoxId.Text.Trim().Equals("") || txtBoxId.Text.Trim() == null)
+        //    {
+
+        //        if (operationType.Equals("newInsertion") && typeEdition.Equals("insert"))
+        //        {
+        //            if (rem.Length <= 3)
+        //            {
+        //                var resultado = MessageBox.Show("A Inserção não alcançou o número mínimo de 3 caracteres.\nPara tentar novamente clique no botão 'Sim'. E no botão 'Não' para cancelar e sair do modo de Inserção.", "Aviso do Sistema", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+        //                if (resultado == DialogResult.Yes)
+        //                {
+        //                    txtBoxName.Text = "";
+        //                    txtBoxName.Focus();
+        //                }
+        //                else if (resultado == DialogResult.No)
+        //                {
+        //                    behaviorRefresh();
+        //                }
+        //            }
+        //            else if (rem.Length >= 3)
+        //            {
+
+        //                controllerTipoGastos.Salvar(Convert.ToInt32(txtIdTipogastos.Text), txtBoxName.Text);
+        //                if ("NS".Equals(controllerTipoGastos.AcaoCrudTipoGastosDAO()))
+        //                {
+        //                    txtBoxName.Focus();
+        //                    txtBoxName.Text = "";
+
+        //                }
+        //                else if ("S!".Equals(controllerTipoGastos.AcaoCrudTipoGastosDAO()))
+        //                {
+        //                    operationType = "newInsertion";
+        //                    typeEdition = "insert";
+        //                    acoesBehaviorSave();
+
+        //                }
+        //                else if ("S!!".Equals(controllerTipoGastos.AcaoCrudTipoGastosDAO()))
+        //                {
+        //                    acoesBehaviorSave();
+
+        //                }
+        //            }
+        //        }
+        //    }
+        //    else if (!txtBoxId.Text.Trim().Equals("") || txtBoxId.Text.Trim() != null)
+        //    {
+
+        //        if (operationType.Equals("updateData") && typeEdition.Equals("insert"))
+        //        {
+        //            if (rem.Length <= 3)
+        //            {
+
+        //                var resultado = MessageBox.Show("A Edição não alcançou o número mínimo de 3 caracteres.\nPara tentar novamente clique no botão 'Sim'. E no botão 'Não' para cancelar e sair do modo de Inserção.", "Aviso do Sistema", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+        //                if (resultado == DialogResult.Yes)
+        //                {
+
+        //                    txtBoxName.Text = "";
+        //                }
+        //                else if (resultado == DialogResult.No)
+        //                {
+
+        //                    behaviorRefresh();
+        //                }
+
+        //            }
+        //            else if (rem.Length >= 3)
+        //            {
+        //                controllerTipoGastos.Editar(Convert.ToInt32(txtBoxId.Text.Trim()),txtBoxName.Text, Convert.ToInt32(txtIdTipogastos.Text));
+
+        //                if ("AT".Equals(controllerTipoGastos.AcaoCrudTipoGastosDAO()))
+        //                {
+
+        //                    operationType = "newInsertion";
+        //                    typeEdition = "insert";
+
+        //                    behaviorRefresh();
+
+
+        //                }
+        //            }
+        //        }
+        //        else if (operationType.Equals("updateData") && typeEdition.Equals("search"))
+        //        {
+
+        //            if (rem.Length <= 3)
+        //            {
+        //                var resultado = MessageBox.Show("A Edição não alcançou o número mínimo de 3 caracteres.\nPara tentar novamente clique no botão 'Sim'. E no botão 'Não' para cancelar e sair do modo de Inserção.", "Aviso do Sistema", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+        //                if (resultado == DialogResult.Yes)
+        //                {
+        //                    txtBoxName.Text = "";
+        //                }
+        //                else if (resultado == DialogResult.No)
+        //                {
+        //                    operationType = "updateData";
+        //                    typeEdition = "search";
+        //                    behaviorRefresh();
+        //                }
+
+        //            }
+        //            else if (rem.Length >= 3)
+        //            {
+        //                controllerTipoGastos.Editar(Convert.ToInt32(txtBoxId.Text.Trim()),txtBoxName.Text,Convert.ToInt32(txtIdTipogastos.Text));
+
+        //                if ("AT".Equals(controllerTipoGastos.AcaoCrudTipoGastosDAO()))
+        //                {
+        //                    operationType = "updateData";
+        //                    typeEdition = "search";
+        //                    behaviorRefresh();
+
+        //                }
+        //                if ("NS".Equals(controllerTipoUnds.AcaoCrudTipoUndsController()))
+        //                {
+        //                    behaviorRefresh();
+        //                }
+        //            }
+        //        }
+        //    }
+        //}
+
+        private void puxarparametro(int deslocamento, int limiteregistro, string inicioDeslocamento)
         {
 
             string jcbOrdem = Convert.ToString(cbOrdemParam1.SelectedItem);
@@ -1020,66 +1163,10 @@ namespace Sistema.View.views
             puxarparametro(0, Convert.ToInt32(cbButtnQuantPage1.SelectedItem), "Sim");
         }
 
-        private void behaviorEdit()
-        {
-
-            typeEdition = "insert";
-            operationType = "updateData";
-            bttnDel.Enabled = false;
-            bttnEdit.Enabled = false;
-            bttnSearch.Enabled = false;
-            bttnRefresh.Enabled = true;
-            bttnSave.Enabled = true;
-            bttnNew.Enabled = false;
-            gridCrudTipoGastos.Visible = false;
-            tabControlAssets.Visible = false;
-            tabControlAssets.TabPages.Remove(tabPagePesquisar);
-            groupBoxFormulario.Enabled = true;
-            groupBoxFormulario.Visible = true;
-            enableFieldsFormulario();
-            clearFieldsFormulario();
-            txtBoxId.Enabled = false;
-            setaGridEmCampos();
-        }
-
-        private void behaviorEditPesquisa()
-        {
-
-
-            typeEdition = "search";
-            bttnDel.Enabled = false;
-            bttnEdit.Enabled = false;
-            bttnSearch.Enabled = false;
-            bttnRefresh.Enabled = true;
-            bttnSave.Enabled = true;
-            bttnNew.Enabled = false;
-            gridCrudTipoGastos.Visible = false;
-            tabControlAssets.Visible = false;
-            tabControlAssets.TabPages.Remove(tabPagePesquisar);
-            groupBoxFormulario.Enabled = true;
-            groupBoxFormulario.Visible = true;
-            enableFieldsFormulario();
-            clearFieldsFormulario();
-            txtBoxId.Enabled = false;
-            setaGridEmCampos();
-        }
-
-      
         private void behaviorClickGrid()
         {
 
-            //bttnNew.Enabled = false;
-            //bttnDel.Enabled = true;
-            //bttnEdit.Enabled = true;
-            //bttnSearch.Enabled = true;
-            //bttnRefresh.Enabled = true;
-            //bttnSave.Enabled = false;
-            //radioBttnComeca.Checked = false;
-            //radioBttnContem.Checked = false;
-            //radioBttnTermina.Checked = false;
-            //enableFieldsFormulario();
-            //clearFieldsFormulario();
-            //setaGridEmCampos();
+
             if (operationType == "updateData" && typeEdition == "search")
             {
                 bttnNew.Enabled = false;
@@ -1131,19 +1218,9 @@ namespace Sistema.View.views
                 setaGridEmCampos();
             }
 
-
-
-
-
         }
 
-        private void setaGridEmCampos()
-        {
-            txtBoxId.Text = gridCrudTipoGastos.CurrentRow.Cells[0].Value.ToString();
-            txtBoxName.Text = gridCrudTipoGastos.CurrentRow.Cells[2].Value.ToString();
-
-        }
-
+      
         private void behaviorClickGridPesquisa()
         {
             bttnNew.Enabled = false;
@@ -1156,6 +1233,173 @@ namespace Sistema.View.views
             clearFieldsFormulario();
             setaGridEmCampos();
         }
+
+
+
+
+        private void setaGridEmCampos()
+        {
+            txtBoxId.Text = gridCrudTipoGastos.CurrentRow.Cells[0].Value.ToString();
+            txtBoxName.Text = gridCrudTipoGastos.CurrentRow.Cells[2].Value.ToString();
+
+        }
+        //private void behaviorEdit()
+        //{
+
+        //    typeEdition = "insert";
+        //    operationType = "updateData";
+        //    bttnDel.Enabled = false;
+        //    bttnEdit.Enabled = false;
+        //    bttnSearch.Enabled = false;
+        //    bttnRefresh.Enabled = true;
+        //    bttnSave.Enabled = true;
+        //    bttnNew.Enabled = false;
+        //    gridCrudTipoGastos.Visible = false;
+        //    tabControlAssets.Visible = false;
+        //    tabControlAssets.TabPages.Remove(tabPagePesquisar);
+        //    groupBoxFormulario.Enabled = true;
+        //    groupBoxFormulario.Visible = true;
+        //    enableFieldsFormulario();
+        //    clearFieldsFormulario();
+        //    txtBoxId.Enabled = false;
+        //    setaGridEmCampos();
+        //}
+
+        private void behaviorEdit()
+        {
+            typeEdition = "insert";
+            operationType = "updateData";
+            bttnDel.Enabled = false;
+            bttnEdit.Enabled = false;
+            bttnSearch.Enabled = false;
+            bttnRefresh.Enabled = true;
+            bttnSave.Enabled = true;
+            bttnNew.Enabled = false;
+            gridCrudTipoGastos.Visible = false;
+            tabControlAssets.Visible = false;
+            tabControlAssets.TabPages.Remove(tabPagePesquisar);
+            groupBoxFormulario.Enabled = true;
+            groupBoxFormulario.Visible = true;
+            enableFieldsFormulario();
+            clearFieldsFormulario();
+            txtBoxId.Enabled = false;
+            setaGridEmCampos();
+        }
+
+
+        private void behaviorEditPesquisa()
+        {
+            typeEdition = "search";
+            bttnDel.Enabled = false;
+            bttnEdit.Enabled = false;
+            bttnSearch.Enabled = false;
+            bttnRefresh.Enabled = true;
+            bttnSave.Enabled = true;
+            bttnNew.Enabled = false;
+            gridCrudTipoGastos.Visible = false;
+            tabControlAssets.Visible = false;
+            tabControlAssets.TabPages.Remove(tabPagePesquisar);
+            groupBoxFormulario.Enabled = true;
+            groupBoxFormulario.Visible = true;
+            enableFieldsFormulario();
+            clearFieldsFormulario();
+            txtBoxId.Enabled = false;
+            setaGridEmCampos();
+        }
+
+   
+      
+        //private void behaviorClickGrid()
+        //{
+
+        //    //bttnNew.Enabled = false;
+        //    //bttnDel.Enabled = true;
+        //    //bttnEdit.Enabled = true;
+        //    //bttnSearch.Enabled = true;
+        //    //bttnRefresh.Enabled = true;
+        //    //bttnSave.Enabled = false;
+        //    //radioBttnComeca.Checked = false;
+        //    //radioBttnContem.Checked = false;
+        //    //radioBttnTermina.Checked = false;
+        //    //enableFieldsFormulario();
+        //    //clearFieldsFormulario();
+        //    //setaGridEmCampos();
+        //    if (operationType == "updateData" && typeEdition == "search")
+        //    {
+        //        bttnNew.Enabled = false;
+        //        bttnDel.Enabled = true;
+        //        bttnEdit.Enabled = true;
+        //        bttnSearch.Enabled = true;
+        //        bttnRefresh.Enabled = true;
+        //        bttnSave.Enabled = false;
+
+        //        radioBttnComeca.Checked = true;
+        //        enableFieldsFormulario();
+        //        clearFieldsFormulario();
+        //        setaGridEmCampos();
+
+
+
+        //    }
+        //    else if (operationType == "" || operationType == "newInsertion" || operationType == "updateData" || operationType == "search" && typeEdition == "insert")
+        //    {
+        //        bttnNew.Enabled = false;
+        //        bttnDel.Enabled = true;
+        //        bttnEdit.Enabled = true;
+        //        bttnSearch.Enabled = true;
+        //        bttnRefresh.Enabled = true;
+        //        bttnSave.Enabled = false;
+
+        //        radioBttnComeca.Checked = false;
+        //        radioBttnContem.Checked = false;
+        //        radioBttnTermina.Checked = false;
+        //        enableFieldsFormulario();
+        //        clearFieldsFormulario();
+        //        setaGridEmCampos();
+
+        //    }
+        //    else if (operationType == "" || operationType == "newInsertion" || operationType == "updateData" || operationType == "search" && typeEdition == "search")
+        //    {
+        //        bttnNew.Enabled = false;
+        //        bttnDel.Enabled = true;
+        //        bttnEdit.Enabled = true;
+        //        bttnSearch.Enabled = true;
+        //        bttnRefresh.Enabled = true;
+        //        bttnSave.Enabled = false;
+
+        //        radioBttnComeca.Checked = false;
+        //        radioBttnContem.Checked = false;
+        //        radioBttnTermina.Checked = false;
+        //        enableFieldsFormulario();
+        //        clearFieldsFormulario();
+        //        setaGridEmCampos();
+        //    }
+
+
+
+
+
+        //}
+
+        //private void setaGridEmCampos()
+        //{
+        //    txtBoxId.Text = gridCrudTipoGastos.CurrentRow.Cells[0].Value.ToString();
+        //    txtBoxName.Text = gridCrudTipoGastos.CurrentRow.Cells[2].Value.ToString();
+
+        //}
+
+        //private void behaviorClickGridPesquisa()
+        //{
+        //    bttnNew.Enabled = false;
+        //    bttnDel.Enabled = true;
+        //    bttnEdit.Enabled = true;
+        //    bttnSearch.Enabled = true;
+        //    bttnRefresh.Enabled = false;
+        //    bttnSave.Enabled = false;
+        //    enableFieldsFormulario();
+        //    clearFieldsFormulario();
+        //    setaGridEmCampos();
+        //}
 
 
 
@@ -1403,27 +1647,22 @@ namespace Sistema.View.views
         private void bttnEdit_Click(object sender, EventArgs e)
         {
 
+
             var gridVazia = gridCrudTipoGastos.CurrentRow.Cells[0].Value.ToString();
             if (string.IsNullOrEmpty(gridVazia))
             {
             }
-
-
             else if (gridVazia.Length > 0)
             {
-                operationType = "newInsertion";
-                typeEdition = "insert";
+
                 if (typeEdition.Equals("insert") && operationType.Equals("newInsertion"))
                 {
                     behaviorEdit();
                 }
                 else if (typeEdition.Equals("search") && operationType.Equals("updateData"))
                 {
-
                     behaviorEditPesquisa();
                 }
-
-
             }
         }
 
@@ -1504,50 +1743,28 @@ namespace Sistema.View.views
 
         private void gridCrudTipoGastos_CellClick_1(object sender, DataGridViewCellEventArgs e)
         {
-            //var gridVazia = gridCrudTipoGastos.CurrentRow.Cells[0].Value.ToString();
-            //if (string.IsNullOrEmpty(gridVazia))
-            //{
+            
+                var gridVazia = gridCrudTipoGastos.CurrentRow.Cells[0].Value.ToString();
+                if (string.IsNullOrEmpty(gridVazia))
+                {
 
-            //}
-            //else if (gridVazia.Length > 0)
-            //{
-            //    operationType = "newInsertion";
-            //    typeEdition = "insert";
+                }
+                else if (gridVazia.Length > 0)
+                {
+                    if (typeEdition.Equals("insert"))
+                    {
+                        operationType = "newInsertion";
+                        behaviorClickGrid();
+                    }
+                    else if (typeEdition.Equals("search"))
+                    {
+                        operationType = "updateData";
+                        behaviorClickGrid();
+                    }
 
-            //    if (typeEdition.Equals("insert"))
-            //    {
-            //        operationType = "newInsertion";
 
-
-            //        behaviorClickGrid();
-            //    }
-            //    else if (typeEdition.Equals("search"))
-            //    {
-            //        operationType = "updateData";
-
-            //        behaviorClickGridPesquisa();
-
-            //    }
-            var gridVazia = gridCrudTipoGastos.CurrentRow.Cells[0].Value.ToString();
-            if (string.IsNullOrEmpty(gridVazia))
-            {
-
+                }
             }
-            else if (gridVazia.Length > 0)
-            {
-                if (typeEdition.Equals("insert"))
-                {
-                    operationType = "newInsertion";
-                    behaviorClickGrid();
-                }
-                else if (typeEdition.Equals("search"))
-                {
-                    operationType = "updateData";
-                    behaviorClickGrid();
-                }
-
-            }        
-        }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -1585,6 +1802,11 @@ namespace Sistema.View.views
         private void radioBttnTermina_CheckedChanged_2(object sender, EventArgs e)
         {
             puxarparametroPesquisa();
+        }
+
+        private void gridCrudTipoGastos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 
