@@ -85,7 +85,7 @@ namespace Sistema.View
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(86, 47);
             this.button2.TabIndex = 5;
-            this.button2.Text = "Sair - Esc";
+            this.button2.Text = "Sair";
             this.button2.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
@@ -99,7 +99,7 @@ namespace Sistema.View
             this.bttnSalvar.Name = "bttnSalvar";
             this.bttnSalvar.Size = new System.Drawing.Size(86, 47);
             this.bttnSalvar.TabIndex = 4;
-            this.bttnSalvar.Text = "Ok - Enter";
+            this.bttnSalvar.Text = "Ok";
             this.bttnSalvar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.bttnSalvar.UseVisualStyleBackColor = true;
             this.bttnSalvar.Click += new System.EventHandler(this.button1_Click);

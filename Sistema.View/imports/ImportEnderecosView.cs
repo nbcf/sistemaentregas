@@ -324,7 +324,8 @@ namespace Sistema.View
         {
             puxarparametroPesquisa();
         }
-
+        /*Logradouro
+Bairro*/
         private void dataGridImpEndereco_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             behaviorClickGrid();
@@ -345,23 +346,17 @@ namespace Sistema.View
             puxarparametroPesquisa();
         }
 
-        private void button2_Click_1(object sender, EventArgs e)
-        {
-            salvarNovoEndereco();
-            limparCampos();
-            groupBox1.Visible = false;
-            tabControlAssets.Visible = true;
+      
 
-        }
-
-        private void button4_Click(object sender, EventArgs e)
+        public void NovoEndereco()
         {
             tabControlAssets.Visible = false;
             limparCampos();
             puxarparametroPesquisa();
             groupBox1.Visible = true;
-        }
 
+
+        }
         private void button3_Click(object sender, EventArgs e)
         {
             limparCampos();
@@ -383,6 +378,32 @@ namespace Sistema.View
         private void txtBoxPesquisar_TextChanged_5(object sender, EventArgs e)
         {
             puxarparametroPesquisa();
+        }
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            limparCampos();
+            groupBox1.Visible = false;
+            tabControlAssets.Visible = false;
+            tabControlAssets.Visible = true;
+        }
+
+        private void bttnSave_Click(object sender, EventArgs e)
+        {
+            salvarNovoEndereco();
+            limparCampos();
+            groupBox1.Visible = false;
+            tabControlAssets.Visible = true;
+        }
+
+        private void bttnNew_Click(object sender, EventArgs e)
+        {
+            NovoEndereco();
+        }
+
+        private void bttnEdit_Click(object sender, EventArgs e)
+        {
+
         }
     }
 

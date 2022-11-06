@@ -143,7 +143,7 @@ namespace Sistema.View
             this.btnOk.Text = "OK ";
             this.btnOk.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnOk.UseVisualStyleBackColor = true;
-            this.btnOk.Click += new System.EventHandler(this.button1_Click);
+            this.btnOk.Click += new System.EventHandler(this.btnOkClick);
             // 
             // btnSair
             // 

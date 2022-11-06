@@ -1527,6 +1527,8 @@ namespace Sistema.View
 
         private void bttnDel_Click(object sender, EventArgs e)
         {
+   
+
 
         }
     }

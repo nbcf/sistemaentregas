@@ -81,23 +81,23 @@ namespace Sistema.Controller
         }
 
         public object retornoDadoPessoas(string idpessoa){
-            pec.Nomepessoa = dao.ExibirDadosPessoa(idpessoa);
-            return pec;
+
+            return pec.Nomepessoa = dao.ExibirDadosPessoa(idpessoa);
         }
 
 
         public DataTable ListarDataGrid(string parametro, string indexar, int offsett, int limitt){
-                retornoQuantRegistro();
+              //  retornoQuantRegistro();
                 return dao.ListarDataGrid(parametro, indexar, offsett, limitt);
         }
        
         public DataTable ListarEntregador(string funcao){
-                retornoQuantRegistro();
+             //   retornoQuantRegistro();
                 return dao.ListarImportEntregador(funcao); 
         }
 
         public DataTable PesquisarComecaCom(string coluna, string campo, string pesquisar){
-                retornoQuantPesquisa();
+             //   retornoQuantPesquisa();
                 return dao.PesquisarComeca(coluna, campo, pesquisar);
             }
 

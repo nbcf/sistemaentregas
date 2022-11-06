@@ -411,11 +411,11 @@ namespace Sistema.View.edits
             // datePDataEntrada
             // 
             this.datePDataEntrada.Enabled = false;
-            this.datePDataEntrada.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.datePDataEntrada.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.datePDataEntrada.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.datePDataEntrada.Location = new System.Drawing.Point(116, 43);
             this.datePDataEntrada.Name = "datePDataEntrada";
-            this.datePDataEntrada.Size = new System.Drawing.Size(137, 23);
+            this.datePDataEntrada.Size = new System.Drawing.Size(137, 25);
             this.datePDataEntrada.TabIndex = 14;
             // 
             // label12
@@ -496,11 +496,11 @@ namespace Sistema.View.edits
             // 
             // datePDataEntregue
             // 
-            this.datePDataEntregue.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.datePDataEntregue.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.datePDataEntregue.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.datePDataEntregue.Location = new System.Drawing.Point(116, 73);
             this.datePDataEntregue.Name = "datePDataEntregue";
-            this.datePDataEntregue.Size = new System.Drawing.Size(137, 23);
+            this.datePDataEntregue.Size = new System.Drawing.Size(137, 25);
             this.datePDataEntregue.TabIndex = 18;
             this.datePDataEntregue.ValueChanged += new System.EventHandler(this.dtPDataEntrega_ValueChanged);
             // 
@@ -517,11 +517,11 @@ namespace Sistema.View.edits
             // datePDataRota
             // 
             this.datePDataRota.Enabled = false;
-            this.datePDataRota.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.datePDataRota.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.datePDataRota.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.datePDataRota.Location = new System.Drawing.Point(333, 43);
             this.datePDataRota.Name = "datePDataRota";
-            this.datePDataRota.Size = new System.Drawing.Size(127, 23);
+            this.datePDataRota.Size = new System.Drawing.Size(127, 25);
             this.datePDataRota.TabIndex = 16;
             // 
             // EditSaidas

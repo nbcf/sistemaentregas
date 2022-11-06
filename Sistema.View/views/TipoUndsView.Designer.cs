@@ -494,9 +494,10 @@ namespace Sistema.View.views
             this.groupBoxFormulario.Controls.Add(this.label2);
             this.groupBoxFormulario.Controls.Add(this.label1);
             this.groupBoxFormulario.Controls.Add(this.txtBoxId);
-            this.groupBoxFormulario.Location = new System.Drawing.Point(0, 255);
+            this.groupBoxFormulario.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBoxFormulario.Location = new System.Drawing.Point(0, 138);
             this.groupBoxFormulario.Name = "groupBoxFormulario";
-            this.groupBoxFormulario.Size = new System.Drawing.Size(674, 167);
+            this.groupBoxFormulario.Size = new System.Drawing.Size(674, 284);
             this.groupBoxFormulario.TabIndex = 10;
             this.groupBoxFormulario.TabStop = false;
             // 
@@ -550,7 +551,6 @@ namespace Sistema.View.views
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.toolStrip2);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MaximizeBox = false;
             this.Name = "TipoUndsView";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Tipo Unidades";

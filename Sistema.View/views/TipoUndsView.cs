@@ -1312,41 +1312,12 @@ namespace Sistema.View.views
             puxarparametro(0, Convert.ToInt32(cbButtnQuantPage1.SelectedItem), "Sim");
         }
 
-     
-
-
-        ////private void gridCrudPessoa_CellClick(object sender, DataGridViewCellEventArgs e)
-        ////{
-
-        ////    var gridVazia = gridCrudTipoUnds.CurrentRow.Cells[0].Value.ToString();
-        ////    if (string.IsNullOrEmpty(gridVazia))
-        ////    {
-
-        ////    }
-        ////    else if (gridVazia.Length > 0)
-        ////    {
-        ////        operationType = "newInsertion";
-        ////        typeEdition = "insert";
-
-        ////        if (typeEdition.Equals("insert"))
-        ////        {
-        ////            operationType = "newInsertion";
-
-
-        ////            behaviorClickGrid();
-        ////        }
-        ////        else if (typeEdition.Equals("search"))
-        ////        {
-        ////            operationType = "updateData";
-
-        ////            behaviorClickGridPesquisa();
-
-        ////        }
-
-        ////    }
-
-        ////}
-     public void  DataGridModel() { }
+     public void  DataGridModel() {
+            gridCrudTipoUnds.Columns[0].Width = 60;
+            gridCrudTipoUnds.Columns[1].Width = 150;
+            gridCrudTipoUnds.Columns[0].HeaderText = "ID";
+            gridCrudTipoUnds.Columns[1].HeaderText = "UNIDADES";
+        }
 
         private void gridCrudTipoGastos_CellClick(object sender, DataGridViewCellEventArgs e)
         {

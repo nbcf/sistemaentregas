@@ -34,19 +34,9 @@ namespace Sistema.View
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ImportEnderecos));
-            this.tabControlAssets = new System.Windows.Forms.TabControl();
-            this.tabPagePesquisar = new System.Windows.Forms.TabPage();
-            this.txtBoxPesquisar = new System.Windows.Forms.TextBox();
-            this.button4 = new System.Windows.Forms.Button();
-            this.radioBttnContem = new System.Windows.Forms.RadioButton();
-            this.radioBttnTermina = new System.Windows.Forms.RadioButton();
-            this.radioBttnComeca = new System.Windows.Forms.RadioButton();
-            this.cbButtonPesquisarEm = new System.Windows.Forms.ComboBox();
             this.dataGridImpEndereco = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.txtCep = new System.Windows.Forms.TextBox();
             this.txtUf = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -56,110 +46,26 @@ namespace Sistema.View
             this.label5 = new System.Windows.Forms.Label();
             this.txtLogradouro = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.tabControlAssets.SuspendLayout();
-            this.tabPagePesquisar.SuspendLayout();
+            this.tabControlAssets = new System.Windows.Forms.TabControl();
+            this.tabPagePesquisar = new System.Windows.Forms.TabPage();
+            this.radioBttnTermina = new System.Windows.Forms.RadioButton();
+            this.radioBttnContem = new System.Windows.Forms.RadioButton();
+            this.cbButtonPesquisarEm = new System.Windows.Forms.ComboBox();
+            this.radioBttnComeca = new System.Windows.Forms.RadioButton();
+            this.txtBoxPesquisar = new System.Windows.Forms.TextBox();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.bttnNew = new System.Windows.Forms.ToolStripButton();
+            this.bttnSave = new System.Windows.Forms.ToolStripButton();
+            this.bttnRefresh = new System.Windows.Forms.ToolStripButton();
+            this.bttnEdit = new System.Windows.Forms.ToolStripButton();
+            this.bttnSearch = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridImpEndereco)).BeginInit();
             this.groupBox1.SuspendLayout();
+            this.tabControlAssets.SuspendLayout();
+            this.tabPagePesquisar.SuspendLayout();
+            this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // tabControlAssets
-            // 
-            this.tabControlAssets.Appearance = System.Windows.Forms.TabAppearance.FlatButtons;
-            this.tabControlAssets.Controls.Add(this.tabPagePesquisar);
-            this.tabControlAssets.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tabControlAssets.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabControlAssets.Location = new System.Drawing.Point(0, 0);
-            this.tabControlAssets.Name = "tabControlAssets";
-            this.tabControlAssets.SelectedIndex = 0;
-            this.tabControlAssets.Size = new System.Drawing.Size(768, 89);
-            this.tabControlAssets.TabIndex = 7;
-            // 
-            // tabPagePesquisar
-            // 
-            this.tabPagePesquisar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.tabPagePesquisar.Controls.Add(this.txtBoxPesquisar);
-            this.tabPagePesquisar.Controls.Add(this.button4);
-            this.tabPagePesquisar.Controls.Add(this.radioBttnContem);
-            this.tabPagePesquisar.Controls.Add(this.radioBttnTermina);
-            this.tabPagePesquisar.Controls.Add(this.radioBttnComeca);
-            this.tabPagePesquisar.Controls.Add(this.cbButtonPesquisarEm);
-            this.tabPagePesquisar.Location = new System.Drawing.Point(4, 32);
-            this.tabPagePesquisar.Name = "tabPagePesquisar";
-            this.tabPagePesquisar.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPagePesquisar.Size = new System.Drawing.Size(760, 53);
-            this.tabPagePesquisar.TabIndex = 1;
-            this.tabPagePesquisar.Text = "Pesquisar";
-            this.tabPagePesquisar.UseVisualStyleBackColor = true;
-            // 
-            // txtBoxPesquisar
-            // 
-            this.txtBoxPesquisar.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBoxPesquisar.Location = new System.Drawing.Point(8, 9);
-            this.txtBoxPesquisar.Name = "txtBoxPesquisar";
-            this.txtBoxPesquisar.Size = new System.Drawing.Size(261, 25);
-            this.txtBoxPesquisar.TabIndex = 35;
-            this.txtBoxPesquisar.TextChanged += new System.EventHandler(this.txtBoxPesquisar_TextChanged_5);
-            // 
-            // button4
-            // 
-            this.button4.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(673, 6);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(78, 31);
-            this.button4.TabIndex = 34;
-            this.button4.Text = "Novo";
-            this.button4.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
-            // 
-            // radioBttnContem
-            // 
-            this.radioBttnContem.AutoSize = true;
-            this.radioBttnContem.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioBttnContem.Location = new System.Drawing.Point(481, 10);
-            this.radioBttnContem.Name = "radioBttnContem";
-            this.radioBttnContem.Size = new System.Drawing.Size(74, 21);
-            this.radioBttnContem.TabIndex = 5;
-            this.radioBttnContem.Text = "Contém";
-            this.radioBttnContem.UseVisualStyleBackColor = true;
-            this.radioBttnContem.CheckedChanged += new System.EventHandler(this.radioBttnContem_CheckedChanged_4);
-            // 
-            // radioBttnTermina
-            // 
-            this.radioBttnTermina.AutoSize = true;
-            this.radioBttnTermina.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioBttnTermina.Location = new System.Drawing.Point(561, 10);
-            this.radioBttnTermina.Name = "radioBttnTermina";
-            this.radioBttnTermina.Size = new System.Drawing.Size(74, 21);
-            this.radioBttnTermina.TabIndex = 4;
-            this.radioBttnTermina.Text = "Termina";
-            this.radioBttnTermina.UseVisualStyleBackColor = true;
-            this.radioBttnTermina.CheckedChanged += new System.EventHandler(this.radioBttnTermina_CheckedChanged_2);
-            // 
-            // radioBttnComeca
-            // 
-            this.radioBttnComeca.AutoSize = true;
-            this.radioBttnComeca.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioBttnComeca.Location = new System.Drawing.Point(401, 10);
-            this.radioBttnComeca.Name = "radioBttnComeca";
-            this.radioBttnComeca.Size = new System.Drawing.Size(74, 21);
-            this.radioBttnComeca.TabIndex = 6;
-            this.radioBttnComeca.Text = "Começa";
-            this.radioBttnComeca.UseVisualStyleBackColor = true;
-            this.radioBttnComeca.CheckedChanged += new System.EventHandler(this.radioBttnComeca_CheckedChanged_4);
-            // 
-            // cbButtonPesquisarEm
-            // 
-            this.cbButtonPesquisarEm.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbButtonPesquisarEm.FormattingEnabled = true;
-            this.cbButtonPesquisarEm.Items.AddRange(new object[] {
-            "Logradouro",
-            "Bairro"});
-            this.cbButtonPesquisarEm.Location = new System.Drawing.Point(275, 9);
-            this.cbButtonPesquisarEm.Name = "cbButtonPesquisarEm";
-            this.cbButtonPesquisarEm.Size = new System.Drawing.Size(120, 25);
-            this.cbButtonPesquisarEm.TabIndex = 1;
-            this.cbButtonPesquisarEm.SelectedIndexChanged += new System.EventHandler(this.cbButtonPesquisarEm_SelectedIndexChanged_3);
             // 
             // dataGridImpEndereco
             // 
@@ -186,7 +92,7 @@ namespace Sistema.View
             this.dataGridImpEndereco.DefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridImpEndereco.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridImpEndereco.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dataGridImpEndereco.Location = new System.Drawing.Point(0, 89);
+            this.dataGridImpEndereco.Location = new System.Drawing.Point(0, 0);
             this.dataGridImpEndereco.MultiSelect = false;
             this.dataGridImpEndereco.Name = "dataGridImpEndereco";
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -198,15 +104,13 @@ namespace Sistema.View
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridImpEndereco.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridImpEndereco.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridImpEndereco.Size = new System.Drawing.Size(768, 279);
+            this.dataGridImpEndereco.Size = new System.Drawing.Size(768, 450);
             this.dataGridImpEndereco.TabIndex = 8;
             this.dataGridImpEndereco.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridImpEndereco_CellMouseDoubleClick);
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.button1);
-            this.groupBox1.Controls.Add(this.button3);
-            this.groupBox1.Controls.Add(this.button2);
             this.groupBox1.Controls.Add(this.txtCep);
             this.groupBox1.Controls.Add(this.txtUf);
             this.groupBox1.Controls.Add(this.label6);
@@ -217,9 +121,9 @@ namespace Sistema.View
             this.groupBox1.Controls.Add(this.txtLogradouro);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox1.Location = new System.Drawing.Point(0, 89);
+            this.groupBox1.Location = new System.Drawing.Point(0, 138);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(768, 279);
+            this.groupBox1.Size = new System.Drawing.Size(768, 312);
             this.groupBox1.TabIndex = 9;
             this.groupBox1.TabStop = false;
             // 
@@ -233,34 +137,6 @@ namespace Sistema.View
             this.button1.Text = "Cep:";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // button3
-            // 
-            this.button3.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.Location = new System.Drawing.Point(556, 228);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(88, 39);
-            this.button3.TabIndex = 32;
-            this.button3.Text = "Cancelar";
-            this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // button2
-            // 
-            this.button2.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Image = global::Sistema.View.Properties.Resources.ok;
-            this.button2.Location = new System.Drawing.Point(658, 228);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(88, 39);
-            this.button2.TabIndex = 32;
-            this.button2.Text = "Salvar";
-            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click_1);
             // 
             // txtCep
             // 
@@ -342,15 +218,190 @@ namespace Sistema.View
             this.label3.TabIndex = 18;
             this.label3.Text = "Endereço";
             // 
+            // tabControlAssets
+            // 
+            this.tabControlAssets.Appearance = System.Windows.Forms.TabAppearance.FlatButtons;
+            this.tabControlAssets.Controls.Add(this.tabPagePesquisar);
+            this.tabControlAssets.Dock = System.Windows.Forms.DockStyle.Top;
+            this.tabControlAssets.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabControlAssets.Location = new System.Drawing.Point(0, 51);
+            this.tabControlAssets.Name = "tabControlAssets";
+            this.tabControlAssets.SelectedIndex = 0;
+            this.tabControlAssets.Size = new System.Drawing.Size(768, 87);
+            this.tabControlAssets.TabIndex = 11;
+            // 
+            // tabPagePesquisar
+            // 
+            this.tabPagePesquisar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tabPagePesquisar.Controls.Add(this.radioBttnTermina);
+            this.tabPagePesquisar.Controls.Add(this.radioBttnContem);
+            this.tabPagePesquisar.Controls.Add(this.cbButtonPesquisarEm);
+            this.tabPagePesquisar.Controls.Add(this.radioBttnComeca);
+            this.tabPagePesquisar.Controls.Add(this.txtBoxPesquisar);
+            this.tabPagePesquisar.Location = new System.Drawing.Point(4, 32);
+            this.tabPagePesquisar.Name = "tabPagePesquisar";
+            this.tabPagePesquisar.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPagePesquisar.Size = new System.Drawing.Size(760, 51);
+            this.tabPagePesquisar.TabIndex = 1;
+            this.tabPagePesquisar.Text = "Pesquisar";
+            this.tabPagePesquisar.UseVisualStyleBackColor = true;
+            // 
+            // radioBttnTermina
+            // 
+            this.radioBttnTermina.AutoSize = true;
+            this.radioBttnTermina.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioBttnTermina.Location = new System.Drawing.Point(467, 9);
+            this.radioBttnTermina.Name = "radioBttnTermina";
+            this.radioBttnTermina.Size = new System.Drawing.Size(74, 21);
+            this.radioBttnTermina.TabIndex = 4;
+            this.radioBttnTermina.Text = "Termina";
+            this.radioBttnTermina.UseVisualStyleBackColor = true;
+            // 
+            // radioBttnContem
+            // 
+            this.radioBttnContem.AutoSize = true;
+            this.radioBttnContem.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioBttnContem.Location = new System.Drawing.Point(391, 10);
+            this.radioBttnContem.Name = "radioBttnContem";
+            this.radioBttnContem.Size = new System.Drawing.Size(74, 21);
+            this.radioBttnContem.TabIndex = 5;
+            this.radioBttnContem.Text = "Contém";
+            this.radioBttnContem.UseVisualStyleBackColor = true;
+            // 
+            // cbButtonPesquisarEm
+            // 
+            this.cbButtonPesquisarEm.AutoCompleteCustomSource.AddRange(new string[] {
+            "Logradouro",
+            "Bairro"});
+            this.cbButtonPesquisarEm.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbButtonPesquisarEm.FormattingEnabled = true;
+            this.cbButtonPesquisarEm.Items.AddRange(new object[] {
+            "Nome"});
+            this.cbButtonPesquisarEm.Location = new System.Drawing.Point(170, 6);
+            this.cbButtonPesquisarEm.Name = "cbButtonPesquisarEm";
+            this.cbButtonPesquisarEm.Size = new System.Drawing.Size(138, 25);
+            this.cbButtonPesquisarEm.TabIndex = 1;
+            // 
+            // radioBttnComeca
+            // 
+            this.radioBttnComeca.AutoSize = true;
+            this.radioBttnComeca.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioBttnComeca.Location = new System.Drawing.Point(316, 10);
+            this.radioBttnComeca.Name = "radioBttnComeca";
+            this.radioBttnComeca.Size = new System.Drawing.Size(74, 21);
+            this.radioBttnComeca.TabIndex = 6;
+            this.radioBttnComeca.Text = "Começa";
+            this.radioBttnComeca.UseVisualStyleBackColor = true;
+            // 
+            // txtBoxPesquisar
+            // 
+            this.txtBoxPesquisar.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBoxPesquisar.Location = new System.Drawing.Point(7, 6);
+            this.txtBoxPesquisar.Name = "txtBoxPesquisar";
+            this.txtBoxPesquisar.Size = new System.Drawing.Size(157, 25);
+            this.txtBoxPesquisar.TabIndex = 0;
+            // 
+            // toolStrip1
+            // 
+            this.toolStrip1.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.bttnNew,
+            this.bttnSave,
+            this.bttnRefresh,
+            this.bttnEdit,
+            this.bttnSearch,
+            this.toolStripButton1});
+            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Padding = new System.Windows.Forms.Padding(0);
+            this.toolStrip1.Size = new System.Drawing.Size(768, 51);
+            this.toolStrip1.TabIndex = 10;
+            this.toolStrip1.Text = "toolStrip1";
+            // 
+            // bttnNew
+            // 
+            this.bttnNew.AutoSize = false;
+            this.bttnNew.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.bttnNew.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bttnNew.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.bttnNew.Image = global::Sistema.View.Properties.Resources.add48;
+            this.bttnNew.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.bttnNew.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.bttnNew.Name = "bttnNew";
+            this.bttnNew.Size = new System.Drawing.Size(80, 48);
+            this.bttnNew.Text = "toolStripButton1";
+            this.bttnNew.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
+            this.bttnNew.Click += new System.EventHandler(this.bttnNew_Click);
+            // 
+            // bttnSave
+            // 
+            this.bttnSave.AutoSize = false;
+            this.bttnSave.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bttnSave.Image = global::Sistema.View.Properties.Resources.ok48;
+            this.bttnSave.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.bttnSave.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.bttnSave.Name = "bttnSave";
+            this.bttnSave.Size = new System.Drawing.Size(80, 48);
+            this.bttnSave.Text = "toolStripButton2";
+            this.bttnSave.Click += new System.EventHandler(this.bttnSave_Click);
+            // 
+            // bttnRefresh
+            // 
+            this.bttnRefresh.AutoSize = false;
+            this.bttnRefresh.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bttnRefresh.Image = global::Sistema.View.Properties.Resources.refresh48;
+            this.bttnRefresh.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.bttnRefresh.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.bttnRefresh.Name = "bttnRefresh";
+            this.bttnRefresh.Size = new System.Drawing.Size(80, 48);
+            this.bttnRefresh.Text = "toolStripButton3";
+            // 
+            // bttnEdit
+            // 
+            this.bttnEdit.AutoSize = false;
+            this.bttnEdit.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bttnEdit.Image = global::Sistema.View.Properties.Resources.editForm48;
+            this.bttnEdit.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.bttnEdit.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.bttnEdit.Name = "bttnEdit";
+            this.bttnEdit.Size = new System.Drawing.Size(80, 48);
+            this.bttnEdit.Text = "toolStripButton4";
+            this.bttnEdit.Click += new System.EventHandler(this.bttnEdit_Click);
+            // 
+            // bttnSearch
+            // 
+            this.bttnSearch.AutoSize = false;
+            this.bttnSearch.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bttnSearch.Image = global::Sistema.View.Properties.Resources.search48;
+            this.bttnSearch.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.bttnSearch.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.bttnSearch.Name = "bttnSearch";
+            this.bttnSearch.Size = new System.Drawing.Size(80, 48);
+            this.bttnSearch.Text = "toolStripButton5";
+            // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.AutoSize = false;
+            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton1.Image = global::Sistema.View.Properties.Resources.close48;
+            this.toolStripButton1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(80, 48);
+            this.toolStripButton1.Text = "toolStripButton1";
+            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
+            // 
             // ImportEnderecos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(768, 368);
+            this.ClientSize = new System.Drawing.Size(768, 450);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.dataGridImpEndereco);
             this.Controls.Add(this.tabControlAssets);
+            this.Controls.Add(this.toolStrip1);
+            this.Controls.Add(this.dataGridImpEndereco);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
@@ -359,28 +410,22 @@ namespace Sistema.View
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Importar Endereços Offline";
             this.Load += new System.EventHandler(this.ImportEnderecos_Load);
-            this.tabControlAssets.ResumeLayout(false);
-            this.tabPagePesquisar.ResumeLayout(false);
-            this.tabPagePesquisar.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridImpEndereco)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.tabControlAssets.ResumeLayout(false);
+            this.tabPagePesquisar.ResumeLayout(false);
+            this.tabPagePesquisar.PerformLayout();
+            this.toolStrip1.ResumeLayout(false);
+            this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.TabControl tabControlAssets;
-        private System.Windows.Forms.TabPage tabPagePesquisar;
-        private System.Windows.Forms.RadioButton radioBttnContem;
-        private System.Windows.Forms.RadioButton radioBttnTermina;
-        private System.Windows.Forms.RadioButton radioBttnComeca;
-        private System.Windows.Forms.ComboBox cbButtonPesquisarEm;
         private System.Windows.Forms.DataGridView dataGridImpEndereco;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.TextBox txtCep;
         private System.Windows.Forms.TextBox txtUf;
         private System.Windows.Forms.Label label6;
@@ -390,8 +435,20 @@ namespace Sistema.View
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtLogradouro;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TabControl tabControlAssets;
+        private System.Windows.Forms.TabPage tabPagePesquisar;
+        private System.Windows.Forms.RadioButton radioBttnTermina;
+        private System.Windows.Forms.RadioButton radioBttnContem;
+        private System.Windows.Forms.ComboBox cbButtonPesquisarEm;
+        private System.Windows.Forms.RadioButton radioBttnComeca;
         private System.Windows.Forms.TextBox txtBoxPesquisar;
+        private System.Windows.Forms.ToolStrip toolStrip1;
+        private System.Windows.Forms.ToolStripButton bttnNew;
+        private System.Windows.Forms.ToolStripButton bttnSave;
+        private System.Windows.Forms.ToolStripButton bttnRefresh;
+        private System.Windows.Forms.ToolStripButton bttnEdit;
+        private System.Windows.Forms.ToolStripButton bttnSearch;
+        private System.Windows.Forms.ToolStripButton toolStripButton1;
     }
 }

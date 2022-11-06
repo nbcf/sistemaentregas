@@ -689,16 +689,67 @@ namespace Sistema.View
             operationType = "newInsertion";
             txtBoxId.Enabled = false;
         }
+
         private void behaviorDel()
         {
-            bttnDel.Enabled = true;
-            bttnEdit.Enabled = false;
-            bttnSearch.Enabled = true;
-            bttnRefresh.Enabled = true;
-            bttnSave.Enabled = false;
-            bttnNew.Enabled = true;
-            controllerPessoa.Excluir(Convert.ToInt32(gridCrudPessoa.CurrentRow.Cells[0].Value));
-            puxarparametro(0, Convert.ToInt32(cbButtnQuantPage1.SelectedItem), "Sim");
+            if (operationType == "updateData" && typeEdition == "search")
+            {
+                controllerPessoa.Excluir(Convert.ToInt32(gridCrudPessoa.CurrentRow.Cells[0].Value));
+
+                puxarparametroPesquisa();
+                radioBttnComeca.Checked = true;
+                bttnDel.Enabled = true;
+                bttnEdit.Enabled = false;
+                bttnSearch.Enabled = true;
+                bttnRefresh.Enabled = true;
+                bttnSave.Enabled = false;
+                bttnNew.Enabled = true;
+
+
+                int tamanho_lista = gridCrudPessoa.RowCount;
+                MessageBox.Show(tamanho_lista.ToString());
+                if (tamanho_lista == 0)
+                {
+                    bttnDel.Enabled = false;
+                    bttnEdit.Enabled = false;
+                    bttnRefresh.Enabled = false;
+                    bttnSearch.Enabled = true;
+                }
+
+            }
+            else if (operationType == "" ||
+                operationType == "newInsertion" ||
+                operationType == "updateData" ||
+                operationType == "search" &&
+                typeEdition == "insert")
+            {
+                bttnDel.Enabled = true;
+                bttnEdit.Enabled = false;
+                bttnSearch.Enabled = true;
+                bttnRefresh.Enabled = true;
+                bttnSave.Enabled = false;
+                bttnNew.Enabled = true;
+                controllerPessoa.Excluir(Convert.ToInt32(gridCrudPessoa.CurrentRow.Cells[0].Value));
+                puxarparametro(0, Convert.ToInt32(cbButtnQuantPage1.SelectedItem), "Sim");
+
+
+            }
+            else if (operationType == "" ||
+              operationType == "newInsertion" ||
+              operationType == "updateData" ||
+              operationType == "search" &&
+              typeEdition == "search")
+            {
+                bttnDel.Enabled = true;
+                bttnEdit.Enabled = false;
+                bttnSearch.Enabled = true;
+                bttnRefresh.Enabled = true;
+                bttnSave.Enabled = false;
+                bttnNew.Enabled = true;
+                controllerPessoa.Excluir(Convert.ToInt32(gridCrudPessoa.CurrentRow.Cells[0].Value));
+                puxarparametro(0, Convert.ToInt32(cbButtnQuantPage1.SelectedItem), "Sim");
+
+            }
         }
 
         private void behaviorSave(){
@@ -879,19 +930,77 @@ namespace Sistema.View
 
         private void behaviorClickGrid() {
 
-            bttnNew.Enabled             = false;
-            bttnDel.Enabled             = true;
-            bttnEdit.Enabled            = true;
-            bttnSearch.Enabled          = true;
-            bttnRefresh.Enabled         = true;
-            bttnSave.Enabled            = false;
-            radioBttnComeca.Checked     = false;
-            radioBttnContem.Checked     = false;
-            radioBttnTermina.Checked    = false;
-            enableFieldsFormulario();
-            clearFieldsFormulario();
-            setaGridEmCampos();
-            
+            if (operationType == "updateData" && typeEdition == "search")
+            {
+                bttnNew.Enabled = false;
+                bttnDel.Enabled = true;
+                bttnEdit.Enabled = true;
+                bttnSearch.Enabled = true;
+                bttnRefresh.Enabled = true;
+                bttnSave.Enabled = false;
+
+                radioBttnComeca.Checked = true;
+                enableFieldsFormulario();
+                clearFieldsFormulario();
+                setaGridEmCampos();
+
+            }
+            else if (operationType == "" ||
+                operationType == "newInsertion" ||
+                operationType == "updateData" ||
+                operationType == "search" &&
+                typeEdition == "insert")
+            {
+                bttnNew.Enabled = false;
+                bttnDel.Enabled = true;
+                bttnEdit.Enabled = true;
+                bttnSearch.Enabled = true;
+                bttnRefresh.Enabled = true;
+                bttnSave.Enabled = false;
+
+                radioBttnComeca.Checked = false;
+                radioBttnContem.Checked = false;
+                radioBttnTermina.Checked = false;
+                enableFieldsFormulario();
+                clearFieldsFormulario();
+                setaGridEmCampos();
+
+            }
+            else if (operationType == "" ||
+                operationType == "newInsertion" ||
+                operationType == "updateData" ||
+                operationType == "search" &&
+                typeEdition == "search")
+            {
+                bttnNew.Enabled = false;
+                bttnDel.Enabled = true;
+                bttnEdit.Enabled = true;
+                bttnSearch.Enabled = true;
+                bttnRefresh.Enabled = true;
+                bttnSave.Enabled = false;
+
+                radioBttnComeca.Checked = false;
+                radioBttnContem.Checked = false;
+                radioBttnTermina.Checked = false;
+                enableFieldsFormulario();
+                clearFieldsFormulario();
+                setaGridEmCampos();
+            }
+
+
+            //bttnNew.Enabled             = false;
+            //bttnDel.Enabled             = true;
+            //bttnEdit.Enabled            = true;
+            //bttnSearch.Enabled          = true;
+            //bttnRefresh.Enabled         = true;
+            //bttnSave.Enabled            = false;
+            //radioBttnComeca.Checked     = false;
+            //radioBttnContem.Checked     = false;
+            //radioBttnTermina.Checked    = false;
+            //enableFieldsFormulario();
+            //clearFieldsFormulario();
+            //setaGridEmCampos();
+
         }
 
         private void setaGridEmCampos()

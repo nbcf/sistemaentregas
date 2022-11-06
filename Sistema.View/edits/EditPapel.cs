@@ -102,11 +102,6 @@ namespace Sistema.View
 
         }
 
-        private void txtBoxName_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void formEditPapel_Load(object sender, EventArgs e)
         {
             textBox1.Visible = false;
@@ -118,6 +113,9 @@ namespace Sistema.View
             
         }
 
-     
+        private void btnOkClick(object sender, EventArgs e)
+        {
+
+        }
     }
 }

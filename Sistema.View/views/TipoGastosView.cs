@@ -1365,7 +1365,7 @@ namespace Sistema.View.views
         {
             gridCrudTipoGastos.Columns[0].Width = 60;
             gridCrudTipoGastos.Columns[1].Width = 100;
-            gridCrudTipoGastos.Columns[2].Width = 100;
+            gridCrudTipoGastos.Columns[2].Width = 300;
             gridCrudTipoGastos.Columns[3].Width = 100;
             gridCrudTipoGastos.Columns[4].Width = 100;
 
