@@ -78,9 +78,14 @@ namespace Sistema.View
             {
                 _InstanciaformCrudPessoas = new PessoasView();
             }
-            return _InstanciaformCrudPessoas;
-        }
+            else if (_InstanciaformCrudPessoas != null) {
 
+                MessageBox.Show("O Gerênciador de Pessoas já se encontra aberto!", "Aviso do Sistema", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+
+            return _InstanciaformCrudPessoas;
+
+        }
 
         PessoasController controllerPessoa = new PessoasController();
         public PessoasView()
