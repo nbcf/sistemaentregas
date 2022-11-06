@@ -216,7 +216,8 @@ namespace Sistema.DAO
         public DataTable ListarDataGrid(string parametro, string indexar, int offsett, int limitt){
             try{
                 classeConecta.AbrirCon();
-                sql = "SELECT * from tipogastos ORDER BY " + parametro + " " + indexar + " Limit " + offsett + "," + limitt;
+            //    sql = "SELECT * from tipogastos tpg INNER JOIN tipounds tpuns ON tpg.idtipound = tpunds.idtipound  ORDER BY " + parametro + " " + indexar + " Limit " + offsett + "," + limitt;
+              sql = "SELECT * FROM tipogastos tpg INNER JOIN tipounds tpund ON tpg.idtipound = tpund.idtipound ORDER BY " + parametro + " " + indexar + " Limit " + offsett + "," + limitt;
                 cmd = new MySqlCommand(sql, classeConecta.con);
                 MySqlDataAdapter da = new MySqlDataAdapter();
                 da.SelectCommand = cmd;

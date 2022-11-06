@@ -458,7 +458,6 @@ namespace Sistema.View.views
             bttnRefresh.Enabled = true;
             bttnSave.Enabled = false;
             bttnNew.Enabled = true;
-       
             radioBttnComeca.Checked = false;
             radioBttnContem.Checked = false;
             radioBttnTermina.Checked = false;
@@ -478,7 +477,6 @@ namespace Sistema.View.views
             bttnEndPages.Visible = true;
             toolStripLabel1.Visible = false;
             toolStripLabel2.Visible = false;
-
             clearFieldsFormulario();
             disableFieldsFormulario();
 
@@ -503,11 +501,8 @@ namespace Sistema.View.views
             {
                 tabControlAssets.Visible = false;
                 tabControlAssets.TabPages.Remove(tabPagePesquisar);
-                //tabControlAssets.TabPages.Remove(tabPageFormulario);
                 groupBoxFormulario.Enabled = false;
                 groupBoxFormulario.Visible = false;
-                //     tabControlAssets.TabPages.Remove(tabPageOptListagem);
-
                 bttnNew.Enabled = true;
                 bttnRefresh.Enabled = true;
                 bttnSearch.Enabled = true;
@@ -750,26 +745,19 @@ namespace Sistema.View.views
                      
                         if ("NS".Equals(controllerTipoGastos.AcaoCrudTipoGastosDAO()))
                         {
-
                             txtBoxName.Text = "";
                             behaviorRefresh();
                         }
                         else if ("S!".Equals(controllerTipoGastos.AcaoCrudTipoGastosDAO()))
                         {
-
                             operationType = "newInsertion";
                             typeEdition = "insert";
 
                             behaviorRefresh();
                           
-                        }
-                        else if ("S!!".Equals(controllerTipoGastos.AcaoCrudTipoGastosDAO()))
-
-                        {
-
+                        }else if ("S!!".Equals(controllerTipoGastos.AcaoCrudTipoGastosDAO())){
                             operationType = "newInsertion";
                             typeEdition = "insert";
-
                             behaviorRefresh();
                           
                         }
@@ -1145,7 +1133,6 @@ namespace Sistema.View.views
 
         private void bttnSave_Click_1(object sender, EventArgs e)
         {
-
             behaviorSave();
         }
 
@@ -1163,7 +1150,6 @@ namespace Sistema.View.views
 
         private void bttnNew_Click_1(object sender, EventArgs e)
         {
-
             behaviorNewInsert();
         }
 
@@ -1240,40 +1226,6 @@ namespace Sistema.View.views
         }
 
 
-
-
-        ////private void gridCrudPessoa_CellClick(object sender, DataGridViewCellEventArgs e)
-        ////{
-
-        ////    var gridVazia = gridCrudTipoGastos.CurrentRow.Cells[0].Value.ToString();
-        ////    if (string.IsNullOrEmpty(gridVazia))
-        ////    {
-
-        ////    }
-        ////    else if (gridVazia.Length > 0)
-        ////    {
-        ////        operationType = "newInsertion";
-        ////        typeEdition = "insert";
-
-        ////        if (typeEdition.Equals("insert"))
-        ////        {
-        ////            operationType = "newInsertion";
-
-
-        ////            behaviorClickGrid();
-        ////        }
-        ////        else if (typeEdition.Equals("search"))
-        ////        {
-        ////            operationType = "updateData";
-
-        ////            behaviorClickGridPesquisa();
-
-        ////        }
-
-        ////    }
-
-        ////}
-        public void DataGridModel() { }
 
         private void gridCrudTipoGastos_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -1409,6 +1361,32 @@ namespace Sistema.View.views
             }
         }
 
+        private void DataGridModel()
+        {
+            gridCrudTipoGastos.Columns[0].Width = 60;
+            gridCrudTipoGastos.Columns[1].Width = 100;
+            gridCrudTipoGastos.Columns[2].Width = 100;
+            gridCrudTipoGastos.Columns[3].Width = 100;
+            gridCrudTipoGastos.Columns[4].Width = 100;
+
+
+            gridCrudTipoGastos.Columns[0].HeaderText = "ID";
+            gridCrudTipoGastos.Columns[1].HeaderText = "1"; 
+            gridCrudTipoGastos.Columns[2].HeaderText = "GASTO";
+            gridCrudTipoGastos.Columns[3].HeaderText = "3";
+            gridCrudTipoGastos.Columns[4].HeaderText = "TIPO"; 
+
+
+
+
+            gridCrudTipoGastos.Columns[1].Visible = false;
+            gridCrudTipoGastos.Columns[3].Visible = false;
+            //gridCrudUsuarios.Columns[4].Visible = false;
+            //gridCrudUsuarios.Columns[5].Visible = false;
+            //gridCrudUsuarios.Columns[7].Visible = false;
+            
+
+        }
         private void txtBoxPesquisar_TextChanged_2(object sender, EventArgs e)
         {
             puxarparametroPesquisa();
