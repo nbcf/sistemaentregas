@@ -655,8 +655,8 @@ namespace Sistema.View
             }
         }
 
-        private void DataGridModel()
-        {
+        private void DataGridModel(){
+
             gridCrudEncomendas.Columns[0].Width = 50;
             gridCrudEncomendas.Columns[1].Width = 0;
             gridCrudEncomendas.Columns[2].Width = 0;
@@ -675,9 +675,9 @@ namespace Sistema.View
             gridCrudEncomendas.Columns[15].Width = 150;
             gridCrudEncomendas.Columns[16].Width = 50;
             gridCrudEncomendas.Columns[17].Width = 80;
-            gridCrudEncomendas.Columns[18].Width = 100;
-            gridCrudEncomendas.Columns[19].Width = 100;
-            gridCrudEncomendas.Columns[20].Width = 100;
+            gridCrudEncomendas.Columns[18].Width = 80;
+            gridCrudEncomendas.Columns[19].Width = 80;
+            gridCrudEncomendas.Columns[20].Width = 80;
             gridCrudEncomendas.Columns[21].Width = 100;
             gridCrudEncomendas.Columns[22].Width = 80;
             gridCrudEncomendas.Columns[23].Width = 80;
@@ -730,7 +730,7 @@ namespace Sistema.View
             gridCrudEncomendas.Columns[21].Visible = false;
             gridCrudEncomendas.Columns[22].Visible = false;
             gridCrudEncomendas.Columns[23].Visible = false;
-
+            gridCrudEncomendas.Columns[24].Visible = false;
 
         }
 

@@ -73,9 +73,8 @@ namespace Sistema.View
             if (_InstanciaformCrudPapeis == null)
             {
                 _InstanciaformCrudPapeis = new PapeisView();
-            }
-            else if (_InstanciaformCrudPapeis != null)
-            {
+
+            } else if (_InstanciaformCrudPapeis != null){
 
                 MessageBox.Show("O Gerênciador de Papeis de Usuário já se encontra aberto!", "Aviso do Sistema", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
