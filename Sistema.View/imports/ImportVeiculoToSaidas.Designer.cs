@@ -29,6 +29,9 @@ namespace Sistema.View
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ImportVeiculoToSaidas));
             this.gridImportVS = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.gridImportVS)).BeginInit();
@@ -37,36 +40,46 @@ namespace Sistema.View
             // gridImportVS
             // 
             this.gridImportVS.AllowUserToAddRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Gainsboro;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridImportVS.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.gridImportVS.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.gridImportVS.DefaultCellStyle = dataGridViewCellStyle2;
             this.gridImportVS.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gridImportVS.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.gridImportVS.Location = new System.Drawing.Point(0, 0);
-            this.gridImportVS.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.gridImportVS.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.gridImportVS.MultiSelect = false;
             this.gridImportVS.Name = "gridImportVS";
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridImportVS.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.gridImportVS.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.gridImportVS.Size = new System.Drawing.Size(394, 311);
+            this.gridImportVS.Size = new System.Drawing.Size(566, 384);
             this.gridImportVS.TabIndex = 8;
-            this.gridImportVS.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridImportVS_CellClick);
-            this.gridImportVS.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridImportVS_CellContentClick);
             this.gridImportVS.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.gridImportVS_CellMouseDoubleClick);
             // 
             // ImportVeiculoToSaidas
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(394, 311);
+            this.ClientSize = new System.Drawing.Size(566, 384);
             this.Controls.Add(this.gridImportVS);
-            this.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "ImportVeiculoToSaidas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Importar Veiculos";
-            this.Load += new System.EventHandler(this.ImportVeiculoToSaidas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridImportVS)).EndInit();
             this.ResumeLayout(false);
 

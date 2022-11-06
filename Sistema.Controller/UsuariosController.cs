@@ -91,7 +91,7 @@ namespace Sistema.Controller
                 return dao.ListarDataGrid(parametro, indexar, offsett, limitt);
         }
        
-        public DataTable ListarEntregador(string funcao){
+        public DataTable ListarImportEntregador(string funcao){
              //   retornoQuantRegistro();
                 return dao.ListarImportEntregador(funcao); 
         }

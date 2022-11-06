@@ -52,59 +52,23 @@ namespace Sistema.View
         private void DataGridModel()
         {
             gridImportVS.Columns[0].HeaderText = "ID";
-            gridImportVS.Columns[1].HeaderText = "Veiculo";
-            gridImportVS.Columns[2].HeaderText = "Placa";
-            gridImportVS.Columns[3].HeaderText = "Estatus";
+            gridImportVS.Columns[1].HeaderText = "VEÍCULO";
+            gridImportVS.Columns[2].HeaderText = "PLACA";
+            gridImportVS.Columns[3].HeaderText = "ESTATUS";
   
-            gridImportVS.Columns[0].Width = 80;
-            gridImportVS.Columns[1].Width = 150;
-            gridImportVS.Columns[2].Width = 90;
-            gridImportVS.Columns[3].Width = 90;
+            gridImportVS.Columns[0].Width = 60;
+            gridImportVS.Columns[1].Width = 250;
+            gridImportVS.Columns[2].Width = 100;
+            gridImportVS.Columns[3].Width = 100;
             gridImportVS.Columns[3].Visible = false;
         }
 
-        public void behaviorClickGrid()
-        {
-         //   NovaSaidaView novasaida = new NovaSaidaView();
-
-            //if (IdVO == "")
-            //{
-
-            //    MessageBox.Show("Vazio");
-
+        public void behaviorClickGrid(){
                 strID = gridImportVS.CurrentRow.Cells[0].Value.ToString();
                 strVeiculo = gridImportVS.CurrentRow.Cells[1].Value.ToString();
                 strPlaca = gridImportVS.CurrentRow.Cells[2].Value.ToString();
                 strEstVeiculo = gridImportVS.CurrentRow.Cells[3].Value.ToString();
-              //   controllerVeiculo.EditarEstatusVeiculo(strVeiculo, strPlaca, "Em Rota", Convert.ToInt32(strID));
                 Close();
-
-            //}
-            //else if (IdVO != "")
-            //{
-            //    string oldId;
-            //    string oldVeiculo;
-            //    string oldPlaca;
-
-            //    oldId = IdVO;
-            //    oldVeiculo = veiculoVO;
-            //    oldPlaca = placaVO;
-
-
-            //    // Metodo Atualizar
-            //    controllerVeiculo.EditarEstatusVeiculo(oldVeiculo, oldPlaca, "Disponivel", Convert.ToInt32(oldId));
-            //    MessageBox.Show("Cheio");
-
-            //    strID = gridImportVS.CurrentRow.Cells[0].Value.ToString();
-            //    strVeiculo = gridImportVS.CurrentRow.Cells[1].Value.ToString();
-            //    strPlaca = gridImportVS.CurrentRow.Cells[2].Value.ToString();
-            //    // strEstVeiculo = gridImportVS.CurrentRow.Cells[3].Value.ToString();
-            //    controllerVeiculo.EditarEstatusVeiculo(strVeiculo, strPlaca, "Em Rota", Convert.ToInt32(strID));
-            //    Close();
-
-
-            //}
-
         }
 
   
@@ -113,20 +77,7 @@ namespace Sistema.View
             behaviorClickGrid();
         }
 
-        private void gridImportVS_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void gridImportVS_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void ImportVeiculoToSaidas_Load(object sender, EventArgs e)
-        {
-
-        }
+      
     }
 
 }

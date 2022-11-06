@@ -512,7 +512,7 @@ namespace Sistema.View
             btConfirmarRetorno.Visible = false;
 
             button5.Enabled = false;
-            label5.Visible = false;
+            label5.Visible = true;
             txtKmTotal.Visible = false;
             datePckSaida.Value = DateTime.Now;
             datePckRetorno.Value = DateTime.Now;
