@@ -727,9 +727,10 @@ namespace Sistema.View
             this.groupBoxFormulario.Controls.Add(this.txtBoxUsuario);
             this.groupBoxFormulario.Controls.Add(this.txtBoxSenha);
             this.groupBoxFormulario.Controls.Add(this.txtNomePapel);
-            this.groupBoxFormulario.Location = new System.Drawing.Point(0, 317);
+            this.groupBoxFormulario.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBoxFormulario.Location = new System.Drawing.Point(0, 131);
             this.groupBoxFormulario.Name = "groupBoxFormulario";
-            this.groupBoxFormulario.Size = new System.Drawing.Size(632, 116);
+            this.groupBoxFormulario.Size = new System.Drawing.Size(632, 302);
             this.groupBoxFormulario.TabIndex = 8;
             this.groupBoxFormulario.TabStop = false;
             // 

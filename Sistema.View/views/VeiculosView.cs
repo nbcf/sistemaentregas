@@ -70,7 +70,14 @@ namespace Sistema.View
             {
                 _InstanciaformCrudVeiculos = new VeiculosView();
             }
+            else if (_InstanciaformCrudVeiculos != null)
+            {
+
+                MessageBox.Show("O Gerênciador de Veiculos já se encontra aberto!", "Aviso do Sistema", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+
             return _InstanciaformCrudVeiculos;
+
         }
 
 

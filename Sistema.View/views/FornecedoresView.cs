@@ -73,8 +73,16 @@ namespace Sistema.View.views
             {
                 _InstanciaFornecedoresView = new FornecedoresView();
             }
+            else if (_InstanciaFornecedoresView != null)
+            {
+
+                MessageBox.Show("O Gerênciador de Fornecedores já se encontra aberto!", "Aviso do Sistema", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+
             return _InstanciaFornecedoresView;
+
         }
+
 
         FornecedoresController controllerFornecedores = new FornecedoresController();
         public FornecedoresView(){
@@ -433,9 +441,9 @@ namespace Sistema.View.views
  
         private void DataGridModel(){
             gridCrudFornecedores.Columns[0].HeaderText = "ID";
-            gridCrudFornecedores.Columns[1].HeaderText = "Fornecedores";
-            gridCrudFornecedores.Columns[0].Width = 80;
-            gridCrudFornecedores.Columns[1].Width = 100;
+            gridCrudFornecedores.Columns[1].HeaderText = "FORNECEDORES";
+            gridCrudFornecedores.Columns[0].Width = 60;
+            gridCrudFornecedores.Columns[1].Width = 350;
    
         }
 

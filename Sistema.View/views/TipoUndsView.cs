@@ -65,7 +65,14 @@ namespace Sistema.View.views
             {
                 _InstanciaTipoUndsView = new TipoUndsView();
             }
+            else if (_InstanciaTipoUndsView != null)
+            {
+
+                MessageBox.Show("O Gerênciador de Tipos de Unidades já se encontra aberto!", "Aviso do Sistema", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+
             return _InstanciaTipoUndsView;
+
         }
 
 

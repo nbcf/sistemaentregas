@@ -32,8 +32,6 @@ namespace Sistema.View
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(OrigemView));
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.bttnNew = new System.Windows.Forms.ToolStripButton();
@@ -99,7 +97,7 @@ namespace Sistema.View
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Padding = new System.Windows.Forms.Padding(0);
-            this.toolStrip1.Size = new System.Drawing.Size(696, 51);
+            this.toolStrip1.Size = new System.Drawing.Size(729, 51);
             this.toolStrip1.TabIndex = 3;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -186,9 +184,10 @@ namespace Sistema.View
             this.tabControlAssets.Dock = System.Windows.Forms.DockStyle.Top;
             this.tabControlAssets.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabControlAssets.Location = new System.Drawing.Point(0, 51);
+            this.tabControlAssets.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tabControlAssets.Name = "tabControlAssets";
             this.tabControlAssets.SelectedIndex = 0;
-            this.tabControlAssets.Size = new System.Drawing.Size(696, 83);
+            this.tabControlAssets.Size = new System.Drawing.Size(729, 95);
             this.tabControlAssets.TabIndex = 4;
             // 
             // tabPagePesquisar
@@ -200,9 +199,10 @@ namespace Sistema.View
             this.tabPagePesquisar.Controls.Add(this.radioBttnComeca);
             this.tabPagePesquisar.Controls.Add(this.txtBoxPesquisar);
             this.tabPagePesquisar.Location = new System.Drawing.Point(4, 29);
+            this.tabPagePesquisar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tabPagePesquisar.Name = "tabPagePesquisar";
-            this.tabPagePesquisar.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPagePesquisar.Size = new System.Drawing.Size(688, 50);
+            this.tabPagePesquisar.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tabPagePesquisar.Size = new System.Drawing.Size(721, 62);
             this.tabPagePesquisar.TabIndex = 1;
             this.tabPagePesquisar.Text = "Pesquisar";
             this.tabPagePesquisar.UseVisualStyleBackColor = true;
@@ -211,7 +211,8 @@ namespace Sistema.View
             // 
             this.radioBttnTermina.AutoSize = true;
             this.radioBttnTermina.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioBttnTermina.Location = new System.Drawing.Point(574, 9);
+            this.radioBttnTermina.Location = new System.Drawing.Point(602, 13);
+            this.radioBttnTermina.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.radioBttnTermina.Name = "radioBttnTermina";
             this.radioBttnTermina.Size = new System.Drawing.Size(74, 21);
             this.radioBttnTermina.TabIndex = 4;
@@ -223,7 +224,8 @@ namespace Sistema.View
             // 
             this.radioBttnContem.AutoSize = true;
             this.radioBttnContem.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioBttnContem.Location = new System.Drawing.Point(495, 10);
+            this.radioBttnContem.Location = new System.Drawing.Point(526, 14);
+            this.radioBttnContem.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.radioBttnContem.Name = "radioBttnContem";
             this.radioBttnContem.Size = new System.Drawing.Size(74, 21);
             this.radioBttnContem.TabIndex = 5;
@@ -237,9 +239,10 @@ namespace Sistema.View
             this.cbButtonPesquisarEm.FormattingEnabled = true;
             this.cbButtonPesquisarEm.Items.AddRange(new object[] {
             "Origem"});
-            this.cbButtonPesquisarEm.Location = new System.Drawing.Point(271, 6);
+            this.cbButtonPesquisarEm.Location = new System.Drawing.Point(296, 9);
+            this.cbButtonPesquisarEm.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cbButtonPesquisarEm.Name = "cbButtonPesquisarEm";
-            this.cbButtonPesquisarEm.Size = new System.Drawing.Size(138, 25);
+            this.cbButtonPesquisarEm.Size = new System.Drawing.Size(150, 25);
             this.cbButtonPesquisarEm.TabIndex = 1;
             this.cbButtonPesquisarEm.SelectedIndexChanged += new System.EventHandler(this.cbButtonPesquisarEm_SelectedIndexChanged_1);
             // 
@@ -247,7 +250,8 @@ namespace Sistema.View
             // 
             this.radioBttnComeca.AutoSize = true;
             this.radioBttnComeca.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioBttnComeca.Location = new System.Drawing.Point(414, 10);
+            this.radioBttnComeca.Location = new System.Drawing.Point(453, 14);
+            this.radioBttnComeca.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.radioBttnComeca.Name = "radioBttnComeca";
             this.radioBttnComeca.Size = new System.Drawing.Size(74, 21);
             this.radioBttnComeca.TabIndex = 6;
@@ -258,9 +262,10 @@ namespace Sistema.View
             // txtBoxPesquisar
             // 
             this.txtBoxPesquisar.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBoxPesquisar.Location = new System.Drawing.Point(10, 6);
+            this.txtBoxPesquisar.Location = new System.Drawing.Point(15, 9);
+            this.txtBoxPesquisar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtBoxPesquisar.Name = "txtBoxPesquisar";
-            this.txtBoxPesquisar.Size = new System.Drawing.Size(252, 25);
+            this.txtBoxPesquisar.Size = new System.Drawing.Size(268, 25);
             this.txtBoxPesquisar.TabIndex = 0;
             this.txtBoxPesquisar.TextChanged += new System.EventHandler(this.txtBoxPesquisar_TextChanged_1);
             // 
@@ -274,9 +279,10 @@ namespace Sistema.View
             this.tabPageFormulario.Controls.Add(this.label1);
             this.tabPageFormulario.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabPageFormulario.Location = new System.Drawing.Point(4, 29);
+            this.tabPageFormulario.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tabPageFormulario.Name = "tabPageFormulario";
-            this.tabPageFormulario.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageFormulario.Size = new System.Drawing.Size(688, 50);
+            this.tabPageFormulario.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tabPageFormulario.Size = new System.Drawing.Size(1036, 95);
             this.tabPageFormulario.TabIndex = 2;
             this.tabPageFormulario.Text = "Formulário";
             this.tabPageFormulario.UseVisualStyleBackColor = true;
@@ -284,16 +290,18 @@ namespace Sistema.View
             // txtBoxCodOrigem
             // 
             this.txtBoxCodOrigem.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBoxCodOrigem.Location = new System.Drawing.Point(496, 7);
+            this.txtBoxCodOrigem.Location = new System.Drawing.Point(744, 11);
+            this.txtBoxCodOrigem.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtBoxCodOrigem.Name = "txtBoxCodOrigem";
-            this.txtBoxCodOrigem.Size = new System.Drawing.Size(57, 25);
+            this.txtBoxCodOrigem.Size = new System.Drawing.Size(84, 25);
             this.txtBoxCodOrigem.TabIndex = 5;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(388, 11);
+            this.label3.Location = new System.Drawing.Point(582, 17);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(103, 17);
             this.label3.TabIndex = 4;
@@ -303,7 +311,8 @@ namespace Sistema.View
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(118, 12);
+            this.label2.Location = new System.Drawing.Point(177, 18);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(48, 17);
             this.label2.TabIndex = 3;
@@ -312,25 +321,28 @@ namespace Sistema.View
             // txtBoxName
             // 
             this.txtBoxName.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBoxName.Location = new System.Drawing.Point(170, 8);
+            this.txtBoxName.Location = new System.Drawing.Point(255, 12);
+            this.txtBoxName.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtBoxName.Name = "txtBoxName";
-            this.txtBoxName.Size = new System.Drawing.Size(212, 25);
+            this.txtBoxName.Size = new System.Drawing.Size(316, 25);
             this.txtBoxName.TabIndex = 2;
             // 
             // txtBoxId
             // 
             this.txtBoxId.Enabled = false;
             this.txtBoxId.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBoxId.Location = new System.Drawing.Point(62, 7);
+            this.txtBoxId.Location = new System.Drawing.Point(93, 11);
+            this.txtBoxId.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtBoxId.Name = "txtBoxId";
-            this.txtBoxId.Size = new System.Drawing.Size(52, 25);
+            this.txtBoxId.Size = new System.Drawing.Size(76, 25);
             this.txtBoxId.TabIndex = 1;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(7, 10);
+            this.label1.Location = new System.Drawing.Point(10, 15);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(54, 17);
             this.label1.TabIndex = 0;
@@ -358,9 +370,10 @@ namespace Sistema.View
             this.cbOrdemParam1,
             this.toolStripLabel7,
             this.cbOrdenarPor1});
-            this.toolStrip2.Location = new System.Drawing.Point(0, 421);
+            this.toolStrip2.Location = new System.Drawing.Point(0, 450);
             this.toolStrip2.Name = "toolStrip2";
-            this.toolStrip2.Size = new System.Drawing.Size(696, 29);
+            this.toolStrip2.Padding = new System.Windows.Forms.Padding(0, 0, 2, 0);
+            this.toolStrip2.Size = new System.Drawing.Size(729, 29);
             this.toolStrip2.TabIndex = 7;
             this.toolStrip2.Text = "toolStrip2";
             // 
@@ -478,7 +491,7 @@ namespace Sistema.View
             "75",
             "100"});
             this.cbButtnQuantPage1.Name = "cbButtnQuantPage1";
-            this.cbButtnQuantPage1.Size = new System.Drawing.Size(75, 29);
+            this.cbButtnQuantPage1.Size = new System.Drawing.Size(110, 29);
             this.cbButtnQuantPage1.SelectedIndexChanged += new System.EventHandler(this.cbButtnQuantPage1_SelectedIndexChanged);
             // 
             // toolStripLabel6
@@ -532,46 +545,32 @@ namespace Sistema.View
             this.gridCrudOrigem.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.gridCrudOrigem.ColumnHeadersHeight = 26;
             this.gridCrudOrigem.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.gridCrudOrigem.DefaultCellStyle = dataGridViewCellStyle3;
             this.gridCrudOrigem.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gridCrudOrigem.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.gridCrudOrigem.Location = new System.Drawing.Point(0, 134);
+            this.gridCrudOrigem.Location = new System.Drawing.Point(0, 146);
+            this.gridCrudOrigem.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.gridCrudOrigem.MultiSelect = false;
             this.gridCrudOrigem.Name = "gridCrudOrigem";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gridCrudOrigem.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gridCrudOrigem.RowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridCrudOrigem.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.gridCrudOrigem.RowTemplate.Height = 25;
             this.gridCrudOrigem.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.gridCrudOrigem.Size = new System.Drawing.Size(696, 287);
+            this.gridCrudOrigem.Size = new System.Drawing.Size(729, 304);
             this.gridCrudOrigem.TabIndex = 8;
             this.gridCrudOrigem.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridCrudOrigem_CellClick);
             // 
             // OrigemView
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(696, 450);
+            this.ClientSize = new System.Drawing.Size(729, 479);
             this.Controls.Add(this.gridCrudOrigem);
             this.Controls.Add(this.toolStrip2);
             this.Controls.Add(this.tabControlAssets);
             this.Controls.Add(this.toolStrip1);
-            this.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "OrigemView";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastro de Origem";

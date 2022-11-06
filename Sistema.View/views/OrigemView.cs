@@ -73,9 +73,17 @@ namespace Sistema.View
             {
                 _InstanciaformCrudOrigem = new OrigemView();
             }
+            else if (_InstanciaformCrudOrigem != null)
+            {
+
+                MessageBox.Show("O Gerênciador de Origem de Encomendas já se encontra aberto!", "Aviso do Sistema", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+
             return _InstanciaformCrudOrigem;
+
         }
- 
+
+
         OrigemController controllerOrigem = new OrigemController();
         public OrigemView()
         {

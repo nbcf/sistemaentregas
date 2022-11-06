@@ -173,7 +173,8 @@ namespace Sistema.View
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.Gainsboro;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gridCrudPapeis.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.gridCrudPapeis.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridCrudPapeis.ColumnHeadersHeight = 26;
+            this.gridCrudPapeis.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.gridCrudPapeis.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gridCrudPapeis.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.gridCrudPapeis.Location = new System.Drawing.Point(0, 139);
