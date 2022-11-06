@@ -42,8 +42,8 @@ namespace Sistema.DAO
             return retorno;
 
         }
-        public void Salvar(int idtipound, string nomegasto)
-        {
+
+        public void Salvar(int idtipound, string nomegasto) {
             try
             {
                 classeConecta.AbrirCon();
@@ -58,16 +58,14 @@ namespace Sistema.DAO
                 if (dtp.Rows.Count > 0)
                 {
                     var resultado = MessageBox.Show("O Registro: " +
-                    Convert.ToString(nomegasto) +
+                    nomegasto +
                     ", se encotra na base de dados. " + "\n" +
                     "Para confirmar a inserção duplicada, clique no botão 'Sim', e 'Não' para cancelar.",
                     "Aviso de Duplicidade",
                     MessageBoxButtons.YesNo,
                     MessageBoxIcon.Question);
 
-                    if (resultado == DialogResult.Yes)
-                    {
-
+                    if (resultado == DialogResult.Yes){
                         classeConecta.AbrirCon();
                         sql = "INSERT INTO tipogastos ( idtipound, nomegasto) VALUES ( @idtipound, @nomegasto)";
                         cmd = new MySqlCommand(sql, classeConecta.con);
@@ -77,16 +75,10 @@ namespace Sistema.DAO
                         acaoCrudTipoGastosDAO = "S!!";
                         classeConecta.FecharCon();
 
-                    }
-                    else if (resultado == DialogResult.No)
-                    {
+                    }else if (resultado == DialogResult.No){
                         acaoCrudTipoGastosDAO = "NS";
-                      
-
                     }
-                }
-                else if (dtp.Rows.Count == 0)
-                {
+                }else if (dtp.Rows.Count == 0){
                     classeConecta.AbrirCon();
                     sql = "INSERT INTO tipogastos ( idtipound, nomegasto) VALUES ( @idtipound, @nomegasto)";
                     cmd = new MySqlCommand(sql, classeConecta.con);

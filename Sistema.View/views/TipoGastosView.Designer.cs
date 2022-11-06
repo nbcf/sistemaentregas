@@ -105,9 +105,9 @@ namespace Sistema.View.views
             this.cbOrdemParam1,
             this.toolStripLabel7,
             this.cbOrdenarPor1});
-            this.toolStrip2.Location = new System.Drawing.Point(0, 422);
+            this.toolStrip2.Location = new System.Drawing.Point(0, 426);
             this.toolStrip2.Name = "toolStrip2";
-            this.toolStrip2.Size = new System.Drawing.Size(674, 29);
+            this.toolStrip2.Size = new System.Drawing.Size(919, 25);
             this.toolStrip2.TabIndex = 6;
             this.toolStrip2.Text = "toolStrip2";
             // 
@@ -117,7 +117,7 @@ namespace Sistema.View.views
             this.bttnBeginPages.Image = global::Sistema.View.Properties.Resources._2leftarrow;
             this.bttnBeginPages.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.bttnBeginPages.Name = "bttnBeginPages";
-            this.bttnBeginPages.Size = new System.Drawing.Size(23, 26);
+            this.bttnBeginPages.Size = new System.Drawing.Size(23, 22);
             this.bttnBeginPages.Text = "toolStripButton1";
             // 
             // bttnOnePageLeft
@@ -126,42 +126,42 @@ namespace Sistema.View.views
             this.bttnOnePageLeft.Image = global::Sistema.View.Properties.Resources._1leftarrow;
             this.bttnOnePageLeft.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.bttnOnePageLeft.Name = "bttnOnePageLeft";
-            this.bttnOnePageLeft.Size = new System.Drawing.Size(23, 26);
+            this.bttnOnePageLeft.Size = new System.Drawing.Size(23, 22);
             this.bttnOnePageLeft.Text = "toolStripButton2";
             // 
             // labelTextPageFrom
             // 
             this.labelTextPageFrom.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelTextPageFrom.Name = "labelTextPageFrom";
-            this.labelTextPageFrom.Size = new System.Drawing.Size(17, 26);
+            this.labelTextPageFrom.Size = new System.Drawing.Size(17, 22);
             this.labelTextPageFrom.Text = "0";
             // 
             // toolStripLabel3
             // 
             this.toolStripLabel3.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStripLabel3.Name = "toolStripLabel3";
-            this.toolStripLabel3.Size = new System.Drawing.Size(15, 26);
+            this.toolStripLabel3.Size = new System.Drawing.Size(15, 22);
             this.toolStripLabel3.Text = "/";
             // 
             // labelTextTotalPages
             // 
             this.labelTextTotalPages.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelTextTotalPages.Name = "labelTextTotalPages";
-            this.labelTextTotalPages.Size = new System.Drawing.Size(17, 26);
+            this.labelTextTotalPages.Size = new System.Drawing.Size(17, 22);
             this.labelTextTotalPages.Text = "0";
             // 
             // toolStripLabel5
             // 
             this.toolStripLabel5.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStripLabel5.Name = "toolStripLabel5";
-            this.toolStripLabel5.Size = new System.Drawing.Size(15, 26);
+            this.toolStripLabel5.Size = new System.Drawing.Size(15, 22);
             this.toolStripLabel5.Text = "-";
             // 
             // labelTextTotalRegFould
             // 
             this.labelTextTotalRegFould.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelTextTotalRegFould.Name = "labelTextTotalRegFould";
-            this.labelTextTotalRegFould.Size = new System.Drawing.Size(17, 26);
+            this.labelTextTotalRegFould.Size = new System.Drawing.Size(17, 22);
             this.labelTextTotalRegFould.Text = "0";
             // 
             // bttnOnePageRight
@@ -170,7 +170,7 @@ namespace Sistema.View.views
             this.bttnOnePageRight.Image = global::Sistema.View.Properties.Resources._1rightarrow;
             this.bttnOnePageRight.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.bttnOnePageRight.Name = "bttnOnePageRight";
-            this.bttnOnePageRight.Size = new System.Drawing.Size(23, 26);
+            this.bttnOnePageRight.Size = new System.Drawing.Size(23, 22);
             this.bttnOnePageRight.Text = "toolStripButton3";
             this.bttnOnePageRight.Click += new System.EventHandler(this.bttnOnePageRight_Click);
             // 
@@ -180,33 +180,33 @@ namespace Sistema.View.views
             this.bttnEndPages.Image = global::Sistema.View.Properties.Resources._2rightarrow;
             this.bttnEndPages.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.bttnEndPages.Name = "bttnEndPages";
-            this.bttnEndPages.Size = new System.Drawing.Size(23, 26);
+            this.bttnEndPages.Size = new System.Drawing.Size(23, 22);
             this.bttnEndPages.Text = "toolStripButton4";
             // 
             // toolStripLabel1
             // 
             this.toolStripLabel1.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStripLabel1.Name = "toolStripLabel1";
-            this.toolStripLabel1.Size = new System.Drawing.Size(209, 26);
+            this.toolStripLabel1.Size = new System.Drawing.Size(209, 22);
             this.toolStripLabel1.Text = "Total Registros Encontrados : ";
             // 
             // toolStripLabel2
             // 
             this.toolStripLabel2.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStripLabel2.Name = "toolStripLabel2";
-            this.toolStripLabel2.Size = new System.Drawing.Size(17, 26);
+            this.toolStripLabel2.Size = new System.Drawing.Size(17, 22);
             this.toolStripLabel2.Text = "0";
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 29);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
             // 
             // toolStripLabel4
             // 
             this.toolStripLabel4.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStripLabel4.Name = "toolStripLabel4";
-            this.toolStripLabel4.Size = new System.Drawing.Size(54, 26);
+            this.toolStripLabel4.Size = new System.Drawing.Size(54, 22);
             this.toolStripLabel4.Text = "Qt.Pg.:";
             // 
             // cbButtnQuantPage1
@@ -226,13 +226,15 @@ namespace Sistema.View.views
             "75",
             "100"});
             this.cbButtnQuantPage1.Name = "cbButtnQuantPage1";
-            this.cbButtnQuantPage1.Size = new System.Drawing.Size(75, 29);
+            this.cbButtnQuantPage1.Size = new System.Drawing.Size(75, 25);
+            this.cbButtnQuantPage1.SelectedIndexChanged += new System.EventHandler(this.cbButtnQuantPage1_SelectedIndexChanged);
+            this.cbButtnQuantPage1.Click += new System.EventHandler(this.cbButtnQuantPage1_Click);
             // 
             // toolStripLabel6
             // 
             this.toolStripLabel6.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStripLabel6.Name = "toolStripLabel6";
-            this.toolStripLabel6.Size = new System.Drawing.Size(77, 26);
+            this.toolStripLabel6.Size = new System.Drawing.Size(77, 22);
             this.toolStripLabel6.Text = "Listar Por:";
             // 
             // cbOrdemParam1
@@ -243,12 +245,13 @@ namespace Sistema.View.views
             "Alfabeto"});
             this.cbOrdemParam1.Name = "cbOrdemParam1";
             this.cbOrdemParam1.Size = new System.Drawing.Size(90, 25);
+            this.cbOrdemParam1.SelectedIndexChanged += new System.EventHandler(this.cbOrdemParam1_SelectedIndexChanged);
             // 
             // toolStripLabel7
             // 
             this.toolStripLabel7.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStripLabel7.Name = "toolStripLabel7";
-            this.toolStripLabel7.Size = new System.Drawing.Size(60, 20);
+            this.toolStripLabel7.Size = new System.Drawing.Size(60, 22);
             this.toolStripLabel7.Text = "Ordem:";
             // 
             // cbOrdenarPor1
@@ -259,6 +262,7 @@ namespace Sistema.View.views
             "Ultimos"});
             this.cbOrdenarPor1.Name = "cbOrdenarPor1";
             this.cbOrdenarPor1.Size = new System.Drawing.Size(90, 25);
+            this.cbOrdenarPor1.SelectedIndexChanged += new System.EventHandler(this.cbOrdenarPor1_SelectedIndexChanged_1);
             // 
             // toolStrip1
             // 
@@ -274,7 +278,7 @@ namespace Sistema.View.views
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Padding = new System.Windows.Forms.Padding(0);
-            this.toolStrip1.Size = new System.Drawing.Size(674, 51);
+            this.toolStrip1.Size = new System.Drawing.Size(919, 51);
             this.toolStrip1.TabIndex = 7;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -362,7 +366,7 @@ namespace Sistema.View.views
             this.tabControlAssets.Location = new System.Drawing.Point(0, 51);
             this.tabControlAssets.Name = "tabControlAssets";
             this.tabControlAssets.SelectedIndex = 0;
-            this.tabControlAssets.Size = new System.Drawing.Size(674, 68);
+            this.tabControlAssets.Size = new System.Drawing.Size(919, 68);
             this.tabControlAssets.TabIndex = 8;
             // 
             // tabPagePesquisar
@@ -376,7 +380,7 @@ namespace Sistema.View.views
             this.tabPagePesquisar.Location = new System.Drawing.Point(4, 25);
             this.tabPagePesquisar.Name = "tabPagePesquisar";
             this.tabPagePesquisar.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPagePesquisar.Size = new System.Drawing.Size(666, 39);
+            this.tabPagePesquisar.Size = new System.Drawing.Size(911, 39);
             this.tabPagePesquisar.TabIndex = 1;
             this.tabPagePesquisar.Text = "Pesquisar";
             this.tabPagePesquisar.UseVisualStyleBackColor = true;
@@ -469,10 +473,9 @@ namespace Sistema.View.views
             this.gridCrudTipoGastos.Name = "gridCrudTipoGastos";
             this.gridCrudTipoGastos.RowTemplate.Height = 25;
             this.gridCrudTipoGastos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.gridCrudTipoGastos.Size = new System.Drawing.Size(674, 303);
+            this.gridCrudTipoGastos.Size = new System.Drawing.Size(919, 307);
             this.gridCrudTipoGastos.TabIndex = 9;
             this.gridCrudTipoGastos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridCrudTipoGastos_CellClick_1);
-            this.gridCrudTipoGastos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridCrudTipoGastos_CellContentClick);
             // 
             // groupBoxFormulario
             // 
@@ -483,9 +486,9 @@ namespace Sistema.View.views
             this.groupBoxFormulario.Controls.Add(this.label2);
             this.groupBoxFormulario.Controls.Add(this.label1);
             this.groupBoxFormulario.Controls.Add(this.txtBoxId);
-            this.groupBoxFormulario.Location = new System.Drawing.Point(0, 203);
+            this.groupBoxFormulario.Location = new System.Drawing.Point(0, 119);
             this.groupBoxFormulario.Name = "groupBoxFormulario";
-            this.groupBoxFormulario.Size = new System.Drawing.Size(674, 219);
+            this.groupBoxFormulario.Size = new System.Drawing.Size(912, 303);
             this.groupBoxFormulario.TabIndex = 10;
             this.groupBoxFormulario.TabStop = false;
             // 
@@ -558,7 +561,7 @@ namespace Sistema.View.views
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(674, 451);
+            this.ClientSize = new System.Drawing.Size(919, 451);
             this.Controls.Add(this.groupBoxFormulario);
             this.Controls.Add(this.gridCrudTipoGastos);
             this.Controls.Add(this.tabControlAssets);
@@ -568,7 +571,6 @@ namespace Sistema.View.views
             this.Name = "TipoGastosView";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TipoGastosView";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.TipoGastosView_FormClosing);
             this.Load += new System.EventHandler(this.TipoGastosView_Load);
             this.toolStrip2.ResumeLayout(false);
             this.toolStrip2.PerformLayout();

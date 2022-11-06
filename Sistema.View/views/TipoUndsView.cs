@@ -913,8 +913,9 @@ namespace Sistema.View.views
                             operationType = "updateData";
                             typeEdition = "search";
                             behaviorRefresh();
+
                             //puxarparametroPesquisa();
-                            //MessageBox.Show("Registro Pesquisado foi Atualizado !  \n else if (operationType.Equals(search) && typeEdition.Equals(search))", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            MessageBox.Show("Registro Pesquisado foi Atualizado !  \n else if (operationType.Equals(search) && typeEdition.Equals(search))", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         }
                     }
                     if ("NS".Equals(controllerTipoUnds.AcaoCrudTipoUndsController()))
@@ -966,8 +967,6 @@ namespace Sistema.View.views
         }
 
         private void behaviorClickGrid() {
-
-
             if (operationType == "updateData" && typeEdition == "search")
             {
                 bttnNew.Enabled = false;
@@ -982,10 +981,12 @@ namespace Sistema.View.views
                 clearFieldsFormulario();
                 setaGridEmCampos();
 
-        
-
             }
-            else if (operationType == "" || operationType == "newInsertion" || operationType == "updateData" || operationType == "search" && typeEdition == "insert")
+            else if (operationType == "" ||
+                operationType == "newInsertion" ||
+                operationType == "updateData" ||
+                operationType == "search" &&
+                typeEdition == "insert")
             {
                 bttnNew.Enabled = false;
                 bttnDel.Enabled = true;
@@ -1002,7 +1003,11 @@ namespace Sistema.View.views
                 setaGridEmCampos();
 
             }
-            else if (operationType == "" || operationType == "newInsertion" || operationType == "updateData" || operationType == "search" && typeEdition == "search")
+            else if (operationType == "" ||
+                operationType == "newInsertion" ||
+                operationType == "updateData" ||
+                operationType == "search" &&
+                typeEdition == "search")
             {
                 bttnNew.Enabled = false;
                 bttnDel.Enabled = true;
@@ -1026,21 +1031,6 @@ namespace Sistema.View.views
             txtBoxName.Text = gridCrudTipoUnds.CurrentRow.Cells[1].Value.ToString();
 
         }
-
-        private void behaviorClickGridPesquisa()
-        {
-            bttnNew.Enabled = false;
-            bttnDel.Enabled = true;
-            bttnEdit.Enabled = true;
-            bttnSearch.Enabled = true;
-            bttnRefresh.Enabled = false;
-            bttnSave.Enabled = false;
-            enableFieldsFormulario();
-            clearFieldsFormulario();
-            setaGridEmCampos();
-        }
-
-
 
 
         public void clearFieldsFormulario()
@@ -1325,37 +1315,37 @@ namespace Sistema.View.views
      
 
 
-        private void gridCrudPessoa_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
+        ////private void gridCrudPessoa_CellClick(object sender, DataGridViewCellEventArgs e)
+        ////{
 
-            var gridVazia = gridCrudTipoUnds.CurrentRow.Cells[0].Value.ToString();
-            if (string.IsNullOrEmpty(gridVazia))
-            {
+        ////    var gridVazia = gridCrudTipoUnds.CurrentRow.Cells[0].Value.ToString();
+        ////    if (string.IsNullOrEmpty(gridVazia))
+        ////    {
 
-            }
-            else if (gridVazia.Length > 0)
-            {
-                operationType = "newInsertion";
-                typeEdition = "insert";
+        ////    }
+        ////    else if (gridVazia.Length > 0)
+        ////    {
+        ////        operationType = "newInsertion";
+        ////        typeEdition = "insert";
 
-                if (typeEdition.Equals("insert"))
-                {
-                    operationType = "newInsertion";
+        ////        if (typeEdition.Equals("insert"))
+        ////        {
+        ////            operationType = "newInsertion";
 
 
-                    behaviorClickGrid();
-                }
-                else if (typeEdition.Equals("search"))
-                {
-                    operationType = "updateData";
+        ////            behaviorClickGrid();
+        ////        }
+        ////        else if (typeEdition.Equals("search"))
+        ////        {
+        ////            operationType = "updateData";
 
-                    behaviorClickGridPesquisa();
+        ////            behaviorClickGridPesquisa();
 
-                }
+        ////        }
 
-            }
+        ////    }
 
-        }
+        ////}
      public void  DataGridModel() { }
 
         private void gridCrudTipoGastos_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -1419,11 +1409,6 @@ namespace Sistema.View.views
             txtBoxName.Text = txtBoxName.Text.ToUpper();
         }
 
-        private void radioBttnComeca_CheckedChanged_1(object sender, EventArgs e)
-        {
-
-        }
-
         private void gridCrudTipoUnds_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             var gridVazia = gridCrudTipoUnds.CurrentRow.Cells[0].Value.ToString();
@@ -1446,6 +1431,11 @@ namespace Sistema.View.views
 
 
             }
+        }
+
+        private void cbButtnQuantPage1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 

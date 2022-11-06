@@ -230,6 +230,7 @@ namespace Sistema.View.views
             this.cbButtnQuantPage1.Name = "cbButtnQuantPage1";
             this.cbButtnQuantPage1.Size = new System.Drawing.Size(75, 29);
             this.cbButtnQuantPage1.SelectedIndexChanged += new System.EventHandler(this.cbButtnQuantPage_SelectedIndexChanged);
+            this.cbButtnQuantPage1.Click += new System.EventHandler(this.cbButtnQuantPage1_Click);
             // 
             // toolStripLabel6
             // 
@@ -432,7 +433,6 @@ namespace Sistema.View.views
             this.radioBttnComeca.TabIndex = 6;
             this.radioBttnComeca.Text = "Começa";
             this.radioBttnComeca.UseVisualStyleBackColor = true;
-            this.radioBttnComeca.CheckedChanged += new System.EventHandler(this.radioBttnComeca_CheckedChanged_1);
             this.radioBttnComeca.TextChanged += new System.EventHandler(this.radioBttnComeca_TextChanged);
             // 
             // txtBoxPesquisar

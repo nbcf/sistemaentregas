@@ -15,7 +15,7 @@ namespace Sistema.Controller
      
         public void Salvar(int idtipound, string nomegasto){
             dao.Salvar(idtipound, nomegasto);
-            AcaoCrudTipoGastosDAO();
+       //     AcaoCrudTipoGastosDAO();
         }
 
         //public DataTable ListarGrid(string nomegasto){
@@ -32,12 +32,12 @@ namespace Sistema.Controller
 
         public void Excluir(int idtipogasto){
             dao.Excluir(idtipogasto);
-            AcaoCrudTipoGastosDAO();
+           // AcaoCrudTipoGastosDAO();
         }
 
         public void Editar(int idtipound, string nomegasto, int idtipogasto) {
             dao.Editar(idtipound,  nomegasto, idtipogasto);
-            AcaoCrudTipoGastosDAO();
+         //   AcaoCrudTipoGastosDAO();
         }
 
         public int ListarBDTipoGastosController(){
