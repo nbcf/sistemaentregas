@@ -942,24 +942,7 @@ namespace Sistema.View
                 }
             }
         }
-        private void acoesBehaviorSave()
-        {
-
-            bttnDel.Enabled = false;
-            bttnEdit.Enabled = false;
-            bttnSearch.Enabled = true;
-            bttnRefresh.Enabled = true;
-            bttnSave.Enabled = false;
-            bttnNew.Enabled = true;
-            radioBttnComeca.Checked = false;
-            radioBttnContem.Checked = false;
-            radioBttnTermina.Checked = false;
-            tabControlAssets.Visible = false;
-
-            tabControlAssets.TabPages.Remove(tabPagePesquisar);
-            clearFieldsFormulario();
-            puxarparametro(0, Convert.ToInt32(cbButtnQuantPage1.SelectedItem), "Sim");
-        }
+   
 
         private void behaviorEdit()
         {

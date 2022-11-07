@@ -65,6 +65,7 @@ namespace Sistema.View
         public int resultadoPesquisa = 0;
         public int totalPaginasPesquisa = 0;
         public int memoriaPesquisa = 1;
+        public string strNomePapel = "";
 
 
         private static PapeisView _InstanciaformCrudPapeis;
@@ -628,6 +629,7 @@ namespace Sistema.View
             }
         }
         private void behaviorNewInsert(){
+
             bttnDel.Enabled = false;
             bttnEdit.Enabled = false;
             bttnSearch.Enabled = false;
@@ -637,6 +639,8 @@ namespace Sistema.View
 
             operationType = "newInsertion";
             txtBoxId.Enabled = false;
+            stringPapel = "";
+            txtBoxId.Text = "";
             formEditPapel frmEditPapel = new formEditPapel();
             stringPapel = "";
             bolCriar = false;
@@ -657,7 +661,7 @@ namespace Sistema.View
             frmEditPapel.ShowDialog();
 
 
-            if (frmEditPapel.AcaoDialogVO.Equals("sair")){
+            if ("sair".Equals(frmEditPapel.AcaoDialogVO)) { 
                 stringPapel = "";
                 txtBoxId.Text = "";
                 bolCriar = false;
@@ -669,9 +673,7 @@ namespace Sistema.View
                 bolMenuGen = false;
                 behaviorRefresh();
 
-            }
-
-            if (frmEditPapel.AcaoDialogVO.Equals("ok")){
+            }else if ("ok".Equals(frmEditPapel.AcaoDialogVO)) {
                 stringPapel = frmEditPapel.PapelVO;
                 bolCriar = frmEditPapel.CriarVO;
                 bolRecuperar = frmEditPapel.RecuperarVO;
@@ -711,6 +713,7 @@ namespace Sistema.View
 
         private void behaviorSave()
         {
+
             string retiraEspacos = stringPapel;
             string remPapel = retiraEspacos.Trim();
             string retiraEspacosId = txtBoxId.Text;
@@ -776,7 +779,7 @@ namespace Sistema.View
             }
             else if (!remEspacosId.Equals("") || remEspacosId != null)
             {
-
+                
                 if (operationType.Equals("updateData") && typeEdition.Equals("insert"))
                 {
 
@@ -795,17 +798,14 @@ namespace Sistema.View
                     else if (remPapel.Length >= 3)
                     {
                         controllerPapeis.Editar(stringPapel, bolCriar, bolRecuperar, bolEditar, bolExcluir, bolMenuOp, bolMenuAdmin, bolMenuGen, Convert.ToInt32(txtBoxId.Text));//  controllerPapeis.Editar(Convert.ToInt32(txtBoxId.Text), stringPapel, bolCriar, bolRecuperar, bolEditar, bolExcluir, bolMenuOp, bolMenuAdmin, bolMenuGen);
-
+                     
                         if ("AT".Equals(controllerPapeis.AcaoCrudPapeisDAO()))
                         {
-
-                            behaviorRefresh();
-
+                           behaviorRefresh();
                         }
                     }
                     if ("NS".Equals(controllerPapeis.AcaoCrudPapeisDAO()))
                     {
-
                         behaviorRefresh();
                     }
                 }
@@ -816,11 +816,9 @@ namespace Sistema.View
                         var resultado = MessageBox.Show("A Edição não alcançou o número mínimo de 3 caracteres.\nPara tentar novamente clique no botão 'Sim'. E no botão 'Não' para cancelar e sair do modo de Inserção.", "Aviso do Sistema", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                         if (resultado == DialogResult.Yes)
                         {
-
                             stringPapel = "";
-                        }
-                        else if (resultado == DialogResult.No)
-                        {
+
+                        }else if (resultado == DialogResult.No){
                             behaviorRefresh();
                         }
 
@@ -1017,33 +1015,24 @@ namespace Sistema.View
 
         private void bttnEdit_Click(object sender, EventArgs e)
         {
-            editarRegistro();
-        }
-
-        private void gridCrudPessoa_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
             var gridVazia = gridCrudPapeis.CurrentRow.Cells[0].Value.ToString();
             if (string.IsNullOrEmpty(gridVazia))
             {
-
             }
             else if (gridVazia.Length > 0)
             {
-                if (typeEdition.Equals("insert"))
+                if (typeEdition.Equals("insert") && operationType.Equals("newInsertion"))
                 {
-                    operationType = "newInsertion";
-                    behaviorClickGrid();
+                    behaviorEdit();
                 }
-                else if (typeEdition.Equals("search"))
+                else if (typeEdition.Equals("search") && operationType.Equals("updateData"))
                 {
-                    operationType = "updateData";
-                    behaviorClickGrid();
-
+                    behaviorEditPesquisa();
                 }
-
-
             }
         }
+
+      
 
         private void button2_Click_1(object sender, EventArgs e)
         {
@@ -1064,7 +1053,6 @@ namespace Sistema.View
                 cbButtonPesquisarEm.SelectedIndex = 0;
                 radioBttnComeca.Checked = true;
                 txtBoxPesquisar.Text = "";
-
                 bttnBeginPages.Visible = false;
                 bttnOnePageLeft.Visible = false;
                 labelTextPageFrom.Visible = false;
@@ -1074,8 +1062,6 @@ namespace Sistema.View
                 labelTextTotalRegFould.Visible = false;
                 bttnOnePageRight.Visible = false;
                 bttnEndPages.Visible = false;
-
-
                 toolStripLabel1.Visible = true;
                 toolStripLabel2.Visible = true;
                 txtBoxPesquisar.Text = "";
@@ -1085,10 +1071,7 @@ namespace Sistema.View
                 toolStripLabel2.Text = Convert.ToString(controllerPapeis.ListarPesquisaPapeisController());
                 operationType = "search";
 
-
-            }
-            else
-            {
+            } else{
                 tabControlAssets.Visible = false;
                 tabControlAssets.TabPages.Remove(tabPagePesquisar);
                 bttnEdit.Enabled = false;
@@ -1160,28 +1143,50 @@ namespace Sistema.View
         private void gridCrudPapeis_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             var gridVazia = gridCrudPapeis.CurrentRow.Cells[0].Value.ToString();
-            if (string.IsNullOrEmpty(gridVazia))
-            {
+            if (string.IsNullOrEmpty(gridVazia)){
             }
-            else if (gridVazia.Length > 0)
-            {
-                if (typeEdition.Equals("insert"))
-                {
+            else if (gridVazia.Length > 0){
+                if (typeEdition.Equals("insert")){
                     operationType = "newInsertion";
                     behaviorClickGrid();
-                }
-                else if (typeEdition.Equals("search"))
-                {
+                }else if (typeEdition.Equals("search")){
                     operationType = "updateData";
-                    behaviorClickGrid();
+                    behaviorClickGridPesquisa();
                 }
             }
 
         }
 
+        private void gridCrudPessoa_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            var gridVazia = gridCrudPapeis.CurrentRow.Cells[0].Value.ToString();
+            if (string.IsNullOrEmpty(gridVazia)) {
+            }
+            else if (gridVazia.Length > 0)
+            {
+                if (typeEdition.Equals("insert")) {
+                    operationType = "newInsertion";
+                    behaviorClickGrid();
+                }else if (typeEdition.Equals("search")) {
+                    operationType = "updateData";
+                    behaviorClickGrid();
+                }
+            }
+        }
+
+        private void behaviorClickGridPesquisa(){
+                txtBoxId.Text = gridCrudPapeis.CurrentRow.Cells[0].Value.ToString();
+                strNomePapel = gridCrudPapeis.CurrentRow.Cells[1].Value.ToString();
+                bttnNew.Enabled = false;
+                bttnDel.Enabled = true;
+                bttnEdit.Enabled = true;
+                bttnSearch.Enabled = true;
+                bttnRefresh.Enabled = false;
+                bttnSave.Enabled = false;
+            }
 
 
-        private void cbOrdemParam1_Click(object sender, EventArgs e)
+            private void cbOrdemParam1_Click(object sender, EventArgs e)
         {
             puxarparametro(0, Convert.ToInt32(cbButtnQuantPage1.SelectedItem), "Sim");
         }
@@ -1250,135 +1255,136 @@ namespace Sistema.View
 
         private void gridCrudPapeis_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            editarRegistro();
-        }
-
-
-        public void editarRegistro()
-        {
             var gridVazia = gridCrudPapeis.CurrentRow.Cells[0].Value.ToString();
-            
-            if (string.IsNullOrEmpty(gridVazia)){ }
-
-            else if (gridVazia.Length > 0){
-
-                if (typeEdition.Equals("insert") && operationType.Equals("newInsertion")){
-                    operationType = "newInsertion";
-                    typeEdition = "insert";
-                    bttnDel.Enabled = false;
-                    bttnEdit.Enabled = false;
-                    bttnSearch.Enabled = false;
-                    bttnRefresh.Enabled = true;
-                    bttnSave.Enabled = true;
-                    bttnNew.Enabled = false;
-                    clearFieldsFormulario();
-                    txtBoxId.Enabled = false;
-                    txtBoxId.Text = gridCrudPapeis.CurrentRow.Cells[0].Value.ToString();
-                    stringPapel = gridCrudPapeis.CurrentRow.Cells[1].Value.ToString();
-
-                    formEditPapel frmEditPapel = new formEditPapel();
-
-                    frmEditPapel.PapelVO = stringPapel;
-                    frmEditPapel.CriarVO = bolCriar;
-                    frmEditPapel.RecuperarVO = bolRecuperar;
-                    frmEditPapel.AtualizarVO = bolRecuperar;
-                    frmEditPapel.DeletarVO = bolExcluir;
-                    frmEditPapel.MenuOpVO = bolMenuOp;
-                    frmEditPapel.MenuAdminVO = bolMenuAdmin;
-                    frmEditPapel.MenuGenVO = bolMenuGen;
-                    frmEditPapel.ShowDialog();
-                  
-                    if (frmEditPapel.AcaoDialogVO.Equals("sair"))
-                    {
-                        stringPapel = "";
-                        bolCriar = false;
-                        bolRecuperar = false;
-                        bolEditar = false;
-                        bolEditar = false;
-                        bolMenuOp = false;
-                        bolMenuAdmin = false;
-                        bolMenuGen = false;
-                        bttnRefresh.Enabled = false;
-                        behaviorRefresh();
-                    }
-
-                    else if (frmEditPapel.AcaoDialogVO.Equals("ok"))
-                    {
-
-                        stringPapel = frmEditPapel.PapelVO;
-                        bolCriar = frmEditPapel.CriarVO;
-                        bolRecuperar = frmEditPapel.RecuperarVO;
-                        bolEditar = frmEditPapel.AtualizarVO;
-                        bolExcluir = frmEditPapel.DeletarVO;
-                        bolMenuOp = frmEditPapel.MenuOpVO;
-                        bolMenuAdmin = frmEditPapel.MenuAdminVO;
-                        bolMenuGen = frmEditPapel.MenuGenVO;
-                        bttnRefresh.Enabled = false;
-                        behaviorSave();
-
-                    }
-
+            if (string.IsNullOrEmpty(gridVazia))
+            {
+            }
+            else if (gridVazia.Length > 0)
+            {
+                if (typeEdition.Equals("insert") && operationType.Equals("newInsertion"))
+                {
+                    behaviorEdit();
                 }
                 else if (typeEdition.Equals("search") && operationType.Equals("updateData"))
                 {
-                    operationType = "updateData";
-                    typeEdition = "search";
-                    bttnDel.Enabled = false;
-                    bttnEdit.Enabled = false;
-                    bttnSearch.Enabled = false;
-                    bttnRefresh.Enabled = true;
-                    bttnSave.Enabled = true;
-                    bttnNew.Enabled = false;
-                    clearFieldsFormulario();
-                    txtBoxId.Enabled = false;
-                    txtBoxId.Text = gridCrudPapeis.CurrentRow.Cells[0].Value.ToString();
-                    stringPapel = gridCrudPapeis.CurrentRow.Cells[1].Value.ToString();
-
-
-                    formEditPapel frmEditPapel = new formEditPapel();
-
-                    frmEditPapel.PapelVO = stringPapel;
-                    frmEditPapel.CriarVO = bolCriar;
-                    frmEditPapel.RecuperarVO = bolRecuperar;
-                    frmEditPapel.AtualizarVO = bolRecuperar;
-                    frmEditPapel.DeletarVO = bolExcluir;
-                    frmEditPapel.MenuOpVO = bolMenuOp;
-                    frmEditPapel.MenuAdminVO = bolMenuAdmin;
-                    frmEditPapel.MenuGenVO = bolMenuGen;
-                    frmEditPapel.ShowDialog();
-
-                    if (frmEditPapel.AcaoDialogVO.Equals("sair"))
-                    {
-                        stringPapel = "";
-                        bolCriar = false;
-                        bolRecuperar = false;
-                        bolEditar = false;
-                        bolEditar = false;
-                        bolMenuOp = false;
-                        bolMenuAdmin = false;
-                        bolMenuGen = false;
-                        bttnRefresh.Enabled = false;
-                        behaviorRefresh();
-                    }
-
-                    else if (frmEditPapel.AcaoDialogVO.Equals("ok"))
-                    {
-
-                        stringPapel = frmEditPapel.PapelVO;
-                        bolCriar = frmEditPapel.CriarVO;
-                        bolRecuperar = frmEditPapel.RecuperarVO;
-                        bolEditar = frmEditPapel.AtualizarVO;
-                        bolExcluir = frmEditPapel.DeletarVO;
-                        bolMenuOp = frmEditPapel.MenuOpVO;
-                        bolMenuAdmin = frmEditPapel.MenuAdminVO;
-                        bolMenuGen = frmEditPapel.MenuGenVO;
-                        bttnRefresh.Enabled = false;
-                        behaviorSave();
-
-                    }
+                    behaviorEditPesquisa();
                 }
             }
         }
+
+        private void behaviorEdit()
+        {
+            typeEdition = "insert";
+            operationType = "updateData";
+            bttnDel.Enabled = false;
+            bttnEdit.Enabled = false;
+            bttnSearch.Enabled = false;
+            bttnRefresh.Enabled = true;
+            bttnSave.Enabled = true;
+            bttnNew.Enabled = false;
+            txtBoxId.Enabled = false;
+            txtBoxId.Text = gridCrudPapeis.CurrentRow.Cells[0].Value.ToString();
+            stringPapel = gridCrudPapeis.CurrentRow.Cells[1].Value.ToString();
+
+            formEditPapel frmEditPapel = new formEditPapel();
+
+            frmEditPapel.PapelVO = stringPapel;
+            frmEditPapel.CriarVO = bolCriar;
+            frmEditPapel.RecuperarVO = bolRecuperar;
+            frmEditPapel.AtualizarVO = bolRecuperar;
+            frmEditPapel.DeletarVO = bolExcluir;
+            frmEditPapel.MenuOpVO = bolMenuOp;
+            frmEditPapel.MenuAdminVO = bolMenuAdmin;
+            frmEditPapel.MenuGenVO = bolMenuGen;
+            frmEditPapel.ShowDialog();
+
+            if ("sair".Equals(frmEditPapel.AcaoDialogVO))
+            {
+                stringPapel = "";
+                bolCriar = false;
+                bolRecuperar = false;
+                bolEditar = false;
+                bolEditar = false;
+                bolMenuOp = false;
+                bolMenuAdmin = false;
+                bolMenuGen = false;
+                bttnRefresh.Enabled = false;
+                behaviorRefresh();
+            }
+
+            else if ("ok".Equals(frmEditPapel.AcaoDialogVO))
+            {
+                stringPapel = frmEditPapel.PapelVO;
+                bolCriar = frmEditPapel.CriarVO;
+                bolRecuperar = frmEditPapel.RecuperarVO;
+                bolEditar = frmEditPapel.AtualizarVO;
+                bolExcluir = frmEditPapel.DeletarVO;
+                bolMenuOp = frmEditPapel.MenuOpVO;
+                bolMenuAdmin = frmEditPapel.MenuAdminVO;
+                bolMenuGen = frmEditPapel.MenuGenVO;
+                bttnRefresh.Enabled = false;
+                behaviorSave();
+            }
+        }
+
+        private void behaviorEditPesquisa()
+        {
+            typeEdition             = "search";
+            bttnDel.Enabled         = false;
+            bttnEdit.Enabled        = false;
+            bttnSearch.Enabled      = false;
+            bttnRefresh.Enabled     = true;
+            bttnSave.Enabled        = true;
+            bttnNew.Enabled         = false;
+            //     bttnPrint.Enabled = false;
+            //     bttnImport.Enabled = false;
+            //     bttnExcel.Enabled = false;
+            clearFieldsFormulario();
+            txtBoxId.Enabled = false;
+            txtBoxId.Text = gridCrudPapeis.CurrentRow.Cells[0].Value.ToString();
+            stringPapel = gridCrudPapeis.CurrentRow.Cells[1].Value.ToString();
+
+            formEditPapel frmEditPapel = new formEditPapel();
+
+            frmEditPapel.PapelVO = stringPapel;
+            frmEditPapel.CriarVO = bolCriar;
+            frmEditPapel.RecuperarVO = bolRecuperar;
+            frmEditPapel.AtualizarVO = bolRecuperar;
+            frmEditPapel.DeletarVO = bolExcluir;
+            frmEditPapel.MenuOpVO = bolMenuOp;
+            frmEditPapel.MenuAdminVO = bolMenuAdmin;
+            frmEditPapel.MenuGenVO = bolMenuGen;
+            frmEditPapel.ShowDialog();
+
+            if ("sair".Equals(frmEditPapel.AcaoDialogVO))
+            {
+                stringPapel = "";
+                bolCriar = false;
+                bolRecuperar = false;
+                bolEditar = false;
+                bolEditar = false;
+                bolMenuOp = false;
+                bolMenuAdmin = false;
+                bolMenuGen = false;
+                bttnRefresh.Enabled = false;
+                behaviorRefresh();
+            }
+
+            else if ("ok".Equals(frmEditPapel.AcaoDialogVO))
+            {
+                stringPapel = frmEditPapel.PapelVO;
+                bolCriar = frmEditPapel.CriarVO;
+                bolRecuperar = frmEditPapel.RecuperarVO;
+                bolEditar = frmEditPapel.AtualizarVO;
+                bolExcluir = frmEditPapel.DeletarVO;
+                bolMenuOp = frmEditPapel.MenuOpVO;
+                bolMenuAdmin = frmEditPapel.MenuAdminVO;
+                bolMenuGen = frmEditPapel.MenuGenVO;
+                bttnRefresh.Enabled = false;
+                behaviorSave();
+            }
+        }
+
 
         private void behaviorClickGrid()
         {
@@ -1413,5 +1419,7 @@ namespace Sistema.View
         public void clearFieldsPesquisar() { txtBoxPesquisar.Text = ""; cbButtonPesquisarEm.SelectedValue = 0; }
         public void disableFieldsPesquisar() { txtBoxPesquisar.Enabled = true; }
         public void enableFieldsPesquisar() { txtBoxPesquisar.Enabled = true; }
+
+       
     }
 }

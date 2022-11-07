@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 using System.Windows.Forms;
 
 namespace Sistema.View
@@ -82,40 +76,40 @@ namespace Sistema.View
             set { acaoFormDialog = value; }
         }
 
-        public formEditPapel()
-        {
+        public formEditPapel(){
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            AcaoDialogVO = "ok";
-            AcaoFormDialogVO = "ok";
-            Close();
-        }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
+        public void Sair(){
             AcaoDialogVO = "sair";
-            AcaoFormDialogVO = "sair";
+           // AcaoFormDialogVO = "sair";
             Close();
 
         }
+        public void Ok(){
+            AcaoDialogVO = "ok";
+          //  AcaoFormDialogVO = "ok";
+            Close();
+        }
 
-        private void formEditPapel_Load(object sender, EventArgs e)
-        {
+
+        private void formEditPapel_Load(object sender, EventArgs e){
             textBox1.Visible = false;
         }
 
-        private void formEditPapel_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            AcaoFormDialogVO = "fechou";
+
+        private void formEditPapel_FormClosing(object sender, FormClosingEventArgs e){
+         //   AcaoFormDialogVO = "fechou";
             
         }
 
-        private void btnOkClick(object sender, EventArgs e)
-        {
+        private void btnOk_Click(object sender, EventArgs e){
+            Ok();
+        }
 
+        private void btnSair_Click(object sender, EventArgs e){
+            Sair();
         }
     }
 }

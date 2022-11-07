@@ -138,6 +138,12 @@
     <Compile Include="edits\EditSaidas.Designer.cs">
       <DependentUpon>EditSaidas.cs</DependentUpon>
     </Compile>
+    <Compile Include="imports\ImportEndereco.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="imports\ImportEndereco.Designer.cs">
+      <DependentUpon>ImportEndereco.cs</DependentUpon>
+    </Compile>
     <Compile Include="imports\ImportSaidasToGastos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -246,12 +252,6 @@
     <Compile Include="views\PessoasView.Designer.cs">
       <DependentUpon>PessoasView.cs</DependentUpon>
     </Compile>
-    <Compile Include="imports\ImportEnderecosView.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="imports\ImportEnderecosView.Designer.cs">
-      <DependentUpon>ImportEnderecosView.cs</DependentUpon>
-    </Compile>
     <Compile Include="imports\ImportEntregadorToSaidas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -304,6 +304,9 @@
     </Compile>
     <EmbeddedResource Include="edits\EditSaidas.resx">
       <DependentUpon>EditSaidas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="imports\ImportEndereco.resx">
+      <DependentUpon>ImportEndereco.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="imports\ImportSaidasToGastos.resx">
       <DependentUpon>ImportSaidasToGastos.cs</DependentUpon>
@@ -358,9 +361,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="imports\ImportEncomendasToSaida.resx">
       <DependentUpon>ImportEncomendasToSaida.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="imports\ImportEnderecosView.resx">
-      <DependentUpon>ImportEnderecosView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="imports\ImportEntregadorToSaidas.resx">
       <DependentUpon>ImportEntregadorToSaidas.cs</DependentUpon>

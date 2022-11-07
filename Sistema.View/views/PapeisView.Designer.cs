@@ -188,6 +188,7 @@ namespace Sistema.View
             this.gridCrudPapeis.Size = new System.Drawing.Size(731, 342);
             this.gridCrudPapeis.TabIndex = 7;
             this.gridCrudPapeis.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridCrudPapeis_CellClick);
+    //        this.gridCrudPapeis.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridCrudPapeis_CellContentClick);
             this.gridCrudPapeis.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridCrudPapeis_CellDoubleClick);
             // 
             // toolStrip2

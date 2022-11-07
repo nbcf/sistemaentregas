@@ -143,7 +143,7 @@ namespace Sistema.View
             this.btnOk.Text = "OK ";
             this.btnOk.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnOk.UseVisualStyleBackColor = true;
-            this.btnOk.Click += new System.EventHandler(this.btnOkClick);
+            this.btnOk.Click += new System.EventHandler(this.btnOk_Click);
             // 
             // btnSair
             // 
@@ -157,7 +157,7 @@ namespace Sistema.View
             this.btnSair.Text = "Sair ";
             this.btnSair.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnSair.UseVisualStyleBackColor = true;
-            this.btnSair.Click += new System.EventHandler(this.button2_Click);
+            this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
             // 
             // textBox1
             // 

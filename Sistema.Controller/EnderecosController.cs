@@ -75,17 +75,17 @@ namespace Sistema.Controller{
         }
 
         public DataTable PesquisarComecaCom(string coluna, string campo, string pesquisar) {
-                PesquisaEnderecosController();
+              //  PesquisaEnderecosController();
                 return dao.PesquisarComeca(coluna, campo, pesquisar);
         }
 
         public DataTable PesquisarContemCom(string coluna, string campo, string pesquisar) {
-                PesquisaEnderecosController();
+             //   PesquisaEnderecosController();
                 return dao.PesquisarContem(coluna, campo, pesquisar);
             }
 
         public DataTable PesquisarTerminaCom(string coluna, string campo, string pesquisar){
-                PesquisaEnderecosController();
+               // PesquisaEnderecosController();
                 return dao.PesquisarTermina(coluna, campo, pesquisar);
         }
     }

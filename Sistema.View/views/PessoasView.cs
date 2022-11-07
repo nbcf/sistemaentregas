@@ -1320,15 +1320,17 @@ namespace Sistema.View
 
         private void button1_Click(object sender, EventArgs e)
         {
-            ImportEnderecos impEnderecosToPessoas = new ImportEnderecos();
-            impEnderecosToPessoas.ShowDialog();
-            txtBoxIdEndereco.Text = impEnderecosToPessoas.strID;
-            txtLogradouro.Text = impEnderecosToPessoas.strLogradouro;
-            txtBairro.Text = impEnderecosToPessoas.strBairro;
-            txtCidade.Text = impEnderecosToPessoas.strCidade;
-            txtUf.Text = impEnderecosToPessoas.strUF;
-            txtCep.Text = impEnderecosToPessoas.strCep;
-            
+            EnderecosView frmEnderecos = EnderecosView.GetInstanciaformCrudEnderecos();
+            frmEnderecos.Text = "Importar Endereços para o Formulário Cadastro de Pessoas";
+            frmEnderecos.modoVO = "Importacao";
+            frmEnderecos.ShowDialog();
+            txtBoxIdEndereco.Text   = frmEnderecos.IdVO;
+            txtLogradouro.Text      = frmEnderecos.logradouroVO;
+            txtBairro.Text          = frmEnderecos.bairroVO;
+            txtCidade.Text          = frmEnderecos.cidadeVO;
+            txtUf.Text              = frmEnderecos.ufVO;
+            txtCep.Text             = frmEnderecos.cepVO;
+
         }
 
 

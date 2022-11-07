@@ -1505,15 +1505,17 @@ namespace Sistema.View
 
         private void button1_Click(object sender, EventArgs e)
         {
-            ImportEnderecos imp = new ImportEnderecos();
-            imp.ShowDialog();
-
-          
-            txtLogradouro.Text = imp.logradouroVO;
-            txtBairro.Text = imp.bairroVO;
-            txtCidade.Text = imp.cidadeVO;
-            txtCep.Text = imp.cepVO;
-            txtUf.Text = imp.ufVO;
+            EnderecosView frmEnd = EnderecosView.GetInstanciaformCrudEnderecos();
+            frmEnd.Text = "Importar Endereços para o Formulário Cadastro de Encomendas";
+            frmEnd.modoVO = "Importacao";
+            frmEnd.ShowDialog();
+         //  .Text = frmEnderecos.IdVO;
+            txtLogradouro.Text = frmEnd.logradouroVO;
+            txtBairro.Text = frmEnd.bairroVO;
+            txtCidade.Text = frmEnd.cidadeVO;
+            txtUf.Text = frmEnd.ufVO;
+            txtCep.Text = frmEnd.cepVO;
+        
 
         }
 

@@ -221,13 +221,11 @@ namespace Sistema.DAO
 
         public int PesquisaEnderecosDAO()
         {
-            
             return pesquisaEnderecosDAO;
         }
 
         public string AcaoCrudEnderecosDAO()
         {
-            
             return acaoCrudEnderecosDAO;
         }
 
