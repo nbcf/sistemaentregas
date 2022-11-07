@@ -89,6 +89,8 @@ namespace Sistema.View
             this.cbOrdenarPor1 = new System.Windows.Forms.ToolStripComboBox();
             this.gridCrudUsuarios = new System.Windows.Forms.DataGridView();
             this.groupBoxFormulario = new System.Windows.Forms.GroupBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.toolStrip1.SuspendLayout();
             this.tabControlAssets.SuspendLayout();
             this.tabPagePesquisar.SuspendLayout();
@@ -279,7 +281,7 @@ namespace Sistema.View
             // 
             this.txtBoxIdPapeis.Enabled = false;
             this.txtBoxIdPapeis.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBoxIdPapeis.Location = new System.Drawing.Point(102, 109);
+            this.txtBoxIdPapeis.Location = new System.Drawing.Point(95, 104);
             this.txtBoxIdPapeis.Name = "txtBoxIdPapeis";
             this.txtBoxIdPapeis.Size = new System.Drawing.Size(40, 25);
             this.txtBoxIdPapeis.TabIndex = 20;
@@ -288,7 +290,7 @@ namespace Sistema.View
             // 
             this.txtBoxIdPessoa.Enabled = false;
             this.txtBoxIdPessoa.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBoxIdPessoa.Location = new System.Drawing.Point(102, 140);
+            this.txtBoxIdPessoa.Location = new System.Drawing.Point(96, 231);
             this.txtBoxIdPessoa.Name = "txtBoxIdPessoa";
             this.txtBoxIdPessoa.Size = new System.Drawing.Size(40, 25);
             this.txtBoxIdPessoa.TabIndex = 19;
@@ -297,13 +299,10 @@ namespace Sistema.View
             // 
             this.bttImportPessoa.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bttImportPessoa.Image = ((System.Drawing.Image)(resources.GetObject("bttImportPessoa.Image")));
-            this.bttImportPessoa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bttImportPessoa.Location = new System.Drawing.Point(15, 140);
+            this.bttImportPessoa.Location = new System.Drawing.Point(69, 232);
             this.bttImportPessoa.Name = "bttImportPessoa";
-            this.bttImportPessoa.Size = new System.Drawing.Size(82, 25);
+            this.bttImportPessoa.Size = new System.Drawing.Size(25, 25);
             this.bttImportPessoa.TabIndex = 18;
-            this.bttImportPessoa.Text = "Pessoa:";
-            this.bttImportPessoa.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.bttImportPessoa.UseVisualStyleBackColor = true;
             this.bttImportPessoa.Click += new System.EventHandler(this.bttImportPessoa_Click);
             // 
@@ -312,7 +311,7 @@ namespace Sistema.View
             this.ckMenuGen.AutoSize = true;
             this.ckMenuGen.Enabled = false;
             this.ckMenuGen.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ckMenuGen.Location = new System.Drawing.Point(199, 220);
+            this.ckMenuGen.Location = new System.Drawing.Point(170, 183);
             this.ckMenuGen.Name = "ckMenuGen";
             this.ckMenuGen.Size = new System.Drawing.Size(125, 21);
             this.ckMenuGen.TabIndex = 17;
@@ -324,7 +323,7 @@ namespace Sistema.View
             this.ckMenuAdmin.AutoSize = true;
             this.ckMenuAdmin.Enabled = false;
             this.ckMenuAdmin.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ckMenuAdmin.Location = new System.Drawing.Point(199, 197);
+            this.ckMenuAdmin.Location = new System.Drawing.Point(170, 160);
             this.ckMenuAdmin.Name = "ckMenuAdmin";
             this.ckMenuAdmin.Size = new System.Drawing.Size(162, 21);
             this.ckMenuAdmin.TabIndex = 16;
@@ -336,7 +335,7 @@ namespace Sistema.View
             this.ckMenuOp.AutoSize = true;
             this.ckMenuOp.Enabled = false;
             this.ckMenuOp.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ckMenuOp.Location = new System.Drawing.Point(199, 173);
+            this.ckMenuOp.Location = new System.Drawing.Point(170, 136);
             this.ckMenuOp.Name = "ckMenuOp";
             this.ckMenuOp.Size = new System.Drawing.Size(145, 21);
             this.ckMenuOp.TabIndex = 15;
@@ -348,7 +347,7 @@ namespace Sistema.View
             this.ckDeletar.AutoSize = true;
             this.ckDeletar.Enabled = false;
             this.ckDeletar.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ckDeletar.Location = new System.Drawing.Point(103, 242);
+            this.ckDeletar.Location = new System.Drawing.Point(74, 205);
             this.ckDeletar.Name = "ckDeletar";
             this.ckDeletar.Size = new System.Drawing.Size(70, 21);
             this.ckDeletar.TabIndex = 14;
@@ -360,7 +359,7 @@ namespace Sistema.View
             this.ckEditar.AutoSize = true;
             this.ckEditar.Enabled = false;
             this.ckEditar.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ckEditar.Location = new System.Drawing.Point(103, 219);
+            this.ckEditar.Location = new System.Drawing.Point(74, 182);
             this.ckEditar.Name = "ckEditar";
             this.ckEditar.Size = new System.Drawing.Size(62, 21);
             this.ckEditar.TabIndex = 13;
@@ -372,7 +371,7 @@ namespace Sistema.View
             this.ckPesquisar.AutoSize = true;
             this.ckPesquisar.Enabled = false;
             this.ckPesquisar.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ckPesquisar.Location = new System.Drawing.Point(103, 196);
+            this.ckPesquisar.Location = new System.Drawing.Point(74, 159);
             this.ckPesquisar.Name = "ckPesquisar";
             this.ckPesquisar.Size = new System.Drawing.Size(85, 21);
             this.ckPesquisar.TabIndex = 12;
@@ -384,7 +383,7 @@ namespace Sistema.View
             this.ckCadastrar.AutoSize = true;
             this.ckCadastrar.Enabled = false;
             this.ckCadastrar.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ckCadastrar.Location = new System.Drawing.Point(104, 173);
+            this.ckCadastrar.Location = new System.Drawing.Point(75, 136);
             this.ckCadastrar.Name = "ckCadastrar";
             this.ckCadastrar.Size = new System.Drawing.Size(85, 21);
             this.ckCadastrar.TabIndex = 11;
@@ -395,38 +394,35 @@ namespace Sistema.View
             // 
             this.txtNomePessoa.Enabled = false;
             this.txtNomePessoa.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNomePessoa.Location = new System.Drawing.Point(145, 140);
+            this.txtNomePessoa.Location = new System.Drawing.Point(142, 231);
             this.txtNomePessoa.Name = "txtNomePessoa";
-            this.txtNomePessoa.Size = new System.Drawing.Size(216, 25);
+            this.txtNomePessoa.Size = new System.Drawing.Size(186, 25);
             this.txtNomePessoa.TabIndex = 10;
             // 
             // txtNomePapel
             // 
             this.txtNomePapel.Enabled = false;
             this.txtNomePapel.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNomePapel.Location = new System.Drawing.Point(145, 109);
+            this.txtNomePapel.Location = new System.Drawing.Point(141, 105);
             this.txtNomePapel.Name = "txtNomePapel";
-            this.txtNomePapel.Size = new System.Drawing.Size(216, 25);
+            this.txtNomePapel.Size = new System.Drawing.Size(187, 25);
             this.txtNomePapel.TabIndex = 7;
             // 
             // bttImportaPapel
             // 
             this.bttImportaPapel.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bttImportaPapel.Image = ((System.Drawing.Image)(resources.GetObject("bttImportaPapel.Image")));
-            this.bttImportaPapel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bttImportaPapel.Location = new System.Drawing.Point(15, 107);
+            this.bttImportaPapel.Location = new System.Drawing.Point(69, 105);
             this.bttImportaPapel.Name = "bttImportaPapel";
-            this.bttImportaPapel.Size = new System.Drawing.Size(82, 27);
+            this.bttImportaPapel.Size = new System.Drawing.Size(25, 25);
             this.bttImportaPapel.TabIndex = 6;
-            this.bttImportaPapel.Text = "Função:";
-            this.bttImportaPapel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.bttImportaPapel.UseVisualStyleBackColor = true;
             this.bttImportaPapel.Click += new System.EventHandler(this.bttImportaPapel_Click);
             // 
             // txtBoxSenha
             // 
             this.txtBoxSenha.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBoxSenha.Location = new System.Drawing.Point(102, 78);
+            this.txtBoxSenha.Location = new System.Drawing.Point(69, 74);
             this.txtBoxSenha.Name = "txtBoxSenha";
             this.txtBoxSenha.Size = new System.Drawing.Size(259, 25);
             this.txtBoxSenha.TabIndex = 5;
@@ -435,7 +431,7 @@ namespace Sistema.View
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(35, 76);
+            this.label3.Location = new System.Drawing.Point(17, 78);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(48, 17);
             this.label3.TabIndex = 4;
@@ -445,7 +441,7 @@ namespace Sistema.View
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(29, 48);
+            this.label2.Location = new System.Drawing.Point(11, 48);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(54, 17);
             this.label2.TabIndex = 3;
@@ -454,7 +450,7 @@ namespace Sistema.View
             // txtBoxUsuario
             // 
             this.txtBoxUsuario.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBoxUsuario.Location = new System.Drawing.Point(102, 48);
+            this.txtBoxUsuario.Location = new System.Drawing.Point(69, 44);
             this.txtBoxUsuario.Name = "txtBoxUsuario";
             this.txtBoxUsuario.Size = new System.Drawing.Size(259, 25);
             this.txtBoxUsuario.TabIndex = 2;
@@ -463,7 +459,7 @@ namespace Sistema.View
             // 
             this.txtBoxId.Enabled = false;
             this.txtBoxId.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBoxId.Location = new System.Drawing.Point(102, 18);
+            this.txtBoxId.Location = new System.Drawing.Point(69, 14);
             this.txtBoxId.Name = "txtBoxId";
             this.txtBoxId.Size = new System.Drawing.Size(66, 25);
             this.txtBoxId.TabIndex = 1;
@@ -472,7 +468,7 @@ namespace Sistema.View
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(32, 21);
+            this.label1.Location = new System.Drawing.Point(14, 18);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(51, 17);
             this.label1.TabIndex = 0;
@@ -500,7 +496,7 @@ namespace Sistema.View
             this.cbOrdemParam1,
             this.toolStripLabel8,
             this.cbOrdenarPor1});
-            this.toolStrip2.Location = new System.Drawing.Point(0, 433);
+            this.toolStrip2.Location = new System.Drawing.Point(0, 408);
             this.toolStrip2.Name = "toolStrip2";
             this.toolStrip2.Size = new System.Drawing.Size(632, 32);
             this.toolStrip2.TabIndex = 7;
@@ -702,12 +698,14 @@ namespace Sistema.View
             this.gridCrudUsuarios.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.gridCrudUsuarios.RowTemplate.Height = 25;
             this.gridCrudUsuarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.gridCrudUsuarios.Size = new System.Drawing.Size(632, 334);
+            this.gridCrudUsuarios.Size = new System.Drawing.Size(632, 309);
             this.gridCrudUsuarios.TabIndex = 6;
             this.gridCrudUsuarios.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridCrudPessoa_CellClick_1);
             // 
             // groupBoxFormulario
             // 
+            this.groupBoxFormulario.Controls.Add(this.label5);
+            this.groupBoxFormulario.Controls.Add(this.label4);
             this.groupBoxFormulario.Controls.Add(this.ckMenuGen);
             this.groupBoxFormulario.Controls.Add(this.txtBoxIdPessoa);
             this.groupBoxFormulario.Controls.Add(this.ckMenuAdmin);
@@ -730,15 +728,35 @@ namespace Sistema.View
             this.groupBoxFormulario.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBoxFormulario.Location = new System.Drawing.Point(0, 131);
             this.groupBoxFormulario.Name = "groupBoxFormulario";
-            this.groupBoxFormulario.Size = new System.Drawing.Size(632, 302);
+            this.groupBoxFormulario.Size = new System.Drawing.Size(632, 277);
             this.groupBoxFormulario.TabIndex = 8;
             this.groupBoxFormulario.TabStop = false;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(12, 235);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(53, 17);
+            this.label4.TabIndex = 21;
+            this.label4.Text = "Pessoa:";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(10, 108);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(55, 17);
+            this.label5.TabIndex = 22;
+            this.label5.Text = "Função:";
             // 
             // UsuariosView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(632, 465);
+            this.ClientSize = new System.Drawing.Size(632, 440);
             this.Controls.Add(this.groupBoxFormulario);
             this.Controls.Add(this.toolStrip2);
             this.Controls.Add(this.gridCrudUsuarios);
@@ -821,5 +839,7 @@ namespace Sistema.View
         private System.Windows.Forms.ToolStripLabel toolStripLabel8;
         private System.Windows.Forms.ToolStripComboBox cbOrdenarPor1;
         private System.Windows.Forms.GroupBox groupBoxFormulario;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
     }
 }

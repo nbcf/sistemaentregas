@@ -1277,10 +1277,7 @@ namespace Sistema.View.views
             puxarparametroPesquisa();
         }
 
-        private void TipoUndsView_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            _InstanciaTipoGastosView = null;
-        }
+        
 
         private void txtBoxName_TextChanged(object sender, EventArgs e)
         {
@@ -1430,6 +1427,11 @@ namespace Sistema.View.views
         private void cbOrdenarPor1_SelectedIndexChanged_1(object sender, EventArgs e)
         {
             puxarparametro(0, Convert.ToInt32(cbButtnQuantPage1.SelectedItem), "Sim");
+        }
+
+        private void TipoGastosView_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            _InstanciaTipoGastosView = null;
         }
     }
 

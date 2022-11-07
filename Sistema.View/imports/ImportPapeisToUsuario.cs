@@ -75,7 +75,6 @@ namespace Sistema.View
             
             IdPapeisVO = Convert.ToString(dataGridView1.CurrentRow.Cells[0].Value.ToString());
             AcaoDialogVO = "Importou";
-    
             Close();
         }
 

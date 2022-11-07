@@ -641,6 +641,7 @@
     <None Include="image\crud48x48\gastos48.png" />
     <None Include="image\crud48x48\gastosB48.png" />
     <None Include="image\crud48x48\close48.png" />
+    <None Include="image\crud48x48\list48.png" />
     <Content Include="image\icons8-truck-32.png" />
     <None Include="image\truck-esquerda-24.png" />
   </ItemGroup>

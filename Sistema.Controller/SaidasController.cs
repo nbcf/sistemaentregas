@@ -55,7 +55,6 @@ namespace Sistema.Controller
 
         public DataTable ListarEstatusSaidaController(string estsaidas){
             return dao.ListarEstatusSaidaDAO(estsaidas);
-
         }
 
         public DataTable ListarSaidaGasto(){
@@ -136,7 +135,7 @@ namespace Sistema.Controller
             string indexar,
             int offsett,
             int limitt){
-                ListarBDSaidasController();
+          
                 return dao.ListarDataGridDAO(parametro, estatusSaida, indexar, offsett, limitt);
             
         }

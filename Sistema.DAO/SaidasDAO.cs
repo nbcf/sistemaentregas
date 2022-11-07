@@ -294,7 +294,7 @@ namespace Sistema.DAO
                     "AND sai.idusuario = usuario.idusuario " +
                     "AND usuario.idpapel = pap.idpapel " +
                     "AND usuario.idpessoa = pess.idpessoa " +
-                    "WHERE sai.estsaida = 'Rota Concluída' " +
+                    "WHERE sai.estsaida = '"+ estatusSaida + "' " +
                     "ORDER BY pess.nomepessoa " + indexar + " Limit " + offsett + "," + limitt;
                 cmd = new MySqlCommand(sql, classeConecta.con);
                 MySqlDataAdapter da = new MySqlDataAdapter();

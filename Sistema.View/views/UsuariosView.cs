@@ -732,7 +732,7 @@ namespace Sistema.View
             gridCrudUsuarios.Columns[3].Width = 130;
             gridCrudUsuarios.Columns[4].Width = 100;
             gridCrudUsuarios.Columns[5].Width = 0;
-            gridCrudUsuarios.Columns[6].Width = 130;
+            gridCrudUsuarios.Columns[6].Width = 200;
             gridCrudUsuarios.Columns[7].Width = 0;
             gridCrudUsuarios.Columns[8].Width = 0;
             gridCrudUsuarios.Columns[9].Width = 0;
@@ -747,13 +747,14 @@ namespace Sistema.View
             gridCrudUsuarios.Columns[0].HeaderText = "ID";
             gridCrudUsuarios.Columns[1].HeaderText = "ID Pessoa"; //
             gridCrudUsuarios.Columns[2].HeaderText = "ID Papel"; //
-            gridCrudUsuarios.Columns[3].HeaderText = "Usuario";
+            gridCrudUsuarios.Columns[3].HeaderText = "USUARIO";
             gridCrudUsuarios.Columns[4].HeaderText = "Senha";
             gridCrudUsuarios.Columns[5].HeaderText = "ID Papel";//
-            gridCrudUsuarios.Columns[6].HeaderText = "Função";
-            gridCrudUsuarios.Columns[16].HeaderText = "Nome Pessoa";
+            gridCrudUsuarios.Columns[6].HeaderText = "FUNÇÃO";
+            gridCrudUsuarios.Columns[16].HeaderText = "PESSOA";
             gridCrudUsuarios.Columns[1].Visible = false;
             gridCrudUsuarios.Columns[2].Visible = false;
+            gridCrudUsuarios.Columns[3].Visible = false;
             gridCrudUsuarios.Columns[4].Visible = false;
             gridCrudUsuarios.Columns[5].Visible = false;
             gridCrudUsuarios.Columns[7].Visible = false;

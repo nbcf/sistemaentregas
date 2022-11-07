@@ -95,19 +95,20 @@ namespace Sistema.View
         {
             InitializeComponent();
             carregarEstadoPadrao("CarregaPadraoIDTodosUltimos", 0);
+            toolStripButton4.Enabled = false;
         }
 
 
         private void puxarparametro(int deslocamento, int limiteregistro, string inicioDeslocamento)
         {
 
-            string jcbOrdem = Convert.ToString(cbOrdemParam1.SelectedItem);
+            string jcbOrdem = Convert.ToString(cbOrdemParam.SelectedItem);
             string ordem = "";
-            if (Convert.ToString(cbOrdenarPor1.SelectedItem).Equals("Primeiros"))
+            if (Convert.ToString(cbOrdenarPor.SelectedItem).Equals("Primeiros"))
             {
                 ordem = "primeiros";
             }
-            else if (Convert.ToString(cbOrdenarPor1.SelectedItem).Equals("Ultimos"))
+            else if (Convert.ToString(cbOrdenarPor.SelectedItem).Equals("Ultimos"))
             {
                 ordem = "ultimos";
             }
@@ -197,6 +198,95 @@ namespace Sistema.View
                         }
                     }
                 }
+        }
+        private void puxarparametroPesquisa()
+        {
+
+            string estadoPesquisa = "";
+            string pesquisarEmColuna = Convert.ToString(cbButtonPesquisarEm.SelectedItem);
+
+
+            if (radioBttnComeca.Checked == true)
+            {
+                estadoPesquisa = "ComecaCom";
+            }
+            else if (radioBttnContem.Checked == true)
+            {
+                estadoPesquisa = "Contem";
+            }
+            else if (radioBttnTermina.Checked == true)
+            {
+                estadoPesquisa = "TerminaCom";
+            }
+            else if (radioBttnComeca.Checked == false)
+            {
+                estadoPesquisa = "";
+            }
+            else if (radioBttnContem.Checked == false)
+            {
+                estadoPesquisa = "";
+            }
+            else if (radioBttnTermina.Checked == false)
+            {
+                estadoPesquisa = "";
+            }
+
+            if (actBehaviorSerarch == true)
+            {
+
+
+                if (estadoPesquisa.Equals("ComecaCom") && pesquisarEmColuna.Equals("Nome"))
+                {
+                    gridCrudSaidas.DataSource = controllerSaida.PesquisarComecaCom("nomepessoa", "@nomepessoa", txtBoxPesquisar.Text);
+                    DataGridModel();
+                    toolStripLabel2.Text = Convert.ToString(controllerSaida.ListarPesquisaController());
+                }
+                else if (estadoPesquisa.Equals("Contem") && pesquisarEmColuna.Equals("Nome"))
+                {
+                    gridCrudSaidas.DataSource = controllerSaida.PesquisarContemCom("nomepessoa", "@nomepessoa", txtBoxPesquisar.Text);
+                    DataGridModel();
+                    toolStripLabel2.Text = Convert.ToString(controllerSaida.ListarPesquisaController());
+                }
+                else if (estadoPesquisa.Equals("TerminaCom") && pesquisarEmColuna.Equals("Nome"))
+                {
+                    gridCrudSaidas.DataSource = controllerSaida.PesquisarTerminaCom("nomepessoa", "@nomepessoa", txtBoxPesquisar.Text);
+                    DataGridModel();
+                    toolStripLabel2.Text = Convert.ToString(controllerSaida.ListarPesquisaController());
+                }
+            }
+        }
+
+        public void EnviaModelo(string pesquisa, int offset, int limitt)
+        {
+            if (pesquisa.Equals("CarregaPadraoIDTodosUltimos") && parametroCodigoAlfabeto.Equals("Codigo") && parametroASCDESC.Equals("ultimos"))
+            {
+                gridCrudSaidas.DataSource = controllerSaida.ListarSaidasGridController("idpessoa", cbEstatusSaida.SelectedItem.ToString(), "desc", offset, limitt);
+                DataGridModel();
+                labelTextTotalRegFould.Text = Convert.ToString(controllerSaida.ListarBDSaidasController());
+                carregarInformacoes();
+            }
+            else if (pesquisa.Equals("CarregaPadraoIDTodosPrimeiros") && parametroCodigoAlfabeto.Equals("Codigo") && parametroASCDESC.Equals("primeiros"))
+            {
+                gridCrudSaidas.DataSource = controllerSaida.ListarSaidasGridController("idpessoa", cbEstatusSaida.SelectedItem.ToString(), "asc", offset, limitt);
+                DataGridModel();
+                labelTextTotalRegFould.Text = Convert.ToString(controllerSaida.ListarBDSaidasController());
+                carregarInformacoes();
+            }
+            else if (pesquisa.Equals("CarregaPadraoNomeTodosUltimos") && parametroCodigoAlfabeto.Equals("Alfabeto") && parametroASCDESC.Equals("ultimos"))
+            {
+                gridCrudSaidas.DataSource = controllerSaida.ListarSaidasGridController("nomepessoa", cbEstatusSaida.SelectedItem.ToString(), "desc", offset, limitt);
+                DataGridModel();
+                labelTextTotalRegFould.Text = Convert.ToString(controllerSaida.ListarBDSaidasController());
+                carregarInformacoes();
+            }
+            else if (pesquisa.Equals("CarregaPadraoNomeTodosPrimeiros") && parametroCodigoAlfabeto.Equals("Alfabeto") && parametroASCDESC.Equals("primeiros"))
+            {
+                gridCrudSaidas.DataSource = controllerSaida.ListarSaidasGridController("nomepessoa", cbEstatusSaida.SelectedItem.ToString(), "asc", offset, limitt);
+                DataGridModel();
+                labelTextTotalRegFould.Text = Convert.ToString(controllerSaida.ListarBDSaidasController());
+                carregarInformacoes();
+            }
+
         }
 
 
@@ -364,103 +454,15 @@ namespace Sistema.View
 
 
 
-        private void puxarparametroPesquisa()
-        {
-
-            string estadoPesquisa = "";
-            string pesquisarEmColuna = Convert.ToString(cbButtonPesquisarEm.SelectedItem);
-
-
-            if (radioBttnComeca.Checked == true)
-            {
-                estadoPesquisa = "ComecaCom";
-            }
-            else if (radioBttnContem.Checked == true)
-            {
-                estadoPesquisa = "Contem";
-            }
-            else if (radioBttnTermina.Checked == true)
-            {
-                estadoPesquisa = "TerminaCom";
-            }
-            else if (radioBttnComeca.Checked == false)
-            {
-                estadoPesquisa = "";
-            }
-            else if (radioBttnContem.Checked == false)
-            {
-                estadoPesquisa = "";
-            }
-            else if (radioBttnTermina.Checked == false)
-            {
-                estadoPesquisa = "";
-            }
-
-            if (actBehaviorSerarch == true)
-            {
-
-
-                if (estadoPesquisa.Equals("ComecaCom") && pesquisarEmColuna.Equals("Nome"))
-                {
-                    gridCrudSaidas.DataSource = controllerSaida.PesquisarComecaCom("nomepessoa", "@nomepessoa", txtBoxPesquisar.Text);
-                    DataGridModel();
-                    toolStripLabel2.Text = Convert.ToString(controllerSaida.ListarPesquisaController());
-                }
-                else if (estadoPesquisa.Equals("Contem") && pesquisarEmColuna.Equals("Nome"))
-                {
-                    gridCrudSaidas.DataSource = controllerSaida.PesquisarContemCom("nomepessoa", "@nomepessoa", txtBoxPesquisar.Text);
-                    DataGridModel();
-                    toolStripLabel2.Text = Convert.ToString(controllerSaida.ListarPesquisaController());
-                }
-                else if (estadoPesquisa.Equals("TerminaCom") && pesquisarEmColuna.Equals("Nome"))
-                {
-                    gridCrudSaidas.DataSource = controllerSaida.PesquisarTerminaCom("nomepessoa", "@nomepessoa", txtBoxPesquisar.Text);
-                    DataGridModel();
-                    toolStripLabel2.Text = Convert.ToString(controllerSaida.ListarPesquisaController());
-                }
-            }
-        }
-
-        public void EnviaModelo(string pesquisa, int offset, int limitt)
-        {
-            if (pesquisa.Equals("CarregaPadraoIDTodosUltimos") && parametroCodigoAlfabeto.Equals("Codigo") && parametroASCDESC.Equals("ultimos"))
-            {
-                gridCrudSaidas.DataSource = controllerSaida.ListarSaidasGridController("idpessoa", toolStripComboBox1.SelectedItem.ToString(), "desc", offset, limitt);
-                DataGridModel();
-                labelTextTotalRegFould.Text = Convert.ToString(controllerSaida.ListarBDSaidasController());
-                carregarInformacoes();
-            }
-            else if (pesquisa.Equals("CarregaPadraoIDTodosPrimeiros") && parametroCodigoAlfabeto.Equals("Codigo") && parametroASCDESC.Equals("primeiros"))
-            {
-                gridCrudSaidas.DataSource = controllerSaida.ListarSaidasGridController("idpessoa", toolStripComboBox1.SelectedItem.ToString(), "asc", offset, limitt);
-                DataGridModel();
-                labelTextTotalRegFould.Text = Convert.ToString(controllerSaida.ListarBDSaidasController());
-                carregarInformacoes();
-            }
-            else if (pesquisa.Equals("CarregaPadraoNomeTodosUltimos") && parametroCodigoAlfabeto.Equals("Alfabeto") && parametroASCDESC.Equals("ultimos"))
-            {
-                gridCrudSaidas.DataSource = controllerSaida.ListarSaidasGridController("nomepessoa", toolStripComboBox1.SelectedItem.ToString(), "desc", offset, limitt);
-                DataGridModel();
-                labelTextTotalRegFould.Text = Convert.ToString(controllerSaida.ListarBDSaidasController());
-                carregarInformacoes();
-            }
-            else if (pesquisa.Equals("CarregaPadraoNomeTodosPrimeiros") && parametroCodigoAlfabeto.Equals("Alfabeto") && parametroASCDESC.Equals("primeiros"))
-            {
-                gridCrudSaidas.DataSource = controllerSaida.ListarSaidasGridController("nomepessoa", toolStripComboBox1.SelectedItem.ToString(), "asc", offset, limitt);
-                DataGridModel();
-                labelTextTotalRegFould.Text = Convert.ToString(controllerSaida.ListarBDSaidasController());
-                carregarInformacoes();
-            }
-
-        }
-
+     
         public void carregarEstadoPadrao(string pesquisa, int offsett)
         {
+            cbEstatusSaida.SelectedIndex = 0;
             cbButtnQuantPage1.SelectedIndex = 0;
-            toolStripComboBox1.SelectedIndex = 0;
+            cbEstatusSaida.SelectedIndex = 0;
             int quantRegPage = Convert.ToInt32(cbButtnQuantPage1.SelectedItem);
-            cbOrdenarPor1.SelectedIndex = 1;
-            cbOrdemParam1.SelectedIndex = 0;
+            cbOrdenarPor.SelectedIndex = 1;
+            cbOrdemParam.SelectedIndex = 0;
             resetarPonteiros();
             this.puxarparametro(0, quantRegPage, "Nao");
             bttnDel.Enabled = false;
@@ -470,8 +472,8 @@ namespace Sistema.View
             bttnSave.Enabled = false;
             bttnNew.Enabled = true;
             bttnImport.Enabled = false;
-            toolStripButton2.Enabled = false;
-            toolStripButton1.Enabled = false;
+            btnRotaConcluida.Enabled = false;
+            btnEmRota.Enabled = false;
             bttnImport.Enabled = false;
             radioBttnComeca.Checked = false;
             radioBttnContem.Checked = false;
@@ -532,6 +534,7 @@ namespace Sistema.View
             btnCalcularKmTotal.Visible = false;
             //toolStripButton3.Enabled = false;
             btConfirmarRetorno.Enabled = false;
+            btnDespesas.Enabled = false;
 
             //  gridCrudSaidas.ClearSelection();
         }
@@ -776,8 +779,8 @@ namespace Sistema.View
             gridCurdMestreDetalhe.Columns[24].Visible = false;
         }
 
-        private void behaviorRefresh(){
-            if (operationType == "updateData" && typeEdition == "search"){
+        private void behaviorRefresh() {
+            if (operationType == "updateData" && typeEdition == "search") {
 
                 gridCrudSaidas.Visible = true;
                 tabControlAssets.Visible = true;
@@ -791,11 +794,11 @@ namespace Sistema.View
                 btConfirmarRetorno.Enabled = false;
                 btConfirmarRetorno.Visible = false;
 
-            }else if (operationType == "" ||
-                operationType == "newInsertion" ||
-                operationType == "updateData" ||
-                operationType == "search" &&
-                typeEdition == "insert"){
+            } else if (operationType == "" ||
+                 operationType == "newInsertion" ||
+                 operationType == "updateData" ||
+                 operationType == "search" &&
+                 typeEdition == "insert") {
                 bttnDel.Enabled = false;
                 bttnSearch.Enabled = true;
                 bttnRefresh.Enabled = true;
@@ -813,13 +816,13 @@ namespace Sistema.View
                 groupBoxFormulario.Enabled = false;
                 groupBoxFormulario.Visible = false;
                 toolStrip2.Visible = true;
-                toolStripButton1.Enabled = false;
+                btnEmRota.Enabled = false;
                 clearFieldsFormulario();
                 disableFieldsFormulario();
                 puxarparametro(0, Convert.ToInt32(cbButtnQuantPage1.SelectedItem), "Sim");
                 txtEstatusSaida.Enabled = false;
-                toolStripButton1.Enabled = false;
-                toolStripButton2.Enabled = false;
+                btnEmRota.Enabled = false;
+                btnRotaConcluida.Enabled = false;
                 btnCalcularKmTotal.Enabled = false;
                 btnCalcularKmTotal.Visible = false;
                 label5.Visible = false;
@@ -830,18 +833,18 @@ namespace Sistema.View
                 btConfirmarRetorno.Visible = false;
                 btConfirmarRetorno.Enabled = false;
                 gridCrudSaidas.ClearSelection();
-            }else if (operationType == "" ||
-                operationType == "newInsertion" ||
-                operationType == "updateData" ||
-                operationType == "search" &&
-                typeEdition == "search"){
+            } else if (operationType == "" ||
+                 operationType == "newInsertion" ||
+                 operationType == "updateData" ||
+                 operationType == "search" &&
+                 typeEdition == "search") {
                 bttnDel.Enabled = false;
                 bttnSearch.Enabled = true;
                 bttnRefresh.Enabled = true;
                 bttnSave.Enabled = false;
                 bttnNew.Enabled = true;
                 bttnImport.Enabled = false;
-                toolStripButton1.Enabled = false;
+                btnEmRota.Enabled = false;
                 radioBttnComeca.Checked = false;
                 radioBttnContem.Checked = false;
                 radioBttnTermina.Checked = false;
@@ -856,8 +859,8 @@ namespace Sistema.View
                 clearFieldsFormulario();
                 disableFieldsFormulario();
                 txtEstatusSaida.Enabled = false;
-                toolStripButton1.Enabled = false;
-                toolStripButton2.Enabled = false;
+                btnEmRota.Enabled = false;
+                btnRotaConcluida.Enabled = false;
                 label5.Visible = false;
                 txtKmTotal.Visible = false;
                 btnCalcularKmTotal.Enabled = false;
@@ -868,8 +871,8 @@ namespace Sistema.View
             }
         }
 
-        private void behaviorNewInsert(){
-            toolStripComboBox1.SelectedIndex = 0;
+        private void behaviorNewInsert() {
+            cbEstatusSaida.SelectedIndex = 0;
             bttnDel.Enabled = false;
             bttnSearch.Enabled = false;
             bttnRefresh.Enabled = true;
@@ -919,16 +922,16 @@ namespace Sistema.View
             string remEspacosPlaca = retiraEspacosPlaca.Trim();
             string remEntregador = retiraEntregador.Trim();
 
-            if (remEspacosPlaca.Length < 3 || remEntregador.Length < 3){
-                
-            }else{
-                if (txtIdSaida.Text.Trim().Equals("") || txtIdSaida.Text.Trim() == null){
+            if (remEspacosPlaca.Length < 3 || remEntregador.Length < 3) {
+
+            } else {
+                if (txtIdSaida.Text.Trim().Equals("") || txtIdSaida.Text.Trim() == null) {
                     if (operationType.Equals("newInsertion") && typeEdition.Equals("insert")) {
                         if (remEspacosPlaca.Length <= 3 && remEntregador.Length <= 3) {
                             var resultado = MessageBox.Show("A Inserção não alcançou o número mínimo de 3 caracteres.\nPara tentar novamente clique no botão 'Sim'. E no botão 'Não' para cancelar e sair do modo de Inserção.", "Aviso do Sistema", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                             if (resultado == DialogResult.Yes) {
 
-                            }else if (resultado == DialogResult.No){
+                            } else if (resultado == DialogResult.No) {
                                 behaviorRefresh();
                             }
                         }
@@ -947,7 +950,7 @@ namespace Sistema.View
                                                     Convert.ToDateTime(DateTime.Today.ToString("dd/MM/yyyy")),
                                                     "",
                                                     "",
-                                                    txtEstatusSaida.Text,
+                                                    "Preparando",
                                                     txtRegiaoEntrega.Text,
                                                     txtKmSaida.Text,
                                                     txtKmRetorno.Text,
@@ -992,7 +995,7 @@ namespace Sistema.View
                                     groupBox1.Visible = true;
                                     veiculosController.EditarEstatusVeiculo(txtVeiculo.Text, txtPlacaVeiculo.Text, "Em Rota", Convert.ToInt32(txtIdVeiculo.Text));
 
-                                }else if (resultado == DialogResult.No){
+                                } else if (resultado == DialogResult.No) {
 
                                     controllerSaida.Excluir(Convert.ToInt32(id));
                                     veiculosController.EditarEstatusVeiculo(txtVeiculo.Text, txtPlacaVeiculo.Text, "Disponivel", Convert.ToInt32(txtIdVeiculo.Text));
@@ -1002,14 +1005,14 @@ namespace Sistema.View
                                     behaviorRefresh();
                                 }
 
-                            }else if ("S!!".Equals(controllerSaida.AcaoCrudSaidasController())) {
+                            } else if ("S!!".Equals(controllerSaida.AcaoCrudSaidasController())) {
                                 acoesBehaviorSave();
                                 MessageBox.Show("Dado Existente Salvo!", "Aviso de Confirmação", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             }
                         }
                     }
-                }else if (!txtIdSaida.Text.Trim().Equals("") || txtIdSaida.Text.Trim() != null){
-                    if (operationType.Equals("updateData") && typeEdition.Equals("insert")){
+                } else if (!txtIdSaida.Text.Trim().Equals("") || txtIdSaida.Text.Trim() != null) {
+                    if (operationType.Equals("updateData") && typeEdition.Equals("insert")) {
                         if (remEspacosPlaca.Length <= 3 && remEntregador.Length <= 3) {
 
                             var resultado = MessageBox.Show("A Edição não alcançou o número mínimo de 3 caracteres.\nPara tentar novamente clique no botão 'Sim'. E no botão 'Não' para cancelar e sair do modo de Inserção.", "Aviso do Sistema", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -1024,13 +1027,13 @@ namespace Sistema.View
                             if ("AT".Equals(controllerSaida.AcaoCrudSaidasController()))
                             {
                                 behaviorRefresh();
-                                
+
                             }
                         }
                     }
                     else if (operationType.Equals("updateData") && typeEdition.Equals("search"))
                     {
-                       
+
                         if (remEspacosPlaca.Length <= 3 && remEntregador.Length <= 3)
                         {
 
@@ -1045,7 +1048,7 @@ namespace Sistema.View
                         }
                         else if (remEspacosPlaca.Length >= 3 && remEntregador.Length >= 3)
                         {
-                           
+
                             if ("AT".Equals(controllerSaida.AcaoCrudSaidasController()))
                             {
                                 behaviorRefresh();
@@ -1058,7 +1061,7 @@ namespace Sistema.View
             }
         }
 
-        private void acoesBehaviorSave(){
+        private void acoesBehaviorSave() {
 
             bttnDel.Enabled = false;
             //bttnEdit.Enabled = false;
@@ -1081,8 +1084,8 @@ namespace Sistema.View
             puxarparametro(0, Convert.ToInt32(cbButtnQuantPage1.SelectedItem), "Sim");
             txtEstatusSaida.Enabled = false;
         }
-      
-        private void behaviorClickGrid(){
+
+        private void behaviorClickGrid() {
             bttnDel.Enabled = true;
             //bttnEdit.Enabled = false;
             bttnSearch.Enabled = true;
@@ -1090,7 +1093,7 @@ namespace Sistema.View
             bttnSave.Enabled = false;
             bttnNew.Enabled = true;
             bttnImport.Enabled = false;
-            toolStripButton1.Enabled = true;
+            btnEmRota.Enabled = true;
             radioBttnComeca.Checked = false;
             radioBttnContem.Checked = false;
             radioBttnTermina.Checked = false;
@@ -1238,8 +1241,10 @@ namespace Sistema.View
                 DataGridModel();
                 typeEdition = "search";
                 cbButtnQuantPage1.Visible = false;
-                cbOrdemParam1.Visible = false;
-                cbOrdenarPor1.Visible = false;
+                cbOrdemParam.Visible = false;
+                cbOrdenarPor.Visible = false;
+                cbEstatusSaida.Visible = false;
+                lbCbEstatusSaida.Visible = false;
                 toolStripLabel6.Visible = false;
                 toolStripLabel7.Visible = false;
                 // toolStripLabel8.Visible = false;
@@ -1268,8 +1273,10 @@ namespace Sistema.View
                 txtIdSaida.Text = "";
                 typeEdition = "insert";
                 cbButtnQuantPage1.Visible = true;
-                cbOrdemParam1.Visible = true;
-                cbOrdenarPor1.Visible = true;
+                cbOrdemParam.Visible = true;
+                cbOrdenarPor.Visible = true;
+                cbEstatusSaida.Visible = true;
+                lbCbEstatusSaida.Visible = true;
                 toolStripLabel6.Visible = true;
                 toolStripLabel7.Visible = true;
                 toolStripLabel4.Visible = false;
@@ -1428,108 +1435,32 @@ namespace Sistema.View
 
         private void bttnDel_Click(object sender, EventArgs e)
         {
-            //int linhasDetalhes = gridCurdMestreDetalhe.RowCount;
-            //MessageBox.Show(linhasDetalhes.ToString());
 
-            //if (linhasDetalhes > 0)
-            //{
-            //    int linhas = gridCrudSaidas.RowCount;
-
-            //    int idorigem = Convert.ToInt32(gridCurdMestreDetalhe.CurrentRow.Cells[1].Value.ToString());
-            //    int idVeiculo = Convert.ToInt32(gridCurdMestreDetalhe.CurrentRow.Cells[2].Value.ToString());
-            //    int idEntregador = Convert.ToInt32(gridCurdMestreDetalhe.CurrentRow.Cells[3].Value.ToString());
-            //    string veiculo = gridCrudSaidas.CurrentRow.Cells[5].Value.ToString();
-            //    string placa = gridCrudSaidas.CurrentRow.Cells[6].Value.ToString();
-            //    string entregador = gridCrudSaidas.CurrentRow.Cells[7].Value.ToString();
-            //    int idsaida = Convert.ToInt32(gridCrudSaidas.CurrentRow.Cells[0].Value.ToString());
-            //    string estatus = "Em Transito";
-            //    DateTime dataEntrega = Convert.ToDateTime(gridCurdMestreDetalhe.CurrentRow.Cells[18].Value);
-            //    DateTime dataRota = Convert.ToDateTime(gridCurdMestreDetalhe.CurrentRow.Cells[19].Value);
-            //    DateTime dataEntrada = Convert.ToDateTime(gridCurdMestreDetalhe.CurrentRow.Cells[20].Value);
-
-
-
-            //    gridCurdMestreDetalhe.DataSource = controllerEncomendas.ListarDetalheMestre(idsaida.ToString(), "Saiu para entrega");
-            //    //DataGridModelDetalhe();
-            //    //int linhasDetalhe = 10;
-            //    int linhasDetalhe = gridCurdMestreDetalhe.RowCount;
-            //    for (int i = 1; i <= linhasDetalhe; i++)
-            //    {
-
-            //        string idDetalhe;
-            //        int ajustalinha = i - 1;
-            //        gridCurdMestreDetalhe.CurrentCell = gridCurdMestreDetalhe.Rows[ajustalinha].Cells[0];
-            //        idDetalhe = gridCurdMestreDetalhe.CurrentRow.Cells[0].Value.ToString();
-            //        Console.WriteLine("-----" + i + " ----- " + linhasDetalhe.ToString());
-            //        // controllerEncomendas.EditarSaidaEncomendaRotaDel(idorigem,0, 0, "", "", "", "Em Transito", "000", Convert.ToInt32(idDetalhe));
-            //        controllerEncomendas.Editar(idorigem,
-            //                                    0,
-            //                                    0,
-            //                                    "",
-            //                                    "",
-            //                                    "",
-            //                                    gridCurdMestreDetalhe.CurrentRow.Cells[7].Value.ToString(),
-            //                                    gridCurdMestreDetalhe.CurrentRow.Cells[8].Value.ToString(),
-            //                                    "Em Transito",
-            //                                    gridCurdMestreDetalhe.CurrentRow.Cells[10].Value.ToString(),
-            //                                    gridCurdMestreDetalhe.CurrentRow.Cells[11].Value.ToString(),
-            //                                    gridCurdMestreDetalhe.CurrentRow.Cells[12].Value.ToString(),
-            //                                    gridCurdMestreDetalhe.CurrentRow.Cells[13].Value.ToString(),
-            //                                    gridCurdMestreDetalhe.CurrentRow.Cells[14].Value.ToString(),
-            //                                    gridCurdMestreDetalhe.CurrentRow.Cells[15].Value.ToString(),
-            //                                    gridCurdMestreDetalhe.CurrentRow.Cells[16].Value.ToString(),
-            //                                    gridCurdMestreDetalhe.CurrentRow.Cells[17].Value.ToString(),
-            //                                    DateTime.Now,
-            //                                    DateTime.Now,
-            //                                    dataEntrada,
-            //                                    "000",
-            //                                    Convert.ToInt32(idDetalhe));
-            //        if (i == linhasDetalhe)
-            //        {
-
-            //            veiculosController.EditarEstatusVeiculo(veiculo, placa, "Disponivel", Convert.ToInt32(idVeiculo));
-            //            controllerSaida.Excluir(Convert.ToInt32(gridCrudSaidas.CurrentRow.Cells[0].Value.ToString()));
-
-
-            //        }
-            //        //    gridCurdMestreDetalhe.DataSource = controllerEncomendas.ListarDetalheMestre("000", "Saiu para entrega");
-            //        //    DataGridModelDetalhe();
-
-            //    }
-            //    behaviorRefresh();
-            //    gridCurdMestreDetalhe.DataSource = controllerEncomendas.ListarDetalheMestre("000", "Saiu para entrega");
-            //    DataGridModelDetalhe();
-            //}
-            //else if (linhasDetalhes == 0)
-            //{
-            //    veiculosController.EditarEstatusVeiculo(gridCrudSaidas.CurrentRow.Cells[5].Value.ToString(), gridCrudSaidas.CurrentRow.Cells[6].Value.ToString(), "Disponivel", Convert.ToInt32(gridCrudSaidas.CurrentRow.Cells[0].Value.ToString()));
-            //    controllerSaida.Excluir(Convert.ToInt32(gridCrudSaidas.CurrentRow.Cells[0].Value.ToString()));
-
-            //    behaviorRefresh();
-            //    gridCurdMestreDetalhe.DataSource = controllerEncomendas.ListarDetalheMestre("000", "Saiu para entrega");
-            //    DataGridModelDetalhe();
-            //}
-
+          
+           
+            gridCurdMestreDetalhe.DataSource = controllerEncomendas.ListarDetalheMestre(txtIdSaida.Text, "Saiu para entrega");
+            DataGridModelDetalhe();
             int linhasDetalhes = gridCurdMestreDetalhe.RowCount;
-            MessageBox.Show(linhasDetalhes.ToString());
+           
+          
+
+            string veiculo = gridCrudSaidas.CurrentRow.Cells[5].Value.ToString();
+            string placa = gridCrudSaidas.CurrentRow.Cells[6].Value.ToString();
+            string entregador = gridCrudSaidas.CurrentRow.Cells[7].Value.ToString();
+            int idsaida = Convert.ToInt32(gridCrudSaidas.CurrentRow.Cells[0].Value.ToString());
+            string estatus = "Em Transito";
+
 
             if (linhasDetalhes > 0)
             {
-                int linhas = gridCrudSaidas.RowCount;
 
                 int idorigem = Convert.ToInt32(gridCurdMestreDetalhe.CurrentRow.Cells[1].Value.ToString());
                 int idVeiculo = Convert.ToInt32(gridCurdMestreDetalhe.CurrentRow.Cells[2].Value.ToString());
                 int idEntregador = Convert.ToInt32(gridCurdMestreDetalhe.CurrentRow.Cells[3].Value.ToString());
-                string veiculo = gridCrudSaidas.CurrentRow.Cells[5].Value.ToString();
-                string placa = gridCrudSaidas.CurrentRow.Cells[6].Value.ToString();
-                string entregador = gridCrudSaidas.CurrentRow.Cells[7].Value.ToString();
-                int idsaida = Convert.ToInt32(gridCrudSaidas.CurrentRow.Cells[0].Value.ToString());
-                string estatus = "Em Transito";
+
                 DateTime dataEntrega = Convert.ToDateTime(gridCurdMestreDetalhe.CurrentRow.Cells[18].Value);
                 DateTime dataRota = Convert.ToDateTime(gridCurdMestreDetalhe.CurrentRow.Cells[19].Value);
                 DateTime dataEntrada = Convert.ToDateTime(gridCurdMestreDetalhe.CurrentRow.Cells[20].Value);
-
-
 
                 gridCurdMestreDetalhe.DataSource = controllerEncomendas.ListarDetalheMestre(idsaida.ToString(), "Saiu para entrega");
                 DataGridModelDetalhe();
@@ -1577,7 +1508,8 @@ namespace Sistema.View
             }
             else if (linhasDetalhes == 0)
             {
-                veiculosController.EditarEstatusVeiculo(gridCrudSaidas.CurrentRow.Cells[5].Value.ToString(), gridCrudSaidas.CurrentRow.Cells[6].Value.ToString(), "Disponivel", Convert.ToInt32(gridCrudSaidas.CurrentRow.Cells[0].Value.ToString()));
+                veiculosController.EditarEstatusVeiculo(veiculo, placa, "Disponivel", Convert.ToInt32(gridCrudSaidas.CurrentRow.Cells[1].Value.ToString()));
+                //veiculosController.EditarEstatusVeiculo(gridCrudSaidas.CurrentRow.Cells[5].Value.ToString(), gridCrudSaidas.CurrentRow.Cells[6].Value.ToString(), "Disponivel", Convert.ToInt32(gridCrudSaidas.CurrentRow.Cells[0].Value.ToString()));
                 controllerSaida.Excluir(Convert.ToInt32(gridCrudSaidas.CurrentRow.Cells[0].Value.ToString()));
 
                 behaviorRefresh();
@@ -1585,6 +1517,7 @@ namespace Sistema.View
                 //  DataGridModelDetalhe();
             }
         }
+    
 
         private void cbButtonPesquisarEm_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -1706,14 +1639,14 @@ namespace Sistema.View
 
                     if (gridCurdMestreDetalhe.CurrentRow.Cells[0].Value.ToString().Length == 0)
                     {
-                        toolStripButton1.Enabled = false;
-                        toolStripButton2.Enabled = false;
+                        btnEmRota.Enabled = false;
+                        btnRotaConcluida.Enabled = false;
 
                     }
                     else if (gridCurdMestreDetalhe.CurrentRow.Cells[0].Value.ToString().Length > 0)
                     {
-                        toolStripButton1.Enabled = true;
-                        toolStripButton2.Enabled = false;
+                        btnEmRota.Enabled = true;
+                        btnRotaConcluida.Enabled = false;
                     }
                 }
             }
@@ -1814,80 +1747,84 @@ namespace Sistema.View
             }
         }
 
-        private void button5_Click_2(object sender, EventArgs e)
-        {
-            var resultado = MessageBox.Show(
-                               "Deseja dar entrada em uma saida agora?",
-                               "Pergunda do sistema",
-                               MessageBoxButtons.YesNo,
-                               MessageBoxIcon.Question);
+        private void button5_Click_2(object sender, EventArgs e){
+            int linhasDetalhes = gridCurdMestreDetalhe.RowCount;
 
-            if (resultado == DialogResult.Yes)
+
+            if (linhasDetalhes > 0)
             {
 
-                gridCrudSaidas.DataSource = controllerSaida.UltimoRegistro();
-                gridCrudSaidas.CurrentCell = gridCrudSaidas.Rows[0].Cells[0];
+                var resultado = MessageBox.Show("Deseja dar entrada em uma saida agora?", "Pergunda do sistema", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (resultado == DialogResult.Yes)
+                {
 
-                int linhas = gridCrudSaidas.RowCount;
+                    gridCrudSaidas.DataSource = controllerSaida.UltimoRegistro();
+                    gridCrudSaidas.CurrentCell = gridCrudSaidas.Rows[0].Cells[0];
 
-                int idorigem = Convert.ToInt32(gridCurdMestreDetalhe.CurrentRow.Cells[1].Value.ToString());
-                int idVeiculo = Convert.ToInt32(gridCurdMestreDetalhe.CurrentRow.Cells[2].Value.ToString());
-                int idEntregador = Convert.ToInt32(gridCurdMestreDetalhe.CurrentRow.Cells[3].Value.ToString());
-                string idDetalhe = gridCurdMestreDetalhe.CurrentRow.Cells[0].Value.ToString();
-                string veiculo = gridCrudSaidas.CurrentRow.Cells[5].Value.ToString();
-                string placa = gridCrudSaidas.CurrentRow.Cells[6].Value.ToString();
-                string entregador = gridCrudSaidas.CurrentRow.Cells[7].Value.ToString();
-                int idsaida = Convert.ToInt32(gridCrudSaidas.CurrentRow.Cells[0].Value.ToString());
-                string estatus = "Em Transito";
-                DateTime dataEntrega = Convert.ToDateTime(gridCurdMestreDetalhe.CurrentRow.Cells[18].Value);
-                DateTime dataRota = Convert.ToDateTime(gridCurdMestreDetalhe.CurrentRow.Cells[19].Value);
-                DateTime dataEntrada = Convert.ToDateTime(gridCurdMestreDetalhe.CurrentRow.Cells[20].Value);
+                    int linhas = gridCrudSaidas.RowCount;
+                    int idorigem = Convert.ToInt32(gridCurdMestreDetalhe.CurrentRow.Cells[1].Value.ToString());
+                    int idVeiculo = Convert.ToInt32(gridCurdMestreDetalhe.CurrentRow.Cells[2].Value.ToString());
+                    int idEntregador = Convert.ToInt32(gridCurdMestreDetalhe.CurrentRow.Cells[3].Value.ToString());
+                    string idDetalhe = gridCurdMestreDetalhe.CurrentRow.Cells[0].Value.ToString();
+                    string veiculo = gridCrudSaidas.CurrentRow.Cells[5].Value.ToString();
+                    string placa = gridCrudSaidas.CurrentRow.Cells[6].Value.ToString();
+                    string entregador = gridCrudSaidas.CurrentRow.Cells[7].Value.ToString();
+                    int idsaida = Convert.ToInt32(gridCrudSaidas.CurrentRow.Cells[0].Value.ToString());
+                    string estatus = "Em Transito";
+                    DateTime dataEntrega = Convert.ToDateTime(gridCurdMestreDetalhe.CurrentRow.Cells[18].Value);
+                    DateTime dataRota = Convert.ToDateTime(gridCurdMestreDetalhe.CurrentRow.Cells[19].Value);
+                    DateTime dataEntrada = Convert.ToDateTime(gridCurdMestreDetalhe.CurrentRow.Cells[20].Value);
 
-                controllerEncomendas.Editar(idorigem,
-                                            0,
-                                            0,
-                                            "",
-                                            "",
-                                            "",
-                                            gridCurdMestreDetalhe.CurrentRow.Cells[7].Value.ToString(),
-                                            gridCurdMestreDetalhe.CurrentRow.Cells[8].Value.ToString(),
-                                            "Em Transito",
-                                            gridCurdMestreDetalhe.CurrentRow.Cells[10].Value.ToString(),
-                                            gridCurdMestreDetalhe.CurrentRow.Cells[11].Value.ToString(),
-                                            gridCurdMestreDetalhe.CurrentRow.Cells[12].Value.ToString(),
-                                            gridCurdMestreDetalhe.CurrentRow.Cells[13].Value.ToString(),
-                                            gridCurdMestreDetalhe.CurrentRow.Cells[14].Value.ToString(),
-                                            gridCurdMestreDetalhe.CurrentRow.Cells[15].Value.ToString(),
-                                            gridCurdMestreDetalhe.CurrentRow.Cells[16].Value.ToString(),
-                                            gridCurdMestreDetalhe.CurrentRow.Cells[17].Value.ToString(),
-                                            dataEntrega,
-                                            dataRota,
-                                            dataEntrada,
-                                            "000",
-                                            Convert.ToInt32(idDetalhe));
+                    controllerEncomendas.Editar(idorigem,
+                                                0,
+                                                0,
+                                                "",
+                                                "",
+                                                "",
+                                                gridCurdMestreDetalhe.CurrentRow.Cells[7].Value.ToString(),
+                                                gridCurdMestreDetalhe.CurrentRow.Cells[8].Value.ToString(),
+                                                "Em Transito",
+                                                gridCurdMestreDetalhe.CurrentRow.Cells[10].Value.ToString(),
+                                                gridCurdMestreDetalhe.CurrentRow.Cells[11].Value.ToString(),
+                                                gridCurdMestreDetalhe.CurrentRow.Cells[12].Value.ToString(),
+                                                gridCurdMestreDetalhe.CurrentRow.Cells[13].Value.ToString(),
+                                                gridCurdMestreDetalhe.CurrentRow.Cells[14].Value.ToString(),
+                                                gridCurdMestreDetalhe.CurrentRow.Cells[15].Value.ToString(),
+                                                gridCurdMestreDetalhe.CurrentRow.Cells[16].Value.ToString(),
+                                                gridCurdMestreDetalhe.CurrentRow.Cells[17].Value.ToString(),
+                                                dataEntrega,
+                                                dataRota,
+                                                dataEntrada,
+                                                "000",
+                                                Convert.ToInt32(idDetalhe));
 
 
-                gridCurdMestreDetalhe.DataSource = controllerEncomendas.ListarDetalheMestre(txtIdSaida.Text, "Saiu para entrega");
-                DataGridModelDetalhe();
+                    gridCurdMestreDetalhe.DataSource = controllerEncomendas.ListarDetalheMestre(txtIdSaida.Text, "Saiu para entrega");
+                    DataGridModelDetalhe();
 
+                }
+                else if (resultado == DialogResult.No)
+                {
+
+                }
+            }else if (linhasDetalhes == 0){
+
+                MessageBox.Show("Não há itens para remover");
             }
-            else if (resultado == DialogResult.No) {
-            }
-
+            
         }
 
-        private void dataGridMestreDetalhe_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
+                private void dataGridMestreDetalhe_CellClick(object sender, DataGridViewCellEventArgs e){
             //if (String.IsNullOrEmpty(Convert.ToString(gridCrudSaidas.CurrentRow.Cells[0].Value.ToString()))) {
 
             //}
-        }
+                }
 
 
         private void toolStripButton2_Click(object sender, EventArgs e)
         {
             if ("Rota Concluída".Equals(txtEstatusSaida.Text = gridCrudSaidas.CurrentRow.Cells[12].Value.ToString())) {
-
+             
                 groupBoxFormulario.Enabled = true;
                 groupBoxFormulario.Visible = true;
                 datePckSaida.Enabled = false;
@@ -1922,6 +1859,7 @@ namespace Sistema.View
                 txtKmSaida.Text = gridCrudSaidas.CurrentRow.Cells[14].Value.ToString();
                 txtKmRetorno.Text = gridCrudSaidas.CurrentRow.Cells[15].Value.ToString();
                 txtKmTotal.Text = gridCrudSaidas.CurrentRow.Cells[16].Value.ToString();
+                btnRotaConcluida.Enabled = false;
             }
         }
 
@@ -2152,83 +2090,68 @@ namespace Sistema.View
 
         private void gridCrudSaidas_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            // 
-            int tamanhoGridSaidas = gridCrudSaidas.Rows.Count;
 
-            //  MessageBox.Show(gridCrudSaidas.CurrentRow.Cells[12].Value.ToString());
+            int tamanhoGridSaidas = gridCrudSaidas.Rows.Count;
             var gridVazia = gridCrudSaidas.CurrentRow.Cells[0].Value.ToString();
-            if (tamanhoGridSaidas ==0)
-            {
+
+            if (tamanhoGridSaidas == 0){
                 bttnDel.Enabled = false;
                 bttnNew.Enabled = false;
-            }
-            else if (tamanhoGridSaidas > 0)
-            {
 
+            }else if (tamanhoGridSaidas > 0) {
 
+                if (gridCrudSaidas.CurrentRow.Cells[12].Value.ToString().Equals("Rota Concluída"))
+                {
 
-                if (gridCrudSaidas.CurrentRow.Cells[12].Value.ToString().Equals("Rota Concluída") && tamanhoGridSaidas > 0){
-                  
                     btConfirmarRetorno.Enabled = true;
-                    toolStripButton2.Enabled = true;
-
-                }else if (!gridCrudSaidas.CurrentRow.Cells[12].Value.ToString().Equals("Rota Concluída") && tamanhoGridSaidas > 0){
-
-                    btConfirmarRetorno.Enabled = false;
-                    bttnDel.Enabled = true;
-
-                    toolStripButton2.Enabled = false;
+                    btnRotaConcluida.Enabled = true;
+                    bttnDel.Enabled = false;
 
                 }
-                else if (gridCrudSaidas.CurrentRow.Cells[12].Value.ToString().Equals("Em Rota") && tamanhoGridSaidas > 0)
-                {
+                
+                else if (gridCrudSaidas.CurrentRow.Cells[12].Value.ToString().Equals("Em Rota")){
 
                     //   bttnDel.Enabled = true;
 
+                }else if (gridCrudSaidas.CurrentRow.Cells[12].Value.ToString().Equals("Preparando")){
+
+
+                    btConfirmarRetorno.Enabled = false;
+                    bttnDel.Enabled = true;
+                    btnRotaConcluida.Enabled = false;
+
+                    toolStripButton4.Enabled = true;
+                    bttnDel.Enabled = true;
+                    datePckRetorno.Enabled = false;
+
+                    txtIdSaida.Text         =   gridCrudSaidas.CurrentRow.Cells[0].Value.ToString();
+                    txtIdVeiculo.Text       =   gridCrudSaidas.CurrentRow.Cells[1].Value.ToString();
+                    txtIdUsuario.Text       =   gridCrudSaidas.CurrentRow.Cells[2].Value.ToString();
+                    txtIdPapel.Text         =   gridCrudSaidas.CurrentRow.Cells[3].Value.ToString();
+                    txtIdPessoa.Text        =   gridCrudSaidas.CurrentRow.Cells[4].Value.ToString();
+                    txtVeiculo.Text         =   gridCrudSaidas.CurrentRow.Cells[5].Value.ToString(); ;
+                    txtPlacaVeiculo.Text    =   gridCrudSaidas.CurrentRow.Cells[6].Value.ToString(); ;
+                    txtPessoa.Text          =   gridCrudSaidas.CurrentRow.Cells[7].Value.ToString();
+                    datePckSaida.Value      =   Convert.ToDateTime(gridCrudSaidas.CurrentRow.Cells[8].Value.ToString());
+                    txtEstatusSaida.Text    =   gridCrudSaidas.CurrentRow.Cells[12].Value.ToString();
+                    txtRegiaoEntrega.Text   =   gridCrudSaidas.CurrentRow.Cells[13].Value.ToString();
+                    txtKmSaida.Text         =   gridCrudSaidas.CurrentRow.Cells[14].Value.ToString();
+                    txtKmRetorno.Text       =   gridCrudSaidas.CurrentRow.Cells[15].Value.ToString();
+                    txtKmTotal.Text         =   gridCrudSaidas.CurrentRow.Cells[16].Value.ToString();
+                    txtEstatusSaida.Text    =   gridCrudSaidas.CurrentRow.Cells[12].Value.ToString();
+
+                    gridCurdMestreDetalhe.DataSource = controllerEncomendas.ListarDetalheMestre(txtIdSaida.Text, "Saiu para entrega");
+                    DataGridModelDetalhe();
+
                 }
-                //  gridCrudSaidas.CurrentRow.Cells[12].Value.ToString().Equals("Rota concluida") ? toolStripButton2.Enabled = false : toolStripButton2.Enabled = true;
             }
-        }
+       }
+            
+       
 
         private void txtKmRetorno_Leave(object sender, EventArgs e)
         {
-            //bool conteudoStringNuloOuVazio = String.IsNullOrEmpty(txtKmRetorno.Text);
-            //bool isNumeric = int.TryParse(txtKmRetorno.Text, out int n);
-
-            //if (conteudoStringNuloOuVazio == false)
-            //{
-            //    txtEstatusSaida.Text = "Retornado";
-            //    int kmsaida = Convert.ToInt32(txtKmSaida.Text);
-            //    int kmretorno = Convert.ToInt32(txtKmRetorno.Text);
-
-            //    if (kmretorno - kmsaida <= 0)
-            //    {
-
-            //        MessageBox.Show("O KM do veículo no retorno não pode ser menor, ou igual, do que foi infromado na saída\n",
-            //            "Alerta do Sistema",
-            //            MessageBoxButtons.OK,
-            //            MessageBoxIcon.Error);
-            //    }
-            //    else
-            //    {
-            //        var resultado = MessageBox.Show("Confirma a kilometragem de retorno?",
-            //            "Aviso do Sistema",
-            //            MessageBoxButtons.YesNo,
-            //            MessageBoxIcon.Question);
-
-            //        if (resultado == DialogResult.Yes)
-            //        {
-            //            int kmtotal = kmretorno - kmsaida;
-            //            txtKmTotal.Text = Convert.ToString(kmtotal);
-            //            btConfirmarRetorno.Enabled = true;
-            //        }
-            //    }
-            //}
-            //else if (conteudoStringNuloOuVazio == true)
-            //{
-            //    MessageBox.Show("O Campo 'Km Retorno' não pode estar vazio para que seja contabilizado o km total",
-            //                    "Alerta do Sistema",MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //}
+            
         }
 
         private void SaidaEncomendasView_FormClosing(object sender, FormClosingEventArgs e)
@@ -2243,7 +2166,24 @@ namespace Sistema.View
 
         private void toolStripComboBox1_SelectedIndexChanged_1(object sender, EventArgs e)
         {
+          
+
+            int qtLinhasSaidas = gridCrudSaidas.RowCount;
+            int qtLinhasMD = gridCurdMestreDetalhe.RowCount;
+
+            if (cbEstatusSaida.SelectedItem.Equals("Preparando") ) {
+                toolStripButton4.Enabled = true;
+
+               
+            }
+            else if (!cbEstatusSaida.SelectedItem.Equals("Preparando"))
+            {
+                toolStripButton4.Enabled = false;
+
+
+            }
             puxarparametro(0, Convert.ToInt32(cbButtnQuantPage1.SelectedItem), "Sim");
+
         }
 
         private void txtKmRetorno_TextChanged(object sender, EventArgs e)
@@ -2253,7 +2193,7 @@ namespace Sistema.View
 
         private void gridCrudSaidas_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (toolStripComboBox1.SelectedItem.ToString().Equals("Rota Concluída"))
+            if (cbEstatusSaida.SelectedItem.ToString().Equals("Rota Concluída"))
             {
                 toolStrip2.Visible = false;
                 groupBoxFormulario.Enabled = true;
@@ -2276,10 +2216,8 @@ namespace Sistema.View
                 txtPlacaVeiculo.Text = gridCrudSaidas.CurrentRow.Cells[6].Value.ToString();
                 txtPessoa.Text = gridCrudSaidas.CurrentRow.Cells[7].Value.ToString();
                 datePckSaida.Value = Convert.ToDateTime(gridCrudSaidas.CurrentRow.Cells[8].Value.ToString());
-              
                 txtHoraSaida.Text = gridCrudSaidas.CurrentRow.Cells[10].Value.ToString();
                 txtHoraRetorno.Text = gridCrudSaidas.CurrentRow.Cells[11].Value.ToString();
-              
                 txtEstatusSaida.Text = gridCrudSaidas.CurrentRow.Cells[12].Value.ToString();
                 txtRegiaoEntrega.Text = gridCrudSaidas.CurrentRow.Cells[13].Value.ToString();
                 txtKmSaida.Text = gridCrudSaidas.CurrentRow.Cells[14].Value.ToString();
@@ -2292,11 +2230,7 @@ namespace Sistema.View
             }
         }
 
-        private void gridCurdMestreDetalhe_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
+ 
         private void button4_Click_1(object sender, EventArgs e)
         {
             ImportVeiculoToSaidas importVS = new ImportVeiculoToSaidas();
@@ -2325,5 +2259,52 @@ namespace Sistema.View
         {
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
         }
+
+        private void toolStripButton4_Click(object sender, EventArgs e)
+        {
+            int qtlinhasSaida = gridCrudSaidas.RowCount;
+            if (gridCrudSaidas.CurrentRow.Cells[12].Value.ToString().Equals("Preparando") && qtlinhasSaida > 0)
+            {
+
+                groupBoxFormulario.Enabled = true;
+                groupBoxFormulario.Visible = true;
+
+                groupBox1.Enabled = true;
+                groupBox1.Visible = true;
+
+
+                bttnNew.Enabled = false;
+                bttnDel.Enabled = false;
+                bttnSearch.Enabled = false;
+
+
+                bttnImport.Enabled = true;
+                btnEmRota.Enabled = true;
+
+                button5.Enabled = true;
+
+                txtIdSaida.Text = gridCrudSaidas.CurrentRow.Cells[0].Value.ToString();
+                txtIdVeiculo.Text = gridCrudSaidas.CurrentRow.Cells[1].Value.ToString();
+                txtIdUsuario.Text = gridCrudSaidas.CurrentRow.Cells[2].Value.ToString();
+                txtIdPapel.Text = gridCrudSaidas.CurrentRow.Cells[3].Value.ToString();
+                txtIdPessoa.Text = gridCrudSaidas.CurrentRow.Cells[4].Value.ToString();
+                txtVeiculo.Text = gridCrudSaidas.CurrentRow.Cells[5].Value.ToString();
+                txtPlacaVeiculo.Text = gridCrudSaidas.CurrentRow.Cells[6].Value.ToString();
+                txtPessoa.Text = gridCrudSaidas.CurrentRow.Cells[7].Value.ToString();
+                datePckSaida.Value = Convert.ToDateTime(gridCrudSaidas.CurrentRow.Cells[8].Value.ToString());
+                txtHoraSaida.Text = gridCrudSaidas.CurrentRow.Cells[10].Value.ToString();
+                txtHoraRetorno.Text = gridCrudSaidas.CurrentRow.Cells[11].Value.ToString();
+                txtEstatusSaida.Text = gridCrudSaidas.CurrentRow.Cells[12].Value.ToString();
+                txtRegiaoEntrega.Text = gridCrudSaidas.CurrentRow.Cells[13].Value.ToString();
+                txtKmSaida.Text = gridCrudSaidas.CurrentRow.Cells[14].Value.ToString();
+                txtKmRetorno.Text = gridCrudSaidas.CurrentRow.Cells[15].Value.ToString();
+                txtKmTotal.Text = gridCrudSaidas.CurrentRow.Cells[16].Value.ToString();
+                gridCurdMestreDetalhe.DataSource = controllerEncomendas.ListarDetalheMestre(txtIdSaida.Text, "Saiu para entrega");
+                DataGridModelDetalhe();
+                
+            }
+        }
+
+
     }
 }

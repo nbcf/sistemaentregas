@@ -157,8 +157,8 @@
   <data name="barcode" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\image\crud32x32\barcode.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="lockopen" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\image\crud32x32\lockopen.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="add481" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\image\crud48x48\add48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="packege48" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\image\crud48x48\packege48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -202,9 +202,6 @@
   <data name="editForm48" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\image\crud48x48\editForm48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="del" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\image\crud32x32\del.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="atualizar" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\image\atualizar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -232,6 +229,9 @@
   <data name="2rightarrow" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\image\2rightarrow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="lockopen" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\image\crud32x32\lockopen.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="truck481" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\image\crud48x48\truck48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -244,9 +244,6 @@
   <data name="add" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\image\crud32x32\add.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="add481" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\image\crud48x48\add48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="1rightarrow" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\image\1rightarrow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -255,6 +252,9 @@
   </data>
   <data name="truck48" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\image\crud48x48\truck48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="graficos481" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\image\crud48x48\graficos48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="calc" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\image\crud32x32\calc.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -301,6 +301,9 @@
   <data name="editar" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\image\editar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="close48" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\image\crud48x48\close48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="add16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\image\crud16x16\add16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -319,13 +322,13 @@
   <data name="search" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\image\crud32x32\search.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="graficos481" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\image\crud48x48\graficos48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="del" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\image\crud32x32\del.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="salvar" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\image\salvar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="close48" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\image\crud48x48\close48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="list48" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\image\crud48x48\list48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

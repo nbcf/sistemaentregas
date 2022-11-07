@@ -58,7 +58,7 @@ namespace Sistema.View
   
             gridImportVS.Columns[0].Width = 60;
             gridImportVS.Columns[1].Width = 250;
-            gridImportVS.Columns[2].Width = 100;
+            gridImportVS.Columns[2].Width = 105;
             gridImportVS.Columns[3].Width = 100;
             gridImportVS.Columns[3].Visible = false;
         }
@@ -77,7 +77,10 @@ namespace Sistema.View
             behaviorClickGrid();
         }
 
-      
+        private void ImportVeiculoToSaidas_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 
 }

@@ -258,39 +258,16 @@ namespace Sistema.View
         }
 
         private void DataGridModel() {
-            //{
-            //    gridCrudImporES.Columns[0].Width = 80;
-            //    gridCrudImporES.Columns[1].Width = 0;
-            //    gridCrudImporES.Columns[2].Width = 0;
-            //    gridCrudImporES.Columns[3].Width = 0;
-            //    gridCrudImporES.Columns[4].Width = 0;
-            //    gridCrudImporES.Columns[5].Width = 0;
-            //    gridCrudImporES.Columns[6].Width = 0;
-            //    gridCrudImporES.Columns[7].Width = 150;
-            //    gridCrudImporES.Columns[8].Width = 150;
-            //    gridCrudImporES.Columns[9].Width = 150;
-            //    gridCrudImporES.Columns[10].Width = 130;
-            //    gridCrudImporES.Columns[11].Width = 150;
-            //    gridCrudImporES.Columns[12].Width = 150;
-            //    gridCrudImporES.Columns[13].Width = 0;
-            //    gridCrudImporES.Columns[14].Width = 0;
-            //    gridCrudImporES.Columns[15].Width = 0;
-            //    gridCrudImporES.Columns[16].Width = 0;
-            //    gridCrudImporES.Columns[17].Width = 0;
-            //    gridCrudImporES.Columns[18].Width = 0;
-            //    gridCrudImporES.Columns[19].Width = 0;
-            //    gridCrudImporES.Columns[20].Width = 150;
-            //    gridCrudImporES.Columns[21].Width = 150;
-
+            
             gridCrudImporES.Columns[0].HeaderText = "ID";
             gridCrudImporES.Columns[1].HeaderText = "ID Origem";
             gridCrudImporES.Columns[2].HeaderText = "ID Veiculo"; //
             gridCrudImporES.Columns[3].HeaderText = "ID Entregador"; //
-            gridCrudImporES.Columns[4].HeaderText = "Nome Veiculo"; //
-            gridCrudImporES.Columns[5].HeaderText = "Placa"; //
-            gridCrudImporES.Columns[6].HeaderText = "Entregador"; //
+            gridCrudImporES.Columns[4].HeaderText = "VEÍCULO"; //
+            gridCrudImporES.Columns[5].HeaderText = "PLACA"; //
+            gridCrudImporES.Columns[6].HeaderText = "ENTREGADOR"; //
             gridCrudImporES.Columns[7].HeaderText = "PESO"; //
-            gridCrudImporES.Columns[8].HeaderText = "NUM. ENCO."; //
+            gridCrudImporES.Columns[8].HeaderText = "ENCOMENDA"; //
             gridCrudImporES.Columns[9].HeaderText = "ESTATUS";
             gridCrudImporES.Columns[10].HeaderText = "CPF";
             gridCrudImporES.Columns[11].HeaderText = "DESTINATARIO";
@@ -300,9 +277,9 @@ namespace Sistema.View
             gridCrudImporES.Columns[15].HeaderText = "CIDADE";
             gridCrudImporES.Columns[16].HeaderText = "UF";
             gridCrudImporES.Columns[17].HeaderText = "CEP";
-            gridCrudImporES.Columns[18].HeaderText = "Data Entrega";
-            gridCrudImporES.Columns[19].HeaderText = "Data Rota";
-            gridCrudImporES.Columns[20].HeaderText = "Data Entrada";
+            gridCrudImporES.Columns[18].HeaderText = "ENTREGA";
+            gridCrudImporES.Columns[19].HeaderText = "ROTA";
+            gridCrudImporES.Columns[20].HeaderText = "ENTRADA";
             gridCrudImporES.Columns[21].HeaderText = "IDSaida"; //
             gridCrudImporES.Columns[22].HeaderText = "ID Origem Join 1";
             gridCrudImporES.Columns[23].HeaderText = "ORIGEM";
@@ -816,7 +793,7 @@ namespace Sistema.View
                     gridCrudImporES.Columns[5].HeaderText = "Placa"; //
                     gridCrudImporES.Columns[6].HeaderText = "Entregador"; //
                     gridCrudImporES.Columns[7].HeaderText = "PESO"; //
-                    gridCrudImporES.Columns[8].HeaderText = "NUM. ENCO."; //
+                    gridCrudImporES.Columns[8].HeaderText = "ENCOMENDA"; //
                     gridCrudImporES.Columns[9].HeaderText = "ESTATUS";
                     gridCrudImporES.Columns[10].HeaderText = "CPF";
                     gridCrudImporES.Columns[11].HeaderText = "DESTINATARIO";

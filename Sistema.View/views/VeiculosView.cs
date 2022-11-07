@@ -582,9 +582,9 @@ namespace Sistema.View
             gridCrudVeiculos.Columns[3].HeaderText = "Estatus";
             gridCrudVeiculos.Columns[0].Width = 80;
             gridCrudVeiculos.Columns[1].Width = 200;
-            gridCrudVeiculos.Columns[2].Width = 200;
+            gridCrudVeiculos.Columns[2].Width = 150;
             gridCrudVeiculos.Columns[3].Width = 200;
-            gridCrudVeiculos.Columns[3].Visible = false;
+       //     gridCrudVeiculos.Columns[3].Visible = false;
 
         }
 
