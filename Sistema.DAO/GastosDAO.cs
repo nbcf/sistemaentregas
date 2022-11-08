@@ -276,18 +276,6 @@ namespace Sistema.DAO
         public DataTable ListarDataGridAddSaida(int idsaida) {
             try{
                 classeConecta.AbrirCon();
-                //sql = "SELECT * FROM gastos       gts " +
-                //      "INNER JOIN tipogastos      tpg " +
-                //      "INNER JOIN tipounds        tpu " +
-                //      "INNER JOIN saidas          sai " +
-                //      "INNER JOIN fornecedores    forn " +
-
-                //      "ON  gts.idsaida        =   sai.idsaida " +
-                //      "AND gts.idfornecedor   =   forn.idfornecedor " +
-                //      "AND gts.idtipogasto    =   tpg.idtipogasto " +
-                //      "AND gts.tipound        =   tpg.idtipound   = tpu.idtipound " +
-
-                //      "WHERE gts.idsaida = " + idsaida +"";
                   sql = "SELECT " +
                         "fornecedor, " +
                         "nomegasto, " +
@@ -315,10 +303,7 @@ namespace Sistema.DAO
                 da.Fill(dt);
                 classeConecta.FecharCon();
                 return dt;
-
-            }
-            catch (Exception ex)
-            {
+            } catch (Exception ex){
                 throw ex;
             }
         }
