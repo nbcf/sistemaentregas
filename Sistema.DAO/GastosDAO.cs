@@ -276,18 +276,38 @@ namespace Sistema.DAO
         public DataTable ListarDataGridAddSaida(int idsaida) {
             try{
                 classeConecta.AbrirCon();
-              sql = "SELECT * FROM gastos       gts " +
-                    "INNER JOIN tipogastos      tpg " +
-                    "INNER JOIN saidas          sai " +
-                    "INNER JOIN fornecedores    forn " +
+                //sql = "SELECT * FROM gastos       gts " +
+                //      "INNER JOIN tipogastos      tpg " +
+                //      "INNER JOIN tipounds        tpu " +
+                //      "INNER JOIN saidas          sai " +
+                //      "INNER JOIN fornecedores    forn " +
 
-                    "ON  gts.idsaida        =   sai.idsaida " +
-                    "AND gts.idfornecedor   =   forn.idfornecedor " +
-                    "AND gts.idtipogasto    =   tpg.idtipogasto " +
-                    "AND gts.tipound        =   tpg.idtipound " +
-                    
-                    "WHERE gts.idsaida = "+ idsaida +"";
+                //      "ON  gts.idsaida        =   sai.idsaida " +
+                //      "AND gts.idfornecedor   =   forn.idfornecedor " +
+                //      "AND gts.idtipogasto    =   tpg.idtipogasto " +
+                //      "AND gts.tipound        =   tpg.idtipound   = tpu.idtipound " +
 
+                //      "WHERE gts.idsaida = " + idsaida +"";
+                  sql = "SELECT " +
+                        "fornecedor, " +
+                        "nomegasto, " +
+                        "nomeund, " +
+                        "qtd, " +
+                        "valorunitario, " +
+                        "valortotal, " +
+                        "numeronota, " +
+                        "datagasto, " +
+                        "km " +
+                        "FROM gastos gts " +
+                        "INNER JOIN tipogastos tpg " +
+                        "INNER JOIN tipounds tpu " +
+                        "INNER JOIN saidas sai " +
+                        "INNER JOIN fornecedores forn " +
+                        "ON gts.idsaida = sai.idsaida " +
+                        "AND gts.idfornecedor = forn.idfornecedor " +
+                        "AND gts.idtipogasto = tpg.idtipogasto " +
+                        "AND gts.tipound = tpu.idtipound " +
+                        "WHERE gts.idsaida = " + idsaida + "";
                 cmd = new MySqlCommand(sql, classeConecta.con);
                 MySqlDataAdapter da = new MySqlDataAdapter();
                 da.SelectCommand = cmd;
