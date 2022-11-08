@@ -81,6 +81,10 @@ namespace Sistema.Controller
         }
 
 
+        public DataTable ListarDataGridAddSaidaController(int idsaida) { 
+            return dao.ListarDataGridAddSaida( idsaida);
+        }
+
         public int ListarGridBDGastosController() {
             return dao.ListarGridBDGastosDAO();
         }
@@ -95,22 +99,22 @@ namespace Sistema.Controller
 
 
         public DataTable ListarDataGrid(string parametro, string indexar, int offsett, int limitt){
-            AcaoCrudGastosController();
+           // AcaoCrudGastosController();
                 return dao.ListarDataGridGastosDAO(parametro, indexar, offsett, limitt);
         }
 
         public DataTable PesquisarComecaCom(string coluna, string campo, string pesquisar){
-            ListarPesquisadosGastosController();
+         //   ListarPesquisadosGastosController();
             return dao.PesquisarComeca(coluna, campo, pesquisar);
         }
 
         public DataTable PesquisarContemCom(string coluna, string campo, string pesquisar){
-            ListarPesquisadosGastosController();
+         //   ListarPesquisadosGastosController();
             return dao.PesquisarContem(coluna, campo, pesquisar);
         }
 
         public DataTable PesquisarTerminaCom(string coluna, string campo, string pesquisar){
-            ListarPesquisadosGastosController();
+          //  ListarPesquisadosGastosController();
             return dao.PesquisarTermina(coluna, campo, pesquisar);
         }
     }

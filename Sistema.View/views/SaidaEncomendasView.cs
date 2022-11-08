@@ -1,4 +1,5 @@
 ﻿using Sistema.Controller;
+using Sistema.View.views;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -2306,6 +2307,11 @@ namespace Sistema.View
             }
         }
 
-
+        private void btnDespesas_Click(object sender, EventArgs e)
+        {
+            AddGastosSaidaView chamarAddGastosSaidaView = new AddGastosSaidaView();
+            chamarAddGastosSaidaView.IdSaidaVO = gridCrudSaidas.CurrentRow.Cells[0].Value.ToString();
+            chamarAddGastosSaidaView.ShowDialog();
+        }
     }
 }

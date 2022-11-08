@@ -17,8 +17,8 @@ namespace Sistema.View.views
         public string strIdFornecedores;
         public string strIdTipoGastos;
         public string strIdTipoUnit;
-
         public string strTipoUnit;
+
         public bool finalPaginaBol = false;
         public bool inicioPaginaBol = true;
         public bool estadoBotaoDesbloqueio = false;
@@ -450,10 +450,6 @@ namespace Sistema.View.views
                     DataGridModel();
                     toolStripLabel2.Text = Convert.ToString(controllerGastos.ListarPesquisadosGastosController());
                 }
-
-
-
-
             }
         }
 
@@ -461,14 +457,14 @@ namespace Sistema.View.views
         {
             if (pesquisa.Equals("CarregaPadraoIDTodosUltimos") && parametroCodigoAlfabeto.Equals("Codigo") && parametroASCDESC.Equals("ultimos"))
             {
-                dataGridGastos.DataSource = controllerGastos.ListarDataGrid("idtipound", "desc", offset, limitt);
+                dataGridGastos.DataSource = controllerGastos.ListarDataGrid("idgasto", "desc", offset, limitt);
                 DataGridModel();
                 labelTextTotalRegFould.Text = Convert.ToString(controllerGastos.ListarGridBDGastosController());
                 carregarInformacoes();
             }
             else if (pesquisa.Equals("CarregaPadraoIDTodosPrimeiros") && parametroCodigoAlfabeto.Equals("Codigo") && parametroASCDESC.Equals("primeiros"))
             {
-                dataGridGastos.DataSource = controllerGastos.ListarDataGrid("idtipound", "asc", offset, limitt);
+                dataGridGastos.DataSource = controllerGastos.ListarDataGrid("idgasto", "asc", offset, limitt);
                 DataGridModel();
                 labelTextTotalRegFould.Text = Convert.ToString(controllerGastos.ListarGridBDGastosController());
                 carregarInformacoes();
@@ -490,8 +486,7 @@ namespace Sistema.View.views
 
         }
 
-        public void carregarEstadoPadrao(string pesquisa, int offsett)
-        {
+        public void carregarEstadoPadrao(string pesquisa, int offsett){
             cbButtnQuantPage1.SelectedIndex = 0;
             int quantRegPage = Convert.ToInt32(cbButtnQuantPage1.SelectedItem);
             cbOrdenarPor1.SelectedIndex = 1;
@@ -504,9 +499,6 @@ namespace Sistema.View.views
             bttnRefresh.Enabled = true;
             bttnSave.Enabled = false;
             bttnNew.Enabled = true;
-            //    bttnPrint.Enabled = false;
-            //   bttnImport.Enabled = false;
-            //    bttnExcel.Enabled = false;
             radioBttnComeca.Checked = false;
             radioBttnContem.Checked = false;
             radioBttnTermina.Checked = false;
@@ -526,7 +518,6 @@ namespace Sistema.View.views
             bttnEndPages.Visible = true;
             toolStripLabel1.Visible = false;
             toolStripLabel2.Visible = false;
-
             clearFieldsFormulario();
             disableFieldsFormulario();
 
@@ -535,27 +526,21 @@ namespace Sistema.View.views
         private void bttnTools_Click(object sender, EventArgs e)
         {
             countBttnToggleTools++;
-            if (countBttnToggleTools % 2 == 0)
-            {
+            if (countBttnToggleTools % 2 == 0){
                 tabControlAssets.Visible = true;
                 tabControlAssets.TabPages.Remove(tabPagePesquisar);
-                //  tabControlAssets.TabPages.Remove(tabPageFormulario);
                 groupBoxFormulario.Enabled = false;
                 groupBoxFormulario.Visible = false;
                 bttnNew.Enabled = false;
                 bttnRefresh.Enabled = false;
                 bttnSearch.Enabled = false;
 
-            }
-            else
-            {
+            }else{
+
                 tabControlAssets.Visible = false;
                 tabControlAssets.TabPages.Remove(tabPagePesquisar);
-                //tabControlAssets.TabPages.Remove(tabPageFormulario);
                 groupBoxFormulario.Enabled = false;
                 groupBoxFormulario.Visible = false;
-                //     tabControlAssets.TabPages.Remove(tabPageOptListagem);
-
                 bttnNew.Enabled = true;
                 bttnRefresh.Enabled = true;
                 bttnSearch.Enabled = true;
@@ -1306,8 +1291,8 @@ namespace Sistema.View.views
 
             else if (gridVazia.Length > 0)
             {
-                operationType = "newInsertion";
-                typeEdition = "insert";
+                //operationType = "newInsertion";
+                //typeEdition = "insert";
                 if (typeEdition.Equals("insert") && operationType.Equals("newInsertion"))
                 {
                     behaviorEdit();
@@ -1353,63 +1338,63 @@ namespace Sistema.View.views
 
         public void DataGridModel() {
 
-            dataGridGastos.Columns[0].HeaderText = "ID";
-            dataGridGastos.Columns[1].HeaderText = "COD SAIDA";
-            dataGridGastos.Columns[2].HeaderText = "id Fornecedor ";
-            dataGridGastos.Columns[3].HeaderText = "id Tipo Gasto";
-            dataGridGastos.Columns[4].HeaderText = "QTD";
-            dataGridGastos.Columns[5].HeaderText = "ID TIPOUND";
-            dataGridGastos.Columns[6].HeaderText = "VALOR UNT";
-            dataGridGastos.Columns[7].HeaderText = "VALOR TOTAL";
-            dataGridGastos.Columns[8].HeaderText = "KM";
-            dataGridGastos.Columns[9].HeaderText = "DATA NOTA";
-            dataGridGastos.Columns[10].HeaderText = "NUMERO NOTA";
-            dataGridGastos.Columns[11].HeaderText = "IMG NOTA";
-            dataGridGastos.Columns[12].HeaderText = "ID TIPO GASTO 1";
-            dataGridGastos.Columns[13].HeaderText = "ID TPO UND";
+            //dataGridGastos.Columns[0].HeaderText = "ID";
+            //dataGridGastos.Columns[1].HeaderText = "COD SAIDA";
+            //dataGridGastos.Columns[2].HeaderText = "id Fornecedor ";
+            //dataGridGastos.Columns[3].HeaderText = "id Tipo Gasto";
+            //dataGridGastos.Columns[4].HeaderText = "QTD";
+            //dataGridGastos.Columns[5].HeaderText = "ID TIPOUND";
+            //dataGridGastos.Columns[6].HeaderText = "VALOR UNT";
+            //dataGridGastos.Columns[7].HeaderText = "VALOR TOTAL";
+            //dataGridGastos.Columns[8].HeaderText = "KM";
+            //dataGridGastos.Columns[9].HeaderText = "DATA NOTA";
+            //dataGridGastos.Columns[10].HeaderText = "NUMERO NOTA";
+            //dataGridGastos.Columns[11].HeaderText = "IMG NOTA";
+            //dataGridGastos.Columns[12].HeaderText = "ID TIPO GASTO 1";
+            //dataGridGastos.Columns[13].HeaderText = "ID TPO UND";
             //dataGridGastos.Columns[14].HeaderText = "KM SAÍDA";
             //dataGridGastos.Columns[15].HeaderText = "KM REGRESSO";
             //dataGridGastos.Columns[16].HeaderText = "KM TOTAL";
 
-            dataGridGastos.Columns[0].Visible = true;// id
-            dataGridGastos.Columns[1].Visible = true;// cod saida
-            dataGridGastos.Columns[2].Visible = false;
-            dataGridGastos.Columns[3].Visible = false;
-            dataGridGastos.Columns[4].Visible = false;//qtd
-            dataGridGastos.Columns[5].Visible = false;
-            dataGridGastos.Columns[6].Visible = false;// valor unit
-            dataGridGastos.Columns[7].Visible = false;
-            dataGridGastos.Columns[8].Visible = false;//km
-            dataGridGastos.Columns[9].Visible = true; // data gasto
-            dataGridGastos.Columns[10].Visible = true;// numero nota
-            dataGridGastos.Columns[11].Visible = false;
-            dataGridGastos.Columns[12].Visible = false;
-            dataGridGastos.Columns[13].Visible = false;
+            //dataGridGastos.Columns[0].Visible = true;// id
+            //dataGridGastos.Columns[1].Visible = true;// cod saida
+            //dataGridGastos.Columns[2].Visible = false;
+            //dataGridGastos.Columns[3].Visible = false;
+            //dataGridGastos.Columns[4].Visible = false;//qtd
+            //dataGridGastos.Columns[5].Visible = false;
+            //dataGridGastos.Columns[6].Visible = false;// valor unit
+            //dataGridGastos.Columns[7].Visible = false;
+            //dataGridGastos.Columns[8].Visible = false;//km
+            //dataGridGastos.Columns[9].Visible = true; // data gasto
+            //dataGridGastos.Columns[10].Visible = true;// numero nota
+            //dataGridGastos.Columns[11].Visible = false;
+            //dataGridGastos.Columns[12].Visible = false;
+            //dataGridGastos.Columns[13].Visible = false;
 
-            dataGridGastos.Columns[14].HeaderText = "GASTO";
-            dataGridGastos.Columns[14].Visible = true;// abastecimento
-            dataGridGastos.Columns[15].Visible = false;
-            dataGridGastos.Columns[16].Visible = false;
-            dataGridGastos.Columns[17].Visible = false;
-            dataGridGastos.Columns[18].Visible = false;
-            dataGridGastos.Columns[19].Visible = false;
-            dataGridGastos.Columns[20].Visible = true;
-            dataGridGastos.Columns[21].Visible = true;
+            //dataGridGastos.Columns[14].HeaderText = "GASTO";
+            //dataGridGastos.Columns[14].Visible = true;// abastecimento
+            //dataGridGastos.Columns[15].Visible = false;
+            //dataGridGastos.Columns[16].Visible = false;
+            //dataGridGastos.Columns[17].Visible = false;
+            //dataGridGastos.Columns[18].Visible = false;
+            //dataGridGastos.Columns[19].Visible = false;
+            //dataGridGastos.Columns[20].Visible = true;
+            //dataGridGastos.Columns[21].Visible = true;
 
-            dataGridGastos.Columns[22].HeaderText = "NOME ENTREGADOR";
-            dataGridGastos.Columns[22].Visible = true;// nome entregador
-            dataGridGastos.Columns[23].Visible = true;// p 
-            dataGridGastos.Columns[24].Visible = false;// 
-            dataGridGastos.Columns[25].Visible = false;
-            dataGridGastos.Columns[26].Visible = false;
-            dataGridGastos.Columns[27].Visible = false;
-            dataGridGastos.Columns[28].Visible = false;
-            dataGridGastos.Columns[29].Visible = false;
-            dataGridGastos.Columns[30].Visible = false;
-            dataGridGastos.Columns[31].Visible = false;
-            dataGridGastos.Columns[32].Visible = false;
-            dataGridGastos.Columns[33].HeaderText = "FORNECEDOR";
-            dataGridGastos.Columns[33].Visible = true;
+            //dataGridGastos.Columns[22].HeaderText = "NOME ENTREGADOR";
+            //dataGridGastos.Columns[22].Visible = true;// nome entregador
+            //dataGridGastos.Columns[23].Visible = true;// p 
+            //dataGridGastos.Columns[24].Visible = false;// 
+            //dataGridGastos.Columns[25].Visible = false;
+            //dataGridGastos.Columns[26].Visible = false;
+            //dataGridGastos.Columns[27].Visible = false;
+            //dataGridGastos.Columns[28].Visible = false;
+            //dataGridGastos.Columns[29].Visible = false;
+            //dataGridGastos.Columns[30].Visible = false;
+            //dataGridGastos.Columns[31].Visible = false;
+            //dataGridGastos.Columns[32].Visible = false;
+            //dataGridGastos.Columns[33].HeaderText = "FORNECEDOR";
+            //dataGridGastos.Columns[33].Visible = true;
      
         }
 
@@ -1455,8 +1440,8 @@ namespace Sistema.View.views
             }
             else if (gridVazia.Length > 0)
             {
-                operationType = "newInsertion";
-                typeEdition = "insert";
+                //operationType = "newInsertion";
+                //typeEdition = "insert";
 
                 if (typeEdition.Equals("insert"))
                 {
@@ -1595,6 +1580,16 @@ namespace Sistema.View.views
         }
 
         private void bttnDel_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bttnEdit_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void GastosView_Load(object sender, EventArgs e)
         {
 
         }

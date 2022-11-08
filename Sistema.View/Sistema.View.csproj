@@ -59,6 +59,7 @@
     </Reference>
     <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
     <Reference Include="System.IO, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.IO.4.3.0\lib\net462\System.IO.dll</HintPath>
       <Private>True</Private>
@@ -149,6 +150,12 @@
     </Compile>
     <Compile Include="imports\ImportSaidasToGastos.Designer.cs">
       <DependentUpon>ImportSaidasToGastos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="views\AddGastosSaidaView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\AddGastosSaidaView.Designer.cs">
+      <DependentUpon>AddGastosSaidaView.cs</DependentUpon>
     </Compile>
     <Compile Include="views\FornecedoresView.cs">
       <SubType>Form</SubType>
@@ -310,6 +317,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="imports\ImportSaidasToGastos.resx">
       <DependentUpon>ImportSaidasToGastos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\AddGastosSaidaView.resx">
+      <DependentUpon>AddGastosSaidaView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="views\FornecedoresView.resx">
       <DependentUpon>FornecedoresView.cs</DependentUpon>

@@ -273,6 +273,39 @@ namespace Sistema.DAO
             return acaoCrudGastosDAO;
         }
 
+        public DataTable ListarDataGridAddSaida(int idsaida)
+        {
+            try
+            {
+                classeConecta.AbrirCon();
+
+                sql = " SELECT * FROM gastos where idsaida = "+idsaida+"";
+
+
+                //sql = " SELECT * FROM gastos gast " +
+                //      " INNER JOIN tipogastos tpg " +
+                //      " INNER JOIN saidas said " +
+                //      " INNER JOIN fornecedores forn " +
+                //      " ON gast.idsaida = said.+"+idsaida+ " " +
+                //      " AND gast.idfornecedor = forn.idfornecedor " +
+                //      " AND gast.idtipogasto = tpg.idtipogasto " +
+                //      " ORDER BY " + parametro + " " + indexar + " Limit " + offsett + "," + limitt;
+                cmd = new MySqlCommand(sql, classeConecta.con);
+                MySqlDataAdapter da = new MySqlDataAdapter();
+                da.SelectCommand = cmd;
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                classeConecta.FecharCon();
+                return dt;
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+
 
         public DataTable ListarDataGridINNERJOIN(string parametro, string indexar, int offsett, int limitt){
             try{
@@ -320,14 +353,14 @@ namespace Sistema.DAO
             try{
 
                 classeConecta.AbrirCon();
+                //(string coluna, string campo, string pesquisar){
                 sql = "SELECT * FROM gastos where despesa Like " + campo + "";
                 cmd = new MySqlCommand(sql, classeConecta.con);
-
-                if (pesquisar == ""){
-                    cmd.Parameters.AddWithValue(campo, "");
-                }else{
-                    cmd.Parameters.AddWithValue(campo, "%" + pesquisar);
-                }
+                    if (pesquisar == ""){
+                        cmd.Parameters.AddWithValue(campo, "");
+                    }else{
+                        cmd.Parameters.AddWithValue(campo, "%" + pesquisar);
+                    }
                 MySqlDataAdapter da = new MySqlDataAdapter();
                 da.SelectCommand = cmd;
                 DataTable dt = new DataTable();
@@ -346,12 +379,12 @@ namespace Sistema.DAO
                 classeConecta.AbrirCon();
                 sql = "SELECT * FROM gastos where despesa Like  " + campo + "";
                 cmd = new MySqlCommand(sql, classeConecta.con);
-                if (pesquisar == ""){
-                    cmd.Parameters.AddWithValue(campo, "");
+                    if (pesquisar == ""){
+                        cmd.Parameters.AddWithValue(campo, "");
 
-                }else{
-                    cmd.Parameters.AddWithValue(campo, "%" + pesquisar + "%");
-                }
+                    }else{
+                        cmd.Parameters.AddWithValue(campo, "%" + pesquisar + "%");
+                    }
                 MySqlDataAdapter da = new MySqlDataAdapter();
                 da.SelectCommand = cmd;
                 DataTable dt = new DataTable();
@@ -370,13 +403,13 @@ namespace Sistema.DAO
                 sql = "SELECT * FROM gastos where despesa Like  " + campo + "";
                 cmd = new MySqlCommand(sql, classeConecta.con);
 
-                if (pesquisar == ""){
-                    cmd.Parameters.AddWithValue(campo, "");
+                    if (pesquisar == ""){
+                        cmd.Parameters.AddWithValue(campo, "");
 
-                }else{
-                    cmd.Parameters.AddWithValue(campo, pesquisar + "%");
+                    }else{
+                        cmd.Parameters.AddWithValue(campo, pesquisar + "%");
                     
-                }
+                    }
 
                 MySqlDataAdapter da = new MySqlDataAdapter();
                 da.SelectCommand = cmd;

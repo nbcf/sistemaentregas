@@ -280,6 +280,7 @@ namespace Sistema.View
             this.btnDespesas.Name = "btnDespesas";
             this.btnDespesas.Size = new System.Drawing.Size(80, 48);
             this.btnDespesas.Text = "toolStripButton3";
+            this.btnDespesas.Click += new System.EventHandler(this.btnDespesas_Click);
             // 
             // tabControlAssets
             // 
