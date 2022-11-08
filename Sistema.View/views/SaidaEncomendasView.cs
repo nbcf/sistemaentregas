@@ -1860,6 +1860,7 @@ namespace Sistema.View
                 txtKmRetorno.Text = gridCrudSaidas.CurrentRow.Cells[15].Value.ToString();
                 txtKmTotal.Text = gridCrudSaidas.CurrentRow.Cells[16].Value.ToString();
                 btnRotaConcluida.Enabled = false;
+                btnDespesas.Enabled = true;
             }
         }
 
