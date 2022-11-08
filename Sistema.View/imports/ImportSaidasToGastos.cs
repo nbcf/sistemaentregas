@@ -70,7 +70,7 @@ namespace Sistema.View.imports
 
         private void dataGridView1_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            CodSaidaVO = Convert.ToInt32(as
+            CodSaidaVO = Convert.ToInt32(gridCrudSaidas.CurrentRow.Cells[0].Value.ToString());
             EntregadorVO  = gridCrudSaidas.CurrentRow.Cells[7].Value.ToString();
             VeiculoVO = gridCrudSaidas.CurrentRow.Cells[5].Value.ToString();
             PlacaVO = gridCrudSaidas.CurrentRow.Cells[6].Value.ToString();

@@ -1262,35 +1262,28 @@ namespace Sistema.View.views
             puxarparametroPesquisa();
         }
 
-        private void radioBttnComeca_TextChanged(object sender, EventArgs e)
-        {
+        private void radioBttnComeca_TextChanged(object sender, EventArgs e){
             puxarparametroPesquisa();
         }
 
-        private void radioBttnContem_CheckedChanged_1(object sender, EventArgs e)
-        {
+        private void radioBttnContem_CheckedChanged_1(object sender, EventArgs e){
             puxarparametroPesquisa();
         }
 
-        private void radioBttnTermina_CheckedChanged_1(object sender, EventArgs e)
-        {
+        private void radioBttnTermina_CheckedChanged_1(object sender, EventArgs e){
             puxarparametroPesquisa();
         }
 
         
 
-        private void txtBoxName_TextChanged(object sender, EventArgs e)
-        {
+        private void txtBoxName_TextChanged(object sender, EventArgs e){
             txtBoxName.SelectionStart = txtBoxName.Text.Length;
             txtBoxName.Text = txtBoxName.Text.ToUpper();
         }
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e){
 
-            if (comboBox1.Items.Count > 0)
-            {
-
+            if (comboBox1.Items.Count > 0){
                 txtIdTipogastos.Text = comboBox1.SelectedValue.ToString();
                 strIdCombo = txtIdTipogastos.Text;
                 puxarparametro(0, Convert.ToInt32(cbButtnQuantPage1.SelectedItem), "Sim");
@@ -1298,27 +1291,22 @@ namespace Sistema.View.views
             }
         }
 
-        private void TipoGastosView_Load(object sender, EventArgs e)
-        {
+        private void TipoGastosView_Load(object sender, EventArgs e){
             comboBox1.DataSource = controllerTipoUnds.ListComboBoxTipoUndController();
             comboBox1.ValueMember = "idtipound";
             comboBox1.DisplayMember = "nomeund";
-            if (comboBox1.Items.Count > 0)
-            {
+            if (comboBox1.Items.Count > 0){
                 txtIdTipogastos.Text = comboBox1.SelectedValue.ToString();
                 strIdCombo = txtIdTipogastos.Text;
             }
         }
 
-            private void gridCrudTipoUnds_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
-        {
+            private void gridCrudTipoUnds_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e){
             var gridVazia = gridCrudTipoGastos.CurrentRow.Cells[0].Value.ToString();
-            if (string.IsNullOrEmpty(gridVazia))
-            {
+            if (string.IsNullOrEmpty(gridVazia)){
 
             }
-            else if (gridVazia.Length > 0)
-            {
+            else if (gridVazia.Length > 0){
                 if (typeEdition.Equals("insert"))
                 {
                     operationType = "newInsertion";

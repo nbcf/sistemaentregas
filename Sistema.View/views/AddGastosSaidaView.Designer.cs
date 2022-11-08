@@ -29,7 +29,7 @@ namespace Sistema.View.views
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridGastos = new System.Windows.Forms.DataGridView();
             this.txtIdSaida = new System.Windows.Forms.TextBox();
             this.txtIdFornecedor = new System.Windows.Forms.TextBox();
             this.txtIdTipogasto = new System.Windows.Forms.TextBox();
@@ -51,7 +51,11 @@ namespace Sistema.View.views
             this.txtnumnota = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cbTipoGasto = new System.Windows.Forms.ComboBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.txtJoinTipoUnit = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
+            this.txtidgastos = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.textBox11 = new System.Windows.Forms.TextBox();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
@@ -59,40 +63,44 @@ namespace Sistema.View.views
             this.bttnSave = new System.Windows.Forms.ToolStripButton();
             this.bttnRefresh = new System.Windows.Forms.ToolStripButton();
             this.bttnDel = new System.Windows.Forms.ToolStripButton();
-            this.txtidgastos = new System.Windows.Forms.TextBox();
-            this.cbTipoGasto = new System.Windows.Forms.ComboBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.txtJoinTipoUnit = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridGastos)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // dataGridGastos
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 273);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(831, 256);
-            this.dataGridView1.TabIndex = 0;
+            this.dataGridGastos.AllowUserToAddRows = false;
+            this.dataGridGastos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridGastos.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridGastos.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.dataGridGastos.Location = new System.Drawing.Point(3, 16);
+            this.dataGridGastos.MultiSelect = false;
+            this.dataGridGastos.Name = "dataGridGastos";
+            this.dataGridGastos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridGastos.Size = new System.Drawing.Size(871, 284);
+            this.dataGridGastos.TabIndex = 0;
+            this.dataGridGastos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridGastos_CellClick);
             // 
             // txtIdSaida
             // 
-            this.txtIdSaida.Location = new System.Drawing.Point(172, 247);
+            this.txtIdSaida.Location = new System.Drawing.Point(835, 92);
             this.txtIdSaida.Name = "txtIdSaida";
             this.txtIdSaida.Size = new System.Drawing.Size(30, 20);
             this.txtIdSaida.TabIndex = 1;
             // 
             // txtIdFornecedor
             // 
-            this.txtIdFornecedor.Location = new System.Drawing.Point(138, 247);
+            this.txtIdFornecedor.Location = new System.Drawing.Point(801, 92);
             this.txtIdFornecedor.Name = "txtIdFornecedor";
             this.txtIdFornecedor.Size = new System.Drawing.Size(28, 20);
             this.txtIdFornecedor.TabIndex = 2;
             // 
             // txtIdTipogasto
             // 
-            this.txtIdTipogasto.Location = new System.Drawing.Point(108, 247);
+            this.txtIdTipogasto.Location = new System.Drawing.Point(771, 91);
             this.txtIdTipogasto.Name = "txtIdTipogasto";
             this.txtIdTipogasto.Size = new System.Drawing.Size(24, 20);
             this.txtIdTipogasto.TabIndex = 3;
@@ -118,16 +126,16 @@ namespace Sistema.View.views
             // 
             // txtIdTipoUnit
             // 
-            this.txtIdTipoUnit.Location = new System.Drawing.Point(12, 247);
+            this.txtIdTipoUnit.Location = new System.Drawing.Point(707, 92);
             this.txtIdTipoUnit.Name = "txtIdTipoUnit";
-            this.txtIdTipoUnit.Size = new System.Drawing.Size(52, 20);
+            this.txtIdTipoUnit.Size = new System.Drawing.Size(27, 20);
             this.txtIdTipoUnit.TabIndex = 6;
             // 
             // txtqtd
             // 
-            this.txtqtd.Location = new System.Drawing.Point(70, 247);
+            this.txtqtd.Location = new System.Drawing.Point(740, 92);
             this.txtqtd.Name = "txtqtd";
-            this.txtqtd.Size = new System.Drawing.Size(32, 20);
+            this.txtqtd.Size = new System.Drawing.Size(25, 20);
             this.txtqtd.TabIndex = 7;
             // 
             // txtqt
@@ -253,10 +261,19 @@ namespace Sistema.View.views
             // 
             this.groupBox1.Controls.Add(this.cbTipoGasto);
             this.groupBox1.Controls.Add(this.label10);
+            this.groupBox1.Controls.Add(this.txtJoinTipoUnit);
             this.groupBox1.Controls.Add(this.label8);
+            this.groupBox1.Controls.Add(this.txtidgastos);
             this.groupBox1.Controls.Add(this.dateTimePicker1);
+            this.groupBox1.Controls.Add(this.label9);
+            this.groupBox1.Controls.Add(this.txtIdTipoUnit);
+            this.groupBox1.Controls.Add(this.txtqtd);
+            this.groupBox1.Controls.Add(this.textBox11);
+            this.groupBox1.Controls.Add(this.txtIdSaida);
             this.groupBox1.Controls.Add(this.cbTipoUnit);
+            this.groupBox1.Controls.Add(this.txtIdFornecedor);
             this.groupBox1.Controls.Add(this.txtnumnota);
+            this.groupBox1.Controls.Add(this.txtIdTipogasto);
             this.groupBox1.Controls.Add(this.txtkm);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label7);
@@ -269,12 +286,40 @@ namespace Sistema.View.views
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.txtvalorunt);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Location = new System.Drawing.Point(1, 54);
+            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.groupBox1.Location = new System.Drawing.Point(0, 51);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(830, 187);
+            this.groupBox1.Size = new System.Drawing.Size(877, 187);
             this.groupBox1.TabIndex = 21;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "FORMULÁRIO:";
+            // 
+            // cbTipoGasto
+            // 
+            this.cbTipoGasto.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbTipoGasto.FormattingEnabled = true;
+            this.cbTipoGasto.Location = new System.Drawing.Point(218, 41);
+            this.cbTipoGasto.Name = "cbTipoGasto";
+            this.cbTipoGasto.Size = new System.Drawing.Size(197, 25);
+            this.cbTipoGasto.TabIndex = 24;
+            this.cbTipoGasto.SelectedIndexChanged += new System.EventHandler(this.cbTipoGasto_SelectedIndexChanged);
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(217, 21);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(92, 17);
+            this.label10.TabIndex = 25;
+            this.label10.Text = "TIPO GASTOS:";
+            // 
+            // txtJoinTipoUnit
+            // 
+            this.txtJoinTipoUnit.Location = new System.Drawing.Point(761, 140);
+            this.txtJoinTipoUnit.Name = "txtJoinTipoUnit";
+            this.txtJoinTipoUnit.Size = new System.Drawing.Size(63, 20);
+            this.txtJoinTipoUnit.TabIndex = 25;
             // 
             // label8
             // 
@@ -286,10 +331,17 @@ namespace Sistema.View.views
             this.label8.TabIndex = 22;
             this.label8.Text = "DATA NOTA";
             // 
+            // txtidgastos
+            // 
+            this.txtidgastos.Location = new System.Drawing.Point(707, 140);
+            this.txtidgastos.Name = "txtidgastos";
+            this.txtidgastos.Size = new System.Drawing.Size(48, 20);
+            this.txtidgastos.TabIndex = 23;
+            // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(610, 250);
+            this.label9.Location = new System.Drawing.Point(710, 24);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(45, 13);
             this.label9.TabIndex = 22;
@@ -297,11 +349,10 @@ namespace Sistema.View.views
             // 
             // textBox11
             // 
-            this.textBox11.Location = new System.Drawing.Point(661, 247);
+            this.textBox11.Location = new System.Drawing.Point(713, 41);
             this.textBox11.Name = "textBox11";
             this.textBox11.Size = new System.Drawing.Size(158, 20);
             this.textBox11.TabIndex = 23;
-            this.textBox11.TextChanged += new System.EventHandler(this.textBox11_TextChanged);
             // 
             // toolStrip1
             // 
@@ -315,7 +366,7 @@ namespace Sistema.View.views
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Padding = new System.Windows.Forms.Padding(0);
-            this.toolStrip1.Size = new System.Drawing.Size(831, 51);
+            this.toolStrip1.Size = new System.Drawing.Size(877, 51);
             this.toolStrip1.TabIndex = 24;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -368,67 +419,36 @@ namespace Sistema.View.views
             this.bttnDel.Name = "bttnDel";
             this.bttnDel.Size = new System.Drawing.Size(80, 48);
             this.bttnDel.Text = "toolStripButton6";
-            this.bttnDel.Click += new System.EventHandler(this.bttnDel_Click);
             // 
-            // txtidgastos
+            // groupBox2
             // 
-            this.txtidgastos.Location = new System.Drawing.Point(222, 246);
-            this.txtidgastos.Name = "txtidgastos";
-            this.txtidgastos.Size = new System.Drawing.Size(100, 20);
-            this.txtidgastos.TabIndex = 23;
-            // 
-            // cbTipoGasto
-            // 
-            this.cbTipoGasto.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbTipoGasto.FormattingEnabled = true;
-            this.cbTipoGasto.Location = new System.Drawing.Point(218, 41);
-            this.cbTipoGasto.Name = "cbTipoGasto";
-            this.cbTipoGasto.Size = new System.Drawing.Size(197, 25);
-            this.cbTipoGasto.TabIndex = 24;
-            this.cbTipoGasto.SelectedIndexChanged += new System.EventHandler(this.cbTipoGasto_SelectedIndexChanged);
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(217, 21);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(92, 17);
-            this.label10.TabIndex = 25;
-            this.label10.Text = "TIPO GASTOS:";
-            // 
-            // txtJoinTipoUnit
-            // 
-            this.txtJoinTipoUnit.Location = new System.Drawing.Point(491, 247);
-            this.txtJoinTipoUnit.Name = "txtJoinTipoUnit";
-            this.txtJoinTipoUnit.Size = new System.Drawing.Size(100, 20);
-            this.txtJoinTipoUnit.TabIndex = 25;
+            this.groupBox2.Controls.Add(this.dataGridGastos);
+            this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox2.Location = new System.Drawing.Point(0, 238);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(877, 303);
+            this.groupBox2.TabIndex = 25;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "groupBox2";
             // 
             // AddGastosSaidaView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(831, 541);
-            this.Controls.Add(this.txtJoinTipoUnit);
-            this.Controls.Add(this.toolStrip1);
-            this.Controls.Add(this.txtidgastos);
-            this.Controls.Add(this.textBox11);
-            this.Controls.Add(this.label9);
+            this.ClientSize = new System.Drawing.Size(877, 541);
+            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.txtIdTipoUnit);
-            this.Controls.Add(this.txtqtd);
-            this.Controls.Add(this.txtIdSaida);
-            this.Controls.Add(this.txtIdFornecedor);
-            this.Controls.Add(this.txtIdTipogasto);
+            this.Controls.Add(this.toolStrip1);
             this.Name = "AddGastosSaidaView";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AddGastosSaidaView";
             this.Load += new System.EventHandler(this.AddGastosSaidaView_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridGastos)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -436,7 +456,7 @@ namespace Sistema.View.views
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridGastos;
         private System.Windows.Forms.TextBox txtIdSaida;
         private System.Windows.Forms.TextBox txtIdFornecedor;
         private System.Windows.Forms.TextBox txtIdTipogasto;
@@ -470,5 +490,6 @@ namespace Sistema.View.views
         private System.Windows.Forms.ComboBox cbTipoGasto;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox txtJoinTipoUnit;
+        private System.Windows.Forms.GroupBox groupBox2;
     }
 }

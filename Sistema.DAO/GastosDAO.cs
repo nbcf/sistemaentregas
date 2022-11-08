@@ -273,23 +273,21 @@ namespace Sistema.DAO
             return acaoCrudGastosDAO;
         }
 
-        public DataTable ListarDataGridAddSaida(int idsaida)
-        {
-            try
-            {
+        public DataTable ListarDataGridAddSaida(int idsaida) {
+            try{
                 classeConecta.AbrirCon();
+              sql = "SELECT * FROM gastos       gts " +
+                    "INNER JOIN tipogastos      tpg " +
+                    "INNER JOIN saidas          sai " +
+                    "INNER JOIN fornecedores    forn " +
 
-                sql = " SELECT * FROM gastos where idsaida = "+idsaida+"";
+                    "ON  gts.idsaida        =   sai.idsaida " +
+                    "AND gts.idfornecedor   =   forn.idfornecedor " +
+                    "AND gts.idtipogasto    =   tpg.idtipogasto " +
+                    "AND gts.tipound        =   tpg.idtipound " +
+                    
+                    "WHERE gts.idsaida = "+ idsaida +"";
 
-
-                //sql = " SELECT * FROM gastos gast " +
-                //      " INNER JOIN tipogastos tpg " +
-                //      " INNER JOIN saidas said " +
-                //      " INNER JOIN fornecedores forn " +
-                //      " ON gast.idsaida = said.+"+idsaida+ " " +
-                //      " AND gast.idfornecedor = forn.idfornecedor " +
-                //      " AND gast.idtipogasto = tpg.idtipogasto " +
-                //      " ORDER BY " + parametro + " " + indexar + " Limit " + offsett + "," + limitt;
                 cmd = new MySqlCommand(sql, classeConecta.con);
                 MySqlDataAdapter da = new MySqlDataAdapter();
                 da.SelectCommand = cmd;
