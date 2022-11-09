@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace Sistema.View.views
 {
    
@@ -38,18 +39,16 @@ namespace Sistema.View.views
             get { return strAcaoForm; }
             set { strAcaoForm = value; }
         }
-
-        GastosController controllerGastos = new GastosController();
-        FornecedoresController controllerFornecedores = new FornecedoresController();
-        TipoGastosController controllerTipoGastos = new TipoGastosController();
+        SomarCellDataGrid st = new SomarCellDataGrid();
+        GastosController        controllerGastos        = new GastosController();
+        FornecedoresController  controllerFornecedores  = new FornecedoresController();
+        TipoGastosController    controllerTipoGastos    = new TipoGastosController();
 
 
 
         public AddGastosSaidaView() {
             InitializeComponent();
             carregarEstadoPadrao();
-
-
         }
 
    
@@ -61,6 +60,7 @@ namespace Sistema.View.views
             bttnNew.Enabled = false;
             bttnDel.Enabled = false;
             bttnRefresh.Enabled = true;
+            dataGridGastos.Enabled = false;
             carregarPadraoComboBox();
         }
 
@@ -73,8 +73,7 @@ namespace Sistema.View.views
             refresh();
         }
 
-        public void refresh() {
-
+        public void refresh(){
             dataGridGastos.DataSource = controllerGastos.ListarDataGridAddSaidaController(Convert.ToInt32(IdSaidaVO));
             DataGridModel();
             limparcampos();
@@ -83,6 +82,13 @@ namespace Sistema.View.views
             bttnNew.Enabled = true;
             bttnDel.Enabled = false;
             bttnRefresh.Enabled = true;
+            toolStripButton1.Enabled = false;
+            dataGridGastos.Enabled = true;
+            bttnNew.Enabled = true;
+            bttnSave.Enabled = false;
+            textBox11.Text = SomarTotais().ToString();
+
+
         }
 
         public void save() {
@@ -95,7 +101,7 @@ namespace Sistema.View.views
                 txtvalorunt.Text,
                 txtvalortotal.Text,
                 txtkm.Text,
-                Convert.ToDateTime(dateTimePicker1.Value.ToString("dd/MM/yyyy")), 
+                Convert.ToDateTime(dateTimePicker1.Value.ToString("dd/MM/yyyy HH:mm")), 
                 txtnumnota.Text,
                 "");
             bttnSave.Enabled = false;
@@ -103,46 +109,33 @@ namespace Sistema.View.views
             bttnDel.Enabled = false;
             bttnRefresh.Enabled = true;
             refresh();
-
         }
 
 
         public void edit() {
-
-              controllerGastos.Editar(Convert.ToInt32(txtIdSaida.Text),
-              Convert.ToInt32(txtIdFornecedor.Text),
-              Convert.ToInt32(txtIdTipogasto.Text),
-              txtqtd.Text,
-              txtIdTipoUnit.Text,
-              txtvalorunt.Text,
-              txtvalortotal.Text,
-              txtkm.Text,
-              dateTimePicker1.Value,
-              txtnumnota.Text,
-              "",
-              Convert.ToInt32(txtidgastos.Text));
-              refresh();
-
+            controllerGastos.Editar(Convert.ToInt32(txtIdSaida.Text),
+            Convert.ToInt32(txtIdFornecedor.Text),
+            Convert.ToInt32(txtIdTipogasto.Text),
+            txtqtd.Text,
+            txtIdTipoUnit.Text,
+            txtvalorunt.Text,
+            txtvalortotal.Text,
+            txtkm.Text,
+            dateTimePicker1.Value,
+            txtnumnota.Text,
+            "",
+            Convert.ToInt32(txtidgastos.Text));
+            refresh();
         }
 
         public void carregarEstadoPadrao() {
-
             desabilitarcampos();
             limparcampos();
             bttnSave.Enabled = false;
             bttnNew.Enabled = true;
             bttnDel.Enabled = false;
             bttnRefresh.Enabled = true;
-            //txtIdTipogasto.Visible     = false;
-            //txtIdFornecedor.Visible     = false;
-            //txtIdSaida.Visible          = false;
-            //txtidgastos.Visible         = false;
-            //txtJoinTipoUnit.Visible     = false;
-            //txtIdTipoUnit.Visible = false;
-            //txtqtd.Visible = false;
-          //  dataGridGastos.DataSource = controllerGastos.ListarDataGridAddSaidaController(Convert.ToInt32(IdSaidaVO));
-         //   DataGridModel();
-
+            toolStripButton1.Enabled = false;
         }
 
 
@@ -168,7 +161,6 @@ namespace Sistema.View.views
         }
 
         public void desabilitarcampos() {
-
             cbFornecedor.Enabled = false;
             cbTipoGasto.Enabled = false;
             cbTipoUnit.Enabled = false;
@@ -193,7 +185,7 @@ namespace Sistema.View.views
 
         public void limparcampos() {
             txtnumnota.Text = "";
-            dateTimePicker1.Value = DateTime.Today;
+            dateTimePicker1.Value = DateTime.Now;
             txtkm.Text = "";
             txtqt.Text = "";
             txtvalorunt.Text = "";
@@ -242,88 +234,108 @@ namespace Sistema.View.views
                 txtIdTipogasto.Text = strIdTipoGastos;
                 txtJoinTipoUnit.Enabled = false;
             }
+            toolStripButton1.Enabled = false;
 
         }
 
-        private void cbTipoGasto_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (cbTipoGasto.Items.Count > 0 && cbTipoUnit.Items.Count > 0)
-            {
-                cbTipoUnit.DataSource = controllerTipoGastos.ComplementoComboBoxTipoUnds(Convert.ToInt32(cbTipoGasto.SelectedValue.ToString()));
-                cbTipoUnit.ValueMember = "idtipound";
-                cbTipoUnit.DisplayMember = "nomeund";
+        private void cbTipoGasto_SelectedIndexChanged(object sender, EventArgs e){
 
-                strIdTipoUnit = cbTipoUnit.SelectedValue.ToString();
-                strTipoUnit = cbTipoUnit.Text;
-                strIdTipoGastos = cbTipoGasto.SelectedValue.ToString();
+            if (cbTipoGasto.Items.Count > 0 && cbTipoUnit.Items.Count > 0){
 
-                txtIdTipoUnit.Text = strIdTipoUnit;
-                txtJoinTipoUnit.Text = strTipoUnit;
-                txtIdTipogasto.Text = strIdTipoGastos;
-
-                txtJoinTipoUnit.Enabled = false;
-                //txtIdTipoUnit.Text          =   cbTipoUnit.SelectedValue.ToString();
-                //txtJoinTipoUnit.Text        =   cbTipoUnit.Text;
-                //txtIdTipogasto.Text         =   cbTipoGasto.SelectedValue.ToString();
+                cbTipoUnit.DataSource       = controllerTipoGastos.ComplementoComboBoxTipoUnds(Convert.ToInt32(cbTipoGasto.SelectedValue.ToString()));
+                cbTipoUnit.ValueMember      = "idtipound";
+                cbTipoUnit.DisplayMember    = "nomeund";
+                strIdTipoUnit               = cbTipoUnit.SelectedValue.ToString();
+                strTipoUnit                 = cbTipoUnit.Text;
+                strIdTipoGastos             = cbTipoGasto.SelectedValue.ToString();
+                txtIdTipoUnit.Text          = strIdTipoUnit;
+                txtJoinTipoUnit.Text        = strTipoUnit;
+                txtIdTipogasto.Text         = strIdTipoGastos;
+                txtJoinTipoUnit.Enabled     = false;
             }
-
         }
 
         private void cbFornecedor_SelectedIndexChanged(object sender, EventArgs e){
             if (cbFornecedor.Items.Count > 0){
                 txtIdFornecedor.Text = cbFornecedor.SelectedValue.ToString();
                 strIdFornecedores = txtIdFornecedor.Text;
-
-
             }
         }
 
-        private void bttnSave_Click_1(object sender, EventArgs e)
-        {
+        private void bttnSave_Click_1(object sender, EventArgs e){
             save();
-            
         }
 
         public void DataGridModel() {
-
-
-             dataGridGastos.Columns[0].HeaderText = "ID";
-            //dataGridGastos.Columns[1].HeaderText = "ID Origem";
-            //dataGridGastos.Columns[2].HeaderText = "ID Veiculo"; //
-            //dataGridGastos.Columns[3].HeaderText = "ID Entregador"; //
-            //dataGridGastos.Columns[4].HeaderText = "VEÍCULO"; //
-            //dataGridGastos.Columns[5].HeaderText = "PLACA"; //
-            //dataGridGastos.Columns[6].HeaderText = "ENTREGADOR"; //
-            //dataGridGastos.Columns[7].HeaderText = "PESO"; //
-            //dataGridGastos.Columns[8].HeaderText = "ENCOMENDA"; //
-            //dataGridGastos.Columns[9].HeaderText = "ESTATUS";
-            //dataGridGastos.Columns[10].HeaderText = "CPF";
-            //dataGridGastos.Columns[11].HeaderText = "DESTINATARIO";
-           //dataGridGastos.Columns[0].Visible = false;
-           //dataGridGastos.Columns[1].Visible = false;
-           //dataGridGastos.Columns[2].Visible = false;
-           //dataGridGastos.Columns[3].Visible = false;
-           //dataGridGastos.Columns[11].Visible = false;
-
-
+             dataGridGastos.Columns[0].HeaderText = "FORNECEDOR";
+             dataGridGastos.Columns[1].HeaderText = "GASTO";
+             dataGridGastos.Columns[2].HeaderText = "TIPO"; 
+             dataGridGastos.Columns[3].HeaderText = "QTD"; 
+             dataGridGastos.Columns[4].HeaderText = "VALOR"; 
+             dataGridGastos.Columns[5].HeaderText = "TOTAL"; 
+             dataGridGastos.Columns[6].HeaderText = "N. NOTA";
+             dataGridGastos.Columns[7].HeaderText = "DATA";
+             dataGridGastos.Columns[8].HeaderText = "KM"; 
+             dataGridGastos.Columns[0].Width = 180;
+             dataGridGastos.Columns[1].Width = 150;
+             dataGridGastos.Columns[2].Width = 60;
+             dataGridGastos.Columns[3].Width = 60;
+             dataGridGastos.Columns[4].Width = 60;
+             dataGridGastos.Columns[5].Width = 80;
+             dataGridGastos.Columns[6].Width = 80;
+             dataGridGastos.Columns[7].Width = 80;
+             dataGridGastos.Columns[8].Width = 80;
+             dataGridGastos.Columns[9].Visible = false;
+             dataGridGastos.Columns[10].Visible = false;
+             dataGridGastos.Columns[11].Visible = false;
+             dataGridGastos.Columns[12].Visible = false;
+             dataGridGastos.Columns[13].Visible = false;
+             dataGridGastos.Columns[9].Width = 0;
+             dataGridGastos.Columns[10].Width = 0;
+             dataGridGastos.Columns[11].Width = 0;
+             dataGridGastos.Columns[12].Width = 0;
+             dataGridGastos.Columns[13].Width = 0;
         }
 
         private void dataGridGastos_CellClick(object sender, DataGridViewCellEventArgs e){
+            cbFornecedor.Text       =       dataGridGastos.CurrentRow.Cells[0].Value.ToString(); 
+            cbTipoGasto.Text        =       dataGridGastos.CurrentRow.Cells[1].Value.ToString();
+            cbTipoUnit.Text         =       dataGridGastos.CurrentRow.Cells[2].Value.ToString();
+            txtJoinTipoUnit.Text    =       dataGridGastos.CurrentRow.Cells[2].Value.ToString();
+            txtqt.Text              =       dataGridGastos.CurrentRow.Cells[3].Value.ToString();
+            txtvalorunt.Text        =       dataGridGastos.CurrentRow.Cells[4].Value.ToString();
+            txtvalortotal.Text      =       dataGridGastos.CurrentRow.Cells[5].Value.ToString();
+            txtnumnota.Text         =       dataGridGastos.CurrentRow.Cells[6].Value.ToString();
+            dateTimePicker1.Value   =       Convert.ToDateTime(dataGridGastos.CurrentRow.Cells[7].Value.ToString());
+            txtkm.Text              =       dataGridGastos.CurrentRow.Cells[8].Value.ToString();
+            txtidgastos.Text        =       dataGridGastos.CurrentRow.Cells[9].Value.ToString();
+      //      txtIdSaida.Text         =       dataGridGastos.CurrentRow.Cells[8].Value.ToString();
+            txtIdFornecedor.Text    =       dataGridGastos.CurrentRow.Cells[11].Value.ToString();
+            txtIdTipogasto.Text     =       dataGridGastos.CurrentRow.Cells[12].Value.ToString();
+            txtIdTipoUnit.Text      =       dataGridGastos.CurrentRow.Cells[13].Value.ToString();
             
-                txtidgastos.Text = dataGridGastos.CurrentRow.Cells[0].Value.ToString();
-                txtIdSaida.Text =  dataGridGastos.CurrentRow.Cells[1].Value.ToString();
-                txtIdFornecedor.Text =  dataGridGastos.CurrentRow.Cells[2].Value.ToString();
-                txtIdTipogasto.Text = dataGridGastos.CurrentRow.Cells[3].Value.ToString();
-                txtqt.Text = dataGridGastos.CurrentRow.Cells[4].Value.ToString();
-                
-            //dateTimePicker1.Value = Convert.ToDateTime(dataGridGastos.CurrentRow.Cells[0].Value);
-            //txtvalorunt.Text = dataGridGastos.CurrentRow.Cells[0].Value.ToString();
-            //txtvalortotal.Text = dataGridGastos.CurrentRow.Cells[0].Value.ToString();
+            bttnNew.Enabled = false;
+            bttnSave.Enabled = false;
+            toolStripButton1.Enabled = true;
+            bttnDel.Enabled = true;
 
+        }
 
+        private void toolStripButton1_Click(object sender, EventArgs e){
+            toolStripButton1.Enabled = false;
+            abilitarcampos();
+            dataGridGastos.Enabled = false;
+            bttnDel.Enabled = false;
+            bttnNew.Enabled = false;
+            bttnSave.Enabled = true;
+        }
 
+        private void bttnDel_Click(object sender, EventArgs e) {
+            excluir();
+        }
 
-
+        public int SomarTotais(){
+            return st.SomarTotais(dataGridGastos.RowCount, dataGridGastos, "valortotal");
         }
     }
 }

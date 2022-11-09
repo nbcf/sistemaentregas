@@ -276,26 +276,33 @@ namespace Sistema.DAO
         public DataTable ListarDataGridAddSaida(int idsaida) {
             try{
                 classeConecta.AbrirCon();
-                  sql = "SELECT " +
-                        "fornecedor, " +
-                        "nomegasto, " +
-                        "nomeund, " +
-                        "qtd, " +
-                        "valorunitario, " +
-                        "valortotal, " +
-                        "numeronota, " +
-                        "datagasto, " +
-                        "km " +
-                        "FROM gastos gts " +
-                        "INNER JOIN tipogastos tpg " +
-                        "INNER JOIN tipounds tpu " +
-                        "INNER JOIN saidas sai " +
-                        "INNER JOIN fornecedores forn " +
-                        "ON gts.idsaida = sai.idsaida " +
-                        "AND gts.idfornecedor = forn.idfornecedor " +
-                        "AND gts.idtipogasto = tpg.idtipogasto " +
-                        "AND gts.tipound = tpu.idtipound " +
-                        "WHERE gts.idsaida = " + idsaida + "";
+                sql = "SELECT  forn.fornecedor,  " +
+                     "tpg.nomegasto,  " +
+                     "tpu.nomeund, " +
+                     "gts.qtd, " +
+                     "gts.valorunitario, " +
+                     "gts.valortotal, " +
+                     "gts.numeronota,  " +
+                     "gts.datagasto, " +
+                     "gts.km, " +
+                     "gts.idgasto, " +
+                     "sai.idsaida, " +
+                     "forn.idfornecedor, " +
+                     "tpg.idtipogasto, " +
+                     "tpu.idtipound " +
+
+                     "FROM gastos gts " +
+                     "INNER JOIN tipogastos tpg " +
+                     "INNER JOIN tipounds tpu " +
+                     "INNER JOIN saidas sai " +
+                     "INNER JOIN fornecedores forn " +
+
+                     "ON gts.idsaida = sai.idsaida " +
+                     "AND gts.idfornecedor = forn.idfornecedor " +
+                     "AND gts.idtipogasto = tpg.idtipogasto " +
+                     "AND gts.tipound = tpu.idtipound " +
+
+                     "WHERE gts.idsaida = 60  order by idgasto asc";
                 cmd = new MySqlCommand(sql, classeConecta.con);
                 MySqlDataAdapter da = new MySqlDataAdapter();
                 da.SelectCommand = cmd;

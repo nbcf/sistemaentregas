@@ -29,6 +29,12 @@ namespace Sistema.View.views
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddGastosSaidaView));
             this.dataGridGastos = new System.Windows.Forms.DataGridView();
             this.txtIdSaida = new System.Windows.Forms.TextBox();
             this.txtIdFornecedor = new System.Windows.Forms.TextBox();
@@ -64,6 +70,7 @@ namespace Sistema.View.views
             this.bttnRefresh = new System.Windows.Forms.ToolStripButton();
             this.bttnDel = new System.Windows.Forms.ToolStripButton();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridGastos)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
@@ -73,36 +80,65 @@ namespace Sistema.View.views
             // dataGridGastos
             // 
             this.dataGridGastos.AllowUserToAddRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Gainsboro;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dataGridGastos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridGastos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridGastos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridGastos.DefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridGastos.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridGastos.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dataGridGastos.Location = new System.Drawing.Point(3, 16);
             this.dataGridGastos.MultiSelect = false;
             this.dataGridGastos.Name = "dataGridGastos";
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridGastos.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dataGridGastos.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridGastos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridGastos.Size = new System.Drawing.Size(871, 284);
+            this.dataGridGastos.Size = new System.Drawing.Size(873, 284);
             this.dataGridGastos.TabIndex = 0;
             this.dataGridGastos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridGastos_CellClick);
             // 
             // txtIdSaida
             // 
-            this.txtIdSaida.Location = new System.Drawing.Point(835, 92);
+            this.txtIdSaida.Location = new System.Drawing.Point(837, 47);
             this.txtIdSaida.Name = "txtIdSaida";
             this.txtIdSaida.Size = new System.Drawing.Size(30, 20);
             this.txtIdSaida.TabIndex = 1;
             // 
             // txtIdFornecedor
             // 
-            this.txtIdFornecedor.Location = new System.Drawing.Point(801, 92);
+            this.txtIdFornecedor.Location = new System.Drawing.Point(837, 69);
             this.txtIdFornecedor.Name = "txtIdFornecedor";
-            this.txtIdFornecedor.Size = new System.Drawing.Size(28, 20);
+            this.txtIdFornecedor.Size = new System.Drawing.Size(30, 20);
             this.txtIdFornecedor.TabIndex = 2;
             // 
             // txtIdTipogasto
             // 
-            this.txtIdTipogasto.Location = new System.Drawing.Point(771, 91);
+            this.txtIdTipogasto.Location = new System.Drawing.Point(837, 92);
             this.txtIdTipogasto.Name = "txtIdTipogasto";
-            this.txtIdTipogasto.Size = new System.Drawing.Size(24, 20);
+            this.txtIdTipogasto.Size = new System.Drawing.Size(30, 20);
             this.txtIdTipogasto.TabIndex = 3;
             // 
             // cbTipoUnit
@@ -126,16 +162,16 @@ namespace Sistema.View.views
             // 
             // txtIdTipoUnit
             // 
-            this.txtIdTipoUnit.Location = new System.Drawing.Point(707, 92);
+            this.txtIdTipoUnit.Location = new System.Drawing.Point(837, 114);
             this.txtIdTipoUnit.Name = "txtIdTipoUnit";
-            this.txtIdTipoUnit.Size = new System.Drawing.Size(27, 20);
+            this.txtIdTipoUnit.Size = new System.Drawing.Size(30, 20);
             this.txtIdTipoUnit.TabIndex = 6;
             // 
             // txtqtd
             // 
-            this.txtqtd.Location = new System.Drawing.Point(740, 92);
+            this.txtqtd.Location = new System.Drawing.Point(761, 140);
             this.txtqtd.Name = "txtqtd";
-            this.txtqtd.Size = new System.Drawing.Size(25, 20);
+            this.txtqtd.Size = new System.Drawing.Size(37, 20);
             this.txtqtd.TabIndex = 7;
             // 
             // txtqt
@@ -233,7 +269,7 @@ namespace Sistema.View.views
             // dateTimePicker1
             // 
             this.dateTimePicker1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimePicker1.Location = new System.Drawing.Point(214, 89);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(201, 25);
@@ -289,7 +325,7 @@ namespace Sistema.View.views
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox1.Location = new System.Drawing.Point(0, 51);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(877, 187);
+            this.groupBox1.Size = new System.Drawing.Size(879, 187);
             this.groupBox1.TabIndex = 21;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "FORMULÁRIO:";
@@ -316,7 +352,7 @@ namespace Sistema.View.views
             // 
             // txtJoinTipoUnit
             // 
-            this.txtJoinTipoUnit.Location = new System.Drawing.Point(761, 140);
+            this.txtJoinTipoUnit.Location = new System.Drawing.Point(804, 140);
             this.txtJoinTipoUnit.Name = "txtJoinTipoUnit";
             this.txtJoinTipoUnit.Size = new System.Drawing.Size(63, 20);
             this.txtJoinTipoUnit.TabIndex = 25;
@@ -341,7 +377,7 @@ namespace Sistema.View.views
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(710, 24);
+            this.label9.Location = new System.Drawing.Point(674, 25);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(45, 13);
             this.label9.TabIndex = 22;
@@ -349,9 +385,9 @@ namespace Sistema.View.views
             // 
             // textBox11
             // 
-            this.textBox11.Location = new System.Drawing.Point(713, 41);
+            this.textBox11.Location = new System.Drawing.Point(725, 21);
             this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(158, 20);
+            this.textBox11.Size = new System.Drawing.Size(142, 20);
             this.textBox11.TabIndex = 23;
             // 
             // toolStrip1
@@ -362,11 +398,12 @@ namespace Sistema.View.views
             this.bttnNew,
             this.bttnSave,
             this.bttnRefresh,
+            this.toolStripButton1,
             this.bttnDel});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Padding = new System.Windows.Forms.Padding(0);
-            this.toolStrip1.Size = new System.Drawing.Size(877, 51);
+            this.toolStrip1.Size = new System.Drawing.Size(879, 51);
             this.toolStrip1.TabIndex = 24;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -419,6 +456,7 @@ namespace Sistema.View.views
             this.bttnDel.Name = "bttnDel";
             this.bttnDel.Size = new System.Drawing.Size(80, 48);
             this.bttnDel.Text = "toolStripButton6";
+            this.bttnDel.Click += new System.EventHandler(this.bttnDel_Click);
             // 
             // groupBox2
             // 
@@ -426,19 +464,32 @@ namespace Sistema.View.views
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox2.Location = new System.Drawing.Point(0, 238);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(877, 303);
+            this.groupBox2.Size = new System.Drawing.Size(879, 303);
             this.groupBox2.TabIndex = 25;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "groupBox2";
+            // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.AutoSize = false;
+            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton1.Image = global::Sistema.View.Properties.Resources.editForm48;
+            this.toolStripButton1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(80, 48);
+            this.toolStripButton1.Text = "toolStripButton1";
+            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
             // AddGastosSaidaView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(877, 541);
+            this.ClientSize = new System.Drawing.Size(879, 541);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.toolStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "AddGastosSaidaView";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AddGastosSaidaView";
@@ -491,5 +542,6 @@ namespace Sistema.View.views
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox txtJoinTipoUnit;
         private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.ToolStripButton toolStripButton1;
     }
 }

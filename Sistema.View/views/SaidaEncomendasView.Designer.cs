@@ -274,7 +274,7 @@ namespace Sistema.View
             // 
             this.btnDespesas.AutoSize = false;
             this.btnDespesas.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btnDespesas.Image = global::Sistema.View.Properties.Resources.gastosB48;
+            this.btnDespesas.Image = global::Sistema.View.Properties.Resources.gastos48;
             this.btnDespesas.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.btnDespesas.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnDespesas.Name = "btnDespesas";
