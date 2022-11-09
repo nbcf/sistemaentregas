@@ -57,11 +57,11 @@ namespace Sistema.View
             this.toolStrip2 = new System.Windows.Forms.ToolStrip();
             this.bttnBeginPages = new System.Windows.Forms.ToolStripButton();
             this.bttnOnePageLeft = new System.Windows.Forms.ToolStripButton();
-            this.labelTextPageFrom = new System.Windows.Forms.ToolStripLabel();
+            this.lbPaginas = new System.Windows.Forms.ToolStripLabel();
             this.toolStripLabel3 = new System.Windows.Forms.ToolStripLabel();
-            this.labelTextTotalPages = new System.Windows.Forms.ToolStripLabel();
+            this.lbTotalPaginas = new System.Windows.Forms.ToolStripLabel();
             this.toolStripLabel5 = new System.Windows.Forms.ToolStripLabel();
-            this.labelTextTotalRegFould = new System.Windows.Forms.ToolStripLabel();
+            this.lbTotalRegEncontrados = new System.Windows.Forms.ToolStripLabel();
             this.bttnOnePageRight = new System.Windows.Forms.ToolStripButton();
             this.bttnEndPages = new System.Windows.Forms.ToolStripButton();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
@@ -282,7 +282,7 @@ namespace Sistema.View
             this.tabPageFormulario.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tabPageFormulario.Name = "tabPageFormulario";
             this.tabPageFormulario.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.tabPageFormulario.Size = new System.Drawing.Size(1036, 95);
+            this.tabPageFormulario.Size = new System.Drawing.Size(721, 62);
             this.tabPageFormulario.TabIndex = 2;
             this.tabPageFormulario.Text = "Formulário";
             this.tabPageFormulario.UseVisualStyleBackColor = true;
@@ -354,11 +354,11 @@ namespace Sistema.View
             this.toolStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.bttnBeginPages,
             this.bttnOnePageLeft,
-            this.labelTextPageFrom,
+            this.lbPaginas,
             this.toolStripLabel3,
-            this.labelTextTotalPages,
+            this.lbTotalPaginas,
             this.toolStripLabel5,
-            this.labelTextTotalRegFould,
+            this.lbTotalRegEncontrados,
             this.bttnOnePageRight,
             this.bttnEndPages,
             this.toolStripLabel1,
@@ -395,12 +395,12 @@ namespace Sistema.View
             this.bttnOnePageLeft.Size = new System.Drawing.Size(23, 26);
             this.bttnOnePageLeft.Text = "toolStripButton2";
             // 
-            // labelTextPageFrom
+            // lbPaginas
             // 
-            this.labelTextPageFrom.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTextPageFrom.Name = "labelTextPageFrom";
-            this.labelTextPageFrom.Size = new System.Drawing.Size(17, 26);
-            this.labelTextPageFrom.Text = "0";
+            this.lbPaginas.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbPaginas.Name = "lbPaginas";
+            this.lbPaginas.Size = new System.Drawing.Size(17, 26);
+            this.lbPaginas.Text = "0";
             // 
             // toolStripLabel3
             // 
@@ -409,12 +409,12 @@ namespace Sistema.View
             this.toolStripLabel3.Size = new System.Drawing.Size(15, 26);
             this.toolStripLabel3.Text = "/";
             // 
-            // labelTextTotalPages
+            // lbTotalPaginas
             // 
-            this.labelTextTotalPages.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTextTotalPages.Name = "labelTextTotalPages";
-            this.labelTextTotalPages.Size = new System.Drawing.Size(17, 26);
-            this.labelTextTotalPages.Text = "0";
+            this.lbTotalPaginas.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTotalPaginas.Name = "lbTotalPaginas";
+            this.lbTotalPaginas.Size = new System.Drawing.Size(17, 26);
+            this.lbTotalPaginas.Text = "0";
             // 
             // toolStripLabel5
             // 
@@ -423,12 +423,12 @@ namespace Sistema.View
             this.toolStripLabel5.Size = new System.Drawing.Size(15, 26);
             this.toolStripLabel5.Text = "-";
             // 
-            // labelTextTotalRegFould
+            // lbTotalRegEncontrados
             // 
-            this.labelTextTotalRegFould.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTextTotalRegFould.Name = "labelTextTotalRegFould";
-            this.labelTextTotalRegFould.Size = new System.Drawing.Size(17, 26);
-            this.labelTextTotalRegFould.Text = "0";
+            this.lbTotalRegEncontrados.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTotalRegEncontrados.Name = "lbTotalRegEncontrados";
+            this.lbTotalRegEncontrados.Size = new System.Drawing.Size(17, 26);
+            this.lbTotalRegEncontrados.Text = "0";
             // 
             // bttnOnePageRight
             // 
@@ -438,6 +438,7 @@ namespace Sistema.View
             this.bttnOnePageRight.Name = "bttnOnePageRight";
             this.bttnOnePageRight.Size = new System.Drawing.Size(23, 26);
             this.bttnOnePageRight.Text = "toolStripButton3";
+            this.bttnOnePageRight.Click += new System.EventHandler(this.bttnOnePageRight_Click_1);
             // 
             // bttnEndPages
             // 
@@ -614,11 +615,11 @@ namespace Sistema.View
         private System.Windows.Forms.ToolStrip toolStrip2;
         private System.Windows.Forms.ToolStripButton bttnBeginPages;
         private System.Windows.Forms.ToolStripButton bttnOnePageLeft;
-        private System.Windows.Forms.ToolStripLabel labelTextPageFrom;
+        private System.Windows.Forms.ToolStripLabel lbPaginas;
         private System.Windows.Forms.ToolStripLabel toolStripLabel3;
-        private System.Windows.Forms.ToolStripLabel labelTextTotalPages;
+        private System.Windows.Forms.ToolStripLabel lbTotalPaginas;
         private System.Windows.Forms.ToolStripLabel toolStripLabel5;
-        private System.Windows.Forms.ToolStripLabel labelTextTotalRegFould;
+        private System.Windows.Forms.ToolStripLabel lbTotalRegEncontrados;
         private System.Windows.Forms.ToolStripButton bttnOnePageRight;
         private System.Windows.Forms.ToolStripButton bttnEndPages;
         private System.Windows.Forms.ToolStripLabel toolStripLabel1;

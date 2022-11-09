@@ -22,7 +22,6 @@ namespace Sistema.View
         public bool finalPaginaBolPesquisa = false;
         public bool inicioPaginaBolPesquisa = true;
         public bool actBehaviorSerarch = false;
-
         public string porteiro = "fechado";
         public string switchSalvarFlag = "vazio";
         public string name = "";
@@ -35,12 +34,9 @@ namespace Sistema.View
         public string pegaDirPadrao;
         public string parametroCodigoAlfabeto = "null";
         public string parametroASCDESC = "null";
-
         public int paginaAtual = 0;
         public int paginar = 0;
         public int paginarListagemGrid = 0;
-
-
         public int deslocado = 0;
         public int ultimaPagina = 0;
         public int deslocamento1;
@@ -50,10 +46,7 @@ namespace Sistema.View
         public int memoria = 1;
         public int countBttnToggle = 1;
         public int offsettPag = 0;
-        //public int limitt = 0;
-
         public int countBttnToggleTools = 1;
-
         public int paginaAtualPesquisa = 0;
         public int paginarPesquisa = 0;
         public int deslocadoPesquisa = 0;
@@ -203,7 +196,7 @@ namespace Sistema.View
 
         public void somar()
         {
-            int pagina1 = Convert.ToInt32(labelTextTotalPages.Text);
+            int pagina1 = Convert.ToInt32(lbTotalPaginas.Text);
             int pg = Convert.ToInt32(cbButtnQuantPage1.SelectedItem);
             if (memoria < pagina1 && finalPaginaBol == false)
             {
@@ -212,7 +205,7 @@ namespace Sistema.View
                 deslocado = deslocamento1;
                 paginaAtual = deslocado;
                 memoria++;
-                labelTextPageFrom.Text = memoria.ToString();
+                lbPaginas.Text = memoria.ToString();
                 bttnBeginPages.Enabled = true;
                 bttnBeginPages.Enabled = true;
                 this.puxarparametro(deslocamento1, pg, "Nao");
@@ -230,7 +223,7 @@ namespace Sistema.View
                 deslocado = deslocamento1;
                 paginaAtual = deslocado;
                 memoria++;
-                labelTextPageFrom.Text = memoria.ToString();
+                lbPaginas.Text = memoria.ToString();
                 bttnBeginPages.Enabled = true;
                 bttnBeginPages.Enabled = true;
                 this.puxarparametro(deslocamento1, paginar, "Nao");
@@ -246,7 +239,7 @@ namespace Sistema.View
 
         public void descontar()
         {
-            int pagina1 = Convert.ToInt32(labelTextTotalPages.Text);
+            int pagina1 = Convert.ToInt32(lbTotalPaginas.Text);
             int pg = Convert.ToInt32(cbButtnQuantPage1.SelectedItem);
             if (memoria > 1 && memoria <= pagina1 && inicioPaginaBol == true)
             {
@@ -254,7 +247,7 @@ namespace Sistema.View
                 deslocado = deslocamento1;
                 paginaAtual = deslocado;
                 --memoria;
-                labelTextPageFrom.Text = Convert.ToString(memoria);
+                lbPaginas.Text = Convert.ToString(memoria);
                 bttnOnePageRight.Enabled = true;
                 bttnEndPages.Enabled = true;
                 this.puxarparametro(deslocamento1, pg, "Nao");
@@ -274,7 +267,7 @@ namespace Sistema.View
                 deslocado = deslocamento1;
                 paginaAtual = deslocado;
                 --memoria;
-                labelTextPageFrom.Text = Convert.ToString(memoria);
+                lbPaginas.Text = Convert.ToString(memoria);
                 this.puxarparametro(deslocamento1, pg, "Nao");
                 bttnOnePageRight.Enabled = true;
                 bttnEndPages.Enabled = true;
@@ -302,7 +295,7 @@ namespace Sistema.View
 
         public void finalDaPagina()
         {
-            int pagina1 = Convert.ToInt32(labelTextTotalPages.Text);
+            int pagina1 = Convert.ToInt32(lbTotalPaginas.Text);
             int ajustaPaginacao = pagina1 - 1;
             int pg = Convert.ToInt32(cbButtnQuantPage1.SelectedItem);
             for (int i = memoria; memoria <= ajustaPaginacao; i++)
@@ -317,7 +310,7 @@ namespace Sistema.View
                     bttnEndPages.Enabled = false;
                     bttnBeginPages.Enabled = true;
                     bttnBeginPages.Enabled = true;
-                    labelTextPageFrom.Text = Convert.ToString(memoria);
+                    lbPaginas.Text = Convert.ToString(memoria);
                     inicioPaginaBol = false;
                     finalPaginaBol = true;
                     this.puxarparametro(deslocamento1, pg, "Nao");
@@ -332,7 +325,7 @@ namespace Sistema.View
             inicioPaginaBol = true;
             bttnOnePageRight.Enabled = true;
             bttnEndPages.Enabled = true;
-            labelTextPageFrom.Text = Convert.ToString(1);
+            lbPaginas.Text = Convert.ToString(1);
             paginaAtual = 0;
             paginar = Convert.ToInt32(cbButtnQuantPage1.SelectedItem);
             deslocado = 0;
@@ -355,11 +348,11 @@ namespace Sistema.View
             int resto = quantidadeReg % jcbPaginas;
             if (resto >= 1)
             {
-                labelTextTotalPages.Text = Convert.ToString(resultado + 1);
+                lbTotalPaginas.Text = Convert.ToString(resultado + 1);
             }
             else if (resto == 0)
             {
-                labelTextTotalPages.Text = Convert.ToString(resultado);
+                lbTotalPaginas.Text = Convert.ToString(resultado);
             }
         }
 
@@ -403,6 +396,7 @@ namespace Sistema.View
 
                 if (estadoPesquisa.Equals("ComecaCom") && pesquisarEmColuna.Equals("Origem"))
                 {
+
                     gridCrudOrigem.DataSource = controllerOrigem.PesquisarComecaCom("nomeorigem", "@nomeorigem", txtBoxPesquisar.Text);
                     DataGridModel();
                     toolStripLabel2.Text = Convert.ToString(controllerOrigem.RetornoQuantPesquisa());
@@ -428,28 +422,28 @@ namespace Sistema.View
             {
                 gridCrudOrigem.DataSource = controllerOrigem.ListaDataGrid("idorigem", "desc", offset, limitt);
                 DataGridModel();
-                labelTextTotalRegFould.Text = Convert.ToString(controllerOrigem.ListarTodosVeiculosBD());
+                lbTotalRegEncontrados.Text = Convert.ToString(controllerOrigem.ListarTodosVeiculosBD());
                 carregarInformacoes();
             }
             else if (pesquisa.Equals("CarregaPadraoIDTodosPrimeiros") && parametroCodigoAlfabeto.Equals("Codigo") && parametroASCDESC.Equals("primeiros"))
             {
                 gridCrudOrigem.DataSource = controllerOrigem.ListaDataGrid("idorigem", "asc", offset, limitt);
                 DataGridModel();
-                labelTextTotalRegFould.Text = Convert.ToString(controllerOrigem.ListarTodosVeiculosBD());
+                lbTotalRegEncontrados.Text = Convert.ToString(controllerOrigem.ListarTodosVeiculosBD());
                 carregarInformacoes();
             }
             else if (pesquisa.Equals("CarregaPadraoNomeTodosUltimos") && parametroCodigoAlfabeto.Equals("Alfabeto") && parametroASCDESC.Equals("ultimos"))
             {
                 gridCrudOrigem.DataSource = controllerOrigem.ListaDataGrid("nomeorigem", "desc", offset, limitt);
                 DataGridModel();
-                labelTextTotalRegFould.Text = Convert.ToString(controllerOrigem.ListarTodosVeiculosBD());
+                lbTotalRegEncontrados.Text = Convert.ToString(controllerOrigem.ListarTodosVeiculosBD());
                 carregarInformacoes();
             }
             else if (pesquisa.Equals("CarregaPadraoNomeTodosPrimeiros") && parametroCodigoAlfabeto.Equals("Alfabeto") && parametroASCDESC.Equals("primeiros"))
             {
                 gridCrudOrigem.DataSource = controllerOrigem.ListaDataGrid("nomeorigem", "asc", offset, limitt);
                 DataGridModel();
-                labelTextTotalRegFould.Text = Convert.ToString(controllerOrigem.ListarTodosVeiculosBD());
+                lbTotalRegEncontrados.Text = Convert.ToString(controllerOrigem.ListarTodosVeiculosBD());
                 carregarInformacoes();
             }
 
@@ -478,11 +472,11 @@ namespace Sistema.View
             tabControlAssets.TabPages.Remove(tabPageFormulario);
             bttnBeginPages.Visible = true;
             bttnOnePageLeft.Visible = true;
-            labelTextPageFrom.Visible = true;
+            lbPaginas.Visible = true;
             toolStripLabel3.Visible = true;
-            labelTextTotalPages.Visible = true;
+            lbTotalPaginas.Visible = true;
             toolStripLabel5.Visible = true;
-            labelTextTotalRegFould.Visible = true;
+            lbTotalRegEncontrados.Visible = true;
             bttnOnePageRight.Visible = true;
             bttnEndPages.Visible = true;
             toolStripLabel1.Visible = false;
@@ -494,11 +488,9 @@ namespace Sistema.View
 
         }
 
-        private void bttnTools_Click(object sender, EventArgs e)
-        {
+        private void bttnTools_Click(object sender, EventArgs e){
             countBttnToggleTools++;
-            if (countBttnToggleTools % 2 == 0)
-            {
+            if (countBttnToggleTools % 2 == 0){
                 tabControlAssets.Visible = true;
                 tabControlAssets.TabPages.Remove(tabPagePesquisar);
                 tabControlAssets.TabPages.Remove(tabPageFormulario);
@@ -506,9 +498,7 @@ namespace Sistema.View
                 bttnRefresh.Enabled = false;
                 bttnSearch.Enabled = false;
 
-            }
-            else
-            {
+            }else{
                 tabControlAssets.Visible = false;
                 tabControlAssets.TabPages.Remove(tabPagePesquisar);
                 tabControlAssets.TabPages.Remove(tabPageFormulario);
@@ -517,7 +507,6 @@ namespace Sistema.View
                 bttnRefresh.Enabled = true;
                 bttnSearch.Enabled = true;
                 puxarparametro(0, Convert.ToInt32(cbButtnQuantPage1.SelectedItem), "Sim");
-
             }
         }
 
@@ -559,11 +548,11 @@ namespace Sistema.View
 
                 bttnBeginPages.Visible = true;
                 bttnOnePageLeft.Visible = true;
-                labelTextPageFrom.Visible = true;
+                lbPaginas.Visible = true;
                 toolStripLabel3.Visible = true;
-                labelTextTotalPages.Visible = true;
+                lbTotalPaginas.Visible = true;
                 toolStripLabel5.Visible = true;
-                labelTextTotalRegFould.Visible = true;
+                lbTotalRegEncontrados.Visible = true;
                 bttnOnePageRight.Visible = true;
                 bttnEndPages.Visible = true;
                 toolStripLabel2.Visible = false;
@@ -596,11 +585,11 @@ namespace Sistema.View
                 toolStripLabel2.Visible = false;
                 bttnBeginPages.Visible = true;
                 bttnOnePageLeft.Visible = true;
-                labelTextPageFrom.Visible = true;
+                lbPaginas.Visible = true;
                 toolStripLabel3.Visible = true;
-                labelTextTotalPages.Visible = true;
+                lbTotalPaginas.Visible = true;
                 toolStripLabel5.Visible = true;
-                labelTextTotalRegFould.Visible = true;
+                lbTotalRegEncontrados.Visible = true;
                 bttnOnePageRight.Visible = true;
                 bttnEndPages.Visible = true;
                 toolStripLabel4.Visible = true;
@@ -634,11 +623,11 @@ namespace Sistema.View
             bttnNew.Enabled = false;
             bttnBeginPages.Visible = false;
             bttnOnePageLeft.Visible = false;
-            labelTextPageFrom.Visible = false;
+            lbPaginas.Visible = false;
             toolStripLabel3.Visible = false;
-            labelTextTotalPages.Visible = false;
+            lbTotalPaginas.Visible = false;
             toolStripLabel5.Visible = false;
-            labelTextTotalRegFould.Visible = false;
+            lbTotalRegEncontrados.Visible = false;
             bttnOnePageRight.Visible = false;
             bttnEndPages.Visible = false;
             toolStripLabel2.Visible = false;
@@ -992,11 +981,11 @@ namespace Sistema.View
                 txtBoxPesquisar.Text = "";
                 bttnBeginPages.Visible = false;
                 bttnOnePageLeft.Visible = false;
-                labelTextPageFrom.Visible = false;
+                lbPaginas.Visible = false;
                 toolStripLabel3.Visible = false;
-                labelTextTotalPages.Visible = false;
+                lbTotalPaginas.Visible = false;
                 toolStripLabel5.Visible = false;
-                labelTextTotalRegFould.Visible = false;
+                lbTotalRegEncontrados.Visible = false;
                 bttnOnePageRight.Visible = false;
                 bttnEndPages.Visible = false;
                 toolStripLabel1.Visible = true;
@@ -1026,11 +1015,11 @@ namespace Sistema.View
 
                 bttnBeginPages.Visible = true;
                 bttnOnePageLeft.Visible = true;
-                labelTextPageFrom.Visible = true;
+                lbPaginas.Visible = true;
                 toolStripLabel3.Visible = true;
-                labelTextTotalPages.Visible = true;
+                lbTotalPaginas.Visible = true;
                 toolStripLabel5.Visible = true;
-                labelTextTotalRegFould.Visible = true;
+                lbTotalRegEncontrados.Visible = true;
                 bttnOnePageRight.Visible = true;
                 bttnEndPages.Visible = true;
                 toolStripLabel1.Visible = false;
@@ -1327,6 +1316,11 @@ namespace Sistema.View
 
 
             }
+
+        }
+
+        private void bttnOnePageRight_Click_1(object sender, EventArgs e)
+        {
 
         }
     }

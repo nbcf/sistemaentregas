@@ -13,7 +13,7 @@ using System.Windows.Forms;
 
 namespace Sistema.View
 {
-    public partial class SaidaEncomendasView : Form
+    public partial class SaidaEncomendasView : Form 
     {
         public bool finalPaginaBol = false;
         public bool inicioPaginaBol = true;
@@ -85,8 +85,6 @@ namespace Sistema.View
             return _InstSaidaEncomendasView;
         }
 
-
-        UsuariosController usuariosController = new UsuariosController();
         EncomendasController controllerEncomendas = new EncomendasController();
         SaidasController controllerSaida = new SaidasController();
         VeiculosController veiculosController = new VeiculosController();

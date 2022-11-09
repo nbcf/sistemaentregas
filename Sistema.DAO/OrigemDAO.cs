@@ -12,11 +12,11 @@ using System.Windows.Forms;
 
 namespace Sistema.DAO
 {
-  public  class OrigemDAO
+  public  class OrigemDAO 
     {
         public int regEncontradosPesquisa = 0;
         public string acaoCrudDAO = "";
-        Sistema.Conexao.ClasseConexao classeConecta = new Sistema.Conexao.ClasseConexao();
+        ClasseConexao classeConecta = new ClasseConexao();
         string sql;
         MySqlCommand cmd;
         MySqlCommand cmdVerificar;

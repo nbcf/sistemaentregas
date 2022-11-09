@@ -10,13 +10,14 @@ using System.Windows.Forms;
 
 namespace Sistema.Controller
 {
-   public class OrigemController
+   public class OrigemController 
     {
         OrigemDAO dao = new OrigemDAO();
 
         public void Salvar(string nomeorigem, string codorigem){
             dao.Salvar( nomeorigem,  codorigem);
             AcaoCrudController();
+            
         }
 
      
