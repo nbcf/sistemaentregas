@@ -290,11 +290,7 @@ namespace Sistema.View.views
              dataGridGastos.Columns[11].Visible = false;
              dataGridGastos.Columns[12].Visible = false;
              dataGridGastos.Columns[13].Visible = false;
-             dataGridGastos.Columns[9].Width = 0;
-             dataGridGastos.Columns[10].Width = 0;
-             dataGridGastos.Columns[11].Width = 0;
-             dataGridGastos.Columns[12].Width = 0;
-             dataGridGastos.Columns[13].Width = 0;
+
         }
 
         private void dataGridGastos_CellClick(object sender, DataGridViewCellEventArgs e){
