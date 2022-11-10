@@ -455,107 +455,102 @@ namespace Sistema.View
 
      
         public void carregarEstadoPadrao(string pesquisa, int offsett){
-            cbEstatusSaida.SelectedIndex = 0;
-            cbButtnQuantPage1.SelectedIndex = 0;
-            cbEstatusSaida.SelectedIndex = 0;
+            cbEstatusSaida.SelectedIndex        = 0;
+            cbButtnQuantPage1.SelectedIndex     = 0;
+            cbEstatusSaida.SelectedIndex        = 0;
             int quantRegPage = Convert.ToInt32(cbButtnQuantPage1.SelectedItem);
-            cbOrdenarPor.SelectedIndex = 1;
-            cbOrdemParam.SelectedIndex = 0;
+            cbOrdenarPor.SelectedIndex          = 1;
+            cbOrdemParam.SelectedIndex          = 0;
             resetarPonteiros();
             this.puxarparametro(0, quantRegPage, "Nao");
-            bttnDel.Enabled = false;
-            bttnSearch.Enabled = true;
-            bttnRefresh.Enabled = true;
-            bttnSave.Enabled = false;
-            bttnNew.Enabled = true;
-            bttnImport.Enabled = false;
-            btnRotaConcluida.Enabled = false;
-            btnEmRota.Enabled = false;
-            bttnImport.Enabled = false;
-            radioBttnComeca.Checked = false;
-            radioBttnContem.Checked = false;
-            radioBttnTermina.Checked = false;
-            gridCrudSaidas.Visible = true;
-            tabControlAssets.Visible = false;
+            bttnDel.Enabled                 = false;
+            bttnSearch.Enabled              = true;
+            bttnRefresh.Enabled             = true;
+            bttnSave.Enabled                = false;
+            bttnNew.Enabled                 = true;
+            bttnImport.Enabled              = false;
+            btnRotaConcluida.Enabled        = false;
+            btnEmRota.Enabled               = false;
+            bttnImport.Enabled              = false;
+            radioBttnComeca.Checked         = false;
+            radioBttnContem.Checked         = false;
+            radioBttnTermina.Checked        = false;
+            gridCrudSaidas.Visible          = true;
+            tabControlAssets.Visible        = false;
             tabControlAssets.TabPages.Remove(tabPagePesquisar);
-            groupBoxFormulario.Enabled = false;
-            groupBoxFormulario.Visible = false;
-            groupBox1.Enabled = false;
-            groupBox1.Visible = false;
-            toolStrip2.Visible = true;
-            bttnBeginPages.Visible = true;
-            bttnOnePageLeft.Visible = true;
-            labelTextPageFrom.Visible = true;
-            toolStripLabel3.Visible = true;
-            labelTextTotalPages.Visible = true;
-            toolStripLabel5.Visible = true;
-            labelTextTotalRegFould.Visible = true;
-            bttnOnePageRight.Visible = true;
-            bttnEndPages.Visible = true;
-            tabControlAssets.Visible = false;
+            groupBoxFormulario.Enabled      = false;
+            groupBoxFormulario.Visible      = false;
+            groupBox1.Enabled               = false;
+            groupBox1.Visible               = false;
+            toolStrip2.Visible              = true;
+            bttnBeginPages.Visible          = true;
+            bttnOnePageLeft.Visible         = true;
+            labelTextPageFrom.Visible       = true;
+            toolStripLabel3.Visible         = true;
+            labelTextTotalPages.Visible     = true;
+            toolStripLabel5.Visible         = true;
+            labelTextTotalRegFould.Visible  = true;
+            bttnOnePageRight.Visible        = true;
+            bttnEndPages.Visible            = true;
+            tabControlAssets.Visible        = false;
             tabControlAssets.TabPages.Remove(tabPagePesquisar);
-            toolStripLabel1.Visible = false;
-            toolStripLabel2.Visible = false;
+            toolStripLabel1.Visible         = false;
+            toolStripLabel2.Visible         = false;
             clearFieldsFormulario();
             disableFieldsFormulario();
-            toolStrip2.Visible = true;
-            txtIdSaida.Enabled = false;
-            btnImportarEntregador.Enabled = false;
-            btnImportarVeiculo.Enabled = false;
-            btConfirmarRetorno.Enabled = false;
-            btConfirmarRetorno.Visible = false;
-            button5.Enabled = false;
-            label5.Visible = true;
-            txtKmTotal.Visible = false;
-            datePckSaida.Value = DateTime.Now;
-            datePckRetorno.Value = DateTime.Now;
-            label4.Visible = true;
-            txtIdSaida.Visible = true;
-            txtIdVeiculo.Visible = false;
-            label9.Visible = false;
-            txtEstatuVeiculo.Visible = false;
-            label10.Visible = false;
-            txtIdUsuario.Visible = false;
-            label11.Visible = false;
-            txtIdPapel.Visible = false;
-            label13.Visible = false;
-            txtIdPessoa.Visible = false;
-            btnCalcularKmTotal.Enabled = false;
-            btnCalcularKmTotal.Visible = false;
-            btConfirmarRetorno.Enabled = false;
-            btnDespesas.Enabled = false;
-            label18.Visible = false;
-            txtEstatusSaida.Enabled = false;
-            txtEstatusSaida.Visible = false;
+            toolStrip2.Visible              = true;
+            txtIdSaida.Enabled              = false;
+            btnImportarEntregador.Enabled   = false;
+            btnImportarVeiculo.Enabled      = false;
+            btConfirmarRetorno.Enabled      = false;
+            btConfirmarRetorno.Visible      = false;
+            button5.Enabled                 = false;
+            label5.Visible                  = true;
+            txtKmTotal.Visible              = false;
+            datePckSaida.Value              = DateTime.Now;
+            datePckRetorno.Value            = DateTime.Now;
+            label4.Visible                  = true;
+            txtIdSaida.Visible              = true;
+            txtIdVeiculo.Visible            = false;
+            label9.Visible                  = false;
+            txtEstatuVeiculo.Visible        = false;
+            label10.Visible                 = false;
+            txtIdUsuario.Visible            = false;
+            label11.Visible                 = false;
+            txtIdPapel.Visible              = false;
+            label13.Visible                 = false;
+            txtIdPessoa.Visible             = false;
+            btnCalcularKmTotal.Enabled      = false;
+            btnCalcularKmTotal.Visible      = false;
+            btConfirmarRetorno.Enabled      = false;
+            btnDespesas.Enabled             = false;
+            label18.Visible                 = false;
+            txtEstatusSaida.Enabled         = false;
+            txtEstatusSaida.Visible         = false;
         }
 
-        private void bttnTools_Click(object sender, EventArgs e)
-        {
+        private void bttnTools_Click(object sender, EventArgs e){
             countBttnToggleTools++;
-            if (countBttnToggleTools % 2 == 0)
-            {
-                tabControlAssets.Visible = true;
+            if (countBttnToggleTools % 2 == 0){
+                tabControlAssets.Visible        = true;
                 tabControlAssets.TabPages.Remove(tabPagePesquisar);
-                bttnNew.Enabled = false;
-                bttnRefresh.Enabled = false;
-                bttnSearch.Enabled = false;
+                bttnNew.Enabled                 = false;
+                bttnRefresh.Enabled             = false;
+                bttnSearch.Enabled              = false;
 
-            }
-            else
-            {
-                tabControlAssets.Visible = false;
+            }else{
+
+                tabControlAssets.Visible        = false;
                 tabControlAssets.TabPages.Remove(tabPagePesquisar);
-
-                bttnNew.Enabled = true;
-                bttnRefresh.Enabled = true;
-                bttnSearch.Enabled = true;
+                bttnNew.Enabled                 = true;
+                bttnRefresh.Enabled             = true;
+                bttnSearch.Enabled              = true;
                 puxarparametro(0, Convert.ToInt32(cbButtnQuantPage1.SelectedItem), "Sim");
 
             }
         }
 
-        private void DataGridModel()
-        {
+        private void DataGridModel(){
             gridCrudSaidas.Columns[0].HeaderText = "Id Saida";
             gridCrudSaidas.Columns[1].HeaderText = "Id veiculo";
             gridCrudSaidas.Columns[2].HeaderText = "id usuario ";
@@ -595,7 +590,6 @@ namespace Sistema.View
             gridCrudSaidas.Columns[36].HeaderText = "nome veiculo 1";
             gridCrudSaidas.Columns[37].HeaderText = "placa 1";
             gridCrudSaidas.Columns[38].HeaderText = "estatus veiculo";
-
 
             gridCrudSaidas.Columns[0].Width = 80;
             gridCrudSaidas.Columns[1].Width = 0;
@@ -651,11 +645,9 @@ namespace Sistema.View
             gridCrudSaidas.Columns[11].Visible = true;
             gridCrudSaidas.Columns[12].Visible = true;
             gridCrudSaidas.Columns[13].Visible = true;
-
             gridCrudSaidas.Columns[14].Visible = false;
             gridCrudSaidas.Columns[15].Visible = false;
             gridCrudSaidas.Columns[16].Visible = false;
-
             gridCrudSaidas.Columns[17].Visible = false;
             gridCrudSaidas.Columns[18].Visible = false;
             gridCrudSaidas.Columns[19].Visible = false;
@@ -681,57 +673,17 @@ namespace Sistema.View
         }
 
 
-        public void DataGridModelDetalhe()
-        {
-
-
-            //dataGridMestreDetalhe.Columns[0].Width = 50;
-            //dataGridMestreDetalhe.Columns[1].Width = 0;
-            //dataGridMestreDetalhe.Columns[2].Width = 0;
-            //dataGridMestreDetalhe.Columns[3].Width = 0;
-            //dataGridMestreDetalhe.Columns[4].Width = 0;
-            //dataGridMestreDetalhe.Columns[5].Width = 0;
-            //dataGridMestreDetalhe.Columns[6].Width = 0;
-            //dataGridMestreDetalhe.Columns[7].Width = 70;
-            //dataGridMestreDetalhe.Columns[8].Width = 100;
-            //dataGridMestreDetalhe.Columns[9].Width = 0;
-            //dataGridMestreDetalhe.Columns[10].Width = 0;
-            //dataGridMestreDetalhe.Columns[11].Width = 150;
-            //dataGridMestreDetalhe.Columns[12].Width = 150;
-            //dataGridMestreDetalhe.Columns[13].Width = 100;
-            //dataGridMestreDetalhe.Columns[14].Width = 150;
-            //dataGridMestreDetalhe.Columns[15].Width = 150;
-            //dataGridMestreDetalhe.Columns[16].Width = 50;
-            //dataGridMestreDetalhe.Columns[17].Width = 80;
-            //dataGridMestreDetalhe.Columns[18].Width = 0;
-            //dataGridMestreDetalhe.Columns[19].Width = 0;
-            //dataGridMestreDetalhe.Columns[20].Width = 0;
-            //dataGridMestreDetalhe.Columns[21].Width = 100;
-            //dataGridMestreDetalhe.Columns[22].Width = 0;
-            //dataGridMestreDetalhe.Columns[0].Visible = true;
-            //dataGridMestreDetalhe.Columns[1].Visible = false;
-            //dataGridMestreDetalhe.Columns[2].Visible = false;
-            //dataGridMestreDetalhe.Columns[3].Visible = false;
-            //dataGridMestreDetalhe.Columns[4].Visible = false;
-            //dataGridMestreDetalhe.Columns[5].Visible = false;
-            //dataGridMestreDetalhe.Columns[6].Visible = false;
-            //dataGridMestreDetalhe.Columns[9].Visible = false;
-            //dataGridMestreDetalhe.Columns[10].Visible = false;
-            //dataGridMestreDetalhe.Columns[18].Visible = false;
-            //dataGridMestreDetalhe.Columns[19].Visible = false;
-            //dataGridMestreDetalhe.Columns[20].Visible = false;
-            //dataGridMestreDetalhe.Columns[22].Visible = false;
-
+        public void DataGridModelDetalhe(){
 
             gridCurdMestreDetalhe.Columns[0].HeaderText = "ID";
             gridCurdMestreDetalhe.Columns[1].HeaderText = "ID Origem";
-            gridCurdMestreDetalhe.Columns[2].HeaderText = "ID Veiculo"; //
-            gridCurdMestreDetalhe.Columns[3].HeaderText = "ID Entregador"; //
-            gridCurdMestreDetalhe.Columns[4].HeaderText = "Nome Veiculo"; //
-            gridCurdMestreDetalhe.Columns[5].HeaderText = "Placa"; //
-            gridCurdMestreDetalhe.Columns[6].HeaderText = "Entregador"; //
-            gridCurdMestreDetalhe.Columns[7].HeaderText = "PESO"; //
-            gridCurdMestreDetalhe.Columns[8].HeaderText = "NUM. ENCO."; //
+            gridCurdMestreDetalhe.Columns[2].HeaderText = "ID Veiculo"; 
+            gridCurdMestreDetalhe.Columns[3].HeaderText = "ID Entregador";
+            gridCurdMestreDetalhe.Columns[4].HeaderText = "Nome Veiculo";
+            gridCurdMestreDetalhe.Columns[5].HeaderText = "Placa"; 
+            gridCurdMestreDetalhe.Columns[6].HeaderText = "Entregador"; 
+            gridCurdMestreDetalhe.Columns[7].HeaderText = "PESO"; 
+            gridCurdMestreDetalhe.Columns[8].HeaderText = "NUM. ENCO.";
             gridCurdMestreDetalhe.Columns[9].HeaderText = "ESTATUS";
             gridCurdMestreDetalhe.Columns[10].HeaderText = "CPF";
             gridCurdMestreDetalhe.Columns[11].HeaderText = "DESTINATARIO";
@@ -748,7 +700,6 @@ namespace Sistema.View
             gridCurdMestreDetalhe.Columns[22].HeaderText = "ID Origem Join 1";
             gridCurdMestreDetalhe.Columns[23].HeaderText = "ORIGEM";
             gridCurdMestreDetalhe.Columns[24].HeaderText = "CD. ORIGEM";
-
 
             gridCurdMestreDetalhe.Columns[1].Visible = false;
             gridCurdMestreDetalhe.Columns[2].Visible = false;
@@ -774,134 +725,136 @@ namespace Sistema.View
                 btConfirmarRetorno.Enabled = false;
                 btConfirmarRetorno.Visible = false;
 
-            } else if (operationType == "" ||
-                 operationType == "newInsertion" ||
-                 operationType == "updateData" ||
-                 operationType == "search" &&
-                 typeEdition == "insert") {
-                bttnDel.Enabled = false;
-                bttnSearch.Enabled = true;
-                bttnRefresh.Enabled = true;
-                bttnSave.Enabled = false;
-                bttnNew.Enabled = true;
-                bttnImport.Enabled = false;
-                radioBttnComeca.Checked = false;
-                radioBttnContem.Checked = false;
-                radioBttnTermina.Checked = false;
-                gridCrudSaidas.Visible = true;
-                tabControlAssets.Visible = false;
+            } else if (operationType == ""          ||
+                 operationType == "newInsertion"    ||
+                 operationType == "updateData"      ||
+                 operationType == "search"          &&
+                 typeEdition == "insert"){
+
+                bttnDel.Enabled             = false;
+                bttnSearch.Enabled          = true;
+                bttnRefresh.Enabled         = true;
+                bttnSave.Enabled            = false;
+                bttnNew.Enabled             = true;
+                bttnImport.Enabled          = false;
+                radioBttnComeca.Checked     = false;
+                radioBttnContem.Checked     = false;
+                radioBttnTermina.Checked    = false;
+                gridCrudSaidas.Visible      = true;
+                tabControlAssets.Visible    = false;
                 tabControlAssets.TabPages.Remove(tabPagePesquisar);
-                datePckSaida.Value = DateTime.Now;
-                datePckRetorno.Value = DateTime.Now;
-                groupBoxFormulario.Enabled = false;
-                groupBoxFormulario.Visible = false;
-                toolStrip2.Visible = true;
-                btnEmRota.Enabled = false;
+                datePckSaida.Value          = DateTime.Now;
+                datePckRetorno.Value        = DateTime.Now;
+                groupBoxFormulario.Enabled  = false;
+                groupBoxFormulario.Visible  = false;
+                toolStrip2.Visible          = true;
+                btnEmRota.Enabled           = false;
                 clearFieldsFormulario();
                 disableFieldsFormulario();
                 puxarparametro(0, Convert.ToInt32(cbButtnQuantPage1.SelectedItem), "Sim");
-                txtEstatusSaida.Enabled = false;
-                btnEmRota.Enabled = false;
-                btnRotaConcluida.Enabled = false;
-                btnCalcularKmTotal.Enabled = false;
-                btnCalcularKmTotal.Visible = false;
-                label5.Visible = false;
-                txtKmTotal.Visible = false;
-                btnCalcularKmTotal.Enabled = false;
-                btnCalcularKmTotal.Visible = false;
-                btConfirmarRetorno.Enabled = false;
-                btConfirmarRetorno.Visible = false;
-                btConfirmarRetorno.Enabled = false;
+                txtEstatusSaida.Enabled         = false;
+                btnEmRota.Enabled               = false;
+                btnRotaConcluida.Enabled        = false;
+                btnCalcularKmTotal.Enabled      = false;
+                btnCalcularKmTotal.Visible      = false;
+                label5.Visible                  = false;
+                txtKmTotal.Visible              = false;
+                btnCalcularKmTotal.Enabled      = false;
+                btnCalcularKmTotal.Visible      = false;
+                btConfirmarRetorno.Enabled      = false;
+                btConfirmarRetorno.Visible      = false;
+                btConfirmarRetorno.Enabled      = false;
                 gridCrudSaidas.ClearSelection();
 
-            } else if (operationType == "" ||
-                 operationType == "newInsertion" ||
-                 operationType == "updateData" ||
-                 operationType == "search" &&
-                 typeEdition == "search") {
-                bttnDel.Enabled = false;
-                bttnSearch.Enabled = true;
-                bttnRefresh.Enabled = true;
-                bttnSave.Enabled = false;
-                bttnNew.Enabled = true;
-                bttnImport.Enabled = false;
-                btnEmRota.Enabled = false;
-                radioBttnComeca.Checked = false;
-                radioBttnContem.Checked = false;
-                radioBttnTermina.Checked = false;
-                gridCrudSaidas.Visible = true;
-                tabControlAssets.Visible = false;
+            } else if (operationType == ""          ||
+                 operationType == "newInsertion"    ||
+                 operationType == "updateData"      ||
+                 operationType == "search"          &&
+                 typeEdition == "search"){
+
+                bttnDel.Enabled                 = false;
+                bttnSearch.Enabled              = true;
+                bttnRefresh.Enabled             = true;
+                bttnSave.Enabled                = false;
+                bttnNew.Enabled                 = true;
+                bttnImport.Enabled              = false;
+                btnEmRota.Enabled               = false;
+                radioBttnComeca.Checked         = false;
+                radioBttnContem.Checked         = false;
+                radioBttnTermina.Checked        = false;
+                gridCrudSaidas.Visible          = true;
+                tabControlAssets.Visible        = false;
                 tabControlAssets.TabPages.Remove(tabPagePesquisar);
-                groupBoxFormulario.Enabled = false;
-                groupBoxFormulario.Visible = false;
-                toolStrip2.Visible = true;
-                datePckSaida.Value = DateTime.Now;
-                datePckRetorno.Value = DateTime.Now;
+                groupBoxFormulario.Enabled      = false;
+                groupBoxFormulario.Visible      = false;
+                toolStrip2.Visible              = true;
+                datePckSaida.Value              = DateTime.Now;
+                datePckRetorno.Value            = DateTime.Now;
                 clearFieldsFormulario();
                 disableFieldsFormulario();
-                txtEstatusSaida.Enabled = false;
-                btnEmRota.Enabled = false;
-                btnRotaConcluida.Enabled = false;
-                label5.Visible = false;
-                txtKmTotal.Visible = false;
-                btnCalcularKmTotal.Enabled = false;
-                btnCalcularKmTotal.Visible = false;
-                btConfirmarRetorno.Enabled = false;
-                btConfirmarRetorno.Visible = false;
+                txtEstatusSaida.Enabled         = false;
+                btnEmRota.Enabled               = false;
+                btnRotaConcluida.Enabled        = false;
+                label5.Visible                  = false;
+                txtKmTotal.Visible              = false;
+                btnCalcularKmTotal.Enabled      = false;
+                btnCalcularKmTotal.Visible      = false;
+                btConfirmarRetorno.Enabled      = false;
+                btConfirmarRetorno.Visible      = false;
                 gridCrudSaidas.ClearSelection();
             }
         }
 
         private void behaviorNewInsert() {
-            cbEstatusSaida.SelectedIndex = 0;
-            bttnDel.Enabled = false;
-            bttnSearch.Enabled = false;
-            bttnRefresh.Enabled = true;
-            bttnSave.Enabled = true;
-            bttnNew.Enabled = false;
-            gridCrudSaidas.Visible = false;
-            tabControlAssets.Visible = false;
+            cbEstatusSaida.SelectedIndex        = 0;
+            bttnDel.Enabled                     = false;
+            bttnSearch.Enabled                  = false;
+            bttnRefresh.Enabled                 = true;
+            bttnSave.Enabled                    = true;
+            bttnNew.Enabled                     = false;
+            gridCrudSaidas.Visible              = false;
+            tabControlAssets.Visible            = false;
             tabControlAssets.TabPages.Remove(tabPagePesquisar);
             clearFieldsFormulario();
             enableFieldsFormulario();
             operationType = "newInsertion";
-            txtIdSaida.Enabled = false;
-            txtEstatusSaida.Text = "Em Rota";
-            toolStrip2.Visible = false;
-            groupBoxFormulario.Enabled = true;
-            groupBoxFormulario.Visible = true;
-            txtEstatusSaida.Enabled = false;
-            btnImportarEntregador.Enabled = true;
-            btnImportarVeiculo.Enabled = true;
-            button5.Enabled = true;
-            txtRegiaoEntrega.Text = "";
-            txtKmSaida.Text = "";
-            datePckRetorno.Enabled = false;
-            txtRegiaoEntrega.Enabled = true;
-            txtKmSaida.Enabled = true;
-            txtKmRetorno.Enabled = false;
-            txtKmTotal.Enabled = false;
-            label4.Visible = true;
-            txtIdVeiculo.Visible = false;
-            label9.Visible = false;
-            txtEstatuVeiculo.Visible = false;
-            label10.Visible = false;
-            txtIdUsuario.Visible = false;
-            label11.Visible = false;
-            txtIdPapel.Visible = false;
-            label13.Visible = false;
-            txtIdPessoa.Visible = false;
-            btConfirmarRetorno.Enabled = false;
-            btConfirmarRetorno.Visible = false;
+            txtIdSaida.Enabled                  = false;
+            txtEstatusSaida.Text                = "Em Rota";
+            toolStrip2.Visible                  = false;
+            groupBoxFormulario.Enabled          = true;
+            groupBoxFormulario.Visible          = true;
+            txtEstatusSaida.Enabled             = false;
+            btnImportarEntregador.Enabled       = true;
+            btnImportarVeiculo.Enabled          = true;
+            button5.Enabled                     = true;
+            txtRegiaoEntrega.Text               = "";
+            txtKmSaida.Text                     = "";
+            datePckRetorno.Enabled              = false;
+            txtRegiaoEntrega.Enabled            = true;
+            txtKmSaida.Enabled                  = true;
+            txtKmRetorno.Enabled                = false;
+            txtKmTotal.Enabled                  = false;
+            label4.Visible                      = true;
+            txtIdVeiculo.Visible                = false;
+            label9.Visible                      = false;
+            txtEstatuVeiculo.Visible            = false;
+            label10.Visible                     = false;
+            txtIdUsuario.Visible                = false;
+            label11.Visible                     = false;
+            txtIdPapel.Visible                  = false;
+            label13.Visible                     = false;
+            txtIdPessoa.Visible                 = false;
+            btConfirmarRetorno.Enabled          = false;
+            btConfirmarRetorno.Visible          = false;
         }
 
 
         private void behaviorSave()
         {
-            string retiraEspacosPlaca = txtPlacaVeiculo.Text;
-            string retiraEntregador = txtPessoa.Text;
-            string remEspacosPlaca = retiraEspacosPlaca.Trim();
-            string remEntregador = retiraEntregador.Trim();
+            string retiraEspacosPlaca   =   txtPlacaVeiculo.Text;
+            string retiraEntregador     =   txtPessoa.Text;
+            string remEspacosPlaca      =   retiraEspacosPlaca.Trim();
+            string remEntregador        =   retiraEntregador.Trim();
 
             if (remEspacosPlaca.Length < 3 || remEntregador.Length < 3) {
 
@@ -1056,25 +1009,25 @@ namespace Sistema.View
         }
 
         private void acoesBehaviorSave(){
-            bttnDel.Enabled = false;
-            bttnSearch.Enabled = true;
-            bttnRefresh.Enabled = true;
-            bttnSave.Enabled = false;
-            bttnNew.Enabled = true;
-            gridCrudSaidas.Visible = true;
-            radioBttnComeca.Checked = false;
-            radioBttnContem.Checked = false;
-            radioBttnTermina.Checked = false;
-            tabControlAssets.Visible = false;
-            gridCrudSaidas.Visible = true;
+            bttnDel.Enabled             = false;
+            bttnSearch.Enabled          = true;
+            bttnRefresh.Enabled         = true;
+            bttnSave.Enabled            = false;
+            bttnNew.Enabled             = true;
+            gridCrudSaidas.Visible      = true;
+            radioBttnComeca.Checked     = false;
+            radioBttnContem.Checked     = false;
+            radioBttnTermina.Checked    = false;
+            tabControlAssets.Visible    = false;
+            gridCrudSaidas.Visible      = true;
             tabControlAssets.TabPages.Remove(tabPagePesquisar);
-            groupBoxFormulario.Enabled = false;
-            groupBoxFormulario.Visible = false;
-            toolStrip2.Visible = true;
+            groupBoxFormulario.Enabled  = false;
+            groupBoxFormulario.Visible  = false;
+            toolStrip2.Visible          = true;
             clearFieldsFormulario();
             disableFieldsFormulario();
             puxarparametro(0, Convert.ToInt32(cbButtnQuantPage1.SelectedItem), "Sim");
-            txtEstatusSaida.Enabled = false;
+            txtEstatusSaida.Enabled     = false;
         }
 
         private void behaviorClickGrid(){
@@ -1141,23 +1094,23 @@ namespace Sistema.View
 
 
         public void clearFieldsFormulario(){
-            txtIdSaida.Text = "";
-            txtIdVeiculo.Text = "";
-            txtIdUsuario.Text = "";
-            txtIdPapel.Text = "";
-            txtIdPessoa.Text = "";
-            txtVeiculo.Text = "";
-            txtPlacaVeiculo.Text = "";
-            txtPessoa.Text = "";
-            datePckSaida.Value = DateTime.Now;
-            datePckRetorno.Value = DateTime.Now;
-            txtEstatusSaida.Text = "";
-            txtRegiaoEntrega.Text = "";
-            txtKmSaida.Text = "";
-            txtKmRetorno.Text = "";
-            txtKmTotal.Text = "";
-            txtHoraSaida.Text = "";
-            txtHoraRetorno.Text = "";
+            txtIdSaida.Text         = "";
+            txtIdVeiculo.Text       = "";
+            txtIdUsuario.Text       = "";
+            txtIdPapel.Text         = "";
+            txtIdPessoa.Text        = "";
+            txtVeiculo.Text         = "";
+            txtPlacaVeiculo.Text    = "";
+            txtPessoa.Text          = "";
+            datePckSaida.Value      = DateTime.Now;
+            datePckRetorno.Value    = DateTime.Now;
+            txtEstatusSaida.Text    = "";
+            txtRegiaoEntrega.Text   = "";
+            txtKmSaida.Text         = "";
+            txtKmRetorno.Text       = "";
+            txtKmTotal.Text         = "";
+            txtHoraSaida.Text       = "";
+            txtHoraRetorno.Text     = "";
         }
 
         public void disableFieldsFormulario() { txtIdSaida.Enabled = false; }
@@ -1188,72 +1141,72 @@ namespace Sistema.View
 
             countBttnToggle++;
             if (countBttnToggle % 2 == 0){
-                tabControlAssets.Visible = true;
+                tabControlAssets.Visible        =  true;
                 tabControlAssets.TabPages.Remove(tabPagePesquisar);
                 tabControlAssets.TabPages.Insert(0, tabPagePesquisar);
-                bttnNew.Enabled = false;
-                bttnRefresh.Enabled = false;
-                actBehaviorSerarch = true;
+                bttnNew.Enabled                 = false;
+                bttnRefresh.Enabled             = false;
+                actBehaviorSerarch              = true;
                 cbButtonPesquisarEm.SelectedIndex = 0;
-                radioBttnComeca.Checked = true;
-                txtBoxPesquisar.Text = "";
-                bttnBeginPages.Visible = false;
-                bttnOnePageLeft.Visible = false;
-                labelTextPageFrom.Visible = false;
-                toolStripLabel3.Visible = false;
-                labelTextTotalPages.Visible = false;
-                toolStripLabel5.Visible = false;
-                labelTextTotalRegFould.Visible = false;
-                bttnOnePageRight.Visible = false;
-                bttnEndPages.Visible = false;
-                toolStripLabel1.Visible = true;
-                toolStripLabel2.Visible = true;
-                txtBoxPesquisar.Text = "";
+                radioBttnComeca.Checked         = true;
+                txtBoxPesquisar.Text            = "";
+                bttnBeginPages.Visible          = false;
+                bttnOnePageLeft.Visible         = false;
+                labelTextPageFrom.Visible       = false;
+                toolStripLabel3.Visible         = false;
+                labelTextTotalPages.Visible     = false;
+                toolStripLabel5.Visible         = false;
+                labelTextTotalRegFould.Visible  = false;
+                bttnOnePageRight.Visible        = false;
+                bttnEndPages.Visible            = false;
+                toolStripLabel1.Visible         = true;
+                toolStripLabel2.Visible         = true;
+                txtBoxPesquisar.Text            = "";
                 txtBoxPesquisar.Focus();
-                txtBoxPesquisar.Text = "";
+                txtBoxPesquisar.Text            = "";
                 txtBoxPesquisar.Focus();
-                radioBttnComeca.Checked = true;
-                gridCrudSaidas.DataSource = controllerSaida.PesquisarComecaCom("nomepessoa", "@nomepessoa", "");
+                radioBttnComeca.Checked         = true;
+                gridCrudSaidas.DataSource       = controllerSaida.PesquisarComecaCom("nomepessoa", "@nomepessoa", "");
                 DataGridModel();
-                typeEdition = "search";
-                cbButtnQuantPage1.Visible = false;
-                cbOrdemParam.Visible = false;
-                cbOrdenarPor.Visible = false;
-                cbEstatusSaida.Visible = false;
-                lbCbEstatusSaida.Visible = false;
-                toolStripLabel6.Visible = false;
-                toolStripLabel7.Visible = false;
-                toolStripLabel4.Visible = false;
+                typeEdition                     = "search";
+                cbButtnQuantPage1.Visible       = false;
+                cbOrdemParam.Visible            = false;
+                cbOrdenarPor.Visible            = false;
+                cbEstatusSaida.Visible          = false;
+                lbCbEstatusSaida.Visible        = false;
+                toolStripLabel6.Visible         = false;
+                toolStripLabel7.Visible         = false;
+                toolStripLabel4.Visible         = false;
             
             }else{
 
                 tabControlAssets.Visible = false;
                 tabControlAssets.TabPages.Remove(tabPagePesquisar);
-                bttnNew.Enabled = true;
-                bttnRefresh.Enabled = true;
-                actBehaviorSerarch = false;
-                bttnBeginPages.Visible = true;
-                bttnOnePageLeft.Visible = true;
-                labelTextPageFrom.Visible = true;
-                toolStripLabel3.Visible = true;
-                labelTextTotalPages.Visible = true;
-                toolStripLabel5.Visible = true;
-                labelTextTotalRegFould.Visible = true;
-                bttnOnePageRight.Visible = true;
-                bttnEndPages.Visible = true;
-                toolStripLabel1.Visible = false;
-                toolStripLabel2.Visible = false;
+                bttnNew.Enabled                 = true;
+                bttnRefresh.Enabled             = true;
+                actBehaviorSerarch              = false;
+                bttnBeginPages.Visible          = true;
+                bttnOnePageLeft.Visible         = true;
+                labelTextPageFrom.Visible       = true;
+                toolStripLabel3.Visible         = true;
+                labelTextTotalPages.Visible     = true;
+                toolStripLabel5.Visible         = true; 
+                labelTextTotalRegFould.Visible  = true;
+                bttnOnePageRight.Visible        = true;
+                bttnEndPages.Visible            = true;
+                toolStripLabel1.Visible         = false;
+                toolStripLabel2.Visible         = false;
                 puxarparametro(0, Convert.ToInt32(cbButtnQuantPage1.SelectedItem), "Sim");
-                txtIdSaida.Text = "";
-                typeEdition = "insert";
-                cbButtnQuantPage1.Visible = true;
-                cbOrdemParam.Visible = true;
-                cbOrdenarPor.Visible = true;
-                cbEstatusSaida.Visible = true;
-                lbCbEstatusSaida.Visible = true;
-                toolStripLabel6.Visible = true;
-                toolStripLabel7.Visible = true;
-                toolStripLabel4.Visible = false;
+                txtIdSaida.Text                 = "";
+                typeEdition                     = "insert";
+                cbButtnQuantPage1.Visible       = true;
+                cbOrdemParam.Visible            = true;
+                cbOrdenarPor.Visible            = true;
+                cbEstatusSaida.Visible          = true;
+                lbCbEstatusSaida.Visible        = true;
+                toolStripLabel6.Visible         = true;
+                toolStripLabel7.Visible         = true;
+                toolStripLabel4.Visible         = false;
             }
         }
 
