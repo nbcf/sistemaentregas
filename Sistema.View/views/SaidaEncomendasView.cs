@@ -1990,7 +1990,7 @@ namespace Sistema.View
         }
 
         private void SaidaEncomendasView_Load(object sender, EventArgs e){
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            //this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
          //   gridCrudSaidas.
         }
 

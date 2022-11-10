@@ -1,4 +1,5 @@
-﻿using Sistema.View.views;
+﻿using Sistema.View.relatorios;
+using Sistema.View.views;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -104,10 +105,10 @@ namespace Sistema.View
 
         private void entradaDeNotasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //GastosView frmGastosView  = GastosView.GetInstanciaGastosView();
-            //frmGastosView.MdiParent = this;
-            //frmGastosView.Text = "Gerenciamento de Gastos de Veículo";
-            //frmGastosView.Show();
+            RelatorioConsumoVeiculos frmRelConsumoVeiculos = new RelatorioConsumoVeiculos();
+            frmRelConsumoVeiculos.MdiParent = this;
+            frmRelConsumoVeiculos.Text = "Ainda em Contrucao";
+            frmRelConsumoVeiculos.Show();
         }
 
         private void tipoGastosToolStripMenuItem_Click(object sender, EventArgs e)
@@ -144,6 +145,11 @@ namespace Sistema.View
         }
 
         private void abastecimentoPorDataToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void gerênciaDeEntregasToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
         }
