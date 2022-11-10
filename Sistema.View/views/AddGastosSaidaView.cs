@@ -87,6 +87,13 @@ namespace Sistema.View.views
             bttnNew.Enabled = true;
             bttnSave.Enabled = false;
             textBox11.Text = SomarTotais().ToString();
+            txtIdSaida.Visible = false;
+            txtIdFornecedor.Visible = false;
+            txtIdTipogasto.Visible = false;
+            txtIdTipoUnit.Visible = false;
+            txtidgastos.Visible = false;
+            txtqtd.Visible = false;
+            txtJoinTipoUnit.Visible = false;
 
 
         }
@@ -96,7 +103,7 @@ namespace Sistema.View.views
                 Convert.ToInt32(txtIdSaida.Text),
                 Convert.ToInt32(txtIdFornecedor.Text),
                 Convert.ToInt32(txtIdTipogasto.Text),
-                txtqt.Text,
+                txtqantidade.Text,
                 txtIdTipoUnit.Text,
                 txtvalorunt.Text,
                 txtvalortotal.Text,
@@ -136,6 +143,14 @@ namespace Sistema.View.views
             bttnDel.Enabled = false;
             bttnRefresh.Enabled = true;
             toolStripButton1.Enabled = false;
+
+            txtIdSaida.Visible = false;
+            txtIdFornecedor.Visible = false;
+            txtIdTipogasto.Visible = false;
+            txtIdTipoUnit.Visible = false;
+            txtidgastos.Visible = false;
+            txtqtd.Visible = false;
+            txtJoinTipoUnit.Visible = false;
         }
 
 
@@ -147,16 +162,16 @@ namespace Sistema.View.views
             txtnumnota.Enabled = true;
             dateTimePicker1.Value = DateTime.Now;
             txtkm.Enabled = true;
-            txtqt.Enabled = true;
+            txtqantidade.Enabled = true;
             txtvalorunt.Enabled = true;
             txtvalortotal.Enabled = true;
-            txtIdTipoUnit.Enabled = true;
-            txtqtd.Enabled = true;
-            txtIdTipogasto.Enabled = true;
-            txtIdFornecedor.Enabled = true;
-            txtIdSaida.Enabled = true;
-            txtidgastos.Enabled = true;
-            txtJoinTipoUnit.Enabled = true;
+          // txtIdTipoUnit.Enabled = true;
+           // txtqtd.Enabled = true;
+         //   txtIdTipogasto.Enabled = true;
+         //   txtIdFornecedor.Enabled = true;
+         //   txtIdSaida.Enabled = true;
+         //   txtidgastos.Enabled = true;
+         //   txtJoinTipoUnit.Enabled = true;
             dateTimePicker1.Enabled = true;
         }
 
@@ -167,16 +182,16 @@ namespace Sistema.View.views
             txtnumnota.Enabled = false;
             dateTimePicker1.Value = DateTime.Now;
             txtkm.Enabled = false;
-            txtqt.Enabled = false;
+            txtqantidade.Enabled = false;
             txtvalorunt.Enabled = false;
             txtvalortotal.Enabled = false;
-            txtIdTipoUnit.Enabled = false;
-            txtqtd.Enabled = false;
-            txtIdTipogasto.Enabled = false;
-            txtIdFornecedor.Enabled = false;
-            txtIdSaida.Enabled = false;
-            txtidgastos.Enabled = false;
-            txtJoinTipoUnit.Enabled = false;
+          //  txtIdTipoUnit.Enabled = false;
+        //    txtqtd.Enabled = false;
+         //   txtIdTipogasto.Enabled = false;
+         //   txtIdFornecedor.Enabled = false;
+         //   txtIdSaida.Enabled = false;
+          //  txtidgastos.Enabled = false;
+          //  txtJoinTipoUnit.Enabled = false;
             dateTimePicker1.Enabled = false;
             
         }
@@ -187,7 +202,7 @@ namespace Sistema.View.views
             txtnumnota.Text = "";
             dateTimePicker1.Value = DateTime.Now;
             txtkm.Text = "";
-            txtqt.Text = "";
+            txtqantidade.Text = "";
             txtvalorunt.Text = "";
             txtvalortotal.Text = "";
             txtIdTipoUnit.Text = "";
@@ -298,7 +313,7 @@ namespace Sistema.View.views
             cbTipoGasto.Text        =       dataGridGastos.CurrentRow.Cells[1].Value.ToString();
             cbTipoUnit.Text         =       dataGridGastos.CurrentRow.Cells[2].Value.ToString();
             txtJoinTipoUnit.Text    =       dataGridGastos.CurrentRow.Cells[2].Value.ToString();
-            txtqt.Text              =       dataGridGastos.CurrentRow.Cells[3].Value.ToString();
+            txtqantidade.Text              =       dataGridGastos.CurrentRow.Cells[3].Value.ToString();
             txtvalorunt.Text        =       dataGridGastos.CurrentRow.Cells[4].Value.ToString();
             txtvalortotal.Text      =       dataGridGastos.CurrentRow.Cells[5].Value.ToString();
             txtnumnota.Text         =       dataGridGastos.CurrentRow.Cells[6].Value.ToString();

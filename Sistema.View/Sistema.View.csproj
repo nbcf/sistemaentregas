@@ -151,6 +151,12 @@
     <Compile Include="imports\ImportSaidasToGastos.Designer.cs">
       <DependentUpon>ImportSaidasToGastos.cs</DependentUpon>
     </Compile>
+    <Compile Include="relatorios\RelatorioConsumoVeiculos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="relatorios\RelatorioConsumoVeiculos.Designer.cs">
+      <DependentUpon>RelatorioConsumoVeiculos.cs</DependentUpon>
+    </Compile>
     <Compile Include="views\AddGastosSaidaView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -317,6 +323,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="imports\ImportSaidasToGastos.resx">
       <DependentUpon>ImportSaidasToGastos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="relatorios\RelatorioConsumoVeiculos.resx">
+      <DependentUpon>RelatorioConsumoVeiculos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="views\AddGastosSaidaView.resx">
       <DependentUpon>AddGastosSaidaView.cs</DependentUpon>

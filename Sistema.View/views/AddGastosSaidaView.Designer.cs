@@ -43,7 +43,7 @@ namespace Sistema.View.views
             this.cbFornecedor = new System.Windows.Forms.ComboBox();
             this.txtIdTipoUnit = new System.Windows.Forms.TextBox();
             this.txtqtd = new System.Windows.Forms.TextBox();
-            this.txtqt = new System.Windows.Forms.TextBox();
+            this.txtqantidade = new System.Windows.Forms.TextBox();
             this.txtvalorunt = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -68,9 +68,9 @@ namespace Sistema.View.views
             this.bttnNew = new System.Windows.Forms.ToolStripButton();
             this.bttnSave = new System.Windows.Forms.ToolStripButton();
             this.bttnRefresh = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.bttnDel = new System.Windows.Forms.ToolStripButton();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridGastos)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
@@ -174,13 +174,13 @@ namespace Sistema.View.views
             this.txtqtd.Size = new System.Drawing.Size(37, 20);
             this.txtqtd.TabIndex = 7;
             // 
-            // txtqt
+            // txtqantidade
             // 
-            this.txtqt.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtqt.Location = new System.Drawing.Point(11, 137);
-            this.txtqt.Name = "txtqt";
-            this.txtqt.Size = new System.Drawing.Size(197, 25);
-            this.txtqt.TabIndex = 8;
+            this.txtqantidade.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtqantidade.Location = new System.Drawing.Point(11, 137);
+            this.txtqantidade.Name = "txtqantidade";
+            this.txtqantidade.Size = new System.Drawing.Size(197, 25);
+            this.txtqantidade.TabIndex = 8;
             // 
             // txtvalorunt
             // 
@@ -317,7 +317,7 @@ namespace Sistema.View.views
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.txtvalortotal);
-            this.groupBox1.Controls.Add(this.txtqt);
+            this.groupBox1.Controls.Add(this.txtqantidade);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.txtvalorunt);
@@ -446,6 +446,18 @@ namespace Sistema.View.views
             this.bttnRefresh.Text = "toolStripButton3";
             this.bttnRefresh.Click += new System.EventHandler(this.bttnRefresh_Click);
             // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.AutoSize = false;
+            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton1.Image = global::Sistema.View.Properties.Resources.editForm48;
+            this.toolStripButton1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(80, 48);
+            this.toolStripButton1.Text = "toolStripButton1";
+            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
+            // 
             // bttnDel
             // 
             this.bttnDel.AutoSize = false;
@@ -467,18 +479,6 @@ namespace Sistema.View.views
             this.groupBox2.Size = new System.Drawing.Size(879, 303);
             this.groupBox2.TabIndex = 25;
             this.groupBox2.TabStop = false;
-            // 
-            // toolStripButton1
-            // 
-            this.toolStripButton1.AutoSize = false;
-            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton1.Image = global::Sistema.View.Properties.Resources.editForm48;
-            this.toolStripButton1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(80, 48);
-            this.toolStripButton1.Text = "toolStripButton1";
-            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
             // AddGastosSaidaView
             // 
@@ -515,7 +515,7 @@ namespace Sistema.View.views
         private System.Windows.Forms.ComboBox cbFornecedor;
         private System.Windows.Forms.TextBox txtIdTipoUnit;
         private System.Windows.Forms.TextBox txtqtd;
-        private System.Windows.Forms.TextBox txtqt;
+        private System.Windows.Forms.TextBox txtqantidade;
         private System.Windows.Forms.TextBox txtvalorunt;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;

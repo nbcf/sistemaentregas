@@ -104,10 +104,10 @@ namespace Sistema.View
 
         private void entradaDeNotasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            GastosView frmGastosView  = GastosView.GetInstanciaGastosView();
-            frmGastosView.MdiParent = this;
-            frmGastosView.Text = "Gerenciamento de Gastos de Veículo";
-            frmGastosView.Show();
+            //GastosView frmGastosView  = GastosView.GetInstanciaGastosView();
+            //frmGastosView.MdiParent = this;
+            //frmGastosView.Text = "Gerenciamento de Gastos de Veículo";
+            //frmGastosView.Show();
         }
 
         private void tipoGastosToolStripMenuItem_Click(object sender, EventArgs e)
