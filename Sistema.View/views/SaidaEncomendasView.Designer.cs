@@ -30,6 +30,11 @@ namespace Sistema.View
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SaidaEncomendasView));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.bttnNew = new System.Windows.Forms.ToolStripButton();
             this.bttnSave = new System.Windows.Forms.ToolStripButton();
@@ -42,6 +47,8 @@ namespace Sistema.View
             this.btnRotaConcluida = new System.Windows.Forms.ToolStripButton();
             this.btnEmRota = new System.Windows.Forms.ToolStripButton();
             this.btnDespesas = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
             this.tabControlAssets = new System.Windows.Forms.TabControl();
             this.tabPagePesquisar = new System.Windows.Forms.TabPage();
             this.radioBttnTermina = new System.Windows.Forms.RadioButton();
@@ -140,7 +147,9 @@ namespace Sistema.View
             this.btConfirmarRetorno,
             this.btnRotaConcluida,
             this.btnEmRota,
-            this.btnDespesas});
+            this.btnDespesas,
+            this.toolStripButton1,
+            this.toolStripButton2});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Padding = new System.Windows.Forms.Padding(0);
@@ -281,6 +290,26 @@ namespace Sistema.View
             this.btnDespesas.Size = new System.Drawing.Size(80, 48);
             this.btnDespesas.Text = "toolStripButton3";
             this.btnDespesas.Click += new System.EventHandler(this.btnDespesas_Click);
+            // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(28, 48);
+            this.toolStripButton1.Text = "toolStripButton1";
+            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click_1);
+            // 
+            // toolStripButton2
+            // 
+            this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
+            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton2.Name = "toolStripButton2";
+            this.toolStripButton2.Size = new System.Drawing.Size(28, 48);
+            this.toolStripButton2.Text = "toolStripButton2";
+            this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click_1);
             // 
             // tabControlAssets
             // 
@@ -659,12 +688,43 @@ namespace Sistema.View
             // gridCrudSaidas
             // 
             this.gridCrudSaidas.AllowUserToAddRows = false;
-            this.gridCrudSaidas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.Gainsboro;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridCrudSaidas.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridCrudSaidas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            this.gridCrudSaidas.ColumnHeadersHeight = 26;
+            this.gridCrudSaidas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.gridCrudSaidas.DefaultCellStyle = dataGridViewCellStyle8;
             this.gridCrudSaidas.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gridCrudSaidas.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.gridCrudSaidas.Location = new System.Drawing.Point(0, 119);
             this.gridCrudSaidas.MultiSelect = false;
             this.gridCrudSaidas.Name = "gridCrudSaidas";
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridCrudSaidas.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            this.gridCrudSaidas.RowHeadersWidth = 42;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridCrudSaidas.RowsDefaultCellStyle = dataGridViewCellStyle10;
             this.gridCrudSaidas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gridCrudSaidas.Size = new System.Drawing.Size(1131, 577);
             this.gridCrudSaidas.TabIndex = 9;
@@ -975,9 +1035,7 @@ namespace Sistema.View
             this.txtKmRetorno.Name = "txtKmRetorno";
             this.txtKmRetorno.Size = new System.Drawing.Size(104, 25);
             this.txtKmRetorno.TabIndex = 92;
-   //         this.txtKmRetorno.TextChanged += new System.EventHandler(this.txtKmRetorno_TextChanged);
             this.txtKmRetorno.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtKmRetorno_KeyPress);
- //           this.txtKmRetorno.Leave += new System.EventHandler(this.txtKmRetorno_Leave);
             // 
             // txtKmSaida
             // 
@@ -986,7 +1044,6 @@ namespace Sistema.View
             this.txtKmSaida.Name = "txtKmSaida";
             this.txtKmSaida.Size = new System.Drawing.Size(146, 25);
             this.txtKmSaida.TabIndex = 90;
-    //        this.txtKmSaida.TextChanged += new System.EventHandler(this.txtKmSaida_TextChanged);
             this.txtKmSaida.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtKmSaida_KeyPress);
             // 
             // label3
@@ -1166,5 +1223,7 @@ namespace Sistema.View
         private System.Windows.Forms.TextBox txtEstatusSaida;
         private System.Windows.Forms.ToolStripButton btnDespesas;
         private System.Windows.Forms.ToolStripButton toolStripButton4;
+        private System.Windows.Forms.ToolStripButton toolStripButton1;
+        private System.Windows.Forms.ToolStripButton toolStripButton2;
     }
 }

@@ -68,6 +68,8 @@ namespace Sistema.View
         public int memoriaPesquisa = 1;
 
 
+        public System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+        public System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
 
         private static SaidaEncomendasView _InstSaidaEncomendasView;
         public static SaidaEncomendasView GetInst()
@@ -84,6 +86,7 @@ namespace Sistema.View
 
             return _InstSaidaEncomendasView;
         }
+        public int posicaoTamanhoFonte = 1;
 
         EncomendasController controllerEncomendas = new EncomendasController();
         SaidasController controllerSaida = new SaidasController();
@@ -551,7 +554,7 @@ namespace Sistema.View
         }
 
         private void DataGridModel(){
-            gridCrudSaidas.Columns[0].HeaderText = "Id Saida";
+            gridCrudSaidas.Columns[0].HeaderText = "ID";
             gridCrudSaidas.Columns[1].HeaderText = "Id veiculo";
             gridCrudSaidas.Columns[2].HeaderText = "id usuario ";
             gridCrudSaidas.Columns[3].HeaderText = "id idpapel";
@@ -591,20 +594,20 @@ namespace Sistema.View
             gridCrudSaidas.Columns[37].HeaderText = "placa 1";
             gridCrudSaidas.Columns[38].HeaderText = "estatus veiculo";
 
-            gridCrudSaidas.Columns[0].Width = 80;
+            gridCrudSaidas.Columns[0].Width = 60;
             gridCrudSaidas.Columns[1].Width = 0;
             gridCrudSaidas.Columns[2].Width = 0;
             gridCrudSaidas.Columns[3].Width = 0;
             gridCrudSaidas.Columns[4].Width = 0;
             gridCrudSaidas.Columns[5].Width = 100;
             gridCrudSaidas.Columns[6].Width = 100;
-            gridCrudSaidas.Columns[7].Width = 100;
+            gridCrudSaidas.Columns[7].Width = 180;
             gridCrudSaidas.Columns[8].Width = 100;
             gridCrudSaidas.Columns[9].Width = 100;
             gridCrudSaidas.Columns[10].Width = 100;
             gridCrudSaidas.Columns[11].Width = 100;
-            gridCrudSaidas.Columns[12].Width = 100;
-            gridCrudSaidas.Columns[13].Width = 100;
+            gridCrudSaidas.Columns[12].Width = 130;
+            gridCrudSaidas.Columns[13].Width = 200;
             gridCrudSaidas.Columns[14].Width = 100;
             gridCrudSaidas.Columns[15].Width = 100;
             gridCrudSaidas.Columns[16].Width = 100;
@@ -1988,6 +1991,7 @@ namespace Sistema.View
 
         private void SaidaEncomendasView_Load(object sender, EventArgs e){
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+         //   gridCrudSaidas.
         }
 
         private void toolStripButton4_Click(object sender, EventArgs e){
@@ -2031,6 +2035,113 @@ namespace Sistema.View
             AddGastosSaidaView chamarAddGastosSaidaView = new AddGastosSaidaView();
             chamarAddGastosSaidaView.IdSaidaVO = gridCrudSaidas.CurrentRow.Cells[0].Value.ToString();
             chamarAddGastosSaidaView.ShowDialog();
+        }
+
+        private void toolStripButton1_Click_1(object sender, EventArgs e)
+        {
+          //  aumentarFonte();
+        }
+
+
+        //public void aumentarFonte()
+        //{
+        //    if (posicaoTamanhoFonte == 1)
+        //    {
+
+        //        posicaoTamanhoFonte++;
+        //     //   gridCrudSaidas.DefaultCellStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+        //        gridCrudSaidas.RowsDefaultCellStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+        //        gridCrudSaidas.ColumnHeadersHeight = 28;
+        //        //  dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+        //        //jTableDadosModel.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N  
+        //        //jTableDadosModel.setRowHeight(16);
+
+        //    }
+        //    else if (posicaoTamanhoFonte == 2)
+        //    {
+        //        posicaoTamanhoFonte++;
+        //       // gridCrudSaidas.DefaultCellStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+        //        gridCrudSaidas.RowsDefaultCellStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+        //        gridCrudSaidas.ColumnHeadersHeight = 32;
+        //        //  dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+        //        //jTableDadosModel.setFont(new java.awt.Font("Tahoma", 0, 26));
+        //        //jTableDadosModel.setRowHeight(18);
+
+        //    }
+        //    else if (posicaoTamanhoFonte == 3)
+        //    {
+        //        posicaoTamanhoFonte++;
+        //      //  gridCrudSaidas.DefaultCellStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+        //        gridCrudSaidas.RowsDefaultCellStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+        //        gridCrudSaidas.ColumnHeadersHeight = 36;
+        //        //  dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+        //        //jTableDadosModel.setFont(new java.awt.Font("Tahoma", 0, 18));
+        //        //jTableDadosModel.setRowHeight(24);
+
+        //    }
+        //    else if (posicaoTamanhoFonte == 4)
+        //    {
+        //        gridCrudSaidas.DefaultCellStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+        //        gridCrudSaidas.RowsDefaultCellStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+        //        gridCrudSaidas.ColumnHeadersHeight = 42;
+        //        // dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+        //        //jTableDadosModel.setFont(new java.awt.Font("Tahoma", 0, 24));
+        //        //jTableDadosModel.setRowHeight(30);
+
+
+        //    }
+        //}
+
+        //public void reduzirFonte()
+        //{
+           
+        //    if (posicaoTamanhoFonte == 1)
+        //    {
+        //        // jTableDadosModel.setFont(new java.awt.Font("Tahoma", 0, 12));
+        //        // jTableDadosModel.setRowHeight(16);
+        //      //  gridCrudSaidas.DefaultCellStyle.Font  = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+        //        gridCrudSaidas.RowsDefaultCellStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+        //        gridCrudSaidas.ColumnHeadersHeight = 18;
+        //        //   dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+        //    }
+        //    else if (posicaoTamanhoFonte == 2)
+        //    {
+        //        posicaoTamanhoFonte--;
+        //      //  gridCrudSaidas.DefaultCellStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+        //        gridCrudSaidas.RowsDefaultCellStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+        //        gridCrudSaidas.ColumnHeadersHeight = 26;
+        //        //     dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+        //        //jTableDadosModel.setFont(new java.awt.Font("Tahoma", 0, 14));
+        //        //jTableDadosModel.setRowHeight(16);
+
+        //    }
+        //    else if (posicaoTamanhoFonte == 3)
+        //    {
+        //        posicaoTamanhoFonte--;
+        //    //    gridCrudSaidas.DefaultCellStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+        //        gridCrudSaidas.RowsDefaultCellStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+        //        gridCrudSaidas.ColumnHeadersHeight = 26;
+        //        //   dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+        //        //jTableDadosModel.setFont(new java.awt.Font("Tahoma", 0, 16));
+        //        //jTableDadosModel.setRowHeight(18);
+
+        //    }
+        //    else if (posicaoTamanhoFonte == 4)
+        //    {
+        //        posicaoTamanhoFonte--;
+        //     //   gridCrudSaidas.DefaultCellStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+        //        gridCrudSaidas.RowsDefaultCellStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+        //        gridCrudSaidas.ColumnHeadersHeight = 32;
+        //        //    dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+        //        //jTableDadosModel.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N  
+        //        //jTableDadosModel.setRowHeight(24);
+
+        //    }
+        //}
+
+        private void toolStripButton2_Click_1(object sender, EventArgs e)
+        {
+          //  reduzirFonte();
         }
     }
 }

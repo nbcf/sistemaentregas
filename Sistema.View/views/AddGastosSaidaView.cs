@@ -86,7 +86,7 @@ namespace Sistema.View.views
             dataGridGastos.Enabled = true;
             bttnNew.Enabled = true;
             bttnSave.Enabled = false;
-            textBox11.Text = SomarTotais().ToString();
+            toolStripLabel3.Text = SomarTotais().ToString();
             txtIdSaida.Visible = false;
             txtIdFornecedor.Visible = false;
             txtIdTipogasto.Visible = false;
