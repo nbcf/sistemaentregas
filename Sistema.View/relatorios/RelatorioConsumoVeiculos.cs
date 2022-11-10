@@ -18,20 +18,38 @@ namespace Sistema.View.relatorios
             InitializeComponent();
         }
         SaidasController controllerSaida = new SaidasController();
+        VeiculosController controllerVeiculos = new VeiculosController();
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            if (comboBox1.Items.Count > 0)
+            {
+                textBox1.Text = comboBox1.SelectedValue.ToString();
+               
+            }
         }
 
         private void RelatorioConsumoVeiculos_Load(object sender, EventArgs e)
         {
-          
+            carregarPadraoComboBox();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            dataGridView1.DataSource = controllerSaida.ListarConsumoPorVeiculoNoPeriodocontroller(7, dateTimePicker1.Value, dateTimePicker2.Value);
+            dataGridView1.DataSource = controllerSaida.ListarConsumoPorVeiculoNoPeriodocontroller(Convert.ToInt32(textBox1.Text), Convert.ToDateTime(dateTimePicker1.Value.ToString("yyyy/MM/dd")), Convert.ToDateTime(dateTimePicker2.Value.ToString("yyyy/MM/dd")));
         }
+
+        public void carregarPadraoComboBox()
+        {
+            comboBox1.DataSource = controllerVeiculos.ListarVeiculosEmComboBoxController();
+            comboBox1.ValueMember = "idveiculo";
+            comboBox1.DisplayMember = "nomeveiculo";
+
+
+            if (comboBox1.Items.Count > 0){
+                textBox1.Text = comboBox1.SelectedValue.ToString();
+            }
+        }
+
     }
 }

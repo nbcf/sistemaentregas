@@ -196,6 +196,24 @@ namespace Sistema.DAO
         }
 
 
+        public DataTable ListarVeiculosEmComboBoxDAO(){
+
+            try{
+                classeConecta.AbrirCon();
+                sql = "SELECT * FROM veiculos";
+                cmd = new MySqlCommand(sql, classeConecta.con);
+                MySqlDataAdapter da = new MySqlDataAdapter();
+                da.SelectCommand = cmd;
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                classeConecta.FecharCon();
+                return dt;
+
+            } catch (Exception ex){
+                throw ex;
+            }
+        }
+
         public DataTable ListarDataGrid(string parametro, string indexar, int offsett, int limitt){
             try{
                 classeConecta.AbrirCon();

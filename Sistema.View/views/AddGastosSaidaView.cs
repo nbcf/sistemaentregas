@@ -39,7 +39,7 @@ namespace Sistema.View.views
             get { return strAcaoForm; }
             set { strAcaoForm = value; }
         }
-        SomarCellDataGrid st = new SomarCellDataGrid();
+        SomarCellDataGrid       st                      = new SomarCellDataGrid();
         GastosController        controllerGastos        = new GastosController();
         FornecedoresController  controllerFornecedores  = new FornecedoresController();
         TipoGastosController    controllerTipoGastos    = new TipoGastosController();

@@ -382,11 +382,13 @@ namespace Sistema.DAO
                       " AND gts.idtipogasto    =   tpg.idtipogasto     " +
                       " AND gts.tipound        =   tpu.idtipound       " +
                       " AND sai.estsaida       =   'Concluida'         " +
-                      " WHERE sai.idveiculo    =   7     " +
+                      " WHERE sai.idveiculo    =   "+ idveiculo + "    " +
+                      " AND sai.datasaida BETWEEN @dataInicial  AND  @dataFinal  ORDER BY gts.idgasto asc  ";
 
-                      " AND sai.datasaida BETWEEN '2022-11-01' AND '2022-11-10' ORDER BY gts.idgasto asc  ";
-        
+
                 cmd = new MySqlCommand(sql, classeConecta.con);
+                cmd.Parameters.AddWithValue("@dataInicial", dataInicial);
+                cmd.Parameters.AddWithValue("@dataFinal", dataFinal);
                 MySqlDataAdapter da = new MySqlDataAdapter();
                 da.SelectCommand = cmd;
                 DataTable dt = new DataTable();

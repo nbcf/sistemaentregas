@@ -46,6 +46,11 @@ namespace Sistema.Controller
             return dao.AcaoCrudVeiculosDAO();
 
         }
+
+        public DataTable ListarVeiculosEmComboBoxController(){
+            return dao.ListarVeiculosEmComboBoxDAO();
+        }
+
         public DataTable ListarDataGrid(string parametro, string indexar, int offsett, int limitt){
                 RetornoQuantVeiclosEncontrados();
                 return dao.ListarDataGrid(parametro, indexar, offsett, limitt);
