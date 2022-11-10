@@ -365,14 +365,31 @@ namespace Sistema.DAO
             try{
                 classeConecta.AbrirCon();
 
-                sql = " SELECT * FROM gastos       gts " +
-                      " INNER JOIN tipogastos      tpg " +
-                      " INNER JOIN tipounds        tpu " +
-                      " INNER JOIN saidas          sai " +
+              sql = " SELECT " +
+                    " sai.datasaida     AS SAIDA,           " +
+                    " sai.dataretorno   AS RETORNO,         " +
+                    " sai.entregador    AS ENTREGADOR,      " +
+                    " gts.datagasto     AS DATA_NOTA,       " +
+                    " sai.kmsaida       AS KM_SAIDA," +
+                    " gts.km            AS KM_NOTA,         " +
+                    " sai.kmretorno     AS KM_VOLTA," +
+                    " sai.kmtotal       AS PERCORRIDO,      " +
+                    " tpg.nomegasto     AS DESPESA,         " +
+                    " tpu.nomeund       AS UND,             " +
+                    " gts.valorunitario AS VL_UNIT,      " +
+                    " gts.qtd           AS QTD,             " +
+                    " gts.valortotal    AS TOTAL_NTA," +
+                    " forn.fornecedor   AS FORNECEDOR," +
+                    " gts.numeronota    AS NUM_NOTA " +
+
+                      " FROM gastos                gts  " +
+                      " INNER JOIN tipogastos      tpg  " +
+                      " INNER JOIN tipounds        tpu  " +
+                      " INNER JOIN saidas          sai  " +
                       " INNER JOIN fornecedores    forn " +
-                      " INNER JOIN usuarios        usr " +
-                      " INNER JOIN pessoas         pes " +
-                      " INNER JOIN papeis          pel " +
+                      " INNER JOIN usuarios        usr  " +
+                      " INNER JOIN pessoas         pes  " +
+                      " INNER JOIN papeis          pel  " +
 
                       " ON sai.idusuario       =   usr.idusuario       " +
                       " AND usr.idpessoa       =   pes.idpessoa        " +
@@ -383,7 +400,7 @@ namespace Sistema.DAO
                       " AND gts.tipound        =   tpu.idtipound       " +
                       " AND sai.estsaida       =   'Concluida'         " +
                       " WHERE sai.idveiculo    =   "+ idveiculo + "    " +
-                      " AND sai.datasaida BETWEEN @dataInicial  AND  @dataFinal  ORDER BY gts.idgasto asc  ";
+                      " AND sai.datasaida BETWEEN @dataInicial AND @dataFinal ORDER BY gts.idgasto asc  ";
 
 
                 cmd = new MySqlCommand(sql, classeConecta.con);

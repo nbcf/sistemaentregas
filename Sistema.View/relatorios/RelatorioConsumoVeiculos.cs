@@ -36,7 +36,7 @@ namespace Sistema.View.relatorios
 
         private void button1_Click(object sender, EventArgs e)
         {
-            dataGridView1.DataSource = controllerSaida.ListarConsumoPorVeiculoNoPeriodocontroller(Convert.ToInt32(textBox1.Text), Convert.ToDateTime(dateTimePicker1.Value.ToString("yyyy/MM/dd")), Convert.ToDateTime(dateTimePicker2.Value.ToString("yyyy/MM/dd")));
+            dataGridView1.DataSource = controllerSaida.ListarConsumoPorVeiculoNoPeriodocontroller(Convert.ToInt32(textBox1.Text), dateTimePicker1.Value, dateTimePicker2.Value);
         }
 
         public void carregarPadraoComboBox()
