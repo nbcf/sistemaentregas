@@ -1631,8 +1631,15 @@ namespace Sistema.View
 
         private void EncomendasEntradaView_Load(object sender, EventArgs e)
         {
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            //this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
         }
 
+        private void txtPeso_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //if (!char.IsNumber(e.KeyChar) && !(e.KeyChar == (char)Keys.Back))
+            //{
+            //    e.Handled = true;
+            //}
+        }
     }
 }

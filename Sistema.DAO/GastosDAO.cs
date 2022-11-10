@@ -302,7 +302,7 @@ namespace Sistema.DAO
                      "AND gts.idtipogasto = tpg.idtipogasto " +
                      "AND gts.tipound = tpu.idtipound " +
 
-                     "WHERE gts.idsaida = 60  order by idgasto asc";
+                     "WHERE gts.idsaida = "+ idsaida + "  order by idgasto asc";
                 cmd = new MySqlCommand(sql, classeConecta.con);
                 MySqlDataAdapter da = new MySqlDataAdapter();
                 da.SelectCommand = cmd;

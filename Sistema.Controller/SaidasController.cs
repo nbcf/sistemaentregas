@@ -140,6 +140,11 @@ namespace Sistema.Controller
             
         }
 
+        public DataTable ListarConsumoPorVeiculoNoPeriodocontroller(int idveiculo, DateTime dataInicial, DateTime dataFinal) {
+            return dao.ListarConsumoPorVeiculoNoPeriodoDAO(idveiculo, dataInicial, dataFinal);
+        }
+
+
         public DataTable PesquisarComecaCom(string coluna, string campo, string pesquisar){
               return dao.PesquisarComeca(coluna, campo, pesquisar);
         }

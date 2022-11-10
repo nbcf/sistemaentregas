@@ -57,7 +57,7 @@ namespace Sistema.View.edits
         public DateTime DataEntregaVO 
         {
             get { return datePDataEntregue.Value; }
-            set { datePDataEntregue.Value = value; }
+            set { datePDataEntregue.Value = value; }// Convert.ToDateTime(datePckSaida.Value.ToString("dd/MM/yyyy")),
         }
 
         public DateTime DataEntradaVO

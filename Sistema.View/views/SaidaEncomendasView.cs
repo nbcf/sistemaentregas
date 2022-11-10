@@ -508,8 +508,17 @@ namespace Sistema.View
             btConfirmarRetorno.Enabled      = false;
             btConfirmarRetorno.Visible      = false;
             button5.Enabled                 = false;
-            label5.Visible                  = true;
+            lbveiculo.Visible               = true;
             txtKmTotal.Visible              = false;
+
+            lbTotalKm.Visible = false;
+            lbFechamento.Visible = false;
+            txtHoraRetorno.Visible = false;
+            lbHoraSaida.Visible = false;
+            txtHoraSaida.Visible = false;
+            txtEstatusSaida.Visible = false;
+            lbEstatus.Visible = false;
+
             datePckSaida.Value              = DateTime.Now;
             datePckRetorno.Value            = DateTime.Now;
             label4.Visible                  = true;
@@ -527,9 +536,10 @@ namespace Sistema.View
             btnCalcularKmTotal.Visible      = false;
             btConfirmarRetorno.Enabled      = false;
             btnDespesas.Enabled             = false;
-            label18.Visible                 = false;
+            lbEstatus.Visible                 = false;
             txtEstatusSaida.Enabled         = false;
             txtEstatusSaida.Visible         = false;
+            btnDespesas.Enabled = false;
         }
 
         private void bttnTools_Click(object sender, EventArgs e){
@@ -727,13 +737,15 @@ namespace Sistema.View
                 bttnSearch.Enabled = true;
                 btConfirmarRetorno.Enabled = false;
                 btConfirmarRetorno.Visible = false;
+                btnDespesas.Enabled = false;
+                lbveiculo.Visible = true;
 
             } else if (operationType == ""          ||
                  operationType == "newInsertion"    ||
                  operationType == "updateData"      ||
                  operationType == "search"          &&
                  typeEdition == "insert"){
-
+                btnDespesas.Enabled = false;
                 bttnDel.Enabled             = false;
                 bttnSearch.Enabled          = true;
                 bttnRefresh.Enabled         = true;
@@ -760,10 +772,9 @@ namespace Sistema.View
                 btnRotaConcluida.Enabled        = false;
                 btnCalcularKmTotal.Enabled      = false;
                 btnCalcularKmTotal.Visible      = false;
-                label5.Visible                  = false;
+                lbveiculo.Visible                = true;
                 txtKmTotal.Visible              = false;
-                btnCalcularKmTotal.Enabled      = false;
-                btnCalcularKmTotal.Visible      = false;
+              
                 btConfirmarRetorno.Enabled      = false;
                 btConfirmarRetorno.Visible      = false;
                 btConfirmarRetorno.Enabled      = false;
@@ -774,7 +785,7 @@ namespace Sistema.View
                  operationType == "updateData"      ||
                  operationType == "search"          &&
                  typeEdition == "search"){
-
+                btnDespesas.Enabled = false;
                 bttnDel.Enabled                 = false;
                 bttnSearch.Enabled              = true;
                 bttnRefresh.Enabled             = true;
@@ -798,7 +809,7 @@ namespace Sistema.View
                 txtEstatusSaida.Enabled         = false;
                 btnEmRota.Enabled               = false;
                 btnRotaConcluida.Enabled        = false;
-                label5.Visible                  = false;
+                lbveiculo.Visible = true;
                 txtKmTotal.Visible              = false;
                 btnCalcularKmTotal.Enabled      = false;
                 btnCalcularKmTotal.Visible      = false;
@@ -836,6 +847,17 @@ namespace Sistema.View
             txtRegiaoEntrega.Enabled            = true;
             txtKmSaida.Enabled                  = true;
             txtKmRetorno.Enabled                = false;
+
+            lbdataRetorno.Visible = false;
+            datePckRetorno.Visible = false;
+            lbKmRetorno.Visible = false;
+            txtKmRetorno.Visible = false;
+            lbTotalKm.Visible = false;
+            btnCalcularKmTotal.Visible = false;
+            txtKmTotal.Visible = false;
+            lbFechamento.Visible = false;
+            txtHoraRetorno.Visible = false;
+
             txtKmTotal.Enabled                  = false;
             label4.Visible                      = true;
             txtIdVeiculo.Visible                = false;
@@ -1636,6 +1658,19 @@ namespace Sistema.View
                 groupBoxFormulario.Visible      =   true;
                 datePckSaida.Enabled            =   false;
                 txtKmTotal.Visible              =   true;
+
+                lbTotalKm.Visible = true;
+                lbFechamento.Visible = true;
+                txtHoraRetorno.Visible = true;
+                lbHoraSaida.Visible = true;
+                txtHoraSaida.Visible = true;
+                txtEstatusSaida.Visible = true;
+                lbEstatus.Visible = true;
+                lbdataRetorno.Visible = true;
+                lbKmRetorno.Visible = true;
+                lbTotalKm.Visible = true;
+                btnRotaConcluida.Enabled = false;
+                btnDespesas.Enabled = true;
                 btnCalcularKmTotal.Visible      =   true;
                 btnCalcularKmTotal.Enabled      =   true;
                 txtKmSaida.Visible              =   true;
@@ -1665,8 +1700,11 @@ namespace Sistema.View
                 txtKmSaida.Text                 =   gridCrudSaidas.CurrentRow.Cells[14].Value.ToString();
                 txtKmRetorno.Text               =   gridCrudSaidas.CurrentRow.Cells[15].Value.ToString();
                 txtKmTotal.Text                 =   gridCrudSaidas.CurrentRow.Cells[16].Value.ToString();
-                btnRotaConcluida.Enabled        =   false;
-                btnDespesas.Enabled             =   true;
+                btnCalcularKmTotal.Visible = true;
+                btnCalcularKmTotal.Visible = true;
+
+
+
             }
         }
 
@@ -1919,8 +1957,12 @@ namespace Sistema.View
             }else if (!cbEstatusSaida.SelectedItem.Equals("Preparando")){
                 toolStripButton4.Enabled = false;
             }
+            else if (cbEstatusSaida.SelectedItem.Equals("Rota Concluída"))
+            {
+                btnCalcularKmTotal.Visible = true;
+            }  //      
 
-          puxarparametro(0, Convert.ToInt32(cbButtnQuantPage1.SelectedItem), "Sim");
+            puxarparametro(0, Convert.ToInt32(cbButtnQuantPage1.SelectedItem), "Sim");
 
         }
 
@@ -1935,8 +1977,17 @@ namespace Sistema.View
                 datePckRetorno.Enabled      =   true;
                 txtKmRetorno.Enabled        =   true;
                 txtKmSaida.Enabled          =   false;
-                label5.Visible              =   true;
+                lbveiculo.Visible           =   true;
                 txtKmTotal.Visible          =   true;
+
+                lbTotalKm.Visible = true;
+                lbFechamento.Visible = true;
+                txtHoraRetorno.Visible = true;
+                lbHoraSaida.Visible = true;
+                txtHoraSaida.Visible = true;
+                txtEstatusSaida.Visible = true;
+                lbEstatus.Visible = true;
+
                 txtRegiaoEntrega.Enabled    =   false;
                 txtIdSaida.Text             =   gridCrudSaidas.CurrentRow.Cells[0].Value.ToString();
                 txtIdVeiculo.Text           =   gridCrudSaidas.CurrentRow.Cells[1].Value.ToString();
@@ -2032,6 +2083,7 @@ namespace Sistema.View
         }
 
         private void btnDespesas_Click(object sender, EventArgs e){
+
             AddGastosSaidaView chamarAddGastosSaidaView = new AddGastosSaidaView();
             chamarAddGastosSaidaView.IdSaidaVO = gridCrudSaidas.CurrentRow.Cells[0].Value.ToString();
             chamarAddGastosSaidaView.ShowDialog();
@@ -2142,6 +2194,11 @@ namespace Sistema.View
         private void toolStripButton2_Click_1(object sender, EventArgs e)
         {
           //  reduzirFonte();
+        }
+
+        private void cbEstatusSaida_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

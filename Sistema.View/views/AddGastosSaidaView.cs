@@ -74,6 +74,7 @@ namespace Sistema.View.views
         }
 
         public void refresh(){
+           
             dataGridGastos.DataSource = controllerGastos.ListarDataGridAddSaidaController(Convert.ToInt32(IdSaidaVO));
             DataGridModel();
             limparcampos();

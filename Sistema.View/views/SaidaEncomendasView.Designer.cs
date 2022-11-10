@@ -90,22 +90,22 @@ namespace Sistema.View
             this.gridCurdMestreDetalhe = new System.Windows.Forms.DataGridView();
             this.button5 = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label18 = new System.Windows.Forms.Label();
+            this.lbEstatus = new System.Windows.Forms.Label();
             this.txtEstatusSaida = new System.Windows.Forms.TextBox();
             this.txtHoraRetorno = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
+            this.lbFechamento = new System.Windows.Forms.Label();
             this.txtHoraSaida = new System.Windows.Forms.TextBox();
-            this.label16 = new System.Windows.Forms.Label();
+            this.lbTotalKm = new System.Windows.Forms.Label();
             this.btnImportarEntregador = new System.Windows.Forms.Button();
             this.txtIdSaida = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
+            this.lbHoraSaida = new System.Windows.Forms.Label();
             this.btnImportarVeiculo = new System.Windows.Forms.Button();
             this.label15 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.lbveiculo = new System.Windows.Forms.Label();
             this.btnCalcularKmTotal = new System.Windows.Forms.Button();
             this.datePckRetorno = new System.Windows.Forms.DateTimePicker();
-            this.label14 = new System.Windows.Forms.Label();
+            this.lbdataRetorno = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.txtRegiaoEntrega = new System.Windows.Forms.TextBox();
             this.txtPlacaVeiculo = new System.Windows.Forms.TextBox();
@@ -113,7 +113,7 @@ namespace Sistema.View
             this.txtKmTotal = new System.Windows.Forms.TextBox();
             this.txtKmRetorno = new System.Windows.Forms.TextBox();
             this.txtKmSaida = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lbKmRetorno = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.datePckSaida = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
@@ -660,6 +660,7 @@ namespace Sistema.View
             this.cbEstatusSaida.Name = "cbEstatusSaida";
             this.cbEstatusSaida.Size = new System.Drawing.Size(120, 28);
             this.cbEstatusSaida.SelectedIndexChanged += new System.EventHandler(this.toolStripComboBox1_SelectedIndexChanged_1);
+            this.cbEstatusSaida.Click += new System.EventHandler(this.cbEstatusSaida_Click);
             // 
             // gridCrudSaidas
             // 
@@ -761,22 +762,22 @@ namespace Sistema.View
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.label18);
+            this.groupBox2.Controls.Add(this.lbEstatus);
             this.groupBox2.Controls.Add(this.txtEstatusSaida);
             this.groupBox2.Controls.Add(this.txtHoraRetorno);
-            this.groupBox2.Controls.Add(this.label8);
+            this.groupBox2.Controls.Add(this.lbFechamento);
             this.groupBox2.Controls.Add(this.txtHoraSaida);
-            this.groupBox2.Controls.Add(this.label16);
+            this.groupBox2.Controls.Add(this.lbTotalKm);
             this.groupBox2.Controls.Add(this.btnImportarEntregador);
             this.groupBox2.Controls.Add(this.txtIdSaida);
             this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Controls.Add(this.label17);
+            this.groupBox2.Controls.Add(this.lbHoraSaida);
             this.groupBox2.Controls.Add(this.btnImportarVeiculo);
             this.groupBox2.Controls.Add(this.label15);
-            this.groupBox2.Controls.Add(this.label5);
+            this.groupBox2.Controls.Add(this.lbveiculo);
             this.groupBox2.Controls.Add(this.btnCalcularKmTotal);
             this.groupBox2.Controls.Add(this.datePckRetorno);
-            this.groupBox2.Controls.Add(this.label14);
+            this.groupBox2.Controls.Add(this.lbdataRetorno);
             this.groupBox2.Controls.Add(this.label12);
             this.groupBox2.Controls.Add(this.txtRegiaoEntrega);
             this.groupBox2.Controls.Add(this.txtPlacaVeiculo);
@@ -784,7 +785,7 @@ namespace Sistema.View
             this.groupBox2.Controls.Add(this.txtKmTotal);
             this.groupBox2.Controls.Add(this.txtKmRetorno);
             this.groupBox2.Controls.Add(this.txtKmSaida);
-            this.groupBox2.Controls.Add(this.label3);
+            this.groupBox2.Controls.Add(this.lbKmRetorno);
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.datePckSaida);
             this.groupBox2.Controls.Add(this.label1);
@@ -799,15 +800,15 @@ namespace Sistema.View
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Formulário";
             // 
-            // label18
+            // lbEstatus
             // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(896, 45);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(55, 17);
-            this.label18.TabIndex = 117;
-            this.label18.Text = "Estatus:";
+            this.lbEstatus.AutoSize = true;
+            this.lbEstatus.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbEstatus.Location = new System.Drawing.Point(896, 45);
+            this.lbEstatus.Name = "lbEstatus";
+            this.lbEstatus.Size = new System.Drawing.Size(55, 17);
+            this.lbEstatus.TabIndex = 117;
+            this.lbEstatus.Text = "Estatus:";
             // 
             // txtEstatusSaida
             // 
@@ -826,15 +827,15 @@ namespace Sistema.View
             this.txtHoraRetorno.Size = new System.Drawing.Size(75, 25);
             this.txtHoraRetorno.TabIndex = 115;
             // 
-            // label8
+            // lbFechamento
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(723, 114);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(86, 17);
-            this.label8.TabIndex = 114;
-            this.label8.Text = "Fechamento:";
+            this.lbFechamento.AutoSize = true;
+            this.lbFechamento.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbFechamento.Location = new System.Drawing.Point(723, 114);
+            this.lbFechamento.Name = "lbFechamento";
+            this.lbFechamento.Size = new System.Drawing.Size(86, 17);
+            this.lbFechamento.TabIndex = 114;
+            this.lbFechamento.Text = "Fechamento:";
             // 
             // txtHoraSaida
             // 
@@ -845,15 +846,15 @@ namespace Sistema.View
             this.txtHoraSaida.Size = new System.Drawing.Size(75, 25);
             this.txtHoraSaida.TabIndex = 113;
             // 
-            // label16
+            // lbTotalKm
             // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(501, 117);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(40, 17);
-            this.label16.TabIndex = 111;
-            this.label16.Text = "Total:";
+            this.lbTotalKm.AutoSize = true;
+            this.lbTotalKm.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTotalKm.Location = new System.Drawing.Point(501, 117);
+            this.lbTotalKm.Name = "lbTotalKm";
+            this.lbTotalKm.Size = new System.Drawing.Size(40, 17);
+            this.lbTotalKm.TabIndex = 111;
+            this.lbTotalKm.Text = "Total:";
             // 
             // btnImportarEntregador
             // 
@@ -886,15 +887,15 @@ namespace Sistema.View
             this.label4.TabIndex = 99;
             this.label4.Text = "ID:";
             // 
-            // label17
+            // lbHoraSaida
             // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(723, 83);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(77, 17);
-            this.label17.TabIndex = 112;
-            this.label17.Text = "Hora Saida:";
+            this.lbHoraSaida.AutoSize = true;
+            this.lbHoraSaida.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbHoraSaida.Location = new System.Drawing.Point(723, 83);
+            this.lbHoraSaida.Name = "lbHoraSaida";
+            this.lbHoraSaida.Size = new System.Drawing.Size(77, 17);
+            this.lbHoraSaida.TabIndex = 112;
+            this.lbHoraSaida.Text = "Hora Saida:";
             // 
             // btnImportarVeiculo
             // 
@@ -916,15 +917,15 @@ namespace Sistema.View
             this.label15.TabIndex = 108;
             this.label15.Text = "Entregador:";
             // 
-            // label5
+            // lbveiculo
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(32, 56);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(53, 17);
-            this.label5.TabIndex = 107;
-            this.label5.Text = "Veículo:";
+            this.lbveiculo.AutoSize = true;
+            this.lbveiculo.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbveiculo.Location = new System.Drawing.Point(32, 56);
+            this.lbveiculo.Name = "lbveiculo";
+            this.lbveiculo.Size = new System.Drawing.Size(53, 17);
+            this.lbveiculo.TabIndex = 107;
+            this.lbveiculo.Text = "Veículo:";
             // 
             // btnCalcularKmTotal
             // 
@@ -946,15 +947,15 @@ namespace Sistema.View
             this.datePckRetorno.Size = new System.Drawing.Size(154, 25);
             this.datePckRetorno.TabIndex = 105;
             // 
-            // label14
+            // lbdataRetorno
             // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(55, 121);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(60, 17);
-            this.label14.TabIndex = 104;
-            this.label14.Text = "Retorno:";
+            this.lbdataRetorno.AutoSize = true;
+            this.lbdataRetorno.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbdataRetorno.Location = new System.Drawing.Point(55, 121);
+            this.lbdataRetorno.Name = "lbdataRetorno";
+            this.lbdataRetorno.Size = new System.Drawing.Size(60, 17);
+            this.lbdataRetorno.TabIndex = 104;
+            this.lbdataRetorno.Text = "Retorno:";
             // 
             // label12
             // 
@@ -1022,15 +1023,15 @@ namespace Sistema.View
             this.txtKmSaida.TabIndex = 90;
             this.txtKmSaida.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtKmSaida_KeyPress);
             // 
-            // label3
+            // lbKmRetorno
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(283, 120);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(84, 17);
-            this.label3.TabIndex = 91;
-            this.label3.Text = "Km Retorno:";
+            this.lbKmRetorno.AutoSize = true;
+            this.lbKmRetorno.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbKmRetorno.Location = new System.Drawing.Point(283, 120);
+            this.lbKmRetorno.Name = "lbKmRetorno";
+            this.lbKmRetorno.Size = new System.Drawing.Size(84, 17);
+            this.lbKmRetorno.TabIndex = 91;
+            this.lbKmRetorno.Text = "Km Retorno:";
             // 
             // label2
             // 
@@ -1157,7 +1158,7 @@ namespace Sistema.View
         private System.Windows.Forms.TextBox txtKmTotal;
         private System.Windows.Forms.TextBox txtKmRetorno;
         private System.Windows.Forms.TextBox txtKmSaida;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lbKmRetorno;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DateTimePicker datePckSaida;
         private System.Windows.Forms.Label label1;
@@ -1181,21 +1182,21 @@ namespace Sistema.View
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ToolStripButton btConfirmarRetorno;
         private System.Windows.Forms.DateTimePicker datePckRetorno;
-        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label lbdataRetorno;
         private System.Windows.Forms.DataGridView gridCurdMestreDetalhe;
         private System.Windows.Forms.Button btnCalcularKmTotal;
         private System.Windows.Forms.ToolStripLabel lbCbEstatusSaida;
         private System.Windows.Forms.ToolStripComboBox cbEstatusSaida;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lbveiculo;
         private System.Windows.Forms.Button btnImportarEntregador;
         private System.Windows.Forms.Button btnImportarVeiculo;
-        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label lbTotalKm;
         private System.Windows.Forms.TextBox txtHoraSaida;
-        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label lbHoraSaida;
         private System.Windows.Forms.TextBox txtHoraRetorno;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label lbFechamento;
+        private System.Windows.Forms.Label lbEstatus;
         private System.Windows.Forms.TextBox txtEstatusSaida;
         private System.Windows.Forms.ToolStripButton btnDespesas;
         private System.Windows.Forms.ToolStripButton toolStripButton4;

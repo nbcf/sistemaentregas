@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Sistema.Controller;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,10 +17,21 @@ namespace Sistema.View.relatorios
         {
             InitializeComponent();
         }
+        SaidasController controllerSaida = new SaidasController();
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void RelatorioConsumoVeiculos_Load(object sender, EventArgs e)
+        {
+          
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            dataGridView1.DataSource = controllerSaida.ListarConsumoPorVeiculoNoPeriodocontroller(7, dateTimePicker1.Value, dateTimePicker2.Value);
         }
     }
 }

@@ -17,10 +17,6 @@ namespace Sistema.View.views
                     total = soma + total;
                 }
             }else if (linhasgrid == 0) {
-                MessageBox.Show("Não há valores para somar!",
-                 "Aviso do Sistema",
-                 MessageBoxButtons.OK,
-                 MessageBoxIcon.Information);
             }
             return total;
         }

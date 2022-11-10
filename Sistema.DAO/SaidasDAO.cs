@@ -361,27 +361,30 @@ namespace Sistema.DAO
             }
         }
 
-        public DataTable ListarSaidasPorVeiculo(int idpessoa, DateTime dataInicial, DateTime dataFinal){
+        public DataTable ListarConsumoPorVeiculoNoPeriodoDAO(int idveiculo, DateTime dataInicial, DateTime dataFinal){
             try{
                 classeConecta.AbrirCon();
-                sql = "SELECT * FROM gastos       gts " +
-                      "INNER JOIN tipogastos      tpg " +
-                      "INNER JOIN tipounds        tpu " +
-                      "INNER JOIN saidas          sai " +
-                      "INNER JOIN fornecedores    for " +
-                      "INNER JOIN usuarios        usr " +
-                      "INNER JOIN pessoas         pes " +
-                      "INNER JOIN papeis          pel " +
-                      "ON sai.idusuario       =   usr.idusuario       " +
-                      "AND usr.idpessoa       =   pes.idpessoa        " +
-                      "AND usr.idpapel        =   pel.idpapel         " +
-                      "AND gts.idsaida        =   sai.idsaida         " +
-                      "AND gts.idfornecedor   =   forn.idfornecedor   " +
-                      "AND gts.idtipogasto    =   tpg.idtipogasto     " +
-                      "AND gts.tipound        =   tpu.idtipound       " +
-                      "AND sai.estsaida       =   'Concluida'         " +
-                      "WHERE sai.idpessoa     =   1 AND sai.datasaida " +
-                      "BETWEEN '" + dataInicial + "' AND '" + dataFinal + "' ORDER BY gts.idgasto asc  ";
+
+                sql = " SELECT * FROM gastos       gts " +
+                      " INNER JOIN tipogastos      tpg " +
+                      " INNER JOIN tipounds        tpu " +
+                      " INNER JOIN saidas          sai " +
+                      " INNER JOIN fornecedores    forn " +
+                      " INNER JOIN usuarios        usr " +
+                      " INNER JOIN pessoas         pes " +
+                      " INNER JOIN papeis          pel " +
+
+                      " ON sai.idusuario       =   usr.idusuario       " +
+                      " AND usr.idpessoa       =   pes.idpessoa        " +
+                      " AND usr.idpapel        =   pel.idpapel         " +
+                      " AND gts.idsaida        =   sai.idsaida         " +
+                      " AND gts.idfornecedor   =   forn.idfornecedor   " +
+                      " AND gts.idtipogasto    =   tpg.idtipogasto     " +
+                      " AND gts.tipound        =   tpu.idtipound       " +
+                      " AND sai.estsaida       =   'Concluida'         " +
+                      " WHERE sai.idveiculo    =   7     " +
+
+                      " AND sai.datasaida BETWEEN '2022-11-01' AND '2022-11-10' ORDER BY gts.idgasto asc  ";
         
                 cmd = new MySqlCommand(sql, classeConecta.con);
                 MySqlDataAdapter da = new MySqlDataAdapter();

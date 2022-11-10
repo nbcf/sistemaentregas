@@ -564,7 +564,7 @@ namespace Sistema.View
                 strCidade           =       editSaidas.CidadeVO;
                 strUf               =       editSaidas.UfVO;
                 strCep              =       editSaidas.CepVO;
-                dtDataEntrega       =       editSaidas.DataEntregaVO;
+                dtDataEntrega       =       editSaidas.  DataEntregaVO;
                 dtDatarota          =       editSaidas.DataRotaVO;
                 dtDataEntrada       =       editSaidas.DataEntradaVO;
                 strIdSaida          =       editSaidas.IdSaidaVO;

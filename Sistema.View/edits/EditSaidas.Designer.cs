@@ -497,10 +497,9 @@ namespace Sistema.View.edits
             // datePDataEntregue
             // 
             this.datePDataEntregue.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.datePDataEntregue.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.datePDataEntregue.Location = new System.Drawing.Point(116, 73);
             this.datePDataEntregue.Name = "datePDataEntregue";
-            this.datePDataEntregue.Size = new System.Drawing.Size(137, 25);
+            this.datePDataEntregue.Size = new System.Drawing.Size(344, 25);
             this.datePDataEntregue.TabIndex = 18;
             this.datePDataEntregue.ValueChanged += new System.EventHandler(this.dtPDataEntrega_ValueChanged);
             // 
