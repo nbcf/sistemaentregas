@@ -1078,60 +1078,62 @@ namespace Sistema.View
         }
 
         private void behaviorClickGrid(){
-            bttnDel.Enabled = true;
-            bttnSearch.Enabled = true;
-            bttnRefresh.Enabled = true;
-            bttnSave.Enabled = false;
-            bttnNew.Enabled = true;
-            bttnImport.Enabled = false;
-            btnEmRota.Enabled = true;
-            radioBttnComeca.Checked = false;
-            radioBttnContem.Checked = false;
-            radioBttnTermina.Checked = false;
-            radioBttnComeca.Checked = false;
-            radioBttnContem.Checked = false;
-            radioBttnTermina.Checked = false;
+            bttnDel.Enabled             = true;
+            bttnSearch.Enabled          = true;
+            bttnRefresh.Enabled         = true;
+            bttnSave.Enabled            = false;
+            bttnNew.Enabled             = true;
+            bttnImport.Enabled          = false;
+            btnEmRota.Enabled           = true;
+            radioBttnComeca.Checked     = false;
+            radioBttnContem.Checked     = false;
+            radioBttnTermina.Checked    = false;
+            radioBttnComeca.Checked     = false;
+            radioBttnContem.Checked     = false;
+            radioBttnTermina.Checked    = false;
             enableFieldsFormulario();
             clearFieldsFormulario();
-            txtIdSaida.Text = gridCrudSaidas.CurrentRow.Cells[0].Value.ToString();
-            txtIdVeiculo.Text = gridCrudSaidas.CurrentRow.Cells[1].Value.ToString();
-            txtIdUsuario.Text = gridCrudSaidas.CurrentRow.Cells[2].Value.ToString();
-            txtIdPapel.Text = gridCrudSaidas.CurrentRow.Cells[3].Value.ToString();
-            txtIdPessoa.Text = gridCrudSaidas.CurrentRow.Cells[4].Value.ToString();
-            txtVeiculo.Text = gridCrudSaidas.CurrentRow.Cells[5].Value.ToString();
-            txtPlacaVeiculo.Text = gridCrudSaidas.CurrentRow.Cells[6].Value.ToString();
-            txtPessoa.Text = gridCrudSaidas.CurrentRow.Cells[7].Value.ToString();
-            datePckSaida.Value = Convert.ToDateTime(gridCrudSaidas.CurrentRow.Cells[8].Value.ToString());
-            txtEstatusSaida.Text = gridCrudSaidas.CurrentRow.Cells[12].Value.ToString();
-            txtRegiaoEntrega.Text = gridCrudSaidas.CurrentRow.Cells[13].Value.ToString();
-            txtKmSaida.Text = gridCrudSaidas.CurrentRow.Cells[14].Value.ToString();
-            txtKmRetorno.Text = gridCrudSaidas.CurrentRow.Cells[15].Value.ToString();
-            txtKmTotal.Text = gridCrudSaidas.CurrentRow.Cells[16].Value.ToString();
+            txtIdSaida.Text             =   gridCrudSaidas.CurrentRow.Cells[0].Value.ToString();
+            txtIdVeiculo.Text           =   gridCrudSaidas.CurrentRow.Cells[1].Value.ToString();
+            txtIdUsuario.Text           =   gridCrudSaidas.CurrentRow.Cells[2].Value.ToString();
+            txtIdPapel.Text             =   gridCrudSaidas.CurrentRow.Cells[3].Value.ToString();
+            txtIdPessoa.Text            =   gridCrudSaidas.CurrentRow.Cells[4].Value.ToString();
+            txtVeiculo.Text             =   gridCrudSaidas.CurrentRow.Cells[5].Value.ToString();
+            txtPlacaVeiculo.Text        =   gridCrudSaidas.CurrentRow.Cells[6].Value.ToString();
+            txtPessoa.Text              =   gridCrudSaidas.CurrentRow.Cells[7].Value.ToString();
+            datePckSaida.Value          =   Convert.ToDateTime(gridCrudSaidas.CurrentRow.Cells[8].Value.ToString());
+            txtEstatusSaida.Text        =   gridCrudSaidas.CurrentRow.Cells[12].Value.ToString();
+            txtRegiaoEntrega.Text       =   gridCrudSaidas.CurrentRow.Cells[13].Value.ToString();
+            txtKmSaida.Text             =   gridCrudSaidas.CurrentRow.Cells[14].Value.ToString();
+            txtKmRetorno.Text           =   gridCrudSaidas.CurrentRow.Cells[15].Value.ToString();
+            txtKmTotal.Text             =   gridCrudSaidas.CurrentRow.Cells[16].Value.ToString();
             setaGridEmCampos();
 
         }
 
-        private void setaGridEmCampos() {
-            txtIdSaida.Text = gridCrudSaidas.CurrentRow.Cells[0].Value.ToString();
-            txtIdVeiculo.Text = gridCrudSaidas.CurrentRow.Cells[1].Value.ToString();
-            txtIdUsuario.Text = gridCrudSaidas.CurrentRow.Cells[2].Value.ToString();
-            txtIdPapel.Text = gridCrudSaidas.CurrentRow.Cells[3].Value.ToString();
-            txtIdPessoa.Text = gridCrudSaidas.CurrentRow.Cells[4].Value.ToString();
-            txtVeiculo.Text = gridCrudSaidas.CurrentRow.Cells[5].Value.ToString(); ;
-            txtPlacaVeiculo.Text = gridCrudSaidas.CurrentRow.Cells[6].Value.ToString(); ;
-            txtPessoa.Text = gridCrudSaidas.CurrentRow.Cells[7].Value.ToString();
-            datePckSaida.Value = Convert.ToDateTime(gridCrudSaidas.CurrentRow.Cells[8].Value.ToString());
-            txtEstatusSaida.Text = gridCrudSaidas.CurrentRow.Cells[12].Value.ToString();
-            txtRegiaoEntrega.Text = gridCrudSaidas.CurrentRow.Cells[13].Value.ToString();
-            txtKmSaida.Text = gridCrudSaidas.CurrentRow.Cells[14].Value.ToString();
-            txtKmRetorno.Text = gridCrudSaidas.CurrentRow.Cells[15].Value.ToString();
-            txtKmTotal.Text = gridCrudSaidas.CurrentRow.Cells[16].Value.ToString();
-            txtEstatusSaida.Text = gridCrudSaidas.CurrentRow.Cells[12].Value.ToString();
+        private void setaGridEmCampos(){
+
+            txtIdSaida.Text         =   gridCrudSaidas.CurrentRow.Cells[0].Value.ToString();
+            txtIdVeiculo.Text       =   gridCrudSaidas.CurrentRow.Cells[1].Value.ToString();
+            txtIdUsuario.Text       =   gridCrudSaidas.CurrentRow.Cells[2].Value.ToString();
+            txtIdPapel.Text         =   gridCrudSaidas.CurrentRow.Cells[3].Value.ToString();
+            txtIdPessoa.Text        =   gridCrudSaidas.CurrentRow.Cells[4].Value.ToString();
+            txtVeiculo.Text         =   gridCrudSaidas.CurrentRow.Cells[5].Value.ToString(); ;
+            txtPlacaVeiculo.Text    =   gridCrudSaidas.CurrentRow.Cells[6].Value.ToString(); ;
+            txtPessoa.Text          =   gridCrudSaidas.CurrentRow.Cells[7].Value.ToString();
+            datePckSaida.Value      =   Convert.ToDateTime(gridCrudSaidas.CurrentRow.Cells[8].Value.ToString());
+            txtEstatusSaida.Text    =   gridCrudSaidas.CurrentRow.Cells[12].Value.ToString();
+            txtRegiaoEntrega.Text   =   gridCrudSaidas.CurrentRow.Cells[13].Value.ToString();
+            txtKmSaida.Text         =   gridCrudSaidas.CurrentRow.Cells[14].Value.ToString();
+            txtKmRetorno.Text       =   gridCrudSaidas.CurrentRow.Cells[15].Value.ToString();
+            txtKmTotal.Text         =   gridCrudSaidas.CurrentRow.Cells[16].Value.ToString();
+            txtEstatusSaida.Text    =   gridCrudSaidas.CurrentRow.Cells[12].Value.ToString();
+
             if (!String.IsNullOrEmpty(txtIdSaida.Text) || txtIdSaida.Text != ""){
-                gridCurdMestreDetalhe.DataSource = controllerEncomendas.ListarDetalheMestre(txtIdSaida.Text, "Saiu para entrega");
+                gridCurdMestreDetalhe.DataSource    =   controllerEncomendas.ListarDetalheMestre(txtIdSaida.Text, "Saiu para entrega");
                 DataGridModelDetalhe();
-                ListaView lista = new ListaView();
-                lista.IdSaidaVO = txtIdSaida.Text;
+                ListaView lista                     =   new ListaView();
+                lista.IdSaidaVO                     =   txtIdSaida.Text;
                 lista.ShowDialog();
             }
         }
@@ -1170,21 +1172,15 @@ namespace Sistema.View
 
         public void disableFieldsPesquisar() { txtBoxPesquisar.Enabled = true; }
         public void enableFieldsPesquisar() { txtBoxPesquisar.Enabled = true; }
-        private void bttnSave_Click(object sender, EventArgs e)
-        {
-            if (txtVeiculo.Text.Length > 0 && txtPessoa.Text.Length > 0)
-            {
+
+        private void bttnSave_Click(object sender, EventArgs e){
+            if (txtVeiculo.Text.Length > 0 && txtPessoa.Text.Length > 0){
                 behaviorSave();
 
-            }
-            else
-            {
-
-            }
+            } else{}
         }
 
-        private void bttnNew_Click(object sender, EventArgs e)
-        {
+        private void bttnNew_Click(object sender, EventArgs e) {
             behaviorNewInsert();
         }
 
@@ -1283,8 +1279,7 @@ namespace Sistema.View
             }
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
+        private void button2_Click(object sender, EventArgs e){
             countBttnToggle++;
             if (countBttnToggle % 2 != 0)
             {
@@ -1303,125 +1298,97 @@ namespace Sistema.View
             }
         }
 
-        private void bttnOnePageRight_Click(object sender, EventArgs e)
-        {
+        private void bttnOnePageRight_Click(object sender, EventArgs e){
             somar();
         }
 
-        private void bttnEndPages_Click(object sender, EventArgs e)
-        {
+        private void bttnEndPages_Click(object sender, EventArgs e){
             finalDaPagina();
         }
 
-        private void bttnOnePageLeft_Click(object sender, EventArgs e)
-        {
+        private void bttnOnePageLeft_Click(object sender, EventArgs e){
             descontar();
         }
 
-        private void bttnBeginPages_Click(object sender, EventArgs e)
-        {
+        private void bttnBeginPages_Click(object sender, EventArgs e){
             inicioPagina();
         }
 
-        private void cbButtnQuantPage_SelectedIndexChanged(object sender, EventArgs e)
-        {
+        private void cbButtnQuantPage_SelectedIndexChanged(object sender, EventArgs e){
             puxarparametro(0, Convert.ToInt32(cbButtnQuantPage1.SelectedItem), "Sim");
 
         }
 
-        private void bttnSave_Click_1(object sender, EventArgs e)
-        {
-
+        private void bttnSave_Click_1(object sender, EventArgs e){
             behaviorSave();
         }
 
-        private void radBttnFirst_CheckedChanged(object sender, EventArgs e)
-        {
+        private void radBttnFirst_CheckedChanged(object sender, EventArgs e){
             puxarparametro(0, Convert.ToInt32(cbButtnQuantPage1.SelectedItem), "Sim");
         }
 
-        private void radBttnLast_CheckedChanged(object sender, EventArgs e)
-        {
+        private void radBttnLast_CheckedChanged(object sender, EventArgs e){
             puxarparametro(0, Convert.ToInt32(cbButtnQuantPage1.SelectedItem), "Sim");
         }
 
 
-
-        private void bttnNew_Click_1(object sender, EventArgs e)
-        {
-
+        private void bttnNew_Click_1(object sender, EventArgs e){
             behaviorNewInsert();
         }
 
-        private void bttnRefresh_Click_1(object sender, EventArgs e)
-        {
+        private void bttnRefresh_Click_1(object sender, EventArgs e){
             behaviorRefresh();
         }
 
-        private void radioBttnContem_CheckedChanged(object sender, EventArgs e)
-        {
+        private void radioBttnContem_CheckedChanged(object sender, EventArgs e){
             puxarparametroPesquisa();
         }
 
-        private void radioBttnTermina_CheckedChanged(object sender, EventArgs e)
-        {
+        private void radioBttnTermina_CheckedChanged(object sender, EventArgs e){
             puxarparametroPesquisa();
         }
 
-        private void radioBttnComeca_CheckedChanged(object sender, EventArgs e)
-        {
+        private void radioBttnComeca_CheckedChanged(object sender, EventArgs e){
             puxarparametroPesquisa();
         }
 
-        private void txtBoxPesquisar_TextChanged(object sender, EventArgs e)
-        {
+        private void txtBoxPesquisar_TextChanged(object sender, EventArgs e){
             puxarparametroPesquisa();
         }
 
     
 
 
-        private void bttnDel_Click(object sender, EventArgs e)
-        {
-
-          
-           
+        private void bttnDel_Click(object sender, EventArgs e){
             gridCurdMestreDetalhe.DataSource = controllerEncomendas.ListarDetalheMestre(txtIdSaida.Text, "Saiu para entrega");
             DataGridModelDetalhe();
-            int linhasDetalhes = gridCurdMestreDetalhe.RowCount;
-           
-          
-
-            string veiculo = gridCrudSaidas.CurrentRow.Cells[5].Value.ToString();
-            string placa = gridCrudSaidas.CurrentRow.Cells[6].Value.ToString();
-            string entregador = gridCrudSaidas.CurrentRow.Cells[7].Value.ToString();
-            int idsaida = Convert.ToInt32(gridCrudSaidas.CurrentRow.Cells[0].Value.ToString());
-            string estatus = "Em Transito";
+            
+            int linhasDetalhes  =   gridCurdMestreDetalhe.RowCount;
+            string veiculo      =   gridCrudSaidas.CurrentRow.Cells[5].Value.ToString();
+            string placa        =   gridCrudSaidas.CurrentRow.Cells[6].Value.ToString();
+            string entregador   =   gridCrudSaidas.CurrentRow.Cells[7].Value.ToString();
+            int idsaida         =   Convert.ToInt32(gridCrudSaidas.CurrentRow.Cells[0].Value.ToString());
+            string estatus      =   "Em Transito";
 
 
-            if (linhasDetalhes > 0)
-            {
+            if (linhasDetalhes > 0){
 
-                int idorigem = Convert.ToInt32(gridCurdMestreDetalhe.CurrentRow.Cells[1].Value.ToString());
-                int idVeiculo = Convert.ToInt32(gridCurdMestreDetalhe.CurrentRow.Cells[2].Value.ToString());
-                int idEntregador = Convert.ToInt32(gridCurdMestreDetalhe.CurrentRow.Cells[3].Value.ToString());
-
-                DateTime dataEntrega = Convert.ToDateTime(gridCurdMestreDetalhe.CurrentRow.Cells[18].Value);
-                DateTime dataRota = Convert.ToDateTime(gridCurdMestreDetalhe.CurrentRow.Cells[19].Value);
-                DateTime dataEntrada = Convert.ToDateTime(gridCurdMestreDetalhe.CurrentRow.Cells[20].Value);
-
+                int idorigem            =       Convert.ToInt32(gridCurdMestreDetalhe.CurrentRow.Cells[1].Value.ToString());
+                int idVeiculo           =       Convert.ToInt32(gridCurdMestreDetalhe.CurrentRow.Cells[2].Value.ToString());
+                int idEntregador        =       Convert.ToInt32(gridCurdMestreDetalhe.CurrentRow.Cells[3].Value.ToString());
+                DateTime dataEntrega    =       Convert.ToDateTime(gridCurdMestreDetalhe.CurrentRow.Cells[18].Value);
+                DateTime dataRota       =       Convert.ToDateTime(gridCurdMestreDetalhe.CurrentRow.Cells[19].Value);
+                DateTime dataEntrada    =       Convert.ToDateTime(gridCurdMestreDetalhe.CurrentRow.Cells[20].Value);
                 gridCurdMestreDetalhe.DataSource = controllerEncomendas.ListarDetalheMestre(idsaida.ToString(), "Saiu para entrega");
                 DataGridModelDetalhe();
 
                 int linhasDetalhe = gridCurdMestreDetalhe.RowCount;
-                for (int i = 1; i <= linhasDetalhe; i++)
-                {
+                for (int i = 1; i <= linhasDetalhe; i++){
 
                     string idDetalhe;
                     int ajustalinha = i - 1;
                     gridCurdMestreDetalhe.CurrentCell = gridCurdMestreDetalhe.Rows[ajustalinha].Cells[0];
                     idDetalhe = gridCurdMestreDetalhe.CurrentRow.Cells[0].Value.ToString();
-
 
                     controllerEncomendas.Editar(idorigem,
                                                 0,
@@ -1448,62 +1415,52 @@ namespace Sistema.View
 
 
                 }
+
                 veiculosController.EditarEstatusVeiculo(veiculo, placa, "Disponivel", Convert.ToInt32(idVeiculo));
                 controllerSaida.Excluir(Convert.ToInt32(gridCrudSaidas.CurrentRow.Cells[0].Value.ToString()));
                 gridCurdMestreDetalhe.DataSource = controllerEncomendas.ListarDetalheMestre("000", "Saiu para entrega");
                 DataGridModelDetalhe();
                 behaviorRefresh();
-            }
-            else if (linhasDetalhes == 0)
-            {
+
+            }else if (linhasDetalhes == 0){
                 veiculosController.EditarEstatusVeiculo(veiculo, placa, "Disponivel", Convert.ToInt32(gridCrudSaidas.CurrentRow.Cells[1].Value.ToString()));
                 controllerSaida.Excluir(Convert.ToInt32(gridCrudSaidas.CurrentRow.Cells[0].Value.ToString()));
-
                 behaviorRefresh();
          
             }
         }
     
 
-        private void cbButtonPesquisarEm_SelectedIndexChanged(object sender, EventArgs e)
-        {
+        private void cbButtonPesquisarEm_SelectedIndexChanged(object sender, EventArgs e){
             puxarparametroPesquisa();
         }
 
-        private void cbOrdemParam_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
+        private void cbOrdemParam_SelectedIndexChanged(object sender, EventArgs e){
             puxarparametro(0, Convert.ToInt32(cbButtnQuantPage1.SelectedItem), "Sim");
         }
 
-        private void toolStripComboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
+        private void toolStripComboBox1_SelectedIndexChanged(object sender, EventArgs e){
             puxarparametro(0, Convert.ToInt32(cbButtnQuantPage1.SelectedItem), "Sim");
         }
 
-        private void toolStripComboBox2_SelectedIndexChanged(object sender, EventArgs e)
-        {
+        private void toolStripComboBox2_SelectedIndexChanged(object sender, EventArgs e){
             puxarparametro(0, Convert.ToInt32(cbButtnQuantPage1.SelectedItem), "Sim");
         }
 
-        private void cbOrdenarPor1_SelectedIndexChanged(object sender, EventArgs e)
-        {
+        private void cbOrdenarPor1_SelectedIndexChanged(object sender, EventArgs e){
             puxarparametro(0, Convert.ToInt32(cbButtnQuantPage1.SelectedItem), "Sim");
         }
 
 
-        private void button1_Click_1(object sender, EventArgs e)
-        {
+        private void button1_Click_1(object sender, EventArgs e){
             ImportVeiculoToSaidas importVeiculoToSaidas = new ImportVeiculoToSaidas();
             importVeiculoToSaidas.ShowDialog();
-            txtIdVeiculo.Text = importVeiculoToSaidas.IdVO;
-            txtVeiculo.Text = importVeiculoToSaidas.veiculoVO;
-            txtPlacaVeiculo.Text = importVeiculoToSaidas.placaVO;
-
+            txtIdVeiculo.Text       =   importVeiculoToSaidas.IdVO;
+            txtVeiculo.Text         =   importVeiculoToSaidas.veiculoVO;
+            txtPlacaVeiculo.Text    =   importVeiculoToSaidas.placaVO;
         }
 
-        private void button2_Click_1(object sender, EventArgs e)
-        {
+        private void button2_Click_1(object sender, EventArgs e){
             ImportEntregadorToSaidas importEntregadorToSaidas = new ImportEntregadorToSaidas();
             importEntregadorToSaidas.ShowDialog();
             txtIdPessoa.Text = importEntregadorToSaidas.IdVO;
@@ -1512,28 +1469,21 @@ namespace Sistema.View
         }
 
 
-        private void gridCrudSaidas_Click(object sender, EventArgs e)
-        {
+        private void gridCrudSaidas_Click(object sender, EventArgs e){
             behaviorClickGrid();
         }
 
-
-
-        private void button5_Click(object sender, EventArgs e)
-        {
+        private void button5_Click(object sender, EventArgs e){
             setaGridEmCampos();
         }
 
 
 
-        private void bttnRefresh_Click_2(object sender, EventArgs e)
-        {
-            if (String.IsNullOrEmpty(txtIdVeiculo.Text) || txtIdVeiculo.Text == "")
-            {
+        private void bttnRefresh_Click_2(object sender, EventArgs e){
+            if (String.IsNullOrEmpty(txtIdVeiculo.Text) || txtIdVeiculo.Text == ""){
                 behaviorRefresh();
-            }
-            else if (!String.IsNullOrEmpty(txtIdVeiculo.Text) || txtIdVeiculo.Text != "")
-            {
+
+            } else if (!String.IsNullOrEmpty(txtIdVeiculo.Text) || txtIdVeiculo.Text != ""){
                 veiculosController.EditarEstatusVeiculo(txtVeiculo.Text, txtPlacaVeiculo.Text, "Disponivel", Convert.ToInt32(txtIdVeiculo.Text));
                 behaviorRefresh();
             }
@@ -1567,11 +1517,10 @@ namespace Sistema.View
 
             if (importEncomendaToSaidas.AcaoDialogVO == "Cancelar" && importEncomendaToSaidas.AcaoFormVO == "Fechar"){
 
-
-
-            } else if (importEncomendaToSaidas.AcaoDialogVO == "Cancelar"){
+            }else if (importEncomendaToSaidas.AcaoDialogVO == "Cancelar"){
             
             }else if (importEncomendaToSaidas.AcaoDialogVO == "Atualizar"){
+
                 if (!String.IsNullOrEmpty(txtIdSaida.Text) || txtIdSaida.Text != ""){
 
                     gridCurdMestreDetalhe.DataSource = controllerEncomendas.ListarDetalheMestre(txtIdSaida.Text, "Saiu para entrega");
@@ -1590,19 +1539,6 @@ namespace Sistema.View
             }
         }
 
-
-        private void button3_Click_2(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button2_Click_3(object sender, EventArgs e)
-        {
-
-        }
-
-
-
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
             if (txtKmSaida.Text.Length < 3)
@@ -1618,10 +1554,10 @@ namespace Sistema.View
 
             if (txtKmSaida.Text.Length > 3 && txtRegiaoEntrega.Text.Length > 3)
             {
-                gridCrudSaidas.DataSource = controllerSaida.UltimoRegistro();
-                gridCrudSaidas.CurrentCell = gridCrudSaidas.Rows[0].Cells[0];
-                txtIdSaida.Text = gridCrudSaidas.CurrentRow.Cells[0].Value.ToString();
-                string strHoraSaida = DateTime.Now.ToString("HH:mm:ss");
+                gridCrudSaidas.DataSource   =   controllerSaida.UltimoRegistro();
+                gridCrudSaidas.CurrentCell  =   gridCrudSaidas.Rows[0].Cells[0];
+                txtIdSaida.Text             =   gridCrudSaidas.CurrentRow.Cells[0].Value.ToString();
+                string strHoraSaida         =   DateTime.Now.ToString("HH:mm:ss");
 
                 controllerSaida.Editar(
                    Convert.ToInt32(txtIdVeiculo.Text),
@@ -1654,13 +1590,14 @@ namespace Sistema.View
         }
 
         private void button1_Click_2(object sender, EventArgs e){
-            ImportEncomendasToSaida importEncomendaToSaidas = new ImportEncomendasToSaida();
-            importEncomendaToSaidas.IdVeiculoVO = Convert.ToInt32(txtIdVeiculo.Text);
-            importEncomendaToSaidas.IdEntregadorVO = Convert.ToInt32(txtIdUsuario.Text);
-            importEncomendaToSaidas.NomeVeiculoVO = txtVeiculo.Text;
-            importEncomendaToSaidas.PlacaVeiculoVO = txtPlacaVeiculo.Text;
-            importEncomendaToSaidas.EntregadorVO = txtPessoa.Text;
-            importEncomendaToSaidas.IdSaidaVO = txtIdSaida.Text;
+
+            ImportEncomendasToSaida importEncomendaToSaidas     =   new ImportEncomendasToSaida();
+            importEncomendaToSaidas.IdVeiculoVO                 =   Convert.ToInt32(txtIdVeiculo.Text);
+            importEncomendaToSaidas.IdEntregadorVO              =   Convert.ToInt32(txtIdUsuario.Text);
+            importEncomendaToSaidas.NomeVeiculoVO               =   txtVeiculo.Text;
+            importEncomendaToSaidas.PlacaVeiculoVO              =   txtPlacaVeiculo.Text;
+            importEncomendaToSaidas.EntregadorVO                =   txtPessoa.Text;
+            importEncomendaToSaidas.IdSaidaVO                   =   txtIdSaida.Text;
             importEncomendaToSaidas.ShowDialog();
             if (!String.IsNullOrEmpty(txtIdSaida.Text) || txtIdSaida.Text != ""){
                 gridCurdMestreDetalhe.DataSource = controllerEncomendas.ListarDetalheMestre(txtIdSaida.Text, "Saiu para entrega");
@@ -1669,10 +1606,8 @@ namespace Sistema.View
 
         }
 
-        private void button5_Click_1(object sender, EventArgs e)
-        {
-            if (!String.IsNullOrEmpty(txtIdSaida.Text) || txtIdSaida.Text != "")
-            {
+        private void button5_Click_1(object sender, EventArgs e){
+            if (!String.IsNullOrEmpty(txtIdSaida.Text) || txtIdSaida.Text != ""){
                 gridCurdMestreDetalhe.DataSource = controllerEncomendas.ListarDetalheMestre(txtIdSaida.Text, "Saiu para entrega");
                 DataGridModelDetalhe();
             }
@@ -1682,29 +1617,27 @@ namespace Sistema.View
             int linhasDetalhes = gridCurdMestreDetalhe.RowCount;
 
 
-            if (linhasDetalhes > 0)
-            {
+            if (linhasDetalhes > 0){
 
                 var resultado = MessageBox.Show("Deseja dar entrada em uma saida agora?", "Pergunda do sistema", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                if (resultado == DialogResult.Yes)
-                {
+                if (resultado == DialogResult.Yes){
 
-                    gridCrudSaidas.DataSource = controllerSaida.UltimoRegistro();
-                    gridCrudSaidas.CurrentCell = gridCrudSaidas.Rows[0].Cells[0];
+                    gridCrudSaidas.DataSource   =   controllerSaida.UltimoRegistro();
+                    gridCrudSaidas.CurrentCell  =   gridCrudSaidas.Rows[0].Cells[0];
 
-                    int linhas = gridCrudSaidas.RowCount;
-                    int idorigem = Convert.ToInt32(gridCurdMestreDetalhe.CurrentRow.Cells[1].Value.ToString());
-                    int idVeiculo = Convert.ToInt32(gridCurdMestreDetalhe.CurrentRow.Cells[2].Value.ToString());
-                    int idEntregador = Convert.ToInt32(gridCurdMestreDetalhe.CurrentRow.Cells[3].Value.ToString());
-                    string idDetalhe = gridCurdMestreDetalhe.CurrentRow.Cells[0].Value.ToString();
-                    string veiculo = gridCrudSaidas.CurrentRow.Cells[5].Value.ToString();
-                    string placa = gridCrudSaidas.CurrentRow.Cells[6].Value.ToString();
-                    string entregador = gridCrudSaidas.CurrentRow.Cells[7].Value.ToString();
-                    int idsaida = Convert.ToInt32(gridCrudSaidas.CurrentRow.Cells[0].Value.ToString());
-                    string estatus = "Em Transito";
-                    DateTime dataEntrega = Convert.ToDateTime(gridCurdMestreDetalhe.CurrentRow.Cells[18].Value);
-                    DateTime dataRota = Convert.ToDateTime(gridCurdMestreDetalhe.CurrentRow.Cells[19].Value);
-                    DateTime dataEntrada = Convert.ToDateTime(gridCurdMestreDetalhe.CurrentRow.Cells[20].Value);
+                    int linhas              =   gridCrudSaidas.RowCount;
+                    int idorigem            =   Convert.ToInt32(gridCurdMestreDetalhe.CurrentRow.Cells[1].Value.ToString());
+                    int idVeiculo           =   Convert.ToInt32(gridCurdMestreDetalhe.CurrentRow.Cells[2].Value.ToString());
+                    int idEntregador        =   Convert.ToInt32(gridCurdMestreDetalhe.CurrentRow.Cells[3].Value.ToString());
+                    string idDetalhe        =   gridCurdMestreDetalhe.CurrentRow.Cells[0].Value.ToString();
+                    string veiculo          =   gridCrudSaidas.CurrentRow.Cells[5].Value.ToString();
+                    string placa            =   gridCrudSaidas.CurrentRow.Cells[6].Value.ToString();
+                    string entregador       =   gridCrudSaidas.CurrentRow.Cells[7].Value.ToString();
+                    int idsaida             =   Convert.ToInt32(gridCrudSaidas.CurrentRow.Cells[0].Value.ToString());
+                    string estatus          =   "Em Transito";
+                    DateTime dataEntrega    =   Convert.ToDateTime(gridCurdMestreDetalhe.CurrentRow.Cells[18].Value);
+                    DateTime dataRota       =   Convert.ToDateTime(gridCurdMestreDetalhe.CurrentRow.Cells[19].Value);
+                    DateTime dataEntrada    =   Convert.ToDateTime(gridCurdMestreDetalhe.CurrentRow.Cells[20].Value);
 
                     controllerEncomendas.Editar(idorigem,
                                                 0,
@@ -1743,52 +1676,54 @@ namespace Sistema.View
 
         private void toolStripButton2_Click(object sender, EventArgs e){
             if ("Rota Concluída".Equals(txtEstatusSaida.Text = gridCrudSaidas.CurrentRow.Cells[12].Value.ToString())) {
-                groupBoxFormulario.Enabled = true;
-                groupBoxFormulario.Visible = true;
-                datePckSaida.Enabled = false;
-                txtKmTotal.Visible = true;
-                btnCalcularKmTotal.Visible = true;
-                btnCalcularKmTotal.Enabled = true;
-                txtKmSaida.Visible = true;
-                txtKmSaida.Enabled = false;
-                txtKmRetorno.Visible = true;
-                txtKmRetorno.Enabled = true;
-                datePckRetorno.Visible = true;
-                datePckRetorno.Enabled = true;
-                txtRegiaoEntrega.Enabled = false;
-                int idsaida = Convert.ToInt32(gridCrudSaidas.CurrentRow.Cells[0].Value.ToString());
-                groupBoxFormulario.Visible = true;
-                groupBox1.Visible = true;
-                txtIdSaida.Text = gridCrudSaidas.CurrentRow.Cells[0].Value.ToString();
-                txtIdVeiculo.Text = gridCrudSaidas.CurrentRow.Cells[1].Value.ToString();
-                txtIdUsuario.Text = gridCrudSaidas.CurrentRow.Cells[2].Value.ToString();
-                txtIdPapel.Text = gridCrudSaidas.CurrentRow.Cells[3].Value.ToString();
-                txtIdPessoa.Text = gridCrudSaidas.CurrentRow.Cells[4].Value.ToString();
-                txtVeiculo.Text = gridCrudSaidas.CurrentRow.Cells[5].Value.ToString();
-                txtPlacaVeiculo.Text = gridCrudSaidas.CurrentRow.Cells[6].Value.ToString();
-                txtPessoa.Text = gridCrudSaidas.CurrentRow.Cells[7].Value.ToString();
-                datePckSaida.Value = Convert.ToDateTime(gridCrudSaidas.CurrentRow.Cells[8].Value.ToString());
-                txtHoraSaida.Text = gridCrudSaidas.CurrentRow.Cells[10].Value.ToString();
-                txtHoraRetorno.Text = gridCrudSaidas.CurrentRow.Cells[11].Value.ToString();
-                txtEstatusSaida.Text = gridCrudSaidas.CurrentRow.Cells[12].Value.ToString();
-                txtRegiaoEntrega.Text = gridCrudSaidas.CurrentRow.Cells[13].Value.ToString();
-                txtKmSaida.Text = gridCrudSaidas.CurrentRow.Cells[14].Value.ToString();
-                txtKmRetorno.Text = gridCrudSaidas.CurrentRow.Cells[15].Value.ToString();
-                txtKmTotal.Text = gridCrudSaidas.CurrentRow.Cells[16].Value.ToString();
-                btnRotaConcluida.Enabled = false;
-                btnDespesas.Enabled = true;
+                groupBoxFormulario.Enabled      =   true;
+                groupBoxFormulario.Visible      =   true;
+                datePckSaida.Enabled            =   false;
+                txtKmTotal.Visible              =   true;
+                btnCalcularKmTotal.Visible      =   true;
+                btnCalcularKmTotal.Enabled      =   true;
+                txtKmSaida.Visible              =   true;
+                txtKmSaida.Enabled              =   false;
+                txtKmRetorno.Visible            =   true;
+                txtKmRetorno.Enabled            =   true;
+                datePckRetorno.Visible          =   true;
+                datePckRetorno.Enabled          =   true;
+                txtRegiaoEntrega.Enabled        =   false;
+                int idsaida                     =   Convert.ToInt32(gridCrudSaidas.CurrentRow.Cells[0].Value.ToString());
+                groupBoxFormulario.Visible      =   true;
+                groupBox1.Visible               =   true;
+
+                txtIdSaida.Text                 =   gridCrudSaidas.CurrentRow.Cells[0].Value.ToString();
+                txtIdVeiculo.Text               =   gridCrudSaidas.CurrentRow.Cells[1].Value.ToString();
+                txtIdUsuario.Text               =   gridCrudSaidas.CurrentRow.Cells[2].Value.ToString();
+                txtIdPapel.Text                 =   gridCrudSaidas.CurrentRow.Cells[3].Value.ToString();
+                txtIdPessoa.Text                =   gridCrudSaidas.CurrentRow.Cells[4].Value.ToString();
+                txtVeiculo.Text                 =   gridCrudSaidas.CurrentRow.Cells[5].Value.ToString();
+                txtPlacaVeiculo.Text            =   gridCrudSaidas.CurrentRow.Cells[6].Value.ToString();
+                txtPessoa.Text                  =   gridCrudSaidas.CurrentRow.Cells[7].Value.ToString();
+                datePckSaida.Value              =   Convert.ToDateTime(gridCrudSaidas.CurrentRow.Cells[8].Value.ToString());
+                txtHoraSaida.Text               =   gridCrudSaidas.CurrentRow.Cells[10].Value.ToString();
+                txtHoraRetorno.Text             =   gridCrudSaidas.CurrentRow.Cells[11].Value.ToString();
+                txtEstatusSaida.Text            =   gridCrudSaidas.CurrentRow.Cells[12].Value.ToString();
+                txtRegiaoEntrega.Text           =   gridCrudSaidas.CurrentRow.Cells[13].Value.ToString();
+                txtKmSaida.Text                 =   gridCrudSaidas.CurrentRow.Cells[14].Value.ToString();
+                txtKmRetorno.Text               =   gridCrudSaidas.CurrentRow.Cells[15].Value.ToString();
+                txtKmTotal.Text                 =   gridCrudSaidas.CurrentRow.Cells[16].Value.ToString();
+                btnRotaConcluida.Enabled        =   false;
+                btnDespesas.Enabled             =   true;
             }
         }
 
 
-        private void toolStripButton3_Click(object sender, EventArgs e) {
-            var resultadoRetorno = MessageBox.Show("Deseja concluir a saida de rota ?",
-                              "Aviso do Sistema",
-                              MessageBoxButtons.YesNo,
-                              MessageBoxIcon.Question);
+        private void toolStripButton3_Click(object sender, EventArgs e){
 
-            if (resultadoRetorno == DialogResult.Yes)
-            {
+            var resultadoRetorno = MessageBox.Show(
+                                        "Deseja concluir a saida de rota ?",
+                                        "Aviso do Sistema",
+                                        MessageBoxButtons.YesNo,
+                                        MessageBoxIcon.Question);
+
+            if (resultadoRetorno == DialogResult.Yes){
                 controllerSaida.Editar(
                 Convert.ToInt32(txtIdVeiculo.Text),
                 Convert.ToInt32(txtIdUsuario.Text),
@@ -1808,10 +1743,11 @@ namespace Sistema.View
                 txtKmTotal.Text,
                 Convert.ToInt32(txtIdSaida.Text));
                 veiculosController.EditarEstatusVeiculo(
-                    txtVeiculo.Text, 
-                    txtPlacaVeiculo.Text,
-                    "Disponivel", 
-                    Convert.ToInt32(txtIdVeiculo.Text));
+                txtVeiculo.Text, 
+                txtPlacaVeiculo.Text,
+                "Disponivel", 
+                Convert.ToInt32(txtIdVeiculo.Text));
+
                 if ("AT".Equals(controllerSaida.AcaoCrudSaidasController())){
                     behaviorRefresh();
                 }
@@ -1835,30 +1771,36 @@ namespace Sistema.View
 
         private void button1_Click(object sender, EventArgs e){
             if (String.IsNullOrEmpty(txtKmSaida.Text) == false
-               && String.IsNullOrEmpty(txtKmRetorno.Text) == false) {
+               && String.IsNullOrEmpty(txtKmRetorno.Text) == false){
+
                 bool conteudoStringNuloOuVazio = String.IsNullOrEmpty(txtKmRetorno.Text);
                 bool isNumeric = int.TryParse(txtKmRetorno.Text, out int n);
+
                 if (conteudoStringNuloOuVazio == false){
                     txtEstatusSaida.Text = gridCrudSaidas.CurrentRow.Cells[12].Value.ToString();
                     int kmsaida = Convert.ToInt32(txtKmSaida.Text);
                     int kmretorno = Convert.ToInt32(txtKmRetorno.Text);
+
                     if (kmretorno - kmsaida <= 0){
                         MessageBox.Show("O KM do veículo no retorno não" +
                             " pode ser menor, ou igual, do que foi infromado na saída\n",
                             "Alerta do Sistema",
                             MessageBoxButtons.OK,
                             MessageBoxIcon.Error);
+
                     }else if (kmretorno - kmsaida > 0){
                         var escolhaTotalizar = MessageBox.Show("Confirma a kilometragem de retorno?",
                             "Aviso do Sistema",
                             MessageBoxButtons.YesNo,
                             MessageBoxIcon.Question);
+
                         if (escolhaTotalizar == DialogResult.Yes){
 
                             int kmtotal = kmretorno - kmsaida;
                             txtKmTotal.Text = Convert.ToString(kmtotal);
                             btConfirmarRetorno.Enabled = true;
                             btConfirmarRetorno.Visible = true;
+
                         }else if (escolhaTotalizar == DialogResult.No){}
                     }
                 }else if (conteudoStringNuloOuVazio == true) {
@@ -2005,28 +1947,23 @@ namespace Sistema.View
             }
        }
             
-       
 
-        private void txtKmRetorno_Leave(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void SaidaEncomendasView_FormClosing(object sender, FormClosingEventArgs e)
-        {
+        private void SaidaEncomendasView_FormClosing(object sender, FormClosingEventArgs e){
             _InstSaidaEncomendasView = null;
         }
 
 
         private void toolStripComboBox1_SelectedIndexChanged_1(object sender, EventArgs e){
-            int qtLinhasSaidas = gridCrudSaidas.RowCount;
-            int qtLinhasMD = gridCurdMestreDetalhe.RowCount;
-            if (cbEstatusSaida.SelectedItem.Equals("Preparando") ) {
+
+            int qtLinhasSaidas  =   gridCrudSaidas.RowCount;
+            int qtLinhasMD      =   gridCurdMestreDetalhe.RowCount;
+            if (cbEstatusSaida.SelectedItem.Equals("Preparando")){
                 toolStripButton4.Enabled = true;
                
             }else if (!cbEstatusSaida.SelectedItem.Equals("Preparando")){
                 toolStripButton4.Enabled = false;
             }
+
           puxarparametro(0, Convert.ToInt32(cbButtnQuantPage1.SelectedItem), "Sim");
 
         }
@@ -2034,71 +1971,76 @@ namespace Sistema.View
 
         private void gridCrudSaidas_CellDoubleClick(object sender, DataGridViewCellEventArgs e){
             if (cbEstatusSaida.SelectedItem.ToString().Equals("Rota Concluída")){
-                toolStrip2.Visible = false;
-                groupBoxFormulario.Enabled = true;
-                groupBoxFormulario.Visible = true;
-                txtEstatusSaida.Enabled = false;
-                datePckSaida.Enabled = false;
-                datePckRetorno.Enabled = true;
-                txtKmRetorno.Enabled = true;
-                txtKmSaida.Enabled = false;
-                label5.Visible = true;
-                txtKmTotal.Visible = true;
-                txtRegiaoEntrega.Enabled = false;
-                txtIdSaida.Text = gridCrudSaidas.CurrentRow.Cells[0].Value.ToString();
-                txtIdVeiculo.Text = gridCrudSaidas.CurrentRow.Cells[1].Value.ToString();
-                txtIdUsuario.Text = gridCrudSaidas.CurrentRow.Cells[2].Value.ToString();
-                txtIdPapel.Text = gridCrudSaidas.CurrentRow.Cells[3].Value.ToString();
-                txtIdPessoa.Text = gridCrudSaidas.CurrentRow.Cells[4].Value.ToString();
-                txtVeiculo.Text = gridCrudSaidas.CurrentRow.Cells[5].Value.ToString();
-                txtPlacaVeiculo.Text = gridCrudSaidas.CurrentRow.Cells[6].Value.ToString();
-                txtPessoa.Text = gridCrudSaidas.CurrentRow.Cells[7].Value.ToString();
-                datePckSaida.Value = Convert.ToDateTime(gridCrudSaidas.CurrentRow.Cells[8].Value.ToString());
-                txtHoraSaida.Text = gridCrudSaidas.CurrentRow.Cells[10].Value.ToString();
-                txtHoraRetorno.Text = gridCrudSaidas.CurrentRow.Cells[11].Value.ToString();
-                txtEstatusSaida.Text = gridCrudSaidas.CurrentRow.Cells[12].Value.ToString();
-                txtRegiaoEntrega.Text = gridCrudSaidas.CurrentRow.Cells[13].Value.ToString();
-                txtKmSaida.Text = gridCrudSaidas.CurrentRow.Cells[14].Value.ToString();
-                txtKmRetorno.Text = gridCrudSaidas.CurrentRow.Cells[15].Value.ToString();
-                txtKmTotal.Text = gridCrudSaidas.CurrentRow.Cells[16].Value.ToString();
+                toolStrip2.Visible          =   false;
+                groupBoxFormulario.Enabled  =   true;
+                groupBoxFormulario.Visible  =   true;
+                txtEstatusSaida.Enabled     =   false;
+                datePckSaida.Enabled        =   false;
+                datePckRetorno.Enabled      =   true;
+                txtKmRetorno.Enabled        =   true;
+                txtKmSaida.Enabled          =   false;
+                label5.Visible              =   true;
+                txtKmTotal.Visible          =   true;
+                txtRegiaoEntrega.Enabled    =   false;
+                txtIdSaida.Text             =   gridCrudSaidas.CurrentRow.Cells[0].Value.ToString();
+                txtIdVeiculo.Text           =   gridCrudSaidas.CurrentRow.Cells[1].Value.ToString();
+                txtIdUsuario.Text           =   gridCrudSaidas.CurrentRow.Cells[2].Value.ToString();
+                txtIdPapel.Text             =   gridCrudSaidas.CurrentRow.Cells[3].Value.ToString();
+                txtIdPessoa.Text            =   gridCrudSaidas.CurrentRow.Cells[4].Value.ToString();
+                txtVeiculo.Text             =   gridCrudSaidas.CurrentRow.Cells[5].Value.ToString();
+                txtPlacaVeiculo.Text        =   gridCrudSaidas.CurrentRow.Cells[6].Value.ToString();
+                txtPessoa.Text              =   gridCrudSaidas.CurrentRow.Cells[7].Value.ToString();
+                datePckSaida.Value          =   Convert.ToDateTime(gridCrudSaidas.CurrentRow.Cells[8].Value.ToString());
+                txtHoraSaida.Text           =   gridCrudSaidas.CurrentRow.Cells[10].Value.ToString();
+                txtHoraRetorno.Text         =   gridCrudSaidas.CurrentRow.Cells[11].Value.ToString();
+                txtEstatusSaida.Text        =   gridCrudSaidas.CurrentRow.Cells[12].Value.ToString();
+                txtRegiaoEntrega.Text       =   gridCrudSaidas.CurrentRow.Cells[13].Value.ToString();
+                txtKmSaida.Text             =   gridCrudSaidas.CurrentRow.Cells[14].Value.ToString();
+                txtKmRetorno.Text           =   gridCrudSaidas.CurrentRow.Cells[15].Value.ToString();
+                txtKmTotal.Text             =   gridCrudSaidas.CurrentRow.Cells[16].Value.ToString();
             } else {
                 setaGridEmCampos();
             }
         }
 
  
-        private void button4_Click_1(object sender, EventArgs e)
-        {
+        private void button4_Click_1(object sender, EventArgs e){
+
             ImportVeiculoToSaidas importVS = new ImportVeiculoToSaidas();
-            importVS.IdVO = txtIdVeiculo.Text;
-            importVS.veiculoVO = txtVeiculo.Text;
-            importVS.placaVO = txtPlacaVeiculo.Text;
-            importVS.estatusVO = txtPessoa.Text;
+            
+            importVS.IdVO           =   txtIdVeiculo.Text;
+            importVS.veiculoVO      =   txtVeiculo.Text;
+            importVS.placaVO        =   txtPlacaVeiculo.Text;
+            importVS.estatusVO      =   txtPessoa.Text;
+
             importVS.ShowDialog();
-            txtIdVeiculo.Text = Convert.ToString(importVS.IdVO);
-            txtVeiculo.Text = importVS.veiculoVO;
-            txtPlacaVeiculo.Text = importVS.placaVO;
-            txtEstatuVeiculo.Text = importVS.estatusVO;
+
+            txtIdVeiculo.Text       =   Convert.ToString(importVS.IdVO);
+            txtVeiculo.Text         =   importVS.veiculoVO;
+            txtPlacaVeiculo.Text    =   importVS.placaVO;
+            txtEstatuVeiculo.Text   =   importVS.estatusVO;
         }
 
         private void button6_Click_1(object sender, EventArgs e)
         {
             ImportEntregadorToSaidas importEntregadorToSaidas = new ImportEntregadorToSaidas();
+
             importEntregadorToSaidas.ShowDialog();
-            txtIdUsuario.Text = importEntregadorToSaidas.IdVO;
-            txtIdPessoa.Text = importEntregadorToSaidas.IdPessoaVO;
-            txtIdPapel.Text = importEntregadorToSaidas.IdPapelVO;
-            txtPessoa.Text = importEntregadorToSaidas.nomeVO;
+
+            txtIdUsuario.Text   =   importEntregadorToSaidas.IdVO;
+            txtIdPessoa.Text    =   importEntregadorToSaidas.IdPessoaVO;
+            txtIdPapel.Text     =   importEntregadorToSaidas.IdPapelVO;
+            txtPessoa.Text      =   importEntregadorToSaidas.nomeVO;
         }
 
-        private void SaidaEncomendasView_Load(object sender, EventArgs e)
-        {
+        private void SaidaEncomendasView_Load(object sender, EventArgs e){
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
         }
 
         private void toolStripButton4_Click(object sender, EventArgs e){
             int qtlinhasSaida = gridCrudSaidas.RowCount;
             if (gridCrudSaidas.CurrentRow.Cells[12].Value.ToString().Equals("Preparando") && qtlinhasSaida > 0){
+
                 groupBoxFormulario.Enabled      = true;
                 groupBoxFormulario.Visible      = true;
                 groupBox1.Enabled               = true;
@@ -2109,6 +2051,7 @@ namespace Sistema.View
                 bttnImport.Enabled              = true;
                 btnEmRota.Enabled               = true;
                 button5.Enabled                 = true;
+
                 txtIdSaida.Text         =   gridCrudSaidas.CurrentRow.Cells[0].Value.ToString();
                 txtIdVeiculo.Text       =   gridCrudSaidas.CurrentRow.Cells[1].Value.ToString();
                 txtIdUsuario.Text       =   gridCrudSaidas.CurrentRow.Cells[2].Value.ToString();
@@ -2125,6 +2068,7 @@ namespace Sistema.View
                 txtKmSaida.Text         =   gridCrudSaidas.CurrentRow.Cells[14].Value.ToString();
                 txtKmRetorno.Text       =   gridCrudSaidas.CurrentRow.Cells[15].Value.ToString();
                 txtKmTotal.Text         =   gridCrudSaidas.CurrentRow.Cells[16].Value.ToString();
+
                 gridCurdMestreDetalhe.DataSource = controllerEncomendas.ListarDetalheMestre(txtIdSaida.Text, "Saiu para entrega");
                 DataGridModelDetalhe(); 
             }

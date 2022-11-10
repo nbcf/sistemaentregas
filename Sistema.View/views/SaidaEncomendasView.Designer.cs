@@ -975,9 +975,9 @@ namespace Sistema.View
             this.txtKmRetorno.Name = "txtKmRetorno";
             this.txtKmRetorno.Size = new System.Drawing.Size(104, 25);
             this.txtKmRetorno.TabIndex = 92;
-            this.txtKmRetorno.TextChanged += new System.EventHandler(this.txtKmRetorno_TextChanged);
+   //         this.txtKmRetorno.TextChanged += new System.EventHandler(this.txtKmRetorno_TextChanged);
             this.txtKmRetorno.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtKmRetorno_KeyPress);
-            this.txtKmRetorno.Leave += new System.EventHandler(this.txtKmRetorno_Leave);
+ //           this.txtKmRetorno.Leave += new System.EventHandler(this.txtKmRetorno_Leave);
             // 
             // txtKmSaida
             // 
@@ -986,7 +986,7 @@ namespace Sistema.View
             this.txtKmSaida.Name = "txtKmSaida";
             this.txtKmSaida.Size = new System.Drawing.Size(146, 25);
             this.txtKmSaida.TabIndex = 90;
-            this.txtKmSaida.TextChanged += new System.EventHandler(this.txtKmSaida_TextChanged);
+    //        this.txtKmSaida.TextChanged += new System.EventHandler(this.txtKmSaida_TextChanged);
             this.txtKmSaida.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtKmSaida_KeyPress);
             // 
             // label3
