@@ -39,9 +39,10 @@ namespace Sistema.View
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(4, 61);
+            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView1.Location = new System.Drawing.Point(0, 0);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(925, 539);
+            this.dataGridView1.Size = new System.Drawing.Size(927, 599);
             this.dataGridView1.TabIndex = 0;
             // 
             // toolStrip1
@@ -62,6 +63,7 @@ namespace Sistema.View
             this.bttnRefresh.AutoSize = false;
             this.bttnRefresh.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.bttnRefresh.Image = global::Sistema.View.Properties.Resources.refresh48;
+            this.bttnRefresh.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.bttnRefresh.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.bttnRefresh.Name = "bttnRefresh";
             this.bttnRefresh.Size = new System.Drawing.Size(100, 48);

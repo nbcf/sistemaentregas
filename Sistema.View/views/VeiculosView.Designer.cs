@@ -501,6 +501,7 @@ namespace Sistema.View
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastro de Veículos";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.formCrudVeiculos_FormClosing);
+            this.Load += new System.EventHandler(this.VeiculosView_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.tabControlAssets.ResumeLayout(false);

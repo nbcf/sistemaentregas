@@ -349,4 +349,22 @@
   <data name="fiat-fiorino-2022" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\image\fiat-fiorino-2022.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Circle_Blue" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\circle_blue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Circle_Green" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\circle_green.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Circle_Grey" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\circle_grey.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Circle_Orange" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\circle_orange.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Circle_Red" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\circle_red.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Circle_Yellow" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\circle_yellow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

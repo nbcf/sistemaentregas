@@ -98,6 +98,7 @@ namespace Sistema.View
             toolStripLabel1.Visible = false;
             toolStripLabel2.Visible = false;
 
+
         }
 
 
@@ -500,6 +501,7 @@ namespace Sistema.View
             bttnEndPages.Visible = true;
             toolStripLabel1.Visible = false;
             toolStripLabel2.Visible = false;
+            
             clearFieldsFormulario();
         }
         private void bttnSearch_Click_1(object sender, EventArgs e)
@@ -989,9 +991,6 @@ namespace Sistema.View
             bttnRefresh.Enabled = true;
             bttnSave.Enabled = true;
             bttnNew.Enabled = false;
-       //     bttnPrint.Enabled = false;
-       //     bttnImport.Enabled = false;
-       //     bttnExcel.Enabled = false;
             clearFieldsFormulario();
             txtBoxId.Enabled = false;
             txtBoxId.Text = gridCrudVeiculos.CurrentRow.Cells[0].Value.ToString();
@@ -1023,28 +1022,11 @@ namespace Sistema.View
             }
         }
 
-        private void behaviorSearch()
-        {
-            bttnDel.Enabled = false;
-            bttnEdit.Enabled = false;
-            bttnSearch.Enabled = true;
-            bttnRefresh.Enabled = false;
-            bttnSave.Enabled = false;
-            bttnNew.Enabled = false;
-       ///     bttnPrint.Enabled = false;
-       ///     bttnImport.Enabled = false;
-       //     bttnExcel.Enabled = false;
-            tabControlAssets.Visible = true;
-        }
 
-        private void behaviorClickGrid()
-        {
-       
-
+        private void behaviorClickGrid() {
             txtBoxId.Text = gridCrudVeiculos.CurrentRow.Cells[0].Value.ToString();
             strVeiculo = gridCrudVeiculos.CurrentRow.Cells[1].Value.ToString();
             strPlaca = gridCrudVeiculos.CurrentRow.Cells[2].Value.ToString();
-
 
             bttnNew.Enabled = false;
             bttnDel.Enabled = true;
@@ -1052,9 +1034,6 @@ namespace Sistema.View
             bttnSearch.Enabled = true;
             bttnRefresh.Enabled = true;
             bttnSave.Enabled = false;
-       //     bttnPrint.Enabled = false;
-       //     bttnImport.Enabled = false;
-       //     bttnExcel.Enabled = false;
             radioBttnComeca.Checked = false;
             radioBttnContem.Checked = false;
             radioBttnTermina.Checked = false;
@@ -1187,8 +1166,7 @@ namespace Sistema.View
             inicioPagina();
         }
 
-        private void cbButtnQuantPage1_SelectedIndexChanged(object sender, EventArgs e)
-        {
+        private void cbButtnQuantPage1_SelectedIndexChanged(object sender, EventArgs e){
             puxarparametro(0, Convert.ToInt32(cbButtnQuantPage1.SelectedItem), "Sim");
 
         }
@@ -1246,21 +1224,28 @@ namespace Sistema.View
 
         private void bttnEdit_Click(object sender, EventArgs e)
         {
-            var gridVazia = gridCrudVeiculos.CurrentRow.Cells[0].Value.ToString();
-            if (string.IsNullOrEmpty(gridVazia))
-            {
-            }
-            else if (gridVazia.Length > 0)
-            {
-                if (typeEdition.Equals("insert") && operationType.Equals("newInsertion"))
-                {
-                    behaviorEdit();
+            if ("Em Rota".Equals(gridCrudVeiculos.CurrentRow.Cells[3].Value.ToString())) {
+            }else if (gridCrudVeiculos.CurrentRow.Cells[3].Value.ToString().Equals("Disponivel") || 
+                      gridCrudVeiculos.CurrentRow.Cells[3].Value.ToString().Equals("")){
+
+
+                var gridVazia = gridCrudVeiculos.CurrentRow.Cells[0].Value.ToString();
+                if (string.IsNullOrEmpty(gridVazia)){
                 }
-                else if (typeEdition.Equals("search") && operationType.Equals("updateData"))
+                else if (gridVazia.Length > 0)
                 {
-                    behaviorEditPesquisa();
+                    if (typeEdition.Equals("insert") && operationType.Equals("newInsertion"))
+                    {
+                        behaviorEdit();
+                    }
+                    else if (typeEdition.Equals("search") && operationType.Equals("updateData"))
+                    {
+                        behaviorEditPesquisa();
+                    }
                 }
+
             }
+
         }
 
         private void gridCrudPessoa_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -1504,27 +1489,25 @@ namespace Sistema.View
 
         private void gridCrudVeiculos_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            var gridVazia = gridCrudVeiculos.CurrentRow.Cells[0].Value.ToString();
-            if (string.IsNullOrEmpty(gridVazia))
-            {
+            if ("Em Rota".Equals(gridCrudVeiculos.CurrentRow.Cells[3].Value.ToString())) {
 
-            }
-            else if (gridVazia.Length > 0)
-            {
+            }else if (gridCrudVeiculos.CurrentRow.Cells[3].Value.ToString().Equals("Disponivel") || 
+                      gridCrudVeiculos.CurrentRow.Cells[3].Value.ToString().Equals("")){
+               
+                    var gridVazia = gridCrudVeiculos.CurrentRow.Cells[0].Value.ToString();
+            if (string.IsNullOrEmpty(gridVazia)){
 
-                if (typeEdition.Equals("insert"))
-                {
+            }else if (gridVazia.Length > 0){
+                if (typeEdition.Equals("insert")){
                     operationType = "newInsertion";
                     behaviorClickGrid();
-                }
-                else if (typeEdition.Equals("search"))
-                {
+
+                } else if (typeEdition.Equals("search")){
                     operationType = "updateData";
                     behaviorClickGridPesquisa();
                 }
-
-
             }
+           }
         }
 
         private void bttnRefresh_Click_2(object sender, EventArgs e)
@@ -1540,6 +1523,11 @@ namespace Sistema.View
         }
 
         private void bttnSave_Click_2(object sender, EventArgs e)
+        {
+
+        }
+
+        private void VeiculosView_Load(object sender, EventArgs e)
         {
 
         }

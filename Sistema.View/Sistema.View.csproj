@@ -597,6 +597,13 @@
     <None Include="image\truck-100.png" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Resources\Circle_Blue.png" />
+    <Content Include="Resources\Circle_Green.png" />
+    <Content Include="Resources\Circle_Grey.png" />
+    <Content Include="Resources\Circle_Orange.png" />
+    <Content Include="Resources\Circle_Red.png" />
+    <Content Include="Resources\Circle_Yellow.png" />
+    <None Include="Resources\ledazul.bmp" />
     <None Include="Resources\Image1.bmp" />
     <None Include="image\kissxcancelpng.png" />
     <None Include="image\ok_32.png" />
