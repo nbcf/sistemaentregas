@@ -85,6 +85,16 @@ namespace Sistema.Controller
             return pec.Nomepessoa = dao.ExibirDadosPessoa(idpessoa);
         }
 
+        public object VerificarSenhaController(string usuario, string senha)
+        {
+            return dao.VerificarSenha(usuario,senha);
+           
+        }
+        public string SenhaVerificadaController()
+        {
+            return dao.SenhaVerificadaDAO();
+        }
+
 
         public DataTable ListarDataGrid(string parametro, string indexar, int offsett, int limitt){
               //  retornoQuantRegistro();

@@ -9,6 +9,24 @@
 //    class Paginacao
 //    {
 
+
+   
+
+//        //public int ListarTodosVeiculosBDVO
+//        //{
+//        //    get { return txtPlaca.Text; }
+//        //    set { txtPlaca.Text = value; }
+//        //}
+//        ////cbButtnQuantPage1.SelectedItem)
+
+
+//        //public int cbButtnQuantPageVO
+//        //{
+//        //    get { return txtPlaca.Text; }
+//        //    set { txtPlaca.Text = value; }
+//        //}
+
+
 //        public bool finalPaginaBol = false;
 //        public bool inicioPaginaBol = true;
 //        public bool estadoBotaoDesbloqueio = false;

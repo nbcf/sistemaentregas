@@ -12,19 +12,22 @@ using System.Windows.Forms;
 
 namespace Sistema.DAO
 {
-  public  class UsuariosDAO
+    public class UsuariosDAO
     {
 
         public int regEncontradosPesquisaUsuariosDAO = 0;
         public string acaoCrudUsuariosDAO = "";
+        public string verificarSenha = "fechado";
 
-        ClasseConexao classeConecta = new ClasseConexao();
+       ClasseConexao classeConecta = new ClasseConexao();
         string sql;
         MySqlCommand cmd;
         MySqlCommand cmdVerificar;
         public bool conexao = false;
         public PapeisModel pmodelDAO;
         public PessoasModel pessmodelDAO;
+        public UsuariosModel usermodelDAO;
+
 
 
         public string estConexao()
@@ -83,10 +86,14 @@ namespace Sistema.DAO
                         acaoCrudUsuariosDAO = "S!!";
                         classeConecta.FecharCon();
 
-                    }else if (resultado == DialogResult.No){
+                    }
+                    else if (resultado == DialogResult.No)
+                    {
                         acaoCrudUsuariosDAO = "NS";
                     }
-                }else if (dtp.Rows.Count == 0){
+                }
+                else if (dtp.Rows.Count == 0)
+                {
                     classeConecta.AbrirCon();
                     sql = "INSERT INTO usuarios (" +
                         " idpessoa," +
@@ -112,14 +119,15 @@ namespace Sistema.DAO
             {
                 MessageBox.Show("A Seguinte Excessão foi lançada quando o método Salvar foi operado " + ex,
                     "Erro na classe UsuariosDAO",
-                    MessageBoxButtons.OK, 
+                    MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
             }
 
         }
         public void Editar(int idpessoa, int idpapel, string usuario, string senha, int idusuario)
         {
-            try{
+            try
+            {
                 classeConecta.AbrirCon();
                 cmd = new MySqlCommand("UPDATE usuarios SET " +
                     " idpessoa = @idpessoa," +
@@ -136,12 +144,14 @@ namespace Sistema.DAO
                 acaoCrudUsuariosDAO = "AT";
                 classeConecta.FecharCon();
 
-            }catch (Exception ex){
-                    MessageBox.Show("A Seguinte Excessão foi lançada quando o método" +
-                    " Editar foi operado " + ex,
-                    "Erro na classe UsuariosDAO",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Error);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("A Seguinte Excessão foi lançada quando o método" +
+                " Editar foi operado " + ex,
+                "Erro na classe UsuariosDAO",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Error);
             }
 
         }
@@ -164,19 +174,24 @@ namespace Sistema.DAO
                     acaoCrudUsuariosDAO = "DEL";
                     classeConecta.FecharCon();
 
-                }catch (Exception ex){
+                }
+                catch (Exception ex)
+                {
 
                     MessageBox.Show("A Seguinte Excessão foi lançada quando o método Excluir foi operado " + ex,
                         "Erro na classe UsuariosDAO",
                         MessageBoxButtons.OK,
                         MessageBoxIcon.Error);
                 }
-            }else if (resultado == DialogResult.No){
+            }
+            else if (resultado == DialogResult.No)
+            {
                 acaoCrudUsuariosDAO = "NDEL";
             }
         }
 
-        public Object ExibirDadosPapeis(string idpapel) {
+        public Object ExibirDadosPapeis(string idpapel)
+        {
             PapeisModel pmodel = new PapeisModel();
             try
             {
@@ -192,19 +207,20 @@ namespace Sistema.DAO
                     while (reader.Read())
                     {
                         pmodel.Nomepapel = Convert.ToString(reader["Nomepapel"]);
-                        pmodel.Criar            =       "1".Equals(reader["Criar"])       ? true : false;
-                        pmodel.Recuperar        =       "1".Equals(reader["Recuperar"])   ? true : false;
-                        pmodel.Atualizar        =       "1".Equals(reader["Atualizar"])   ? true : false;
-                        pmodel.Excluir          =       "1".Equals(reader["Excluir"])     ? true : false;
-                        pmodel.Menuope          =       "1".Equals(reader["Menuope"])     ? true : false;
-                        pmodel.Menuadmin        =       "1".Equals(reader["Menuadmin"])   ? true : false;
-                        pmodel.Menugen          =       "1".Equals(reader["Menugen"])     ? true : false;
+                        pmodel.Criar = "1".Equals(reader["Criar"]) ? true : false;
+                        pmodel.Recuperar = "1".Equals(reader["Recuperar"]) ? true : false;
+                        pmodel.Atualizar = "1".Equals(reader["Atualizar"]) ? true : false;
+                        pmodel.Excluir = "1".Equals(reader["Excluir"]) ? true : false;
+                        pmodel.Menuope = "1".Equals(reader["Menuope"]) ? true : false;
+                        pmodel.Menuadmin = "1".Equals(reader["Menuadmin"]) ? true : false;
+                        pmodel.Menugen = "1".Equals(reader["Menugen"]) ? true : false;
                     }
                 }
                 pmodelDAO = pmodel;
                 return pmodelDAO;
             }
-            catch (Exception ex){
+            catch (Exception ex)
+            {
                 throw ex;
             }
         }
@@ -212,7 +228,7 @@ namespace Sistema.DAO
 
         public string ExibirDadosPessoa(string idpessoa)
         {
-            string peganomepessoa= "";
+            string peganomepessoa = "";
             try
             {
                 classeConecta.AbrirCon();
@@ -252,48 +268,63 @@ namespace Sistema.DAO
                 classeConecta.FecharCon();
                 return dt.Rows.Count;
 
-            }catch (Exception ex){
+            }
+            catch (Exception ex)
+            {
 
                 throw ex;
             }
         }
 
 
-        public int ListarPesquisados(){
+        public int ListarPesquisados()
+        {
             return regEncontradosPesquisaUsuariosDAO;
         }
 
-        public string AcaoCrudUsuariosDAO(){
+        public string AcaoCrudUsuariosDAO()
+        {
             return acaoCrudUsuariosDAO;
+        }
+
+        public string SenhaVerificadaDAO()
+        {
+            return verificarSenha;
         }
 
 
 
-        public DataTable ListarDataGrid(string parametro, string indexar, int offsett, int limitt){
-              try{
-               
+        public DataTable ListarDataGrid(string parametro, string indexar, int offsett, int limitt)
+        {
+            try
+            {
+
                 classeConecta.AbrirCon();
-                sql =   "SELECT * FROM usuarios usu " +
+                sql = "SELECT * FROM usuarios usu " +
                         "INNER JOIN papeis pap " +
                         "INNER JOIN pessoas pes " +
                         "ON usu.idpapel = pap.idpapel " +
                         "AND usu.idpessoa = pes.idpessoa " +
-                        "ORDER BY usu."+parametro+ " " +indexar+ " Limit " + offsett + "," + limitt;
+                        "ORDER BY usu." + parametro + " " + indexar + " Limit " + offsett + "," + limitt;
                 cmd = new MySqlCommand(sql, classeConecta.con);
                 MySqlDataAdapter da = new MySqlDataAdapter();
                 da.SelectCommand = cmd;
                 DataTable dt = new DataTable();
                 da.Fill(dt);
-                    classeConecta.FecharCon();
-                    return dt;
+                classeConecta.FecharCon();
+                return dt;
 
-              }catch (Exception ex){
-                    throw ex;
-              }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
- 
-        public DataTable ListarImportEntregador(string funcao) {
-            try{
+
+        public DataTable ListarImportEntregador(string funcao)
+        {
+            try
+            {
 
                 classeConecta.AbrirCon();
                 sql = "SELECT * FROM usuarios usu " +
@@ -307,27 +338,34 @@ namespace Sistema.DAO
                 da.Fill(dt);
                 classeConecta.FecharCon();
                 return dt;
-                
-            }catch (Exception ex){
+
+            }
+            catch (Exception ex)
+            {
 
                 throw ex;
             }
         }
 
-        public DataTable PesquisarComeca(string coluna, string campo, string pesquisar) {
-            try{
+        public DataTable PesquisarComeca(string coluna, string campo, string pesquisar)
+        {
+            try
+            {
                 classeConecta.AbrirCon();
                 sql = "SELECT * FROM usuarios usu " +
                     "INNER JOIN papeis pap " +
                     "INNER JOIN pessoas pes ON usu.idpapel = pap.idpapel AND usu.idpessoa = pes.idpessoa " +
-                    "WHERE usu.usuario LIKE " +campo + "";
+                    "WHERE usu.usuario LIKE " + campo + "";
                 cmd = new MySqlCommand(sql, classeConecta.con);
 
-                if (pesquisar == ""){
+                if (pesquisar == "")
+                {
                     cmd.Parameters.AddWithValue(campo, "");
 
-                } else{
-                    cmd.Parameters.AddWithValue(campo, pesquisar +"%");
+                }
+                else
+                {
+                    cmd.Parameters.AddWithValue(campo, pesquisar + "%");
                 }
                 MySqlDataAdapter da = new MySqlDataAdapter();
                 da.SelectCommand = cmd;
@@ -336,22 +374,26 @@ namespace Sistema.DAO
                 regEncontradosPesquisaUsuariosDAO = dt.Rows.Count;
                 classeConecta.FecharCon();
                 return dt;
-                
-            } catch (Exception ex){
+
+            }
+            catch (Exception ex)
+            {
 
                 throw ex;
             }
         }
 
-        public DataTable PesquisarContem(string coluna, string campo, string pesquisar){
-            try{
+        public DataTable PesquisarContem(string coluna, string campo, string pesquisar)
+        {
+            try
+            {
                 classeConecta.AbrirCon();
-               sql ="SELECT * FROM usuarios usu " +
-                    "INNER JOIN papeis pap " +
-                    "INNER JOIN pessoas pes " +
-                    "ON usu.idpapel = pap.idpapel " +
-                    "AND usu.idpessoa = pes.idpessoa " +
-                    "WHERE usu.usuario LIKE " + campo + "";
+                sql = "SELECT * FROM usuarios usu " +
+                     "INNER JOIN papeis pap " +
+                     "INNER JOIN pessoas pes " +
+                     "ON usu.idpapel = pap.idpapel " +
+                     "AND usu.idpessoa = pes.idpessoa " +
+                     "WHERE usu.usuario LIKE " + campo + "";
                 cmd = new MySqlCommand(sql, classeConecta.con);
                 if (pesquisar == "")
                 {
@@ -369,7 +411,9 @@ namespace Sistema.DAO
                 classeConecta.FecharCon();
                 return dt;
 
-            }catch (Exception ex){
+            }
+            catch (Exception ex)
+            {
                 throw ex;
             }
         }
@@ -379,18 +423,20 @@ namespace Sistema.DAO
             try
             {
                 classeConecta.AbrirCon();
-              sql = "SELECT * FROM usuarios usu " +
-                    "INNER JOIN papeis pap " +
-                    "INNER JOIN pessoas pes " +
-                    "ON usu.idpapel = pap.idpapel " +
-                    "AND usu.idpessoa = pes.idpessoa " +
-                    "WHERE usu.usuario LIKE " + campo + "";
+                sql = "SELECT * FROM usuarios usu " +
+                      "INNER JOIN papeis pap " +
+                      "INNER JOIN pessoas pes " +
+                      "ON usu.idpapel = pap.idpapel " +
+                      "AND usu.idpessoa = pes.idpessoa " +
+                      "WHERE usu.usuario LIKE " + campo + "";
                 cmd = new MySqlCommand(sql, classeConecta.con);
                 if (pesquisar == "")
                 {
                     cmd.Parameters.AddWithValue("@" + campo, "");
 
-                } else{
+                }
+                else
+                {
                     cmd.Parameters.AddWithValue("@" + campo, "%" + pesquisar);
                 }
                 MySqlDataAdapter da = new MySqlDataAdapter();
@@ -400,11 +446,64 @@ namespace Sistema.DAO
                 regEncontradosPesquisaUsuariosDAO = dt.Rows.Count;
                 classeConecta.FecharCon();
                 return dt;
-               
+
             }
             catch (Exception ex)
             {
 
+                throw ex;
+            }
+        }
+
+
+        public Object VerificarSenha(string usuario, string senha)
+        {
+            UsuariosModel modelUsuario = new UsuariosModel();
+            try
+            {
+                classeConecta.AbrirCon();
+                MySqlCommand cmdVerificar;
+                MySqlDataReader reader;
+                MySqlDataAdapter dap = new MySqlDataAdapter();
+                DataTable dtp = new DataTable();
+                cmdVerificar = new MySqlCommand("SELECT * FROM usuarios where usuario = @usuario and senha = @senha", classeConecta.con);
+                cmdVerificar.Parameters.AddWithValue("@usuario", usuario);
+                cmdVerificar.Parameters.AddWithValue("@senha", senha);
+                dap.SelectCommand = cmdVerificar;
+                dap.Fill(dtp);
+                reader = cmdVerificar.ExecuteReader();
+                
+              
+                if (reader.HasRows)
+                {
+
+                    while (reader.Read())
+                    {
+                        modelUsuario.Usuario = Convert.ToString(reader["usuario"]);
+                        modelUsuario.Senha = Convert.ToString(reader["senha"]);
+                    }
+
+                }
+                else
+                {
+
+
+                }
+            
+                if (dtp.Rows.Count > 0) { 
+                    verificarSenha = "201";
+
+                }else if (dtp.Rows.Count == 0){
+                    verificarSenha = "404";
+
+                }
+
+                classeConecta.FecharCon();
+                usermodelDAO = modelUsuario;
+                return usermodelDAO;
+            }
+            catch (Exception ex)
+            {
                 throw ex;
             }
         }

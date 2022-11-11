@@ -153,5 +153,10 @@ namespace Sistema.View
         {
 
         }
+
+        private void toolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
