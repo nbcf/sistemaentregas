@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Sistema.Model
 {
-  public  class EncomendasModel
+    public class EncomendasModel
     {
         private int idencomenda;
         private int idorigem;
@@ -29,6 +29,7 @@ namespace Sistema.Model
         private DateTime dataentrega;
         private DateTime datarota;
         private DateTime dataentrada;
+ 
         private string idsaida;
 
         public EncomendasModel()
@@ -57,6 +58,7 @@ namespace Sistema.Model
         public DateTime Dataentrega { get => dataentrega; set => dataentrega = value; }
         public DateTime Datarota { get => datarota; set => datarota = value; }
         public DateTime Dataentrada { get => dataentrada; set => dataentrada = value; }
+
         public string Idsaida { get => idsaida; set => idsaida = value; }
 
         public override bool Equals(object obj)
@@ -88,7 +90,7 @@ namespace Sistema.Model
 
         public override int GetHashCode()
         {
-            int hashCode = 1186573959;
+            int hashCode = 277818876;
             hashCode = hashCode * -1521134295 + idencomenda.GetHashCode();
             hashCode = hashCode * -1521134295 + idorigem.GetHashCode();
             hashCode = hashCode * -1521134295 + idveiculo.GetHashCode();
@@ -114,5 +116,4 @@ namespace Sistema.Model
             return hashCode;
         }
     }
-
 }

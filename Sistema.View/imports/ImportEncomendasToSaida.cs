@@ -833,7 +833,9 @@ namespace Sistema.View
                     DateTime drEntrega      = DataEntregaVO;
                     DateTime drRota         = DataEmRotaVO;
                     DateTime drEntrada      = Convert.ToDateTime(gridCrudImporES.CurrentRow.Cells[20].Value.ToString());
+                    MessageBox.Show(IdSaidaVO);
                     string idSaida          = IdSaidaVO;                                                                                                //string origem = gridCrudImporES.CurrentRow.Cells[20].Value.ToString(); //"NOME ORIGEM";
+                    MessageBox.Show(idSaida);
                     int idorigemjoin1       = Convert.ToInt32(gridCrudImporES.CurrentRow.Cells[22].Value.ToString());
                     string origem           = gridCrudImporES.CurrentRow.Cells[23].Value.ToString();
                     string codorigem        = gridCrudImporES.CurrentRow.Cells[24].Value.ToString();
@@ -855,9 +857,9 @@ namespace Sistema.View
                                                 cidade,
                                                 uf,
                                                 cep,
-                                                drEntrega,
-                                                drRota,
-                                                drEntrada,
+                                                Convert.ToDateTime(drEntrega.ToString("dd/MM/yyyy HH:mm")),//    drEntrega,
+                                                Convert.ToDateTime(drRota.ToString("dd/MM/yyyy HH:mm")), //  drRota,
+                                                Convert.ToDateTime(drEntrada.ToString("dd/MM/yyyy HH:mm")), //  dateTimeEntrada.Value,// drEntrada,
                                                 idSaida,
                                                 id);
 
@@ -881,6 +883,11 @@ namespace Sistema.View
         private void ImportEncomendasToSaida_FormClosed(object sender, FormClosedEventArgs e)
         {
             AcaoFormVO = "Fechar";
+        }
+
+        private void ImportEncomendasToSaida_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

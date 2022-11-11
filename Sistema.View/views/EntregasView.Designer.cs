@@ -254,6 +254,7 @@ namespace Sistema.View
             this.tabPrincipal.TabIndex = 2;
             this.tabPrincipal.Text = "tabPage1";
             this.tabPrincipal.UseVisualStyleBackColor = true;
+            this.tabPrincipal.Click += new System.EventHandler(this.tabPrincipal_Click);
             // 
             // txtIdOrigem
             // 

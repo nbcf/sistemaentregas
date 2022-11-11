@@ -53,8 +53,6 @@ namespace Sistema.View.relatorios
             txtQtd.Text             = somarCellTotal.SomarTotais(dataGridView1.RowCount, dataGridView1, "QTD").ToString();
             lbContagemLinhas.Text = dataGridView1.RowCount.ToString();
 
-
-
         }
 
 

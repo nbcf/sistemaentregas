@@ -607,7 +607,14 @@ namespace Sistema.View
             toolStripLabel2.Visible = false;
             txtBoxId.Enabled = false;
             txtBoxId.Visible = false;
-
+            lbDataRota.Visible = false;
+            dateTimeRota.Visible = false;
+            lbDataEntrega.Visible = false;
+            dateTimeEntrega.Visible = false;
+            lbFaltamDias.Visible = false;
+            txtDiasVencerPrazo.Visible = false;
+            lbEstatus.Visible = false;
+            txtEstatusEncomenda.Visible = false;
 
             if (cbButtonPesquisarEm.SelectedItem.Equals("Destinatario"))        { strPesquisarEmColuna = "enco.destinatario"; }
             else if (cbButtonPesquisarEm.SelectedItem.Equals("Cpf"))            { strPesquisarEmColuna = "enco.cpf"; }
@@ -874,9 +881,10 @@ namespace Sistema.View
                                             txtCidade.Text,
                                             txtUf.Text,
                                             txtCep.Text,
-                                            dateTimeEntrega.Value,
-                                            dateTimeRota.Value,
-                                            dateTimeEntrada.Value,
+                                            Convert.ToDateTime(dateTimeEntrega.Value.ToString("dd/MM/yyyy HH:mm")),// dateTimeEntrega.Value,
+                                            Convert.ToDateTime(dateTimeRota.Value.ToString("dd/MM/yyyy HH:mm")),// dateTimeRota.Value,
+                                            Convert.ToDateTime(dtEntradaSistema.Value.ToString("dd/MM/yyyy HH:mm")), //  dateTimeEntrada.Value,// dateTimeEntrada.Value,
+                                          //  Convert.ToDateTime(dtPrazo.Value.ToString("dd/MM/yyyy HH:mm")),
                                             "000");
                         if (controllerEncomendas.retornoAcaoEncomendasDAO() == "NS")
                         {
@@ -933,10 +941,11 @@ namespace Sistema.View
                                                     txtCidade.Text,
                                                     txtUf.Text,
                                                     txtCep.Text,
-                                                    dateTimeEntrega.Value,
-                                                    dateTimeRota.Value,
-                                                    dateTimeEntrada.Value,
-                                                    "000",
+                                                   Convert.ToDateTime(dateTimeEntrega.Value.ToString("dd/MM/yyyy HH:mm")),// dateTimeEntrega.Value,
+                                                   Convert.ToDateTime(dateTimeRota.Value.ToString("dd/MM/yyyy HH:mm")),// dateTimeRota.Value,
+                                                   Convert.ToDateTime(dtEntradaSistema.Value.ToString("dd/MM/yyyy HH:mm")), //  dateTimeEntrada.Value,// dateTimeEntrada.Value,
+                                               //     Convert.ToDateTime(dtPrazo.Value.ToString("dd/MM/yyyy HH:mm")),
+                                                   "000",
                                                     Convert.ToInt32(txtBoxId.Text));
                         if (controllerEncomendas.retornoAcaoEncomendasDAO() == "AT")
                         {
@@ -978,9 +987,10 @@ namespace Sistema.View
                                                      txtCidade.Text,
                                                      txtUf.Text,
                                                      txtCep.Text,
-                                                     dateTimeEntrega.Value,
-                                                     dateTimeRota.Value,
-                                                     dateTimeEntrada.Value,
+                                                     Convert.ToDateTime(dateTimeEntrega.Value.ToString("dd/MM/yyyy HH:mm")),// dateTimeEntrega.Value,
+                                                     Convert.ToDateTime(dateTimeRota.Value.ToString("dd/MM/yyyy HH:mm")),// dateTimeRota.Value,
+                                                     Convert.ToDateTime(dtEntradaSistema.Value.ToString("dd/MM/yyyy HH:mm")), //  dateTimeEntrada.Value,// dateTimeEntrada.Value,
+                                                  //    Convert.ToDateTime(dtPrazo.Value.ToString("dd/MM/yyyy HH:mm")),
                                                      "000",
                                                      Convert.ToInt32(txtBoxId.Text));
                         if (controllerEncomendas.retornoAcaoEncomendasDAO() ==  "AT")
@@ -1048,7 +1058,7 @@ namespace Sistema.View
             txtCep.Text                 =   gridCrudEncomendas.CurrentRow.Cells[17].Value.ToString();
             dateTimeEntrega.Value       =   Convert.ToDateTime(gridCrudEncomendas.CurrentRow.Cells[18].Value.ToString());
             dateTimeRota.Value          =   Convert.ToDateTime(gridCrudEncomendas.CurrentRow.Cells[19].Value.ToString());
-            dateTimeEntrada.Value       =   Convert.ToDateTime(gridCrudEncomendas.CurrentRow.Cells[20].Value.ToString());
+            dtEntradaSistema.Value       =   Convert.ToDateTime(gridCrudEncomendas.CurrentRow.Cells[20].Value.ToString());
             txtOrigem.Text              =   gridCrudEncomendas.CurrentRow.Cells[22].Value.ToString();
             txtCdOri.Text               =   gridCrudEncomendas.CurrentRow.Cells[23].Value.ToString();
         }
@@ -1078,7 +1088,7 @@ namespace Sistema.View
             txtCep.Text                 =   gridCrudEncomendas.CurrentRow.Cells[17].Value.ToString();
             dateTimeEntrega.Value       =   Convert.ToDateTime(gridCrudEncomendas.CurrentRow.Cells[18].Value.ToString());
             dateTimeRota.Value          =   Convert.ToDateTime(gridCrudEncomendas.CurrentRow.Cells[19].Value.ToString());
-            dateTimeEntrada.Value       =   Convert.ToDateTime(gridCrudEncomendas.CurrentRow.Cells[20].Value.ToString());
+            dtEntradaSistema.Value       =   Convert.ToDateTime(gridCrudEncomendas.CurrentRow.Cells[20].Value.ToString());
             txtCpf.Text                 =   gridCrudEncomendas.CurrentRow.Cells[21].Value.ToString();
             txtOrigem.Text              =   gridCrudEncomendas.CurrentRow.Cells[22].Value.ToString();
             txtCdOri.Text               =   gridCrudEncomendas.CurrentRow.Cells[23].Value.ToString();            
@@ -1124,7 +1134,7 @@ namespace Sistema.View
             txtCep.Text                 =   gridCrudEncomendas.CurrentRow.Cells[17].Value.ToString();
             dateTimeEntrega.Value       =   Convert.ToDateTime(gridCrudEncomendas.CurrentRow.Cells[18].Value.ToString());
             dateTimeRota.Value          =   Convert.ToDateTime(gridCrudEncomendas.CurrentRow.Cells[19].Value.ToString());
-            dateTimeEntrada.Value       =   Convert.ToDateTime(gridCrudEncomendas.CurrentRow.Cells[20].Value.ToString());
+            dtEntradaSistema.Value       =   Convert.ToDateTime(gridCrudEncomendas.CurrentRow.Cells[20].Value.ToString());
             txtOrigem.Text              =   gridCrudEncomendas.CurrentRow.Cells[23].Value.ToString();
             txtCdOri.Text               =   gridCrudEncomendas.CurrentRow.Cells[24].Value.ToString();
            
@@ -1155,7 +1165,7 @@ namespace Sistema.View
             txtCep.Text                 =   gridCrudEncomendas.CurrentRow.Cells[17].Value.ToString();
             dateTimeEntrega.Value       =   Convert.ToDateTime(gridCrudEncomendas.CurrentRow.Cells[18].Value.ToString());
             dateTimeRota.Value          =   Convert.ToDateTime(gridCrudEncomendas.CurrentRow.Cells[19].Value.ToString());
-            dateTimeEntrada.Value       =   Convert.ToDateTime(gridCrudEncomendas.CurrentRow.Cells[20].Value.ToString());
+            dtEntradaSistema.Value       =   Convert.ToDateTime(gridCrudEncomendas.CurrentRow.Cells[20].Value.ToString());
             txtOrigem.Text              =   gridCrudEncomendas.CurrentRow.Cells[23].Value.ToString();
             txtCdOri.Text               =   gridCrudEncomendas.CurrentRow.Cells[24].Value.ToString();
         }
@@ -1177,7 +1187,7 @@ namespace Sistema.View
             txtCidade.Text              =   "";
             txtUf.Text                  =   "";
             txtCep.Text                 =   "";
-            dateTimeEntrada.Value       =   DateTime.Today;
+            dtEntradaSistema.Value       =   DateTime.Now;
             txtOrigem.Text              =   "";
             txtCdOri.Text               =   "";
         }

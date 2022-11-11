@@ -439,6 +439,7 @@ namespace Sistema.View
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Despachar Encomendas";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ImportEncomendasToSaida_FormClosed);
+            this.Load += new System.EventHandler(this.ImportEncomendasToSaida_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.tabControlAssets.ResumeLayout(false);

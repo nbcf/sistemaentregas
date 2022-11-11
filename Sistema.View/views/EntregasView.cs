@@ -507,19 +507,16 @@ namespace Sistema.View
             editSaidas.CidadeVO             =       gridCrudEnc.CurrentRow.Cells[15].Value.ToString();
             editSaidas.UfVO                 =       gridCrudEnc.CurrentRow.Cells[16].Value.ToString();
             editSaidas.CepVO                =       gridCrudEnc.CurrentRow.Cells[17].Value.ToString();
+
             editSaidas.DataEntregaVO        =       Convert.ToDateTime(gridCrudEnc.CurrentRow.Cells[18].Value.ToString());
             editSaidas.DataRotaVO           =       Convert.ToDateTime(gridCrudEnc.CurrentRow.Cells[19].Value.ToString());
             editSaidas.DataEntradaVO        =       Convert.ToDateTime(gridCrudEnc.CurrentRow.Cells[20].Value.ToString());
-            editSaidas.IdSaidaVO            =       gridCrudEnc.CurrentRow.Cells[21].Value.ToString();
+
+            editSaidas.IdSaidaVO            =       gridCrudEnc.CurrentRow.Cells[22].Value.ToString();
             editSaidas.OrigemVO             =       gridCrudEnc.CurrentRow.Cells[23].Value.ToString();
+            MessageBox.Show(gridCrudEnc.CurrentRow.Cells[21].Value.ToString());
             editSaidas.ShowDialog();
-            /*"SELECT  COUNT (*) " +
-                   " FROM encomendas enco " +
-                   " WHERE enco.idsaida = '"+ stridsaida + "' " +
-                   " AND  enco.idveiculo = '"+ idveiculo + "' " +
-                   " AND  enco.identregador = '"+ identregador + "' " +
-                   " AND enco.estentrega = '"+ estentrega + "'" +
-                   " AND enco.datarota= '"+datarota+"'";*/
+
            
            
             if (editSaidas.AcaoDialogoVO.Equals("Cancelar"))
@@ -564,7 +561,7 @@ namespace Sistema.View
                 strCidade           =       editSaidas.CidadeVO;
                 strUf               =       editSaidas.UfVO;
                 strCep              =       editSaidas.CepVO;
-                dtDataEntrega       =       editSaidas.  DataEntregaVO;
+                dtDataEntrega       =       editSaidas.DataEntregaVO;
                 dtDatarota          =       editSaidas.DataRotaVO;
                 dtDataEntrada       =       editSaidas.DataEntradaVO;
                 strIdSaida          =       editSaidas.IdSaidaVO;
@@ -705,6 +702,11 @@ namespace Sistema.View
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tabPrincipal_Click(object sender, EventArgs e)
         {
 
         }

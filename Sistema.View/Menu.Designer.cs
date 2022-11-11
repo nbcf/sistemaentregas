@@ -81,63 +81,63 @@ namespace Sistema.View
             // papeisToolStripMenuItem
             // 
             this.papeisToolStripMenuItem.Name = "papeisToolStripMenuItem";
-            this.papeisToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
+            this.papeisToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.papeisToolStripMenuItem.Text = "Papeis";
             this.papeisToolStripMenuItem.Click += new System.EventHandler(this.papeisToolStripMenuItem_Click);
             // 
             // pessoasToolStripMenuItem
             // 
             this.pessoasToolStripMenuItem.Name = "pessoasToolStripMenuItem";
-            this.pessoasToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
+            this.pessoasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.pessoasToolStripMenuItem.Text = "Pessoas";
             this.pessoasToolStripMenuItem.Click += new System.EventHandler(this.pessoasToolStripMenuItem_Click);
             // 
             // usuariosToolStripMenuItem
             // 
             this.usuariosToolStripMenuItem.Name = "usuariosToolStripMenuItem";
-            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
+            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.usuariosToolStripMenuItem.Text = "Usuarios";
             this.usuariosToolStripMenuItem.Click += new System.EventHandler(this.usuariosToolStripMenuItem_Click);
             // 
             // endereçosToolStripMenuItem
             // 
             this.endereçosToolStripMenuItem.Name = "endereçosToolStripMenuItem";
-            this.endereçosToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
+            this.endereçosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.endereçosToolStripMenuItem.Text = "Endereços";
             this.endereçosToolStripMenuItem.Click += new System.EventHandler(this.endereçosToolStripMenuItem_Click);
             // 
             // veículosToolStripMenuItem
             // 
             this.veículosToolStripMenuItem.Name = "veículosToolStripMenuItem";
-            this.veículosToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
+            this.veículosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.veículosToolStripMenuItem.Text = "Veículos";
             this.veículosToolStripMenuItem.Click += new System.EventHandler(this.veículosToolStripMenuItem_Click);
             // 
             // origemEcomendasToolStripMenuItem
             // 
             this.origemEcomendasToolStripMenuItem.Name = "origemEcomendasToolStripMenuItem";
-            this.origemEcomendasToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
+            this.origemEcomendasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.origemEcomendasToolStripMenuItem.Text = "E-Commerce";
             this.origemEcomendasToolStripMenuItem.Click += new System.EventHandler(this.origemEcomendasToolStripMenuItem_Click);
             // 
             // tipoUnidadesToolStripMenuItem
             // 
             this.tipoUnidadesToolStripMenuItem.Name = "tipoUnidadesToolStripMenuItem";
-            this.tipoUnidadesToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
+            this.tipoUnidadesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.tipoUnidadesToolStripMenuItem.Text = "Tipo Unidades";
             this.tipoUnidadesToolStripMenuItem.Click += new System.EventHandler(this.tipoUnidadesToolStripMenuItem_Click);
             // 
             // tipoGastosToolStripMenuItem
             // 
             this.tipoGastosToolStripMenuItem.Name = "tipoGastosToolStripMenuItem";
-            this.tipoGastosToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
+            this.tipoGastosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.tipoGastosToolStripMenuItem.Text = "Tipo Gastos";
             this.tipoGastosToolStripMenuItem.Click += new System.EventHandler(this.tipoGastosToolStripMenuItem_Click);
             // 
             // fornecedoresToolStripMenuItem
             // 
             this.fornecedoresToolStripMenuItem.Name = "fornecedoresToolStripMenuItem";
-            this.fornecedoresToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
+            this.fornecedoresToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.fornecedoresToolStripMenuItem.Text = "Fornecedores";
             this.fornecedoresToolStripMenuItem.Click += new System.EventHandler(this.fornecedoresToolStripMenuItem_Click);
             // 
@@ -154,22 +154,22 @@ namespace Sistema.View
             // receberToolStripMenuItem
             // 
             this.receberToolStripMenuItem.Name = "receberToolStripMenuItem";
-            this.receberToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
+            this.receberToolStripMenuItem.Size = new System.Drawing.Size(207, 22);
             this.receberToolStripMenuItem.Text = "Receber Encomendas";
             this.receberToolStripMenuItem.Click += new System.EventHandler(this.receberToolStripMenuItem_Click);
             // 
             // despacharToolStripMenuItem
             // 
             this.despacharToolStripMenuItem.Name = "despacharToolStripMenuItem";
-            this.despacharToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
+            this.despacharToolStripMenuItem.Size = new System.Drawing.Size(207, 22);
             this.despacharToolStripMenuItem.Text = "Despachar Encomendas";
             this.despacharToolStripMenuItem.Click += new System.EventHandler(this.despacharToolStripMenuItem_Click);
             // 
             // hjgfjhgToolStripMenuItem
             // 
             this.hjgfjhgToolStripMenuItem.Name = "hjgfjhgToolStripMenuItem";
-            this.hjgfjhgToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
-            this.hjgfjhgToolStripMenuItem.Text = "Entrega Encomendas";
+            this.hjgfjhgToolStripMenuItem.Size = new System.Drawing.Size(207, 22);
+            this.hjgfjhgToolStripMenuItem.Text = "parte no app em xamarin";
             this.hjgfjhgToolStripMenuItem.Click += new System.EventHandler(this.hjgfjhgToolStripMenuItem_Click);
             // 
             // financeiroToolStripMenuItem

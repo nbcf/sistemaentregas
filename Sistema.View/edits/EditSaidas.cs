@@ -197,7 +197,7 @@ namespace Sistema.View.edits
 
         private void dtPDataEntrega_ValueChanged(object sender, EventArgs e)
         {
-            DataEntregaVO = datePDataEntregue.Value;
+            DataEntregaVO = Convert.ToDateTime(datePDataEntregue.Value.ToString("dd/MM/yyyy HH:mm"));
         }
 
         private void EditSaidas_FormClosed(object sender, FormClosedEventArgs e)

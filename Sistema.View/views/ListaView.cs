@@ -13,10 +13,14 @@ namespace Sistema.View
 {
     public partial class ListaView : Form
     {
+
+        public string strId;
+
         public string IdSaidaVO
+
         {
-            get { return textBox1.Text; }
-            set { textBox1.Text = value; }
+            get { return strId; }
+            set { strId = value; }
         }
 
         EncomendasController controllerEncomendas = new EncomendasController();
@@ -34,7 +38,7 @@ namespace Sistema.View
         }
 
         public void carregarEstadoPadrao() {
-            textBox1.Text = IdSaidaVO;
+            strId = IdSaidaVO;
             atualizar(IdSaidaVO);
         }
 
@@ -110,7 +114,9 @@ namespace Sistema.View
             carregarEstadoPadrao();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+       
+
+        private void bttnRefresh_Click(object sender, EventArgs e)
         {
             carregarEstadoPadrao();
         }

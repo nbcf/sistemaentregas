@@ -72,16 +72,15 @@ namespace Sistema.View
             this.toolStripLabel7 = new System.Windows.Forms.ToolStripLabel();
             this.cbOrdenarPor1 = new System.Windows.Forms.ToolStripComboBox();
             this.groupBoxFormulario = new System.Windows.Forms.GroupBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label14 = new System.Windows.Forms.Label();
+            this.txtDiasVencerPrazo = new System.Windows.Forms.TextBox();
+            this.lbFaltamDias = new System.Windows.Forms.Label();
             this.txtEstatusEncomenda = new System.Windows.Forms.TextBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
+            this.lbEstatus = new System.Windows.Forms.Label();
+            this.lbDataEntrega = new System.Windows.Forms.Label();
             this.dateTimeEntrega = new System.Windows.Forms.DateTimePicker();
-            this.label11 = new System.Windows.Forms.Label();
+            this.lbDataRota = new System.Windows.Forms.Label();
             this.dateTimeRota = new System.Windows.Forms.DateTimePicker();
             this.label6 = new System.Windows.Forms.Label();
-            this.dateTimeEntrada = new System.Windows.Forms.DateTimePicker();
             this.txtCdOri = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.lbTxtCodigoEncomenda = new System.Windows.Forms.Label();
@@ -106,6 +105,9 @@ namespace Sistema.View
             this.txtLogradouro = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.dtEntradaSistema = new System.Windows.Forms.DateTimePicker();
+            this.label15 = new System.Windows.Forms.Label();
+            this.dtPrazo = new System.Windows.Forms.DateTimePicker();
             this.toolStrip1.SuspendLayout();
             this.tabControlAssets.SuspendLayout();
             this.tabPagePesquisar.SuspendLayout();
@@ -547,16 +549,18 @@ namespace Sistema.View
             // 
             // groupBoxFormulario
             // 
-            this.groupBoxFormulario.Controls.Add(this.textBox1);
-            this.groupBoxFormulario.Controls.Add(this.label14);
+            this.groupBoxFormulario.Controls.Add(this.label15);
+            this.groupBoxFormulario.Controls.Add(this.dtPrazo);
+            this.groupBoxFormulario.Controls.Add(this.dtEntradaSistema);
+            this.groupBoxFormulario.Controls.Add(this.txtDiasVencerPrazo);
+            this.groupBoxFormulario.Controls.Add(this.lbFaltamDias);
             this.groupBoxFormulario.Controls.Add(this.txtEstatusEncomenda);
-            this.groupBoxFormulario.Controls.Add(this.label13);
-            this.groupBoxFormulario.Controls.Add(this.label12);
+            this.groupBoxFormulario.Controls.Add(this.lbEstatus);
+            this.groupBoxFormulario.Controls.Add(this.lbDataEntrega);
             this.groupBoxFormulario.Controls.Add(this.dateTimeEntrega);
-            this.groupBoxFormulario.Controls.Add(this.label11);
+            this.groupBoxFormulario.Controls.Add(this.lbDataRota);
             this.groupBoxFormulario.Controls.Add(this.dateTimeRota);
             this.groupBoxFormulario.Controls.Add(this.label6);
-            this.groupBoxFormulario.Controls.Add(this.dateTimeEntrada);
             this.groupBoxFormulario.Controls.Add(this.txtCdOri);
             this.groupBoxFormulario.Controls.Add(this.label8);
             this.groupBoxFormulario.Controls.Add(this.lbTxtCodigoEncomenda);
@@ -588,23 +592,23 @@ namespace Sistema.View
             this.groupBoxFormulario.TabIndex = 7;
             this.groupBoxFormulario.TabStop = false;
             // 
-            // textBox1
+            // txtDiasVencerPrazo
             // 
-            this.textBox1.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(269, 215);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(87, 25);
-            this.textBox1.TabIndex = 43;
+            this.txtDiasVencerPrazo.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDiasVencerPrazo.Location = new System.Drawing.Point(269, 215);
+            this.txtDiasVencerPrazo.Name = "txtDiasVencerPrazo";
+            this.txtDiasVencerPrazo.Size = new System.Drawing.Size(87, 25);
+            this.txtDiasVencerPrazo.TabIndex = 43;
             // 
-            // label14
+            // lbFaltamDias
             // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(212, 220);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(52, 17);
-            this.label14.TabIndex = 42;
-            this.label14.Text = "Faltam:";
+            this.lbFaltamDias.AutoSize = true;
+            this.lbFaltamDias.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbFaltamDias.Location = new System.Drawing.Point(200, 218);
+            this.lbFaltamDias.Name = "lbFaltamDias";
+            this.lbFaltamDias.Size = new System.Drawing.Size(52, 17);
+            this.lbFaltamDias.TabIndex = 42;
+            this.lbFaltamDias.Text = "Faltam:";
             // 
             // txtEstatusEncomenda
             // 
@@ -614,74 +618,65 @@ namespace Sistema.View
             this.txtEstatusEncomenda.Size = new System.Drawing.Size(248, 25);
             this.txtEstatusEncomenda.TabIndex = 41;
             // 
-            // label13
+            // lbEstatus
             // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(441, 218);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(55, 17);
-            this.label13.TabIndex = 40;
-            this.label13.Text = "Estatus:";
+            this.lbEstatus.AutoSize = true;
+            this.lbEstatus.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbEstatus.Location = new System.Drawing.Point(441, 218);
+            this.lbEstatus.Name = "lbEstatus";
+            this.lbEstatus.Size = new System.Drawing.Size(55, 17);
+            this.lbEstatus.TabIndex = 40;
+            this.lbEstatus.Text = "Estatus:";
             // 
-            // label12
+            // lbDataEntrega
             // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(12, 220);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(90, 17);
-            this.label12.TabIndex = 39;
-            this.label12.Text = "Data Entrega:";
+            this.lbDataEntrega.AutoSize = true;
+            this.lbDataEntrega.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbDataEntrega.Location = new System.Drawing.Point(12, 220);
+            this.lbDataEntrega.Name = "lbDataEntrega";
+            this.lbDataEntrega.Size = new System.Drawing.Size(90, 17);
+            this.lbDataEntrega.TabIndex = 39;
+            this.lbDataEntrega.Text = "Data Entrega:";
             // 
             // dateTimeEntrega
             // 
             this.dateTimeEntrega.Enabled = false;
             this.dateTimeEntrega.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimeEntrega.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimeEntrega.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimeEntrega.Location = new System.Drawing.Point(106, 213);
             this.dateTimeEntrega.Name = "dateTimeEntrega";
-            this.dateTimeEntrega.Size = new System.Drawing.Size(100, 25);
+            this.dateTimeEntrega.Size = new System.Drawing.Size(88, 25);
             this.dateTimeEntrega.TabIndex = 38;
             // 
-            // label11
+            // lbDataRota
             // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(428, 179);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(68, 17);
-            this.label11.TabIndex = 37;
-            this.label11.Text = "Data Rota";
+            this.lbDataRota.AutoSize = true;
+            this.lbDataRota.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbDataRota.Location = new System.Drawing.Point(196, 190);
+            this.lbDataRota.Name = "lbDataRota";
+            this.lbDataRota.Size = new System.Drawing.Size(68, 17);
+            this.lbDataRota.TabIndex = 37;
+            this.lbDataRota.Text = "Data Rota";
             // 
             // dateTimeRota
             // 
             this.dateTimeRota.Enabled = false;
             this.dateTimeRota.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimeRota.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimeRota.Location = new System.Drawing.Point(499, 174);
+            this.dateTimeRota.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimeRota.Location = new System.Drawing.Point(270, 184);
             this.dateTimeRota.Name = "dateTimeRota";
-            this.dateTimeRota.Size = new System.Drawing.Size(250, 25);
+            this.dateTimeRota.Size = new System.Drawing.Size(86, 25);
             this.dateTimeRota.TabIndex = 36;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(12, 184);
+            this.label6.Location = new System.Drawing.Point(9, 190);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(90, 17);
             this.label6.TabIndex = 35;
             this.label6.Text = "Data Entrada:";
-            // 
-            // dateTimeEntrada
-            // 
-            this.dateTimeEntrada.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimeEntrada.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimeEntrada.Location = new System.Drawing.Point(106, 177);
-            this.dateTimeEntrada.Name = "dateTimeEntrada";
-            this.dateTimeEntrada.Size = new System.Drawing.Size(250, 25);
-            this.dateTimeEntrada.TabIndex = 34;
             // 
             // txtCdOri
             // 
@@ -909,6 +904,35 @@ namespace Sistema.View
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // dtEntradaSistema
+            // 
+            this.dtEntradaSistema.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtEntradaSistema.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtEntradaSistema.Location = new System.Drawing.Point(105, 184);
+            this.dtEntradaSistema.Name = "dtEntradaSistema";
+            this.dtEntradaSistema.Size = new System.Drawing.Size(89, 25);
+            this.dtEntradaSistema.TabIndex = 44;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(419, 184);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(77, 17);
+            this.label15.TabIndex = 46;
+            this.label15.Text = "Data Prazo:";
+            // 
+            // dtPrazo
+            // 
+            this.dtPrazo.Enabled = false;
+            this.dtPrazo.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtPrazo.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtPrazo.Location = new System.Drawing.Point(502, 178);
+            this.dtPrazo.Name = "dtPrazo";
+            this.dtPrazo.Size = new System.Drawing.Size(101, 25);
+            this.dtPrazo.TabIndex = 45;
+            // 
             // EncomendasEntradaView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1003,15 +1027,17 @@ namespace Sistema.View
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtIdOrigem;
         private System.Windows.Forms.TextBox txtBoxId;
-        private System.Windows.Forms.DateTimePicker dateTimeEntrada;
         private System.Windows.Forms.TextBox txtEstatusEncomenda;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label lbEstatus;
+        private System.Windows.Forms.Label lbDataEntrega;
         private System.Windows.Forms.DateTimePicker dateTimeEntrega;
-        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label lbDataRota;
         private System.Windows.Forms.DateTimePicker dateTimeRota;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.TextBox txtDiasVencerPrazo;
+        private System.Windows.Forms.Label lbFaltamDias;
+        private System.Windows.Forms.DateTimePicker dtEntradaSistema;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.DateTimePicker dtPrazo;
     }
 }

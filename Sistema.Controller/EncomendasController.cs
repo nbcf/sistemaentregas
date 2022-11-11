@@ -38,6 +38,7 @@ namespace Sistema.Controller
                            DateTime dataentrega,
                            DateTime datarota,
                            DateTime dataentrada,
+                     //      DateTime dataprazo,
                            string idsaida) {
             modelEncomendas.Idorigem        =       idorigem;
             modelEncomendas.Idveiculo       =       idveiculo;
@@ -59,6 +60,7 @@ namespace Sistema.Controller
             modelEncomendas.Dataentrega     =       dataentrega;
             modelEncomendas.Datarota        =       datarota;
             modelEncomendas.Dataentrada     =       dataentrada;
+        //    modelEncomendas.Dataentrada = dataprazo;
             modelEncomendas.Idsaida         =       idsaida;
             dao.Salvar(modelEncomendas);
             
@@ -89,6 +91,7 @@ namespace Sistema.Controller
                            DateTime dataentrega,
                            DateTime datarota,
                            DateTime dataentrada,
+                      //     DateTime dataprazo,
                             string idsaida,
                            int idencomenda) {
             modelEncomendas.Idorigem        =   idorigem;
@@ -111,7 +114,8 @@ namespace Sistema.Controller
             modelEncomendas.Dataentrega     =   dataentrega;
             modelEncomendas.Datarota        =   datarota;
             modelEncomendas.Dataentrada     =   dataentrada;
-            modelEncomendas.Idsaida = idsaida;
+         //   modelEncomendas.Dataentrada     =   dataprazo;
+            modelEncomendas.Idsaida         =   idsaida;
             modelEncomendas.Idencomenda     =   idencomenda;
             dao.Editar(modelEncomendas);
         }
