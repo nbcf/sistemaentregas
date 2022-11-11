@@ -353,6 +353,16 @@ namespace Sistema.View.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap fiat_fiorino_2022 {
+            get {
+                object obj = ResourceManager.GetObject("fiat-fiorino-2022", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap gastos48 {
             get {
                 object obj = ResourceManager.GetObject("gastos48", resourceCulture);

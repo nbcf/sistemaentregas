@@ -674,6 +674,7 @@
     <None Include="image\crud16x16\truck16x16.png" />
     <None Include="image\crud48x48\password48.png" />
     <None Include="image\crud48x48\person48.png" />
+    <None Include="image\fiat-fiorino-2022.jpg" />
     <Content Include="image\icons8-truck-32.png" />
     <None Include="image\truck-esquerda-24.png" />
   </ItemGroup>
