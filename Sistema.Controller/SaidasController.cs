@@ -107,7 +107,7 @@ namespace Sistema.Controller
                         AcaoCrudSaidasController();
                         }
 
-        public void EditarFimDeRota(int idveiculo, int idusuario,string estsaida, int idsaida){
+        public void EditarFimDeRota(int idveiculo,  int idusuario,string estsaida, int idsaida){
             dao.EditarFimDeRota(idveiculo, idusuario,estsaida,idsaida);
             AcaoCrudSaidasController();
         }
@@ -140,8 +140,8 @@ namespace Sistema.Controller
             
         }
 
-        public DataTable ListarConsumoPorVeiculoNoPeriodocontroller(int idveiculo, DateTime dataInicial, DateTime dataFinal) {
-            return dao.ListarConsumoPorVeiculoNoPeriodoDAO(idveiculo, dataInicial, dataFinal);
+        public DataTable ListarConsumoPorVeiculoNoPeriodocontroller(int idveiculo, int idgasto, DateTime dataInicial, DateTime dataFinal) {
+            return dao.ListarConsumoPorVeiculoNoPeriodoDAO(idveiculo, idgasto, dataInicial, dataFinal);
         }
 
 

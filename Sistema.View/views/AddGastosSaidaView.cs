@@ -314,7 +314,7 @@ namespace Sistema.View.views
             cbTipoGasto.Text        =       dataGridGastos.CurrentRow.Cells[1].Value.ToString();
             cbTipoUnit.Text         =       dataGridGastos.CurrentRow.Cells[2].Value.ToString();
             txtJoinTipoUnit.Text    =       dataGridGastos.CurrentRow.Cells[2].Value.ToString();
-            txtqantidade.Text              =       dataGridGastos.CurrentRow.Cells[3].Value.ToString();
+            txtqantidade.Text       =       dataGridGastos.CurrentRow.Cells[3].Value.ToString();
             txtvalorunt.Text        =       dataGridGastos.CurrentRow.Cells[4].Value.ToString();
             txtvalortotal.Text      =       dataGridGastos.CurrentRow.Cells[5].Value.ToString();
             txtnumnota.Text         =       dataGridGastos.CurrentRow.Cells[6].Value.ToString();

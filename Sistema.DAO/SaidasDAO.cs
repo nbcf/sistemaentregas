@@ -361,48 +361,45 @@ namespace Sistema.DAO
             }
         }
 
-        public DataTable ListarConsumoPorVeiculoNoPeriodoDAO(int idveiculo, DateTime dataInicial, DateTime dataFinal){
+
+        public DataTable ListarConsumoPorVeiculoNoPeriodoDAO(int idveiculo, int idgasto, DateTime dataInicial, DateTime dataFinal){
             try{
                 classeConecta.AbrirCon();
+                sql = " SELECT " +
+                      " gts.datagasto     AS DATA_NOTA,       " +
+                      " sai.regiaoentrega AS REGIAO,          " +
+                      " sai.entregador    AS ENTREGADOR,      " +
+                      " sai.kmsaida       AS KM_SAIDA,        " +
+                      " gts.km            AS KM_NOTA,         " +
+                      " sai.kmretorno     AS KM_VOLTA,        " +
+                      " sai.kmtotal       AS PERCORRIDO,      " +
+                      " tpg.nomegasto     AS DESPESA,         " +
+                      " gts.valorunitario AS VL_UNIT,         " +
+                      " gts.qtd           AS QTD,             " +
+                      " gts.valortotal    AS TOTAL_NTA,       " +
+                      " forn.fornecedor   AS FORNECEDOR,       " +
+                      " gts.numeronota    AS NUM_NOTA         " +
 
-              sql = " SELECT " +
-                    " sai.datasaida     AS SAIDA,           " +
-                    " sai.dataretorno   AS RETORNO,         " +
-                    " sai.entregador    AS ENTREGADOR,      " +
-                    " gts.datagasto     AS DATA_NOTA,       " +
-                    " sai.kmsaida       AS KM_SAIDA," +
-                    " gts.km            AS KM_NOTA,         " +
-                    " sai.kmretorno     AS KM_VOLTA," +
-                    " sai.kmtotal       AS PERCORRIDO,      " +
-                    " tpg.nomegasto     AS DESPESA,         " +
-                    " tpu.nomeund       AS UND,             " +
-                    " gts.valorunitario AS VL_UNIT,      " +
-                    " gts.qtd           AS QTD,             " +
-                    " gts.valortotal    AS TOTAL_NTA," +
-                    " forn.fornecedor   AS FORNECEDOR," +
-                    " gts.numeronota    AS NUM_NOTA " +
+                        " FROM gastos                gts  " +
+                        " INNER JOIN tipogastos      tpg  " +
+                        " INNER JOIN tipounds        tpu  " +
+                        " INNER JOIN saidas          sai  " +
+                        " INNER JOIN fornecedores    forn " +
+                        " INNER JOIN usuarios        usr  " +
+                        " INNER JOIN pessoas         pes  " +
+                        " INNER JOIN papeis          pel  " +
 
-                      " FROM gastos                gts  " +
-                      " INNER JOIN tipogastos      tpg  " +
-                      " INNER JOIN tipounds        tpu  " +
-                      " INNER JOIN saidas          sai  " +
-                      " INNER JOIN fornecedores    forn " +
-                      " INNER JOIN usuarios        usr  " +
-                      " INNER JOIN pessoas         pes  " +
-                      " INNER JOIN papeis          pel  " +
-
-                      " ON sai.idusuario       =   usr.idusuario       " +
-                      " AND usr.idpessoa       =   pes.idpessoa        " +
-                      " AND usr.idpapel        =   pel.idpapel         " +
-                      " AND gts.idsaida        =   sai.idsaida         " +
-                      " AND gts.idfornecedor   =   forn.idfornecedor   " +
-                      " AND gts.idtipogasto    =   tpg.idtipogasto     " +
-                      " AND gts.tipound        =   tpu.idtipound       " +
-                      " AND sai.estsaida       =   'Concluida'         " +
-                      " WHERE sai.idveiculo    =   "+ idveiculo + "    " +
-                      " AND sai.datasaida BETWEEN @dataInicial AND @dataFinal ORDER BY gts.idgasto asc  ";
-
-
+                        " ON sai.idusuario       =   usr.idusuario       " +
+                        " AND usr.idpessoa       =   pes.idpessoa        " +
+                        " AND usr.idpapel        =   pel.idpapel         " +
+                        " AND gts.idsaida        =   sai.idsaida         " +
+                        " AND gts.idfornecedor   =   forn.idfornecedor   " +
+                        " AND gts.idtipogasto    =   tpg.idtipogasto     " +
+                        " AND gts.tipound        =   tpu.idtipound       " +
+                        " AND sai.estsaida       =   'Concluida'         " +
+                        " WHERE sai.idveiculo    =   " + idveiculo + "   " +
+                        " AND tpg.idtipogasto    =   " + idgasto   + "   " +
+                        " AND sai.datasaida BETWEEN @dataInicial AND @dataFinal ORDER BY gts.idgasto asc  ";
                 cmd = new MySqlCommand(sql, classeConecta.con);
                 cmd.Parameters.AddWithValue("@dataInicial", dataInicial);
                 cmd.Parameters.AddWithValue("@dataFinal", dataFinal);
@@ -410,6 +407,7 @@ namespace Sistema.DAO
                 da.SelectCommand = cmd;
                 DataTable dt = new DataTable();
                 da.Fill(dt);
+                
                 classeConecta.FecharCon();
                 return dt;
             }
