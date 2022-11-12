@@ -42,6 +42,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="PerfilCrud.cs" />
+    <Compile Include="PerfilMenu.cs" />
     <Compile Include="ProgramContainer.cs" />
     <Compile Include="Paginacao.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -1,4 +1,5 @@
-﻿using Sistema.Controller;
+﻿using Engines;
+using Sistema.Controller;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -80,6 +81,7 @@ namespace Sistema.View
 
         }
 
+        PerfilCrud perfilCrud = new PerfilCrud();
 
         VeiculosController controllerVeiculos = new VeiculosController();
         public VeiculosView()
@@ -97,6 +99,8 @@ namespace Sistema.View
             bttnEndPages.Visible = true;
             toolStripLabel1.Visible = false;
             toolStripLabel2.Visible = false;
+            perfilCrud.PermissoesCrud(bttnNew, bttnSave, bttnRefresh, bttnEdit, bttnDel, bttnSearch);
+
 
 
         }

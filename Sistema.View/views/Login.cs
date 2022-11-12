@@ -55,7 +55,7 @@ namespace Sistema.View.views
                 //this.Hide();
                 Limpar();
                 this.Hide();
-                form.ShowDialog();
+                form.Show();
                
 
             }
