@@ -1,4 +1,5 @@
-﻿using Sistema.View.relatorios;
+﻿using Engines;
+using Sistema.View.relatorios;
 using Sistema.View.views;
 using System;
 using System.Collections.Generic;
@@ -14,55 +15,137 @@ namespace Sistema.View
 {
     public partial class Menu : Form
     {
+        ProgramContainer pc ;
+
         public Menu()
         {
             InitializeComponent();
+            PermissoesMenus();
         }
 
-        private void papeisToolStripMenuItem_Click(object sender, EventArgs e)
+        public void PermissoesMenus()
         {
 
+            if (
+             true == ProgramContainer.getPapeisModel().Menuadmin &&
+             false == ProgramContainer.getPapeisModel().Menuope &&
+             false == ProgramContainer.getPapeisModel().Menugen) {
+                CadastroMenuItem.Enabled = true;
+                EntregasMenuItem.Enabled = false;
+                FinanceiroMenuItem.Enabled = false;
+
+            }
+
+
+            else if (
+              false == ProgramContainer.getPapeisModel().Menuadmin &&
+              true == ProgramContainer.getPapeisModel().Menuope &&
+              false == ProgramContainer.getPapeisModel().Menugen)
+            {
+                CadastroMenuItem.Enabled = false;
+                EntregasMenuItem.Enabled = true;
+                FinanceiroMenuItem.Enabled = false;
+
+            }
+            else if (
+              false == ProgramContainer.getPapeisModel().Menuadmin &&
+              false == ProgramContainer.getPapeisModel().Menuope &&
+              true == ProgramContainer.getPapeisModel().Menugen)
+            {
+                CadastroMenuItem.Enabled = false;
+                EntregasMenuItem.Enabled = false;
+                FinanceiroMenuItem.Enabled = true;
+
+
+            }
+            else if (
+              false == ProgramContainer.getPapeisModel().Menuadmin &&
+              false == ProgramContainer.getPapeisModel().Menuope &&
+              false == ProgramContainer.getPapeisModel().Menugen)
+            {
+                CadastroMenuItem.Enabled = false;
+                EntregasMenuItem.Enabled = false;
+                FinanceiroMenuItem.Enabled = false;
+
+
+            }
+            else if (
+            true == ProgramContainer.getPapeisModel().Menuadmin &&
+            false == ProgramContainer.getPapeisModel().Menuope &&
+            false == ProgramContainer.getPapeisModel().Menugen)
+            {
+                CadastroMenuItem.Enabled = true;
+                EntregasMenuItem.Enabled = false;
+                FinanceiroMenuItem.Enabled = false;
+
+
+            }
+
+            else if (
+            true == ProgramContainer.getPapeisModel().Menuadmin &&
+            true == ProgramContainer.getPapeisModel().Menuope &&
+            false == ProgramContainer.getPapeisModel().Menugen)
+            {
+                CadastroMenuItem.Enabled = true;
+                EntregasMenuItem.Enabled = true;
+                FinanceiroMenuItem.Enabled = false;
+
+
+            }
+
+
+
+            else if (
+            true == ProgramContainer.getPapeisModel().Menuadmin &&
+            true == ProgramContainer.getPapeisModel().Menuope &&
+            true == ProgramContainer.getPapeisModel().Menugen)
+            {
+                CadastroMenuItem.Enabled = true;
+                EntregasMenuItem.Enabled = true;
+                FinanceiroMenuItem.Enabled = true;
+
+
+            }
+
+        }
+   
+
+        private void papeisToolStripMenuItem_Click(object sender, EventArgs e){
             PapeisView frmPapeis =  PapeisView.GetInstanciaformCrudPapeis();
             frmPapeis.MdiParent = this;
             frmPapeis.Text = "Gerenciamento de Papéis de Usuários";
             frmPapeis.Show();
-
         }
 
-        private void pessoasToolStripMenuItem_Click(object sender, EventArgs e)
-        {
+        private void pessoasToolStripMenuItem_Click(object sender, EventArgs e){
             PessoasView frmPessoas = PessoasView.GetInstanciaformCrudPessoas();
             frmPessoas.MdiParent = this;
             frmPessoas.Text = "Gerenciamento de Pessoas no Sistema";
             frmPessoas.Show();
         }
 
-        private void usuariosToolStripMenuItem_Click(object sender, EventArgs e)
-        {
+        private void usuariosToolStripMenuItem_Click(object sender, EventArgs e){
             UsuariosView frmUsuarios = UsuariosView.GetInstanciaformCrudUsuarios();
             frmUsuarios.MdiParent = this;
             frmUsuarios.Text = "Gerenciamento de Usuários";
             frmUsuarios.Show();
         }
 
-        private void endereçosToolStripMenuItem_Click(object sender, EventArgs e)
-        {
+        private void endereçosToolStripMenuItem_Click(object sender, EventArgs e){
             EnderecosView frmEnderecos = EnderecosView.GetInstanciaformCrudEnderecos();
             frmEnderecos.MdiParent = this;
             frmEnderecos.Text = "Gerenciamento de Endereços Offline";
             frmEnderecos.Show();
         }
 
-        private void veículosToolStripMenuItem_Click(object sender, EventArgs e)
-        {
+        private void veículosToolStripMenuItem_Click(object sender, EventArgs e){
             VeiculosView frmVeiculos = VeiculosView.GetInstanciaformCrudVeiculos();
             frmVeiculos.MdiParent = this;
             frmVeiculos.Text = "Gerenciamento de Veículos";
             frmVeiculos.Show();
         }
 
-        private void despesasToolStripMenuItem_Click(object sender, EventArgs e)
-        {
+        private void despesasToolStripMenuItem_Click(object sender, EventArgs e){
             //formCrudGastos frmGastos = new formCrudGastos();
             //frmGastos.MdiParent = this;
             //frmGastos.Text = "Gerenciamento de Papéis de Usuários";
@@ -157,6 +240,21 @@ namespace Sistema.View
         private void toolStripMenuItem1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void Menu_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void entregasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Menu_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            
         }
     }
 }

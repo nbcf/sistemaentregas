@@ -8,8 +8,6 @@ using System.Threading.Tasks;
 
 namespace Engines{
     public class ProgramContainer{
-
-        //private static Hashtable container = new Hashtable();
         private static UsuariosModel usuariosModel;
         private static PessoasModel pessoasModel;
         private static PapeisModel papeisModel;
@@ -40,16 +38,5 @@ namespace Engines{
         {
             ProgramContainer.papeisModel = papeisModel;
         }
-
-        //public static Hashtable getContainer(){
-        //    return container;
-        //}
-
-        //public static void setContainer(UsuariosModel usuariosModel, PessoasModel pessoasModel){
-        //    container.Add("usuariosModel", usuariosModel);
-        //    container.Add("pessoasModel", pessoasModel);
-        //}
-
-
     }
 }

@@ -523,20 +523,14 @@ namespace Sistema.DAO
                         papelModel.Menugen      = "1".Equals(Convert.ToString(reader["menugen"]))   ? true : false;
 
                     }
-                 
                     ProgramContainer.setUsuariosModel(modelUsuario);
                     ProgramContainer.setPessoasModel(pessoaModel);
                     ProgramContainer.setPapeisModel(papelModel);
-
                     verificarSenha = "201";
-                }
-                else
-                {
 
+                }else{
                     verificarSenha = "404";
                 }
-
-
                 classeConecta.FecharCon();
                 usermodelDAO = modelUsuario;
                 return usermodelDAO;

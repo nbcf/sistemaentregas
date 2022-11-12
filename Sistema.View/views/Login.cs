@@ -54,8 +54,9 @@ namespace Sistema.View.views
                 Menu form = new Menu();
                 //this.Hide();
                 Limpar();
-                form.Show();
                 this.Hide();
+                form.ShowDialog();
+               
 
             }
             else if ("404".Equals(controllerUsuario.SenhaVerificadaController()))
