@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Engines;
 
 namespace Sistema.View
 {
@@ -57,7 +58,6 @@ namespace Sistema.View
         public int resultadoPesquisa = 0;
         public int totalPaginasPesquisa = 0;
         public int memoriaPesquisa = 1;
-
 
         private static OrigemView _InstanciaformCrudOrigem;
         public static OrigemView GetInstanciaformCrudOrigem()
@@ -962,6 +962,10 @@ namespace Sistema.View
         private void bttnNew_Click(object sender, EventArgs e)
         {
             behaviorNewInsert();
+
+            string str = ProgramContainer.getUsuariosModel().Senha;
+            MessageBox.Show(str);
+          
         }
 
         private void bttnSearch_Click(object sender, EventArgs e)

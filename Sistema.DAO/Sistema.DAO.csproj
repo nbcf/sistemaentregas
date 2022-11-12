@@ -60,6 +60,10 @@
     <Compile Include="VeiculosDAO.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Engines\Engines.csproj">
+      <Project>{4378B281-C518-4BB3-A6B5-7FCF9F72E733}</Project>
+      <Name>Engines</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Sistema.Conexao\Sistema.Conexao.csproj">
       <Project>{f41aa314-29ad-4ea6-b169-02ce095aeeea}</Project>
       <Name>Sistema.Conexao</Name>

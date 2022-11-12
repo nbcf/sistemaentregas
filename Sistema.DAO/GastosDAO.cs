@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
 using Sistema.Conexao;
 using System.Windows.Forms;
+using System.Collections;
 
 namespace Sistema.DAO
 {
@@ -254,6 +255,7 @@ namespace Sistema.DAO
                 sql = "SELECT * FROM gastos";
                 cmd = new MySqlCommand(sql, classeConecta.con);
                 MySqlDataAdapter da = new MySqlDataAdapter();
+              
                 da.SelectCommand = cmd;
                 DataTable dt = new DataTable();
                 da.Fill(dt);

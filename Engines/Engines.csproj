@@ -42,10 +42,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ProgramContainer.cs" />
     <Compile Include="Paginacao.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="CalculosGerenciais.cs" />
     <Compile Include="SomarCellDataGrid.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Sistema.Model\Sistema.Model.csproj">
+      <Project>{8b391b5f-21cd-4f46-90a0-4330361e9a46}</Project>
+      <Name>Sistema.Model</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

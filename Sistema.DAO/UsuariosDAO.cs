@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
 using Sistema.Conexao;
 using System.Windows.Forms;
+using Engines;
 
 namespace Sistema.DAO
 {
@@ -18,7 +19,6 @@ namespace Sistema.DAO
         public int regEncontradosPesquisaUsuariosDAO = 0;
         public string acaoCrudUsuariosDAO = "";
         public string verificarSenha = "fechado";
-
        ClasseConexao classeConecta = new ClasseConexao();
         string sql;
         MySqlCommand cmd;
@@ -459,44 +459,83 @@ namespace Sistema.DAO
         public Object VerificarSenha(string usuario, string senha)
         {
             UsuariosModel modelUsuario = new UsuariosModel();
+            PapeisModel papelModel = new PapeisModel();
+            PessoasModel pessoaModel = new PessoasModel();
             try
             {
                 classeConecta.AbrirCon();
+                sql = "SELECT " +
+                    " usr.idusuario,    " +
+                    " usr.idpapel,      " +
+                    " usr.idpessoa,     " +
+                    " usr.usuario,      " +
+                    " usr.senha,        " +
+                    " pes.nomepessoa,   " +
+                    " pel.nomepapel,    " +
+                    " pel.criar,        " +
+                    " pel.recuperar,    " +
+                    " pel.atualizar,    " +
+                    " pel.excluir,      " +
+                    " pel.menuope,      " +
+                    " pel.menuadmin,    " +
+                    " pel.menugen       " +
+
+                    " FROM usuarios usr " +
+
+                    " INNER JOIN papeis pel " +
+                    " INNER JOIN pessoas pes " +
+
+                    " ON  usr.idpapel    = pel.idpapel  " +
+                    " AND usr.idpessoa   = pes.idpessoa " +
+
+                    " WHERE usuario = @usuario and senha = @senha";
                 MySqlCommand cmdVerificar;
                 MySqlDataReader reader;
                 MySqlDataAdapter dap = new MySqlDataAdapter();
                 DataTable dtp = new DataTable();
-                cmdVerificar = new MySqlCommand("SELECT * FROM usuarios where usuario = @usuario and senha = @senha", classeConecta.con);
+                cmdVerificar = new MySqlCommand(sql, classeConecta.con);
                 cmdVerificar.Parameters.AddWithValue("@usuario", usuario);
                 cmdVerificar.Parameters.AddWithValue("@senha", senha);
+                
                 dap.SelectCommand = cmdVerificar;
                 dap.Fill(dtp);
                 reader = cmdVerificar.ExecuteReader();
-                
-              
+
                 if (reader.HasRows)
                 {
 
                     while (reader.Read())
                     {
-                        modelUsuario.Usuario = Convert.ToString(reader["usuario"]);
-                        modelUsuario.Senha = Convert.ToString(reader["senha"]);
-                    }
+                        modelUsuario.Idusuario  = Convert.ToInt32(reader["idusuario"]);
+                        modelUsuario.Idpapel    = Convert.ToInt32(reader["idpapel"]);
+                        modelUsuario.Idpessoa   = Convert.ToInt32(reader["idpessoa"]);
+                        modelUsuario.Usuario    = Convert.ToString(reader["usuario"]);
+                        modelUsuario.Senha      = Convert.ToString(reader["senha"]);
+                        pessoaModel.Nomepessoa  = Convert.ToString(reader["nomepessoa"]);
+                        papelModel.Nomepapel    = Convert.ToString(reader["nomepapel"]);
 
+                        papelModel.Criar        = "1".Equals(Convert.ToString(reader["criar"]))     ? true : false;
+                        papelModel.Recuperar    = "1".Equals(Convert.ToString(reader["recuperar"])) ? true : false;
+                        papelModel.Atualizar    = "1".Equals(Convert.ToString(reader["atualizar"])) ? true : false;
+                        papelModel.Excluir      = "1".Equals(Convert.ToString(reader["excluir"]))   ? true : false;
+                        papelModel.Menuope      = "1".Equals(Convert.ToString(reader["menuope"]))   ? true : false;
+                        papelModel.Menuadmin    = "1".Equals(Convert.ToString(reader["menuadmin"])) ? true : false;
+                        papelModel.Menugen      = "1".Equals(Convert.ToString(reader["menugen"]))   ? true : false;
+
+                    }
+                 
+                    ProgramContainer.setUsuariosModel(modelUsuario);
+                    ProgramContainer.setPessoasModel(pessoaModel);
+                    ProgramContainer.setPapeisModel(papelModel);
+
+                    verificarSenha = "201";
                 }
                 else
                 {
 
-
-                }
-            
-                if (dtp.Rows.Count > 0) { 
-                    verificarSenha = "201";
-
-                }else if (dtp.Rows.Count == 0){
                     verificarSenha = "404";
-
                 }
+
 
                 classeConecta.FecharCon();
                 usermodelDAO = modelUsuario;
