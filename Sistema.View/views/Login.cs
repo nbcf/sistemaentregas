@@ -88,7 +88,7 @@ namespace Sistema.View.views
 
         private void button2_Click(object sender, EventArgs e)
         {
-            GetInstanciaLogin().Close();
+            Close();
         }
     }
 }
