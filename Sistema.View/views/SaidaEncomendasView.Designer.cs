@@ -38,7 +38,7 @@ namespace Sistema.View
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.bttnNew = new System.Windows.Forms.ToolStripButton();
             this.bttnSave = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
+            this.bttnListaUnion = new System.Windows.Forms.ToolStripButton();
             this.bttnRefresh = new System.Windows.Forms.ToolStripButton();
             this.bttnSearch = new System.Windows.Forms.ToolStripButton();
             this.bttnDel = new System.Windows.Forms.ToolStripButton();
@@ -137,7 +137,7 @@ namespace Sistema.View
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.bttnNew,
             this.bttnSave,
-            this.toolStripButton4,
+            this.bttnListaUnion,
             this.bttnRefresh,
             this.bttnSearch,
             this.bttnDel,
@@ -180,17 +180,17 @@ namespace Sistema.View
             this.bttnSave.Text = "toolStripButton2";
             this.bttnSave.Click += new System.EventHandler(this.bttnSave_Click);
             // 
-            // toolStripButton4
+            // bttnListaUnion
             // 
-            this.toolStripButton4.AutoSize = false;
-            this.toolStripButton4.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton4.Image = global::Sistema.View.Properties.Resources.list48;
-            this.toolStripButton4.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.toolStripButton4.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton4.Name = "toolStripButton4";
-            this.toolStripButton4.Size = new System.Drawing.Size(80, 48);
-            this.toolStripButton4.Text = "toolStripButton4";
-            this.toolStripButton4.Click += new System.EventHandler(this.toolStripButton4_Click);
+            this.bttnListaUnion.AutoSize = false;
+            this.bttnListaUnion.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bttnListaUnion.Image = global::Sistema.View.Properties.Resources.list48;
+            this.bttnListaUnion.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.bttnListaUnion.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.bttnListaUnion.Name = "bttnListaUnion";
+            this.bttnListaUnion.Size = new System.Drawing.Size(80, 48);
+            this.bttnListaUnion.Text = "toolStripButton4";
+            this.bttnListaUnion.Click += new System.EventHandler(this.toolStripButton4_Click);
             // 
             // bttnRefresh
             // 
@@ -661,7 +661,6 @@ namespace Sistema.View
             this.cbEstatusSaida.Name = "cbEstatusSaida";
             this.cbEstatusSaida.Size = new System.Drawing.Size(120, 28);
             this.cbEstatusSaida.SelectedIndexChanged += new System.EventHandler(this.toolStripComboBox1_SelectedIndexChanged_1);
-         //   this.cbEstatusSaida.Click += new System.EventHandler(this.cbEstatusSaida_Click);
             // 
             // gridCrudSaidas
             // 
@@ -706,7 +705,7 @@ namespace Sistema.View
             this.gridCrudSaidas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gridCrudSaidas.Size = new System.Drawing.Size(1131, 577);
             this.gridCrudSaidas.TabIndex = 9;
-            this.gridCrudSaidas.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridCrudSaidas_CellClick);
+            this.gridCrudSaidas.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridCrudSaidas_CellDoubleClick);
             this.gridCrudSaidas.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridCrudSaidas_CellDoubleClick);
             // 
             // groupBoxFormulario
@@ -1199,6 +1198,6 @@ namespace Sistema.View
         private System.Windows.Forms.Label lbEstatus;
         private System.Windows.Forms.TextBox txtEstatusSaida;
         private System.Windows.Forms.ToolStripButton btnDespesas;
-        private System.Windows.Forms.ToolStripButton toolStripButton4;
+        private System.Windows.Forms.ToolStripButton bttnListaUnion;
     }
 }

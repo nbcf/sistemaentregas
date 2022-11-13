@@ -368,6 +368,7 @@ ON           enco.idorigem     = ori.idorigem
 WHERE        enco.estentrega   = 'Entregue' 
 AND          enco.idsaida      = 65 
 */
+/*
 SELECT 
 usr.idusuario,
 usr.idpapel,
@@ -389,4 +390,15 @@ INNER JOIN pessoas pes
 ON usr.idpapel   = pel.idpapel
 AND usr.idpessoa = pes.idpessoa
 WHERE usuario = 'nildob' and senha = 123456
-
+*/
+SELECT * FROM encomendas enco 
+INNER JOIN   origem ori 
+ON enco.idorigem = ori.idorigem 
+WHERE enco.estentrega = 'Saiu para entrega'
+AND enco.idsaida = 73
+UNION
+SELECT * FROM encomendas enco 
+INNER JOIN   origem ori 
+ON enco.idorigem = ori.idorigem 
+WHERE enco.estentrega = 'Entregue'
+AND enco.idsaida = '73'

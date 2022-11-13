@@ -515,8 +515,6 @@ namespace Sistema.DAO
             string estentrega, 
             DateTime datarota){
 
-            //MessageBox.Show("  1  "+ stridsaida+" 2 "+ idveiculo+" 3 "+ identregador+" 4  "+ estentrega);
-
             try
             {
             classeConecta.AbrirCon();
@@ -526,10 +524,8 @@ namespace Sistema.DAO
                        " AND  enco.idveiculo = '" + idveiculo + "'" +
                        " AND  enco.identregador = '" + identregador + "'" +
                        " AND enco.estentrega = '" + estentrega + "'";
-                  //  " AND enco.datarota= '"+ datarota +"'";
                 cmd = new MySqlCommand(sql, classeConecta.con);
                 MySqlDataAdapter da = new MySqlDataAdapter();
-            
                 int id = Convert.ToInt32(cmd.ExecuteScalar());
                 classeConecta.FecharCon();
                 return id;
@@ -571,8 +567,7 @@ namespace Sistema.DAO
             string parametro,
             string indexar, 
             int offsett,
-            int limitt)
-        {
+            int limitt) {
             try
             {
                 classeConecta.AbrirCon();
@@ -706,15 +701,34 @@ namespace Sistema.DAO
             try
             {
                 classeConecta.AbrirCon();
-                sql = "SELECT * FROM encomendas enco " +
-                      "INNER JOIN   origem ori ON enco.idorigem = ori.idorigem " +
-                      "WHERE enco.estentrega = '"+ estSaiuEntrega + "' " +
-                      "AND enco.idsaida = '"+ idsaida + "' " +
-                      "UNION " +
-                      "SELECT* FROM encomendas enco " +
-                      "INNER JOIN   origem ori ON enco.idorigem = ori.idorigem " +
-                      "WHERE enco.estentrega = '" + estEntregue + "' " +
-                      "AND enco.idsaida = '"+ idsaida + "'";
+                sql = "SELECT  " +
+                    "  enco.estentrega AS ESTATUS,      " +
+                    "  enco.dataentrega AS ENTREGUE,    " +
+                    "  enco.numpacote AS PACOTE,        " +
+                    "  enco.peso AS PESO                " +
+
+                      " FROM encomendas enco            " + 
+                      " INNER JOIN origem ori           " +
+                      " ON enco.idorigem = ori.idorigem " +
+                      
+                      " WHERE   enco.estentrega     =   '"+ estSaiuEntrega + "'   " +
+                      " AND     enco.idsaida        =   '"+ idsaida + "'          " +
+                      
+                      " UNION " +
+
+                      " SELECT " +
+                      " enco.estentrega AS ESTATUS,     " +
+                      " enco.dataentrega AS ENTREGUE,   " +
+                      " enco.numpacote AS PACOTE,       " +
+                      " enco.peso AS PESO               " +
+
+                      " FROM encomendas enco            " +
+                      " INNER JOIN origem ori           " +
+                      " ON enco.idorigem = ori.idorigem " +
+
+                      " WHERE enco.estentrega   =   '" + estEntregue + "'" +
+                      " AND enco.idsaida        =   '" + idsaida + "'";
+
                 cmd = new MySqlCommand(sql, classeConecta.con);
                 MySqlDataAdapter da = new MySqlDataAdapter();
                 da.SelectCommand = cmd;

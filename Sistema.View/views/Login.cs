@@ -14,6 +14,7 @@ namespace Sistema.View.views
 {
     public partial class Login : Form
     {
+      
         private static Login _InstanciaLogin;
         public static Login GetInstanciaLogin()
         {
@@ -51,18 +52,25 @@ namespace Sistema.View.views
 
            if("201".Equals(controllerUsuario.SenhaVerificadaController()))
             {
+                 
                 Menu form = new Menu();
                 //this.Hide();
+
+                form.AcaoFormVO = "AbriuMenu";
                 Limpar();
                 this.Hide();
-                form.Show();
+                form.ShowDialog();
+
+                if (form.AcaoFormVO.Equals("FechouSistema")) {
+
+                    Close();
+                
+                }
                
 
-            }
-            else if ("404".Equals(controllerUsuario.SenhaVerificadaController()))
-            { 
-            
-            
+            }else if ("404".Equals(controllerUsuario.SenhaVerificadaController())){
+                MessageBox.Show("Usuário e Senha Inválidos", "Aviso do Sistema", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
             }
         }
 

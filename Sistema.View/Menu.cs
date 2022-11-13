@@ -15,9 +15,16 @@ namespace Sistema.View
 {
     public partial class Menu : Form
     {
+        string acaoForm = "";
+
+        public string AcaoFormVO
+        {
+            get { return acaoForm; }
+            set { acaoForm = value; }
+        }
         ProgramContainer pc ;
         PerfilMenu pm = new PerfilMenu();
-
+        
         public Menu()
         {
             InitializeComponent();
@@ -168,7 +175,7 @@ namespace Sistema.View
 
         private void Menu_FormClosing(object sender, FormClosingEventArgs e)
         {
-            
+           AcaoFormVO = "FechouSistema";
         }
     }
 }
