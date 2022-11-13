@@ -1228,27 +1228,33 @@ namespace Sistema.View
 
         private void bttnEdit_Click(object sender, EventArgs e)
         {
-            if(PerfilCrud.)
-            if ("Em Rota".Equals(gridCrudVeiculos.CurrentRow.Cells[3].Value.ToString())) {
-            }else if (gridCrudVeiculos.CurrentRow.Cells[3].Value.ToString().Equals("Disponivel") || 
-                      gridCrudVeiculos.CurrentRow.Cells[3].Value.ToString().Equals("")){
-
-
-                var gridVazia = gridCrudVeiculos.CurrentRow.Cells[0].Value.ToString();
-                if (string.IsNullOrEmpty(gridVazia)){
-                }
-                else if (gridVazia.Length > 0)
+            if (perfilCrud.PermissaoUpdate() == true)
+            {
+                if ("Em Rota".Equals(gridCrudVeiculos.CurrentRow.Cells[3].Value.ToString()))
                 {
-                    if (typeEdition.Equals("insert") && operationType.Equals("newInsertion"))
-                    {
-                        behaviorEdit();
-                    }
-                    else if (typeEdition.Equals("search") && operationType.Equals("updateData"))
-                    {
-                        behaviorEditPesquisa();
-                    }
                 }
+                else if (gridCrudVeiculos.CurrentRow.Cells[3].Value.ToString().Equals("Disponivel") ||
+                         gridCrudVeiculos.CurrentRow.Cells[3].Value.ToString().Equals(""))
+                {
 
+
+                    var gridVazia = gridCrudVeiculos.CurrentRow.Cells[0].Value.ToString();
+                    if (string.IsNullOrEmpty(gridVazia))
+                    {
+                    }
+                    else if (gridVazia.Length > 0)
+                    {
+                        if (typeEdition.Equals("insert") && operationType.Equals("newInsertion"))
+                        {
+                            behaviorEdit();
+                        }
+                        else if (typeEdition.Equals("search") && operationType.Equals("updateData"))
+                        {
+                            behaviorEditPesquisa();
+                        }
+                    }
+
+                }
             }
 
         }

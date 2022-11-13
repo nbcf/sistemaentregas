@@ -25,27 +25,27 @@ namespace Engines
             bbtnSearch.Visible  =   ProgramContainer.getPapeisModel().Recuperar ? true : false;
         }
 
-        public Boolean PermissaoCreate(){
+        public bool PermissaoCreate(){
           return  ProgramContainer.getPapeisModel().Criar ? true : false;
          
         }
 
-        public Boolean PermissaoRequest(){
-            return ProgramContainer.getPapeisModel().Recuperar ? true : false;
+        public bool PermissaoRequest(){
+            return ProgramContainer.getPapeisModel().Recuperar ?  true : false;
 
         }
 
-        public Boolean PermissaoUpdate(){
+        public bool PermissaoUpdate(){
             return ProgramContainer.getPapeisModel().Atualizar ? true : false;
 
         }
 
-        public Boolean PermissaoDelete(){
+        public bool PermissaoDelete(){
             return ProgramContainer.getPapeisModel().Excluir ? true : false;
 
         }
 
-        public Boolean PermissaoDuploClickEdit() {
+        public bool PermissaoDuploClickEdit() {
             return ProgramContainer.getPapeisModel().Atualizar ? true : false;
 
         }
