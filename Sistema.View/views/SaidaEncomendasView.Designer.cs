@@ -656,11 +656,12 @@ namespace Sistema.View
             "Preparando",
             "Em Rota",
             "Rota Concluída",
-            "Saiu Para Entrega"});
+            "Saiu Para Entrega",
+            "Nova Saida"});
             this.cbEstatusSaida.Name = "cbEstatusSaida";
             this.cbEstatusSaida.Size = new System.Drawing.Size(120, 28);
             this.cbEstatusSaida.SelectedIndexChanged += new System.EventHandler(this.toolStripComboBox1_SelectedIndexChanged_1);
-            this.cbEstatusSaida.Click += new System.EventHandler(this.cbEstatusSaida_Click);
+         //   this.cbEstatusSaida.Click += new System.EventHandler(this.cbEstatusSaida_Click);
             // 
             // gridCrudSaidas
             // 
@@ -712,10 +713,9 @@ namespace Sistema.View
             // 
             this.groupBoxFormulario.Controls.Add(this.groupBox1);
             this.groupBoxFormulario.Controls.Add(this.groupBox2);
-            this.groupBoxFormulario.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBoxFormulario.Location = new System.Drawing.Point(0, 119);
+            this.groupBoxFormulario.Location = new System.Drawing.Point(0, 213);
             this.groupBoxFormulario.Name = "groupBoxFormulario";
-            this.groupBoxFormulario.Size = new System.Drawing.Size(1131, 577);
+            this.groupBoxFormulario.Size = new System.Drawing.Size(1131, 483);
             this.groupBoxFormulario.TabIndex = 10;
             this.groupBoxFormulario.TabStop = false;
             // 
@@ -726,7 +726,7 @@ namespace Sistema.View
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox1.Location = new System.Drawing.Point(3, 172);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1125, 402);
+            this.groupBox1.Size = new System.Drawing.Size(1125, 308);
             this.groupBox1.TabIndex = 98;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Encomendas Para Entrega";
@@ -744,7 +744,7 @@ namespace Sistema.View
             this.gridCurdMestreDetalhe.Name = "gridCurdMestreDetalhe";
             this.gridCurdMestreDetalhe.ReadOnly = true;
             this.gridCurdMestreDetalhe.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.gridCurdMestreDetalhe.Size = new System.Drawing.Size(1110, 348);
+            this.gridCurdMestreDetalhe.Size = new System.Drawing.Size(1110, 254);
             this.gridCurdMestreDetalhe.TabIndex = 105;
             this.gridCurdMestreDetalhe.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridMestreDetalhe_CellClick);
             // 

@@ -540,6 +540,7 @@ namespace Sistema.View
             txtEstatusSaida.Enabled         = false;
             txtEstatusSaida.Visible         = false;
             btnDespesas.Enabled = false;
+            
         }
 
         private void bttnTools_Click(object sender, EventArgs e){
@@ -1702,7 +1703,8 @@ namespace Sistema.View
                 txtKmTotal.Text                 =   gridCrudSaidas.CurrentRow.Cells[16].Value.ToString();
                 btnCalcularKmTotal.Visible = true;
                 btnCalcularKmTotal.Visible = true;
-
+                bttnNew.Enabled = false;
+                bttnSearch.Enabled = false;
 
 
             }
@@ -1744,6 +1746,8 @@ namespace Sistema.View
 
                 if ("AT".Equals(controllerSaida.AcaoCrudSaidasController())){
                     behaviorRefresh();
+                    bttnNew.Enabled = true;
+                    bttnSearch.Enabled = true;
                 }
 
             }else if (resultadoRetorno == DialogResult.No){
@@ -1951,34 +1955,74 @@ namespace Sistema.View
 
             int qtLinhasSaidas  =   gridCrudSaidas.RowCount;
             int qtLinhasMD      =   gridCurdMestreDetalhe.RowCount;
-            if (cbEstatusSaida.SelectedItem.Equals("Preparando")){
-                toolStripButton4.Enabled = true;
-               
-            }else if (!cbEstatusSaida.SelectedItem.Equals("Preparando")){
-                toolStripButton4.Enabled = false;
-            }
-            else if (cbEstatusSaida.SelectedItem.Equals("Rota Concluída"))
-            {
-                btnCalcularKmTotal.Visible = true;
-            }  //      
 
-            puxarparametro(0, Convert.ToInt32(cbButtnQuantPage1.SelectedItem), "Sim");
+            if (cbEstatusSaida.SelectedItem.Equals("Preparando")){
+
+                puxarparametro(0, Convert.ToInt32(cbButtnQuantPage1.SelectedItem), "Sim");
+                toolStripButton4.Enabled = true;
+                bttnNew.Enabled = true;
+                bttnSearch.Enabled = true;
+
+            }else if (cbEstatusSaida.SelectedItem.Equals("Rota Concluída")){
+                puxarparametro(0, Convert.ToInt32(cbButtnQuantPage1.SelectedItem), "Sim");
+                btnCalcularKmTotal.Visible = true;
+                bttnNew.Enabled = false;
+                bttnSearch.Enabled = false;
+            } else {
+                puxarparametro(0, Convert.ToInt32(cbButtnQuantPage1.SelectedItem), "Sim");
+                toolStripButton4.Enabled = false;
+
+            }      
+
+           
 
         }
 
 
         private void gridCrudSaidas_CellDoubleClick(object sender, DataGridViewCellEventArgs e){
             if (cbEstatusSaida.SelectedItem.ToString().Equals("Rota Concluída")){
-                toolStrip2.Visible          =   false;
-                groupBoxFormulario.Enabled  =   true;
-                groupBoxFormulario.Visible  =   true;
-                txtEstatusSaida.Enabled     =   false;
-                datePckSaida.Enabled        =   false;
-                datePckRetorno.Enabled      =   true;
-                txtKmRetorno.Enabled        =   true;
-                txtKmSaida.Enabled          =   false;
-                lbveiculo.Visible           =   true;
-                txtKmTotal.Visible          =   true;
+                //toolStrip2.Visible          =   false;
+                //groupBoxFormulario.Enabled  =   true;
+                //groupBoxFormulario.Visible  =   true;
+                //txtEstatusSaida.Enabled     =   false;
+                //datePckSaida.Enabled        =   false;
+                //datePckRetorno.Enabled      =   true;
+                //txtKmRetorno.Enabled        =   true;
+                //txtKmSaida.Enabled          =   false;
+                //lbveiculo.Visible           =   true;
+                //txtKmTotal.Visible          =   true;
+
+                //lbTotalKm.Visible = true;
+                //lbFechamento.Visible = true;
+                //txtHoraRetorno.Visible = true;
+                //lbHoraSaida.Visible = true;
+                //txtHoraSaida.Visible = true;
+                //txtEstatusSaida.Visible = true;
+                //lbEstatus.Visible = true;
+
+                //txtRegiaoEntrega.Enabled    =   false;
+                //txtIdSaida.Text             =   gridCrudSaidas.CurrentRow.Cells[0].Value.ToString();
+                //txtIdVeiculo.Text           =   gridCrudSaidas.CurrentRow.Cells[1].Value.ToString();
+                //txtIdUsuario.Text           =   gridCrudSaidas.CurrentRow.Cells[2].Value.ToString();
+                //txtIdPapel.Text             =   gridCrudSaidas.CurrentRow.Cells[3].Value.ToString();
+                //txtIdPessoa.Text            =   gridCrudSaidas.CurrentRow.Cells[4].Value.ToString();
+                //txtVeiculo.Text             =   gridCrudSaidas.CurrentRow.Cells[5].Value.ToString();
+                //txtPlacaVeiculo.Text        =   gridCrudSaidas.CurrentRow.Cells[6].Value.ToString();
+                //txtPessoa.Text              =   gridCrudSaidas.CurrentRow.Cells[7].Value.ToString();
+                //datePckSaida.Value          =   Convert.ToDateTime(gridCrudSaidas.CurrentRow.Cells[8].Value.ToString());
+                //txtHoraSaida.Text           =   gridCrudSaidas.CurrentRow.Cells[10].Value.ToString();
+                //txtHoraRetorno.Text         =   gridCrudSaidas.CurrentRow.Cells[11].Value.ToString();
+                //txtEstatusSaida.Text        =   gridCrudSaidas.CurrentRow.Cells[12].Value.ToString();
+                //txtRegiaoEntrega.Text       =   gridCrudSaidas.CurrentRow.Cells[13].Value.ToString();
+                //txtKmSaida.Text             =   gridCrudSaidas.CurrentRow.Cells[14].Value.ToString();
+                //txtKmRetorno.Text           =   gridCrudSaidas.CurrentRow.Cells[15].Value.ToString();
+                //txtKmTotal.Text             =   gridCrudSaidas.CurrentRow.Cells[16].Value.ToString();
+
+
+                groupBoxFormulario.Enabled = true;
+                groupBoxFormulario.Visible = true;
+                datePckSaida.Enabled = false;
+                txtKmTotal.Visible = true;
 
                 lbTotalKm.Visible = true;
                 lbFechamento.Visible = true;
@@ -1987,24 +2031,43 @@ namespace Sistema.View
                 txtHoraSaida.Visible = true;
                 txtEstatusSaida.Visible = true;
                 lbEstatus.Visible = true;
+                lbdataRetorno.Visible = true;
+                lbKmRetorno.Visible = true;
+                lbTotalKm.Visible = true;
+                btnRotaConcluida.Enabled = false;
+                btnDespesas.Enabled = true;
+                btnCalcularKmTotal.Visible = true;
+                btnCalcularKmTotal.Enabled = true;
+                txtKmSaida.Visible = true;
+                txtKmSaida.Enabled = false;
+                txtKmRetorno.Visible = true;
+                txtKmRetorno.Enabled = true;
+                datePckRetorno.Visible = true;
+                datePckRetorno.Enabled = true;
+                txtRegiaoEntrega.Enabled = false;
+                int idsaida = Convert.ToInt32(gridCrudSaidas.CurrentRow.Cells[0].Value.ToString());
+                groupBoxFormulario.Visible = true;
+                groupBox1.Visible = true;
 
-                txtRegiaoEntrega.Enabled    =   false;
-                txtIdSaida.Text             =   gridCrudSaidas.CurrentRow.Cells[0].Value.ToString();
-                txtIdVeiculo.Text           =   gridCrudSaidas.CurrentRow.Cells[1].Value.ToString();
-                txtIdUsuario.Text           =   gridCrudSaidas.CurrentRow.Cells[2].Value.ToString();
-                txtIdPapel.Text             =   gridCrudSaidas.CurrentRow.Cells[3].Value.ToString();
-                txtIdPessoa.Text            =   gridCrudSaidas.CurrentRow.Cells[4].Value.ToString();
-                txtVeiculo.Text             =   gridCrudSaidas.CurrentRow.Cells[5].Value.ToString();
-                txtPlacaVeiculo.Text        =   gridCrudSaidas.CurrentRow.Cells[6].Value.ToString();
-                txtPessoa.Text              =   gridCrudSaidas.CurrentRow.Cells[7].Value.ToString();
-                datePckSaida.Value          =   Convert.ToDateTime(gridCrudSaidas.CurrentRow.Cells[8].Value.ToString());
-                txtHoraSaida.Text           =   gridCrudSaidas.CurrentRow.Cells[10].Value.ToString();
-                txtHoraRetorno.Text         =   gridCrudSaidas.CurrentRow.Cells[11].Value.ToString();
-                txtEstatusSaida.Text        =   gridCrudSaidas.CurrentRow.Cells[12].Value.ToString();
-                txtRegiaoEntrega.Text       =   gridCrudSaidas.CurrentRow.Cells[13].Value.ToString();
-                txtKmSaida.Text             =   gridCrudSaidas.CurrentRow.Cells[14].Value.ToString();
-                txtKmRetorno.Text           =   gridCrudSaidas.CurrentRow.Cells[15].Value.ToString();
-                txtKmTotal.Text             =   gridCrudSaidas.CurrentRow.Cells[16].Value.ToString();
+                txtIdSaida.Text = gridCrudSaidas.CurrentRow.Cells[0].Value.ToString();
+                txtIdVeiculo.Text = gridCrudSaidas.CurrentRow.Cells[1].Value.ToString();
+                txtIdUsuario.Text = gridCrudSaidas.CurrentRow.Cells[2].Value.ToString();
+                txtIdPapel.Text = gridCrudSaidas.CurrentRow.Cells[3].Value.ToString();
+                txtIdPessoa.Text = gridCrudSaidas.CurrentRow.Cells[4].Value.ToString();
+                txtVeiculo.Text = gridCrudSaidas.CurrentRow.Cells[5].Value.ToString();
+                txtPlacaVeiculo.Text = gridCrudSaidas.CurrentRow.Cells[6].Value.ToString();
+                txtPessoa.Text = gridCrudSaidas.CurrentRow.Cells[7].Value.ToString();
+                datePckSaida.Value = Convert.ToDateTime(gridCrudSaidas.CurrentRow.Cells[8].Value.ToString());
+                txtHoraSaida.Text = gridCrudSaidas.CurrentRow.Cells[10].Value.ToString();
+                txtHoraRetorno.Text = gridCrudSaidas.CurrentRow.Cells[11].Value.ToString();
+                txtEstatusSaida.Text = gridCrudSaidas.CurrentRow.Cells[12].Value.ToString();
+                txtRegiaoEntrega.Text = gridCrudSaidas.CurrentRow.Cells[13].Value.ToString();
+                txtKmSaida.Text = gridCrudSaidas.CurrentRow.Cells[14].Value.ToString();
+                txtKmRetorno.Text = gridCrudSaidas.CurrentRow.Cells[15].Value.ToString();
+                txtKmTotal.Text = gridCrudSaidas.CurrentRow.Cells[16].Value.ToString();
+                btnCalcularKmTotal.Visible = true;
+                btnCalcularKmTotal.Visible = true;
+
             } else {
                 setaGridEmCampos();
             }
@@ -2196,9 +2259,6 @@ namespace Sistema.View
           //  reduzirFonte();
         }
 
-        private void cbEstatusSaida_Click(object sender, EventArgs e)
-        {
-
-        }
+      
     }
 }

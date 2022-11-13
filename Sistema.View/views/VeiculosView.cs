@@ -1256,6 +1256,7 @@ namespace Sistema.View
 
                 }
             }
+            else { MessageBox.Show("Este perfil não possui autorização para Editar"); }
 
         }
 
@@ -1500,25 +1501,30 @@ namespace Sistema.View
 
         private void gridCrudVeiculos_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if ("Em Rota".Equals(gridCrudVeiculos.CurrentRow.Cells[3].Value.ToString())) {
+            if (perfilCrud.PermissaoUpdate() == true)
+            {
+                if ("Em Rota".Equals(gridCrudVeiculos.CurrentRow.Cells[3].Value.ToString())) {
+                
+                MessageBox.Show("Não é possível editar veículos que estão em rota");
 
-            }else if (gridCrudVeiculos.CurrentRow.Cells[3].Value.ToString().Equals("Disponivel") || 
-                      gridCrudVeiculos.CurrentRow.Cells[3].Value.ToString().Equals("")){
-               
-                    var gridVazia = gridCrudVeiculos.CurrentRow.Cells[0].Value.ToString();
-            if (string.IsNullOrEmpty(gridVazia)){
+            } else if (gridCrudVeiculos.CurrentRow.Cells[3].Value.ToString().Equals("Disponivel") ||
+                       gridCrudVeiculos.CurrentRow.Cells[3].Value.ToString().Equals("")) {
 
-            }else if (gridVazia.Length > 0){
-                if (typeEdition.Equals("insert")){
-                    operationType = "newInsertion";
-                    behaviorClickGrid();
+                var gridVazia = gridCrudVeiculos.CurrentRow.Cells[0].Value.ToString();
+                if (string.IsNullOrEmpty(gridVazia)) {
 
-                } else if (typeEdition.Equals("search")){
-                    operationType = "updateData";
-                    behaviorClickGridPesquisa();
+                } else if (gridVazia.Length > 0) {
+                    if (typeEdition.Equals("insert")) {
+                        operationType = "newInsertion";
+                        behaviorClickGrid();
+
+                    } else if (typeEdition.Equals("search")) {
+                        operationType = "updateData";
+                        behaviorClickGridPesquisa();
+                    }
                 }
-            }
-           }
+              }
+            }else { MessageBox.Show("Este perfil não possui autorização para Editar"); }
         }
 
         private void bttnRefresh_Click_2(object sender, EventArgs e)
@@ -1543,7 +1549,38 @@ namespace Sistema.View
 
         }
 
-     
+        private void gridCrudVeiculos_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (perfilCrud.PermissaoUpdate() == true)
+            {
+                if ("Em Rota".Equals(gridCrudVeiculos.CurrentRow.Cells[3].Value.ToString()))
+                {
+                }
+                else if (gridCrudVeiculos.CurrentRow.Cells[3].Value.ToString().Equals("Disponivel") ||
+                         gridCrudVeiculos.CurrentRow.Cells[3].Value.ToString().Equals(""))
+                {
+
+
+                    var gridVazia = gridCrudVeiculos.CurrentRow.Cells[0].Value.ToString();
+                    if (string.IsNullOrEmpty(gridVazia))
+                    {
+                    }
+                    else if (gridVazia.Length > 0)
+                    {
+                        if (typeEdition.Equals("insert") && operationType.Equals("newInsertion"))
+                        {
+                            behaviorEdit();
+                        }
+                        else if (typeEdition.Equals("search") && operationType.Equals("updateData"))
+                        {
+                            behaviorEditPesquisa();
+                        }
+                    }
+
+                }
+            }
+            else { MessageBox.Show("Este perfil não possui autorização para Editar"); }
+        }
     }
 
 }

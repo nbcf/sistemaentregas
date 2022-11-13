@@ -310,7 +310,7 @@ namespace Sistema.View
             this.gridCrudVeiculos.Size = new System.Drawing.Size(666, 276);
             this.gridCrudVeiculos.TabIndex = 5;
             this.gridCrudVeiculos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridCrudVeiculos_CellClick);
-        //    this.gridCrudVeiculos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridCrudVeiculos_CellContentClick);
+            this.gridCrudVeiculos.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.gridCrudVeiculos_CellMouseDoubleClick);
             // 
             // toolStrip2
             // 
