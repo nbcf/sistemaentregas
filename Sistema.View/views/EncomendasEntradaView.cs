@@ -1,4 +1,5 @@
-﻿using Sistema.Controller;
+﻿using Engines;
+using Sistema.Controller;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -60,7 +61,9 @@ namespace Sistema.View
         public int totalPaginasPesquisa = 0;
         public int memoriaPesquisa = 1;
         public string strPesquisarEmColuna;
+
         EncomendasController controllerEncomendas = new EncomendasController();
+        PerfilCrud perfilCrud = new PerfilCrud();
         private static EncomendasEntradaView _InstanciaformCrudEncomendas;
 
         public static EncomendasEntradaView GetInstanciaformCrudPapeis()
@@ -80,7 +83,9 @@ namespace Sistema.View
         {
             InitializeComponent();
             carregarEstadoPadrao("CarregaPadraoIDTodosUltimos", 0);
-            
+            perfilCrud.PermissoesCrud(bttnNew, bttnSave, bttnRefresh, bttnEdit, bttnDel, bttnSearch);
+
+
         }
 
 

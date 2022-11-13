@@ -1,4 +1,5 @@
-﻿using Sistema.Controller;
+﻿using Engines;
+using Sistema.Controller;
 using Sistema.View.imports;
 using System;
 using System.Collections.Generic;
@@ -74,16 +75,19 @@ namespace Sistema.View.views
             }
             return _InstanciaGastosView;
         }
+        PerfilCrud perfilCrud = new PerfilCrud();
 
-        TipoGastosController    controllerTipoGastos    = new   TipoGastosController();
+        TipoGastosController controllerTipoGastos    = new   TipoGastosController();
         TipoUndsController      controllerTipoUnds      = new   TipoUndsController();
         FornecedoresController  controllerFornecedores  = new   FornecedoresController();
         GastosController        controllerGastos        = new   GastosController();
-
+                private static VeiculosView _InstanciaformCrudVeiculos;
         public GastosView()
         {
             InitializeComponent();
             carregarEstadoPadrao("CarregaPadraoIDTodosUltimos", 0);
+            perfilCrud.PermissoesCrud(bttnNew, bttnSave, bttnRefresh, bttnEdit, bttnDel, bttnSearch);
+
         }
 
         private void puxarparametro(int deslocamento, int limiteregistro, string inicioDeslocamento)

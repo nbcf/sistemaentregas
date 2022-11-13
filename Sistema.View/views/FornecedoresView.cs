@@ -1,4 +1,5 @@
-﻿using Sistema.Controller;
+﻿using Engines;
+using Sistema.Controller;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -65,7 +66,7 @@ namespace Sistema.View.views
         public int totalPaginasPesquisa = 0;
         public int memoriaPesquisa = 1;
 
-        
+        PerfilCrud perfilCrud = new PerfilCrud();
         private static FornecedoresView _InstanciaFornecedoresView;
         public static FornecedoresView GetInstanciaFornecedoresView()
         {
@@ -89,6 +90,8 @@ namespace Sistema.View.views
 
             InitializeComponent();
            carregarEstadoPadrao("CarregaPadraoIDTodosUltimos", 0);
+            perfilCrud.PermissoesCrud(bttnNew, bttnSave, bttnRefresh, bttnEdit, bttnDel, bttnSearch);
+
         }
 
 
