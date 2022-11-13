@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Sistema.Controller;
+using Engines;
 
 namespace Sistema.View
 {
@@ -96,11 +97,14 @@ namespace Sistema.View
         }
 
         UsuariosController controllerUsuarios = new UsuariosController();
-        public UsuariosView()
-        {
+        PerfilCrud perfilCrud = new PerfilCrud();
+
+        public UsuariosView(){
             InitializeComponent();
 
             carregarEstadoPadrao("CarregaPadraoIDTodosUltimos", 0);
+            perfilCrud.PermissoesCrud(bttnNew, bttnSave, bttnRefresh, bttnEdit, bttnDel, bttnSearch);
+
 
         }
 

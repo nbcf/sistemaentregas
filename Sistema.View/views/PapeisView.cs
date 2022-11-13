@@ -1,4 +1,5 @@
-﻿using Sistema.Controller;
+﻿using Engines;
+using Sistema.Controller;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -69,6 +70,8 @@ namespace Sistema.View
 
 
         private static PapeisView _InstanciaformCrudPapeis;
+        PerfilCrud perfilCrud = new PerfilCrud();
+
         public static PapeisView GetInstanciaformCrudPapeis()
         {
             if (_InstanciaformCrudPapeis == null)
@@ -90,9 +93,11 @@ namespace Sistema.View
         {
             InitializeComponent();
             carregarEstadoPadrao("CarregaPadraoIDTodosUltimos", 0);
+            perfilCrud.PermissoesCrud(bttnNew, bttnSave, bttnRefresh, bttnEdit, bttnDel, bttnSearch);
+
         }
 
-        
+
 
         private void puxarparametro(int deslocamento, int limiteregistro, string inicioDeslocamento)
         {

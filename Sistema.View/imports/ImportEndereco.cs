@@ -1,4 +1,5 @@
-﻿using Sistema.Controller;
+﻿using Engines;
+using Sistema.Controller;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -78,10 +79,12 @@ namespace Sistema.View.imports
 
 
         EnderecosController controllerEnderecos = new EnderecosController();
-
+        PerfilCrud perfilCrud = new PerfilCrud();
         public ImportEndereco()
         {
             InitializeComponent();
+            perfilCrud.PermissoesCrud(bttnNew, bttnSave, bttnRefresh, bttnEdit, bttnDel, bttnSearch);
+
         }
 
         private void bttnNew_Click(object sender, EventArgs e)
