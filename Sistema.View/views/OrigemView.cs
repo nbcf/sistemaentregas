@@ -76,6 +76,7 @@ namespace Sistema.View
 
         }
 
+        PerfilCrud perfilCrud = new PerfilCrud();
 
         OrigemController controllerOrigem = new OrigemController();
         public OrigemView()
@@ -83,10 +84,13 @@ namespace Sistema.View
             InitializeComponent();
 
             carregarEstadoPadrao("CarregaPadraoIDTodosUltimos", 0);
+            perfilCrud.PermissoesCrud(bttnNew, bttnSave, bttnRefresh, bttnEdit, bttnDel, bttnSearch);
+
+
 
         }
 
-  
+
 
 
         private void puxarparametro(int deslocamento, int limiteregistro, string inicioDeslocamento)

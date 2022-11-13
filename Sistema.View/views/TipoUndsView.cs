@@ -1,4 +1,5 @@
-﻿using Sistema.Controller;
+﻿using Engines;
+using Sistema.Controller;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -57,7 +58,10 @@ namespace Sistema.View.views
         public int resultadoPesquisa = 0;
         public int totalPaginasPesquisa = 0;
         public int memoriaPesquisa = 1;
+
+
         TipoUndsController controllerTipoUnds = new TipoUndsController();
+        PerfilCrud perfilCrud = new PerfilCrud();
         private static TipoUndsView _InstanciaTipoUndsView;
         public static TipoUndsView GetInstanciaTipoUndsView()
         {
@@ -80,6 +84,8 @@ namespace Sistema.View.views
         {
             InitializeComponent();
             carregarEstadoPadrao("CarregaPadraoIDTodosUltimos", 0);
+            perfilCrud.PermissoesCrud(bttnNew, bttnSave, bttnRefresh, bttnEdit, bttnDel, bttnSearch);
+
         }
 
         private void puxarparametro(int deslocamento, int limiteregistro, string inicioDeslocamento)

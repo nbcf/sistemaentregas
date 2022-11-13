@@ -72,6 +72,9 @@ namespace Sistema.View
             this.toolStripLabel7 = new System.Windows.Forms.ToolStripLabel();
             this.cbOrdenarPor1 = new System.Windows.Forms.ToolStripComboBox();
             this.groupBoxFormulario = new System.Windows.Forms.GroupBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.dtPrazo = new System.Windows.Forms.DateTimePicker();
+            this.dtEntradaSistema = new System.Windows.Forms.DateTimePicker();
             this.txtDiasVencerPrazo = new System.Windows.Forms.TextBox();
             this.lbFaltamDias = new System.Windows.Forms.Label();
             this.txtEstatusEncomenda = new System.Windows.Forms.TextBox();
@@ -105,9 +108,6 @@ namespace Sistema.View
             this.txtLogradouro = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.dtEntradaSistema = new System.Windows.Forms.DateTimePicker();
-            this.label15 = new System.Windows.Forms.Label();
-            this.dtPrazo = new System.Windows.Forms.DateTimePicker();
             this.toolStrip1.SuspendLayout();
             this.tabControlAssets.SuspendLayout();
             this.tabPagePesquisar.SuspendLayout();
@@ -592,6 +592,35 @@ namespace Sistema.View
             this.groupBoxFormulario.TabIndex = 7;
             this.groupBoxFormulario.TabStop = false;
             // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(419, 189);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(77, 17);
+            this.label15.TabIndex = 46;
+            this.label15.Text = "Data Prazo:";
+            // 
+            // dtPrazo
+            // 
+            this.dtPrazo.Enabled = false;
+            this.dtPrazo.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtPrazo.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtPrazo.Location = new System.Drawing.Point(502, 183);
+            this.dtPrazo.Name = "dtPrazo";
+            this.dtPrazo.Size = new System.Drawing.Size(101, 25);
+            this.dtPrazo.TabIndex = 45;
+            // 
+            // dtEntradaSistema
+            // 
+            this.dtEntradaSistema.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtEntradaSistema.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtEntradaSistema.Location = new System.Drawing.Point(105, 184);
+            this.dtEntradaSistema.Name = "dtEntradaSistema";
+            this.dtEntradaSistema.Size = new System.Drawing.Size(89, 25);
+            this.dtEntradaSistema.TabIndex = 44;
+            // 
             // txtDiasVencerPrazo
             // 
             this.txtDiasVencerPrazo.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -613,7 +642,7 @@ namespace Sistema.View
             // txtEstatusEncomenda
             // 
             this.txtEstatusEncomenda.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEstatusEncomenda.Location = new System.Drawing.Point(502, 212);
+            this.txtEstatusEncomenda.Location = new System.Drawing.Point(502, 217);
             this.txtEstatusEncomenda.Name = "txtEstatusEncomenda";
             this.txtEstatusEncomenda.Size = new System.Drawing.Size(248, 25);
             this.txtEstatusEncomenda.TabIndex = 41;
@@ -622,7 +651,7 @@ namespace Sistema.View
             // 
             this.lbEstatus.AutoSize = true;
             this.lbEstatus.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbEstatus.Location = new System.Drawing.Point(441, 218);
+            this.lbEstatus.Location = new System.Drawing.Point(441, 223);
             this.lbEstatus.Name = "lbEstatus";
             this.lbEstatus.Size = new System.Drawing.Size(55, 17);
             this.lbEstatus.TabIndex = 40;
@@ -701,7 +730,7 @@ namespace Sistema.View
             // 
             this.lbTxtCodigoEncomenda.AutoSize = true;
             this.lbTxtCodigoEncomenda.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTxtCodigoEncomenda.Location = new System.Drawing.Point(398, 146);
+            this.lbTxtCodigoEncomenda.Location = new System.Drawing.Point(398, 151);
             this.lbTxtCodigoEncomenda.Name = "lbTxtCodigoEncomenda";
             this.lbTxtCodigoEncomenda.Size = new System.Drawing.Size(98, 17);
             this.lbTxtCodigoEncomenda.TabIndex = 26;
@@ -710,7 +739,7 @@ namespace Sistema.View
             // txtBoxNumeroPacoete
             // 
             this.txtBoxNumeroPacoete.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBoxNumeroPacoete.Location = new System.Drawing.Point(499, 143);
+            this.txtBoxNumeroPacoete.Location = new System.Drawing.Point(499, 148);
             this.txtBoxNumeroPacoete.Name = "txtBoxNumeroPacoete";
             this.txtBoxNumeroPacoete.Size = new System.Drawing.Size(250, 25);
             this.txtBoxNumeroPacoete.TabIndex = 24;
@@ -738,7 +767,7 @@ namespace Sistema.View
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(412, 115);
+            this.label9.Location = new System.Drawing.Point(412, 120);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(84, 17);
             this.label9.TabIndex = 21;
@@ -747,7 +776,7 @@ namespace Sistema.View
             // txtDestinatario
             // 
             this.txtDestinatario.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDestinatario.Location = new System.Drawing.Point(500, 110);
+            this.txtDestinatario.Location = new System.Drawing.Point(500, 115);
             this.txtDestinatario.Name = "txtDestinatario";
             this.txtDestinatario.Size = new System.Drawing.Size(250, 25);
             this.txtDestinatario.TabIndex = 20;
@@ -775,7 +804,7 @@ namespace Sistema.View
             // 
             this.txtOrigem.Enabled = false;
             this.txtOrigem.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtOrigem.Location = new System.Drawing.Point(500, 81);
+            this.txtOrigem.Location = new System.Drawing.Point(500, 86);
             this.txtOrigem.Name = "txtOrigem";
             this.txtOrigem.Size = new System.Drawing.Size(250, 25);
             this.txtOrigem.TabIndex = 13;
@@ -821,7 +850,7 @@ namespace Sistema.View
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(444, 53);
+            this.label3.Location = new System.Drawing.Point(444, 58);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(52, 17);
             this.label3.TabIndex = 8;
@@ -851,7 +880,7 @@ namespace Sistema.View
             // 
             this.txtCidade.Enabled = false;
             this.txtCidade.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCidade.Location = new System.Drawing.Point(499, 50);
+            this.txtCidade.Location = new System.Drawing.Point(499, 55);
             this.txtCidade.Name = "txtCidade";
             this.txtCidade.Size = new System.Drawing.Size(250, 25);
             this.txtCidade.TabIndex = 5;
@@ -885,7 +914,7 @@ namespace Sistema.View
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(421, 81);
+            this.button2.Location = new System.Drawing.Point(421, 86);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 25);
             this.button2.TabIndex = 1;
@@ -903,35 +932,6 @@ namespace Sistema.View
             this.button1.Text = "End.:";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // dtEntradaSistema
-            // 
-            this.dtEntradaSistema.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtEntradaSistema.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtEntradaSistema.Location = new System.Drawing.Point(105, 184);
-            this.dtEntradaSistema.Name = "dtEntradaSistema";
-            this.dtEntradaSistema.Size = new System.Drawing.Size(89, 25);
-            this.dtEntradaSistema.TabIndex = 44;
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(419, 184);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(77, 17);
-            this.label15.TabIndex = 46;
-            this.label15.Text = "Data Prazo:";
-            // 
-            // dtPrazo
-            // 
-            this.dtPrazo.Enabled = false;
-            this.dtPrazo.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtPrazo.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtPrazo.Location = new System.Drawing.Point(502, 178);
-            this.dtPrazo.Name = "dtPrazo";
-            this.dtPrazo.Size = new System.Drawing.Size(101, 25);
-            this.dtPrazo.TabIndex = 45;
             // 
             // EncomendasEntradaView
             // 
