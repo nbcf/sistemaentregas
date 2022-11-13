@@ -31,7 +31,6 @@ namespace Sistema.View.views
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FornecedoresView));
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.bttnNew = new System.Windows.Forms.ToolStripButton();
@@ -515,20 +514,14 @@ namespace Sistema.View.views
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gridCrudFornecedores.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.gridCrudFornecedores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.gridCrudFornecedores.DefaultCellStyle = dataGridViewCellStyle2;
             this.gridCrudFornecedores.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gridCrudFornecedores.Location = new System.Drawing.Point(0, 133);
             this.gridCrudFornecedores.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.gridCrudFornecedores.MultiSelect = false;
             this.gridCrudFornecedores.Name = "gridCrudFornecedores";
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gridCrudFornecedores.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridCrudFornecedores.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            this.gridCrudFornecedores.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gridCrudFornecedores.Size = new System.Drawing.Size(727, 311);
             this.gridCrudFornecedores.TabIndex = 9;
             this.gridCrudFornecedores.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridCrudFornecedores_CellClick);

@@ -1228,6 +1228,7 @@ namespace Sistema.View
 
         private void bttnEdit_Click(object sender, EventArgs e)
         {
+            if(PerfilCrud.)
             if ("Em Rota".Equals(gridCrudVeiculos.CurrentRow.Cells[3].Value.ToString())) {
             }else if (gridCrudVeiculos.CurrentRow.Cells[3].Value.ToString().Equals("Disponivel") || 
                       gridCrudVeiculos.CurrentRow.Cells[3].Value.ToString().Equals("")){
@@ -1535,6 +1536,8 @@ namespace Sistema.View
         {
 
         }
+
+     
     }
 
 }
