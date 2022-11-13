@@ -1,0 +1,392 @@
+﻿#SELECt * from usuarios usu inner join pessoas pess inner join papeis pape on usu.idpessoa = pess.idpessoa and usu.idpapel = pape.idpapel 
+#SELECT * FROM encomendas enco INNER JOIN enderecos ende INNER JOIN origem ori ON enco.idendereco = ende.idendereco and enco.idorigem = ori.idorigem 
+#SELECT * FROM usuarios usu INNER JOIN papeis pap INNER JOIN pessoas pes ON usu.idpapel = pap.idpapel and usu.idpessoa = pes.idpessoa WHERE pap.nomepapel = 'Entregador'
+#SELECT * FROM encomendas enco INNER JOIN enderecos ende INNER JOIN origem ori ON enco.idendereco = ende.idendereco and enco.idorigem = ori.idorigem where enco.estencomendas = 'Transito'
+#SELECT * FROM saidas sai INNER JOIN veiculos veic INNER JOIN usuarios entregador INNER JOIN papeis pap INNER JOIN pessoas pess ON sai.idveiculo  =  veic.idveiculo  AND sai.identregador = entregador.idusuario AND entregador.idpapel = pap.idpapel AND entregador.idpessoa = pess.idpessoa  WHERE  pess.idpessoa = 1
+#SELECT * FROM saidas sai INNER JOIN veiculos veic ON sai.idveiculo = veic.idveiculo WHERE veic.idveiculo = '1' 
+#SELECT * FROM saidas sai where  sai.estsaida = 'EM ROTA' AND sai.idveiculo = '1' 
+#SELECT * FROM saidas sai INNER JOIN veiculos veic INNER JOIN usuarios entregador INNER JOIN papeis pap INNER JOIN pessoas pess ON sai.idveiculo = veic.idveiculo AND sai.idusuario = entregador.idusuario AND entregador.idpapel = pap.idpapel AND entregador.idpessoa = pess.idpessoa 
+#SELECT * FROM usuarios usu INNER JOIN papeis pap INNER JOIN pessoas pes ON usu.idpapel = pap.idpapel and usu.idpessoa = pes.idpessoa WHERE pap.nomepapel = 'Entregador'
+#SELECt * from saidas said INNER JOIN enderecos ende INNER JOIN usuarios usu  INNER JOIN papeis pape  INNER JOIN pessoas pes  INNER JOIN veiculos veic ON said.idveiculo = veic.idveiculo AND said.idusuario = usu.idusuario AND usu.idpessoa = pes.idpessoa
+#Select * from veiculos where estatusveiculo = 'Disponivel'
+#Select * from saidas saida inner join veiculos veiculo on saida.idveiculo = veiculo.idveiculo where  not saida.kmsaida = '000'
+#SELECT * FROM saidas sai INNER JOIN usuarios usuario INNER JOIN papeis pap INNER JOIN pessoas pess ON sai.idveiculo = veic.idveiculo AND sai.idusuario = usuario.idusuario AND usuario.idpapel = pap.idpapel AND usuario.idpessoa = pess.idpessoa 
+#SELECT * FROM encomendas encomenda INNER JOIN saidas saida ON encomenda.idsaida = saida.idsaida WHERE encomenda.idsaida = '1' 
+#SELECT * FROM encomendas enco INNER  JOIN origem ori ON     enco.idorigem = ori.idorigem WHERE  enco.idsaida = '1' and enco.estentrega = ' Em Transito'  and ori.idorigem =  '1'
+#Select * From encomendas enco INNER JOIN origem ori ON enco.idorigem = ori.idorigem  AND enco.idsaida = '000' AND enco.estentrega = 'Em Transito' order by enco.idencomenda asc limit 0,10
+#SELECT * FROM encomendas encomenda INNER  JOIN origem ori ON encomenda.idorigem = ori.idorigem where encomenda.numpacote 
+#SELECT * FROM encomendas encomenda INNER  JOIN origem ori ON encomenda.idorigem = ori.idorigem where encomenda.bairro LIKE 'Nos'
+
+#SELECT * FROM encomendas enco INNER JOIN origem ori ON enco.idorigem = ori.idorigem WHERE enco.estentrega = 'Em Transito' AND enco.bairro LIKE ''
+#SELECT * FROM encomendas ORDER BY idencomenda DESC LIMIT 1
+#Select * From encomendas enco INNER JOIN origem ori ON enco.idorigem = ori.idorigem  AND enco.idsaida = '71' AND enco.estentrega = 'Saiu para entrega' 
+#union 
+#Select * From encomendas enco INNER JOIN origem ori ON enco.idorigem = ori.idorigem  AND enco.idsaida = '71' AND enco.estentrega = 'Saiu para entrega'
+
+#SELECT  COUNT(*) as conteentrega
+#FROM encomendas enco 
+#WHERE enco.idsaida = '75' 
+#AND  enco.idveiculo = '1' 
+#AND  enco.identregador = '1' 
+#AND enco.dataentrega = '2022-10-20' 
+#AND enco.estentrega = 'Entregue'
+
+
+#SELECT * FROM encomendas enco INNER JOIN enderecos ende INNER JOIN origem ori ON enco.idorigem = ori.idorigem WHERE enco.estentrega = 'Saiu para entrega';
+
+#SELECT * FROM encomendas enco INNER JOIN origem ori ON  enco.idorigem = ori.idorigem WHERE enco.estentrega = 'Saiu para entrega' ORDER BY enco.numpacote asc  Limit 0,2                
+#SELECT * FROM encomendas enco INNER JOIN origem ori ON  enco.idorigem = ori.idorigem WHERE enco.estentrega = 'Saiu para entrega'            
+
+
+
+
+#SELECT * FROM encomendas enco  where estsaida = 'Em Rota'
+
+#SELECT * FROM encomendas enco INNER JOIN origem ori ON enco.idorigem = ori.idorigem WHERE enco.idsaida = '73' AND enco.estentrega = 'Saiu para entrega' ORDER BY enco.numpacote asc  Limit 0,1
+
+
+#UPDATE origem  SET nomeorigem = 'Amazon', codorigem = '200' WHERE idorigem = 1;
+
+#UPDATE origem  SET nomeorigem = 'Amazon', codorigem = IF(codorigem='200', '210', codorigem) WHERE idorigem = 1;
+
+#SELECT  * FROM encomendas enco WHERE  enco.identregador = '1' AND enco.estentrega = 'Saiu para entrega'
+
+#SELECT * FROM encomendas enco 
+#INNER JOIN origem ori 
+#INNER JOIN saidas saida 
+#ON  saida.idsaida = enco.idsaida
+#WHERE enco.estentrega = 'Entregue'
+
+
+#SELECT count (*) from encomendas enco INNER JOIN origem ori ON enco.idorigem = ori.idorigem WHERE enco.estentrega = 'Saiu para entrega' AND enco.idsaida = '35'
+
+#SELECT  COUNT(*) as cont FROM encomendas enco WHERE enco.idsaida = '36' AND  enco.idveiculo = '1' AND  enco.identregador = '1'   AND enco.estentrega = 'Saiu para entrega'
+
+
+
+#SELECT * FROM encomendas enco  INNER JOIN   origem ori  ON    enco.idorigem = ori.idorigem  WHERE enco.estentrega = 'Saiu para entrega' AND enco.idsaida = '74' UNION  SELECT * FROM encomendas enco INNER JOIN   origem ori  ON    enco.idorigem = ori.idorigem WHERE  enco.estentrega = 'Entregue' AND enco.idsaida = '74'
+/*
+SELECT * FROM gastos gast 
+INNER JOIN tipogastos tpg 
+INNER JOIN tipounds tpu 
+INNER JOIN saidas said 
+INNER JOIN fornecedores fornecedor 
+ON gast.idsaida = said.idsaida 
+AND gast.idfornecedor = fornecedor.idfornecedor 
+AND gast.idtipogasto = tpg.idtipogasto AND tpg.idtipound= tpu.idtipound ###
+*/
+
+/*select * from origem order by nomeorigem asc limit 2,1*/
+#SELECT * FROM tipogastos tpg INNER JOIN  tipounds tpu ON tpg.idtipound = tpu.idtipound 
+/*
+SELECT 
+tipogastos.idtipogasto,
+tipogastos.idtipound,
+tipogastos.nomegasto,
+tipounds.nomeund 
+FROM tipogastos,tipounds 
+WHERE tipogastos.idtipound = tipounds.idtipound 
+AND tipogastos.idtipogasto = 1 
+*/
+#SELECT tipogastos.idtipound,tipounds.nomeund FROM tipogastos,tipounds WHERE tipogastos.idtipound = tipounds.idtipound AND tipogastos.idtipogasto = 1 
+
+#SELECT * FROM gastos where numeronota = @numeronota and idfornecedor = @idfornecedor
+
+
+#SELECT * FROM gastos
+
+/*SELECT * FROM gastos gast
+INNER JOIN tipogastos tpg 
+INNER JOIN tipounds tpu 
+INNER JOIN saidas said 
+INNER JOIN fornecedores forn 
+ON gast.idsaida = said.idsaida 
+AND gast.idfornecedor = forn.idfornecedor 
+AND gast.idtipogasto = tpg.idtipogasto 
+*/
+
+#SELECT  COUNT(*) FROM encomendas enco WHERE  enco.idsaida = '25' AND  enco.idveiculo = '3'  AND  enco.identregador = '1'  AND enco.estentrega = 'Saiu para Entrega' AND datarota = '2022-11-04'
+
+#SELECT * FROM tipogastos tpg INNER JOIN tipounds tpund ON tpg.idtipound = tpund.idtipound
+##SELECT * FROM tipogastos  where idtipound = tipounds.idtipound
+/*
+SELECT * FROM usuarios usu 
+INNER JOIN papeis pap 
+INNER JOIN pessoas pes 
+ON usu.idpapel = pap.idpapel and usu.idpessoa = pes.idpessoa 
+WHERE pap.nomepapel = 'Entregador' 
+*/
+/*OR pap.nomepapel = 'entregador' 
+OR pap.nomepapel = motorista 
+OR pap.nomepapel = 'motoboy' 
+OR pap.nomepapel = motoqueiro*/
+
+#SELECT * FROM gastos where idsaida = 67
+
+/*SELECT * FROM gastos        gts 
+INNER JOIN tipogastos       tpg 
+INNER JOIN saidas           said  
+INNER JOIN fornecedores     forn 
+
+ON    gts.idsaida            =     said.idsaida 
+AND   gts.idfornecedor       =     forn.idfornecedor
+AND   gts.idtipogasto        =     tpg.idtipogasto
+AND   gts.tipound            =     tpg.idtipound
+Where gts.idsaida = 60*/
+
+
+/*
+
+SELECT 
+forn.fornecedor,
+tpg.nomegasto, 
+tpu.nomeund,
+gts.qtd,
+gts.valorunitario,
+gts.valortotal,
+gts.numeronota, 
+gts.datagasto,
+gts.km,
+gts.idgasto,
+sai.idsaida,
+forn.idfornecedor,
+tpg.idtipogasto,
+tpu.idtipound
+
+FROM       gastos          gts 
+INNER JOIN tipogastos      tpg 
+INNER JOIN tipounds        tpu 
+INNER JOIN saidas          sai  
+INNER JOIN fornecedores    forn 
+
+ON  gts.idsaida        =   sai.idsaida 
+AND gts.idfornecedor   =   forn.idfornecedor 
+AND gts.idtipogasto    =   tpg.idtipogasto 
+AND gts.tipound        =   tpu.idtipound                     
+WHERE gts.idsaida = 60 */
+
+
+/*
+
+SELECT 
+forn.fornecedor,
+tpg.nomegasto, 
+tpu.nomeund,
+gts.qtd,
+gts.valorunitario,
+gts.valortotal,
+gts.numeronota, 
+gts.datagasto,
+gts.km,
+gts.idgasto,
+sai.idsaida,
+forn.idfornecedor,
+tpg.idtipogasto,
+tpu.idtipound
+
+FROM       gastos          gts 
+INNER JOIN tipogastos      tpg 
+INNER JOIN tipounds        tpu 
+INNER JOIN saidas          sai  
+INNER JOIN fornecedores    forn 
+
+ON  gts.idsaida        =   sai.idsaida 
+AND gts.idfornecedor   =   forn.idfornecedor 
+AND gts.idtipogasto    =   tpg.idtipogasto 
+AND gts.tipound        =   tpu.idtipound                     
+WHERE gts.idsaida = 60 
+*/
+
+/*
+SELECT * FROM gastos       gts 
+INNER JOIN tipogastos      tpg 
+INNER JOIN tipounds        tpu 
+INNER JOIN saidas          sai  
+INNER JOIN fornecedores    forn 
+INNER JOIN usuarios        usr 
+INNER JOIN pessoas         pes 
+INNER JOIN papeis          pel 
+
+ON  sai.idusuario          = usr.idusuario
+AND usr.idpessoa           = pes.idpessoa
+AND usr.idpapel            = pel.idpapel
+AND gts.idsaida            = sai.idsaida 
+AND gts.idfornecedor       = forn.idfornecedor 
+AND gts.idtipogasto        = tpg.idtipogasto 
+AND gts.tipound            = tpu.idtipound   
+AND sai.estsaida = 'Concluida'
+WHERE  sai.idveiculo = 7
+
+AND sai.datasaida BETWEEN '2022-11-01' AND '2022-11-10' ORDER BY gts.idgasto asc 
+*/
+
+
+
+/*
+  SELECT * FROM gastos     gts
+INNER JOIN tipogastos      tpg 
+INNER JOIN tipounds        tpu 
+INNER JOIN saidas          sai 
+INNER JOIN fornecedores    forn                        
+INNER JOIN usuarios        usr 
+INNER JOIN pessoas         pes 
+INNER JOIN papeis          pel 
+
+ON  sai.idusuario       =   usr.idusuario       
+AND usr.idpessoa       =   pes.idpessoa        
+AND usr.idpapel        =   pel.idpapel         
+AND gts.idsaida        =   sai.idsaida         
+AND gts.idfornecedor   =   forn.idfornecedor   
+AND gts.idtipogasto    =   tpg.idtipogasto     
+AND gts.tipound        =   tpu.idtipound       
+AND sai.estsaida       =   'Concluida'         
+WHERE sai.idveiculo    =   7  
+AND sai.datasaida BETWEEN '2022-10-01' AND '2022-11-10' ORDER BY gts.idgasto asc  */
+
+/*
+SELECT 
+sai.datasaida AS SAIDA, 
+sai.dataretorno AS RETORNO,
+sai.entregador AS ENTREGADOR,
+gts.datagasto AS DATA_NOTA,
+sai.kmsaida AS KM_VEICULO_SAIDA,
+gts.km AS KM_NOTA,
+sai.kmretorno AS KM_VEICULO_VOLTA,
+sai.kmtotal AS PERCORRIDO,
+tpg.nomegasto AS DESPESA,
+tpu.nomeund AS UND,
+gts.valorunitario AS VALOR_UNIT,
+gts.qtd AS QTD,
+gts.valortotal AS TOTAL_NOTA,
+forn.fornecedor AS FORNECEDOR,
+gts.numeronota AS NUMERO_NOTA
+  
+  
+FROM gastos     gts
+INNER JOIN tipogastos      tpg 
+INNER JOIN tipounds        tpu 
+INNER JOIN saidas          sai 
+INNER JOIN fornecedores    forn                        
+INNER JOIN usuarios        usr 
+INNER JOIN pessoas         pes 
+INNER JOIN papeis          pel 
+
+ON  sai.idusuario       =   usr.idusuario       
+AND usr.idpessoa       =   pes.idpessoa        
+AND usr.idpapel        =   pel.idpapel         
+AND gts.idsaida        =   sai.idsaida         
+AND gts.idfornecedor   =   forn.idfornecedor   
+AND gts.idtipogasto    =   tpg.idtipogasto     
+AND gts.tipound        =   tpu.idtipound       
+AND sai.estsaida       =   'Concluida'         
+WHERE sai.idveiculo    =   7  
+AND sai.datasaida BETWEEN '2022-10-01' AND '2022-11-10' ORDER BY gts.idgasto asc 
+
+*/
+
+
+/*
+ SELECT  
+ #sai.datasaida     AS SAIDA,            
+ #sai.dataretorno   AS RETORNO,          
+      
+ gts.datagasto     AS DATA_NOTA, 
+ sai.regiaoentrega AS REGIAO, 
+ sai.entregador    AS ENTREGADOR,       
+ sai.kmsaida       AS KM_SAIDA,         
+ gts.km            AS KM_NOTA,          
+ sai.kmretorno     AS KM_VOLTA,         
+ sai.kmtotal       AS PERCORRIDO,       
+ tpg.nomegasto     AS DESPESA,          
+ #tpu.nomeund       AS UND,              
+ gts.valorunitario AS VL_UNT,          
+ gts.qtd           AS QTD,              
+ gts.valortotal ,        
+ forn.fornecedor   AS FORNECEDOR,    
+ gts.numeronota    AS NUM_NOTA          
+
+   FROM gastos                gts   
+   INNER JOIN tipogastos      tpg   
+   INNER JOIN tipounds        tpu   
+   INNER JOIN saidas          sai   
+   INNER JOIN fornecedores    forn  
+   INNER JOIN usuarios        usr   
+   INNER JOIN pessoas         pes   
+   INNER JOIN papeis          pel   
+
+   ON sai.idusuario       =   usr.idusuario        
+   AND usr.idpessoa       =   pes.idpessoa         
+   AND usr.idpapel        =   pel.idpapel          
+   AND gts.idsaida        =   sai.idsaida          
+   AND gts.idfornecedor   =   forn.idfornecedor    
+   AND gts.idtipogasto    =   tpg.idtipogasto      
+   AND gts.tipound        =   tpu.idtipound        
+   AND sai.estsaida       =   'Concluida'          
+   WHERE sai.idveiculo    =   7   
+   AND tpg.idtipogasto = 47
+   AND sai.datasaida BETWEEN '2022-08-10' AND '2022-11-10' ORDER BY gts.idgasto asc 
+
+*/
+
+/*
+SELECT 
+enco.numpacote,
+enco.peso,
+enco.cpf,
+enco.destinatario,
+enco.logradouro,
+enco.complemento,
+enco.bairro,
+enco.cidade,
+enco.cep,
+enco.uf,
+enco.dataentrega
+
+FROM encomendas enco 
+INNER JOIN  origem ori 
+ON          enco.idorigem    = ori.idorigem 
+WHERE       enco.estentrega  = 'Saiu para entrega'
+AND         enco.idsaida     = 65
+UNION 
+
+SELECT
+enco.numpacote,
+enco.peso,
+enco.cpf,
+enco.destinatario,
+enco.logradouro,
+enco.complemento,
+enco.bairro,
+enco.cidade,
+enco.cep,
+enco.uf,
+enco.dataentrega  
+
+FROM encomendas enco 
+INNER JOIN   origem ori 
+ON           enco.idorigem     = ori.idorigem 
+WHERE        enco.estentrega   = 'Entregue' 
+AND          enco.idsaida      = 65 
+*/
+SELECT 
+usr.idusuario,
+usr.idpapel,
+usr.idpessoa,
+usr.usuario,
+usr.senha,
+pes.nomepessoa,
+pel.nomepapel,
+pel.criar,
+pel.recuperar,
+pel.atualizar,
+pel.excluir,
+pel.menuope,
+pel.menuadmin,
+pel.menugen
+FROM usuarios usr 
+INNER JOIN papeis pel
+INNER JOIN pessoas pes
+ON usr.idpapel   = pel.idpapel
+AND usr.idpessoa = pes.idpessoa
+WHERE usuario = 'nildob' and senha = 123456
+
