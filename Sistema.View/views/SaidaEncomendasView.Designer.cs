@@ -705,7 +705,7 @@ namespace Sistema.View
             this.gridCrudSaidas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gridCrudSaidas.Size = new System.Drawing.Size(1131, 577);
             this.gridCrudSaidas.TabIndex = 9;
-            this.gridCrudSaidas.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridCrudSaidas_CellDoubleClick);
+            this.gridCrudSaidas.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridCrudSaidas_CellClick);
             this.gridCrudSaidas.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridCrudSaidas_CellDoubleClick);
             // 
             // groupBoxFormulario

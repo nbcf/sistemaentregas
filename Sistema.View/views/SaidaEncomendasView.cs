@@ -1096,7 +1096,6 @@ namespace Sistema.View
         }
 
         private void setaGridEmCampos(){
-
             int linhasgrid = gridCrudSaidas.RowCount;
             if (linhasgrid > 0) { 
             txtIdSaida.Text         =   gridCrudSaidas.CurrentRow.Cells[0].Value.ToString();
@@ -1918,7 +1917,9 @@ namespace Sistema.View
                 }
                 
                 else if (gridCrudSaidas.CurrentRow.Cells[12].Value.ToString().Equals("Em Rota")){
-                }else if (gridCrudSaidas.CurrentRow.Cells[12].Value.ToString().Equals("Preparando")){
+                    bttnListaUnion.Enabled = true;
+                }
+                else if (gridCrudSaidas.CurrentRow.Cells[12].Value.ToString().Equals("Preparando")){
 
                     btConfirmarRetorno.Enabled = false;
                     bttnDel.Enabled = true;
@@ -1973,6 +1974,7 @@ namespace Sistema.View
                 bttnNew.Enabled = false;
                 bttnSearch.Enabled = false;
                 bttnListaUnion.Enabled = false;
+
             }
             else if (cbEstatusSaida.SelectedItem.Equals("Em Rota")){
 
@@ -1981,11 +1983,12 @@ namespace Sistema.View
                 bttnNew.Enabled = false;
                 bttnSearch.Enabled = false;
                 bttnListaUnion.Enabled = true;
+                
             } else {
                 puxarparametro(0, Convert.ToInt32(cbButtnQuantPage1.SelectedItem), "Sim");
                 bttnListaUnion.Enabled = false;
                 bttnListaUnion.Enabled = false;
-            }      
+            }
 
            
 
@@ -1994,43 +1997,7 @@ namespace Sistema.View
 
         private void gridCrudSaidas_CellDoubleClick(object sender, DataGridViewCellEventArgs e){
             if (cbEstatusSaida.SelectedItem.ToString().Equals("Rota Concluída")){
-                //toolStrip2.Visible          =   false;
-                //groupBoxFormulario.Enabled  =   true;
-                //groupBoxFormulario.Visible  =   true;
-                //txtEstatusSaida.Enabled     =   false;
-                //datePckSaida.Enabled        =   false;
-                //datePckRetorno.Enabled      =   true;
-                //txtKmRetorno.Enabled        =   true;
-                //txtKmSaida.Enabled          =   false;
-                //lbveiculo.Visible           =   true;
-                //txtKmTotal.Visible          =   true;
-
-                //lbTotalKm.Visible = true;
-                //lbFechamento.Visible = true;
-                //txtHoraRetorno.Visible = true;
-                //lbHoraSaida.Visible = true;
-                //txtHoraSaida.Visible = true;
-                //txtEstatusSaida.Visible = true;
-                //lbEstatus.Visible = true;
-
-                //txtRegiaoEntrega.Enabled    =   false;
-                //txtIdSaida.Text             =   gridCrudSaidas.CurrentRow.Cells[0].Value.ToString();
-                //txtIdVeiculo.Text           =   gridCrudSaidas.CurrentRow.Cells[1].Value.ToString();
-                //txtIdUsuario.Text           =   gridCrudSaidas.CurrentRow.Cells[2].Value.ToString();
-                //txtIdPapel.Text             =   gridCrudSaidas.CurrentRow.Cells[3].Value.ToString();
-                //txtIdPessoa.Text            =   gridCrudSaidas.CurrentRow.Cells[4].Value.ToString();
-                //txtVeiculo.Text             =   gridCrudSaidas.CurrentRow.Cells[5].Value.ToString();
-                //txtPlacaVeiculo.Text        =   gridCrudSaidas.CurrentRow.Cells[6].Value.ToString();
-                //txtPessoa.Text              =   gridCrudSaidas.CurrentRow.Cells[7].Value.ToString();
-                //datePckSaida.Value          =   Convert.ToDateTime(gridCrudSaidas.CurrentRow.Cells[8].Value.ToString());
-                //txtHoraSaida.Text           =   gridCrudSaidas.CurrentRow.Cells[10].Value.ToString();
-                //txtHoraRetorno.Text         =   gridCrudSaidas.CurrentRow.Cells[11].Value.ToString();
-                //txtEstatusSaida.Text        =   gridCrudSaidas.CurrentRow.Cells[12].Value.ToString();
-                //txtRegiaoEntrega.Text       =   gridCrudSaidas.CurrentRow.Cells[13].Value.ToString();
-                //txtKmSaida.Text             =   gridCrudSaidas.CurrentRow.Cells[14].Value.ToString();
-                //txtKmRetorno.Text           =   gridCrudSaidas.CurrentRow.Cells[15].Value.ToString();
-                //txtKmTotal.Text             =   gridCrudSaidas.CurrentRow.Cells[16].Value.ToString();
-
+ 
 
                 groupBoxFormulario.Enabled = true;
                 groupBoxFormulario.Visible = true;
@@ -2081,7 +2048,27 @@ namespace Sistema.View
                 btnCalcularKmTotal.Visible = true;
                 btnCalcularKmTotal.Visible = true;
 
-            } else {
+            }
+            if (cbEstatusSaida.SelectedItem.ToString().Equals("Em Rota"))
+            {
+                int qtlinhasSaida = gridCrudSaidas.RowCount;
+
+                if (gridCrudSaidas.CurrentRow.Cells[12].Value.ToString().Equals("Em Rota") && qtlinhasSaida > 0)
+                {
+                    bttnListaUnion.Enabled = true;
+                    txtIdSaida.Text = gridCrudSaidas.CurrentRow.Cells[0].Value.ToString();
+                    bttnListaUnion.Enabled = true;
+                    gridCurdMestreDetalhe.DataSource = controllerEncomendas.ListarDetalheMestre(txtIdSaida.Text, "Em Rota");
+                    DataGridModelDetalhe();
+                    ListaView lista = new ListaView();
+                    lista.IdSaidaVO = txtIdSaida.Text;
+                    lista.ShowDialog();
+
+
+                }
+            }
+            else
+            {
                 setaGridEmCampos();
             }
         }
@@ -2122,47 +2109,18 @@ namespace Sistema.View
         }
 
         private void toolStripButton4_Click(object sender, EventArgs e){
+
             int qtlinhasSaida = gridCrudSaidas.RowCount;
-           
-            
+
             if (gridCrudSaidas.CurrentRow.Cells[12].Value.ToString().Equals("Em Rota") && qtlinhasSaida > 0){
-
-                //gridCurdMestreDetalhe.DataSource = controllerEncomendas.ListarDetalheMestre(txtIdSaida.Text, "Saiu para entrega");
-                //DataGridModelDetalhe();
-
-
+                bttnListaUnion.Enabled = true;
+                txtIdSaida.Text = gridCrudSaidas.CurrentRow.Cells[0].Value.ToString();
+                bttnListaUnion.Enabled = true;
                 gridCurdMestreDetalhe.DataSource = controllerEncomendas.ListarDetalheMestre(txtIdSaida.Text, "Em Rota");
                 DataGridModelDetalhe();
                 ListaView lista = new ListaView();
                 lista.IdSaidaVO = txtIdSaida.Text;
                 lista.ShowDialog();
-                //groupBoxFormulario.Enabled      = true;
-                //groupBoxFormulario.Visible      = true;
-                //groupBox1.Enabled               = true;
-                //groupBox1.Visible               = true;
-                //bttnNew.Enabled                 = false;
-                //bttnDel.Enabled                 = false;
-                //bttnSearch.Enabled              = false;
-                //bttnImport.Enabled              = true;
-                //btnEmRota.Enabled               = true;
-                //button5.Enabled                 = true;
-
-                //txtIdSaida.Text         =   gridCrudSaidas.CurrentRow.Cells[0].Value.ToString();
-                //txtIdVeiculo.Text       =   gridCrudSaidas.CurrentRow.Cells[1].Value.ToString();
-                //txtIdUsuario.Text       =   gridCrudSaidas.CurrentRow.Cells[2].Value.ToString();
-                //txtIdPapel.Text         =   gridCrudSaidas.CurrentRow.Cells[3].Value.ToString();
-                //txtIdPessoa.Text        =   gridCrudSaidas.CurrentRow.Cells[4].Value.ToString();
-                //txtVeiculo.Text         =   gridCrudSaidas.CurrentRow.Cells[5].Value.ToString();
-                //txtPlacaVeiculo.Text    =   gridCrudSaidas.CurrentRow.Cells[6].Value.ToString();
-                //txtPessoa.Text          =   gridCrudSaidas.CurrentRow.Cells[7].Value.ToString();
-                //datePckSaida.Value      =   Convert.ToDateTime(gridCrudSaidas.CurrentRow.Cells[8].Value.ToString());
-                //txtHoraSaida.Text       =   gridCrudSaidas.CurrentRow.Cells[10].Value.ToString();
-                //txtHoraRetorno.Text     =   gridCrudSaidas.CurrentRow.Cells[11].Value.ToString();
-                //txtEstatusSaida.Text    =   gridCrudSaidas.CurrentRow.Cells[12].Value.ToString();
-                //txtRegiaoEntrega.Text   =   gridCrudSaidas.CurrentRow.Cells[13].Value.ToString();
-                //txtKmSaida.Text         =   gridCrudSaidas.CurrentRow.Cells[14].Value.ToString();
-                //txtKmRetorno.Text       =   gridCrudSaidas.CurrentRow.Cells[15].Value.ToString();
-                //txtKmTotal.Text         =   gridCrudSaidas.CurrentRow.Cells[16].Value.ToString();
 
               
             }
@@ -2180,102 +2138,6 @@ namespace Sistema.View
           //  aumentarFonte();
         }
 
-
-        //public void aumentarFonte()
-        //{
-        //    if (posicaoTamanhoFonte == 1)
-        //    {
-
-        //        posicaoTamanhoFonte++;
-        //     //   gridCrudSaidas.DefaultCellStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-        //        gridCrudSaidas.RowsDefaultCellStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-        //        gridCrudSaidas.ColumnHeadersHeight = 28;
-        //        //  dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-        //        //jTableDadosModel.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N  
-        //        //jTableDadosModel.setRowHeight(16);
-
-        //    }
-        //    else if (posicaoTamanhoFonte == 2)
-        //    {
-        //        posicaoTamanhoFonte++;
-        //       // gridCrudSaidas.DefaultCellStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-        //        gridCrudSaidas.RowsDefaultCellStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-        //        gridCrudSaidas.ColumnHeadersHeight = 32;
-        //        //  dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-        //        //jTableDadosModel.setFont(new java.awt.Font("Tahoma", 0, 26));
-        //        //jTableDadosModel.setRowHeight(18);
-
-        //    }
-        //    else if (posicaoTamanhoFonte == 3)
-        //    {
-        //        posicaoTamanhoFonte++;
-        //      //  gridCrudSaidas.DefaultCellStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-        //        gridCrudSaidas.RowsDefaultCellStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-        //        gridCrudSaidas.ColumnHeadersHeight = 36;
-        //        //  dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-        //        //jTableDadosModel.setFont(new java.awt.Font("Tahoma", 0, 18));
-        //        //jTableDadosModel.setRowHeight(24);
-
-        //    }
-        //    else if (posicaoTamanhoFonte == 4)
-        //    {
-        //        gridCrudSaidas.DefaultCellStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-        //        gridCrudSaidas.RowsDefaultCellStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-        //        gridCrudSaidas.ColumnHeadersHeight = 42;
-        //        // dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-        //        //jTableDadosModel.setFont(new java.awt.Font("Tahoma", 0, 24));
-        //        //jTableDadosModel.setRowHeight(30);
-
-
-        //    }
-        //}
-
-        //public void reduzirFonte()
-        //{
-           
-        //    if (posicaoTamanhoFonte == 1)
-        //    {
-        //        // jTableDadosModel.setFont(new java.awt.Font("Tahoma", 0, 12));
-        //        // jTableDadosModel.setRowHeight(16);
-        //      //  gridCrudSaidas.DefaultCellStyle.Font  = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-        //        gridCrudSaidas.RowsDefaultCellStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-        //        gridCrudSaidas.ColumnHeadersHeight = 18;
-        //        //   dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-        //    }
-        //    else if (posicaoTamanhoFonte == 2)
-        //    {
-        //        posicaoTamanhoFonte--;
-        //      //  gridCrudSaidas.DefaultCellStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-        //        gridCrudSaidas.RowsDefaultCellStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-        //        gridCrudSaidas.ColumnHeadersHeight = 26;
-        //        //     dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-        //        //jTableDadosModel.setFont(new java.awt.Font("Tahoma", 0, 14));
-        //        //jTableDadosModel.setRowHeight(16);
-
-        //    }
-        //    else if (posicaoTamanhoFonte == 3)
-        //    {
-        //        posicaoTamanhoFonte--;
-        //    //    gridCrudSaidas.DefaultCellStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-        //        gridCrudSaidas.RowsDefaultCellStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-        //        gridCrudSaidas.ColumnHeadersHeight = 26;
-        //        //   dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-        //        //jTableDadosModel.setFont(new java.awt.Font("Tahoma", 0, 16));
-        //        //jTableDadosModel.setRowHeight(18);
-
-        //    }
-        //    else if (posicaoTamanhoFonte == 4)
-        //    {
-        //        posicaoTamanhoFonte--;
-        //     //   gridCrudSaidas.DefaultCellStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-        //        gridCrudSaidas.RowsDefaultCellStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-        //        gridCrudSaidas.ColumnHeadersHeight = 32;
-        //        //    dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-        //        //jTableDadosModel.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N  
-        //        //jTableDadosModel.setRowHeight(24);
-
-        //    }
-        //}
 
         private void toolStripButton2_Click_1(object sender, EventArgs e)
         {
