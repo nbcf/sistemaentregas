@@ -348,6 +348,7 @@ namespace Sistema.View
             this.bttnBeginPages.Name = "bttnBeginPages";
             this.bttnBeginPages.Size = new System.Drawing.Size(23, 29);
             this.bttnBeginPages.Text = "toolStripButton1";
+            this.bttnBeginPages.Click += new System.EventHandler(this.bttnBeginPages_Click_2);
             // 
             // bttnOnePageLeft
             // 
@@ -357,6 +358,7 @@ namespace Sistema.View
             this.bttnOnePageLeft.Name = "bttnOnePageLeft";
             this.bttnOnePageLeft.Size = new System.Drawing.Size(23, 29);
             this.bttnOnePageLeft.Text = "toolStripButton2";
+            this.bttnOnePageLeft.Click += new System.EventHandler(this.bttnOnePageLeft_Click_2);
             // 
             // labelTextPageFrom
             // 

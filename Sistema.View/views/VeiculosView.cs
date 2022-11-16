@@ -1581,6 +1581,16 @@ namespace Sistema.View
             }
             else { MessageBox.Show("Este perfil não possui autorização para Editar"); }
         }
+
+        private void bttnBeginPages_Click_2(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void bttnOnePageLeft_Click_2(object sender, EventArgs e)
+        {
+
+        }
     }
 
 }
