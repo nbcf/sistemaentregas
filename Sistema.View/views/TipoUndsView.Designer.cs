@@ -106,7 +106,7 @@ namespace Sistema.View.views
             this.cbOrdenarPor1});
             this.toolStrip2.Location = new System.Drawing.Point(0, 422);
             this.toolStrip2.Name = "toolStrip2";
-            this.toolStrip2.Size = new System.Drawing.Size(674, 29);
+            this.toolStrip2.Size = new System.Drawing.Size(655, 29);
             this.toolStrip2.TabIndex = 6;
             this.toolStrip2.Text = "toolStrip2";
             // 
@@ -215,6 +215,7 @@ namespace Sistema.View.views
             // 
             this.cbButtnQuantPage1.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbButtnQuantPage1.Items.AddRange(new object[] {
+            "3",
             "5",
             "10",
             "15",
@@ -230,7 +231,6 @@ namespace Sistema.View.views
             this.cbButtnQuantPage1.Name = "cbButtnQuantPage1";
             this.cbButtnQuantPage1.Size = new System.Drawing.Size(75, 29);
             this.cbButtnQuantPage1.SelectedIndexChanged += new System.EventHandler(this.cbButtnQuantPage_SelectedIndexChanged);
-            this.cbButtnQuantPage1.Click += new System.EventHandler(this.cbButtnQuantPage1_Click);
             // 
             // toolStripLabel6
             // 
@@ -280,7 +280,7 @@ namespace Sistema.View.views
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Padding = new System.Windows.Forms.Padding(0);
-            this.toolStrip1.Size = new System.Drawing.Size(674, 51);
+            this.toolStrip1.Size = new System.Drawing.Size(655, 51);
             this.toolStrip1.TabIndex = 7;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -368,7 +368,7 @@ namespace Sistema.View.views
             this.tabControlAssets.Location = new System.Drawing.Point(0, 51);
             this.tabControlAssets.Name = "tabControlAssets";
             this.tabControlAssets.SelectedIndex = 0;
-            this.tabControlAssets.Size = new System.Drawing.Size(674, 87);
+            this.tabControlAssets.Size = new System.Drawing.Size(655, 87);
             this.tabControlAssets.TabIndex = 8;
             // 
             // tabPagePesquisar
@@ -382,7 +382,7 @@ namespace Sistema.View.views
             this.tabPagePesquisar.Location = new System.Drawing.Point(4, 32);
             this.tabPagePesquisar.Name = "tabPagePesquisar";
             this.tabPagePesquisar.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPagePesquisar.Size = new System.Drawing.Size(666, 51);
+            this.tabPagePesquisar.Size = new System.Drawing.Size(647, 51);
             this.tabPagePesquisar.TabIndex = 1;
             this.tabPagePesquisar.Text = "Pesquisar";
             this.tabPagePesquisar.UseVisualStyleBackColor = true;
@@ -421,7 +421,7 @@ namespace Sistema.View.views
             this.cbButtonPesquisarEm.Name = "cbButtonPesquisarEm";
             this.cbButtonPesquisarEm.Size = new System.Drawing.Size(138, 25);
             this.cbButtonPesquisarEm.TabIndex = 1;
-            this.cbButtonPesquisarEm.SelectedValueChanged += new System.EventHandler(this.cbButtonPesquisarEm_SelectedValueChanged);
+            this.cbButtonPesquisarEm.SelectedIndexChanged += new System.EventHandler(this.cbButtonPesquisarEm_SelectedIndexChanged_1);
             // 
             // radioBttnComeca
             // 
@@ -433,7 +433,7 @@ namespace Sistema.View.views
             this.radioBttnComeca.TabIndex = 6;
             this.radioBttnComeca.Text = "Começa";
             this.radioBttnComeca.UseVisualStyleBackColor = true;
-            this.radioBttnComeca.TextChanged += new System.EventHandler(this.radioBttnComeca_TextChanged);
+            this.radioBttnComeca.CheckedChanged += new System.EventHandler(this.radioBttnComeca_CheckedChanged_1);
             // 
             // txtBoxPesquisar
             // 
@@ -483,7 +483,7 @@ namespace Sistema.View.views
             this.gridCrudTipoUnds.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.gridCrudTipoUnds.RowTemplate.Height = 25;
             this.gridCrudTipoUnds.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.gridCrudTipoUnds.Size = new System.Drawing.Size(674, 284);
+            this.gridCrudTipoUnds.Size = new System.Drawing.Size(655, 284);
             this.gridCrudTipoUnds.TabIndex = 9;
             this.gridCrudTipoUnds.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridCrudTipoGastos_CellClick);
             this.gridCrudTipoUnds.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.gridCrudTipoUnds_CellMouseDoubleClick);
@@ -497,7 +497,7 @@ namespace Sistema.View.views
             this.groupBoxFormulario.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBoxFormulario.Location = new System.Drawing.Point(0, 138);
             this.groupBoxFormulario.Name = "groupBoxFormulario";
-            this.groupBoxFormulario.Size = new System.Drawing.Size(674, 284);
+            this.groupBoxFormulario.Size = new System.Drawing.Size(655, 284);
             this.groupBoxFormulario.TabIndex = 10;
             this.groupBoxFormulario.TabStop = false;
             // 
@@ -544,7 +544,7 @@ namespace Sistema.View.views
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(674, 451);
+            this.ClientSize = new System.Drawing.Size(655, 451);
             this.Controls.Add(this.groupBoxFormulario);
             this.Controls.Add(this.gridCrudTipoUnds);
             this.Controls.Add(this.tabControlAssets);

@@ -24,18 +24,26 @@ namespace Sistema.View
         }
         ProgramContainer pc ;
         PerfilMenu pm = new PerfilMenu();
+        PerfilMenuItemAdmin pmi = new PerfilMenuItemAdmin();
         
         public Menu()
         {
             InitializeComponent();
             pm.PermissoesMenus(CadastroMenuItem, EntregasMenuItem, FinanceiroMenuItem);
+            pmi.PermissoesMenuMenuItemConfSis(papeisToolStripMenuItem);
+            pmi.PermissoesMenuMenuItemConfSis(usuariosToolStripMenuItem);
+            pmi.PermissoesMenuMenuItemConfSis(veículosToolStripMenuItem);
+            pmi.PermissoesMenuMenuItemConfSis(tipoGastosToolStripMenuItem);
         }
 
         private void papeisToolStripMenuItem_Click(object sender, EventArgs e){
+            
             PapeisView frmPapeis =  PapeisView.GetInstanciaformCrudPapeis();
             frmPapeis.MdiParent = this;
             frmPapeis.Text = "Gerenciamento de Papéis de Usuários";
             frmPapeis.Show();
+
+
         }
 
         private void pessoasToolStripMenuItem_Click(object sender, EventArgs e){
@@ -46,6 +54,7 @@ namespace Sistema.View
         }
 
         private void usuariosToolStripMenuItem_Click(object sender, EventArgs e){
+            
             UsuariosView frmUsuarios = UsuariosView.GetInstanciaformCrudUsuarios();
             frmUsuarios.MdiParent = this;
             frmUsuarios.Text = "Gerenciamento de Usuários";
@@ -147,6 +156,16 @@ namespace Sistema.View
         private void Menu_FormClosing(object sender, FormClosingEventArgs e)
         {
            AcaoFormVO = "FechouSistema";
+        }
+
+        private void Menu_Load(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void CadastroMenuItem_Click(object sender, EventArgs e)
+        {
+           
         }
     }
 }

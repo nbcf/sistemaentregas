@@ -52,7 +52,6 @@ namespace Sistema.DAO
                 dap.SelectCommand = cmdVerificar;
                 DataTable dtp = new DataTable();
                 dap.Fill(dtp);
-                MessageBox.Show("Entrou Salvar");
                 registrosLinhas = dtp.Rows.Count;
                 classeConecta.FecharCon();
 
@@ -79,7 +78,6 @@ namespace Sistema.DAO
                     }else if (resultado == DialogResult.No){
                         acaoCrudDAO = "NS";
                     
-
                     }
 
                 }else if (registrosLinhas == 0){
@@ -102,10 +100,8 @@ namespace Sistema.DAO
 
         }
 
-        public void Editar(string nomeorigem, string codorigem, int idorigem)
-        {
-            try
-            {
+        public void Editar(string nomeorigem, string codorigem, int idorigem){
+            try{
                 classeConecta.AbrirCon();
                 cmd = new MySqlCommand("UPDATE origem SET nomeorigem = @nomeorigem, codorigem = @codorigem WHERE idorigem = @idorigem", classeConecta.con);
                 cmd.Parameters.AddWithValue("@nomeorigem", nomeorigem);
@@ -114,9 +110,8 @@ namespace Sistema.DAO
                 cmd.ExecuteNonQuery();
                 acaoCrudDAO = "AT";
                 classeConecta.FecharCon();
-            }
-            catch (Exception ex)
-            {
+
+            }catch (Exception ex){
                 MessageBox.Show("A Seguinte Excessão foi lançada quando o método Editar foi operado " + ex, "Erro na classe OrigemDAO", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 

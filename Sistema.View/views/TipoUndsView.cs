@@ -1357,30 +1357,7 @@ namespace Sistema.View.views
         }
 
 
-        private void cbButtonPesquisarEm_SelectedValueChanged(object sender, EventArgs e)
-        {
-            puxarparametroPesquisa();
-        }
-
-        private void txtBoxPesquisar_TextChanged_1(object sender, EventArgs e)
-        {
-            puxarparametroPesquisa();
-        }
-
-        private void radioBttnComeca_TextChanged(object sender, EventArgs e)
-        {
-            puxarparametroPesquisa();
-        }
-
-        private void radioBttnContem_CheckedChanged_1(object sender, EventArgs e)
-        {
-            puxarparametroPesquisa();
-        }
-
-        private void radioBttnTermina_CheckedChanged_1(object sender, EventArgs e)
-        {
-            puxarparametroPesquisa();
-        }
+     
 
         private void TipoUndsView_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -1417,9 +1394,29 @@ namespace Sistema.View.views
             }
         }
 
-        private void cbButtnQuantPage1_Click(object sender, EventArgs e)
+        private void txtBoxPesquisar_TextChanged_1(object sender, EventArgs e)
         {
+            puxarparametroPesquisa();
+        }
 
+        private void cbButtonPesquisarEm_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            puxarparametroPesquisa();
+        }
+
+        private void radioBttnComeca_CheckedChanged_1(object sender, EventArgs e)
+        {
+            puxarparametroPesquisa();
+        }
+
+        private void radioBttnContem_CheckedChanged_1(object sender, EventArgs e)
+        {
+            puxarparametroPesquisa();
+        }
+
+        private void radioBttnTermina_CheckedChanged_1(object sender, EventArgs e)
+        {
+            puxarparametroPesquisa();
         }
     }
 

@@ -44,6 +44,7 @@
   <ItemGroup>
     <Compile Include="PerfilCrud.cs" />
     <Compile Include="PerfilMenu.cs" />
+    <Compile Include="PerfilMenuItemAdmin.cs" />
     <Compile Include="ProgramContainer.cs" />
     <Compile Include="Paginacao.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -799,25 +799,23 @@ namespace Sistema.View
                     if (rem.Length <= 2)
                     {
 
-                        var resultado = MessageBox.Show("A Edição não alcançou o número mínimo de 2 caracteres.\nPara tentar novamente clique no botão 'Sim'. E no botão 'Não' para cancelar e sair do modo de Inserção.", "Aviso do Sistema", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                        if (resultado == DialogResult.Yes)
-                        {
+                        var resultado = MessageBox.Show(
+                            "A Edição não alcançou o número mínimo de 2 caracteres.\n" +
+                            "Para tentar novamente clique no botão 'Sim'. E no botão 'Não' para cancelar e sair do modo de Inserção.",
+                            "Aviso do Sistema",
+                            MessageBoxButtons.YesNo, 
+                            MessageBoxIcon.Question);
+                        if (resultado == DialogResult.Yes){
                             clearFieldsFormulario();
                             txtBoxName.Focus();
-                        }
-                        else if (resultado == DialogResult.No)
-                        {
+                        }else if (resultado == DialogResult.No){
                             behaviorRefresh();
                         }
 
-                    }
-                    else if (rem.Length >= 2)
-                    {
+                    }else if (rem.Length >= 2){
                         controllerOrigem.Editar( txtBoxName.Text, txtBoxCodOrigem.Text, Convert.ToInt32(txtBoxId.Text.Trim()));
                      
-                        if ("AT".Equals(controllerOrigem.AcaoCrudController()))
-                        {
-                            
+                        if ("AT".Equals(controllerOrigem.AcaoCrudController())){
                             behaviorRefresh();
                             puxarparametroPesquisa();
 
@@ -957,19 +955,12 @@ namespace Sistema.View
 
 
 
-
-        private void bttnSave_Click(object sender, EventArgs e)
-        {
+        private void bttnSave_Click(object sender, EventArgs e){
             behaviorSave();
         }
 
-        private void bttnNew_Click(object sender, EventArgs e)
-        {
+        private void bttnNew_Click(object sender, EventArgs e){
             behaviorNewInsert();
-
-            string str = ProgramContainer.getUsuariosModel().Senha;
-            MessageBox.Show(str);
-          
         }
 
         private void bttnSearch_Click(object sender, EventArgs e)
@@ -1268,7 +1259,7 @@ namespace Sistema.View
             
             gridCrudOrigem.CurrentCell = gridCrudOrigem.Rows[0].Cells[0];  //gridCrudOrigem.SelectedRows[0];//Rows[gridCrudOrigem.Rows.Count - 1].Cells[0];
             id = gridCrudOrigem.CurrentRow.Cells[0].Value.ToString();                                                                //     this.gridCrudOrigem.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            MessageBox.Show(id);
+            //MessageBox.Show(id);
          }
 
      

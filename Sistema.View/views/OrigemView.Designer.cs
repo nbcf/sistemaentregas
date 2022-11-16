@@ -97,7 +97,7 @@ namespace Sistema.View
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Padding = new System.Windows.Forms.Padding(0);
-            this.toolStrip1.Size = new System.Drawing.Size(729, 51);
+            this.toolStrip1.Size = new System.Drawing.Size(693, 51);
             this.toolStrip1.TabIndex = 3;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -187,7 +187,7 @@ namespace Sistema.View
             this.tabControlAssets.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tabControlAssets.Name = "tabControlAssets";
             this.tabControlAssets.SelectedIndex = 0;
-            this.tabControlAssets.Size = new System.Drawing.Size(729, 95);
+            this.tabControlAssets.Size = new System.Drawing.Size(693, 85);
             this.tabControlAssets.TabIndex = 4;
             // 
             // tabPagePesquisar
@@ -202,7 +202,7 @@ namespace Sistema.View
             this.tabPagePesquisar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tabPagePesquisar.Name = "tabPagePesquisar";
             this.tabPagePesquisar.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.tabPagePesquisar.Size = new System.Drawing.Size(721, 62);
+            this.tabPagePesquisar.Size = new System.Drawing.Size(685, 52);
             this.tabPagePesquisar.TabIndex = 1;
             this.tabPagePesquisar.Text = "Pesquisar";
             this.tabPagePesquisar.UseVisualStyleBackColor = true;
@@ -282,7 +282,7 @@ namespace Sistema.View
             this.tabPageFormulario.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tabPageFormulario.Name = "tabPageFormulario";
             this.tabPageFormulario.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.tabPageFormulario.Size = new System.Drawing.Size(721, 62);
+            this.tabPageFormulario.Size = new System.Drawing.Size(685, 52);
             this.tabPageFormulario.TabIndex = 2;
             this.tabPageFormulario.Text = "Formulário";
             this.tabPageFormulario.UseVisualStyleBackColor = true;
@@ -290,7 +290,7 @@ namespace Sistema.View
             // txtBoxCodOrigem
             // 
             this.txtBoxCodOrigem.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBoxCodOrigem.Location = new System.Drawing.Point(744, 11);
+            this.txtBoxCodOrigem.Location = new System.Drawing.Point(487, 12);
             this.txtBoxCodOrigem.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtBoxCodOrigem.Name = "txtBoxCodOrigem";
             this.txtBoxCodOrigem.Size = new System.Drawing.Size(84, 25);
@@ -300,18 +300,18 @@ namespace Sistema.View
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(582, 17);
+            this.label3.Location = new System.Drawing.Point(404, 17);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(103, 17);
+            this.label3.Size = new System.Drawing.Size(79, 17);
             this.label3.TabIndex = 4;
-            this.label3.Text = "Codigo Origem:";
+            this.label3.Text = "Cd. Origem:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(177, 18);
+            this.label2.Location = new System.Drawing.Point(132, 17);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(48, 17);
@@ -321,20 +321,20 @@ namespace Sistema.View
             // txtBoxName
             // 
             this.txtBoxName.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBoxName.Location = new System.Drawing.Point(255, 12);
+            this.txtBoxName.Location = new System.Drawing.Point(182, 12);
             this.txtBoxName.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtBoxName.Name = "txtBoxName";
-            this.txtBoxName.Size = new System.Drawing.Size(316, 25);
+            this.txtBoxName.Size = new System.Drawing.Size(216, 25);
             this.txtBoxName.TabIndex = 2;
             // 
             // txtBoxId
             // 
             this.txtBoxId.Enabled = false;
             this.txtBoxId.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBoxId.Location = new System.Drawing.Point(93, 11);
+            this.txtBoxId.Location = new System.Drawing.Point(67, 12);
             this.txtBoxId.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtBoxId.Name = "txtBoxId";
-            this.txtBoxId.Size = new System.Drawing.Size(76, 25);
+            this.txtBoxId.Size = new System.Drawing.Size(61, 25);
             this.txtBoxId.TabIndex = 1;
             // 
             // label1
@@ -373,7 +373,7 @@ namespace Sistema.View
             this.toolStrip2.Location = new System.Drawing.Point(0, 450);
             this.toolStrip2.Name = "toolStrip2";
             this.toolStrip2.Padding = new System.Windows.Forms.Padding(0, 0, 2, 0);
-            this.toolStrip2.Size = new System.Drawing.Size(729, 29);
+            this.toolStrip2.Size = new System.Drawing.Size(693, 29);
             this.toolStrip2.TabIndex = 7;
             this.toolStrip2.Text = "toolStrip2";
             // 
@@ -549,7 +549,7 @@ namespace Sistema.View
             this.gridCrudOrigem.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.gridCrudOrigem.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gridCrudOrigem.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.gridCrudOrigem.Location = new System.Drawing.Point(0, 146);
+            this.gridCrudOrigem.Location = new System.Drawing.Point(0, 136);
             this.gridCrudOrigem.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.gridCrudOrigem.MultiSelect = false;
             this.gridCrudOrigem.Name = "gridCrudOrigem";
@@ -557,7 +557,7 @@ namespace Sistema.View
             this.gridCrudOrigem.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.gridCrudOrigem.RowTemplate.Height = 25;
             this.gridCrudOrigem.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.gridCrudOrigem.Size = new System.Drawing.Size(729, 304);
+            this.gridCrudOrigem.Size = new System.Drawing.Size(693, 314);
             this.gridCrudOrigem.TabIndex = 8;
             this.gridCrudOrigem.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridCrudOrigem_CellClick);
             // 
@@ -565,7 +565,7 @@ namespace Sistema.View
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(729, 479);
+            this.ClientSize = new System.Drawing.Size(693, 479);
             this.Controls.Add(this.gridCrudOrigem);
             this.Controls.Add(this.toolStrip2);
             this.Controls.Add(this.tabControlAssets);
@@ -573,6 +573,7 @@ namespace Sistema.View
             this.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.MaximizeBox = false;
             this.Name = "OrigemView";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastro de Origem";
