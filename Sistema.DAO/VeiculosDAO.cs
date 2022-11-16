@@ -109,9 +109,8 @@ namespace Sistema.DAO
                 cmd.ExecuteNonQuery();
                 acaoCrudVeiculosDAO = "AT";
                 classeConecta.FecharCon();
-            }
-            catch (Exception ex)
-            {
+
+            }catch (Exception ex){
                 MessageBox.Show("A Seguinte Excessão foi lançada quando o método Editar foi operado em VeiculosDAO " + ex, "Erro na classe VeiculosDAO", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
@@ -164,11 +163,8 @@ namespace Sistema.DAO
         }
 
 
-        public int ListarTodosRegistrosBD()
-        {
-            
-            try
-            {
+        public int ListarTodosRegistrosBD(){
+            try{
                 classeConecta.AbrirCon();
                 sql = "SELECT * FROM veiculos";
                 cmd = new MySqlCommand(sql, classeConecta.con);
@@ -179,10 +175,7 @@ namespace Sistema.DAO
                 classeConecta.FecharCon();
                 return dt.Rows.Count;
         
-            }
-            catch (Exception ex)
-            {
-
+            }catch (Exception ex){
                 throw ex;
             }
         }
@@ -219,7 +212,8 @@ namespace Sistema.DAO
             string spc = "";
             try{
                 classeConecta.AbrirCon();
-                sql = "SELECT * from veiculos WHERE estatusveiculo = 'Disponivel' or estatusveiculo = '' ORDER BY " + parametro + " " + indexar + " Limit " + offsett + "," + limitt;
+                //sql = "SELECT * FROM veiculos WHERE estatusveiculo = 'Disponivel' OR estatusveiculo = '' ORDER BY " + parametro + " " + indexar + " Limit " + offsett + "," + limitt;
+                sql = "SELECT * FROM veiculos ORDER BY " + parametro + " " + indexar + " Limit " + offsett + "," + limitt;
                 cmd = new MySqlCommand(sql, classeConecta.con);
                 MySqlDataAdapter da = new MySqlDataAdapter();
                 da.SelectCommand = cmd;

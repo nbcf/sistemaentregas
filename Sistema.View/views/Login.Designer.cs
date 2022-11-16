@@ -73,6 +73,7 @@ namespace Sistema.View.views
             this.txt1.Name = "txt1";
             this.txt1.Size = new System.Drawing.Size(226, 27);
             this.txt1.TabIndex = 2;
+            this.txt1.Text = "nildob";
             // 
             // txt2
             // 
@@ -82,6 +83,7 @@ namespace Sistema.View.views
             this.txt2.PasswordChar = '*';
             this.txt2.Size = new System.Drawing.Size(226, 27);
             this.txt2.TabIndex = 3;
+            this.txt2.Text = "123456";
             // 
             // label2
             // 

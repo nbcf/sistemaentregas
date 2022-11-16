@@ -88,7 +88,7 @@ namespace Sistema.View
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Padding = new System.Windows.Forms.Padding(0);
-            this.toolStrip1.Size = new System.Drawing.Size(731, 51);
+            this.toolStrip1.Size = new System.Drawing.Size(716, 51);
             this.toolStrip1.TabIndex = 3;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -185,10 +185,9 @@ namespace Sistema.View
             this.gridCrudPapeis.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.gridCrudPapeis.RowTemplate.Height = 25;
             this.gridCrudPapeis.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.gridCrudPapeis.Size = new System.Drawing.Size(731, 342);
+            this.gridCrudPapeis.Size = new System.Drawing.Size(716, 342);
             this.gridCrudPapeis.TabIndex = 7;
             this.gridCrudPapeis.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridCrudPapeis_CellClick);
-    //        this.gridCrudPapeis.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridCrudPapeis_CellContentClick);
             this.gridCrudPapeis.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridCrudPapeis_CellDoubleClick);
             // 
             // toolStrip2
@@ -215,7 +214,7 @@ namespace Sistema.View
             this.cbOrdenarPor1});
             this.toolStrip2.Location = new System.Drawing.Point(0, 449);
             this.toolStrip2.Name = "toolStrip2";
-            this.toolStrip2.Size = new System.Drawing.Size(731, 32);
+            this.toolStrip2.Size = new System.Drawing.Size(716, 32);
             this.toolStrip2.TabIndex = 8;
             this.toolStrip2.Text = "toolStrip2";
             // 
@@ -324,6 +323,7 @@ namespace Sistema.View
             // 
             this.cbButtnQuantPage1.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbButtnQuantPage1.Items.AddRange(new object[] {
+            "3",
             "5",
             "10",
             "15",
@@ -354,7 +354,7 @@ namespace Sistema.View
             "Codigo",
             "Alfabeto"});
             this.cbOrdemParam1.Name = "cbOrdemParam1";
-            this.cbOrdemParam1.Size = new System.Drawing.Size(85, 32);
+            this.cbOrdemParam1.Size = new System.Drawing.Size(85, 28);
             this.cbOrdemParam1.SelectedIndexChanged += new System.EventHandler(this.cbOrdemParam1_SelectedIndexChanged);
             this.cbOrdemParam1.Click += new System.EventHandler(this.cbOrdemParam1_Click);
             // 
@@ -385,7 +385,7 @@ namespace Sistema.View
             this.tabControlAssets.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tabControlAssets.Name = "tabControlAssets";
             this.tabControlAssets.SelectedIndex = 0;
-            this.tabControlAssets.Size = new System.Drawing.Size(731, 88);
+            this.tabControlAssets.Size = new System.Drawing.Size(716, 88);
             this.tabControlAssets.TabIndex = 5;
             // 
             // tabPagePesquisar
@@ -401,7 +401,7 @@ namespace Sistema.View
             this.tabPagePesquisar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tabPagePesquisar.Name = "tabPagePesquisar";
             this.tabPagePesquisar.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.tabPagePesquisar.Size = new System.Drawing.Size(723, 52);
+            this.tabPagePesquisar.Size = new System.Drawing.Size(708, 52);
             this.tabPagePesquisar.TabIndex = 1;
             this.tabPagePesquisar.Text = "Pesquisar";
             this.tabPagePesquisar.UseVisualStyleBackColor = true;
@@ -480,7 +480,7 @@ namespace Sistema.View
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(731, 481);
+            this.ClientSize = new System.Drawing.Size(716, 481);
             this.Controls.Add(this.toolStrip2);
             this.Controls.Add(this.gridCrudPapeis);
             this.Controls.Add(this.tabControlAssets);
