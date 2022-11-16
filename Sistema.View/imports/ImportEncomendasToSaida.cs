@@ -833,9 +833,9 @@ namespace Sistema.View
                     DateTime drEntrega      = DataEntregaVO;
                     DateTime drRota         = DataEmRotaVO;
                     DateTime drEntrada      = Convert.ToDateTime(gridCrudImporES.CurrentRow.Cells[20].Value.ToString());
-                    MessageBox.Show(IdSaidaVO);
+                  //  MessageBox.Show(IdSaidaVO);
                     string idSaida          = IdSaidaVO;                                                                                                //string origem = gridCrudImporES.CurrentRow.Cells[20].Value.ToString(); //"NOME ORIGEM";
-                    MessageBox.Show(idSaida);
+                 //   MessageBox.Show(idSaida);
                     int idorigemjoin1       = Convert.ToInt32(gridCrudImporES.CurrentRow.Cells[22].Value.ToString());
                     string origem           = gridCrudImporES.CurrentRow.Cells[23].Value.ToString();
                     string codorigem        = gridCrudImporES.CurrentRow.Cells[24].Value.ToString();
@@ -870,7 +870,7 @@ namespace Sistema.View
                 {
 
                     AcaoDialogVO = "Cancelar";
-                    MessageBox.Show(AcaoDialogVO);
+                  //  MessageBox.Show(AcaoDialogVO);
                     Close();
                 }
 

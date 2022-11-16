@@ -1349,11 +1349,12 @@ namespace Sistema.View
             string entregador   =   gridCrudSaidas.CurrentRow.Cells[7].Value.ToString();
             int idsaida         =   Convert.ToInt32(gridCrudSaidas.CurrentRow.Cells[0].Value.ToString());
             string estatus      =   "Em Transito";
-
+           
 
             if (linhasDetalhes > 0){
-
-                int idorigem            =       Convert.ToInt32(gridCurdMestreDetalhe.CurrentRow.Cells[1].Value.ToString());
+                // atencao aqui
+                int idorigem =  Convert.ToInt32(gridCurdMestreDetalhe.CurrentRow.Cells[1].Value.ToString());
+               
                 int idVeiculo           =       Convert.ToInt32(gridCurdMestreDetalhe.CurrentRow.Cells[2].Value.ToString());
                 int idEntregador        =       Convert.ToInt32(gridCurdMestreDetalhe.CurrentRow.Cells[3].Value.ToString());
                 DateTime dataEntrega    =       Convert.ToDateTime(gridCurdMestreDetalhe.CurrentRow.Cells[18].Value);
@@ -1950,6 +1951,37 @@ namespace Sistema.View
             
 
         private void SaidaEncomendasView_FormClosing(object sender, FormClosingEventArgs e){
+           
+            
+            int tamanhoListaSaida = gridCrudSaidas.RowCount;
+            int tamanhoListaEncomendas = gridCurdMestreDetalhe.RowCount;
+            if (tamanhoListaSaida > 0 && tamanhoListaEncomendas == 0)
+            {
+                if (cbEstatusSaida.SelectedItem.Equals("Preparando"))
+                {
+                     MessageBox.Show(
+                              "Ao fechar a Janela atravéz do 'X' no modo 'Preparando' " +
+                              "\nNão possuíndo nenhuma encomenda lançada, automaticamente será deletado a Saída de N°: " + txtIdSaida.Text+".\n" +
+                              "E o veículo selecionado voltará a ter o estattus 'Dsponível'",
+                              "Aviso do Exclusão",
+                              MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                   
+                            controllerSaida.Excluir(Convert.ToInt32(txtIdSaida.Text));
+                            veiculosController.EditarEstatusVeiculo(
+                            txtVeiculo.Text,
+                            txtPlacaVeiculo.Text,
+                            "Disponivel",
+                            Convert.ToInt32(txtIdVeiculo.Text));
+
+                            operationType = "newInsertion";
+                            typeEdition = "insert";
+                            behaviorRefresh();
+                  
+                }
+            }
+           
+          
             _InstSaidaEncomendasView = null;
         }
 
@@ -1997,13 +2029,11 @@ namespace Sistema.View
 
         private void gridCrudSaidas_CellDoubleClick(object sender, DataGridViewCellEventArgs e){
             if (cbEstatusSaida.SelectedItem.ToString().Equals("Rota Concluída")){
- 
 
                 groupBoxFormulario.Enabled = true;
                 groupBoxFormulario.Visible = true;
                 datePckSaida.Enabled = false;
                 txtKmTotal.Visible = true;
-
                 lbTotalKm.Visible = true;
                 lbFechamento.Visible = true;
                 txtHoraRetorno.Visible = true;
@@ -2066,9 +2096,16 @@ namespace Sistema.View
 
 
                 }
+            } else if (cbEstatusSaida.SelectedItem.ToString().Equals("Preparando")) {
+
+                groupBoxFormulario.Enabled = true;
+                groupBoxFormulario.Visible = true;
+                groupBox1.Visible = true;
+                gridCurdMestreDetalhe.DataSource = controllerEncomendas.ListarDetalheMestre(txtIdSaida.Text, "Saiu para entrega");
+                button5.Visible = true;
+
             }
-            else
-            {
+            else{
                 setaGridEmCampos();
             }
         }
