@@ -15,7 +15,7 @@ namespace Sistema.Conexao
 
         public string statusConexao = "Conexão Inexistente";
         //CONEXAO COM O BANCO DE DADOS LOCAL
-        public string conec = "SERVER=localhost; DATABASE=sistemaentregas; UID=root; PWD=admin; PORT=3306;";
+        public string conec = "SERVER=localhost; DATABASE=sistemaentregas; UID=root; PWD=; PORT=3306;";
         public MySqlConnection con = null;
 
 

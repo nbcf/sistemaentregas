@@ -143,36 +143,7 @@ namespace Sistema.View
 
         }
 
-        private void relatoriosDeGastosToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void abastecimentoPorDataToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void gerênciaDeEntregasToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void toolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Menu_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void entregasToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
+      
         private void Menu_FormClosing(object sender, FormClosingEventArgs e)
         {
            AcaoFormVO = "FechouSistema";

@@ -77,7 +77,7 @@ namespace Sistema.View
             this.CadastroMenuItem.Name = "CadastroMenuItem";
             this.CadastroMenuItem.Size = new System.Drawing.Size(71, 20);
             this.CadastroMenuItem.Text = "Cadastros";
-            this.CadastroMenuItem.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
+     //       this.CadastroMenuItem.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
             // 
             // papeisToolStripMenuItem
             // 
@@ -151,7 +151,7 @@ namespace Sistema.View
             this.EntregasMenuItem.Name = "EntregasMenuItem";
             this.EntregasMenuItem.Size = new System.Drawing.Size(64, 20);
             this.EntregasMenuItem.Text = "Entregas";
-            this.EntregasMenuItem.Click += new System.EventHandler(this.entregasToolStripMenuItem_Click);
+       //     this.EntregasMenuItem.Click += new System.EventHandler(this.entregasToolStripMenuItem_Click);
             // 
             // receberToolStripMenuItem
             // 
@@ -203,7 +203,7 @@ namespace Sistema.View
             this.Text = "Menu";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Menu_FormClosing);
-            this.Load += new System.EventHandler(this.Menu_Load);
+       //     this.Load += new System.EventHandler(this.Menu_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);

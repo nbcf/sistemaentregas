@@ -441,6 +441,8 @@ namespace Sistema.View
             // 
             this.cbButtnQuantPage1.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbButtnQuantPage1.Items.AddRange(new object[] {
+            "3",
+            "5",
             "10",
             "15",
             "20",
