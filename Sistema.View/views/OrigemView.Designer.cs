@@ -448,6 +448,7 @@ namespace Sistema.View
             this.bttnEndPages.Name = "bttnEndPages";
             this.bttnEndPages.Size = new System.Drawing.Size(23, 26);
             this.bttnEndPages.Text = "toolStripButton4";
+            this.bttnEndPages.Click += new System.EventHandler(this.bttnEndPages_Click_1);
             // 
             // toolStripLabel1
             // 

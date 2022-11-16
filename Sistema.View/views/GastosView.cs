@@ -1597,6 +1597,26 @@ namespace Sistema.View.views
         {
 
         }
+
+        private void bttnBeginPages_Click_1(object sender, EventArgs e)
+        {
+            inicioPagina();
+        }
+
+        private void bttnOnePageLeft_Click_1(object sender, EventArgs e)
+        {
+            descontar();
+        }
+
+        private void bttnOnePageRight_Click_1(object sender, EventArgs e)
+        {
+            somar();
+        }
+
+        private void bttnEndPages_Click_1(object sender, EventArgs e)
+        {
+            finalDaPagina();
+        }
     }
 
 }

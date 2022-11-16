@@ -91,7 +91,7 @@ namespace Sistema.View
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Padding = new System.Windows.Forms.Padding(0);
-            this.toolStrip1.Size = new System.Drawing.Size(666, 51);
+            this.toolStrip1.Size = new System.Drawing.Size(664, 51);
             this.toolStrip1.TabIndex = 3;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -179,7 +179,7 @@ namespace Sistema.View
             this.tabControlAssets.Location = new System.Drawing.Point(0, 51);
             this.tabControlAssets.Name = "tabControlAssets";
             this.tabControlAssets.SelectedIndex = 0;
-            this.tabControlAssets.Size = new System.Drawing.Size(666, 80);
+            this.tabControlAssets.Size = new System.Drawing.Size(664, 80);
             this.tabControlAssets.TabIndex = 4;
             // 
             // tabPagePesquisar
@@ -194,7 +194,7 @@ namespace Sistema.View
             this.tabPagePesquisar.Location = new System.Drawing.Point(4, 32);
             this.tabPagePesquisar.Name = "tabPagePesquisar";
             this.tabPagePesquisar.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPagePesquisar.Size = new System.Drawing.Size(658, 44);
+            this.tabPagePesquisar.Size = new System.Drawing.Size(656, 44);
             this.tabPagePesquisar.TabIndex = 1;
             this.tabPagePesquisar.Text = "Pesquisar";
             this.tabPagePesquisar.UseVisualStyleBackColor = true;
@@ -209,7 +209,7 @@ namespace Sistema.View
             this.radioBttnTermina.TabIndex = 4;
             this.radioBttnTermina.Text = "Termina";
             this.radioBttnTermina.UseVisualStyleBackColor = true;
-            this.radioBttnTermina.CheckedChanged += new System.EventHandler(this.radioBttnTermina_CheckedChanged_2);
+            this.radioBttnTermina.CheckedChanged += new System.EventHandler(this.radioBttnTermina_CheckedChanged_1);
             // 
             // radioBttnContem
             // 
@@ -221,7 +221,7 @@ namespace Sistema.View
             this.radioBttnContem.TabIndex = 5;
             this.radioBttnContem.Text = "Contém";
             this.radioBttnContem.UseVisualStyleBackColor = true;
-            this.radioBttnContem.CheckedChanged += new System.EventHandler(this.radioBttnContem_CheckedChanged_2);
+            this.radioBttnContem.CheckedChanged += new System.EventHandler(this.radioBttnContem_CheckedChanged_1);
             // 
             // cbButtonPesquisarEm
             // 
@@ -234,7 +234,7 @@ namespace Sistema.View
             this.cbButtonPesquisarEm.Name = "cbButtonPesquisarEm";
             this.cbButtonPesquisarEm.Size = new System.Drawing.Size(138, 25);
             this.cbButtonPesquisarEm.TabIndex = 1;
-            this.cbButtonPesquisarEm.SelectedIndexChanged += new System.EventHandler(this.cbButtonPesquisarEm_SelectedIndexChanged_1);
+            this.cbButtonPesquisarEm.SelectedIndexChanged += new System.EventHandler(this.cbButtonPesquisarEm_SelectedIndexChanged);
             // 
             // radioBttnComeca
             // 
@@ -246,7 +246,7 @@ namespace Sistema.View
             this.radioBttnComeca.TabIndex = 6;
             this.radioBttnComeca.Text = "Começa";
             this.radioBttnComeca.UseVisualStyleBackColor = true;
-            this.radioBttnComeca.CheckedChanged += new System.EventHandler(this.radioBttnComeca_CheckedChanged_2);
+            this.radioBttnComeca.CheckedChanged += new System.EventHandler(this.radioBttnComeca_CheckedChanged_1);
             // 
             // txtBoxPesquisar
             // 
@@ -255,7 +255,7 @@ namespace Sistema.View
             this.txtBoxPesquisar.Name = "txtBoxPesquisar";
             this.txtBoxPesquisar.Size = new System.Drawing.Size(157, 25);
             this.txtBoxPesquisar.TabIndex = 0;
-            this.txtBoxPesquisar.TextChanged += new System.EventHandler(this.txtBoxPesquisar_TextChanged_2);
+            this.txtBoxPesquisar.TextChanged += new System.EventHandler(this.txtBoxPesquisar_TextChanged_1);
             // 
             // txtBoxId
             // 
@@ -307,7 +307,7 @@ namespace Sistema.View
             this.gridCrudVeiculos.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.gridCrudVeiculos.RowTemplate.Height = 25;
             this.gridCrudVeiculos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.gridCrudVeiculos.Size = new System.Drawing.Size(666, 276);
+            this.gridCrudVeiculos.Size = new System.Drawing.Size(664, 276);
             this.gridCrudVeiculos.TabIndex = 5;
             this.gridCrudVeiculos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridCrudVeiculos_CellClick);
             this.gridCrudVeiculos.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.gridCrudVeiculos_CellMouseDoubleClick);
@@ -336,7 +336,7 @@ namespace Sistema.View
             this.cbOrdenarPor1});
             this.toolStrip2.Location = new System.Drawing.Point(0, 375);
             this.toolStrip2.Name = "toolStrip2";
-            this.toolStrip2.Size = new System.Drawing.Size(666, 32);
+            this.toolStrip2.Size = new System.Drawing.Size(664, 32);
             this.toolStrip2.TabIndex = 6;
             this.toolStrip2.Text = "toolStrip2";
             // 
@@ -348,7 +348,7 @@ namespace Sistema.View
             this.bttnBeginPages.Name = "bttnBeginPages";
             this.bttnBeginPages.Size = new System.Drawing.Size(23, 29);
             this.bttnBeginPages.Text = "toolStripButton1";
-            this.bttnBeginPages.Click += new System.EventHandler(this.bttnBeginPages_Click_2);
+            this.bttnBeginPages.Click += new System.EventHandler(this.btnInicioPaginacao);
             // 
             // bttnOnePageLeft
             // 
@@ -358,7 +358,7 @@ namespace Sistema.View
             this.bttnOnePageLeft.Name = "bttnOnePageLeft";
             this.bttnOnePageLeft.Size = new System.Drawing.Size(23, 29);
             this.bttnOnePageLeft.Text = "toolStripButton2";
-            this.bttnOnePageLeft.Click += new System.EventHandler(this.bttnOnePageLeft_Click_2);
+            this.bttnOnePageLeft.Click += new System.EventHandler(this.btnVoltarPagina);
             // 
             // labelTextPageFrom
             // 
@@ -403,6 +403,7 @@ namespace Sistema.View
             this.bttnOnePageRight.Name = "bttnOnePageRight";
             this.bttnOnePageRight.Size = new System.Drawing.Size(23, 29);
             this.bttnOnePageRight.Text = "toolStripButton3";
+            this.bttnOnePageRight.Click += new System.EventHandler(this.btnAvancarPagina);
             // 
             // bttnEndPages
             // 
@@ -412,6 +413,7 @@ namespace Sistema.View
             this.bttnEndPages.Name = "bttnEndPages";
             this.bttnEndPages.Size = new System.Drawing.Size(23, 29);
             this.bttnEndPages.Text = "toolStripButton4";
+            this.bttnEndPages.Click += new System.EventHandler(this.btnFinalPaginacao);
             // 
             // toolStripLabel1
             // 
@@ -458,6 +460,7 @@ namespace Sistema.View
             "100"});
             this.cbButtnQuantPage1.Name = "cbButtnQuantPage1";
             this.cbButtnQuantPage1.Size = new System.Drawing.Size(90, 32);
+            this.cbButtnQuantPage1.SelectedIndexChanged += new System.EventHandler(this.cbQtPorPagina);
             // 
             // toolStripLabel6
             // 
@@ -474,6 +477,7 @@ namespace Sistema.View
             "Alfabeto"});
             this.cbOrdemParam1.Name = "cbOrdemParam1";
             this.cbOrdemParam1.Size = new System.Drawing.Size(90, 28);
+            this.cbOrdemParam1.SelectedIndexChanged += new System.EventHandler(this.cbListarPor);
             // 
             // toolStripLabel7
             // 
@@ -490,12 +494,13 @@ namespace Sistema.View
             "Ultimos"});
             this.cbOrdenarPor1.Name = "cbOrdenarPor1";
             this.cbOrdenarPor1.Size = new System.Drawing.Size(90, 28);
+            this.cbOrdenarPor1.SelectedIndexChanged += new System.EventHandler(this.cbOrdenarPor);
             // 
             // VeiculosView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(666, 407);
+            this.ClientSize = new System.Drawing.Size(664, 407);
             this.Controls.Add(this.toolStrip2);
             this.Controls.Add(this.gridCrudVeiculos);
             this.Controls.Add(this.tabControlAssets);

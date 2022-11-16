@@ -112,7 +112,7 @@ namespace Sistema.DAO
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Erro ao Editar " + ex);
+                MessageBox.Show("A Seguinte Excessão foi lançada quando o método Editar foi operado em VeiculosDAO " + ex, "Erro na classe VeiculosDAO", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
         }
@@ -136,7 +136,8 @@ namespace Sistema.DAO
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Erro ao Editar " + ex);
+             
+                MessageBox.Show("A Seguinte Excessão foi lançada quando o método 'AlterarEstatus' foi operado em VeiculosDAO " + ex, "Erro na classe VeiculosDAO", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
         }
@@ -215,9 +216,10 @@ namespace Sistema.DAO
         }
 
         public DataTable ListarDataGrid(string parametro, string indexar, int offsett, int limitt){
+            string spc = "";
             try{
                 classeConecta.AbrirCon();
-                sql = "SELECT * from veiculos ORDER BY " + parametro + " " + indexar + " Limit " + offsett + "," + limitt;
+                sql = "SELECT * from veiculos WHERE estatusveiculo = 'Disponivel' or estatusveiculo = '' ORDER BY " + parametro + " " + indexar + " Limit " + offsett + "," + limitt;
                 cmd = new MySqlCommand(sql, classeConecta.con);
                 MySqlDataAdapter da = new MySqlDataAdapter();
                 da.SelectCommand = cmd;

@@ -1424,6 +1424,21 @@ namespace Sistema.View.views
         {
             _InstanciaTipoGastosView = null;
         }
+
+        private void bttnBeginPages_Click_1(object sender, EventArgs e)
+        {
+            inicioPagina();
+        }
+
+        private void bttnOnePageLeft_Click_1(object sender, EventArgs e)
+        {
+            descontar();
+        }
+
+        private void cbOrdemParam1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 
 }
