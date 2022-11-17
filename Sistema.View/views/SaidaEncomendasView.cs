@@ -1973,7 +1973,6 @@ namespace Sistema.View
                             txtPlacaVeiculo.Text,
                             "Disponivel",
                             Convert.ToInt32(txtIdVeiculo.Text));
-
                             operationType = "newInsertion";
                             typeEdition = "insert";
                             behaviorRefresh();
