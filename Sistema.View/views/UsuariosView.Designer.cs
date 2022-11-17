@@ -89,8 +89,8 @@ namespace Sistema.View
             this.cbOrdenarPor1 = new System.Windows.Forms.ToolStripComboBox();
             this.gridCrudUsuarios = new System.Windows.Forms.DataGridView();
             this.groupBoxFormulario = new System.Windows.Forms.GroupBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.toolStrip1.SuspendLayout();
             this.tabControlAssets.SuspendLayout();
             this.tabPagePesquisar.SuspendLayout();
@@ -113,7 +113,7 @@ namespace Sistema.View
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Padding = new System.Windows.Forms.Padding(0);
-            this.toolStrip1.Size = new System.Drawing.Size(632, 51);
+            this.toolStrip1.Size = new System.Drawing.Size(649, 51);
             this.toolStrip1.TabIndex = 2;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -201,7 +201,7 @@ namespace Sistema.View
             this.tabControlAssets.Location = new System.Drawing.Point(0, 51);
             this.tabControlAssets.Name = "tabControlAssets";
             this.tabControlAssets.SelectedIndex = 0;
-            this.tabControlAssets.Size = new System.Drawing.Size(632, 80);
+            this.tabControlAssets.Size = new System.Drawing.Size(649, 80);
             this.tabControlAssets.TabIndex = 4;
             // 
             // tabPagePesquisar
@@ -215,7 +215,7 @@ namespace Sistema.View
             this.tabPagePesquisar.Location = new System.Drawing.Point(4, 32);
             this.tabPagePesquisar.Name = "tabPagePesquisar";
             this.tabPagePesquisar.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPagePesquisar.Size = new System.Drawing.Size(624, 44);
+            this.tabPagePesquisar.Size = new System.Drawing.Size(641, 44);
             this.tabPagePesquisar.TabIndex = 1;
             this.tabPagePesquisar.Text = "Pesquisar";
             this.tabPagePesquisar.UseVisualStyleBackColor = true;
@@ -424,6 +424,7 @@ namespace Sistema.View
             this.txtBoxSenha.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBoxSenha.Location = new System.Drawing.Point(69, 74);
             this.txtBoxSenha.Name = "txtBoxSenha";
+            this.txtBoxSenha.PasswordChar = '*';
             this.txtBoxSenha.Size = new System.Drawing.Size(259, 25);
             this.txtBoxSenha.TabIndex = 5;
             // 
@@ -498,7 +499,7 @@ namespace Sistema.View
             this.cbOrdenarPor1});
             this.toolStrip2.Location = new System.Drawing.Point(0, 408);
             this.toolStrip2.Name = "toolStrip2";
-            this.toolStrip2.Size = new System.Drawing.Size(632, 32);
+            this.toolStrip2.Size = new System.Drawing.Size(649, 32);
             this.toolStrip2.TabIndex = 7;
             this.toolStrip2.Text = "toolStrip2";
             // 
@@ -627,7 +628,7 @@ namespace Sistema.View
             // 
             this.toolStripLabel7.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStripLabel7.Name = "toolStripLabel7";
-            this.toolStripLabel7.Size = new System.Drawing.Size(77, 20);
+            this.toolStripLabel7.Size = new System.Drawing.Size(77, 29);
             this.toolStripLabel7.Text = "Listar Por:";
             // 
             // cbOrdemParam1
@@ -698,7 +699,7 @@ namespace Sistema.View
             this.gridCrudUsuarios.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.gridCrudUsuarios.RowTemplate.Height = 25;
             this.gridCrudUsuarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.gridCrudUsuarios.Size = new System.Drawing.Size(632, 309);
+            this.gridCrudUsuarios.Size = new System.Drawing.Size(649, 309);
             this.gridCrudUsuarios.TabIndex = 6;
             this.gridCrudUsuarios.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridCrudPessoa_CellClick_1);
             // 
@@ -728,19 +729,9 @@ namespace Sistema.View
             this.groupBoxFormulario.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBoxFormulario.Location = new System.Drawing.Point(0, 131);
             this.groupBoxFormulario.Name = "groupBoxFormulario";
-            this.groupBoxFormulario.Size = new System.Drawing.Size(632, 277);
+            this.groupBoxFormulario.Size = new System.Drawing.Size(649, 277);
             this.groupBoxFormulario.TabIndex = 8;
             this.groupBoxFormulario.TabStop = false;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(12, 235);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(53, 17);
-            this.label4.TabIndex = 21;
-            this.label4.Text = "Pessoa:";
             // 
             // label5
             // 
@@ -752,11 +743,21 @@ namespace Sistema.View
             this.label5.TabIndex = 22;
             this.label5.Text = "Função:";
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(12, 235);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(53, 17);
+            this.label4.TabIndex = 21;
+            this.label4.Text = "Pessoa:";
+            // 
             // UsuariosView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(632, 440);
+            this.ClientSize = new System.Drawing.Size(649, 440);
             this.Controls.Add(this.groupBoxFormulario);
             this.Controls.Add(this.toolStrip2);
             this.Controls.Add(this.gridCrudUsuarios);

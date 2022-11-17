@@ -1707,7 +1707,7 @@ namespace Sistema.View
                 btnCalcularKmTotal.Visible = true;
                 bttnNew.Enabled = false;
                 bttnSearch.Enabled = false;
-
+                toolStrip2.Visible = false;
 
             }
         }

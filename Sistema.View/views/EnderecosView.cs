@@ -838,12 +838,12 @@ namespace Sistema.View
                         MessageBoxIcon.Question);
                         if (resultado == DialogResult.Yes)
                         {
-                            MessageBox.Show("1");
+                           
                             stringPapel = "";
                         }
                         else if (resultado == DialogResult.No)
                         {
-                            MessageBox.Show("2");
+                           
                             behaviorRefresh();
                         }
                     }
@@ -854,13 +854,13 @@ namespace Sistema.View
                         //  if (controllerEnderecos.retornoPersistencia.Equals("NS"))
                         if ("NS".Equals(controllerEnderecos.AcaoCrudEnderecosDAO()))
                         {
-                            MessageBox.Show("3");
+                            
                             stringPapel = "";
                             behaviorRefresh();
                         }
                         else if ("S!".Equals(controllerEnderecos.AcaoCrudEnderecosDAO()))
                         {
-                            MessageBox.Show("4");
+                            
                             operationType = "newInsertion";
                             typeEdition = "insert";
                             //  acoesBehaviorSave();
@@ -869,7 +869,7 @@ namespace Sistema.View
                         }
                         else if ("S!!".Equals(controllerEnderecos.AcaoCrudEnderecosDAO()))
                         {
-                            MessageBox.Show("5");
+                           
                             operationType = "newInsertion";
                             typeEdition = "insert";
                             //acoesBehaviorSave();
@@ -879,7 +879,7 @@ namespace Sistema.View
                     }
                     if ("NS".Equals(controllerEnderecos.AcaoCrudEnderecosDAO()))
                     {
-                        MessageBox.Show("6");
+                        
                         operationType = "newInsertion";
                         typeEdition = "insert";
                         //acoesBehaviorSave();
@@ -927,7 +927,7 @@ namespace Sistema.View
                 else if (operationType.Equals("updateData") && typeEdition.Equals("search"))
                 {
 
-                    MessageBox.Show("8!");
+                  
                     if (remPapel.Length <= 3)
                     {
                         var resultado = MessageBox.Show("A Edição não alcançou o número mínimo de 3 caracteres.\nPara tentar novamente clique no botão 'Sim'. E no botão 'Não' para cancelar e sair do modo de Inserção.", "Aviso do Sistema", MessageBoxButtons.YesNo, MessageBoxIcon.Question);

@@ -1,4 +1,5 @@
 ﻿
+using Engines;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -64,7 +65,7 @@ namespace Sistema.View
             get { return acaoDialog; }
             set { acaoDialog = value; }
         }
-
+         ConsultarCep cp = new ConsultarCep();
         public formEditEnderecos()
         {
             InitializeComponent();
@@ -81,34 +82,15 @@ namespace Sistema.View
         private void button1_Click(object sender, EventArgs e)
         {
             AcaoDialogVO = "ok";
-
             Close();
+         
         }
 
         private void txtCep_Leave(object sender, EventArgs e)
         {
-          
+            puxarCep();
         }
-        async Task BuscarCep(string cep) {
-
-            //try
-            //{
-
-            //    var cepBuscar = RestService.For<ICepApiService>("https://viacep.com.br/");
-            //    var endereco = await cepBuscar.GetAddressAsync(cep);
-            //    txtLogradouro.Text = endereco.Logradouro;
-            //    txtBairro.Text = endereco.Bairro;
-            //    txtCidade.Text = endereco.Localidade;
-            //    txtUf.Text = endereco.Uf;
-            //}
-            //catch (Exception e)
-            //{
-
-
-
-            //}
-
-        }
+     
 
         private void formEditEnderecos_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -124,5 +106,28 @@ namespace Sistema.View
         {
             txtId.Visible = false;
         }
+
+        private void button3_Click(object sender, EventArgs e){
+            puxarCep();
+
+        }
+
+        public void puxarCep() {
+            cp.puxarCep(txtCep.Text);
+            txtLogradouro.Text = cp.LogradouroVO;
+            txtBairro.Text = cp.BairroVO;
+            txtCidade.Text = cp.CidadeVO;
+            txtUf.Text = cp.UfVO;
+   
+        }
+
+            public  void limpar(){
+                txtCep.Text = string.Empty;
+                txtUf.Text = string.Empty;
+                txtCidade.Text = string.Empty;
+                txtBairro.Text = string.Empty;
+                txtLogradouro.Text = string.Empty;
+            }
+
+        }
     }
-}

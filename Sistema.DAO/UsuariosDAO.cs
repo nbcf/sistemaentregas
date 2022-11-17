@@ -19,7 +19,7 @@ namespace Sistema.DAO
         public int regEncontradosPesquisaUsuariosDAO = 0;
         public string acaoCrudUsuariosDAO = "";
         public string verificarSenha = "fechado";
-       ClasseConexao classeConecta = new ClasseConexao();
+        ClasseConexao classeConecta = new ClasseConexao();
         string sql;
         MySqlCommand cmd;
         MySqlCommand cmdVerificar;
@@ -330,7 +330,7 @@ namespace Sistema.DAO
                 sql = "SELECT * FROM usuarios usu " +
                     "INNER JOIN papeis pap " +
                     "INNER JOIN pessoas pes ON usu.idpapel = pap.idpapel and usu.idpessoa = pes.idpessoa " +
-                    "WHERE pap.nomepapel = 'Entregador'";
+                    "WHERE pap.nomepapel = 'Entregador' OR pap.nomepapel = 'Motorista'";
                 cmd = new MySqlCommand(sql, classeConecta.con);
                 MySqlDataAdapter da = new MySqlDataAdapter();
                 da.SelectCommand = cmd;

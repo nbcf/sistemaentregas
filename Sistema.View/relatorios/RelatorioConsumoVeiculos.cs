@@ -48,7 +48,7 @@ namespace Sistema.View.relatorios
         {
             dataGridView1.DataSource = controllerSaida.ListarConsumoPorVeiculoNoPeriodocontroller(Convert.ToInt32(textBox1.Text), Convert.ToInt32(textBox6.Text), dateTimePicker1.Value, dateTimePicker2.Value);
             ModelDataGrid();
-            txtTotal.Text           = somarCellTotal.SomarTotais(dataGridView1.RowCount, dataGridView1, "TOTAL_NTA").ToString();
+            txtTotal.Text           = Convert.ToDouble(somarCellTotal.SomarTotais(dataGridView1.RowCount, dataGridView1, "TOTAL_NTA")).ToString();
             txtKmPercorrido.Text    = somarCellTotal.SomarTotais(dataGridView1.RowCount, dataGridView1, "PERCORRIDO").ToString();
             txtQtd.Text             = somarCellTotal.SomarTotais(dataGridView1.RowCount, dataGridView1, "QTD").ToString();
             lbContagemLinhas.Text = dataGridView1.RowCount.ToString();

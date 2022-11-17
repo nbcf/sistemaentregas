@@ -7,7 +7,7 @@ using System.Windows.Forms;
 
 namespace Engines
 {
-    class Paginacao
+   public class Paginacao
     {
 
 

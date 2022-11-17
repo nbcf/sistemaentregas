@@ -497,6 +497,7 @@ namespace Sistema.View
             // 
             this.cbButtnQuantPage1.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbButtnQuantPage1.Items.AddRange(new object[] {
+            "3",
             "5",
             "10",
             "15",
@@ -512,6 +513,7 @@ namespace Sistema.View
             this.cbButtnQuantPage1.Name = "cbButtnQuantPage1";
             this.cbButtnQuantPage1.Size = new System.Drawing.Size(80, 32);
             this.cbButtnQuantPage1.SelectedIndexChanged += new System.EventHandler(this.cbButtnQuantPage_SelectedIndexChanged);
+            this.cbButtnQuantPage1.Click += new System.EventHandler(this.cbButtnQuantPage1_Click);
             // 
             // toolStripLabel6
             // 
@@ -703,9 +705,9 @@ namespace Sistema.View
             this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(9, 190);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(90, 17);
+            this.label6.Size = new System.Drawing.Size(58, 17);
             this.label6.TabIndex = 35;
-            this.label6.Text = "Data Entrada:";
+            this.label6.Text = "Entrada:";
             // 
             // txtCdOri
             // 
@@ -813,7 +815,7 @@ namespace Sistema.View
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(215, 88);
+            this.label4.Location = new System.Drawing.Point(210, 89);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(34, 17);
             this.label4.TabIndex = 12;
@@ -831,11 +833,13 @@ namespace Sistema.View
             // 
             // txtCep
             // 
+            this.txtCep.BackColor = System.Drawing.Color.Salmon;
             this.txtCep.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCep.Location = new System.Drawing.Point(254, 85);
+            this.txtCep.Location = new System.Drawing.Point(256, 85);
             this.txtCep.Name = "txtCep";
-            this.txtCep.Size = new System.Drawing.Size(102, 25);
+            this.txtCep.Size = new System.Drawing.Size(100, 25);
             this.txtCep.TabIndex = 10;
+            this.txtCep.Leave += new System.EventHandler(this.txtCep_Leave);
             // 
             // txtUf
             // 
@@ -843,7 +847,7 @@ namespace Sistema.View
             this.txtUf.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUf.Location = new System.Drawing.Point(106, 85);
             this.txtUf.Name = "txtUf";
-            this.txtUf.Size = new System.Drawing.Size(100, 25);
+            this.txtUf.Size = new System.Drawing.Size(98, 25);
             this.txtUf.TabIndex = 9;
             // 
             // label3

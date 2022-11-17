@@ -67,7 +67,7 @@ namespace Sistema.View
             gridImportES.Columns[0].Width = 60;
             gridImportES.Columns[6].Width = 150;
             gridImportES.Columns[16].Width = 208;
-             gridImportES.Columns[0].HeaderText = "ID";
+            gridImportES.Columns[0].HeaderText = "ID";
             gridImportES.Columns[6].HeaderText = "FUNÇÃO";
             gridImportES.Columns[16].HeaderText = "NOME";
             gridImportES.Columns[1].Visible = false;

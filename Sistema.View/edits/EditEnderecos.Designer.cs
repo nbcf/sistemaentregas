@@ -41,6 +41,7 @@ namespace Sistema.View
             this.txtCep = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.txtId = new System.Windows.Forms.TextBox();
+            this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -127,7 +128,7 @@ namespace Sistema.View
             this.txtCep.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCep.Location = new System.Drawing.Point(97, 142);
             this.txtCep.Name = "txtCep";
-            this.txtCep.Size = new System.Drawing.Size(149, 25);
+            this.txtCep.Size = new System.Drawing.Size(110, 25);
             this.txtCep.TabIndex = 13;
             this.txtCep.Leave += new System.EventHandler(this.txtCep_Leave);
             // 
@@ -148,6 +149,16 @@ namespace Sistema.View
             this.txtId.Name = "txtId";
             this.txtId.Size = new System.Drawing.Size(46, 25);
             this.txtId.TabIndex = 14;
+            // 
+            // button3
+            // 
+            this.button3.Image = global::Sistema.View.Properties.Resources.location16x16;
+            this.button3.Location = new System.Drawing.Point(213, 142);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(37, 25);
+            this.button3.TabIndex = 15;
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button2
             // 
@@ -182,6 +193,7 @@ namespace Sistema.View
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(381, 221);
+            this.Controls.Add(this.button3);
             this.Controls.Add(this.txtId);
             this.Controls.Add(this.txtCep);
             this.Controls.Add(this.label6);
@@ -224,5 +236,6 @@ namespace Sistema.View
         private System.Windows.Forms.TextBox txtCep;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtId;
+        private System.Windows.Forms.Button button3;
     }
 }

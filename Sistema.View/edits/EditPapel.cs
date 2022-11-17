@@ -9,15 +9,11 @@ namespace Sistema.View
         public string acaoDialog = "";
         public string acaoFormDialog = "";
 
-        public string IdVO
-        {
-            get { return textBox1.Text; }
-            set { textBox1.Text = value; }
-        }
+
         public string PapelVO
         {
-            get { return txtNomeFuncao.Text; }
-            set { txtNomeFuncao.Text = value; }
+            get { return cbCargo.SelectedItem.ToString(); }
+            set { cbCargo.SelectedItem = value; }
         }
 
         public bool CriarVO
@@ -83,26 +79,16 @@ namespace Sistema.View
 
         public void Sair(){
             AcaoDialogVO = "sair";
-           // AcaoFormDialogVO = "sair";
             Close();
 
         }
         public void Ok(){
             AcaoDialogVO = "ok";
-          //  AcaoFormDialogVO = "ok";
             Close();
         }
 
 
-        private void formEditPapel_Load(object sender, EventArgs e){
-            textBox1.Visible = false;
-        }
-
-
-        private void formEditPapel_FormClosing(object sender, FormClosingEventArgs e){
-         //   AcaoFormDialogVO = "fechou";
-            
-        }
+     
 
         private void btnOk_Click(object sender, EventArgs e){
             Ok();

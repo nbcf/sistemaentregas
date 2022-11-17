@@ -64,6 +64,7 @@ namespace Sistema.View
 
         EncomendasController controllerEncomendas = new EncomendasController();
         PerfilCrud perfilCrud = new PerfilCrud();
+        ConsultarCep cp = new ConsultarCep();
         private static EncomendasEntradaView _InstanciaformCrudEncomendas;
 
         public static EncomendasEntradaView GetInstanciaformCrudPapeis()
@@ -576,11 +577,11 @@ namespace Sistema.View
         public void carregarEstadoPadrao(string pesquisa, int offsett)
         {
             cbButtnQuantPage1.SelectedIndex = 0;
-         
-            cbButtonPesquisarEm.SelectedIndex = 0;
-            int quantRegPage = Convert.ToInt32(cbButtnQuantPage1.SelectedItem);
             cbOrdenarPor1.SelectedIndex = 1;
             cbOrdemParam1.SelectedIndex = 0;
+            cbButtonPesquisarEm.SelectedIndex = 0;
+            int quantRegPage = Convert.ToInt32(cbButtnQuantPage1.SelectedItem);
+         
             resetarPonteiros();
             this.puxarparametro(0, quantRegPage, "Nao");
             bttnDel.Enabled = false;
@@ -620,6 +621,9 @@ namespace Sistema.View
             txtDiasVencerPrazo.Visible = false;
             lbEstatus.Visible = false;
             txtEstatusEncomenda.Visible = false;
+
+            label15.Visible = false;
+            dtPrazo.Visible = false;
 
             if (cbButtonPesquisarEm.SelectedItem.Equals("Destinatario"))        { strPesquisarEmColuna = "enco.destinatario"; }
             else if (cbButtonPesquisarEm.SelectedItem.Equals("Cpf"))            { strPesquisarEmColuna = "enco.cpf"; }
@@ -1655,6 +1659,24 @@ namespace Sistema.View
             //{
             //    e.Handled = true;
             //}
+        }
+
+        private void txtCep_Leave(object sender, EventArgs e)
+        {
+            cp.puxarCep(txtCep.Text);
+
+            txtLogradouro.Text = cp.LogradouroVO;
+            txtBairro.Text = cp.BairroVO;
+            txtCidade.Text = cp.CidadeVO;
+            txtUf.Text = cp.UfVO;
+     
+
+
+        }
+
+        private void cbButtnQuantPage1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

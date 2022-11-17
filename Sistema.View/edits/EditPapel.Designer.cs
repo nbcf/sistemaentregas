@@ -40,8 +40,7 @@ namespace Sistema.View
             this.label2 = new System.Windows.Forms.Label();
             this.btnOk = new System.Windows.Forms.Button();
             this.btnSair = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.txtNomeFuncao = new System.Windows.Forms.TextBox();
+            this.cbCargo = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // ckMenuGen
@@ -127,9 +126,9 @@ namespace Sistema.View
             this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(14, 21);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(54, 17);
+            this.label2.Size = new System.Drawing.Size(44, 17);
             this.label2.TabIndex = 21;
-            this.label2.Text = "Usuário";
+            this.label2.Text = "Papel:";
             // 
             // btnOk
             // 
@@ -159,29 +158,27 @@ namespace Sistema.View
             this.btnSair.UseVisualStyleBackColor = true;
             this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
             // 
-            // textBox1
+            // cbCargo
             // 
-            this.textBox1.Location = new System.Drawing.Point(12, 154);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(59, 20);
-            this.textBox1.TabIndex = 31;
-            this.textBox1.Visible = false;
-            // 
-            // txtNomeFuncao
-            // 
-            this.txtNomeFuncao.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNomeFuncao.Location = new System.Drawing.Point(72, 18);
-            this.txtNomeFuncao.Name = "txtNomeFuncao";
-            this.txtNomeFuncao.Size = new System.Drawing.Size(275, 25);
-            this.txtNomeFuncao.TabIndex = 32;
+            this.cbCargo.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbCargo.FormattingEnabled = true;
+            this.cbCargo.Items.AddRange(new object[] {
+            "Operador",
+            "Motorista",
+            "Entregador",
+            "Gerente",
+            "Adiministrador"});
+            this.cbCargo.Location = new System.Drawing.Point(80, 21);
+            this.cbCargo.Name = "cbCargo";
+            this.cbCargo.Size = new System.Drawing.Size(259, 25);
+            this.cbCargo.TabIndex = 33;
             // 
             // formEditPapel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(364, 229);
-            this.Controls.Add(this.txtNomeFuncao);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.cbCargo);
             this.Controls.Add(this.btnSair);
             this.Controls.Add(this.btnOk);
             this.Controls.Add(this.ckMenuGen);
@@ -198,8 +195,6 @@ namespace Sistema.View
             this.Name = "formEditPapel";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Formulário";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.formEditPapel_FormClosing);
-            this.Load += new System.EventHandler(this.formEditPapel_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -217,7 +212,6 @@ namespace Sistema.View
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnOk;
         private System.Windows.Forms.Button btnSair;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox txtNomeFuncao;
+        private System.Windows.Forms.ComboBox cbCargo;
     }
 }
