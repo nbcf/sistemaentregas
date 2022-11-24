@@ -30,12 +30,12 @@ namespace Sistema.View
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PessoasView));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PessoasView));
             this.tabControlAssets = new System.Windows.Forms.TabControl();
             this.tabPagePesquisar = new System.Windows.Forms.TabPage();
             this.radioBttnTermina = new System.Windows.Forms.RadioButton();
@@ -54,7 +54,6 @@ namespace Sistema.View
             this.bttnEdit = new System.Windows.Forms.ToolStripButton();
             this.bttnSearch = new System.Windows.Forms.ToolStripButton();
             this.bttnDel = new System.Windows.Forms.ToolStripButton();
-            this.gridCrudPessoa = new System.Windows.Forms.DataGridView();
             this.toolStrip2 = new System.Windows.Forms.ToolStrip();
             this.bttnBeginPages = new System.Windows.Forms.ToolStripButton();
             this.bttnOnePageLeft = new System.Windows.Forms.ToolStripButton();
@@ -89,12 +88,13 @@ namespace Sistema.View
             this.txtLogradouro = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
+            this.gridCrudPessoa = new System.Windows.Forms.DataGridView();
             this.tabControlAssets.SuspendLayout();
             this.tabPagePesquisar.SuspendLayout();
             this.toolStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridCrudPessoa)).BeginInit();
             this.toolStrip2.SuspendLayout();
             this.groupBoxFormulario.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridCrudPessoa)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControlAssets
@@ -312,51 +312,6 @@ namespace Sistema.View
             this.bttnDel.Size = new System.Drawing.Size(80, 48);
             this.bttnDel.Text = "toolStripButton6";
             this.bttnDel.Click += new System.EventHandler(this.bttnDel_Click);
-            // 
-            // gridCrudPessoa
-            // 
-            this.gridCrudPessoa.AllowUserToAddRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Gainsboro;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gridCrudPessoa.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Transparent;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gridCrudPessoa.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.gridCrudPessoa.ColumnHeadersHeight = 26;
-            this.gridCrudPessoa.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.gridCrudPessoa.DefaultCellStyle = dataGridViewCellStyle3;
-            this.gridCrudPessoa.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridCrudPessoa.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.gridCrudPessoa.Location = new System.Drawing.Point(0, 130);
-            this.gridCrudPessoa.MultiSelect = false;
-            this.gridCrudPessoa.Name = "gridCrudPessoa";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gridCrudPessoa.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gridCrudPessoa.RowsDefaultCellStyle = dataGridViewCellStyle5;
-            this.gridCrudPessoa.RowTemplate.Height = 25;
-            this.gridCrudPessoa.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.gridCrudPessoa.Size = new System.Drawing.Size(849, 424);
-            this.gridCrudPessoa.TabIndex = 4;
-            this.gridCrudPessoa.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridCrudPessoa_CellClick);
             // 
             // toolStrip2
             // 
@@ -701,6 +656,51 @@ namespace Sistema.View
             this.label3.TabIndex = 4;
             this.label3.Text = "Endereço";
             // 
+            // gridCrudPessoa
+            // 
+            this.gridCrudPessoa.AllowUserToAddRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Gainsboro;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridCrudPessoa.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Transparent;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridCrudPessoa.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.gridCrudPessoa.ColumnHeadersHeight = 26;
+            this.gridCrudPessoa.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.gridCrudPessoa.DefaultCellStyle = dataGridViewCellStyle3;
+            this.gridCrudPessoa.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridCrudPessoa.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.gridCrudPessoa.Location = new System.Drawing.Point(0, 130);
+            this.gridCrudPessoa.MultiSelect = false;
+            this.gridCrudPessoa.Name = "gridCrudPessoa";
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridCrudPessoa.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridCrudPessoa.RowsDefaultCellStyle = dataGridViewCellStyle5;
+            this.gridCrudPessoa.RowTemplate.Height = 25;
+            this.gridCrudPessoa.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.gridCrudPessoa.Size = new System.Drawing.Size(849, 424);
+            this.gridCrudPessoa.TabIndex = 4;
+            this.gridCrudPessoa.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridCrudPessoa_CellClick);
+            // 
             // PessoasView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -721,11 +721,11 @@ namespace Sistema.View
             this.tabPagePesquisar.PerformLayout();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridCrudPessoa)).EndInit();
             this.toolStrip2.ResumeLayout(false);
             this.toolStrip2.PerformLayout();
             this.groupBoxFormulario.ResumeLayout(false);
             this.groupBoxFormulario.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridCrudPessoa)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -751,7 +751,6 @@ namespace Sistema.View
         private TextBox txtBoxName;
         private TextBox txtBoxId;
         private Label label1;
-        private DataGridView gridCrudPessoa;
         private ToolStrip toolStrip2;
         private ToolStripButton bttnBeginPages;
         private ToolStripButton bttnOnePageLeft;
@@ -786,5 +785,6 @@ namespace Sistema.View
         private TextBox txtLogradouro;
         private Button button1;
         private Label label3;
+        private DataGridView gridCrudPessoa;
     }
 }
